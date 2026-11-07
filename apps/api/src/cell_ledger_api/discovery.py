@@ -39,6 +39,9 @@ FIND_SERIES_TOOL: dict[str, Any] = {
             "objective": {"type": "string", "description": OBJECTIVE_DESCRIPTION},
         },
         "required": ["query", "objective"],
+        # The agent sends this tool with strict: true, which the API only accepts when every
+        # object in the schema closes itself off.
+        "additionalProperties": False,
     },
 }
 

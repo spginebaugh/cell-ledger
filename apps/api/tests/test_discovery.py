@@ -105,6 +105,8 @@ def test_tool_requires_objective_with_exa_wording() -> None:
     schema = FIND_SERIES_TOOL["input_schema"]
     assert schema["required"] == ["query", "objective"]
     assert schema["properties"]["objective"]["description"] == OBJECTIVE_DESCRIPTION
+    # The agent sends it with strict: true; the API rejects a strict object schema without this.
+    assert schema["additionalProperties"] is False
 
 
 def _client(tmp_path: Path, exa: Any) -> TestClient:
