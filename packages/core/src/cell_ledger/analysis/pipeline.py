@@ -41,7 +41,7 @@ from cell_ledger.analysis.enrichment import (
     write_gsea,
 )
 from cell_ledger.analysis.filtering import filter_genes
-from cell_ledger.analysis.genes import log2_normalized, lookup_genes, score_markers
+from cell_ledger.analysis.genes import gene_ids, log2_normalized, lookup_genes, score_markers
 from cell_ledger.analysis.qc import run_qc
 from cell_ledger.analysis.steps import emit, step
 from cell_ledger.report import figures
@@ -437,8 +437,18 @@ def _run(
     filtered = adata
     if report.status == "complete":
         with step(steps, "filter_genes", min_count=params.min_count):
-            filtered, fsum = filter_genes(adata, min_count=params.min_count)
+            filtered, fsum = filter_genes(
+                adata,
+                min_count=params.min_count,
+                always_keep=gene_ids(params.genes_of_interest, var_frame(adata)),
+            )
             report.filtering = fsum
+        if fsum.kept_below_threshold:
+            report.qualifications.append(
+                f"{len(fsum.kept_below_threshold)} gene(s) of interest have fewer than "
+                f"{fsum.min_count} reads in {fsum.min_samples} samples and were tested anyway; "
+                "their estimates are uncertain"
+            )
         if filtered.n_vars == 0:
             report.status = "qc_only"
             report.blockers.append(

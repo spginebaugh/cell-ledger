@@ -23,6 +23,15 @@ def _resolve(query: str, var: pd.DataFrame, symbols: dict[str, str]) -> str | No
     return symbols.get(q.upper())
 
 
+def gene_ids(queries: list[str], var: pd.DataFrame) -> list[str]:
+    """GeneIDs for the symbols or ids in ``queries`` that the annotation knows, resolved the
+    same way :func:`lookup_genes` resolves them."""
+    if not queries:
+        return []
+    symbols = symbol_to_gene_id(var)
+    return [g for q in queries if (g := _resolve(q, var, symbols)) is not None]
+
+
 def lookup_genes(
     queries: list[str],
     var: pd.DataFrame,

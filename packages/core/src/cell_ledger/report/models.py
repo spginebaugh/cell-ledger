@@ -70,6 +70,10 @@ class FilterSummary(BaseModel):
     n_genes_after: int
     min_count: int
     min_samples: int
+    kept_below_threshold: list[str] = Field(
+        default_factory=list,
+        description="genes of interest kept for testing although they miss the count threshold",
+    )
 
 
 class GeneRow(BaseModel):
