@@ -35,6 +35,13 @@ run = "bun run --cwd apps/web dev"
 description = "Run api and web together"
 depends = ["dev:api", "dev:web"]
 
+[tasks."supabase:start"]
+description = "Local Supabase (Storage only) on :57321, Studio on :57323"
+run = "supabase start -x realtime,edge-runtime,vector,logflare,imgproxy,supavisor,mailpit"
+
+[tasks."supabase:stop"]
+run = "supabase stop"
+
 # ----------------------------------------------------------------- lint
 
 [tasks."lint:py"]
