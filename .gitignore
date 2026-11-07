@@ -1,0 +1,30 @@
+# python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.pyright/
+dist/
+*.egg-info/
+
+# js
+node_modules/
+apps/web/dist/
+apps/web/playwright-report/
+apps/web/test-results/
+apps/web/blob-report/
+apps/web/.vite/
+
+# data and run outputs (GEO downloads, analysis results)
+data/*
+!data/.gitkeep
+
+# env and editors
+.env
+.env.*
+!.env.example
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json

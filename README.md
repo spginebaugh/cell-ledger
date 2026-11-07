@@ -1,0 +1,55 @@
+# cell-ledger
+
+An AI specialist that helps biologists find and use public bulk and single-cell
+RNA-seq data from NIH GEO. Ask a question such as *"is gene X higher in cell
+type Y in disease Z?"* and the agent searches GEO, triages which datasets are
+actually usable (raw counts, readable formats, clear sample labels), harmonizes
+their metadata into one sample sheet, runs a reproducible downstream analysis
+and returns a report.
+
+## Layout
+
+```
+mise.toml            toolchain pins (python 3.13, uv, bun, node) and every task
+pyproject.toml       uv workspace root + shared ruff / pytest / pyright config
+package.json         bun workspace root + Biome
+apps/api/            FastAPI service and agent runtime        (cell_ledger_api)
+apps/web/            React + Vite + TanStack Query, vitest, Playwright
+packages/core/       pure-Python pipeline library, no web deps (cell_ledger)
+  geo/               GEO search and metadata retrieval
+  triage/            usability checks
+  samplesheet/       harmonized SampleSheet model: the backend/frontend contract
+  analysis/          bulk (pydeseq2) and single-cell (scanpy) steps
+  report/            serializable reports
+data/                gitignored GEO cache and run outputs
+```
+
+## Setup
+
+```sh
+mise install     # toolchains
+mise run setup   # uv sync, bun install, Playwright Chromium
+```
+
+## Everyday tasks
+
+| Task                 | What it does                                                |
+| -------------------- | ----------------------------------------------------------- |
+| `mise run dev`       | API on :8000 and Vite on :5173 (Vite proxies `/api`)        |
+| `mise run test`      | pytest + vitest                                             |
+| `mise run e2e`       | Playwright; boots api and web itself                        |
+| `mise run lint`      | ruff, pyright, Biome, tsc                                   |
+| `mise run fmt`       | auto-fix formatting everywhere                              |
+| `mise run gen:api`   | export OpenAPI schema and regenerate `apps/web/src/api/generated` |
+
+Run `mise run gen:api` after changing any FastAPI route or pydantic model so the
+frontend types stay in sync. The generated client is committed.
+
+## Conventions
+
+- Analysis steps are pure functions over a count matrix / AnnData plus a
+  `SampleSheet`, and record their parameters for reproducibility.
+- `packages/core` never imports FastAPI; the agent's tools are thin wrappers
+  over core functions so the pipeline runs from a CLI or a test fixture.
+- Tests that need GEO data use small fixtures in `packages/core/tests/fixtures`,
+  never the network.

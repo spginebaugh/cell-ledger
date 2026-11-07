@@ -1,0 +1,15 @@
+{
+  "name": "cell-ledger",
+  "private": true,
+  "workspaces": [
+    "apps/web",
+    "packages/*"
+  ],
+  "scripts": {
+    "lint": "biome ci .",
+    "fmt": "biome check --write ."
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.6.6"
+  }
+}
