@@ -52,6 +52,12 @@ def _donor_from_source(s: GeoSample, _: dict[str, str]) -> str | None:
     return m.group(1) if m else None
 
 
+def _patient_from_title_number(s: GeoSample, _: dict[str, str]) -> str | None:
+    """GSE140343 titles 'RNA-seq_LADC17' / 'RNA-seq_normal_lung17' share the patient number."""
+    m = re.search(r"(\d+)$", s.title)
+    return f"patient {m.group(1)}" if m else None
+
+
 RULES: dict[str, Rules] = {
     "GSE114286": Rules(
         group_from="participant condition",
@@ -110,8 +116,12 @@ RULES: dict[str, Rules] = {
         contrast="tumor_vs_adjacent_normal",
         case_label="lung adenocarcinoma tumor",
         control_label="adjacent normal lung",
-        fields={"age": "age", "tissue": "tissue"},
-        rationale="Tumor samples lack a 'disease state' characteristic; label is from source_name.",
+        fields={"age": "age", "tissue": "tissue", "donor": _patient_from_title_number},
+        blocking="donor",
+        rationale=(
+            "Tumor samples lack a 'disease state' characteristic; label is from source_name. "
+            "Paired tumor/adjacent per patient, patient number taken from the sample title."
+        ),
     ),
     "GSE232753": Rules(
         group_from="disease state",
@@ -137,7 +147,11 @@ RULES: dict[str, Rules] = {
             "cell_type": "cell type",
         },
         blocking="donor",
-        rationale="24h and 48h pooled, balanced across arms; sex is a second factor ignored in v1.",
+        restricted_to={"time_point": "48 hours"},
+        rationale=(
+            "48 h only (two time points per donor would be pseudo-replication); "
+            "5 of 6 donors have both arms quantified. Sex is a second factor ignored in v1."
+        ),
         markers_up=["VEGFA", "CA9", "PGK1", "SLC2A1", "BNIP3", "ADM", "LDHA", "PDK1", "NDRG1"],
     ),
     "GSE111414": Rules(
@@ -214,6 +228,7 @@ def build(gse: str, rules: Rules) -> tuple[SampleSheet, Contrast]:
                 evidence=[evidence] if group is not Group.UNKNOWN else [],
                 confidence=1.0 if group is not Group.UNKNOWN else None,
                 raw=chars,
+                raw_lines=list(s.characteristics),
                 **fields,
             )
         )

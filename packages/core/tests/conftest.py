@@ -60,23 +60,28 @@ def make_synthetic(seed: int = 0) -> Synthetic:
         index=pd.Index(gene_ids, name="GeneID"),
     )
 
-    def sample(gsm: str, group: Group, sex: str) -> Sample:
-        raw = {"condition": group.value, "Sex": sex}
+    def sample(gsm: str, group: Group, sex: str, donor: str) -> Sample:
+        raw = {"condition": group.value, "Sex": sex, "donor": donor}
         return Sample(
             gsm=gsm,
             title=f"{group.value} {gsm}",
             group=group,
             condition=group.value,
             sex=sex,
+            donor=donor,
             raw=raw,
+            raw_lines=[f"{k}: {v}" for k, v in raw.items()],
             evidence=[f"condition: {group.value}"],
             confidence=1.0,
         )
 
-    sheet_samples = [sample(g, Group.CASE, "female") for g in case]
-    sheet_samples += [sample(g, Group.CONTROL, "male") for g in control[:-1]]
-    sheet_samples.append(sample(control[-1], Group.CONTROL, "female"))  # mislabelled sex
-    sheet_samples.append(sample("GSM42", Group.CASE, "female"))  # in sheet, not in counts
+    # donors d1..d4 each contribute one case and one control -> complete pairing
+    sheet_samples = [sample(g, Group.CASE, "female", f"d{i + 1}") for i, g in enumerate(case)]
+    sheet_samples += [
+        sample(g, Group.CONTROL, "male", f"d{i + 1}") for i, g in enumerate(control[:-1])
+    ]
+    sheet_samples.append(sample(control[-1], Group.CONTROL, "female", "d4"))  # mislabelled sex
+    sheet_samples.append(sample("GSM42", Group.CASE, "female", "d9"))  # in sheet, not in counts
     sheet = SampleSheet(gse="GSE1", assay=Assay.BULK, title="synthetic", samples=sheet_samples)
     contrast = Contrast(
         gse="GSE1",

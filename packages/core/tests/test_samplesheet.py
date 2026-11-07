@@ -5,8 +5,15 @@ from cell_ledger.samplesheet import Assay, Group, Sample, SampleSheet
 
 
 def _sample(gsm: str, condition: str, group: Group = Group.UNKNOWN) -> Sample:
+    raw = {"condition": condition}
     return Sample(
-        gsm=gsm, title=f"{condition} rep", condition=condition, cell_type="T cell", group=group
+        gsm=gsm,
+        title=f"{condition} rep",
+        condition=condition,
+        cell_type="T cell",
+        group=group,
+        raw=raw,
+        evidence=[f"condition: {condition}"] if group is not Group.UNKNOWN else [],
     )
 
 
@@ -51,6 +58,31 @@ def test_evidence_must_be_verbatim_from_record() -> None:
         )
     # title and source_name are part of the record too
     Sample(gsm="GSM1", title="LADC17", source_name="LUAD", raw=raw, evidence=["LUAD", "LADC"])
+
+
+def test_labels_require_record_and_evidence() -> None:
+    with pytest.raises(ValidationError, match="no raw GEO record"):
+        Sample(gsm="GSM1", title="x", group=Group.CASE, evidence=["x"])
+    with pytest.raises(ValidationError, match="no evidence cited"):
+        Sample(gsm="GSM1", title="x", group=Group.CONTROL, raw={"a": "b"})
+    with pytest.raises(ValidationError, match="empty evidence"):
+        Sample(gsm="GSM1", title="x", group=Group.CASE, raw={"a": "b"}, evidence=[""])
+    # unknown samples may carry a record without citing anything
+    Sample(gsm="GSM1", title="x", raw={"a": "b"})
+
+
+def test_repeated_keys_cite_verbatim_lines() -> None:
+    lines = ["tissue: blood", "tissue: blood again"]
+    raw = {"tissue": "blood", "tissue.2": "blood again"}
+    ok = Sample(
+        gsm="GSM1",
+        title="x",
+        group=Group.CASE,
+        raw=raw,
+        raw_lines=lines,
+        evidence=["tissue: blood again"],
+    )
+    assert ok.has_record
 
 
 def test_low_confidence_sets_needs_review() -> None:

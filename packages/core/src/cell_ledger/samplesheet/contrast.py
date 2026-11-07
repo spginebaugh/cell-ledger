@@ -12,7 +12,7 @@ from enum import StrEnum
 
 from pydantic import BaseModel, Field, model_validator
 
-from cell_ledger.samplesheet.models import Group, SampleSheet
+from cell_ledger.samplesheet.models import REVIEW_CONFIDENCE_THRESHOLD, Group, SampleSheet
 
 DEFAULT_MIN_PER_GROUP = 3
 
@@ -56,6 +56,25 @@ class Contrast(BaseModel):
     def gsms(self) -> list[str]:
         return [*self.case_gsms, *self.control_gsms]
 
+    def qualifications(
+        self, sheet: SampleSheet, *, min_confidence: float = REVIEW_CONFIDENCE_THRESHOLD
+    ) -> list[str]:
+        """Reasons to qualify, not block, a result: uncertain status, low confidence, review."""
+        out: list[str] = []
+        if self.status == ContrastStatus.UNCERTAIN:
+            out.append(f"contrast marked uncertain: {self.rationale or 'no reason given'}")
+        if self.confidence is not None and self.confidence < min_confidence:
+            out.append(f"contrast confidence {self.confidence:.2f} < {min_confidence}")
+        known = set(sheet.gsms)
+        samples = [sheet.by_gsm(g) for g in self.gsms if g in known]
+        review = [s.gsm for s in samples if s.needs_review]
+        if review:
+            out.append(f"{len(review)} contrast samples need review: {review}")
+        scores = [s.confidence for s in samples if s.confidence is not None]
+        if scores and sum(scores) / len(scores) < min_confidence:
+            out.append(f"mean label confidence {sum(scores) / len(scores):.2f} < {min_confidence}")
+        return out
+
     def arm_of(self, gsm: str) -> Group:
         if gsm in self.case_gsms:
             return Group.CASE
@@ -87,6 +106,8 @@ class Contrast(BaseModel):
             )
         if self.status == ContrastStatus.BLOCKED:
             out.append(f"contrast is blocked: {self.rationale or 'no reason given'}")
+        if self.status == ContrastStatus.PROPOSED:
+            out.append("contrast is only proposed; it must be confirmed against the sheet first")
         for field, value in self.restricted_to.items():
             off = [
                 g

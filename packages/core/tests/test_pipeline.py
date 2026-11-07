@@ -1,6 +1,7 @@
 import json
 
 import anndata as ad
+import pandas as pd
 import pytest
 
 from cell_ledger.analysis import PipelineParams, load_design, run_pipeline
@@ -59,8 +60,17 @@ def test_pipeline_end_to_end(synthetic, synthetic_files, tmp_path):
         "filter_genes",
         "deseq2",
         "gene_lookup",
-        "write",
+        "write_h5ad",
     }
+    # samples.csv and h5ad obs carry the same QC columns
+    obs = adata.obs
+    assert isinstance(obs, pd.DataFrame)
+    assert {"library_size", "qc_flags", "pc1"} <= set(obs.columns)
+    assert "X_pca" in adata.obsm
+    csv = pd.read_csv(out / "samples.csv", index_col=0)
+    assert list(csv["library_size"]) == list(obs["library_size"])
+    assert report.de.summary.pairing == "none"  # the synthetic contrast sets no blocking
+    assert report.qualifications == []
 
 
 def test_pipeline_blocks_small_groups_but_still_runs_qc(synthetic, synthetic_files, tmp_path):
@@ -112,7 +122,7 @@ def test_prerank_with_custom_gmt(synthetic, synthetic_files, tmp_path):
         counts, synthetic.sheet, load_annotation(synthetic_files[1]), synthetic.contrast
     )
     filtered, _ = filter_genes(adata)
-    results, _, _ = run_de(filtered, DeParams(lfc_shrink=False))
+    results, _, _, _ = run_de(filtered, DeParams(lfc_shrink=False))
     gmt = tmp_path / "sets.gmt"
     up_set = "\t".join(["PLANTED_UP", "test", *[f"G{g}" for g in synthetic.up]])
     down_set = "\t".join(["PLANTED_DOWN", "test", *[f"G{g}" for g in synthetic.down]])
@@ -167,3 +177,101 @@ def test_real_ifng_markers_recovered(tmp_path):
     )
     assert report.status == "complete"
     assert report.markers is not None and report.markers.fraction_recovered >= 0.8
+
+
+def _base(synthetic, synthetic_files):
+    return dict(
+        counts_path=synthetic_files[0], annotation_path=synthetic_files[1], sheet=synthetic.sheet
+    )
+
+
+QUICK = PipelineParams(run_enrichment=False, figures=False)
+
+
+def test_rerun_replaces_stale_outputs(synthetic, synthetic_files, tmp_path):
+    out = tmp_path / "run"
+    run_pipeline(
+        **_base(synthetic, synthetic_files), contrast=synthetic.contrast, out_dir=out, params=QUICK
+    )
+    assert (out / "de_results.tsv").exists()
+    c = synthetic.contrast
+    small = Contrast(**{**c.model_dump(), "case_gsms": c.case_gsms[:2]})
+    report = run_pipeline(
+        **_base(synthetic, synthetic_files), contrast=small, out_dir=out, params=QUICK
+    )
+    assert report.status == "blocked"
+    assert not (out / "de_results.tsv").exists()
+    assert not (out / "normalized_counts.tsv").exists()
+    assert not list(tmp_path.glob(".run.tmp-*"))
+
+
+def test_refuses_to_overwrite_foreign_directory(synthetic, synthetic_files, tmp_path):
+    out = tmp_path / "mine"
+    out.mkdir()
+    (out / "notes.txt").write_text("precious")
+    with pytest.raises(ValueError, match="refusing"):
+        run_pipeline(**_base(synthetic, synthetic_files), contrast=synthetic.contrast, out_dir=out)
+    assert (out / "notes.txt").read_text() == "precious"
+
+
+def test_contrast_gsm_outside_sheet_still_writes_report(synthetic, synthetic_files, tmp_path):
+    c = synthetic.contrast
+    bad = Contrast(**{**c.model_dump(), "case_gsms": [*c.case_gsms, "GSM999"]})
+    report = run_pipeline(
+        **_base(synthetic, synthetic_files), contrast=bad, out_dir=tmp_path / "bad", params=QUICK
+    )
+    assert report.status == "blocked" and report.error is None
+    assert report.reconciliation is not None
+    assert report.reconciliation.contrast_gsms_missing_from_sheet == ["GSM999"]
+    assert report.qc is not None
+    assert (tmp_path / "bad" / "report.json").exists()
+
+
+def test_empty_gene_filter_is_qc_only(synthetic, synthetic_files, tmp_path):
+    params = PipelineParams(run_enrichment=False, figures=False, min_count=10**9)
+    report = run_pipeline(
+        **_base(synthetic, synthetic_files),
+        contrast=synthetic.contrast,
+        out_dir=tmp_path / "empty",
+        params=params,
+    )
+    assert report.status == "qc_only" and report.de is None
+    assert any("nothing to test" in b for b in report.blockers)
+
+
+def test_unexpected_exception_is_reported_not_raised(synthetic, synthetic_files, tmp_path):
+    report = run_pipeline(
+        counts_path=tmp_path / "does_not_exist.tsv",
+        annotation_path=synthetic_files[1],
+        sheet=synthetic.sheet,
+        contrast=synthetic.contrast,
+        out_dir=tmp_path / "crash",
+    )
+    assert report.status == "blocked" and report.error and "FileNotFoundError" in report.error
+    assert (tmp_path / "crash" / "error.txt").exists()
+    saved = AnalysisReport.model_validate_json((tmp_path / "crash" / "report.json").read_text())
+    assert saved.error == report.error
+
+
+def test_uncertain_contrast_runs_qualified_and_proposed_is_blocked(
+    synthetic, synthetic_files, tmp_path
+):
+    from cell_ledger.samplesheet import ContrastStatus
+
+    c = synthetic.contrast.model_copy(
+        update={"status": ContrastStatus.UNCERTAIN, "blocking": "donor"}
+    )
+    report = run_pipeline(
+        **_base(synthetic, synthetic_files), contrast=c, out_dir=tmp_path / "unc", params=QUICK
+    )
+    assert report.status == "complete" and report.de is not None
+    assert any("uncertain" in q for q in report.qualifications)
+    assert report.de.summary.pairing == "modelled" and report.de.summary.design == "~block + arm"
+    proposed = synthetic.contrast.model_copy(update={"status": ContrastStatus.PROPOSED})
+    report = run_pipeline(
+        **_base(synthetic, synthetic_files),
+        contrast=proposed,
+        out_dir=tmp_path / "prop",
+        params=QUICK,
+    )
+    assert report.status == "blocked" and report.de is None

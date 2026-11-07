@@ -28,6 +28,7 @@ class Reconciliation(BaseModel):
     n_contrast_gsms: int
     gsms_used: list[str]
     contrast_gsms_missing_from_counts: list[str]
+    contrast_gsms_missing_from_sheet: list[str] = Field(default_factory=list)
     sheet_gsms_missing_from_counts: list[str]
     columns_not_in_sheet: list[str]
     n_genes: int
@@ -82,9 +83,17 @@ class GeneRow(BaseModel):
     padj: float | None = None
 
 
+Pairing = Literal["none", "modelled", "incomplete_dropped", "ignored"]
+
+
 class DeSummary(BaseModel):
     design: str
     coefficient: str
+    blocking: str | None = None
+    pairing: Pairing = "none"
+    n_case_used: int
+    n_control_used: int
+    dropped_unpaired: list[str] = Field(default_factory=list)
     lfc_shrunk: bool
     alpha: float
     lfc_threshold: float
@@ -120,7 +129,7 @@ class EnrichmentSummary(BaseModel):
     params: dict[str, Any] = Field(default_factory=dict)
 
 
-Verdict = Literal["up", "down", "no_evidence", "not_tested", "not_found", "not_run"]
+Verdict = Literal["up", "down", "no_evidence", "untestable", "not_tested", "not_found", "not_run"]
 
 
 class GeneLookupRow(BaseModel):
@@ -130,6 +139,11 @@ class GeneLookupRow(BaseModel):
     gene_id: str | None
     symbol: str | None
     verdict: Verdict
+    reason: str | None = Field(
+        default=None,
+        description="why no verdict: 'independent_filtering' (padj NA), 'outlier_or_all_zero' "
+        "(pvalue NA), 'filtered_before_testing', 'symbol_not_in_annotation', 'de_not_run'",
+    )
     log2fc: float | None = None
     padj: float | None = None
     base_mean: float | None = None
@@ -168,6 +182,13 @@ class AnalysisReport(BaseModel):
     contrast: Contrast
     status: Status
     blockers: list[str] = Field(default_factory=list)
+    qualifications: list[str] = Field(
+        default_factory=list,
+        description="result stands but must be read with these caveats (uncertain labels etc.)",
+    )
+    error: str | None = Field(
+        default=None, description="set when the pipeline stopped on an exception"
+    )
     created_at: datetime
     versions: dict[str, str]
     params: dict[str, Any]

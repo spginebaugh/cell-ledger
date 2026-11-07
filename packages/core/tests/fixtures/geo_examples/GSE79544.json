@@ -34,7 +34,14 @@
      "Sex": "male",
      "disease": "Control",
      "smoker": "Yes"
-    }
+    },
+    "raw_lines": [
+     "tissue: BAL macrophages",
+     "age: 39.5",
+     "Sex: male",
+     "disease: Control",
+     "smoker: Yes"
+    ]
    },
    {
     "gsm": "GSM2097612",
@@ -66,7 +73,14 @@
      "Sex": "female",
      "disease": "Control",
      "smoker": "Yes"
-    }
+    },
+    "raw_lines": [
+     "tissue: BAL macrophages",
+     "age: 45.3",
+     "Sex: female",
+     "disease: Control",
+     "smoker: Yes"
+    ]
    },
    {
     "gsm": "GSM2097613",
@@ -98,7 +112,14 @@
      "Sex": "female",
      "disease": "Control",
      "smoker": "Yes"
-    }
+    },
+    "raw_lines": [
+     "tissue: BAL macrophages",
+     "age: 44.2",
+     "Sex: female",
+     "disease: Control",
+     "smoker: Yes"
+    ]
    },
    {
     "gsm": "GSM2097614",
@@ -130,7 +151,14 @@
      "Sex": "male",
      "disease": "Control",
      "smoker": "Yes"
-    }
+    },
+    "raw_lines": [
+     "tissue: BAL macrophages",
+     "age: 58.8",
+     "Sex: male",
+     "disease: Control",
+     "smoker: Yes"
+    ]
    },
    {
     "gsm": "GSM2097615",
@@ -162,7 +190,14 @@
      "Sex": "male",
      "disease": "Idiopathic pulmonary fibrosis",
      "smoker": "Yes [Ex smoker]"
-    }
+    },
+    "raw_lines": [
+     "tissue: BAL macrophages",
+     "age: 61.1",
+     "Sex: male",
+     "disease: Idiopathic pulmonary fibrosis",
+     "smoker: Yes [Ex smoker]"
+    ]
    },
    {
     "gsm": "GSM2097616",
@@ -194,7 +229,14 @@
      "Sex": "male",
      "disease": "Idiopathic pulmonary fibrosis",
      "smoker": "Yes"
-    }
+    },
+    "raw_lines": [
+     "tissue: BAL macrophages",
+     "age: 77.8",
+     "Sex: male",
+     "disease: Idiopathic pulmonary fibrosis",
+     "smoker: Yes"
+    ]
    },
    {
     "gsm": "GSM2097617",
@@ -226,7 +268,14 @@
      "Sex": "male",
      "disease": "Idiopathic pulmonary fibrosis",
      "smoker": "No"
-    }
+    },
+    "raw_lines": [
+     "tissue: BAL macrophages",
+     "age: 75.2",
+     "Sex: male",
+     "disease: Idiopathic pulmonary fibrosis",
+     "smoker: No"
+    ]
    },
    {
     "gsm": "GSM2097618",
@@ -258,7 +307,14 @@
      "Sex": "male",
      "disease": "Idiopathic pulmonary fibrosis",
      "smoker": "Yes [ex]"
-    }
+    },
+    "raw_lines": [
+     "tissue: BAL macrophages",
+     "age: 59.5",
+     "Sex: male",
+     "disease: Idiopathic pulmonary fibrosis",
+     "smoker: Yes [ex]"
+    ]
    },
    {
     "gsm": "GSM2097619",
@@ -290,7 +346,14 @@
      "Sex": "male",
      "disease": "Idiopathic pulmonary fibrosis",
      "smoker": "Yes [ex]"
-    }
+    },
+    "raw_lines": [
+     "tissue: BAL macrophages",
+     "age: 61.7",
+     "Sex: male",
+     "disease: Idiopathic pulmonary fibrosis",
+     "smoker: Yes [ex]"
+    ]
    },
    {
     "gsm": "GSM2097620",
@@ -322,7 +385,14 @@
      "Sex": "male",
      "disease": "Idiopathic pulmonary fibrosis",
      "smoker": "Yes [ex]"
-    }
+    },
+    "raw_lines": [
+     "tissue: BAL macrophages",
+     "age: 61.2",
+     "Sex: male",
+     "disease: Idiopathic pulmonary fibrosis",
+     "smoker: Yes [ex]"
+    ]
    },
    {
     "gsm": "GSM2097621",
@@ -354,7 +424,14 @@
      "Sex": "male",
      "disease": "Idiopathic pulmonary fibrosis",
      "smoker": "Yes [ex]"
-    }
+    },
+    "raw_lines": [
+     "tissue: BAL macrophages",
+     "age: 60.8",
+     "Sex: male",
+     "disease: Idiopathic pulmonary fibrosis",
+     "smoker: Yes [ex]"
+    ]
    },
    {
     "gsm": "GSM2608026",
@@ -386,7 +463,14 @@
      "Sex": "male",
      "disease": "Control",
      "smoker": "Yes"
-    }
+    },
+    "raw_lines": [
+     "tissue: BAL macrophages",
+     "age: 41.8",
+     "Sex: male",
+     "disease: Control",
+     "smoker: Yes"
+    ]
    },
    {
     "gsm": "GSM2608027",
@@ -418,7 +502,14 @@
      "Sex": "female",
      "disease": "Control",
      "smoker": "Yes"
-    }
+    },
+    "raw_lines": [
+     "tissue: BAL macrophages",
+     "age: 45.5",
+     "Sex: female",
+     "disease: Control",
+     "smoker: Yes"
+    ]
    },
    {
     "gsm": "GSM2608028",
@@ -450,7 +541,14 @@
      "Sex": "female",
      "disease": "Control",
      "smoker": "Yes"
-    }
+    },
+    "raw_lines": [
+     "tissue: BAL macrophages",
+     "age: 49.5",
+     "Sex: female",
+     "disease: Control",
+     "smoker: Yes"
+    ]
    },
    {
     "gsm": "GSM2608029",
@@ -482,7 +580,14 @@
      "Sex": "male",
      "disease": "Idiopathic pulmonary fibrosis",
      "smoker": "Yes [ex]"
-    }
+    },
+    "raw_lines": [
+     "tissue: BAL macrophages",
+     "age: 71.3",
+     "Sex: male",
+     "disease: Idiopathic pulmonary fibrosis",
+     "smoker: Yes [ex]"
+    ]
    },
    {
     "gsm": "GSM2608030",
@@ -514,7 +619,14 @@
      "Sex": "male",
      "disease": "Idiopathic pulmonary fibrosis",
      "smoker": "Yes [ex]"
-    }
+    },
+    "raw_lines": [
+     "tissue: BAL macrophages",
+     "age: 75.2",
+     "Sex: male",
+     "disease: Idiopathic pulmonary fibrosis",
+     "smoker: Yes [ex]"
+    ]
    },
    {
     "gsm": "GSM2608031",
@@ -546,7 +658,14 @@
      "Sex": "female",
      "disease": "Idiopathic pulmonary fibrosis",
      "smoker": "No"
-    }
+    },
+    "raw_lines": [
+     "tissue: BAL macrophages",
+     "age: 70.8",
+     "Sex: female",
+     "disease: Idiopathic pulmonary fibrosis",
+     "smoker: No"
+    ]
    },
    {
     "gsm": "GSM2608032",
@@ -578,7 +697,14 @@
      "Sex": "female",
      "disease": "Idiopathic pulmonary fibrosis",
      "smoker": "Yes [ex]"
-    }
+    },
+    "raw_lines": [
+     "tissue: BAL macrophages",
+     "age: 63.8",
+     "Sex: female",
+     "disease: Idiopathic pulmonary fibrosis",
+     "smoker: Yes [ex]"
+    ]
    },
    {
     "gsm": "GSM2608033",
@@ -610,7 +736,14 @@
      "Sex": "male",
      "disease": "Idiopathic pulmonary fibrosis",
      "smoker": "Smoking"
-    }
+    },
+    "raw_lines": [
+     "tissue: BAL macrophages",
+     "age: 45.9",
+     "Sex: male",
+     "disease: Idiopathic pulmonary fibrosis",
+     "smoker: Smoking"
+    ]
    },
    {
     "gsm": "GSM2608034",
@@ -642,7 +775,14 @@
      "Sex": "male",
      "disease": "Idiopathic pulmonary fibrosis",
      "smoker": "Yes [ex]"
-    }
+    },
+    "raw_lines": [
+     "tissue: BAL macrophages",
+     "age: 63.8",
+     "Sex: male",
+     "disease: Idiopathic pulmonary fibrosis",
+     "smoker: Yes [ex]"
+    ]
    },
    {
     "gsm": "GSM2608035",
@@ -674,7 +814,14 @@
      "Sex": "male",
      "disease": "Idiopathic pulmonary fibrosis",
      "smoker": "Smoking"
-    }
+    },
+    "raw_lines": [
+     "tissue: BAL macrophages",
+     "age: 71.0",
+     "Sex: male",
+     "disease: Idiopathic pulmonary fibrosis",
+     "smoker: Smoking"
+    ]
    },
    {
     "gsm": "GSM2608036",
@@ -706,7 +853,14 @@
      "Sex": "male",
      "disease": "Idiopathic pulmonary fibrosis",
      "smoker": "Yes [ex]"
-    }
+    },
+    "raw_lines": [
+     "tissue: BAL macrophages",
+     "age: 77.1",
+     "Sex: male",
+     "disease: Idiopathic pulmonary fibrosis",
+     "smoker: Yes [ex]"
+    ]
    },
    {
     "gsm": "GSM2608037",
@@ -738,7 +892,14 @@
      "Sex": "male",
      "disease": "Idiopathic pulmonary fibrosis",
      "smoker": "Yes [ex]"
-    }
+    },
+    "raw_lines": [
+     "tissue: BAL macrophages",
+     "age: 71.8",
+     "Sex: male",
+     "disease: Idiopathic pulmonary fibrosis",
+     "smoker: Yes [ex]"
+    ]
    }
   ]
  },

@@ -32,7 +32,12 @@
      "group": "PP",
      "patient": "1",
      "gender": "male"
-    }
+    },
+    "raw_lines": [
+     "group: PP",
+     "patient: 1",
+     "gender: male"
+    ]
    },
    {
     "gsm": "GSM1656053",
@@ -62,7 +67,12 @@
      "group": "PN",
      "patient": "1",
      "gender": "male"
-    }
+    },
+    "raw_lines": [
+     "group: PN",
+     "patient: 1",
+     "gender: male"
+    ]
    },
    {
     "gsm": "GSM1656054",
@@ -92,7 +102,12 @@
      "group": "PP",
      "patient": "2",
      "gender": "male"
-    }
+    },
+    "raw_lines": [
+     "group: PP",
+     "patient: 2",
+     "gender: male"
+    ]
    },
    {
     "gsm": "GSM1656055",
@@ -122,7 +137,12 @@
      "group": "PN",
      "patient": "2",
      "gender": "male"
-    }
+    },
+    "raw_lines": [
+     "group: PN",
+     "patient: 2",
+     "gender: male"
+    ]
    },
    {
     "gsm": "GSM1656056",
@@ -152,7 +172,12 @@
      "group": "PP",
      "patient": "3",
      "gender": "male"
-    }
+    },
+    "raw_lines": [
+     "group: PP",
+     "patient: 3",
+     "gender: male"
+    ]
    },
    {
     "gsm": "GSM1656057",
@@ -182,7 +207,12 @@
      "group": "PN",
      "patient": "3",
      "gender": "male"
-    }
+    },
+    "raw_lines": [
+     "group: PN",
+     "patient: 3",
+     "gender: male"
+    ]
    },
    {
     "gsm": "GSM1656058",
@@ -212,7 +242,12 @@
      "group": "PP",
      "patient": "4",
      "gender": "female"
-    }
+    },
+    "raw_lines": [
+     "group: PP",
+     "patient: 4",
+     "gender: female"
+    ]
    },
    {
     "gsm": "GSM1656059",
@@ -242,7 +277,12 @@
      "group": "PN",
      "patient": "4",
      "gender": "female"
-    }
+    },
+    "raw_lines": [
+     "group: PN",
+     "patient: 4",
+     "gender: female"
+    ]
    },
    {
     "gsm": "GSM1656060",
@@ -272,7 +312,12 @@
      "group": "PP",
      "patient": "5",
      "gender": "male"
-    }
+    },
+    "raw_lines": [
+     "group: PP",
+     "patient: 5",
+     "gender: male"
+    ]
    },
    {
     "gsm": "GSM1656061",
@@ -302,7 +347,12 @@
      "group": "PN",
      "patient": "5",
      "gender": "male"
-    }
+    },
+    "raw_lines": [
+     "group: PN",
+     "patient: 5",
+     "gender: male"
+    ]
    },
    {
     "gsm": "GSM1656062",
@@ -332,7 +382,12 @@
      "group": "PP",
      "patient": "6",
      "gender": "female"
-    }
+    },
+    "raw_lines": [
+     "group: PP",
+     "patient: 6",
+     "gender: female"
+    ]
    },
    {
     "gsm": "GSM1656063",
@@ -362,7 +417,12 @@
      "group": "PN",
      "patient": "6",
      "gender": "female"
-    }
+    },
+    "raw_lines": [
+     "group: PN",
+     "patient: 6",
+     "gender: female"
+    ]
    },
    {
     "gsm": "GSM1656064",
@@ -392,7 +452,12 @@
      "group": "PP",
      "patient": "7",
      "gender": "male"
-    }
+    },
+    "raw_lines": [
+     "group: PP",
+     "patient: 7",
+     "gender: male"
+    ]
    },
    {
     "gsm": "GSM1656065",
@@ -422,7 +487,12 @@
      "group": "PN",
      "patient": "7",
      "gender": "male"
-    }
+    },
+    "raw_lines": [
+     "group: PN",
+     "patient: 7",
+     "gender: male"
+    ]
    },
    {
     "gsm": "GSM1656066",
@@ -452,7 +522,12 @@
      "group": "PP",
      "patient": "8",
      "gender": "male"
-    }
+    },
+    "raw_lines": [
+     "group: PP",
+     "patient: 8",
+     "gender: male"
+    ]
    },
    {
     "gsm": "GSM1656067",
@@ -482,7 +557,12 @@
      "group": "PN",
      "patient": "8",
      "gender": "male"
-    }
+    },
+    "raw_lines": [
+     "group: PN",
+     "patient: 8",
+     "gender: male"
+    ]
    },
    {
     "gsm": "GSM1656068",
@@ -512,7 +592,12 @@
      "group": "PP",
      "patient": "9",
      "gender": "male"
-    }
+    },
+    "raw_lines": [
+     "group: PP",
+     "patient: 9",
+     "gender: male"
+    ]
    },
    {
     "gsm": "GSM1656069",
@@ -542,7 +627,12 @@
      "group": "PN",
      "patient": "9",
      "gender": "male"
-    }
+    },
+    "raw_lines": [
+     "group: PN",
+     "patient: 9",
+     "gender: male"
+    ]
    },
    {
     "gsm": "GSM1656070",
@@ -572,7 +662,12 @@
      "group": "PP",
      "patient": "10",
      "gender": "male"
-    }
+    },
+    "raw_lines": [
+     "group: PP",
+     "patient: 10",
+     "gender: male"
+    ]
    },
    {
     "gsm": "GSM1656071",
@@ -602,7 +697,12 @@
      "group": "PN",
      "patient": "10",
      "gender": "male"
-    }
+    },
+    "raw_lines": [
+     "group: PN",
+     "patient: 10",
+     "gender: male"
+    ]
    },
    {
     "gsm": "GSM1656072",
@@ -632,7 +732,12 @@
      "group": "PP",
      "patient": "11",
      "gender": "female"
-    }
+    },
+    "raw_lines": [
+     "group: PP",
+     "patient: 11",
+     "gender: female"
+    ]
    },
    {
     "gsm": "GSM1656073",
@@ -662,7 +767,12 @@
      "group": "PN",
      "patient": "11",
      "gender": "female"
-    }
+    },
+    "raw_lines": [
+     "group: PN",
+     "patient: 11",
+     "gender: female"
+    ]
    },
    {
     "gsm": "GSM1656074",
@@ -692,7 +802,12 @@
      "group": "PP",
      "patient": "12",
      "gender": "female"
-    }
+    },
+    "raw_lines": [
+     "group: PP",
+     "patient: 12",
+     "gender: female"
+    ]
    },
    {
     "gsm": "GSM1656075",
@@ -722,7 +837,12 @@
      "group": "PN",
      "patient": "12",
      "gender": "female"
-    }
+    },
+    "raw_lines": [
+     "group: PN",
+     "patient: 12",
+     "gender: female"
+    ]
    },
    {
     "gsm": "GSM1656076",
@@ -752,7 +872,12 @@
      "group": "PP",
      "patient": "13",
      "gender": "female"
-    }
+    },
+    "raw_lines": [
+     "group: PP",
+     "patient: 13",
+     "gender: female"
+    ]
    },
    {
     "gsm": "GSM1656077",
@@ -782,7 +907,12 @@
      "group": "PN",
      "patient": "13",
      "gender": "female"
-    }
+    },
+    "raw_lines": [
+     "group: PN",
+     "patient: 13",
+     "gender: female"
+    ]
    },
    {
     "gsm": "GSM1656078",
@@ -812,7 +942,12 @@
      "group": "PP",
      "patient": "14",
      "gender": "female"
-    }
+    },
+    "raw_lines": [
+     "group: PP",
+     "patient: 14",
+     "gender: female"
+    ]
    },
    {
     "gsm": "GSM1656079",
@@ -842,7 +977,12 @@
      "group": "PN",
      "patient": "14",
      "gender": "female"
-    }
+    },
+    "raw_lines": [
+     "group: PN",
+     "patient: 14",
+     "gender: female"
+    ]
    }
   ]
  },

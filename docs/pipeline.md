@@ -18,11 +18,12 @@ annotation table, and a design file (`samplesheet` + `contrasts` + optional
 
 | # | Step | What it does | Where it can stop |
 | --- | --- | --- | --- |
-| 1 | contract check | `Contrast.problems(sheet)`: arms vs labels, unknown GSMs, < 3 per group, restriction | `status = blocked` |
-| 2 | load + reconcile | integer-only counts; columns matched to GSMs by id; only contrast GSMs kept | `qc_only` if < 3 per arm have counts |
+| 1 | contract check | `Contrast.problems(sheet)`: arms vs labels, unknown GSMs, < 3 per group, restriction, status still `proposed` | `status = blocked` |
+| 1b | qualifications | `Contrast.qualifications(sheet)`: status `uncertain`, contrast or mean sample confidence < 0.7, samples flagged `needs_review` | never; listed under "Read with caution" |
+| 2 | load + reconcile | integer-only counts; columns matched to GSMs by id; only contrast GSMs that are in both counts and sheet are kept | `qc_only` if < 3 per arm have counts |
 | 3 | QC | library size, detected genes, mito/ribo %, within- vs between-arm correlation, PCA, sex check (XIST vs RPS4Y1) | never; flags only |
-| 4 | gene filter | >= 10 counts in >= (smallest arm) samples | |
-| 5 | DESeq2 | pydeseq2, `~arm`, control as reference, Wald test, apeglm-style LFC shrinkage | |
+| 4 | gene filter | >= 10 counts in >= (smallest arm) samples | `qc_only` if nothing survives |
+| 5 | DESeq2 | pydeseq2, control as reference, Wald test, LFC shrinkage. Design is `~block + arm` when the contrast sets `blocking` and >= 3 blocks have both arms (unpaired samples are dropped and listed); otherwise `~arm`, and a declared-but-unusable pairing becomes a qualification | |
 | 6 | GSEA | gseapy prerank on the Wald statistic, MSigDB Hallmark (bundled GMT) | skipped with a warning on error |
 | 7 | gene lookup | per-gene verdict: up / down / no_evidence / not_tested / not_found; marker-panel score | |
 | 8 | figures | library sizes, PCA, volcano, genes of interest, enrichment | |
@@ -30,11 +31,21 @@ annotation table, and a design file (`samplesheet` + `contrasts` + optional
 
 Every step appends a `StepRecord` (parameters, seconds, warnings) to the report.
 
+The run writes into a temporary sibling directory and swaps it into place at the end,
+so an output folder never mixes artifacts from two runs. It refuses to replace a
+non-empty directory that holds no `report.json`. Any exception is caught: the report
+is still written with `status = blocked`, `error` set, and the traceback in `error.txt`.
+
 ## Status
 
 - **complete**: DE ran. Significance does not imply the result is meaningful; read the QC flags.
 - **qc_only**: contract was fine but NCBI did not quantify enough samples. QC and tables are written, no DE.
-- **blocked**: the contrast itself fails the contract (`blockers` says why). QC still runs when possible.
+- **blocked**: the contrast itself fails the contract, or the pipeline hit an error (`blockers` and `error` say why). QC still runs when possible.
+
+A `complete` report can also carry `qualifications`. The result stands, but the labels
+behind it are uncertain (contrast marked uncertain, low confidence, samples needing
+review, or a declared pairing that could not be modelled). Proposed contrasts never run:
+an LLM proposal has to be confirmed against the sheet first.
 
 ## QC flags
 
@@ -56,9 +67,12 @@ samples.csv              sample sheet + QC columns + PCA coordinates
 normalized_counts.tsv    DESeq2 size-factor normalized counts
 de_results.tsv           gene_id, symbol, base_mean, log2fc (shrunk), log2fc_unshrunk, lfc_se, stat, pvalue, padj
 enrichment.tsv           full gseapy table
-gene_lookup.csv          verdict table for genes of interest + markers
-dataset.h5ad             AnnData: layers counts / normed_counts / log2_normed, obs = samples, var = annotation, uns.report = report JSON
-report.json              AnalysisReport (the only source the LLM may quote numbers from)
+gene_lookup.csv          verdict table for genes of interest + markers; verdicts: up, down, no_evidence,
+                         untestable (reason: independent_filtering or outlier_or_all_zero), not_tested, not_found
+dataset.h5ad             AnnData: layers counts / normed_counts / log2_normed, obs = samples + QC columns,
+                         obsm.X_pca, var = annotation, uns.report = report JSON as of the h5ad write
+report.json              AnalysisReport, canonical (the only source the LLM may quote numbers from)
+error.txt                traceback, only when the run stopped on an exception
 report.md                human-readable rendering of report.json
 figures/*.png
 ```
@@ -71,5 +85,5 @@ figures/*.png
 
 ## Not in v1
 
-Paired designs (the `blocking` field is recorded, not modelled), covariates, multi-level
-factors, cross-dataset pooling, TPM, single-cell.
+Covariates beyond one blocking factor, multi-level factors, repeated measures within a
+block (restrict to one time point instead), cross-dataset pooling, TPM, single-cell.

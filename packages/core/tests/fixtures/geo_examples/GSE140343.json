@@ -19,7 +19,7 @@
     "genotype": null,
     "sex": null,
     "age": "73",
-    "donor": null,
+    "donor": "patient 17",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -31,7 +31,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "73"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 73"
+    ]
    },
    {
     "gsm": "GSM4159499",
@@ -48,7 +52,7 @@
     "genotype": null,
     "sex": null,
     "age": "55",
-    "donor": null,
+    "donor": "patient 18",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -60,7 +64,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "55"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 55"
+    ]
    },
    {
     "gsm": "GSM4159500",
@@ -77,7 +85,7 @@
     "genotype": null,
     "sex": null,
     "age": "56",
-    "donor": null,
+    "donor": "patient 19",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -89,7 +97,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "56"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 56"
+    ]
    },
    {
     "gsm": "GSM4159501",
@@ -106,7 +118,7 @@
     "genotype": null,
     "sex": null,
     "age": "57",
-    "donor": null,
+    "donor": "patient 20",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -118,7 +130,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "57"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 57"
+    ]
    },
    {
     "gsm": "GSM4159502",
@@ -135,7 +151,7 @@
     "genotype": null,
     "sex": null,
     "age": "42",
-    "donor": null,
+    "donor": "patient 22",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -147,7 +163,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "42"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 42"
+    ]
    },
    {
     "gsm": "GSM4159503",
@@ -164,7 +184,7 @@
     "genotype": null,
     "sex": null,
     "age": "54",
-    "donor": null,
+    "donor": "patient 23",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -176,7 +196,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "54"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 54"
+    ]
    },
    {
     "gsm": "GSM4159504",
@@ -193,7 +217,7 @@
     "genotype": null,
     "sex": null,
     "age": "73",
-    "donor": null,
+    "donor": "patient 24",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -205,7 +229,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "73"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 73"
+    ]
    },
    {
     "gsm": "GSM4159505",
@@ -222,7 +250,7 @@
     "genotype": null,
     "sex": null,
     "age": "61",
-    "donor": null,
+    "donor": "patient 25",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -234,7 +262,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "61"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 61"
+    ]
    },
    {
     "gsm": "GSM4159506",
@@ -251,7 +283,7 @@
     "genotype": null,
     "sex": null,
     "age": "64",
-    "donor": null,
+    "donor": "patient 26",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -263,7 +295,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "64"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 64"
+    ]
    },
    {
     "gsm": "GSM4159507",
@@ -280,7 +316,7 @@
     "genotype": null,
     "sex": null,
     "age": "31",
-    "donor": null,
+    "donor": "patient 27",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -292,7 +328,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "31"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 31"
+    ]
    },
    {
     "gsm": "GSM4159508",
@@ -309,7 +349,7 @@
     "genotype": null,
     "sex": null,
     "age": "61",
-    "donor": null,
+    "donor": "patient 28",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -321,7 +361,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "61"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 61"
+    ]
    },
    {
     "gsm": "GSM4159509",
@@ -338,7 +382,7 @@
     "genotype": null,
     "sex": null,
     "age": "73",
-    "donor": null,
+    "donor": "patient 29",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -350,7 +394,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "73"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 73"
+    ]
    },
    {
     "gsm": "GSM4159510",
@@ -367,7 +415,7 @@
     "genotype": null,
     "sex": null,
     "age": "67",
-    "donor": null,
+    "donor": "patient 30",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -379,7 +427,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "67"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 67"
+    ]
    },
    {
     "gsm": "GSM4159511",
@@ -396,7 +448,7 @@
     "genotype": null,
     "sex": null,
     "age": "52",
-    "donor": null,
+    "donor": "patient 33",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -408,7 +460,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "52"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 52"
+    ]
    },
    {
     "gsm": "GSM4159512",
@@ -425,7 +481,7 @@
     "genotype": null,
     "sex": null,
     "age": "62",
-    "donor": null,
+    "donor": "patient 34",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -437,7 +493,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "62"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 62"
+    ]
    },
    {
     "gsm": "GSM4159513",
@@ -454,7 +514,7 @@
     "genotype": null,
     "sex": null,
     "age": "43",
-    "donor": null,
+    "donor": "patient 35",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -466,7 +526,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "43"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 43"
+    ]
    },
    {
     "gsm": "GSM4159514",
@@ -483,7 +547,7 @@
     "genotype": null,
     "sex": null,
     "age": "68",
-    "donor": null,
+    "donor": "patient 37",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -495,7 +559,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "68"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 68"
+    ]
    },
    {
     "gsm": "GSM4159515",
@@ -512,7 +580,7 @@
     "genotype": null,
     "sex": null,
     "age": "65",
-    "donor": null,
+    "donor": "patient 38",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -524,7 +592,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "65"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 65"
+    ]
    },
    {
     "gsm": "GSM4159516",
@@ -541,7 +613,7 @@
     "genotype": null,
     "sex": null,
     "age": "48",
-    "donor": null,
+    "donor": "patient 39",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -553,7 +625,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "48"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 48"
+    ]
    },
    {
     "gsm": "GSM4159517",
@@ -570,7 +646,7 @@
     "genotype": null,
     "sex": null,
     "age": "60",
-    "donor": null,
+    "donor": "patient 40",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -582,7 +658,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "60"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 60"
+    ]
    },
    {
     "gsm": "GSM4159518",
@@ -599,7 +679,7 @@
     "genotype": null,
     "sex": null,
     "age": "74",
-    "donor": null,
+    "donor": "patient 41",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -611,7 +691,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "74"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 74"
+    ]
    },
    {
     "gsm": "GSM4159519",
@@ -628,7 +712,7 @@
     "genotype": null,
     "sex": null,
     "age": "55",
-    "donor": null,
+    "donor": "patient 42",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -640,7 +724,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "55"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 55"
+    ]
    },
    {
     "gsm": "GSM4159520",
@@ -657,7 +745,7 @@
     "genotype": null,
     "sex": null,
     "age": "55",
-    "donor": null,
+    "donor": "patient 43",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -669,7 +757,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "55"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 55"
+    ]
    },
    {
     "gsm": "GSM4159521",
@@ -686,7 +778,7 @@
     "genotype": null,
     "sex": null,
     "age": "51",
-    "donor": null,
+    "donor": "patient 44",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -698,7 +790,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "51"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 51"
+    ]
    },
    {
     "gsm": "GSM4159522",
@@ -715,7 +811,7 @@
     "genotype": null,
     "sex": null,
     "age": "26",
-    "donor": null,
+    "donor": "patient 45",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -727,7 +823,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "26"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 26"
+    ]
    },
    {
     "gsm": "GSM4159523",
@@ -744,7 +844,7 @@
     "genotype": null,
     "sex": null,
     "age": "60",
-    "donor": null,
+    "donor": "patient 46",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -756,7 +856,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "60"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 60"
+    ]
    },
    {
     "gsm": "GSM4159524",
@@ -773,7 +877,7 @@
     "genotype": null,
     "sex": null,
     "age": "50",
-    "donor": null,
+    "donor": "patient 47",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -785,7 +889,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "50"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 50"
+    ]
    },
    {
     "gsm": "GSM4159525",
@@ -802,7 +910,7 @@
     "genotype": null,
     "sex": null,
     "age": "63",
-    "donor": null,
+    "donor": "patient 48",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -814,7 +922,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "63"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 63"
+    ]
    },
    {
     "gsm": "GSM4159526",
@@ -831,7 +943,7 @@
     "genotype": null,
     "sex": null,
     "age": "36",
-    "donor": null,
+    "donor": "patient 49",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -843,7 +955,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "36"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 36"
+    ]
    },
    {
     "gsm": "GSM4159527",
@@ -860,7 +976,7 @@
     "genotype": null,
     "sex": null,
     "age": "46",
-    "donor": null,
+    "donor": "patient 50",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -872,7 +988,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "46"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 46"
+    ]
    },
    {
     "gsm": "GSM4159528",
@@ -889,7 +1009,7 @@
     "genotype": null,
     "sex": null,
     "age": "63",
-    "donor": null,
+    "donor": "patient 51",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -901,7 +1021,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "63"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 63"
+    ]
    },
    {
     "gsm": "GSM4159529",
@@ -918,7 +1042,7 @@
     "genotype": null,
     "sex": null,
     "age": "67",
-    "donor": null,
+    "donor": "patient 52",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -930,7 +1054,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "67"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 67"
+    ]
    },
    {
     "gsm": "GSM4159530",
@@ -947,7 +1075,7 @@
     "genotype": null,
     "sex": null,
     "age": "66",
-    "donor": null,
+    "donor": "patient 53",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -959,7 +1087,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "66"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 66"
+    ]
    },
    {
     "gsm": "GSM4159531",
@@ -976,7 +1108,7 @@
     "genotype": null,
     "sex": null,
     "age": "67",
-    "donor": null,
+    "donor": "patient 54",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -988,7 +1120,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "67"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 67"
+    ]
    },
    {
     "gsm": "GSM4159532",
@@ -1005,7 +1141,7 @@
     "genotype": null,
     "sex": null,
     "age": "45",
-    "donor": null,
+    "donor": "patient 55",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1017,7 +1153,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "45"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 45"
+    ]
    },
    {
     "gsm": "GSM4159533",
@@ -1034,7 +1174,7 @@
     "genotype": null,
     "sex": null,
     "age": "59",
-    "donor": null,
+    "donor": "patient 56",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1046,7 +1186,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "59"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 59"
+    ]
    },
    {
     "gsm": "GSM4159534",
@@ -1063,7 +1207,7 @@
     "genotype": null,
     "sex": null,
     "age": "61",
-    "donor": null,
+    "donor": "patient 57",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1075,7 +1219,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "61"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 61"
+    ]
    },
    {
     "gsm": "GSM4159535",
@@ -1092,7 +1240,7 @@
     "genotype": null,
     "sex": null,
     "age": "63",
-    "donor": null,
+    "donor": "patient 58",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1104,7 +1252,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "63"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 63"
+    ]
    },
    {
     "gsm": "GSM4159536",
@@ -1121,7 +1273,7 @@
     "genotype": null,
     "sex": null,
     "age": "72",
-    "donor": null,
+    "donor": "patient 60",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1133,7 +1285,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "72"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 72"
+    ]
    },
    {
     "gsm": "GSM4159537",
@@ -1150,7 +1306,7 @@
     "genotype": null,
     "sex": null,
     "age": "52",
-    "donor": null,
+    "donor": "patient 61",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1162,7 +1318,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "52"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 52"
+    ]
    },
    {
     "gsm": "GSM4159538",
@@ -1179,7 +1339,7 @@
     "genotype": null,
     "sex": null,
     "age": "74",
-    "donor": null,
+    "donor": "patient 63",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1191,7 +1351,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "74"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 74"
+    ]
    },
    {
     "gsm": "GSM4159539",
@@ -1208,7 +1372,7 @@
     "genotype": null,
     "sex": null,
     "age": "61",
-    "donor": null,
+    "donor": "patient 66",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1220,7 +1384,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "61"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 61"
+    ]
    },
    {
     "gsm": "GSM4159540",
@@ -1237,7 +1405,7 @@
     "genotype": null,
     "sex": null,
     "age": "50",
-    "donor": null,
+    "donor": "patient 67",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1249,7 +1417,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "50"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 50"
+    ]
    },
    {
     "gsm": "GSM4159541",
@@ -1266,7 +1438,7 @@
     "genotype": null,
     "sex": null,
     "age": "59",
-    "donor": null,
+    "donor": "patient 68",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1278,7 +1450,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "59"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 59"
+    ]
    },
    {
     "gsm": "GSM4159542",
@@ -1295,7 +1471,7 @@
     "genotype": null,
     "sex": null,
     "age": "73",
-    "donor": null,
+    "donor": "patient 71",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1307,7 +1483,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "73"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 73"
+    ]
    },
    {
     "gsm": "GSM4159543",
@@ -1324,7 +1504,7 @@
     "genotype": null,
     "sex": null,
     "age": "69",
-    "donor": null,
+    "donor": "patient 72",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1336,7 +1516,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "69"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 69"
+    ]
    },
    {
     "gsm": "GSM4159544",
@@ -1353,7 +1537,7 @@
     "genotype": null,
     "sex": null,
     "age": "55",
-    "donor": null,
+    "donor": "patient 73",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1365,7 +1549,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "55"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 55"
+    ]
    },
    {
     "gsm": "GSM4159545",
@@ -1382,7 +1570,7 @@
     "genotype": null,
     "sex": null,
     "age": "44",
-    "donor": null,
+    "donor": "patient 74",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1394,7 +1582,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "44"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 44"
+    ]
    },
    {
     "gsm": "GSM4159546",
@@ -1411,7 +1603,7 @@
     "genotype": null,
     "sex": null,
     "age": "52",
-    "donor": null,
+    "donor": "patient 89",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1423,7 +1615,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "52"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 52"
+    ]
    },
    {
     "gsm": "GSM4159547",
@@ -1440,7 +1636,7 @@
     "genotype": null,
     "sex": null,
     "age": "76",
-    "donor": null,
+    "donor": "patient 90",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1452,7 +1648,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "76"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 76"
+    ]
    },
    {
     "gsm": "GSM4159548",
@@ -1469,7 +1669,7 @@
     "genotype": null,
     "sex": null,
     "age": "51",
-    "donor": null,
+    "donor": "patient 91",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1481,7 +1681,11 @@
     "raw": {
      "tissue": "Lung",
      "age": "51"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "age: 51"
+    ]
    },
    {
     "gsm": "GSM4423295",
@@ -1498,7 +1702,7 @@
     "genotype": null,
     "sex": null,
     "age": "73",
-    "donor": null,
+    "donor": "patient 17",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1511,7 +1715,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "73"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 73"
+    ]
    },
    {
     "gsm": "GSM4423296",
@@ -1528,7 +1737,7 @@
     "genotype": null,
     "sex": null,
     "age": "55",
-    "donor": null,
+    "donor": "patient 18",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1541,7 +1750,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "55"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 55"
+    ]
    },
    {
     "gsm": "GSM4423297",
@@ -1558,7 +1772,7 @@
     "genotype": null,
     "sex": null,
     "age": "56",
-    "donor": null,
+    "donor": "patient 19",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1571,7 +1785,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "56"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 56"
+    ]
    },
    {
     "gsm": "GSM4423298",
@@ -1588,7 +1807,7 @@
     "genotype": null,
     "sex": null,
     "age": "57",
-    "donor": null,
+    "donor": "patient 20",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1601,7 +1820,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "57"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 57"
+    ]
    },
    {
     "gsm": "GSM4423299",
@@ -1618,7 +1842,7 @@
     "genotype": null,
     "sex": null,
     "age": "42",
-    "donor": null,
+    "donor": "patient 22",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1631,7 +1855,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "42"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 42"
+    ]
    },
    {
     "gsm": "GSM4423300",
@@ -1648,7 +1877,7 @@
     "genotype": null,
     "sex": null,
     "age": "54",
-    "donor": null,
+    "donor": "patient 23",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1661,7 +1890,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "54"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 54"
+    ]
    },
    {
     "gsm": "GSM4423301",
@@ -1678,7 +1912,7 @@
     "genotype": null,
     "sex": null,
     "age": "73",
-    "donor": null,
+    "donor": "patient 24",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1691,7 +1925,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "73"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 73"
+    ]
    },
    {
     "gsm": "GSM4423302",
@@ -1708,7 +1947,7 @@
     "genotype": null,
     "sex": null,
     "age": "61",
-    "donor": null,
+    "donor": "patient 25",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1721,7 +1960,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "61"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 61"
+    ]
    },
    {
     "gsm": "GSM4423303",
@@ -1738,7 +1982,7 @@
     "genotype": null,
     "sex": null,
     "age": "64",
-    "donor": null,
+    "donor": "patient 26",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1751,7 +1995,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "64"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 64"
+    ]
    },
    {
     "gsm": "GSM4423304",
@@ -1768,7 +2017,7 @@
     "genotype": null,
     "sex": null,
     "age": "31",
-    "donor": null,
+    "donor": "patient 27",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1781,7 +2030,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "31"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 31"
+    ]
    },
    {
     "gsm": "GSM4423305",
@@ -1798,7 +2052,7 @@
     "genotype": null,
     "sex": null,
     "age": "61",
-    "donor": null,
+    "donor": "patient 28",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1811,7 +2065,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "61"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 61"
+    ]
    },
    {
     "gsm": "GSM4423306",
@@ -1828,7 +2087,7 @@
     "genotype": null,
     "sex": null,
     "age": "73",
-    "donor": null,
+    "donor": "patient 29",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1841,7 +2100,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "73"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 73"
+    ]
    },
    {
     "gsm": "GSM4423307",
@@ -1858,7 +2122,7 @@
     "genotype": null,
     "sex": null,
     "age": "67",
-    "donor": null,
+    "donor": "patient 30",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1871,7 +2135,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "67"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 67"
+    ]
    },
    {
     "gsm": "GSM4423308",
@@ -1888,7 +2157,7 @@
     "genotype": null,
     "sex": null,
     "age": "52",
-    "donor": null,
+    "donor": "patient 33",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1901,7 +2170,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "52"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 52"
+    ]
    },
    {
     "gsm": "GSM4423309",
@@ -1918,7 +2192,7 @@
     "genotype": null,
     "sex": null,
     "age": "62",
-    "donor": null,
+    "donor": "patient 34",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1931,7 +2205,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "62"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 62"
+    ]
    },
    {
     "gsm": "GSM4423310",
@@ -1948,7 +2227,7 @@
     "genotype": null,
     "sex": null,
     "age": "43",
-    "donor": null,
+    "donor": "patient 35",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1961,7 +2240,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "43"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 43"
+    ]
    },
    {
     "gsm": "GSM4423311",
@@ -1978,7 +2262,7 @@
     "genotype": null,
     "sex": null,
     "age": "68",
-    "donor": null,
+    "donor": "patient 37",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -1991,7 +2275,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "68"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 68"
+    ]
    },
    {
     "gsm": "GSM4423312",
@@ -2008,7 +2297,7 @@
     "genotype": null,
     "sex": null,
     "age": "65",
-    "donor": null,
+    "donor": "patient 38",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2021,7 +2310,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "65"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 65"
+    ]
    },
    {
     "gsm": "GSM4423313",
@@ -2038,7 +2332,7 @@
     "genotype": null,
     "sex": null,
     "age": "48",
-    "donor": null,
+    "donor": "patient 39",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2051,7 +2345,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "48"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 48"
+    ]
    },
    {
     "gsm": "GSM4423314",
@@ -2068,7 +2367,7 @@
     "genotype": null,
     "sex": null,
     "age": "60",
-    "donor": null,
+    "donor": "patient 40",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2081,7 +2380,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "60"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 60"
+    ]
    },
    {
     "gsm": "GSM4423315",
@@ -2098,7 +2402,7 @@
     "genotype": null,
     "sex": null,
     "age": "74",
-    "donor": null,
+    "donor": "patient 41",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2111,7 +2415,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "74"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 74"
+    ]
    },
    {
     "gsm": "GSM4423316",
@@ -2128,7 +2437,7 @@
     "genotype": null,
     "sex": null,
     "age": "55",
-    "donor": null,
+    "donor": "patient 42",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2141,7 +2450,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "55"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 55"
+    ]
    },
    {
     "gsm": "GSM4423317",
@@ -2158,7 +2472,7 @@
     "genotype": null,
     "sex": null,
     "age": "51",
-    "donor": null,
+    "donor": "patient 44",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2171,7 +2485,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "51"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 51"
+    ]
    },
    {
     "gsm": "GSM4423318",
@@ -2188,7 +2507,7 @@
     "genotype": null,
     "sex": null,
     "age": "26",
-    "donor": null,
+    "donor": "patient 45",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2201,7 +2520,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "26"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 26"
+    ]
    },
    {
     "gsm": "GSM4423319",
@@ -2218,7 +2542,7 @@
     "genotype": null,
     "sex": null,
     "age": "60",
-    "donor": null,
+    "donor": "patient 46",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2231,7 +2555,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "60"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 60"
+    ]
    },
    {
     "gsm": "GSM4423320",
@@ -2248,7 +2577,7 @@
     "genotype": null,
     "sex": null,
     "age": "50",
-    "donor": null,
+    "donor": "patient 47",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2261,7 +2590,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "50"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 50"
+    ]
    },
    {
     "gsm": "GSM4423321",
@@ -2278,7 +2612,7 @@
     "genotype": null,
     "sex": null,
     "age": "63",
-    "donor": null,
+    "donor": "patient 48",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2291,7 +2625,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "63"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 63"
+    ]
    },
    {
     "gsm": "GSM4423322",
@@ -2308,7 +2647,7 @@
     "genotype": null,
     "sex": null,
     "age": "36",
-    "donor": null,
+    "donor": "patient 49",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2321,7 +2660,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "36"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 36"
+    ]
    },
    {
     "gsm": "GSM4423323",
@@ -2338,7 +2682,7 @@
     "genotype": null,
     "sex": null,
     "age": "46",
-    "donor": null,
+    "donor": "patient 50",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2351,7 +2695,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "46"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 46"
+    ]
    },
    {
     "gsm": "GSM4423324",
@@ -2368,7 +2717,7 @@
     "genotype": null,
     "sex": null,
     "age": "63",
-    "donor": null,
+    "donor": "patient 51",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2381,7 +2730,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "63"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 63"
+    ]
    },
    {
     "gsm": "GSM4423325",
@@ -2398,7 +2752,7 @@
     "genotype": null,
     "sex": null,
     "age": "67",
-    "donor": null,
+    "donor": "patient 52",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2411,7 +2765,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "67"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 67"
+    ]
    },
    {
     "gsm": "GSM4423326",
@@ -2428,7 +2787,7 @@
     "genotype": null,
     "sex": null,
     "age": "66",
-    "donor": null,
+    "donor": "patient 53",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2441,7 +2800,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "66"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 66"
+    ]
    },
    {
     "gsm": "GSM4423327",
@@ -2458,7 +2822,7 @@
     "genotype": null,
     "sex": null,
     "age": "67",
-    "donor": null,
+    "donor": "patient 54",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2471,7 +2835,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "67"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 67"
+    ]
    },
    {
     "gsm": "GSM4423328",
@@ -2488,7 +2857,7 @@
     "genotype": null,
     "sex": null,
     "age": "45",
-    "donor": null,
+    "donor": "patient 55",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2501,7 +2870,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "45"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 45"
+    ]
    },
    {
     "gsm": "GSM4423329",
@@ -2518,7 +2892,7 @@
     "genotype": null,
     "sex": null,
     "age": "59",
-    "donor": null,
+    "donor": "patient 56",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2531,7 +2905,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "59"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 59"
+    ]
    },
    {
     "gsm": "GSM4423330",
@@ -2548,7 +2927,7 @@
     "genotype": null,
     "sex": null,
     "age": "61",
-    "donor": null,
+    "donor": "patient 57",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2561,7 +2940,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "61"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 61"
+    ]
    },
    {
     "gsm": "GSM4423332",
@@ -2578,7 +2962,7 @@
     "genotype": null,
     "sex": null,
     "age": "72",
-    "donor": null,
+    "donor": "patient 60",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2591,7 +2975,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "72"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 72"
+    ]
    },
    {
     "gsm": "GSM4423333",
@@ -2608,7 +2997,7 @@
     "genotype": null,
     "sex": null,
     "age": "52",
-    "donor": null,
+    "donor": "patient 61",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2621,7 +3010,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "52"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 52"
+    ]
    },
    {
     "gsm": "GSM4423334",
@@ -2638,7 +3032,7 @@
     "genotype": null,
     "sex": null,
     "age": "74",
-    "donor": null,
+    "donor": "patient 63",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2651,7 +3045,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "74"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 74"
+    ]
    },
    {
     "gsm": "GSM4423335",
@@ -2668,7 +3067,7 @@
     "genotype": null,
     "sex": null,
     "age": "61",
-    "donor": null,
+    "donor": "patient 66",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2681,7 +3080,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "61"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 61"
+    ]
    },
    {
     "gsm": "GSM4423336",
@@ -2698,7 +3102,7 @@
     "genotype": null,
     "sex": null,
     "age": "50",
-    "donor": null,
+    "donor": "patient 67",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2711,7 +3115,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "50"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 50"
+    ]
    },
    {
     "gsm": "GSM4423337",
@@ -2728,7 +3137,7 @@
     "genotype": null,
     "sex": null,
     "age": "59",
-    "donor": null,
+    "donor": "patient 68",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2741,7 +3150,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "59"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 59"
+    ]
    },
    {
     "gsm": "GSM4423338",
@@ -2758,7 +3172,7 @@
     "genotype": null,
     "sex": null,
     "age": "73",
-    "donor": null,
+    "donor": "patient 71",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2771,7 +3185,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "73"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 73"
+    ]
    },
    {
     "gsm": "GSM4423339",
@@ -2788,7 +3207,7 @@
     "genotype": null,
     "sex": null,
     "age": "69",
-    "donor": null,
+    "donor": "patient 72",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2801,7 +3220,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "69"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 69"
+    ]
    },
    {
     "gsm": "GSM4423340",
@@ -2818,7 +3242,7 @@
     "genotype": null,
     "sex": null,
     "age": "55",
-    "donor": null,
+    "donor": "patient 73",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2831,7 +3255,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "55"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 55"
+    ]
    },
    {
     "gsm": "GSM4423341",
@@ -2848,7 +3277,7 @@
     "genotype": null,
     "sex": null,
     "age": "44",
-    "donor": null,
+    "donor": "patient 74",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2861,7 +3290,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "44"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 44"
+    ]
    },
    {
     "gsm": "GSM4423342",
@@ -2878,7 +3312,7 @@
     "genotype": null,
     "sex": null,
     "age": "52",
-    "donor": null,
+    "donor": "patient 89",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2891,7 +3325,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "52"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 52"
+    ]
    },
    {
     "gsm": "GSM4423343",
@@ -2908,7 +3347,7 @@
     "genotype": null,
     "sex": null,
     "age": "76",
-    "donor": null,
+    "donor": "patient 90",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2921,7 +3360,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "76"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 76"
+    ]
    },
    {
     "gsm": "GSM4423344",
@@ -2938,7 +3382,7 @@
     "genotype": null,
     "sex": null,
     "age": "51",
-    "donor": null,
+    "donor": "patient 91",
     "batch": null,
     "organism": "Homo sapiens",
     "replicate": null,
@@ -2951,7 +3395,12 @@
      "tissue": "Lung",
      "disease state": "normal tissue",
      "age": "51"
-    }
+    },
+    "raw_lines": [
+     "tissue: Lung",
+     "disease state: normal tissue",
+     "age: 51"
+    ]
    }
   ]
  },
@@ -3065,11 +3514,11 @@
     "GSM4423343",
     "GSM4423344"
    ],
-   "blocking": null,
+   "blocking": "donor",
    "restricted_to": {},
    "confidence": 1.0,
    "status": "confirmed",
-   "rationale": "Tumor samples lack a 'disease state' characteristic; label is from source_name."
+   "rationale": "Tumor samples lack a 'disease state' characteristic; label is from source_name. Paired tumor/adjacent per patient, patient number taken from the sample title."
   }
  ],
  "markers": []

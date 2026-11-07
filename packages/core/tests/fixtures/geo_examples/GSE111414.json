@@ -38,7 +38,18 @@
      "timepoint": "N1",
      "cell type": "Peripheral blood mononuclear cells (PBMCs)",
      "cell subtype": "CD8+ T cell"
-    }
+    },
+    "raw_lines": [
+     "subject id: Patient BS373",
+     "subject status: non-small cell lung cancer (NSCLC) patient",
+     "age: 59",
+     "Sex: F",
+     "kir3ds1/l1 genotype: L/L",
+     "response: responder; partial response (PR)",
+     "timepoint: N1",
+     "cell type: Peripheral blood mononuclear cells (PBMCs)",
+     "cell subtype: CD8+ T cell"
+    ]
    },
    {
     "gsm": "GSM3030379",
@@ -74,7 +85,18 @@
      "timepoint": "N2",
      "cell type": "Peripheral blood mononuclear cells (PBMCs)",
      "cell subtype": "CD8+ T cell"
-    }
+    },
+    "raw_lines": [
+     "subject id: Patient BS373",
+     "subject status: non-small cell lung cancer (NSCLC) patient",
+     "age: 59",
+     "Sex: F",
+     "kir3ds1/l1 genotype: L/L",
+     "response: responder; partial response (PR)",
+     "timepoint: N2",
+     "cell type: Peripheral blood mononuclear cells (PBMCs)",
+     "cell subtype: CD8+ T cell"
+    ]
    },
    {
     "gsm": "GSM3030380",
@@ -110,7 +132,18 @@
      "timepoint": "N1",
      "cell type": "Peripheral blood mononuclear cells (PBMCs)",
      "cell subtype": "CD8+ T cell"
-    }
+    },
+    "raw_lines": [
+     "subject id: Patient BS375",
+     "subject status: non-small cell lung cancer (NSCLC) patient",
+     "age: 62",
+     "Sex: M",
+     "kir3ds1/l1 genotype: S/L",
+     "response: nonresponder; progressive disease (PD)",
+     "timepoint: N1",
+     "cell type: Peripheral blood mononuclear cells (PBMCs)",
+     "cell subtype: CD8+ T cell"
+    ]
    },
    {
     "gsm": "GSM3030381",
@@ -146,7 +179,18 @@
      "timepoint": "N2",
      "cell type": "Peripheral blood mononuclear cells (PBMCs)",
      "cell subtype": "CD8+ T cell"
-    }
+    },
+    "raw_lines": [
+     "subject id: Patient BS375",
+     "subject status: non-small cell lung cancer (NSCLC) patient",
+     "age: 62",
+     "Sex: M",
+     "kir3ds1/l1 genotype: S/L",
+     "response: nonresponder; progressive disease (PD)",
+     "timepoint: N2",
+     "cell type: Peripheral blood mononuclear cells (PBMCs)",
+     "cell subtype: CD8+ T cell"
+    ]
    },
    {
     "gsm": "GSM3030382",
@@ -182,7 +226,18 @@
      "timepoint": "N1",
      "cell type": "Peripheral blood mononuclear cells (PBMCs)",
      "cell subtype": "CD8+ T cell"
-    }
+    },
+    "raw_lines": [
+     "subject id: Patient BS379",
+     "subject status: non-small cell lung cancer (NSCLC) patient",
+     "age: 75",
+     "Sex: F",
+     "kir3ds1/l1 genotype: S/L",
+     "response: nonresponder; progressive disease (PD)",
+     "timepoint: N1",
+     "cell type: Peripheral blood mononuclear cells (PBMCs)",
+     "cell subtype: CD8+ T cell"
+    ]
    },
    {
     "gsm": "GSM3030383",
@@ -218,7 +273,18 @@
      "timepoint": "N4",
      "cell type": "Peripheral blood mononuclear cells (PBMCs)",
      "cell subtype": "CD8+ T cell"
-    }
+    },
+    "raw_lines": [
+     "subject id: Patient BS379",
+     "subject status: non-small cell lung cancer (NSCLC) patient",
+     "age: 75",
+     "Sex: F",
+     "kir3ds1/l1 genotype: S/L",
+     "response: nonresponder; progressive disease (PD)",
+     "timepoint: N4",
+     "cell type: Peripheral blood mononuclear cells (PBMCs)",
+     "cell subtype: CD8+ T cell"
+    ]
    },
    {
     "gsm": "GSM3030384",
@@ -254,7 +320,18 @@
      "timepoint": "N1",
      "cell type": "Peripheral blood mononuclear cells (PBMCs)",
      "cell subtype": "CD8+ T cell"
-    }
+    },
+    "raw_lines": [
+     "subject id: Patient BS381",
+     "subject status: non-small cell lung cancer (NSCLC) patient",
+     "age: 51",
+     "Sex: M",
+     "kir3ds1/l1 genotype: L/L",
+     "response: responder; partial response (PR)",
+     "timepoint: N1",
+     "cell type: Peripheral blood mononuclear cells (PBMCs)",
+     "cell subtype: CD8+ T cell"
+    ]
    },
    {
     "gsm": "GSM3030385",
@@ -290,7 +367,18 @@
      "timepoint": "N2",
      "cell type": "Peripheral blood mononuclear cells (PBMCs)",
      "cell subtype": "CD8+ T cell"
-    }
+    },
+    "raw_lines": [
+     "subject id: Patient BS381",
+     "subject status: non-small cell lung cancer (NSCLC) patient",
+     "age: 51",
+     "Sex: M",
+     "kir3ds1/l1 genotype: L/L",
+     "response: responder; partial response (PR)",
+     "timepoint: N2",
+     "cell type: Peripheral blood mononuclear cells (PBMCs)",
+     "cell subtype: CD8+ T cell"
+    ]
    },
    {
     "gsm": "GSM3030386",
@@ -326,7 +414,18 @@
      "timepoint": "N1",
      "cell type": "Peripheral blood mononuclear cells (PBMCs)",
      "cell subtype": "CD8+ T cell"
-    }
+    },
+    "raw_lines": [
+     "subject id: Patient BS385",
+     "subject status: non-small cell lung cancer (NSCLC) patient",
+     "age: 65",
+     "Sex: F",
+     "kir3ds1/l1 genotype: L/L",
+     "response: responder; partial response (PR)",
+     "timepoint: N1",
+     "cell type: Peripheral blood mononuclear cells (PBMCs)",
+     "cell subtype: CD8+ T cell"
+    ]
    },
    {
     "gsm": "GSM3030387",
@@ -362,7 +461,18 @@
      "timepoint": "N2",
      "cell type": "Peripheral blood mononuclear cells (PBMCs)",
      "cell subtype": "CD8+ T cell"
-    }
+    },
+    "raw_lines": [
+     "subject id: Patient BS385",
+     "subject status: non-small cell lung cancer (NSCLC) patient",
+     "age: 65",
+     "Sex: F",
+     "kir3ds1/l1 genotype: L/L",
+     "response: responder; partial response (PR)",
+     "timepoint: N2",
+     "cell type: Peripheral blood mononuclear cells (PBMCs)",
+     "cell subtype: CD8+ T cell"
+    ]
    },
    {
     "gsm": "GSM3030388",
@@ -398,7 +508,18 @@
      "timepoint": "N1",
      "cell type": "Peripheral blood mononuclear cells (PBMCs)",
      "cell subtype": "CD8+ T cell"
-    }
+    },
+    "raw_lines": [
+     "subject id: Patient BS391",
+     "subject status: non-small cell lung cancer (NSCLC) patient",
+     "age: 54",
+     "Sex: M",
+     "kir3ds1/l1 genotype: S/L",
+     "response: nonresponder; progressive disease (PD)",
+     "timepoint: N1",
+     "cell type: Peripheral blood mononuclear cells (PBMCs)",
+     "cell subtype: CD8+ T cell"
+    ]
    },
    {
     "gsm": "GSM3030389",
@@ -434,7 +555,18 @@
      "timepoint": "N2",
      "cell type": "Peripheral blood mononuclear cells (PBMCs)",
      "cell subtype": "CD8+ T cell"
-    }
+    },
+    "raw_lines": [
+     "subject id: Patient BS391",
+     "subject status: non-small cell lung cancer (NSCLC) patient",
+     "age: 54",
+     "Sex: M",
+     "kir3ds1/l1 genotype: S/L",
+     "response: nonresponder; progressive disease (PD)",
+     "timepoint: N2",
+     "cell type: Peripheral blood mononuclear cells (PBMCs)",
+     "cell subtype: CD8+ T cell"
+    ]
    },
    {
     "gsm": "GSM3030390",
@@ -470,7 +602,18 @@
      "timepoint": "N1",
      "cell type": "Peripheral blood mononuclear cells (PBMCs)",
      "cell subtype": "CD8+ T cell"
-    }
+    },
+    "raw_lines": [
+     "subject id: Patient BS394",
+     "subject status: non-small cell lung cancer (NSCLC) patient",
+     "age: 61",
+     "Sex: M",
+     "kir3ds1/l1 genotype: L/L",
+     "response: responder; partial response (PR)",
+     "timepoint: N1",
+     "cell type: Peripheral blood mononuclear cells (PBMCs)",
+     "cell subtype: CD8+ T cell"
+    ]
    },
    {
     "gsm": "GSM3030391",
@@ -506,7 +649,18 @@
      "timepoint": "N2",
      "cell type": "Peripheral blood mononuclear cells (PBMCs)",
      "cell subtype": "CD8+ T cell"
-    }
+    },
+    "raw_lines": [
+     "subject id: Patient BS394",
+     "subject status: non-small cell lung cancer (NSCLC) patient",
+     "age: 61",
+     "Sex: M",
+     "kir3ds1/l1 genotype: L/L",
+     "response: responder; partial response (PR)",
+     "timepoint: N2",
+     "cell type: Peripheral blood mononuclear cells (PBMCs)",
+     "cell subtype: CD8+ T cell"
+    ]
    },
    {
     "gsm": "GSM3030392",
@@ -542,7 +696,18 @@
      "timepoint": "N1",
      "cell type": "Peripheral blood mononuclear cells (PBMCs)",
      "cell subtype": "CD8+ T cell"
-    }
+    },
+    "raw_lines": [
+     "subject id: Patient BS395",
+     "subject status: non-small cell lung cancer (NSCLC) patient",
+     "age: 71",
+     "Sex: M",
+     "kir3ds1/l1 genotype: L/L",
+     "response: responder; partial response (PR)",
+     "timepoint: N1",
+     "cell type: Peripheral blood mononuclear cells (PBMCs)",
+     "cell subtype: CD8+ T cell"
+    ]
    },
    {
     "gsm": "GSM3030393",
@@ -578,7 +743,18 @@
      "timepoint": "N2",
      "cell type": "Peripheral blood mononuclear cells (PBMCs)",
      "cell subtype": "CD8+ T cell"
-    }
+    },
+    "raw_lines": [
+     "subject id: Patient BS395",
+     "subject status: non-small cell lung cancer (NSCLC) patient",
+     "age: 71",
+     "Sex: M",
+     "kir3ds1/l1 genotype: L/L",
+     "response: responder; partial response (PR)",
+     "timepoint: N2",
+     "cell type: Peripheral blood mononuclear cells (PBMCs)",
+     "cell subtype: CD8+ T cell"
+    ]
    },
    {
     "gsm": "GSM3030394",
@@ -614,7 +790,18 @@
      "timepoint": "N1",
      "cell type": "Peripheral blood mononuclear cells (PBMCs)",
      "cell subtype": "CD8+ T cell"
-    }
+    },
+    "raw_lines": [
+     "subject id: Patient BS409",
+     "subject status: non-small cell lung cancer (NSCLC) patient",
+     "age: 79",
+     "Sex: F",
+     "kir3ds1/l1 genotype: S/L",
+     "response: nonresponder; progressive disease (PD)",
+     "timepoint: N1",
+     "cell type: Peripheral blood mononuclear cells (PBMCs)",
+     "cell subtype: CD8+ T cell"
+    ]
    },
    {
     "gsm": "GSM3030395",
@@ -650,7 +837,18 @@
      "timepoint": "N2",
      "cell type": "Peripheral blood mononuclear cells (PBMCs)",
      "cell subtype": "CD8+ T cell"
-    }
+    },
+    "raw_lines": [
+     "subject id: Patient BS409",
+     "subject status: non-small cell lung cancer (NSCLC) patient",
+     "age: 79",
+     "Sex: F",
+     "kir3ds1/l1 genotype: S/L",
+     "response: nonresponder; progressive disease (PD)",
+     "timepoint: N2",
+     "cell type: Peripheral blood mononuclear cells (PBMCs)",
+     "cell subtype: CD8+ T cell"
+    ]
    },
    {
     "gsm": "GSM3030396",
@@ -686,7 +884,18 @@
      "timepoint": "N1",
      "cell type": "Peripheral blood mononuclear cells (PBMCs)",
      "cell subtype": "CD8+ T cell"
-    }
+    },
+    "raw_lines": [
+     "subject id: Patient BS418",
+     "subject status: non-small cell lung cancer (NSCLC) patient",
+     "age: 72",
+     "Sex: M",
+     "kir3ds1/l1 genotype: L/L",
+     "response: nonresponder; progressive disease (PD)",
+     "timepoint: N1",
+     "cell type: Peripheral blood mononuclear cells (PBMCs)",
+     "cell subtype: CD8+ T cell"
+    ]
    },
    {
     "gsm": "GSM3030397",
@@ -722,7 +931,18 @@
      "timepoint": "N2",
      "cell type": "Peripheral blood mononuclear cells (PBMCs)",
      "cell subtype": "CD8+ T cell"
-    }
+    },
+    "raw_lines": [
+     "subject id: Patient BS418",
+     "subject status: non-small cell lung cancer (NSCLC) patient",
+     "age: 72",
+     "Sex: M",
+     "kir3ds1/l1 genotype: L/L",
+     "response: nonresponder; progressive disease (PD)",
+     "timepoint: N2",
+     "cell type: Peripheral blood mononuclear cells (PBMCs)",
+     "cell subtype: CD8+ T cell"
+    ]
    }
   ]
  },

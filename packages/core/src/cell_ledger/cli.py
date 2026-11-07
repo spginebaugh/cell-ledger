@@ -63,10 +63,14 @@ def run_one(gse: str, args: argparse.Namespace) -> int:
         )
         de = report.de.summary if report.de else None
         line = f"{gse} {contrast.name}: {report.status}"
+        if report.qualifications:
+            line += " (qualified)"
+        if report.error:
+            line += f" ERROR {report.error}"
         if report.reconciliation:
             line += f" ({report.reconciliation.n_case} vs {report.reconciliation.n_control})"
         if de:
-            line += f" sig={de.n_sig} up={de.n_up} down={de.n_down}"
+            line += f" design={de.design!r} sig={de.n_sig} up={de.n_up} down={de.n_down}"
         if report.markers:
             m = report.markers
             line += f" markers={m.n_recovered_sig}/{m.n_expected} top{m.top_n}={m.n_in_top_n}"

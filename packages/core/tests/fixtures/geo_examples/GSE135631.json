@@ -32,7 +32,12 @@
      "individual": "67754",
      "disease state": "HCC",
      "tissue": "Adjacent normal"
-    }
+    },
+    "raw_lines": [
+     "individual: 67754",
+     "disease state: HCC",
+     "tissue: Adjacent normal"
+    ]
    },
    {
     "gsm": "GSM4023794",
@@ -62,7 +67,12 @@
      "individual": "67754",
      "disease state": "HCC",
      "tissue": "tumor"
-    }
+    },
+    "raw_lines": [
+     "individual: 67754",
+     "disease state: HCC",
+     "tissue: tumor"
+    ]
    },
    {
     "gsm": "GSM4023795",
@@ -92,7 +102,12 @@
      "individual": "70103",
      "disease state": "HCC",
      "tissue": "Adjacent normal"
-    }
+    },
+    "raw_lines": [
+     "individual: 70103",
+     "disease state: HCC",
+     "tissue: Adjacent normal"
+    ]
    },
    {
     "gsm": "GSM4023796",
@@ -122,7 +137,12 @@
      "individual": "70103",
      "disease state": "HCC",
      "tissue": "tumor"
-    }
+    },
+    "raw_lines": [
+     "individual: 70103",
+     "disease state: HCC",
+     "tissue: tumor"
+    ]
    },
    {
     "gsm": "GSM4023797",
@@ -152,7 +172,12 @@
      "individual": "70785",
      "disease state": "HCC",
      "tissue": "Adjacent normal"
-    }
+    },
+    "raw_lines": [
+     "individual: 70785",
+     "disease state: HCC",
+     "tissue: Adjacent normal"
+    ]
    },
    {
     "gsm": "GSM4023798",
@@ -182,7 +207,12 @@
      "individual": "70785",
      "disease state": "HCC",
      "tissue": "tumor"
-    }
+    },
+    "raw_lines": [
+     "individual: 70785",
+     "disease state: HCC",
+     "tissue: tumor"
+    ]
    },
    {
     "gsm": "GSM4023799",
@@ -212,7 +242,12 @@
      "individual": "70880",
      "disease state": "HCC",
      "tissue": "Adjacent normal"
-    }
+    },
+    "raw_lines": [
+     "individual: 70880",
+     "disease state: HCC",
+     "tissue: Adjacent normal"
+    ]
    },
    {
     "gsm": "GSM4023800",
@@ -242,7 +277,12 @@
      "individual": "70880",
      "disease state": "HCC",
      "tissue": "tumor"
-    }
+    },
+    "raw_lines": [
+     "individual: 70880",
+     "disease state: HCC",
+     "tissue: tumor"
+    ]
    },
    {
     "gsm": "GSM4023801",
@@ -272,7 +312,12 @@
      "individual": "74607",
      "disease state": "HCC",
      "tissue": "Adjacent normal"
-    }
+    },
+    "raw_lines": [
+     "individual: 74607",
+     "disease state: HCC",
+     "tissue: Adjacent normal"
+    ]
    },
    {
     "gsm": "GSM4023802",
@@ -302,7 +347,12 @@
      "individual": "74607",
      "disease state": "HCC",
      "tissue": "tumor"
-    }
+    },
+    "raw_lines": [
+     "individual: 74607",
+     "disease state: HCC",
+     "tissue: tumor"
+    ]
    },
    {
     "gsm": "GSM4023803",
@@ -332,7 +382,12 @@
      "individual": "74720",
      "disease state": "HCC",
      "tissue": "Adjacent normal"
-    }
+    },
+    "raw_lines": [
+     "individual: 74720",
+     "disease state: HCC",
+     "tissue: Adjacent normal"
+    ]
    },
    {
     "gsm": "GSM4023804",
@@ -362,7 +417,12 @@
      "individual": "74720",
      "disease state": "HCC",
      "tissue": "tumor"
-    }
+    },
+    "raw_lines": [
+     "individual: 74720",
+     "disease state: HCC",
+     "tissue: tumor"
+    ]
    },
    {
     "gsm": "GSM4023805",
@@ -392,7 +452,12 @@
      "individual": "74848",
      "disease state": "HCC",
      "tissue": "Adjacent normal"
-    }
+    },
+    "raw_lines": [
+     "individual: 74848",
+     "disease state: HCC",
+     "tissue: Adjacent normal"
+    ]
    },
    {
     "gsm": "GSM4023806",
@@ -422,7 +487,12 @@
      "individual": "74848",
      "disease state": "HCC",
      "tissue": "tumor"
-    }
+    },
+    "raw_lines": [
+     "individual: 74848",
+     "disease state: HCC",
+     "tissue: tumor"
+    ]
    },
    {
     "gsm": "GSM4023807",
@@ -452,7 +522,12 @@
      "individual": "75199",
      "disease state": "HCC",
      "tissue": "Adjacent normal"
-    }
+    },
+    "raw_lines": [
+     "individual: 75199",
+     "disease state: HCC",
+     "tissue: Adjacent normal"
+    ]
    },
    {
     "gsm": "GSM4023808",
@@ -482,7 +557,12 @@
      "individual": "75199",
      "disease state": "HCC",
      "tissue": "tumor"
-    }
+    },
+    "raw_lines": [
+     "individual: 75199",
+     "disease state: HCC",
+     "tissue: tumor"
+    ]
    },
    {
     "gsm": "GSM4023809",
@@ -512,7 +592,12 @@
      "individual": "P070913",
      "disease state": "HCC",
      "tissue": "Adjacent normal"
-    }
+    },
+    "raw_lines": [
+     "individual: P070913",
+     "disease state: HCC",
+     "tissue: Adjacent normal"
+    ]
    },
    {
     "gsm": "GSM4023810",
@@ -542,7 +627,12 @@
      "individual": "P070913",
      "disease state": "HCC",
      "tissue": "tumor"
-    }
+    },
+    "raw_lines": [
+     "individual: P070913",
+     "disease state: HCC",
+     "tissue: tumor"
+    ]
    },
    {
     "gsm": "GSM4023811",
@@ -572,7 +662,12 @@
      "individual": "P079741",
      "disease state": "HCC",
      "tissue": "Adjacent normal"
-    }
+    },
+    "raw_lines": [
+     "individual: P079741",
+     "disease state: HCC",
+     "tissue: Adjacent normal"
+    ]
    },
    {
     "gsm": "GSM4023812",
@@ -602,7 +697,12 @@
      "individual": "P079741",
      "disease state": "HCC",
      "tissue": "tumor"
-    }
+    },
+    "raw_lines": [
+     "individual: P079741",
+     "disease state: HCC",
+     "tissue: tumor"
+    ]
    },
    {
     "gsm": "GSM4023813",
@@ -632,7 +732,12 @@
      "individual": "P079779",
      "disease state": "HCC",
      "tissue": "Adjacent normal"
-    }
+    },
+    "raw_lines": [
+     "individual: P079779",
+     "disease state: HCC",
+     "tissue: Adjacent normal"
+    ]
    },
    {
     "gsm": "GSM4023814",
@@ -662,7 +767,12 @@
      "individual": "P079779",
      "disease state": "HCC",
      "tissue": "tumor"
-    }
+    },
+    "raw_lines": [
+     "individual: P079779",
+     "disease state: HCC",
+     "tissue: tumor"
+    ]
    },
    {
     "gsm": "GSM4023815",
@@ -692,7 +802,12 @@
      "individual": "P116019",
      "disease state": "HCC",
      "tissue": "Adjacent normal"
-    }
+    },
+    "raw_lines": [
+     "individual: P116019",
+     "disease state: HCC",
+     "tissue: Adjacent normal"
+    ]
    },
    {
     "gsm": "GSM4023816",
@@ -722,7 +837,12 @@
      "individual": "P116019",
      "disease state": "HCC",
      "tissue": "tumor"
-    }
+    },
+    "raw_lines": [
+     "individual: P116019",
+     "disease state: HCC",
+     "tissue: tumor"
+    ]
    },
    {
     "gsm": "GSM4023817",
@@ -752,7 +872,12 @@
      "individual": "R079741",
      "disease state": "HCC",
      "tissue": "Adjacent normal"
-    }
+    },
+    "raw_lines": [
+     "individual: R079741",
+     "disease state: HCC",
+     "tissue: Adjacent normal"
+    ]
    },
    {
     "gsm": "GSM4023818",
@@ -782,7 +907,12 @@
      "individual": "R079741",
      "disease state": "HCC",
      "tissue": "tumor"
-    }
+    },
+    "raw_lines": [
+     "individual: R079741",
+     "disease state: HCC",
+     "tissue: tumor"
+    ]
    },
    {
     "gsm": "GSM4023819",
@@ -812,7 +942,12 @@
      "individual": "R079779",
      "disease state": "HCC",
      "tissue": "Adjacent normal"
-    }
+    },
+    "raw_lines": [
+     "individual: R079779",
+     "disease state: HCC",
+     "tissue: Adjacent normal"
+    ]
    },
    {
     "gsm": "GSM4023820",
@@ -842,7 +977,12 @@
      "individual": "R079779",
      "disease state": "HCC",
      "tissue": "tumor"
-    }
+    },
+    "raw_lines": [
+     "individual: R079779",
+     "disease state: HCC",
+     "tissue: tumor"
+    ]
    },
    {
     "gsm": "GSM4023821",
@@ -872,7 +1012,12 @@
      "individual": "R116019",
      "disease state": "HCC",
      "tissue": "Adjacent normal"
-    }
+    },
+    "raw_lines": [
+     "individual: R116019",
+     "disease state: HCC",
+     "tissue: Adjacent normal"
+    ]
    },
    {
     "gsm": "GSM4023822",
@@ -902,7 +1047,12 @@
      "individual": "R116019",
      "disease state": "HCC",
      "tissue": "tumor"
-    }
+    },
+    "raw_lines": [
+     "individual: R116019",
+     "disease state: HCC",
+     "tissue: tumor"
+    ]
    }
   ]
  },

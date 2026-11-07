@@ -37,7 +37,17 @@
      "time": "24 hours",
      "supplier": "Promocell",
      "lot number": "438Z013.1"
-    }
+    },
+    "raw_lines": [
+     "cell line: primary",
+     "cell type: pulmonary microvascular endothelial cells",
+     "Sex: Female",
+     "age (years): 53",
+     "treatment: normoxia (21% oxygen)",
+     "time: 24 hours",
+     "supplier: Promocell",
+     "lot number: 438Z013.1"
+    ]
    },
    {
     "gsm": "GSM7430030",
@@ -72,7 +82,17 @@
      "time": "24 hours",
      "supplier": "Promocell",
      "lot number": "438Z013.1"
-    }
+    },
+    "raw_lines": [
+     "cell line: primary",
+     "cell type: pulmonary microvascular endothelial cells",
+     "Sex: Female",
+     "age (years): 53",
+     "treatment: hypoxia (1% oxygen)",
+     "time: 24 hours",
+     "supplier: Promocell",
+     "lot number: 438Z013.1"
+    ]
    },
    {
     "gsm": "GSM7430031",
@@ -107,7 +127,17 @@
      "time": "48 hours",
      "supplier": "Promocell",
      "lot number": "438Z013.1"
-    }
+    },
+    "raw_lines": [
+     "cell line: primary",
+     "cell type: pulmonary microvascular endothelial cells",
+     "Sex: Female",
+     "age (years): 53",
+     "treatment: normoxia (21% oxygen)",
+     "time: 48 hours",
+     "supplier: Promocell",
+     "lot number: 438Z013.1"
+    ]
    },
    {
     "gsm": "GSM7430032",
@@ -142,7 +172,17 @@
      "time": "48 hours",
      "supplier": "Promocell",
      "lot number": "438Z013.1"
-    }
+    },
+    "raw_lines": [
+     "cell line: primary",
+     "cell type: pulmonary microvascular endothelial cells",
+     "Sex: Female",
+     "age (years): 53",
+     "treatment: hypoxia (1% oxygen)",
+     "time: 48 hours",
+     "supplier: Promocell",
+     "lot number: 438Z013.1"
+    ]
    },
    {
     "gsm": "GSM7430033",
@@ -177,7 +217,17 @@
      "time": "24 hours",
      "supplier": "Promocell",
      "lot number": "399Z027.2"
-    }
+    },
+    "raw_lines": [
+     "cell line: primary",
+     "cell type: pulmonary microvascular endothelial cells",
+     "Sex: Male",
+     "age (years): 65",
+     "treatment: normoxia (21% oxygen)",
+     "time: 24 hours",
+     "supplier: Promocell",
+     "lot number: 399Z027.2"
+    ]
    },
    {
     "gsm": "GSM7430034",
@@ -212,7 +262,17 @@
      "time": "24 hours",
      "supplier": "Promocell",
      "lot number": "399Z027.2"
-    }
+    },
+    "raw_lines": [
+     "cell line: primary",
+     "cell type: pulmonary microvascular endothelial cells",
+     "Sex: Male",
+     "age (years): 65",
+     "treatment: hypoxia (1% oxygen)",
+     "time: 24 hours",
+     "supplier: Promocell",
+     "lot number: 399Z027.2"
+    ]
    },
    {
     "gsm": "GSM7430035",
@@ -247,7 +307,17 @@
      "time": "48 hours",
      "supplier": "Promocell",
      "lot number": "399Z027.2"
-    }
+    },
+    "raw_lines": [
+     "cell line: primary",
+     "cell type: pulmonary microvascular endothelial cells",
+     "Sex: Male",
+     "age (years): 65",
+     "treatment: normoxia (21% oxygen)",
+     "time: 48 hours",
+     "supplier: Promocell",
+     "lot number: 399Z027.2"
+    ]
    },
    {
     "gsm": "GSM7430036",
@@ -282,7 +352,17 @@
      "time": "48 hours",
      "supplier": "Promocell",
      "lot number": "399Z027.2"
-    }
+    },
+    "raw_lines": [
+     "cell line: primary",
+     "cell type: pulmonary microvascular endothelial cells",
+     "Sex: Male",
+     "age (years): 65",
+     "treatment: hypoxia (1% oxygen)",
+     "time: 48 hours",
+     "supplier: Promocell",
+     "lot number: 399Z027.2"
+    ]
    },
    {
     "gsm": "GSM7430037",
@@ -317,7 +397,17 @@
      "time": "24 hours",
      "supplier": "Promocell",
      "lot number": "402Z030.1"
-    }
+    },
+    "raw_lines": [
+     "cell line: primary",
+     "cell type: pulmonary microvascular endothelial cells",
+     "Sex: Male",
+     "age (years): 60",
+     "treatment: normoxia (21% oxygen)",
+     "time: 24 hours",
+     "supplier: Promocell",
+     "lot number: 402Z030.1"
+    ]
    },
    {
     "gsm": "GSM7430038",
@@ -352,7 +442,17 @@
      "time": "24 hours",
      "supplier": "Promocell",
      "lot number": "402Z030.1"
-    }
+    },
+    "raw_lines": [
+     "cell line: primary",
+     "cell type: pulmonary microvascular endothelial cells",
+     "Sex: Male",
+     "age (years): 60",
+     "treatment: hypoxia (1% oxygen)",
+     "time: 24 hours",
+     "supplier: Promocell",
+     "lot number: 402Z030.1"
+    ]
    },
    {
     "gsm": "GSM7430039",
@@ -387,7 +487,17 @@
      "time": "48 hours",
      "supplier": "Promocell",
      "lot number": "402Z030.1"
-    }
+    },
+    "raw_lines": [
+     "cell line: primary",
+     "cell type: pulmonary microvascular endothelial cells",
+     "Sex: Male",
+     "age (years): 60",
+     "treatment: normoxia (21% oxygen)",
+     "time: 48 hours",
+     "supplier: Promocell",
+     "lot number: 402Z030.1"
+    ]
    },
    {
     "gsm": "GSM7430040",
@@ -422,7 +532,17 @@
      "time": "48 hours",
      "supplier": "Promocell",
      "lot number": "402Z030.1"
-    }
+    },
+    "raw_lines": [
+     "cell line: primary",
+     "cell type: pulmonary microvascular endothelial cells",
+     "Sex: Male",
+     "age (years): 60",
+     "treatment: hypoxia (1% oxygen)",
+     "time: 48 hours",
+     "supplier: Promocell",
+     "lot number: 402Z030.1"
+    ]
    },
    {
     "gsm": "GSM7430041",
@@ -457,7 +577,17 @@
      "time": "24 hours",
      "supplier": "Promocell",
      "lot number": "4073001.2"
-    }
+    },
+    "raw_lines": [
+     "cell line: primary",
+     "cell type: pulmonary microvascular endothelial cells",
+     "Sex: Male",
+     "age (years): 69",
+     "treatment: normoxia (21% oxygen)",
+     "time: 24 hours",
+     "supplier: Promocell",
+     "lot number: 4073001.2"
+    ]
    },
    {
     "gsm": "GSM7430042",
@@ -492,7 +622,17 @@
      "time": "24 hours",
      "supplier": "Promocell",
      "lot number": "4073001.2"
-    }
+    },
+    "raw_lines": [
+     "cell line: primary",
+     "cell type: pulmonary microvascular endothelial cells",
+     "Sex: Male",
+     "age (years): 69",
+     "treatment: hypoxia (1% oxygen)",
+     "time: 24 hours",
+     "supplier: Promocell",
+     "lot number: 4073001.2"
+    ]
    },
    {
     "gsm": "GSM7430043",
@@ -527,7 +667,17 @@
      "time": "48 hours",
      "supplier": "Promocell",
      "lot number": "4073001.2"
-    }
+    },
+    "raw_lines": [
+     "cell line: primary",
+     "cell type: pulmonary microvascular endothelial cells",
+     "Sex: Male",
+     "age (years): 69",
+     "treatment: normoxia (21% oxygen)",
+     "time: 48 hours",
+     "supplier: Promocell",
+     "lot number: 4073001.2"
+    ]
    },
    {
     "gsm": "GSM7430044",
@@ -562,7 +712,17 @@
      "time": "48 hours",
      "supplier": "Promocell",
      "lot number": "4073001.2"
-    }
+    },
+    "raw_lines": [
+     "cell line: primary",
+     "cell type: pulmonary microvascular endothelial cells",
+     "Sex: Male",
+     "age (years): 69",
+     "treatment: hypoxia (1% oxygen)",
+     "time: 48 hours",
+     "supplier: Promocell",
+     "lot number: 4073001.2"
+    ]
    },
    {
     "gsm": "GSM7430045",
@@ -597,7 +757,17 @@
      "time": "24 hours",
      "supplier": "Promocell",
      "lot number": "446Z002"
-    }
+    },
+    "raw_lines": [
+     "cell line: primary",
+     "cell type: pulmonary microvascular endothelial cells",
+     "Sex: Female",
+     "age (years): 70",
+     "treatment: normoxia (21% oxygen)",
+     "time: 24 hours",
+     "supplier: Promocell",
+     "lot number: 446Z002"
+    ]
    },
    {
     "gsm": "GSM7430046",
@@ -632,7 +802,17 @@
      "time": "24 hours",
      "supplier": "Promocell",
      "lot number": "446Z002"
-    }
+    },
+    "raw_lines": [
+     "cell line: primary",
+     "cell type: pulmonary microvascular endothelial cells",
+     "Sex: Female",
+     "age (years): 70",
+     "treatment: hypoxia (1% oxygen)",
+     "time: 24 hours",
+     "supplier: Promocell",
+     "lot number: 446Z002"
+    ]
    },
    {
     "gsm": "GSM7430047",
@@ -667,7 +847,17 @@
      "time": "48 hours",
      "supplier": "Promocell",
      "lot number": "446Z002"
-    }
+    },
+    "raw_lines": [
+     "cell line: primary",
+     "cell type: pulmonary microvascular endothelial cells",
+     "Sex: Female",
+     "age (years): 70",
+     "treatment: normoxia (21% oxygen)",
+     "time: 48 hours",
+     "supplier: Promocell",
+     "lot number: 446Z002"
+    ]
    },
    {
     "gsm": "GSM7430048",
@@ -702,7 +892,17 @@
      "time": "48 hours",
      "supplier": "Promocell",
      "lot number": "446Z002"
-    }
+    },
+    "raw_lines": [
+     "cell line: primary",
+     "cell type: pulmonary microvascular endothelial cells",
+     "Sex: Female",
+     "age (years): 70",
+     "treatment: hypoxia (1% oxygen)",
+     "time: 48 hours",
+     "supplier: Promocell",
+     "lot number: 446Z002"
+    ]
    },
    {
     "gsm": "GSM7430049",
@@ -737,7 +937,17 @@
      "time": "24 hours",
      "supplier": "Promocell",
      "lot number": "4070302"
-    }
+    },
+    "raw_lines": [
+     "cell line: primary",
+     "cell type: pulmonary microvascular endothelial cells",
+     "Sex: Female",
+     "age (years): 56",
+     "treatment: normoxia (21% oxygen)",
+     "time: 24 hours",
+     "supplier: Promocell",
+     "lot number: 4070302"
+    ]
    },
    {
     "gsm": "GSM7430050",
@@ -772,7 +982,17 @@
      "time": "24 hours",
      "supplier": "Promocell",
      "lot number": "4070302"
-    }
+    },
+    "raw_lines": [
+     "cell line: primary",
+     "cell type: pulmonary microvascular endothelial cells",
+     "Sex: Female",
+     "age (years): 56",
+     "treatment: hypoxia (1% oxygen)",
+     "time: 24 hours",
+     "supplier: Promocell",
+     "lot number: 4070302"
+    ]
    },
    {
     "gsm": "GSM7430051",
@@ -807,7 +1027,17 @@
      "time": "48 hours",
      "supplier": "Promocell",
      "lot number": "4070302"
-    }
+    },
+    "raw_lines": [
+     "cell line: primary",
+     "cell type: pulmonary microvascular endothelial cells",
+     "Sex: Female",
+     "age (years): 56",
+     "treatment: normoxia (21% oxygen)",
+     "time: 48 hours",
+     "supplier: Promocell",
+     "lot number: 4070302"
+    ]
    },
    {
     "gsm": "GSM7430052",
@@ -842,7 +1072,17 @@
      "time": "48 hours",
      "supplier": "Promocell",
      "lot number": "4070302"
-    }
+    },
+    "raw_lines": [
+     "cell line: primary",
+     "cell type: pulmonary microvascular endothelial cells",
+     "Sex: Female",
+     "age (years): 56",
+     "treatment: hypoxia (1% oxygen)",
+     "time: 48 hours",
+     "supplier: Promocell",
+     "lot number: 4070302"
+    ]
    },
    {
     "gsm": "GSM7430053",
@@ -877,7 +1117,17 @@
      "time": "24 hours",
      "supplier": "Promocell",
      "lot number": "1071902.3"
-    }
+    },
+    "raw_lines": [
+     "cell line: primary",
+     "cell type: pulmonary microvascular endothelial cells",
+     "Sex: Female",
+     "age (years): 64",
+     "treatment: normoxia (21% oxygen)",
+     "time: 24 hours",
+     "supplier: Promocell",
+     "lot number: 1071902.3"
+    ]
    },
    {
     "gsm": "GSM7430054",
@@ -912,7 +1162,17 @@
      "time": "24 hours",
      "supplier": "Promocell",
      "lot number": "1071902.3"
-    }
+    },
+    "raw_lines": [
+     "cell line: primary",
+     "cell type: pulmonary microvascular endothelial cells",
+     "Sex: Female",
+     "age (years): 64",
+     "treatment: hypoxia (1% oxygen)",
+     "time: 24 hours",
+     "supplier: Promocell",
+     "lot number: 1071902.3"
+    ]
    },
    {
     "gsm": "GSM7430055",
@@ -947,7 +1207,17 @@
      "time": "48 hours",
      "supplier": "Promocell",
      "lot number": "1071902.3"
-    }
+    },
+    "raw_lines": [
+     "cell line: primary",
+     "cell type: pulmonary microvascular endothelial cells",
+     "Sex: Female",
+     "age (years): 64",
+     "treatment: normoxia (21% oxygen)",
+     "time: 48 hours",
+     "supplier: Promocell",
+     "lot number: 1071902.3"
+    ]
    },
    {
     "gsm": "GSM7430056",
@@ -982,7 +1252,17 @@
      "time": "48 hours",
      "supplier": "Promocell",
      "lot number": "1071902.3"
-    }
+    },
+    "raw_lines": [
+     "cell line: primary",
+     "cell type: pulmonary microvascular endothelial cells",
+     "Sex: Female",
+     "age (years): 64",
+     "treatment: hypoxia (1% oxygen)",
+     "time: 48 hours",
+     "supplier: Promocell",
+     "lot number: 1071902.3"
+    ]
    }
   ]
  },
@@ -993,42 +1273,30 @@
    "case_label": "hypoxia 1% O2",
    "control_label": "normoxia 21% O2",
    "case_gsms": [
-    "GSM7430030",
     "GSM7430032",
-    "GSM7430034",
     "GSM7430036",
-    "GSM7430038",
     "GSM7430040",
-    "GSM7430042",
     "GSM7430044",
-    "GSM7430046",
     "GSM7430048",
-    "GSM7430050",
     "GSM7430052",
-    "GSM7430054",
     "GSM7430056"
    ],
    "control_gsms": [
-    "GSM7430029",
     "GSM7430031",
-    "GSM7430033",
     "GSM7430035",
-    "GSM7430037",
     "GSM7430039",
-    "GSM7430041",
     "GSM7430043",
-    "GSM7430045",
     "GSM7430047",
-    "GSM7430049",
     "GSM7430051",
-    "GSM7430053",
     "GSM7430055"
    ],
    "blocking": "donor",
-   "restricted_to": {},
+   "restricted_to": {
+    "time_point": "48 hours"
+   },
    "confidence": 1.0,
    "status": "confirmed",
-   "rationale": "24h and 48h pooled, balanced across arms; sex is a second factor ignored in v1."
+   "rationale": "48 h only (two time points per donor would be pseudo-replication); 5 of 6 donors have both arms quantified. Sex is a second factor ignored in v1."
   }
  ],
  "markers": [

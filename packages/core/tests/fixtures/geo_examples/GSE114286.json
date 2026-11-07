@@ -34,7 +34,14 @@
      "gender": "female",
      "sampling location": "limb",
      "tissue": "skin"
-    }
+    },
+    "raw_lines": [
+     "participant condition: healthy volunteer",
+     "age (years): 22",
+     "gender: female",
+     "sampling location: limb",
+     "tissue: skin"
+    ]
    },
    {
     "gsm": "GSM3138825",
@@ -66,7 +73,14 @@
      "gender": "male",
      "sampling location": "limb",
      "tissue": "skin"
-    }
+    },
+    "raw_lines": [
+     "participant condition: healthy volunteer",
+     "age (years): 50",
+     "gender: male",
+     "sampling location: limb",
+     "tissue: skin"
+    ]
    },
    {
     "gsm": "GSM3138826",
@@ -98,7 +112,14 @@
      "gender": "female",
      "sampling location": "trunk",
      "tissue": "skin"
-    }
+    },
+    "raw_lines": [
+     "participant condition: healthy volunteer",
+     "age (years): 50",
+     "gender: female",
+     "sampling location: trunk",
+     "tissue: skin"
+    ]
    },
    {
     "gsm": "GSM3138827",
@@ -130,7 +151,14 @@
      "gender": "male",
      "sampling location": "trunk",
      "tissue": "skin"
-    }
+    },
+    "raw_lines": [
+     "participant condition: healthy volunteer",
+     "age (years): 55",
+     "gender: male",
+     "sampling location: trunk",
+     "tissue: skin"
+    ]
    },
    {
     "gsm": "GSM3138828",
@@ -162,7 +190,14 @@
      "gender": "male",
      "sampling location": "trunk",
      "tissue": "skin"
-    }
+    },
+    "raw_lines": [
+     "participant condition: healthy volunteer",
+     "age (years): 25",
+     "gender: male",
+     "sampling location: trunk",
+     "tissue: skin"
+    ]
    },
    {
     "gsm": "GSM3138829",
@@ -194,7 +229,14 @@
      "gender": "female",
      "sampling location": "trunk",
      "tissue": "skin"
-    }
+    },
+    "raw_lines": [
+     "participant condition: healthy volunteer",
+     "age (years): 27",
+     "gender: female",
+     "sampling location: trunk",
+     "tissue: skin"
+    ]
    },
    {
     "gsm": "GSM3138830",
@@ -226,7 +268,14 @@
      "gender": "male",
      "sampling location": "limb",
      "tissue": "skin"
-    }
+    },
+    "raw_lines": [
+     "participant condition: healthy volunteer",
+     "age (years): 42",
+     "gender: male",
+     "sampling location: limb",
+     "tissue: skin"
+    ]
    },
    {
     "gsm": "GSM3138831",
@@ -258,7 +307,14 @@
      "gender": "male",
      "sampling location": "trunk",
      "tissue": "skin"
-    }
+    },
+    "raw_lines": [
+     "participant condition: healthy volunteer",
+     "age (years): 45",
+     "gender: male",
+     "sampling location: trunk",
+     "tissue: skin"
+    ]
    },
    {
     "gsm": "GSM3138832",
@@ -290,7 +346,14 @@
      "gender": "male",
      "sampling location": "trunk",
      "tissue": "skin"
-    }
+    },
+    "raw_lines": [
+     "participant condition: healthy volunteer",
+     "age (years): 20",
+     "gender: male",
+     "sampling location: trunk",
+     "tissue: skin"
+    ]
    },
    {
     "gsm": "GSM3138833",
@@ -322,7 +385,14 @@
      "gender": "female",
      "sampling location": "trunk",
      "tissue": "skin"
-    }
+    },
+    "raw_lines": [
+     "participant condition: psoriasis vulgaris patient",
+     "age (years): 16",
+     "gender: female",
+     "sampling location: trunk",
+     "tissue: skin"
+    ]
    },
    {
     "gsm": "GSM3138834",
@@ -354,7 +424,14 @@
      "gender": "male",
      "sampling location": "trunk",
      "tissue": "skin"
-    }
+    },
+    "raw_lines": [
+     "participant condition: psoriasis vulgaris patient",
+     "age (years): 44",
+     "gender: male",
+     "sampling location: trunk",
+     "tissue: skin"
+    ]
    },
    {
     "gsm": "GSM3138835",
@@ -386,7 +463,14 @@
      "gender": "male",
      "sampling location": "trunk",
      "tissue": "skin"
-    }
+    },
+    "raw_lines": [
+     "participant condition: psoriasis vulgaris patient",
+     "age (years): 55",
+     "gender: male",
+     "sampling location: trunk",
+     "tissue: skin"
+    ]
    },
    {
     "gsm": "GSM3138836",
@@ -418,7 +502,14 @@
      "gender": "male",
      "sampling location": "limb",
      "tissue": "skin"
-    }
+    },
+    "raw_lines": [
+     "participant condition: psoriasis vulgaris patient",
+     "age (years): 61",
+     "gender: male",
+     "sampling location: limb",
+     "tissue: skin"
+    ]
    },
    {
     "gsm": "GSM3138837",
@@ -450,7 +541,14 @@
      "gender": "male",
      "sampling location": "trunk",
      "tissue": "skin"
-    }
+    },
+    "raw_lines": [
+     "participant condition: psoriasis vulgaris patient",
+     "age (years): 68",
+     "gender: male",
+     "sampling location: trunk",
+     "tissue: skin"
+    ]
    },
    {
     "gsm": "GSM3138838",
@@ -482,7 +580,14 @@
      "gender": "female",
      "sampling location": "trunk",
      "tissue": "skin"
-    }
+    },
+    "raw_lines": [
+     "participant condition: psoriasis vulgaris patient",
+     "age (years): 34",
+     "gender: female",
+     "sampling location: trunk",
+     "tissue: skin"
+    ]
    },
    {
     "gsm": "GSM3138839",
@@ -514,7 +619,14 @@
      "gender": "male",
      "sampling location": "trunk",
      "tissue": "skin"
-    }
+    },
+    "raw_lines": [
+     "participant condition: psoriasis vulgaris patient",
+     "age (years): 56",
+     "gender: male",
+     "sampling location: trunk",
+     "tissue: skin"
+    ]
    },
    {
     "gsm": "GSM3138840",
@@ -546,7 +658,14 @@
      "gender": "male",
      "sampling location": "trunk",
      "tissue": "skin"
-    }
+    },
+    "raw_lines": [
+     "participant condition: psoriasis vulgaris patient",
+     "age (years): 56",
+     "gender: male",
+     "sampling location: trunk",
+     "tissue: skin"
+    ]
    },
    {
     "gsm": "GSM3138841",
@@ -578,7 +697,14 @@
      "gender": "male",
      "sampling location": "trunk",
      "tissue": "skin"
-    }
+    },
+    "raw_lines": [
+     "participant condition: psoriasis vulgaris patient",
+     "age (years): 46",
+     "gender: male",
+     "sampling location: trunk",
+     "tissue: skin"
+    ]
    },
    {
     "gsm": "GSM3138842",
@@ -610,7 +736,14 @@
      "gender": "male",
      "sampling location": "trunk",
      "tissue": "skin"
-    }
+    },
+    "raw_lines": [
+     "participant condition: psoriasis vulgaris patient",
+     "age (years): 63",
+     "gender: male",
+     "sampling location: trunk",
+     "tissue: skin"
+    ]
    },
    {
     "gsm": "GSM3138843",
@@ -642,7 +775,14 @@
      "gender": "female",
      "sampling location": "trunk",
      "tissue": "skin"
-    }
+    },
+    "raw_lines": [
+     "participant condition: psoriasis vulgaris patient",
+     "age (years): 59",
+     "gender: female",
+     "sampling location: trunk",
+     "tissue: skin"
+    ]
    },
    {
     "gsm": "GSM3138844",
@@ -674,7 +814,14 @@
      "gender": "male",
      "sampling location": "trunk",
      "tissue": "skin"
-    }
+    },
+    "raw_lines": [
+     "participant condition: psoriasis vulgaris patient",
+     "age (years): 44",
+     "gender: male",
+     "sampling location: trunk",
+     "tissue: skin"
+    ]
    },
    {
     "gsm": "GSM3138845",
@@ -706,7 +853,14 @@
      "gender": "female",
      "sampling location": "trunk",
      "tissue": "skin"
-    }
+    },
+    "raw_lines": [
+     "participant condition: psoriasis vulgaris patient",
+     "age (years): 28",
+     "gender: female",
+     "sampling location: trunk",
+     "tissue: skin"
+    ]
    },
    {
     "gsm": "GSM3138846",
@@ -738,7 +892,14 @@
      "gender": "male",
      "sampling location": "limb",
      "tissue": "skin"
-    }
+    },
+    "raw_lines": [
+     "participant condition: psoriasis vulgaris patient",
+     "age (years): 40",
+     "gender: male",
+     "sampling location: limb",
+     "tissue: skin"
+    ]
    },
    {
     "gsm": "GSM3138847",
@@ -770,7 +931,14 @@
      "gender": "female",
      "sampling location": "trunk",
      "tissue": "skin"
-    }
+    },
+    "raw_lines": [
+     "participant condition: psoriasis vulgaris patient",
+     "age (years): 50",
+     "gender: female",
+     "sampling location: trunk",
+     "tissue: skin"
+    ]
    },
    {
     "gsm": "GSM3138848",
@@ -802,7 +970,14 @@
      "gender": "female",
      "sampling location": "limb",
      "tissue": "skin"
-    }
+    },
+    "raw_lines": [
+     "participant condition: psoriasis vulgaris patient",
+     "age (years): 14",
+     "gender: female",
+     "sampling location: limb",
+     "tissue: skin"
+    ]
    },
    {
     "gsm": "GSM3138849",
@@ -834,7 +1009,14 @@
      "gender": "male",
      "sampling location": "limb",
      "tissue": "skin"
-    }
+    },
+    "raw_lines": [
+     "participant condition: psoriasis vulgaris patient",
+     "age (years): 25",
+     "gender: male",
+     "sampling location: limb",
+     "tissue: skin"
+    ]
    },
    {
     "gsm": "GSM3138850",
@@ -866,7 +1048,14 @@
      "gender": "male",
      "sampling location": "limb",
      "tissue": "skin"
-    }
+    },
+    "raw_lines": [
+     "participant condition: psoriasis vulgaris patient",
+     "age (years): 30",
+     "gender: male",
+     "sampling location: limb",
+     "tissue: skin"
+    ]
    }
   ]
  },

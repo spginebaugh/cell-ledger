@@ -2,16 +2,26 @@
 
 One fixed sequence with a small set of parameters. The agent picks the dataset,
 the contrast and the parameters; it does not write code.
+
+Output is atomic: the run writes into a temporary sibling directory and swaps it
+into place at the end, so a folder never mixes artifacts from two runs. Any
+exception is caught, recorded in the report (``status=blocked``, ``error``), and
+the report is still written.
 """
 
 from __future__ import annotations
 
 import json
+import os
 import platform
+import shutil
+import traceback
 from datetime import UTC, datetime
 from importlib.metadata import version
 from pathlib import Path
 
+import anndata as ad
+import numpy as np
 import pandas as pd
 from pydantic import BaseModel, Field
 
@@ -24,9 +34,11 @@ from cell_ledger.analysis.genes import log2_normalized, lookup_genes, score_mark
 from cell_ledger.analysis.qc import run_qc
 from cell_ledger.analysis.steps import step
 from cell_ledger.report import figures
-from cell_ledger.report.models import AnalysisReport, MarkerExpectation
+from cell_ledger.report.models import AnalysisReport, MarkerExpectation, QcResult
 from cell_ledger.report.render import render_markdown
 from cell_ledger.samplesheet import Contrast, SampleSheet
+
+REPORT_JSON = "report.json"
 
 
 class PipelineParams(BaseModel):
@@ -57,6 +69,37 @@ def _versions() -> dict[str, str]:
     return out
 
 
+def _check_output_dir(final: Path) -> None:
+    """Refuse to replace a directory we did not create."""
+    if final.exists() and any(final.iterdir()) and not (final / REPORT_JSON).exists():
+        raise ValueError(
+            f"{final} exists, is not empty and holds no {REPORT_JSON}; refusing to overwrite it"
+        )
+
+
+def _attach_qc_to_obs(adata: ad.AnnData, qc: QcResult) -> None:
+    """Put per-sample QC into ``obs`` (and PCA into ``obsm``) so h5ad and samples.csv agree."""
+    obs = obs_frame(adata)
+    by = {s.gsm: s for s in qc.samples}
+    idx = [str(g) for g in adata.obs_names]
+    obs["library_size"] = [by[g].library_size for g in idx]
+    obs["detected_genes"] = [by[g].detected_genes for g in idx]
+    obs["pct_mito"] = [by[g].pct_mito for g in idx]
+    obs["pct_ribo"] = [by[g].pct_ribo for g in idx]
+    obs["mean_corr_same_arm"] = [
+        np.nan if by[g].mean_corr_same_arm is None else by[g].mean_corr_same_arm for g in idx
+    ]
+    obs["mean_corr_other_arm"] = [
+        np.nan if by[g].mean_corr_other_arm is None else by[g].mean_corr_other_arm for g in idx
+    ]
+    obs["predicted_sex"] = [by[g].predicted_sex or "" for g in idx]
+    obs["qc_flags"] = [";".join(by[g].flags) for g in idx]
+    if qc.pca is not None:
+        coords = np.array([qc.pca.coords[g] for g in idx], dtype=float)
+        adata.obsm["X_pca"] = coords
+        obs["pc1"], obs["pc2"] = coords[:, 0], coords[:, 1]
+
+
 def run_pipeline(
     *,
     counts_path: str | Path,
@@ -67,8 +110,13 @@ def run_pipeline(
     params: PipelineParams | None = None,
 ) -> AnalysisReport:
     params = params or PipelineParams()
-    out = Path(out_dir)
-    out.mkdir(parents=True, exist_ok=True)
+    final = Path(out_dir)
+    _check_output_dir(final)
+    work = final.parent / f".{final.name}.tmp-{os.getpid()}"
+    if work.exists():
+        shutil.rmtree(work)
+    work.mkdir(parents=True)
+
     report = AnalysisReport(
         gse=sheet.gse,
         contrast=contrast,
@@ -77,16 +125,44 @@ def run_pipeline(
         versions=_versions(),
         params=params.model_dump(),
     )
-    steps = report.steps  # pydantic copies on construction; append to the report's own list
+    try:
+        _run(report, counts_path, annotation_path, sheet, contrast, work, params)
+    except Exception as exc:
+        report.status = "blocked"
+        report.error = f"{type(exc).__name__}: {exc}"
+        report.blockers.append(f"pipeline stopped: {report.error}")
+        (work / "error.txt").write_text(traceback.format_exc())
+        report.files["error"] = "error.txt"
+    report.files["report_json"] = REPORT_JSON
+    report.files["report_md"] = "report.md"
+    (work / REPORT_JSON).write_text(report.model_dump_json(indent=2))
+    (work / "report.md").write_text(render_markdown(report))
+    if final.exists():
+        shutil.rmtree(final)
+    work.rename(final)
+    return report
+
+
+def _run(
+    report: AnalysisReport,
+    counts_path: str | Path,
+    annotation_path: str | Path,
+    sheet: SampleSheet,
+    contrast: Contrast,
+    out: Path,
+    params: PipelineParams,
+) -> None:
+    steps = report.steps
 
     def rel(p: Path) -> str:
         return str(p.relative_to(out))
 
-    # 1. Contract-level blockers (before touching any data).
+    # 1. Contract: blockers stop DE, qualifications travel with the result.
     blockers = contrast.problems(sheet, min_per_group=params.min_per_group)
     if blockers:
         report.status = "blocked"
         report.blockers.extend(blockers)
+    report.qualifications.extend(contrast.qualifications(sheet))
 
     # 2. Load and reconcile.
     with step(steps, "load", counts=str(counts_path), annotation=str(annotation_path)):
@@ -99,12 +175,17 @@ def run_pipeline(
             f"{len(rec.contrast_gsms_missing_from_counts)} contrast GSMs have no counts column "
             f"and were dropped: {rec.contrast_gsms_missing_from_counts}"
         )
+    if rec.contrast_gsms_missing_from_sheet:
+        report.warnings.append(
+            f"{len(rec.contrast_gsms_missing_from_sheet)} contrast GSMs are not in the sample "
+            f"sheet and were dropped: {rec.contrast_gsms_missing_from_sheet}"
+        )
     if rec.columns_not_in_sheet:
         report.warnings.append(
             f"{len(rec.columns_not_in_sheet)} counts columns are not in the sample sheet "
             f"and were ignored: {rec.columns_not_in_sheet}"
         )
-    if report.status != "blocked" and (
+    if report.status == "complete" and (
         rec.n_case < params.min_per_group or rec.n_control < params.min_per_group
     ):
         report.status = "qc_only"
@@ -118,22 +199,19 @@ def run_pipeline(
     counts_used.to_csv(out / "counts.tsv", sep="\t")
     report.files["counts"] = "counts.tsv"
 
-    # 3. QC (always, when there is anything to look at).
+    # 3. QC whenever there is something to compare.
     qc = None
     if adata.n_obs >= 2:
         with step(steps, "qc", low_library_size=params.low_library_size):
             qc = run_qc(adata, low_library_size=params.low_library_size)
             report.qc = qc
+            _attach_qc_to_obs(adata, qc)
         if qc.flags:
             report.warnings.append(f"QC flags: {', '.join(qc.flags)}")
-        qc_df = pd.DataFrame([s.model_dump() for s in qc.samples]).set_index("gsm")
-        qc_df["flags"] = qc_df["flags"].map(lambda f: ";".join(f))
-        samples = obs_frame(adata).join(qc_df.drop(columns=["arm"]), how="left")
-        if qc.pca is not None:
-            samples["pc1"] = [qc.pca.coords[g][0] for g in samples.index]
-            samples["pc2"] = [qc.pca.coords[g][1] for g in samples.index]
-    else:
-        samples = obs_frame(adata).copy()
+    elif report.status == "complete":
+        report.status = "blocked"
+        report.blockers.append("fewer than 2 samples with counts; nothing to analyse")
+    samples = obs_frame(adata).copy()
     samples.index.name = "gsm"
     samples.to_csv(out / "samples.csv")
     report.files["samples"] = "samples.csv"
@@ -146,17 +224,36 @@ def run_pipeline(
         with step(steps, "filter_genes", min_count=params.min_count):
             filtered, fsum = filter_genes(adata, min_count=params.min_count)
             report.filtering = fsum
+        if filtered.n_vars == 0:
+            report.status = "qc_only"
+            report.blockers.append(
+                f"no gene has >= {fsum.min_count} counts in >= {fsum.min_samples} samples; "
+                "nothing to test"
+            )
+    if report.status == "complete":
         de_params = DeParams(
             alpha=params.alpha,
             lfc_threshold=params.lfc_threshold,
             lfc_shrink=params.lfc_shrink,
             n_cpus=params.n_cpus,
             top_n=params.top_n_genes,
+            min_per_group=params.min_per_group,
         )
-        with step(steps, "deseq2", **de_params.model_dump()) as rec_de:
-            results, normed, de_summary = run_de(filtered, de_params)
+        with step(steps, "deseq2", blocking=contrast.blocking, **de_params.model_dump()) as rec_de:
+            results, normed, de_summary, plan = run_de(
+                filtered, de_params, blocking=contrast.blocking
+            )
             report.de = de_summary
+        report.warnings.extend(plan.warnings)
         report.warnings.extend(f"pydeseq2: {w}" for w in rec_de.warnings)
+        if plan.pairing == "ignored":
+            report.qualifications.append(
+                f"contrast declares pairing by {contrast.blocking!r} but it could not be "
+                "modelled; samples were treated as independent"
+            )
+        if plan.dropped:
+            filtered = filtered[plan.kept].copy()
+            arms = arms.loc[plan.kept]
         results.to_csv(out / "de_results.tsv", sep="\t")
         report.files["de_results"] = "de_results.tsv"
         normed_t = normed.T
@@ -195,9 +292,8 @@ def run_pipeline(
                 arms=arms,
                 alpha=params.alpha,
             )
-            report.gene_lookup = [
-                r for r in lookups if r.query in params.genes_of_interest
-            ] or lookups
+            wanted = set(params.genes_of_interest)
+            report.gene_lookup = [r for r in lookups if r.query in wanted] or lookups
             if params.markers:
                 report.markers = score_markers(params.markers, lookups, top_n=params.marker_top_n)
         pd.DataFrame([r.model_dump() for r in lookups]).to_csv(out / "gene_lookup.csv", index=False)
@@ -238,18 +334,13 @@ def run_pipeline(
                 if p is not None:
                     report.figures["enrichment"] = rel(p)
 
-    # 9. Persist: AnnData, JSON report, Markdown.
-    with step(steps, "write"):
+    # 9. AnnData. report.json is canonical; the embedded copy lacks only this step's timing.
+    with step(steps, "write_h5ad"):
+        report.files["anndata"] = "dataset.h5ad"
+        report.files["report_json"] = REPORT_JSON
+        report.files["report_md"] = "report.md"
         filtered.uns["report"] = report.model_dump_json()
         filtered.write_h5ad(out / "dataset.h5ad")
-        report.files["anndata"] = "dataset.h5ad"
-        (out / "report.json").write_text(report.model_dump_json(indent=2))
-        report.files["report_json"] = "report.json"
-        (out / "report.md").write_text(render_markdown(report))
-        report.files["report_md"] = "report.md"
-    (out / "report.json").write_text(report.model_dump_json(indent=2))
-    (out / "report.md").write_text(render_markdown(report))
-    return report
 
 
 def load_design(path: str | Path) -> tuple[SampleSheet, list[Contrast], list[MarkerExpectation]]:

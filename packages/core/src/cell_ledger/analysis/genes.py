@@ -47,20 +47,46 @@ def lookup_genes(
             s = var.loc[gid, "Symbol"]
             symbol = str(s) if isinstance(s, str) and s else None
         if gid is None:
-            rows.append(GeneLookupRow(query=q, gene_id=None, symbol=None, verdict="not_found"))
+            rows.append(
+                GeneLookupRow(
+                    query=q,
+                    gene_id=None,
+                    symbol=None,
+                    verdict="not_found",
+                    reason="symbol_not_in_annotation",
+                )
+            )
             continue
         if results is None:
-            rows.append(GeneLookupRow(query=q, gene_id=gid, symbol=symbol, verdict="not_run"))
+            rows.append(
+                GeneLookupRow(
+                    query=q, gene_id=gid, symbol=symbol, verdict="not_run", reason="de_not_run"
+                )
+            )
             continue
         if gid not in results.index:
-            rows.append(GeneLookupRow(query=q, gene_id=gid, symbol=symbol, verdict="not_tested"))
+            rows.append(
+                GeneLookupRow(
+                    query=q,
+                    gene_id=gid,
+                    symbol=symbol,
+                    verdict="not_tested",
+                    reason="filtered_before_testing",
+                )
+            )
             continue
         r = cast(Any, results.loc[gid])
         padj = None if pd.isna(r["padj"]) else float(r["padj"])
+        pvalue_missing = bool(pd.isna(r["pvalue"]))
         lfc = float(r["log2fc"])
-        if padj is not None and padj < alpha and lfc > 0:
+        reason = None
+        if pvalue_missing:
+            verdict, reason = "untestable", "outlier_or_all_zero"
+        elif padj is None:
+            verdict, reason = "untestable", "independent_filtering"
+        elif padj < alpha and lfc > 0:
             verdict = "up"
-        elif padj is not None and padj < alpha and lfc < 0:
+        elif padj < alpha and lfc < 0:
             verdict = "down"
         else:
             verdict = "no_evidence"
@@ -76,6 +102,7 @@ def lookup_genes(
                 gene_id=gid,
                 symbol=symbol,
                 verdict=verdict,
+                reason=reason,
                 log2fc=lfc,
                 padj=padj,
                 base_mean=float(r["base_mean"]),

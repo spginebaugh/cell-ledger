@@ -4,13 +4,20 @@ from pydantic import ValidationError
 from cell_ledger.samplesheet import Assay, Contrast, ContrastStatus, Group, Sample, SampleSheet
 
 
+def _s(gsm: str, group: Group) -> Sample:
+    return Sample(
+        gsm=gsm,
+        title=gsm,
+        group=group,
+        time_point="24h",
+        raw={"g": group.value},
+        evidence=[f"g: {group.value}"],
+    )
+
+
 def _sheet(n_case: int = 3, n_ctrl: int = 3) -> SampleSheet:
-    samples = [
-        Sample(gsm=f"GSM{i}", title=f"case{i}", group=Group.CASE, time_point="24h")
-        for i in range(1, n_case + 1)
-    ] + [
-        Sample(gsm=f"GSM{100 + i}", title=f"ctrl{i}", group=Group.CONTROL, time_point="24h")
-        for i in range(1, n_ctrl + 1)
+    samples = [_s(f"GSM{i}", Group.CASE) for i in range(1, n_case + 1)] + [
+        _s(f"GSM{100 + i}", Group.CONTROL) for i in range(1, n_ctrl + 1)
     ]
     return SampleSheet(gse="GSE1", assay=Assay.BULK, samples=samples)
 
@@ -18,6 +25,7 @@ def _sheet(n_case: int = 3, n_ctrl: int = 3) -> SampleSheet:
 def _contrast(sheet: SampleSheet, **kw: object) -> Contrast:
     case = [s.gsm for s in sheet.samples if s.group is Group.CASE]
     ctrl = [s.gsm for s in sheet.samples if s.group is Group.CONTROL]
+    kw.setdefault("status", ContrastStatus.CONFIRMED)
     return Contrast(
         gse="GSE1",
         name="case_vs_ctrl",
@@ -56,6 +64,23 @@ def test_unknown_gsm_and_blocked_status_and_restriction() -> None:
     assert any("restricted to" in p for p in c.problems(sheet))
     c = _contrast(sheet).model_copy(update={"case_gsms": ["GSM1", "GSM2", "GSM999"]})
     assert any("not in sample sheet" in p for p in c.problems(sheet))
+
+
+def test_proposed_contrast_is_not_runnable() -> None:
+    sheet = _sheet()
+    c = _contrast(sheet, status=ContrastStatus.PROPOSED)
+    assert any("only proposed" in p for p in c.problems(sheet))
+
+
+def test_qualifications_for_uncertain_labels() -> None:
+    sheet = _sheet()
+    assert _contrast(sheet).qualifications(sheet) == []
+    c = _contrast(sheet, status=ContrastStatus.UNCERTAIN, rationale="two controls plausible")
+    assert any("uncertain" in q for q in c.qualifications(sheet))
+    low = _contrast(sheet, confidence=0.1)
+    assert any("confidence 0.10" in q for q in low.qualifications(sheet))
+    sheet.samples[0].needs_review = True
+    assert any("need review" in q for q in _contrast(sheet).qualifications(sheet))
 
 
 def test_arms_must_be_disjoint_and_unique() -> None:

@@ -32,7 +32,12 @@
      "tissue": "blood",
      "disease state": "none",
      "time": "Day 0"
-    }
+    },
+    "raw_lines": [
+     "tissue: blood",
+     "disease state: none",
+     "time: Day 0"
+    ]
    },
    {
     "gsm": "GSM7373349",
@@ -62,7 +67,12 @@
      "tissue": "blood",
      "disease state": "none",
      "time": "Day 0"
-    }
+    },
+    "raw_lines": [
+     "tissue: blood",
+     "disease state: none",
+     "time: Day 0"
+    ]
    },
    {
     "gsm": "GSM7373350",
@@ -92,7 +102,12 @@
      "tissue": "blood",
      "disease state": "none",
      "time": "Day 0"
-    }
+    },
+    "raw_lines": [
+     "tissue: blood",
+     "disease state: none",
+     "time: Day 0"
+    ]
    },
    {
     "gsm": "GSM7373351",
@@ -122,7 +137,12 @@
      "tissue": "blood",
      "disease state": "none",
      "time": "Day 0"
-    }
+    },
+    "raw_lines": [
+     "tissue: blood",
+     "disease state: none",
+     "time: Day 0"
+    ]
    },
    {
     "gsm": "GSM7373352",
@@ -152,7 +172,12 @@
      "tissue": "blood",
      "disease state": "none",
      "time": "Day 0"
-    }
+    },
+    "raw_lines": [
+     "tissue: blood",
+     "disease state: none",
+     "time: Day 0"
+    ]
    },
    {
     "gsm": "GSM7373353",
@@ -182,7 +207,12 @@
      "tissue": "blood",
      "disease state": "none",
      "time": "Day 0"
-    }
+    },
+    "raw_lines": [
+     "tissue: blood",
+     "disease state: none",
+     "time: Day 0"
+    ]
    },
    {
     "gsm": "GSM7373354",
@@ -212,7 +242,12 @@
      "tissue": "blood",
      "disease state": "none",
      "time": "Day 0"
-    }
+    },
+    "raw_lines": [
+     "tissue: blood",
+     "disease state: none",
+     "time: Day 0"
+    ]
    },
    {
     "gsm": "GSM7373355",
@@ -242,7 +277,12 @@
      "tissue": "blood",
      "disease state": "none",
      "time": "Day 0"
-    }
+    },
+    "raw_lines": [
+     "tissue: blood",
+     "disease state: none",
+     "time: Day 0"
+    ]
    },
    {
     "gsm": "GSM7373356",
@@ -272,7 +312,12 @@
      "tissue": "blood",
      "disease state": "sepsis",
      "time": "Day 0"
-    }
+    },
+    "raw_lines": [
+     "tissue: blood",
+     "disease state: sepsis",
+     "time: Day 0"
+    ]
    },
    {
     "gsm": "GSM7373357",
@@ -302,7 +347,12 @@
      "tissue": "blood",
      "disease state": "sepsis",
      "time": "Day 0"
-    }
+    },
+    "raw_lines": [
+     "tissue: blood",
+     "disease state: sepsis",
+     "time: Day 0"
+    ]
    },
    {
     "gsm": "GSM7373358",
@@ -332,7 +382,12 @@
      "tissue": "blood",
      "disease state": "sepsis",
      "time": "Day 0"
-    }
+    },
+    "raw_lines": [
+     "tissue: blood",
+     "disease state: sepsis",
+     "time: Day 0"
+    ]
    },
    {
     "gsm": "GSM7373359",
@@ -362,7 +417,12 @@
      "tissue": "blood",
      "disease state": "sepsis",
      "time": "Day 0"
-    }
+    },
+    "raw_lines": [
+     "tissue: blood",
+     "disease state: sepsis",
+     "time: Day 0"
+    ]
    },
    {
     "gsm": "GSM7373360",
@@ -392,7 +452,12 @@
      "tissue": "blood",
      "disease state": "sepsis",
      "time": "Day 0"
-    }
+    },
+    "raw_lines": [
+     "tissue: blood",
+     "disease state: sepsis",
+     "time: Day 0"
+    ]
    },
    {
     "gsm": "GSM7373361",
@@ -422,7 +487,12 @@
      "tissue": "blood",
      "disease state": "sepsis",
      "time": "Day 0"
-    }
+    },
+    "raw_lines": [
+     "tissue: blood",
+     "disease state: sepsis",
+     "time: Day 0"
+    ]
    },
    {
     "gsm": "GSM7373362",
@@ -452,7 +522,12 @@
      "tissue": "blood",
      "disease state": "sepsis",
      "time": "Day 0"
-    }
+    },
+    "raw_lines": [
+     "tissue: blood",
+     "disease state: sepsis",
+     "time: Day 0"
+    ]
    },
    {
     "gsm": "GSM7373363",
@@ -482,7 +557,12 @@
      "tissue": "blood",
      "disease state": "sepsis",
      "time": "Day 0"
-    }
+    },
+    "raw_lines": [
+     "tissue: blood",
+     "disease state: sepsis",
+     "time: Day 0"
+    ]
    },
    {
     "gsm": "GSM7373364",
@@ -512,7 +592,12 @@
      "tissue": "blood",
      "disease state": "sepsis",
      "time": "Day 0"
-    }
+    },
+    "raw_lines": [
+     "tissue: blood",
+     "disease state: sepsis",
+     "time: Day 0"
+    ]
    },
    {
     "gsm": "GSM7373365",
@@ -542,7 +627,12 @@
      "tissue": "blood",
      "disease state": "sepsis",
      "time": "Day 0"
-    }
+    },
+    "raw_lines": [
+     "tissue: blood",
+     "disease state: sepsis",
+     "time: Day 0"
+    ]
    },
    {
     "gsm": "GSM7373366",
@@ -572,7 +662,12 @@
      "tissue": "blood",
      "disease state": "sepsis",
      "time": "Day 0"
-    }
+    },
+    "raw_lines": [
+     "tissue: blood",
+     "disease state: sepsis",
+     "time: Day 0"
+    ]
    },
    {
     "gsm": "GSM7373367",
@@ -602,7 +697,12 @@
      "tissue": "blood",
      "disease state": "sepsis",
      "time": "Day 0"
-    }
+    },
+    "raw_lines": [
+     "tissue: blood",
+     "disease state: sepsis",
+     "time: Day 0"
+    ]
    },
    {
     "gsm": "GSM7373368",
@@ -632,7 +732,12 @@
      "tissue": "blood",
      "disease state": "sepsis",
      "time": "Day 0"
-    }
+    },
+    "raw_lines": [
+     "tissue: blood",
+     "disease state: sepsis",
+     "time: Day 0"
+    ]
    },
    {
     "gsm": "GSM7373369",
@@ -662,7 +767,12 @@
      "tissue": "blood",
      "disease state": "sepsis",
      "time": "Day 0"
-    }
+    },
+    "raw_lines": [
+     "tissue: blood",
+     "disease state: sepsis",
+     "time: Day 0"
+    ]
    },
    {
     "gsm": "GSM7373370",
@@ -692,7 +802,12 @@
      "tissue": "blood",
      "disease state": "sepsis",
      "time": "Day 0"
-    }
+    },
+    "raw_lines": [
+     "tissue: blood",
+     "disease state: sepsis",
+     "time: Day 0"
+    ]
    },
    {
     "gsm": "GSM7373371",
@@ -722,7 +837,12 @@
      "tissue": "blood",
      "disease state": "sepsis",
      "time": "Day 0"
-    }
+    },
+    "raw_lines": [
+     "tissue: blood",
+     "disease state: sepsis",
+     "time: Day 0"
+    ]
    },
    {
     "gsm": "GSM7373372",
@@ -752,7 +872,12 @@
      "tissue": "blood",
      "disease state": "sepsis",
      "time": "Day 0"
-    }
+    },
+    "raw_lines": [
+     "tissue: blood",
+     "disease state: sepsis",
+     "time: Day 0"
+    ]
    },
    {
     "gsm": "GSM7373373",
@@ -782,7 +907,12 @@
      "tissue": "blood",
      "disease state": "sepsis",
      "time": "Day 0"
-    }
+    },
+    "raw_lines": [
+     "tissue: blood",
+     "disease state: sepsis",
+     "time: Day 0"
+    ]
    },
    {
     "gsm": "GSM7373374",
@@ -812,7 +942,12 @@
      "tissue": "blood",
      "disease state": "sepsis",
      "time": "Day 0"
-    }
+    },
+    "raw_lines": [
+     "tissue: blood",
+     "disease state: sepsis",
+     "time: Day 0"
+    ]
    },
    {
     "gsm": "GSM7373375",
@@ -842,7 +977,12 @@
      "tissue": "blood",
      "disease state": "sepsis",
      "time": "Day 0"
-    }
+    },
+    "raw_lines": [
+     "tissue: blood",
+     "disease state: sepsis",
+     "time: Day 0"
+    ]
    }
   ]
  },

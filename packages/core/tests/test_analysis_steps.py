@@ -66,7 +66,8 @@ def test_filter_and_de_recover_planted_genes(synthetic, synthetic_files):
     filtered, fsum = filter_genes(adata, min_count=10)
     assert fsum.n_genes_after < fsum.n_genes_before
     assert "5" not in filtered.var_names  # silent gene removed
-    results, normed, summary = run_de(filtered, DeParams(lfc_shrink=True))
+    results, normed, summary, plan = run_de(filtered, DeParams(lfc_shrink=True))
+    assert plan.pairing == "none" and summary.summary.design == "~arm"
     assert normed.shape == (8, filtered.n_vars)
     sig_up = set(results[(results.padj < 0.05) & (results.log2fc > 0)].index)
     sig_down = set(results[(results.padj < 0.05) & (results.log2fc < 0)].index)
@@ -126,3 +127,49 @@ def test_sex_prediction_needs_clear_evidence():
     assert _predict_sex(xist_cpm=30.0, y_cpm=80.0) == "male"
     assert _predict_sex(xist_cpm=40.0, y_cpm=1.5) is None  # both weak: no call, no flag
     assert _predict_sex(xist_cpm=0.0, y_cpm=0.0) is None
+
+
+def test_blocked_design_when_pairing_is_complete(synthetic, synthetic_files):
+    from cell_ledger.analysis.de import plan_design
+
+    counts = load_counts(synthetic_files[0])
+    adata, _ = build_anndata(
+        counts, synthetic.sheet, load_annotation(synthetic_files[1]), synthetic.contrast
+    )
+    filtered, _ = filter_genes(adata, min_count=10)
+    results, _normed, summary, plan = run_de(filtered, DeParams(), blocking="donor")
+    assert plan.pairing == "modelled" and plan.dropped == []
+    assert summary.summary.design == "~block + arm" and summary.summary.blocking == "donor"
+    sig_up = set(results[(results.padj < 0.05) & (results.log2fc > 0)].index)
+    assert len(sig_up & set(synthetic.up)) >= 40
+
+    # moving one case to a new donor leaves it AND its former partner unpaired: both dropped
+    obs = adata.obs
+    assert isinstance(obs, pd.DataFrame)
+    obs.loc["GSM1", "donor"] = "lonely"
+    plan = plan_design(obs, "donor", min_per_group=3)
+    assert plan.pairing == "incomplete_dropped" and plan.dropped == ["GSM1", "GSM5"]
+    # too few complete pairs -> pairing ignored with a warning, all samples kept
+    obs.loc[["GSM2", "GSM3"], "donor"] = ["x", "y"]
+    plan = plan_design(obs, "donor", min_per_group=3)
+    assert plan.pairing == "ignored" and len(plan.kept) == 8 and plan.warnings
+
+
+def test_lookup_distinguishes_untestable_from_no_evidence():
+    var = pd.DataFrame({"Symbol": ["A", "B", "C"]}, index=pd.Index(["1", "2", "3"], name="gene_id"))
+    results = pd.DataFrame(
+        {
+            "symbol": ["A", "B", "C"],
+            "base_mean": [10.0, 0.5, 100.0],
+            "log2fc": [0.1, 2.0, 1.0],
+            "pvalue": [0.6, 0.01, np.nan],
+            "padj": [0.9, np.nan, np.nan],
+        },
+        index=pd.Index(["1", "2", "3"], name="gene_id"),
+    )
+    rows = lookup_genes(["A", "B", "C"], var, results=results, normed=None, arms=None)
+    assert [(r.verdict, r.reason) for r in rows] == [
+        ("no_evidence", None),
+        ("untestable", "independent_filtering"),
+        ("untestable", "outlier_or_all_zero"),
+    ]

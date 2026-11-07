@@ -2,9 +2,10 @@
 
 Upstream (search, fetch, harmonize) produces a ``SampleSheet`` per GEO series.
 Downstream (QC, differential expression, report) reads only the typed fields.
-Every LLM-filled field must be backed by ``evidence``: verbatim strings copied
-from the GEO record. When ``raw`` is populated the model refuses evidence that
-does not appear in the record, so hallucinated labels cannot be constructed.
+Every label must be backed by ``evidence``: verbatim strings copied from the GEO
+record. A sample whose ``group`` is anything but ``unknown`` must carry the raw
+record (``raw`` or ``raw_lines``) and at least one evidence string found verbatim
+in it, so a label without a real citation cannot be constructed.
 """
 
 from __future__ import annotations
@@ -35,9 +36,9 @@ class Group(StrEnum):
 class Sample(BaseModel):
     """One GEO sample (GSM) with harmonized labels.
 
-    ``raw`` holds the GEO ``characteristics_ch1`` lines as ``{key: value}``;
-    ``title`` and ``source_name`` are copied from GEO as-is. Those three are the
-    only places an ``evidence`` string may come from.
+    ``raw_lines`` holds the GEO ``characteristics_ch1`` lines verbatim and ``raw``
+    the same lines as ``{key: value}``; ``title`` and ``source_name`` are copied
+    from GEO as-is. Those are the only places an ``evidence`` string may come from.
     """
 
     gsm: str = Field(pattern=r"^GSM\d+$")
@@ -64,18 +65,31 @@ class Sample(BaseModel):
     confidence: float | None = Field(default=None, ge=0.0, le=1.0)
     needs_review: bool = False
     raw: dict[str, str] = Field(default_factory=dict)
+    raw_lines: list[str] = Field(default_factory=list)
 
     def record_strings(self) -> list[str]:
         """Every verbatim string from the GEO record that evidence may cite."""
         out = [self.title]
         if self.source_name:
             out.append(self.source_name)
+        out.extend(self.raw_lines)
         out.extend(f"{k}: {v}" for k, v in self.raw.items())
         return out
 
+    @property
+    def has_record(self) -> bool:
+        return bool(self.raw or self.raw_lines)
+
     @model_validator(mode="after")
-    def _evidence_must_appear_in_record(self) -> Sample:
-        if self.raw and self.evidence:
+    def _labels_need_verbatim_evidence(self) -> Sample:
+        if any(not e.strip() for e in self.evidence):
+            raise ValueError(f"{self.gsm}: empty evidence string")
+        if self.group is not Group.UNKNOWN:
+            if not self.has_record:
+                raise ValueError(f"{self.gsm}: group={self.group} but no raw GEO record attached")
+            if not self.evidence:
+                raise ValueError(f"{self.gsm}: group={self.group} but no evidence cited")
+        if self.evidence:
             haystack = self.record_strings()
             bad = [e for e in self.evidence if not any(e in h for h in haystack)]
             if bad:
@@ -128,7 +142,7 @@ class SampleSheet(BaseModel):
         """
         rows = []
         for s in self.samples:
-            row = s.model_dump(exclude={"raw", "evidence"}, mode="json")
+            row = s.model_dump(exclude={"raw", "raw_lines", "evidence"}, mode="json")
             row["evidence"] = " | ".join(s.evidence)
             rows.append(row)
         return pd.DataFrame(rows).set_index("gsm")

@@ -24,18 +24,26 @@ Per GEO series, upstream hands downstream three things:
    `treatment`, `dose`, `time_point`, `cell_line`, `genotype`, `sex`, `age`,
    `donor`, `batch`, `replicate`, `source_name`, and the trust fields `evidence`,
    `confidence`, `needs_review`. `raw` keeps the GEO characteristics verbatim.
-   - `evidence` strings must be substrings of `title`, `source_name`, or a
-     `"key: value"` line in `raw`. The model rejects anything else, so an LLM
-     cannot emit a label without a real citation.
+   - A sample whose `group` is not `unknown` must carry the raw record (`raw`
+     and/or the verbatim `raw_lines`) and at least one non-empty `evidence`
+     string that is a substring of `title`, `source_name`, a `raw_lines` entry,
+     or a `"key: value"` pair from `raw`. The model rejects anything else, so a
+     label without a real citation cannot be constructed.
    - `confidence < 0.7` forces `needs_review = true`.
 3. **One or more `Contrast`s**: explicit `case_gsms` and `control_gsms`, human
-   labels, optional `blocking` field (pairing variable, recorded but not modelled
-   in v1), `restricted_to` (sub-factor the contrast was limited to, e.g. one time
-   point), `confidence`, `status`, `rationale`. `Contrast.problems(sheet)` returns
-   the reasons a contrast is not DE-ready (arm/label disagreement, unknown GSMs,
-   fewer than 3 per group, blocked, restriction violated). Empty list = run it.
+   labels, optional `blocking` field (pairing variable: downstream fits
+   `~block + arm` when at least 3 blocks have both arms, drops unpaired samples
+   and lists them), `restricted_to` (sub-factor the contrast was limited to, e.g.
+   one time point), `confidence`, `status`, `rationale`.
+   - `Contrast.problems(sheet)` returns the reasons a contrast must not run:
+     arm/label disagreement, unknown GSMs, fewer than 3 per group, status
+     `blocked`, status still `proposed`, restriction violated. Empty list = run it.
+   - `Contrast.qualifications(sheet)` returns reasons to run but qualify: status
+     `uncertain`, contrast or mean sample confidence below 0.7, samples with
+     `needs_review`. The report prints them under "Read with caution".
 
-Downstream fits `~ group` on exactly the GSMs in the contrast. It reconciles the
+Downstream fits on exactly the GSMs in the contrast that exist in both the sheet
+and the counts. It reconciles the
 counts columns against the sheet and reports GSMs that NCBI did not quantify
 instead of assuming alignment (3 of the 10 example series have such gaps).
 

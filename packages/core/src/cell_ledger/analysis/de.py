@@ -1,4 +1,9 @@
-"""Two-group differential expression with pydeseq2 on the contrast samples only."""
+"""Two-group differential expression with pydeseq2 on the contrast samples only.
+
+Design is ``~arm`` with ``control`` as the reference, or ``~block + arm`` when the
+contrast names a blocking variable (donor, patient) and the pairing is complete
+enough to model. Unpaired samples are dropped from a blocked fit and reported.
+"""
 
 from __future__ import annotations
 
@@ -12,10 +17,12 @@ from pydeseq2.dds import DeseqDataSet
 from pydeseq2.ds import DeseqStats
 
 from cell_ledger.analysis.bundle import obs_frame, var_frame
-from cell_ledger.report.models import DeResultSummary, DeSummary, GeneRow
+from cell_ledger.report.models import DeResultSummary, DeSummary, GeneRow, Pairing
 
 ARM = "arm"
-DESIGN = "~arm"
+BLOCK = "block"
+DESIGN_SIMPLE = "~arm"
+DESIGN_BLOCKED = "~block + arm"
 COEFFICIENT = "arm[T.case]"
 RESULT_COLUMNS = {
     "baseMean": "base_mean",
@@ -33,32 +40,104 @@ class DeParams(BaseModel):
     lfc_shrink: bool = True
     n_cpus: int | None = None
     top_n: int = 50
+    min_per_group: int = Field(default=3, ge=2)
+
+
+class DesignPlan(BaseModel):
+    design: str
+    pairing: Pairing
+    blocking: str | None
+    kept: list[str]
+    dropped: list[str] = Field(default_factory=list)
+    blocks: dict[str, str] = Field(default_factory=dict)  # gsm -> block level (kept only)
+    warnings: list[str] = Field(default_factory=list)
+
+
+def plan_design(obs: pd.DataFrame, blocking: str | None, *, min_per_group: int) -> DesignPlan:
+    """Decide between ``~arm`` and ``~block + arm`` from the pairing actually present."""
+    gsms = [str(g) for g in obs.index]
+    arms = {g: str(a) for g, a in zip(gsms, obs[ARM], strict=True)}
+    if blocking is None:
+        return DesignPlan(design=DESIGN_SIMPLE, pairing="none", blocking=None, kept=gsms)
+    if blocking not in obs.columns:
+        return DesignPlan(
+            design=DESIGN_SIMPLE,
+            pairing="ignored",
+            blocking=blocking,
+            kept=gsms,
+            warnings=[f"blocking field {blocking!r} is not in the sample sheet; fitting ~arm"],
+        )
+    levels = {g: str(v) for g, v in zip(gsms, obs[blocking], strict=True)}
+    members: dict[str, set[str]] = {}
+    for g, lvl in levels.items():
+        if lvl and lvl != "nan":
+            members.setdefault(lvl, set()).add(arms[g])
+    complete = {lvl for lvl, arms_seen in members.items() if arms_seen == {"case", "control"}}
+    kept = [g for g in gsms if levels[g] in complete]
+    dropped = [g for g in gsms if g not in set(kept)]
+    if len(complete) < min_per_group:
+        return DesignPlan(
+            design=DESIGN_SIMPLE,
+            pairing="ignored",
+            blocking=blocking,
+            kept=gsms,
+            warnings=[
+                f"only {len(complete)} complete {blocking} pairs (< {min_per_group}); "
+                f"pairing ignored, fitting ~arm on all samples"
+            ],
+        )
+    plan = DesignPlan(
+        design=DESIGN_BLOCKED,
+        pairing="modelled" if not dropped else "incomplete_dropped",
+        blocking=blocking,
+        kept=kept,
+        dropped=dropped,
+        blocks={g: levels[g] for g in kept},
+    )
+    if dropped:
+        plan.warnings.append(
+            f"{len(dropped)} samples without a {blocking} partner in the other arm were "
+            f"dropped from the blocked fit: {dropped}"
+        )
+    return plan
 
 
 def run_de(
-    adata: ad.AnnData, params: DeParams
-) -> tuple[pd.DataFrame, pd.DataFrame, DeResultSummary]:
-    """Returns (results by gene, size-factor normalized counts samples x genes, summary).
+    adata: ad.AnnData, params: DeParams, *, blocking: str | None = None
+) -> tuple[pd.DataFrame, pd.DataFrame, DeResultSummary, DesignPlan]:
+    """Returns (results by gene, normalized counts samples x genes, summary, design plan).
 
     ``adata`` must hold only case and control samples with an ``arm`` column; the
     reference level is forced to ``control`` so a positive log2FC means higher in case.
     """
-    arms = [str(a) for a in obs_frame(adata)[ARM]]
-    if set(arms) != {"case", "control"}:
-        raise ValueError(f"DE needs exactly the arms case and control, got {sorted(set(arms))}")
+    obs = obs_frame(adata)
+    arms_all = [str(a) for a in obs[ARM]]
+    if set(arms_all) != {"case", "control"}:
+        raise ValueError(f"DE needs exactly the arms case and control, got {sorted(set(arms_all))}")
+    if adata.n_vars == 0:
+        raise ValueError("no genes left to test")
+    plan = plan_design(obs, blocking, min_per_group=params.min_per_group)
+    sub = adata[plan.kept].copy()
+    obs = obs_frame(sub)
+    arms = [str(a) for a in obs[ARM]]
+
     counts = pd.DataFrame(
-        np.asarray(adata.layers["counts"], dtype=np.int64),
-        index=adata.obs_names,
-        columns=adata.var_names,
+        np.asarray(sub.layers["counts"], dtype=np.int64),
+        index=sub.obs_names,
+        columns=sub.var_names,
     )
     metadata = pd.DataFrame(
-        {ARM: pd.Categorical(arms, categories=["control", "case"])}, index=adata.obs_names
+        {ARM: pd.Categorical(arms, categories=["control", "case"])}, index=sub.obs_names
     )
+    if plan.design == DESIGN_BLOCKED:
+        metadata[BLOCK] = pd.Categorical([plan.blocks[str(g)] for g in sub.obs_names])
     dds = DeseqDataSet(
-        counts=counts, metadata=metadata, design=DESIGN, quiet=True, n_cpus=params.n_cpus
+        counts=counts, metadata=metadata, design=plan.design, quiet=True, n_cpus=params.n_cpus
     )
     dds.deseq2()
-    stats = DeseqStats(dds, contrast=[ARM, "case", "control"], alpha=params.alpha, quiet=True)
+    stats = DeseqStats(
+        dds, contrast=[ARM, "case", "control"], alpha=params.alpha, quiet=True, n_cpus=params.n_cpus
+    )
     stats.summary()
     results = stats.results_df.copy()
     results["log2fc_unshrunk"] = results["log2FoldChange"]
@@ -73,21 +152,26 @@ def run_de(
     results = results.rename(columns=RESULT_COLUMNS)
     results.index = results.index.astype(str)
     results.index.name = "gene_id"
-    var = var_frame(adata)
-    symbols = var["Symbol"] if "Symbol" in var.columns else pd.Series("", index=adata.var_names)
+    var = var_frame(sub)
+    symbols = var["Symbol"] if "Symbol" in var.columns else pd.Series("", index=sub.var_names)
     results.insert(0, "symbol", symbols.reindex(results.index).fillna("").astype(str).to_numpy())
     results = results.sort_values(["padj", "pvalue"], na_position="last")
 
     normed = pd.DataFrame(
-        np.asarray(dds.layers["normed_counts"]), index=adata.obs_names, columns=adata.var_names
+        np.asarray(dds.layers["normed_counts"]), index=sub.obs_names, columns=sub.var_names
     )
 
     sig = cast(pd.Series, results["padj"] < params.alpha)
     up = cast(pd.Series, sig & (results["log2fc"] > 0))
     down = cast(pd.Series, sig & (results["log2fc"] < 0))
     summary = DeSummary(
-        design=DESIGN,
+        design=plan.design,
         coefficient=COEFFICIENT,
+        blocking=plan.blocking,
+        pairing=plan.pairing,
+        n_case_used=arms.count("case"),
+        n_control_used=arms.count("control"),
+        dropped_unpaired=plan.dropped,
         lfc_shrunk=shrunk,
         alpha=params.alpha,
         lfc_threshold=params.lfc_threshold,
@@ -106,6 +190,7 @@ def run_de(
             top_up=gene_rows(pd.DataFrame(results.loc[up]).head(params.top_n)),
             top_down=gene_rows(pd.DataFrame(results.loc[down]).head(params.top_n)),
         ),
+        plan,
     )
 
 

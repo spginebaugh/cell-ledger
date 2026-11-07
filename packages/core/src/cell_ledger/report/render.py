@@ -33,8 +33,12 @@ def render_markdown(report: AnalysisReport) -> str:
     ]
     if c.rationale:
         lines += [f"> {c.rationale}", ""]
+    if report.error:
+        lines += [f"**The pipeline stopped on an error:** `{report.error}`", ""]
     if report.blockers:
         lines += ["## Blockers", ""] + [f"- {b}" for b in report.blockers] + [""]
+    if report.qualifications:
+        lines += ["## Read with caution", ""] + [f"- {q}" for q in report.qualifications] + [""]
 
     if report.reconciliation:
         r = report.reconciliation
@@ -90,7 +94,12 @@ def render_markdown(report: AnalysisReport) -> str:
             "## Differential expression",
             "",
             f"Design `{s.design}`, coefficient `{s.coefficient}`, "
-            f"{'shrunk' if s.lfc_shrunk else 'unshrunk'} log2FC, alpha {s.alpha}.",
+            f"{'shrunk' if s.lfc_shrunk else 'unshrunk'} log2FC, alpha {s.alpha}. "
+            f"Pairing: {s.pairing}"
+            + (f" by `{s.blocking}`" if s.blocking else "")
+            + f"; {s.n_case_used} case vs {s.n_control_used} control samples fitted"
+            + (f", {len(s.dropped_unpaired)} unpaired dropped" if s.dropped_unpaired else "")
+            + ".",
             f"{s.n_genes_tested} genes tested, {s.n_sig} significant: {s.n_up} higher in case "
             f"({s.n_up_lfc} with |log2FC| >= {s.lfc_threshold}), {s.n_down} higher in control "
             f"({s.n_down_lfc}).",
@@ -130,8 +139,9 @@ def render_markdown(report: AnalysisReport) -> str:
             "| --- | --- | --- | --- | --- | --- | --- |",
         ]
         for g in report.gene_lookup:
+            verdict = g.verdict + (f" ({g.reason})" if g.reason else "")
             lines.append(
-                f"| {g.query} | {g.symbol or ''} | {g.verdict} | "
+                f"| {g.query} | {g.symbol or ''} | {verdict} | "
                 f"{'' if g.log2fc is None else f'{g.log2fc:+.2f}'} | {_fmt(g.padj)} | "
                 f"{'' if g.mean_norm_case is None else f'{g.mean_norm_case:.0f}'} | "
                 f"{'' if g.mean_norm_control is None else f'{g.mean_norm_control:.0f}'} |"

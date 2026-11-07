@@ -74,7 +74,7 @@ def build_anndata(
     columns = list(counts.columns)
     col_set = set(columns)
     sheet_set = set(sheet.gsms)
-    used = [g for g in contrast.gsms if g in col_set]
+    used = [g for g in contrast.gsms if g in col_set and g in sheet_set]
     arms = [contrast.arm_of(g) for g in used]
 
     obs = _clean_obs(sheet.subset(used).to_dataframe().loc[used])
@@ -95,6 +95,7 @@ def build_anndata(
         n_contrast_gsms=len(contrast.gsms),
         gsms_used=used,
         contrast_gsms_missing_from_counts=[g for g in contrast.gsms if g not in col_set],
+        contrast_gsms_missing_from_sheet=[g for g in contrast.gsms if g not in sheet_set],
         sheet_gsms_missing_from_counts=[g for g in sheet.gsms if g not in col_set],
         columns_not_in_sheet=[c for c in columns if c not in sheet_set],
         n_genes=int(counts.shape[0]),

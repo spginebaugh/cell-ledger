@@ -32,7 +32,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "2 hours",
      "stimulation": "media alone"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 2 hours",
+     "stimulation: media alone"
+    ]
    },
    {
     "gsm": "GSM2186788",
@@ -62,7 +67,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "2 hours",
      "stimulation": "TLR2/1 ligand"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 2 hours",
+     "stimulation: TLR2/1 ligand"
+    ]
    },
    {
     "gsm": "GSM2186789",
@@ -92,7 +102,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "2 hours",
      "stimulation": "interferon gamma"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 2 hours",
+     "stimulation: interferon gamma"
+    ]
    },
    {
     "gsm": "GSM2186790",
@@ -122,7 +137,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "6 hours",
      "stimulation": "media alone"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 6 hours",
+     "stimulation: media alone"
+    ]
    },
    {
     "gsm": "GSM2186791",
@@ -152,7 +172,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "6 hours",
      "stimulation": "TLR2/1 ligand"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 6 hours",
+     "stimulation: TLR2/1 ligand"
+    ]
    },
    {
     "gsm": "GSM2186792",
@@ -182,7 +207,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "6 hours",
      "stimulation": "interferon gamma"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 6 hours",
+     "stimulation: interferon gamma"
+    ]
    },
    {
     "gsm": "GSM2186793",
@@ -212,7 +242,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "24 hours",
      "stimulation": "media alone"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 24 hours",
+     "stimulation: media alone"
+    ]
    },
    {
     "gsm": "GSM2186794",
@@ -242,7 +277,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "24 hours",
      "stimulation": "TLR2/1 ligand"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 24 hours",
+     "stimulation: TLR2/1 ligand"
+    ]
    },
    {
     "gsm": "GSM2186795",
@@ -272,7 +312,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "24 hours",
      "stimulation": "interferon gamma"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 24 hours",
+     "stimulation: interferon gamma"
+    ]
    },
    {
     "gsm": "GSM2186796",
@@ -302,7 +347,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "2 hours",
      "stimulation": "media alone"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 2 hours",
+     "stimulation: media alone"
+    ]
    },
    {
     "gsm": "GSM2186797",
@@ -332,7 +382,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "2 hours",
      "stimulation": "TLR2/1 ligand"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 2 hours",
+     "stimulation: TLR2/1 ligand"
+    ]
    },
    {
     "gsm": "GSM2186798",
@@ -362,7 +417,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "2 hours",
      "stimulation": "interferon gamma"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 2 hours",
+     "stimulation: interferon gamma"
+    ]
    },
    {
     "gsm": "GSM2186799",
@@ -392,7 +452,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "6 hours",
      "stimulation": "media alone"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 6 hours",
+     "stimulation: media alone"
+    ]
    },
    {
     "gsm": "GSM2186800",
@@ -422,7 +487,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "6 hours",
      "stimulation": "TLR2/1 ligand"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 6 hours",
+     "stimulation: TLR2/1 ligand"
+    ]
    },
    {
     "gsm": "GSM2186801",
@@ -452,7 +522,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "6 hours",
      "stimulation": "interferon gamma"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 6 hours",
+     "stimulation: interferon gamma"
+    ]
    },
    {
     "gsm": "GSM2186802",
@@ -482,7 +557,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "24 hours",
      "stimulation": "media alone"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 24 hours",
+     "stimulation: media alone"
+    ]
    },
    {
     "gsm": "GSM2186803",
@@ -512,7 +592,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "24 hours",
      "stimulation": "TLR2/1 ligand"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 24 hours",
+     "stimulation: TLR2/1 ligand"
+    ]
    },
    {
     "gsm": "GSM2186804",
@@ -542,7 +627,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "24 hours",
      "stimulation": "interferon gamma"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 24 hours",
+     "stimulation: interferon gamma"
+    ]
    },
    {
     "gsm": "GSM2186805",
@@ -572,7 +662,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "2 hours",
      "stimulation": "media alone"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 2 hours",
+     "stimulation: media alone"
+    ]
    },
    {
     "gsm": "GSM2186806",
@@ -602,7 +697,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "2 hours",
      "stimulation": "TLR2/1 ligand"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 2 hours",
+     "stimulation: TLR2/1 ligand"
+    ]
    },
    {
     "gsm": "GSM2186807",
@@ -632,7 +732,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "2 hours",
      "stimulation": "interferon gamma"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 2 hours",
+     "stimulation: interferon gamma"
+    ]
    },
    {
     "gsm": "GSM2186808",
@@ -662,7 +767,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "6 hours",
      "stimulation": "media alone"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 6 hours",
+     "stimulation: media alone"
+    ]
    },
    {
     "gsm": "GSM2186809",
@@ -692,7 +802,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "6 hours",
      "stimulation": "TLR2/1 ligand"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 6 hours",
+     "stimulation: TLR2/1 ligand"
+    ]
    },
    {
     "gsm": "GSM2186810",
@@ -722,7 +837,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "6 hours",
      "stimulation": "interferon gamma"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 6 hours",
+     "stimulation: interferon gamma"
+    ]
    },
    {
     "gsm": "GSM2186811",
@@ -752,7 +872,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "24 hours",
      "stimulation": "media alone"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 24 hours",
+     "stimulation: media alone"
+    ]
    },
    {
     "gsm": "GSM2186812",
@@ -782,7 +907,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "24 hours",
      "stimulation": "TLR2/1 ligand"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 24 hours",
+     "stimulation: TLR2/1 ligand"
+    ]
    },
    {
     "gsm": "GSM2186813",
@@ -812,7 +942,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "24 hours",
      "stimulation": "interferon gamma"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 24 hours",
+     "stimulation: interferon gamma"
+    ]
    },
    {
     "gsm": "GSM2186814",
@@ -842,7 +977,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "2 hours",
      "stimulation": "media alone"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 2 hours",
+     "stimulation: media alone"
+    ]
    },
    {
     "gsm": "GSM2186815",
@@ -872,7 +1012,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "2 hours",
      "stimulation": "TLR2/1 ligand"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 2 hours",
+     "stimulation: TLR2/1 ligand"
+    ]
    },
    {
     "gsm": "GSM2186816",
@@ -902,7 +1047,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "2 hours",
      "stimulation": "interferon gamma"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 2 hours",
+     "stimulation: interferon gamma"
+    ]
    },
    {
     "gsm": "GSM2186817",
@@ -932,7 +1082,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "6 hours",
      "stimulation": "media alone"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 6 hours",
+     "stimulation: media alone"
+    ]
    },
    {
     "gsm": "GSM2186818",
@@ -962,7 +1117,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "6 hours",
      "stimulation": "TLR2/1 ligand"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 6 hours",
+     "stimulation: TLR2/1 ligand"
+    ]
    },
    {
     "gsm": "GSM2186819",
@@ -992,7 +1152,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "6 hours",
      "stimulation": "interferon gamma"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 6 hours",
+     "stimulation: interferon gamma"
+    ]
    },
    {
     "gsm": "GSM2186820",
@@ -1022,7 +1187,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "24 hours",
      "stimulation": "media alone"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 24 hours",
+     "stimulation: media alone"
+    ]
    },
    {
     "gsm": "GSM2186821",
@@ -1052,7 +1222,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "24 hours",
      "stimulation": "TLR2/1 ligand"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 24 hours",
+     "stimulation: TLR2/1 ligand"
+    ]
    },
    {
     "gsm": "GSM2186822",
@@ -1082,7 +1257,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "24 hours",
      "stimulation": "interferon gamma"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 24 hours",
+     "stimulation: interferon gamma"
+    ]
    },
    {
     "gsm": "GSM2186823",
@@ -1112,7 +1292,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "2 hours",
      "stimulation": "media alone"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 2 hours",
+     "stimulation: media alone"
+    ]
    },
    {
     "gsm": "GSM2186824",
@@ -1142,7 +1327,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "2 hours",
      "stimulation": "TLR2/1 ligand"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 2 hours",
+     "stimulation: TLR2/1 ligand"
+    ]
    },
    {
     "gsm": "GSM2186825",
@@ -1172,7 +1362,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "2 hours",
      "stimulation": "interferon gamma"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 2 hours",
+     "stimulation: interferon gamma"
+    ]
    },
    {
     "gsm": "GSM2186826",
@@ -1202,7 +1397,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "6 hours",
      "stimulation": "media alone"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 6 hours",
+     "stimulation: media alone"
+    ]
    },
    {
     "gsm": "GSM2186827",
@@ -1232,7 +1432,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "6 hours",
      "stimulation": "TLR2/1 ligand"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 6 hours",
+     "stimulation: TLR2/1 ligand"
+    ]
    },
    {
     "gsm": "GSM2186828",
@@ -1262,7 +1467,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "6 hours",
      "stimulation": "interferon gamma"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 6 hours",
+     "stimulation: interferon gamma"
+    ]
    },
    {
     "gsm": "GSM2186829",
@@ -1292,7 +1502,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "24 hours",
      "stimulation": "media alone"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 24 hours",
+     "stimulation: media alone"
+    ]
    },
    {
     "gsm": "GSM2186830",
@@ -1322,7 +1537,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "24 hours",
      "stimulation": "TLR2/1 ligand"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 24 hours",
+     "stimulation: TLR2/1 ligand"
+    ]
    },
    {
     "gsm": "GSM2186831",
@@ -1352,7 +1572,12 @@
      "cell type": "monocyte-dervied macrophages",
      "stimulation length": "24 hours",
      "stimulation": "interferon gamma"
-    }
+    },
+    "raw_lines": [
+     "cell type: monocyte-dervied macrophages",
+     "stimulation length: 24 hours",
+     "stimulation: interferon gamma"
+    ]
    }
   ]
  },
