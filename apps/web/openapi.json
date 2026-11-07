@@ -435,7 +435,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RunRequest"
+                "$ref": "#/components/schemas/cell_ledger_api__runs__RunRequest"
               }
             }
           }
@@ -571,6 +571,242 @@
                 "schema": {
                   "$ref": "#/components/schemas/FileUrl"
                 }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/runs": {
+      "get": {
+        "summary": "List Saved Runs",
+        "operationId": "listSavedRuns",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SavedRunLibrary"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create Run",
+        "operationId": "createRun",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/cell_ledger__pipeline__RunRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RunCreated"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/runs/{run_id}": {
+      "get": {
+        "summary": "Get Run",
+        "operationId": "getRun",
+        "parameters": [
+          {
+            "name": "run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Run Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RunSnapshot"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/runs/{run_id}/answer": {
+      "post": {
+        "summary": "Answer Run",
+        "operationId": "answerRun",
+        "parameters": [
+          {
+            "name": "run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Run Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GroupAnswer"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Answerrun"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/runs/{run_id}/samples/{gse}": {
+      "get": {
+        "summary": "Get Samples",
+        "operationId": "getSamples",
+        "parameters": [
+          {
+            "name": "run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Run Id"
+            }
+          },
+          {
+            "name": "gse",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Gse"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "string"
+                    }
+                  },
+                  "title": "Response Getsamples"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/runs/{run_id}/bundle": {
+      "get": {
+        "summary": "Download Bundle",
+        "operationId": "downloadBundle",
+        "parameters": [
+          {
+            "name": "run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Run Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
               }
             }
           },
@@ -1702,6 +1938,27 @@
         "title": "Group",
         "description": "Role of a sample relative to the research question."
       },
+      "GroupAnswer": {
+        "properties": {
+          "case": {
+            "type": "string",
+            "title": "Case",
+            "default": ""
+          },
+          "control": {
+            "type": "string",
+            "title": "Control",
+            "default": ""
+          },
+          "skip": {
+            "type": "boolean",
+            "title": "Skip",
+            "default": false
+          }
+        },
+        "type": "object",
+        "title": "GroupAnswer"
+      },
       "HTTPValidationError": {
         "properties": {
           "detail": {
@@ -2026,52 +2283,68 @@
         "title": "Reconciliation",
         "description": "How the counts matrix columns lined up with the sample sheet and contrast."
       },
-      "RunRequest": {
+      "RunCreated": {
         "properties": {
-          "samplesheet": {
-            "$ref": "#/components/schemas/SampleSheet"
-          },
-          "contrasts": {
-            "items": {
-              "$ref": "#/components/schemas/Contrast"
-            },
-            "type": "array",
-            "minItems": 1,
-            "title": "Contrasts"
-          },
-          "markers": {
-            "items": {
-              "$ref": "#/components/schemas/MarkerExpectation"
-            },
-            "type": "array",
-            "title": "Markers"
-          },
-          "genes": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "title": "Genes",
-            "description": "symbols or GeneIDs to look up"
-          },
-          "enrichment": {
-            "type": "boolean",
-            "title": "Enrichment",
-            "default": true
-          },
-          "figures": {
-            "type": "boolean",
-            "title": "Figures",
-            "default": true
+          "id": {
+            "type": "string",
+            "title": "Id"
           }
         },
         "type": "object",
         "required": [
-          "samplesheet",
-          "contrasts"
+          "id"
         ],
-        "title": "RunRequest",
-        "description": "One design file, as ``cell-ledger run --design`` reads it, plus a few run options."
+        "title": "RunCreated"
+      },
+      "RunSnapshot": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "manifest": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Manifest"
+          },
+          "events": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Events"
+          },
+          "questions": {
+            "type": "string",
+            "title": "Questions"
+          },
+          "pending_question": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pending Question"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "status",
+          "manifest",
+          "events",
+          "questions"
+        ],
+        "title": "RunSnapshot"
       },
       "RunStatus": {
         "properties": {
@@ -2580,6 +2853,65 @@
         ],
         "title": "SampleSheet"
       },
+      "SavedRun": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "topic": {
+            "type": "string",
+            "title": "Topic"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "started_at": {
+            "type": "string",
+            "title": "Started At"
+          },
+          "dataset_count": {
+            "type": "integer",
+            "title": "Dataset Count"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "topic",
+          "status",
+          "started_at",
+          "dataset_count"
+        ],
+        "title": "SavedRun"
+      },
+      "SavedRunLibrary": {
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "title": "Enabled"
+          },
+          "runs": {
+            "items": {
+              "$ref": "#/components/schemas/SavedRun"
+            },
+            "type": "array",
+            "title": "Runs"
+          },
+          "unreadable_count": {
+            "type": "integer",
+            "title": "Unreadable Count",
+            "default": 0
+          }
+        },
+        "type": "object",
+        "required": [
+          "enabled",
+          "runs"
+        ],
+        "title": "SavedRunLibrary"
+      },
       "SearchRequest": {
         "properties": {
           "queries": {
@@ -2913,6 +3245,141 @@
           "found_at"
         ],
         "title": "WebSeriesHit"
+      },
+      "cell_ledger__pipeline__RunRequest": {
+        "properties": {
+          "topic": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 3,
+            "title": "Topic"
+          },
+          "organism": {
+            "type": "string",
+            "title": "Organism",
+            "default": "human"
+          },
+          "max_datasets": {
+            "type": "integer",
+            "maximum": 10.0,
+            "minimum": 1.0,
+            "title": "Max Datasets",
+            "default": 3
+          },
+          "min_per_group": {
+            "type": "integer",
+            "maximum": 100.0,
+            "minimum": 3.0,
+            "title": "Min Per Group",
+            "default": 3
+          },
+          "since": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 2100.0,
+                "minimum": 1900.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Since"
+          },
+          "case": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 200
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Case"
+          },
+          "control": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 200
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Control"
+          },
+          "offline": {
+            "type": "boolean",
+            "title": "Offline",
+            "default": false
+          },
+          "ask_user": {
+            "type": "boolean",
+            "title": "Ask User",
+            "default": false
+          },
+          "max_bytes": {
+            "type": "integer",
+            "maximum": 500000000.0,
+            "minimum": 1000.0,
+            "title": "Max Bytes",
+            "default": 500000000
+          }
+        },
+        "type": "object",
+        "required": [
+          "topic"
+        ],
+        "title": "RunRequest"
+      },
+      "cell_ledger_api__runs__RunRequest": {
+        "properties": {
+          "samplesheet": {
+            "$ref": "#/components/schemas/SampleSheet"
+          },
+          "contrasts": {
+            "items": {
+              "$ref": "#/components/schemas/Contrast"
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Contrasts"
+          },
+          "markers": {
+            "items": {
+              "$ref": "#/components/schemas/MarkerExpectation"
+            },
+            "type": "array",
+            "title": "Markers"
+          },
+          "genes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Genes",
+            "description": "symbols or GeneIDs to look up"
+          },
+          "enrichment": {
+            "type": "boolean",
+            "title": "Enrichment",
+            "default": true
+          },
+          "figures": {
+            "type": "boolean",
+            "title": "Figures",
+            "default": true
+          }
+        },
+        "type": "object",
+        "required": [
+          "samplesheet",
+          "contrasts"
+        ],
+        "title": "RunRequest",
+        "description": "One design file, as ``cell-ledger run --design`` reads it, plus a few run options."
       }
     }
   }

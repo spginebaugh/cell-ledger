@@ -18,6 +18,10 @@ CHUNK = 1 << 20
 
 
 class ObjectStore(Protocol):
+    async def list_paths(self, prefix: str) -> list[str]: ...
+
+    async def get(self, path: str) -> bytes | None: ...
+
     async def put(self, path: str, data: bytes, content_type: str) -> None: ...
 
     async def put_file(self, path: str, file: Path, content_type: str) -> None:
@@ -38,6 +42,13 @@ class SupabaseStore:
 
     def _object(self, path: str) -> str:
         return f"{self._base}/object/{self._bucket}/{quote(path)}"
+
+    async def get(self, path: str) -> bytes | None:
+        r = await self._http.get(self._object(path), headers=self._headers)
+        if r.status_code == 404 or (r.status_code == 400 and r.json().get("code") == "NoSuchKey"):
+            return None
+        r.raise_for_status()
+        return r.content
 
     async def put(self, path: str, data: bytes, content_type: str) -> None:
         r = await self._http.post(
@@ -93,6 +104,9 @@ class SupabaseStore:
                 offset += 1000
         return paths
 
+    async def list_paths(self, prefix: str) -> list[str]:
+        return await self._list(prefix)
+
     async def delete_prefix(self, prefix: str) -> int:
         paths = await self._list(prefix)
         for i in range(0, len(paths), 1000):
@@ -120,6 +134,12 @@ class SupabaseStore:
 class MemoryStore:
     def __init__(self) -> None:
         self.objects: dict[str, bytes] = {}
+
+    async def get(self, path: str) -> bytes | None:
+        return self.objects.get(path)
+
+    async def list_paths(self, prefix: str) -> list[str]:
+        return sorted(p for p in self.objects if p.startswith(prefix.rstrip("/") + "/"))
 
     async def put(self, path: str, data: bytes, content_type: str) -> None:
         self.objects[path] = data

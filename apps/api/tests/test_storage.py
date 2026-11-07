@@ -81,3 +81,22 @@ async def test_signed_url_is_absolute_and_missing_is_none() -> None:
     async with http:
         assert await store.signed_url("s1/x", 60) == f"{BASE}/object/sign/sessions/s1/x?token=t"
         assert await store.signed_url("s1/missing", 60) is None
+
+
+async def test_get_reads_private_object_and_distinguishes_missing_from_failure():
+    import pytest
+
+    def handle(r):
+        assert r.headers["apikey"] == "sb_secret_x"
+        if "missing" in r.url.path:
+            return httpx.Response(400, json={"code": "NoSuchKey"})
+        if "denied" in r.url.path:
+            return httpx.Response(403, json={"error": "denied"})
+        return httpx.Response(200, content=b"saved data")
+
+    store, http = _store(handle)
+    async with http:
+        assert await store.get("runs/a/manifest.json") == b"saved data"
+        assert await store.get("runs/a/missing") is None
+        with pytest.raises(httpx.HTTPStatusError):
+            await store.get("runs/a/denied")

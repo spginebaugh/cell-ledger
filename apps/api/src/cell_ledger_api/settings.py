@@ -7,6 +7,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_prefix="CELL_LEDGER_", env_file=".env", extra="ignore")
 
+    model: str | None = None
     data_dir: Path = Path("data")
 
     # Built frontend (apps/web/dist). Set -> served from "/" on the same origin as the
@@ -17,7 +18,9 @@ class Settings(BaseSettings):
     cors_origins: list[str] = ["http://localhost:5173"]
 
     # NCBI E-utilities: 10 requests/s with a key, 3 without.
-    ncbi_api_key: SecretStr | None = None
+    ncbi_api_key: SecretStr | None = Field(
+        default=None, validation_alias=AliasChoices("CELL_LEDGER_NCBI_API_KEY", "NCBI_API_KEY")
+    )
 
     # Supabase Storage for session files. Unset -> files stay on local disk only.
     supabase_url: str | None = None
@@ -25,7 +28,10 @@ class Settings(BaseSettings):
     supabase_bucket: str = "sessions"
 
     # Claude drives the clarifying/narrowing loop. Opus 5.5 defaults to medium effort.
-    anthropic_api_key: SecretStr | None = None
+    anthropic_api_key: SecretStr | None = Field(
+        default=None,
+        validation_alias=AliasChoices("CELL_LEDGER_ANTHROPIC_API_KEY", "ANTHROPIC_API_KEY"),
+    )
     anthropic_model: str = "claude-opus-5-5"
     anthropic_effort: str = "medium"
 

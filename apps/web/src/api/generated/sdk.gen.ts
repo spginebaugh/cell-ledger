@@ -2,7 +2,7 @@
 
 import type { Client, ClientMeta, Options as Options2, RequestResult, TDataShape } from './client';
 import { client } from './client.gen';
-import type { CollectDatasetsData, CollectDatasetsErrors, CollectDatasetsResponses, CreateSessionData, CreateSessionResponses, DeleteSessionData, DeleteSessionErrors, DeleteSessionResponses, GetDatasetFileUrlData, GetDatasetFileUrlErrors, GetDatasetFileUrlResponses, GetHealthData, GetHealthResponses, GetRunFileUrlData, GetRunFileUrlErrors, GetRunFileUrlResponses, GetSessionData, GetSessionErrors, GetSessionResponses, ListDatasetsData, ListDatasetsErrors, ListDatasetsResponses, ListRunsData, ListRunsErrors, ListRunsResponses, SearchGeoData, SearchGeoErrors, SearchGeoOnWebData, SearchGeoOnWebErrors, SearchGeoOnWebResponses, SearchGeoResponses, StartRunData, StartRunErrors, StartRunResponses, VerifyGeoSeriesData, VerifyGeoSeriesErrors, VerifyGeoSeriesResponses } from './types.gen';
+import type { AnswerRunData, AnswerRunErrors, AnswerRunResponses, CollectDatasetsData, CollectDatasetsErrors, CollectDatasetsResponses, CreateRunData, CreateRunErrors, CreateRunResponses, CreateSessionData, CreateSessionResponses, DeleteSessionData, DeleteSessionErrors, DeleteSessionResponses, DownloadBundleData, DownloadBundleErrors, DownloadBundleResponses, GetDatasetFileUrlData, GetDatasetFileUrlErrors, GetDatasetFileUrlResponses, GetHealthData, GetHealthResponses, GetRunData, GetRunErrors, GetRunFileUrlData, GetRunFileUrlErrors, GetRunFileUrlResponses, GetRunResponses, GetSamplesData, GetSamplesErrors, GetSamplesResponses, GetSessionData, GetSessionErrors, GetSessionResponses, ListDatasetsData, ListDatasetsErrors, ListDatasetsResponses, ListRunsData, ListRunsErrors, ListRunsResponses, ListSavedRunsData, ListSavedRunsResponses, SearchGeoData, SearchGeoErrors, SearchGeoOnWebData, SearchGeoOnWebErrors, SearchGeoOnWebResponses, SearchGeoResponses, StartRunData, StartRunErrors, StartRunResponses, VerifyGeoSeriesData, VerifyGeoSeriesErrors, VerifyGeoSeriesResponses } from './types.gen';
 
 export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends boolean = boolean, TResponse = unknown> = Options2<TData, ThrowOnError, TResponse> & {
     /**
@@ -139,3 +139,47 @@ export const startRun = <ThrowOnError extends boolean = false>(options: Options<
  * Short-lived download link for one run output, e.g. ``report.json`` or ``figures/pca.png``.
  */
 export const getRunFileUrl = <ThrowOnError extends boolean = false>(options: Options<GetRunFileUrlData, ThrowOnError>): RequestResult<GetRunFileUrlResponses, GetRunFileUrlErrors, ThrowOnError> => (options.client ?? client).get<GetRunFileUrlResponses, GetRunFileUrlErrors, ThrowOnError>({ url: '/api/sessions/{session_id}/runs/{gse}/{contrast}/files/{name}', ...options });
+
+/**
+ * List Saved Runs
+ */
+export const listSavedRuns = <ThrowOnError extends boolean = false>(options?: Options<ListSavedRunsData, ThrowOnError>): RequestResult<ListSavedRunsResponses, unknown, ThrowOnError> => (options?.client ?? client).get<ListSavedRunsResponses, unknown, ThrowOnError>({ url: '/api/runs', ...options });
+
+/**
+ * Create Run
+ */
+export const createRun = <ThrowOnError extends boolean = false>(options: Options<CreateRunData, ThrowOnError>): RequestResult<CreateRunResponses, CreateRunErrors, ThrowOnError> => (options.client ?? client).post<CreateRunResponses, CreateRunErrors, ThrowOnError>({
+    url: '/api/runs',
+    ...options,
+    headers: {
+        'Content-Type': 'application/json',
+        ...options.headers
+    }
+});
+
+/**
+ * Get Run
+ */
+export const getRun = <ThrowOnError extends boolean = false>(options: Options<GetRunData, ThrowOnError>): RequestResult<GetRunResponses, GetRunErrors, ThrowOnError> => (options.client ?? client).get<GetRunResponses, GetRunErrors, ThrowOnError>({ url: '/api/runs/{run_id}', ...options });
+
+/**
+ * Answer Run
+ */
+export const answerRun = <ThrowOnError extends boolean = false>(options: Options<AnswerRunData, ThrowOnError>): RequestResult<AnswerRunResponses, AnswerRunErrors, ThrowOnError> => (options.client ?? client).post<AnswerRunResponses, AnswerRunErrors, ThrowOnError>({
+    url: '/api/runs/{run_id}/answer',
+    ...options,
+    headers: {
+        'Content-Type': 'application/json',
+        ...options.headers
+    }
+});
+
+/**
+ * Get Samples
+ */
+export const getSamples = <ThrowOnError extends boolean = false>(options: Options<GetSamplesData, ThrowOnError>): RequestResult<GetSamplesResponses, GetSamplesErrors, ThrowOnError> => (options.client ?? client).get<GetSamplesResponses, GetSamplesErrors, ThrowOnError>({ url: '/api/runs/{run_id}/samples/{gse}', ...options });
+
+/**
+ * Download Bundle
+ */
+export const downloadBundle = <ThrowOnError extends boolean = false>(options: Options<DownloadBundleData, ThrowOnError>): RequestResult<DownloadBundleResponses, DownloadBundleErrors, ThrowOnError> => (options.client ?? client).get<DownloadBundleResponses, DownloadBundleErrors, ThrowOnError>({ url: '/api/runs/{run_id}/bundle', ...options });

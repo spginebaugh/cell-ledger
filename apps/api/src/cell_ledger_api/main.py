@@ -11,7 +11,7 @@ from fastapi.responses import JSONResponse
 from cell_ledger.geo import GeoClient
 from cell_ledger_api import __version__
 from cell_ledger_api.discovery import ExaSearcher
-from cell_ledger_api.routes import geo, health, runs, sessions
+from cell_ledger_api.routes import geo, health, runs, sessions, topic_runs
 from cell_ledger_api.runs import DEFAULT_COMMAND, RunService
 from cell_ledger_api.sessions import SessionNotFound, SessionService
 from cell_ledger_api.settings import Settings, settings
@@ -85,6 +85,7 @@ def create_app(
                     await own_exa.aclose()
 
     app = FastAPI(title="cell-ledger", version=__version__, lifespan=lifespan)
+    app.state.settings = cfg
     app.add_middleware(
         CORSMiddleware,
         allow_origins=cfg.cors_origins,
@@ -96,7 +97,7 @@ def create_app(
     async def _session_not_found(request: Request, exc: SessionNotFound) -> JSONResponse:
         return JSONResponse({"detail": "session not found"}, status_code=404)
 
-    for r in (health.router, geo.router, sessions.router, runs.router):
+    for r in (health.router, geo.router, sessions.router, runs.router, topic_runs.router):
         app.include_router(r, prefix="/api")
 
     if cfg.web_dist is not None:

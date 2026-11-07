@@ -661,6 +661,24 @@ export type GeoSeriesHit = {
 export type Group = 'case' | 'control' | 'other' | 'unknown';
 
 /**
+ * GroupAnswer
+ */
+export type GroupAnswer = {
+    /**
+     * Case
+     */
+    case?: string;
+    /**
+     * Control
+     */
+    control?: string;
+    /**
+     * Skip
+     */
+    skip?: boolean;
+};
+
+/**
  * HTTPValidationError
  */
 export type HttpValidationError = {
@@ -880,34 +898,49 @@ export type Reconciliation = {
 };
 
 /**
- * RunRequest
- *
- * One design file, as ``cell-ledger run --design`` reads it, plus a few run options.
+ * RunCreated
  */
-export type RunRequest = {
-    samplesheet: SampleSheet;
+export type RunCreated = {
     /**
-     * Contrasts
+     * Id
      */
-    contrasts: Array<Contrast>;
+    id: string;
+};
+
+/**
+ * RunSnapshot
+ */
+export type RunSnapshot = {
     /**
-     * Markers
+     * Id
      */
-    markers?: Array<MarkerExpectation>;
+    id: string;
     /**
-     * Genes
-     *
-     * symbols or GeneIDs to look up
+     * Status
      */
-    genes?: Array<string>;
+    status: string;
     /**
-     * Enrichment
+     * Manifest
      */
-    enrichment?: boolean;
+    manifest: {
+        [key: string]: unknown;
+    };
     /**
-     * Figures
+     * Events
      */
-    figures?: boolean;
+    events: Array<{
+        [key: string]: unknown;
+    }>;
+    /**
+     * Questions
+     */
+    questions: string;
+    /**
+     * Pending Question
+     */
+    pending_question?: {
+        [key: string]: unknown;
+    } | null;
 };
 
 /**
@@ -1171,6 +1204,50 @@ export type SampleSheet = {
 };
 
 /**
+ * SavedRun
+ */
+export type SavedRun = {
+    /**
+     * Id
+     */
+    id: string;
+    /**
+     * Topic
+     */
+    topic: string;
+    /**
+     * Status
+     */
+    status: string;
+    /**
+     * Started At
+     */
+    started_at: string;
+    /**
+     * Dataset Count
+     */
+    dataset_count: number;
+};
+
+/**
+ * SavedRunLibrary
+ */
+export type SavedRunLibrary = {
+    /**
+     * Enabled
+     */
+    enabled: boolean;
+    /**
+     * Runs
+     */
+    runs: Array<SavedRun>;
+    /**
+     * Unreadable Count
+     */
+    unreadable_count?: number;
+};
+
+/**
  * SearchRequest
  */
 export type SearchRequest = {
@@ -1383,6 +1460,83 @@ export type WebSeriesHit = {
      * Pages where Exa found the accession
      */
     found_at: Array<string>;
+};
+
+/**
+ * RunRequest
+ */
+export type CellLedgerPipelineRunRequest = {
+    /**
+     * Topic
+     */
+    topic: string;
+    /**
+     * Organism
+     */
+    organism?: string;
+    /**
+     * Max Datasets
+     */
+    max_datasets?: number;
+    /**
+     * Min Per Group
+     */
+    min_per_group?: number;
+    /**
+     * Since
+     */
+    since?: number | null;
+    /**
+     * Case
+     */
+    case?: string | null;
+    /**
+     * Control
+     */
+    control?: string | null;
+    /**
+     * Offline
+     */
+    offline?: boolean;
+    /**
+     * Ask User
+     */
+    ask_user?: boolean;
+    /**
+     * Max Bytes
+     */
+    max_bytes?: number;
+};
+
+/**
+ * RunRequest
+ *
+ * One design file, as ``cell-ledger run --design`` reads it, plus a few run options.
+ */
+export type CellLedgerApiRunsRunRequest = {
+    samplesheet: SampleSheet;
+    /**
+     * Contrasts
+     */
+    contrasts: Array<Contrast>;
+    /**
+     * Markers
+     */
+    markers?: Array<MarkerExpectation>;
+    /**
+     * Genes
+     *
+     * symbols or GeneIDs to look up
+     */
+    genes?: Array<string>;
+    /**
+     * Enrichment
+     */
+    enrichment?: boolean;
+    /**
+     * Figures
+     */
+    figures?: boolean;
 };
 
 /**
@@ -1806,7 +1960,7 @@ export type ListRunsResponses = {
 export type ListRunsResponse = ListRunsResponses[keyof ListRunsResponses];
 
 export type StartRunData = {
-    body: RunRequest;
+    body: CellLedgerApiRunsRunRequest;
     path: {
         /**
          * Session Id
@@ -1878,3 +2032,174 @@ export type GetRunFileUrlResponses = {
 };
 
 export type GetRunFileUrlResponse = GetRunFileUrlResponses[keyof GetRunFileUrlResponses];
+
+export type ListSavedRunsData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/api/runs';
+};
+
+export type ListSavedRunsResponses = {
+    /**
+     * Successful Response
+     */
+    200: SavedRunLibrary;
+};
+
+export type ListSavedRunsResponse = ListSavedRunsResponses[keyof ListSavedRunsResponses];
+
+export type CreateRunData = {
+    body: CellLedgerPipelineRunRequest;
+    path?: never;
+    query?: never;
+    url: '/api/runs';
+};
+
+export type CreateRunErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+};
+
+export type CreateRunError = CreateRunErrors[keyof CreateRunErrors];
+
+export type CreateRunResponses = {
+    /**
+     * Successful Response
+     */
+    202: RunCreated;
+};
+
+export type CreateRunResponse = CreateRunResponses[keyof CreateRunResponses];
+
+export type GetRunData = {
+    body?: never;
+    path: {
+        /**
+         * Run Id
+         */
+        run_id: string;
+    };
+    query?: never;
+    url: '/api/runs/{run_id}';
+};
+
+export type GetRunErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+};
+
+export type GetRunError = GetRunErrors[keyof GetRunErrors];
+
+export type GetRunResponses = {
+    /**
+     * Successful Response
+     */
+    200: RunSnapshot;
+};
+
+export type GetRunResponse = GetRunResponses[keyof GetRunResponses];
+
+export type AnswerRunData = {
+    body: GroupAnswer;
+    path: {
+        /**
+         * Run Id
+         */
+        run_id: string;
+    };
+    query?: never;
+    url: '/api/runs/{run_id}/answer';
+};
+
+export type AnswerRunErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+};
+
+export type AnswerRunError = AnswerRunErrors[keyof AnswerRunErrors];
+
+export type AnswerRunResponses = {
+    /**
+     * Response Answerrun
+     *
+     * Successful Response
+     */
+    200: {
+        [key: string]: unknown;
+    };
+};
+
+export type AnswerRunResponse = AnswerRunResponses[keyof AnswerRunResponses];
+
+export type GetSamplesData = {
+    body?: never;
+    path: {
+        /**
+         * Run Id
+         */
+        run_id: string;
+        /**
+         * Gse
+         */
+        gse: string;
+    };
+    query?: never;
+    url: '/api/runs/{run_id}/samples/{gse}';
+};
+
+export type GetSamplesErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+};
+
+export type GetSamplesError = GetSamplesErrors[keyof GetSamplesErrors];
+
+export type GetSamplesResponses = {
+    /**
+     * Response Getsamples
+     *
+     * Successful Response
+     */
+    200: Array<{
+        [key: string]: string;
+    }>;
+};
+
+export type GetSamplesResponse = GetSamplesResponses[keyof GetSamplesResponses];
+
+export type DownloadBundleData = {
+    body?: never;
+    path: {
+        /**
+         * Run Id
+         */
+        run_id: string;
+    };
+    query?: never;
+    url: '/api/runs/{run_id}/bundle';
+};
+
+export type DownloadBundleErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+};
+
+export type DownloadBundleError = DownloadBundleErrors[keyof DownloadBundleErrors];
+
+export type DownloadBundleResponses = {
+    /**
+     * Successful Response
+     */
+    200: unknown;
+};
