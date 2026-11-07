@@ -175,3 +175,23 @@ def test_lookup_distinguishes_untestable_from_no_evidence():
         ("untestable", "independent_filtering"),
         ("untestable", "outlier_or_all_zero"),
     ]
+
+
+def test_filter_keeps_genes_of_interest_with_any_reads():
+    import anndata as ad
+
+    # 6 samples, 3 per arm. Gene "1" passes; "3605" (IL17A) is low but present; "9" is silent.
+    counts = np.array(
+        [[50, 2, 0], [60, 0, 0], [55, 3, 0], [40, 1, 0], [45, 0, 0], [52, 4, 0]], dtype=np.int64
+    )
+    obs = pd.DataFrame({"arm": ["case"] * 3 + ["control"] * 3}, index=[f"GSM{i}" for i in range(6)])
+    adata = ad.AnnData(X=counts.astype(float), obs=obs, var=pd.DataFrame(index=["1", "3605", "9"]))
+    adata.layers["counts"] = counts
+
+    plain, fsum = filter_genes(adata, min_count=10)
+    assert list(plain.var_names) == ["1"] and fsum.kept_below_threshold == []
+
+    asked, fsum = filter_genes(adata, min_count=10, always_keep=["3605", "9"])
+    # The asked-for low gene is tested; a gene with no reads at all still is not.
+    assert list(asked.var_names) == ["1", "3605"]
+    assert fsum.kept_below_threshold == ["3605"] and fsum.n_genes_after == 2
