@@ -27,7 +27,7 @@ annotation table, and a design file (`samplesheet` + `contrasts` + optional
 | 6 | GSEA | gseapy prerank on the Wald statistic, MSigDB Hallmark (bundled GMT) | skipped with a warning on error |
 | 7 | gene lookup | per-gene verdict: up / down / no_evidence / not_tested / not_found; marker-panel score | |
 | 8 | figures | library sizes, PCA, volcano, genes of interest, enrichment | |
-| 9 | write | TSV/CSV tables, `volcano.json.gz` for the UI, `report.json`, `report.md` | |
+| 9 | write | TSV/CSV tables, `volcano.json.gz` and `heatmap.json.gz` for the UI, `report.json`, `report.md` | |
 
 Every step appends a `StepRecord` (parameters, seconds, warnings) to the report. With
 `--progress`, the CLI also prints one `CL_PROGRESS {json}` line per step start and finish on
@@ -74,6 +74,10 @@ gene_lookup.csv          verdict table for genes of interest + markers; verdicts
                          untestable (reason: independent_filtering or outlier_or_all_zero), not_tested, not_found
 volcano.json.gz          gene_id / symbol / base_mean / log2fc / padj as gzipped column arrays: what the
                          web UI draws (the full-precision table is de_results.tsv)
+heatmap.json.gz          the 50 most significant genes (half per direction, with the fold-change floor when
+                         enough pass it) z-scored over the fitted samples, plus a row and column order from
+                         average-linkage clustering on correlation distance: the UI's expression heatmap.
+                         Clustering never sees the arms; the UI draws the arm bar on top afterwards
 report.json              AnalysisReport, canonical (the only source the LLM may quote numbers from);
                          carries a fingerprint of inputs, design, parameters and code version
 error.txt                traceback, only when the run stopped on an exception

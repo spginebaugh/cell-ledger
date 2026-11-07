@@ -157,6 +157,15 @@ class Concordance(BaseModel):
     groups: dict[str, str] = Field(default_factory=dict, description="label -> group")
 
 
+class MemberEffect(BaseModel):
+    """One dataset's estimate for one gene, as the forest plot draws it."""
+
+    log2fc: float | None = Field(default=None, description="unshrunk log2FC")
+    se: float | None = None
+    padj: float | None = None
+    n_samples: int | None = None
+
+
 class GeneMeta(BaseModel):
     gene_id: str
     symbol: str | None = None
@@ -188,6 +197,11 @@ class GeneMeta(BaseModel):
     i2: float | None = None
     stouffer_z: float | None = None
     robust: bool = False
+    effects: dict[str, MemberEffect] = Field(
+        default_factory=dict,
+        description="label -> that dataset's estimate; filled for the genes in the top tables "
+        "so the browser can draw them across datasets",
+    )
 
 
 class GeneSynthesis(BaseModel):
@@ -234,15 +248,6 @@ class GeneLeaveOneOut(BaseModel):
     pvalue: float | None = None
     verdict: AcrossVerdict
     changed: bool = Field(description="verdict differs from the full-set verdict")
-
-
-class MemberEffect(BaseModel):
-    """One dataset's estimate for one gene, as the forest plot draws it."""
-
-    log2fc: float | None = Field(default=None, description="unshrunk log2FC")
-    se: float | None = None
-    padj: float | None = None
-    n_samples: int | None = None
 
 
 class GeneLookupAcross(BaseModel):

@@ -205,6 +205,13 @@ def test_flags_quarantine_and_synthesis(runs: dict[str, Path], tmp_path: Path) -
     # the permuted run contributes an unrelated gene's effect (or none): the five good
     # runs are always present and always agree
     assert all(x.n_tested >= 5 and x.n_agree_pooled >= 5 for x in g.top_up[:10])
+    # Top rows carry each dataset's own estimate so the browser can draw them side by side.
+    assert all(set(x.effects) == set(g.members) for x in (*g.top_up, *g.top_down))
+    for x in g.top_up[:5]:
+        for lab in g.members:
+            e = x.effects[lab]
+            if e.padj is not None and e.padj < g.alpha:
+                assert e.log2fc is not None and e.log2fc > 0
     # three runs: HKSJ with two degrees of freedom is conservative, by design
     assert set(report.strata) == {"a", "b"} and report.strata["a"].n_robust_up >= 5
     assert len(report.strata["b"].members) == 2  # k=2: HKSJ with one df, few robust genes

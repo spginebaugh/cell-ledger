@@ -249,6 +249,107 @@ def write_volcano(results: pd.DataFrame, path: Path, *, alpha: float, lfc_thresh
         json.dump(doc, f, separators=(",", ":"), allow_nan=False)
 
 
+HEATMAP_GENES = 50
+
+
+def _cluster_order(x: np.ndarray) -> list[int]:
+    """Row order from average-linkage hierarchical clustering on correlation distance.
+
+    Falls back to the given order when there is nothing to cluster or the distances are
+    degenerate (constant rows), so the artifact is always written.
+    """
+    n = x.shape[0]
+    if n < 3:
+        return list(range(n))
+    try:
+        from scipy.cluster.hierarchy import leaves_list, linkage, optimal_leaf_ordering
+        from scipy.spatial.distance import pdist
+
+        d = pdist(x, metric="correlation")
+        if not np.all(np.isfinite(d)):
+            return list(range(n))
+        link = linkage(d, method="average")
+        return [int(i) for i in leaves_list(optimal_leaf_ordering(link, d))]
+    except Exception:
+        return list(range(n))
+
+
+def write_heatmap(
+    results: pd.DataFrame,
+    log2n: pd.DataFrame,
+    arms: pd.Series,
+    path: Path,
+    *,
+    alpha: float,
+    lfc_threshold: float,
+    n_genes: int = HEATMAP_GENES,
+) -> int:
+    """The expression heatmap the browser draws: the top genes by adjusted p (half from each
+    direction, with the fold-change floor when enough genes pass it), z-scored per gene over
+    the fitted observations, both axes ordered by hierarchical clustering.
+
+    Clustering is blind to the arms: the arm bar the browser draws on top is how the reader
+    judges whether the groups separate. Returns the number of genes written (0 writes nothing).
+    """
+    tested: pd.DataFrame = results.loc[results["padj"].notna() & (results["padj"] < alpha)]
+    sig: pd.DataFrame = tested.loc[tested.index.isin(log2n.columns)]
+
+    def top(direction: int) -> pd.DataFrame:
+        lfc = sig["log2fc"].to_numpy(dtype=float)
+        side: pd.DataFrame = sig.loc[np.sign(lfc) == direction]
+        side_lfc = side["log2fc"].to_numpy(dtype=float)
+        strong: pd.DataFrame = side.loc[np.abs(side_lfc) >= lfc_threshold]
+        pool = strong if len(strong) >= n_genes // 2 else side
+        ranked = pool.assign(_a=np.abs(pool["log2fc"].to_numpy(dtype=float)))
+        return ranked.sort_values(["padj", "_a"], ascending=[True, False])
+
+    up, down = top(1), top(-1)
+    half = n_genes // 2
+    chosen = pd.concat([up.head(half), down.head(half)])
+    # when one direction is short, let the other fill the remaining rows
+    if len(chosen) < n_genes:
+        rest = pd.concat([up.iloc[half:], down.iloc[half:]]).sort_values("padj")
+        chosen = pd.concat([chosen, rest.head(n_genes - len(chosen))])
+    if len(chosen) < 2:
+        return 0
+    gene_ids = [str(g) for g in chosen.index]
+    x = log2n[gene_ids].to_numpy(dtype=float).T  # genes x samples
+    mu = x.mean(axis=1, keepdims=True)
+    sd = x.std(axis=1, keepdims=True)
+    sd[sd == 0] = 1.0
+    z = (x - mu) / sd
+    row_order = _cluster_order(z)
+    col_order = _cluster_order(z.T)
+    samples = [str(s) for s in log2n.index]
+    doc = {
+        "n_genes": len(gene_ids),
+        "n_samples": len(samples),
+        "alpha": alpha,
+        "lfc_threshold": lfc_threshold,
+        "genes": [
+            {
+                "gene_id": gid,
+                "symbol": None
+                if pd.isna(chosen.at[gid, "symbol"])
+                else str(chosen.at[gid, "symbol"]),
+                "log2fc": round(float(chosen.at[gid, "log2fc"]), 3),
+                "padj": float(f"{float(chosen.at[gid, 'padj']):.3g}"),
+            }
+            for gid in gene_ids
+        ],
+        "samples": [{"id": s, "arm": str(arms.get(s, ""))} for s in samples],
+        "row_order": row_order,
+        "col_order": col_order,
+        # z-scores, row-major (gene then sample), 2 decimals; log2 values alongside for hover
+        "z": [[round(float(v), 2) for v in row] for row in z],
+        "log2": [[round(float(v), 2) for v in row] for row in x],
+    }
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with gzip.open(path, "wt", encoding="utf-8", compresslevel=6) as f:
+        json.dump(doc, f, separators=(",", ":"), allow_nan=False)
+    return len(gene_ids)
+
+
 def _run(
     report: AnalysisReport,
     counts_path: str | Path,
@@ -381,6 +482,18 @@ def _run(
         normed_t.index.name = "GeneID"
         normed_t.to_csv(out / "normalized_counts.tsv", sep="\t", float_format="%.3f")
         report.files["normalized_counts"] = "normalized_counts.tsv"
+        if (
+            write_heatmap(
+                results,
+                log2_normalized(normed),
+                arms,
+                out / "heatmap.json.gz",
+                alpha=params.alpha,
+                lfc_threshold=params.lfc_threshold,
+            )
+            > 0
+        ):
+            report.files["heatmap"] = "heatmap.json.gz"
 
         if params.run_enrichment:
             enr = EnrichmentParams(

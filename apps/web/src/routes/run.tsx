@@ -1,13 +1,15 @@
 import { Link, useNavigate } from "@tanstack/react-router";
-import { ChevronLeft } from "lucide-react";
+import { ChevronLeft, MousePointerClick } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import type { EnrichmentTerm } from "@/api/generated/types.gen";
 import { EnrichmentBars } from "@/components/charts/enrichment-bars";
+import { PathwayNetwork } from "@/components/charts/pathway-network";
 import { GenePanel, type SelectedGene } from "@/components/gene/gene-panel";
 import { Footer, Page, TopBar } from "@/components/layout/top-bar";
 import { AnswerPanel, StatusBanner } from "@/components/run/answer-panel";
 import { ComparisonPanel } from "@/components/run/design-panel";
 import { Downloads, MarkdownFile } from "@/components/run/downloads";
+import { SamplesPanel } from "@/components/run/samples-panel";
 import { LiveStepper } from "@/components/run/steps";
 import { useVolcanoTable, VolcanoPanel } from "@/components/run/volcano-panel";
 import { StatusChip } from "@/components/ui/badge";
@@ -198,12 +200,38 @@ export function RunPage() {
                       <ComparisonPanel report={report} proposal={proposal} />
                     </Section>
 
+                    {report.qc && (
+                      <Section
+                        title="The Samples"
+                        info="Every sample at once. The PCA is the blind check: it uses the most variable genes and was never told the arms. The heatmap shows the differential-expression result at per-sample resolution: its genes are the top hits, so the question it answers is whether every sample follows the group pattern or a few drive it."
+                      >
+                        <Panel>
+                          <SamplesPanel
+                            report={report}
+                            heatmapUrl={report.de ? urls["heatmap.json.gz"] : undefined}
+                            selected={selected?.symbol ?? null}
+                            onSelect={(symbol, geneId) => selectGene(symbol, geneId)}
+                            themeKey={resolved}
+                          />
+                        </Panel>
+                      </Section>
+                    )}
+
                     {report.de && (
                       <Section title="Differential Expression" info={deLede}>
                         <Panel>
                           <div className="grid gap-6 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:gap-x-8">
                             <div id="volcano" className="min-w-0">
-                              <ColHead label="Volcano" />
+                              <div className="-mb-2">
+                                <ColHead label="Volcano" />
+                              </div>
+                              <p
+                                className="mb-4 inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-[13px] font-bold text-white"
+                                style={{ background: "#7b3294" }}
+                              >
+                                <MousePointerClick size={15} strokeWidth={2.25} aria-hidden />
+                                Click any gene to learn more
+                              </p>
                               <VolcanoPanel
                                 url={urls["volcano.json.gz"]}
                                 alpha0={report.de.summary.alpha}
@@ -234,6 +262,23 @@ export function RunPage() {
                               </div>
                             )}
                           </div>
+                        </Panel>
+                      </Section>
+                    )}
+
+                    {report.enrichment && report.enrichment.top.length > 0 && (
+                      <Section
+                        title="How the Pathways Connect"
+                        info="The strongest gene sets as hubs, joined to the genes that drive them. Sets that share genes pull together. Selecting a set here also marks its genes on the volcano."
+                      >
+                        <Panel>
+                          <PathwayNetwork
+                            terms={report.enrichment.top}
+                            selected={term?.term ?? null}
+                            onSelectTerm={setTerm}
+                            onSelectGene={pick}
+                            canPick={canPick}
+                          />
                         </Panel>
                       </Section>
                     )}

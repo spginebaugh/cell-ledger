@@ -22,6 +22,8 @@
   --case-soft: #e0eaf8;
   --control: #d3602a;
   --control-soft: #f9e5da;
+  --z-hi: #7b3294;
+  --z-lo: #1b8a4a;
   --muted: #b3bdbb;
   --danger: #b4382a;
   --danger-soft: #f8e3df;
@@ -54,6 +56,8 @@
     --case-soft: #15293f;
     --control: #f08b57;
     --control-soft: #3a2418;
+    --z-hi: #c48be0;
+    --z-lo: #5fcf86;
     --muted: #4f6366;
     --danger: #ef7d6c;
     --danger-soft: #3b1f1b;
@@ -85,6 +89,8 @@
   --case-soft: #15293f;
   --control: #f08b57;
   --control-soft: #3a2418;
+  --z-hi: #c48be0;
+  --z-lo: #5fcf86;
   --muted: #4f6366;
   --danger: #ef7d6c;
   --danger-soft: #3b1f1b;
@@ -115,6 +121,8 @@
   --color-case-soft: var(--case-soft);
   --color-control: var(--control);
   --color-control-soft: var(--control-soft);
+  --color-z-hi: var(--z-hi);
+  --color-z-lo: var(--z-lo);
   --color-muted: var(--muted);
   --color-danger: var(--danger);
   --color-danger-soft: var(--danger-soft);

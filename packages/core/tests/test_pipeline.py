@@ -41,6 +41,7 @@ def test_pipeline_end_to_end(synthetic, synthetic_files, tmp_path):
         "normalized_counts.tsv",
         "gene_lookup.csv",
         "volcano.json.gz",
+        "heatmap.json.gz",
         "report.json",
         "report.md",
     ):
@@ -62,6 +63,20 @@ def test_pipeline_end_to_end(synthetic, synthetic_files, tmp_path):
     }
     assert "G10" in volcano["symbol"]
     assert min(p for p in volcano["padj"] if p is not None) > 0  # tiny padj must not round to 0
+    # The browser-side heatmap: top genes z-scored over the fitted samples, both axes a
+    # permutation from clustering, every sample carrying its arm.
+    assert report.files["heatmap"] == "heatmap.json.gz"
+    with gzip.open(out / "heatmap.json.gz", "rt") as f:
+        heat = json.load(f)
+    assert 2 <= heat["n_genes"] <= 50 and len(heat["genes"]) == heat["n_genes"]
+    assert heat["n_samples"] == report.de.summary.n_case_used + report.de.summary.n_control_used
+    assert sorted(heat["row_order"]) == list(range(heat["n_genes"]))
+    assert sorted(heat["col_order"]) == list(range(heat["n_samples"]))
+    assert len(heat["z"]) == heat["n_genes"] and len(heat["z"][0]) == heat["n_samples"]
+    assert {s["arm"] for s in heat["samples"]} == {"case", "control"}
+    assert any(g["log2fc"] > 0 for g in heat["genes"]) and any(
+        g["log2fc"] < 0 for g in heat["genes"]
+    )
     # Per-sample values for the looked-up genes (queries and markers), keyed by GSM.
     assert {e.symbol for e in report.gene_expression} == {"G10", "G60"}
     g10 = next(e for e in report.gene_expression if e.symbol == "G10")

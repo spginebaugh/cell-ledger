@@ -1506,6 +1506,14 @@ export type GeneMeta = {
      * Robust
      */
     robust?: boolean;
+    /**
+     * Effects
+     *
+     * label -> that dataset's estimate; filled for the genes in the top tables so the browser can draw them across datasets
+     */
+    effects?: {
+        [key: string]: MemberEffect;
+    };
 };
 
 /**

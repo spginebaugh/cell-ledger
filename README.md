@@ -93,7 +93,8 @@ runs on its own (`apps/api/src/cell_ledger_api/pipeline.py`).
    with the reason; every choice Claude made is recorded on the dataset row (`proposal`).
 4. **Run** (automatic, when a design passes): the pipeline runs as a subprocess; `listRuns`
    shows step-by-step progress; `GET .../runs/{gse}/{contrast}` returns the report, the design
-   and signed URLs for every file (including `volcano.json.gz`, the browser-side DE table).
+   and signed URLs for every file (including `volcano.json.gz` and `heatmap.json.gz`, the
+   browser-side DE table and clustered expression heatmap).
 5. **Compare** (automatic, once every run is done and two or more completed): pooled effects
    across the session's runs, one comparison per session.
 

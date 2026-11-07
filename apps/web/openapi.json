@@ -3530,6 +3530,14 @@
             "type": "boolean",
             "title": "Robust",
             "default": false
+          },
+          "effects": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/MemberEffect"
+            },
+            "type": "object",
+            "title": "Effects",
+            "description": "label -> that dataset's estimate; filled for the genes in the top tables so the browser can draw them across datasets"
           }
         },
         "type": "object",

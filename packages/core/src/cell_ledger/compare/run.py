@@ -468,6 +468,8 @@ def _run(
         v = share.get(mem.label)
         mem.weight_share = None if v is None or np.isnan(v) else float(v)
     report.genes = synthesize(table, m.labels, params, min_studies=min_studies)
+    for gm in (*report.genes.top_up, *report.genes.top_down):
+        gm.effects = _effects(gm.gene_id, m)
     _wide_table(table, m).to_csv(out / "gene_table.tsv", sep="\t", float_format="%.5g")
     report.files["gene_table"] = "gene_table.tsv"
 

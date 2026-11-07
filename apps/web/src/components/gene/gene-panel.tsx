@@ -147,16 +147,20 @@ function PanelBody({
           )}
         </Section>
 
-        {(protein || hpa.isPending) && (
+        {g?.uniprot && (
           <Section
-            title="Where in the cell"
-            source={cell?.source === "hpa" ? "Human Protein Atlas" : cell ? "UniProt" : null}
-            pending={hpa.isPending || (!cell && uniprot.isPending)}
+            title="3D structure"
+            source={alphafold.data ? "AlphaFold DB" : null}
+            pending={alphafold.isPending}
           >
-            {cell ? (
-              <CellMap highlights={cell} />
-            ) : (
-              <p className="text-[13px] text-ink-3">No subcellular location has been recorded.</p>
+            {alphafold.isSuccess && alphafold.data === null && (
+              <p className="text-[13px] text-ink-3">AlphaFold has no model for this protein.</p>
+            )}
+            {alphafold.isError && (
+              <p className="text-[13px] text-ink-3">AlphaFold could not be reached.</p>
+            )}
+            {alphafold.data && (
+              <Structure model={alphafold.data} accession={g.uniprot} themeKey={themeKey} />
             )}
           </Section>
         )}
@@ -177,20 +181,16 @@ function PanelBody({
           {gtex.data && <BodyMap tissues={gtex.data} themeKey={themeKey} />}
         </Section>
 
-        {g?.uniprot && (
+        {(protein || hpa.isPending) && (
           <Section
-            title="3D structure"
-            source={alphafold.data ? "AlphaFold DB" : null}
-            pending={alphafold.isPending}
+            title="Where in the cell"
+            source={cell?.source === "hpa" ? "Human Protein Atlas" : cell ? "UniProt" : null}
+            pending={hpa.isPending || (!cell && uniprot.isPending)}
           >
-            {alphafold.isSuccess && alphafold.data === null && (
-              <p className="text-[13px] text-ink-3">AlphaFold has no model for this protein.</p>
-            )}
-            {alphafold.isError && (
-              <p className="text-[13px] text-ink-3">AlphaFold could not be reached.</p>
-            )}
-            {alphafold.data && (
-              <Structure model={alphafold.data} accession={g.uniprot} themeKey={themeKey} />
+            {cell ? (
+              <CellMap highlights={cell} />
+            ) : (
+              <p className="text-[13px] text-ink-3">No subcellular location has been recorded.</p>
             )}
           </Section>
         )}

@@ -2,12 +2,14 @@ import { Link } from "@tanstack/react-router";
 import { ChevronLeft } from "lucide-react";
 import { useEffect } from "react";
 import { ConcordanceHeatmap } from "@/components/charts/heatmap";
+import { PathwayMatrix } from "@/components/charts/pathway-matrix";
+import { hasPerMemberEffects, ReplicationStrip } from "@/components/charts/replication-strip";
 import { GeneAcrossCard, RobustGenes } from "@/components/compare/genes";
 import { MemberLedger } from "@/components/compare/ledger";
 import { PathwaysTable } from "@/components/compare/pathways";
 import { Footer, Page, TopBar } from "@/components/layout/top-bar";
 import { Downloads, MarkdownFile } from "@/components/run/downloads";
-import { StatusChip } from "@/components/ui/badge";
+import { StatusChip, Tag } from "@/components/ui/badge";
 import {
   ColHead,
   Details,
@@ -39,6 +41,8 @@ export function ComparePage() {
   const excluded = rep?.excluded ?? [];
   const urls = view?.urls ?? {};
   const nFiles = Object.keys(urls).length;
+  const perMember =
+    rep?.genes != null && hasPerMemberEffects([...rep.genes.top_up, ...rep.genes.top_down]);
   return (
     <>
       <TopBar sessionId={sessionId} />
@@ -214,7 +218,15 @@ export function ComparePage() {
                               label="Pathways across datasets"
                               detail={`${rep.pathways.n_consistent} of ${rep.pathways.n_terms} sets agree in every member`}
                             />
-                            <PathwaysTable pathways={rep.pathways} />
+                            <PathwayMatrix pathways={rep.pathways} />
+                            <p className="mt-3 text-[12px] text-ink-3">
+                              One bubble per dataset and set: colour is the direction, size is the
+                              confidence. A row of one colour is the same biology found
+                              independently by every study.
+                            </p>
+                            <Details summary="As a table" className="mt-3">
+                              <PathwaysTable pathways={rep.pathways} />
+                            </Details>
                           </div>
                         )}
                       </div>
@@ -230,16 +242,61 @@ export function ComparePage() {
                     <Panel>
                       <div className="grid gap-6 lg:grid-cols-2 lg:gap-x-8">
                         <div className="min-w-0">
-                          <RobustGenes title="Higher in case" tone="case" rows={rep.genes.top_up} />
+                          {perMember ? (
+                            <>
+                              <ColHead label={<Tag tone="case">Higher in case</Tag>} />
+                              <ReplicationStrip
+                                rows={rep.genes.top_up}
+                                members={rep.genes.members}
+                                alpha={rep.genes.alpha}
+                              />
+                              <Details summary="As a table" className="mt-3">
+                                <RobustGenes
+                                  title="Higher in case"
+                                  tone="case"
+                                  rows={rep.genes.top_up}
+                                />
+                              </Details>
+                            </>
+                          ) : (
+                            <RobustGenes
+                              title="Higher in case"
+                              tone="case"
+                              rows={rep.genes.top_up}
+                            />
+                          )}
                         </div>
                         <div className="min-w-0 border-t border-line pt-4 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
-                          <RobustGenes
-                            title="Higher in control"
-                            tone="control"
-                            rows={rep.genes.top_down}
-                          />
+                          {perMember ? (
+                            <>
+                              <ColHead label={<Tag tone="control">Higher in control</Tag>} />
+                              <ReplicationStrip
+                                rows={rep.genes.top_down}
+                                members={rep.genes.members}
+                                alpha={rep.genes.alpha}
+                              />
+                              <Details summary="As a table" className="mt-3">
+                                <RobustGenes
+                                  title="Higher in control"
+                                  tone="control"
+                                  rows={rep.genes.top_down}
+                                />
+                              </Details>
+                            </>
+                          ) : (
+                            <RobustGenes
+                              title="Higher in control"
+                              tone="control"
+                              rows={rep.genes.top_down}
+                            />
+                          )}
                         </div>
                       </div>
+                      <p className="mt-4 text-[12px] text-ink-3">
+                        {perMember
+                          ? "Each row is a gene, each column a dataset. Reading across: the same change, seen independently in study after study."
+                          : "This comparison was written before per-dataset estimates were stored with each gene, so the per-dataset view is unavailable; re-run the comparison to get it."}
+                      </p>
                     </Panel>
                   </Section>
                 )}
