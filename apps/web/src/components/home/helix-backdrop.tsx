@@ -23,10 +23,14 @@ export function HelixBackdrop() {
   const ref = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    const canvas = ref.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
+    // Narrowing does not reach the hoisted function declarations below, so bind non-null
+    // constants once the checks pass.
+    const canvasEl = ref.current;
+    if (!canvasEl) return;
+    const canvas: HTMLCanvasElement = canvasEl;
+    const context = canvas.getContext("2d");
+    if (!context) return;
+    const ctx: CanvasRenderingContext2D = context;
 
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
     const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
