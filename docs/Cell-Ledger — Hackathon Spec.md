@@ -29,6 +29,8 @@ ifng_mac/
   contrasts.json       proposed case-vs-control contrasts per dataset, with confidence
   run_deseq.py         pydeseq2 + gseapy template, pre-filled from contrasts.json
   questions.md         everything Cell-Ledger could not decide (empty = nothing pending)
+  comparison.json      when > 1 dataset answers the same contrast: per-dataset ledger, replication
+                       counts, pooled effects with heterogeneity, excluded datasets and why
   datasets/GSE12345/
     counts.tsv         genes x samples, integer raw counts (absent + flagged if only normalized data exist)
     tpm.tsv            when available
@@ -67,7 +69,8 @@ Narrow enough to finish, wide enough to matter: bulk human RNA-seq from GEO with
 | RNA-seq only: GEO type "expression profiling by high throughput sequencing" | Microarray (series matrix / GPL probes), GDC/TCGA, dbGaP, controlled access |
 | Case/control and treatment/time designs | Multi-factor designs beyond one contrast (export, don't propose contrasts) |
 | Output: AnnData + CSV/TSV + pydeseq2 and gseapy template | Running the DE analysis as part of the agent (template only) |
-| `--max-datasets` ≤ 10 per run, 1–3 runs per topic in the demo | Cross-study batch correction or meta-analysis statistics |
+| `--max-datasets` ≤ 20 per run, 1–3 runs per topic in the demo | |
+| Cross-dataset comparison of per-dataset results: ledger of every run, per-gene replication across datasets, random-effects meta-analysis of per-dataset log2FC with heterogeneity, pathway-level concordance, cross-dataset consistency gate | Pooling samples from different series into one matrix; cross-study batch correction (ComBat, `~study + arm`) |
 
 If the judges' topic needs something in the right column, the correct behaviour is to say which row blocks it and what the user could do instead, not to attempt it.
 
@@ -152,7 +155,7 @@ The judges' question is whether they would trust it. The answer is built from th
 - A dataset has only normalized or author-processed values → offers it as "exploration only" and explains why it is not DESeq2 input.
 - Topic is outside scope (non-human, single-cell, microarray, non-GEO) → names the scope row and stops.
 
-**Hard refusals:** never fabricate an accession, a sample count, or a p-value; never report a result from `run_deseq.py` it has not executed; never merge datasets into one matrix.
+**Hard refusals:** never fabricate an accession, a sample count, or a p-value; never report a result from `run_deseq.py` it has not executed; never merge datasets into one matrix. Cross-dataset synthesis combines each dataset's own DESeq2 summary statistics (unshrunk log2FC and SE, Wald statistic); it never refits on pooled counts, and it never pools datasets that fail the consistency gate or share samples.
 
 ## Evals
 
@@ -221,6 +224,6 @@ The demo is a live run on their topic, narrated against the eval table. Eight mi
 3. **Open one dataset** (1.5 min). `samples.csv` with evidence strings next to labels; `provenance.json` with the file rule that fired; QC flags. Open `contrasts.json`, then `run_deseq.py` and run it. Show the top genes.
 4. **The eval table** (1.5 min). Specialist vs baseline on all five evals. Point at the baseline's hallucinated-accession rate and the marker-recovery number.
 5. **Where it stops** (1 min). Run one should-ask case: ambiguous control. Show `questions.md`. Run one out-of-scope case: say the scope row.
-6. **What it cannot do** (30 s). Say it plainly: human only, single-cell, no cross-study meta-analysis, counts differ from papers.
+6. **What it cannot do** (30 s). Say it plainly: human only, single-cell, no pooled cross-study matrix (per-dataset results are compared and meta-analysed, samples are never merged), counts differ from papers.
 
 If the judges' topic hits a limit live, do not route around it. Show the question it asks, answer it as the user would, and continue.

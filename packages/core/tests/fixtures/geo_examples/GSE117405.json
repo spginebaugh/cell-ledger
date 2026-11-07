@@ -1,0 +1,1001 @@
+{
+ "samplesheet": {
+  "gse": "GSE117405",
+  "assay": "bulk",
+  "title": "RNA-seq and flow-cytometry of conventional, scalp, and palmoplantar psoriasis reveal shared and distinct molecular pathways",
+  "samples": [
+   {
+    "gsm": "GSM3293897",
+    "title": "HF_1",
+    "source_name": "Palmoplantar psoriatic skin",
+    "group": "other",
+    "condition": "palmoplantar psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: palmoplantar psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "disease state": "palmoplantar psoriasis"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "disease state: palmoplantar psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM3293898",
+    "title": "HF_2",
+    "source_name": "Palmoplantar psoriatic skin",
+    "group": "other",
+    "condition": "palmoplantar psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: palmoplantar psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "disease state": "palmoplantar psoriasis"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "disease state: palmoplantar psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM3293899",
+    "title": "HF_3",
+    "source_name": "Palmoplantar psoriatic skin",
+    "group": "other",
+    "condition": "palmoplantar psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: palmoplantar psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "disease state": "palmoplantar psoriasis"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "disease state: palmoplantar psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM3293900",
+    "title": "C35",
+    "source_name": "Control skin",
+    "group": "control",
+    "condition": "healthy control",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: healthy control"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "disease state": "healthy control"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "disease state: healthy control"
+    ]
+   },
+   {
+    "gsm": "GSM3293901",
+    "title": "C37",
+    "source_name": "Control skin",
+    "group": "control",
+    "condition": "healthy control",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: healthy control"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "disease state": "healthy control"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "disease state: healthy control"
+    ]
+   },
+   {
+    "gsm": "GSM3293902",
+    "title": "C38",
+    "source_name": "Control skin",
+    "group": "control",
+    "condition": "healthy control",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: healthy control"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "disease state": "healthy control"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "disease state: healthy control"
+    ]
+   },
+   {
+    "gsm": "GSM3293903",
+    "title": "C39",
+    "source_name": "Control skin",
+    "group": "control",
+    "condition": "healthy control",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: healthy control"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "disease state": "healthy control"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "disease state: healthy control"
+    ]
+   },
+   {
+    "gsm": "GSM3293904",
+    "title": "C40",
+    "source_name": "Control skin",
+    "group": "control",
+    "condition": "healthy control",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: healthy control"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "disease state": "healthy control"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "disease state: healthy control"
+    ]
+   },
+   {
+    "gsm": "GSM3293905",
+    "title": "C41",
+    "source_name": "Control skin",
+    "group": "control",
+    "condition": "healthy control",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: healthy control"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "disease state": "healthy control"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "disease state: healthy control"
+    ]
+   },
+   {
+    "gsm": "GSM3293906",
+    "title": "C43",
+    "source_name": "Control skin",
+    "group": "control",
+    "condition": "healthy control",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: healthy control"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "disease state": "healthy control"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "disease state: healthy control"
+    ]
+   },
+   {
+    "gsm": "GSM3293907",
+    "title": "C44",
+    "source_name": "Control skin",
+    "group": "control",
+    "condition": "healthy control",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: healthy control"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "disease state": "healthy control"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "disease state: healthy control"
+    ]
+   },
+   {
+    "gsm": "GSM3293908",
+    "title": "C45",
+    "source_name": "Control skin",
+    "group": "control",
+    "condition": "healthy control",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: healthy control"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "disease state": "healthy control"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "disease state: healthy control"
+    ]
+   },
+   {
+    "gsm": "GSM3293909",
+    "title": "CP_1",
+    "source_name": "Conventional psoriatic skin",
+    "group": "case",
+    "condition": "psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "disease state": "psoriasis"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "disease state: psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM3293910",
+    "title": "CP_2",
+    "source_name": "Conventional psoriatic skin",
+    "group": "case",
+    "condition": "psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "disease state": "psoriasis"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "disease state: psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM3293911",
+    "title": "CP_3",
+    "source_name": "Conventional psoriatic skin",
+    "group": "case",
+    "condition": "psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "disease state": "psoriasis"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "disease state: psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM3293912",
+    "title": "CP_4",
+    "source_name": "Conventional psoriatic skin",
+    "group": "case",
+    "condition": "psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "disease state": "psoriasis"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "disease state: psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM3293913",
+    "title": "CP_5",
+    "source_name": "Conventional psoriatic skin",
+    "group": "case",
+    "condition": "psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "disease state": "psoriasis"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "disease state: psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM3293914",
+    "title": "CP_6",
+    "source_name": "Conventional psoriatic skin",
+    "group": "case",
+    "condition": "psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "disease state": "psoriasis"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "disease state: psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM3293915",
+    "title": "CP_7",
+    "source_name": "Conventional psoriatic skin",
+    "group": "case",
+    "condition": "psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "disease state": "psoriasis"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "disease state: psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM3293916",
+    "title": "CP_8",
+    "source_name": "Conventional psoriatic skin",
+    "group": "case",
+    "condition": "psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "disease state": "psoriasis"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "disease state: psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM3293917",
+    "title": "SP_1",
+    "source_name": "Scalp psoriatic skin",
+    "group": "other",
+    "condition": "scalp psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: scalp psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "disease state": "scalp psoriasis"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "disease state: scalp psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM3293918",
+    "title": "SP_2",
+    "source_name": "Scalp psoriatic skin",
+    "group": "other",
+    "condition": "scalp psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: scalp psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "disease state": "scalp psoriasis"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "disease state: scalp psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM3293919",
+    "title": "SP_3",
+    "source_name": "Scalp psoriatic skin",
+    "group": "other",
+    "condition": "scalp psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: scalp psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "disease state": "scalp psoriasis"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "disease state: scalp psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM3293920",
+    "title": "SP_4",
+    "source_name": "Scalp psoriatic skin",
+    "group": "other",
+    "condition": "scalp psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: scalp psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "disease state": "scalp psoriasis"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "disease state: scalp psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM3293921",
+    "title": "SP_5",
+    "source_name": "Scalp psoriatic skin",
+    "group": "other",
+    "condition": "scalp psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: scalp psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "disease state": "scalp psoriasis"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "disease state: scalp psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM3293922",
+    "title": "SP_6",
+    "source_name": "Scalp psoriatic skin",
+    "group": "other",
+    "condition": "scalp psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: scalp psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "disease state": "scalp psoriasis"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "disease state: scalp psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM3293923",
+    "title": "SP_7",
+    "source_name": "Scalp psoriatic skin",
+    "group": "other",
+    "condition": "scalp psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: scalp psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "disease state": "scalp psoriasis"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "disease state: scalp psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM3293924",
+    "title": "SP_8",
+    "source_name": "Scalp psoriatic skin",
+    "group": "other",
+    "condition": "scalp psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: scalp psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "disease state": "scalp psoriasis"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "disease state: scalp psoriasis"
+    ]
+   }
+  ]
+ },
+ "contrasts": [
+  {
+   "gse": "GSE117405",
+   "name": "lesional_vs_healthy",
+   "case_label": "conventional psoriasis lesional skin",
+   "control_label": "healthy skin",
+   "case_gsms": [
+    "GSM3293909",
+    "GSM3293910",
+    "GSM3293911",
+    "GSM3293912",
+    "GSM3293913",
+    "GSM3293914",
+    "GSM3293915",
+    "GSM3293916"
+   ],
+   "control_gsms": [
+    "GSM3293900",
+    "GSM3293901",
+    "GSM3293902",
+    "GSM3293903",
+    "GSM3293904",
+    "GSM3293905",
+    "GSM3293906",
+    "GSM3293907",
+    "GSM3293908"
+   ],
+   "blocking": null,
+   "restricted_to": {},
+   "confidence": 1.0,
+   "status": "confirmed",
+   "rationale": "Scalp and palmoplantar psoriasis kept as 'other'."
+  }
+ ],
+ "markers": [
+  {
+   "symbol": "S100A7",
+   "direction": "up"
+  },
+  {
+   "symbol": "S100A8",
+   "direction": "up"
+  },
+  {
+   "symbol": "S100A9",
+   "direction": "up"
+  },
+  {
+   "symbol": "DEFB4A",
+   "direction": "up"
+  },
+  {
+   "symbol": "KRT16",
+   "direction": "up"
+  },
+  {
+   "symbol": "PI3",
+   "direction": "up"
+  },
+  {
+   "symbol": "IL36G",
+   "direction": "up"
+  },
+  {
+   "symbol": "SERPINB4",
+   "direction": "up"
+  }
+ ]
+}

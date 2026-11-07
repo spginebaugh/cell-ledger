@@ -91,9 +91,17 @@ class DeSummary(BaseModel):
     coefficient: str
     blocking: str | None = None
     pairing: Pairing = "none"
-    n_case_used: int
+    n_case_used: int = Field(description="observations fitted in the case arm (after collapsing)")
     n_control_used: int
     dropped_unpaired: list[str] = Field(default_factory=list)
+    gsms_fitted: list[str] = Field(
+        default_factory=list, description="every GSM that contributed to the fit"
+    )
+    collapsed: dict[str, list[str]] = Field(
+        default_factory=dict,
+        description="fitted observation -> GSMs summed into it (repeated samples per block/arm)",
+    )
+    n_samples_collapsed: int = 0
     lfc_shrunk: bool
     alpha: float
     lfc_threshold: float
@@ -194,6 +202,16 @@ class AnalysisReport(BaseModel):
     params: dict[str, Any]
     steps: list[StepRecord] = Field(default_factory=list)
     reconciliation: Reconciliation | None = None
+    fingerprint: str | None = Field(
+        default=None,
+        description="sha256 over the counts file, annotation file, design and parameters; "
+        "a cached run is only reused when it matches",
+    )
+    context: dict[str, str] = Field(
+        default_factory=dict,
+        description="modal harmonized field values (tissue, cell_type, ...) over the samples used, "
+        "for grouping runs that answer the same question",
+    )
     qc: QcResult | None = None
     filtering: FilterSummary | None = None
     de: DeResultSummary | None = None

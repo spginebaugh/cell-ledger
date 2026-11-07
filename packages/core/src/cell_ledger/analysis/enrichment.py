@@ -38,6 +38,12 @@ def resolve_gene_sets(name_or_path: str) -> Path:
     return path
 
 
+def gmt_md5(path: Path) -> str:
+    import hashlib
+
+    return hashlib.md5(path.read_bytes()).hexdigest()
+
+
 def rank_by_stat(results: pd.DataFrame) -> pd.Series:
     """Symbol -> Wald statistic, one row per symbol (largest |stat| wins), sorted descending."""
     df = pd.DataFrame(results.loc[:, ["symbol", "stat"]]).dropna()
@@ -96,6 +102,6 @@ def run_prerank(
         n_sig_fdr=int(cast(Any, df["FDR q-val"] < params.fdr_threshold).sum()),
         fdr_threshold=params.fdr_threshold,
         top=top,
-        params=params.model_dump(),
+        params={**params.model_dump(), "gene_sets_md5": gmt_md5(gmt)},
     )
     return df, summary

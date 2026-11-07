@@ -66,7 +66,8 @@ def test_filter_and_de_recover_planted_genes(synthetic, synthetic_files):
     filtered, fsum = filter_genes(adata, min_count=10)
     assert fsum.n_genes_after < fsum.n_genes_before
     assert "5" not in filtered.var_names  # silent gene removed
-    results, normed, summary, plan = run_de(filtered, DeParams(lfc_shrink=True))
+    fit = run_de(filtered, DeParams(lfc_shrink=True))
+    results, normed, summary, plan = fit.results, fit.normed, fit.summary, fit.plan
     assert plan.pairing == "none" and summary.summary.design == "~arm"
     assert normed.shape == (8, filtered.n_vars)
     sig_up = set(results[(results.padj < 0.05) & (results.log2fc > 0)].index)
@@ -137,7 +138,8 @@ def test_blocked_design_when_pairing_is_complete(synthetic, synthetic_files):
         counts, synthetic.sheet, load_annotation(synthetic_files[1]), synthetic.contrast
     )
     filtered, _ = filter_genes(adata, min_count=10)
-    results, _normed, summary, plan = run_de(filtered, DeParams(), blocking="donor")
+    fit = run_de(filtered, DeParams(), blocking="donor")
+    results, summary, plan = fit.results, fit.summary, fit.plan
     assert plan.pairing == "modelled" and plan.dropped == []
     assert summary.summary.design == "~block + arm" and summary.summary.blocking == "donor"
     sig_up = set(results[(results.padj < 0.05) & (results.log2fc > 0)].index)

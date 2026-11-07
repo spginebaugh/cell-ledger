@@ -122,7 +122,7 @@ def test_prerank_with_custom_gmt(synthetic, synthetic_files, tmp_path):
         counts, synthetic.sheet, load_annotation(synthetic_files[1]), synthetic.contrast
     )
     filtered, _ = filter_genes(adata)
-    results, _, _, _ = run_de(filtered, DeParams(lfc_shrink=False))
+    results = run_de(filtered, DeParams(lfc_shrink=False)).results
     gmt = tmp_path / "sets.gmt"
     up_set = "\t".join(["PLANTED_UP", "test", *[f"G{g}" for g in synthetic.up]])
     down_set = "\t".join(["PLANTED_DOWN", "test", *[f"G{g}" for g in synthetic.down]])
@@ -275,3 +275,33 @@ def test_uncertain_contrast_runs_qualified_and_proposed_is_blocked(
         params=QUICK,
     )
     assert report.status == "blocked" and report.de is None
+
+
+def test_fingerprint_tracks_inputs_design_params_and_code(synthetic, synthetic_files) -> None:
+    from cell_ledger.analysis.pipeline import code_digest, compute_fingerprint
+
+    base = compute_fingerprint(
+        synthetic_files[0], synthetic_files[1], synthetic.sheet, synthetic.contrast, QUICK
+    )
+    same = compute_fingerprint(
+        synthetic_files[0], synthetic_files[1], synthetic.sheet, synthetic.contrast, QUICK
+    )
+    assert base == same
+    other_params = QUICK.model_copy(update={"alpha": 0.1})
+    assert (
+        compute_fingerprint(
+            synthetic_files[0],
+            synthetic_files[1],
+            synthetic.sheet,
+            synthetic.contrast,
+            other_params,
+        )
+        != base
+    )
+    c = synthetic.contrast
+    smaller = Contrast(**{**c.model_dump(), "case_gsms": c.case_gsms[:3]})
+    assert (
+        compute_fingerprint(synthetic_files[0], synthetic_files[1], synthetic.sheet, smaller, QUICK)
+        != base
+    )
+    assert len(code_digest()) == 64

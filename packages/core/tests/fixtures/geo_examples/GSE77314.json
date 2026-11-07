@@ -1,0 +1,3468 @@
+{
+ "samplesheet": {
+  "gse": "GSE77314",
+  "assay": "bulk",
+  "title": "RNA-seq of 50 paired hepatocellular carcinoma",
+  "samples": [
+   {
+    "gsm": "GSM2049057",
+    "title": "Patient 1 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 1",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049058",
+    "title": "Patient 2 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 2",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049059",
+    "title": "Patient 3 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 3",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049060",
+    "title": "Patient 4 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 4",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049061",
+    "title": "Patient 5 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 5",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049062",
+    "title": "Patient 6 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 6",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049063",
+    "title": "Patient 7 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 7",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049064",
+    "title": "Patient 8 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 8",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049065",
+    "title": "Patient 9 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 9",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049066",
+    "title": "Patient 10 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 10",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049067",
+    "title": "Patient 11 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 11",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049068",
+    "title": "Patient 12 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 12",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049069",
+    "title": "Patient 13 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 13",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049070",
+    "title": "Patient 14 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 14",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049071",
+    "title": "Patient 15 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 15",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049072",
+    "title": "Patient 16 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 16",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049073",
+    "title": "Patient 17 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 17",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049074",
+    "title": "Patient 18 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 18",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049075",
+    "title": "Patient 19 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 19",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049076",
+    "title": "Patient 20 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 20",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049077",
+    "title": "Patient 21 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 21",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049078",
+    "title": "Patient 22 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 22",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049079",
+    "title": "Patient 23 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 23",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049080",
+    "title": "Patient 24 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 24",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049081",
+    "title": "Patient 25 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 25",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049082",
+    "title": "Patient 26 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 26",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049083",
+    "title": "Patient 27 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 27",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049084",
+    "title": "Patient 28 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 28",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049085",
+    "title": "Patient 29 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 29",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049086",
+    "title": "Patient 30 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 30",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049087",
+    "title": "Patient 31 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 31",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049088",
+    "title": "Patient 32 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 32",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049089",
+    "title": "Patient 33 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 33",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049090",
+    "title": "Patient 34 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 34",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049091",
+    "title": "Patient 35 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 35",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049092",
+    "title": "Patient 36 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 36",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049093",
+    "title": "Patient 37 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 37",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049094",
+    "title": "Patient 38 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 38",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049095",
+    "title": "Patient 39 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 39",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049096",
+    "title": "Patient 40 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 40",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049097",
+    "title": "Patient 41 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 41",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049098",
+    "title": "Patient 42 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 42",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049099",
+    "title": "Patient 43 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 43",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049100",
+    "title": "Patient 44 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 44",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049101",
+    "title": "Patient 45 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 45",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049102",
+    "title": "Patient 46 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 46",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049103",
+    "title": "Patient 47 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 47",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049104",
+    "title": "Patient 48 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 48",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049105",
+    "title": "Patient 49 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 49",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049106",
+    "title": "Patient 50 Normal",
+    "source_name": "Liver",
+    "group": "control",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 50",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Normal"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM2049107",
+    "title": "Patient 1 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 1",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049108",
+    "title": "Patient 2 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 2",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049109",
+    "title": "Patient 3 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 3",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049110",
+    "title": "Patient 4 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 4",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049111",
+    "title": "Patient 5 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 5",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049112",
+    "title": "Patient 6 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 6",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049113",
+    "title": "Patient 7 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 7",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049114",
+    "title": "Patient 8 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 8",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049115",
+    "title": "Patient 9 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 9",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049116",
+    "title": "Patient 10 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 10",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049117",
+    "title": "Patient 11 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 11",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049118",
+    "title": "Patient 12 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 12",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049119",
+    "title": "Patient 13 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 13",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049120",
+    "title": "Patient 14 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 14",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049121",
+    "title": "Patient 15 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 15",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049122",
+    "title": "Patient 16 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 16",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049123",
+    "title": "Patient 17 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 17",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049124",
+    "title": "Patient 18 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 18",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049125",
+    "title": "Patient 19 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 19",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049126",
+    "title": "Patient 20 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 20",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049127",
+    "title": "Patient 21 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 21",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049128",
+    "title": "Patient 22 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 22",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049129",
+    "title": "Patient 23 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 23",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049130",
+    "title": "Patient 24 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 24",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049131",
+    "title": "Patient 25 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 25",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049132",
+    "title": "Patient 26 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 26",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049133",
+    "title": "Patient 27 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 27",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049134",
+    "title": "Patient 28 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 28",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049135",
+    "title": "Patient 29 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 29",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049136",
+    "title": "Patient 30 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 30",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049137",
+    "title": "Patient 31 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 31",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049138",
+    "title": "Patient 32 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 32",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049139",
+    "title": "Patient 33 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 33",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049140",
+    "title": "Patient 34 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 34",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049141",
+    "title": "Patient 35 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 35",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049142",
+    "title": "Patient 36 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 36",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049143",
+    "title": "Patient 37 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 37",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049144",
+    "title": "Patient 38 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 38",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049145",
+    "title": "Patient 39 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 39",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049146",
+    "title": "Patient 40 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 40",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049147",
+    "title": "Patient 41 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 41",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049148",
+    "title": "Patient 42 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 42",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049149",
+    "title": "Patient 43 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 43",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049150",
+    "title": "Patient 44 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 44",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049151",
+    "title": "Patient 45 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 45",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049152",
+    "title": "Patient 46 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 46",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049153",
+    "title": "Patient 47 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 47",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049154",
+    "title": "Patient 48 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 48",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049155",
+    "title": "Patient 49 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 49",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   },
+   {
+    "gsm": "GSM2049156",
+    "title": "Patient 50 Tumor",
+    "source_name": "Liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Patient 50",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "diagnosis: Tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "liver",
+     "diagnosis": "Tumor"
+    },
+    "raw_lines": [
+     "tissue: liver",
+     "diagnosis: Tumor"
+    ]
+   }
+  ]
+ },
+ "contrasts": [
+  {
+   "gse": "GSE77314",
+   "name": "tumor_vs_adjacent_normal",
+   "case_label": "HCC tumor",
+   "control_label": "adjacent non-tumor liver",
+   "case_gsms": [
+    "GSM2049107",
+    "GSM2049108",
+    "GSM2049109",
+    "GSM2049110",
+    "GSM2049111",
+    "GSM2049112",
+    "GSM2049113",
+    "GSM2049114",
+    "GSM2049115",
+    "GSM2049116",
+    "GSM2049117",
+    "GSM2049118",
+    "GSM2049119",
+    "GSM2049120",
+    "GSM2049121",
+    "GSM2049122",
+    "GSM2049123",
+    "GSM2049124",
+    "GSM2049125",
+    "GSM2049126",
+    "GSM2049127",
+    "GSM2049128",
+    "GSM2049129",
+    "GSM2049130",
+    "GSM2049131",
+    "GSM2049132",
+    "GSM2049133",
+    "GSM2049134",
+    "GSM2049135",
+    "GSM2049136",
+    "GSM2049137",
+    "GSM2049138",
+    "GSM2049139",
+    "GSM2049140",
+    "GSM2049141",
+    "GSM2049142",
+    "GSM2049143",
+    "GSM2049144",
+    "GSM2049145",
+    "GSM2049146",
+    "GSM2049147",
+    "GSM2049148",
+    "GSM2049149",
+    "GSM2049150",
+    "GSM2049151",
+    "GSM2049152",
+    "GSM2049153",
+    "GSM2049154",
+    "GSM2049155",
+    "GSM2049156"
+   ],
+   "control_gsms": [
+    "GSM2049057",
+    "GSM2049058",
+    "GSM2049059",
+    "GSM2049060",
+    "GSM2049061",
+    "GSM2049062",
+    "GSM2049063",
+    "GSM2049064",
+    "GSM2049065",
+    "GSM2049066",
+    "GSM2049067",
+    "GSM2049068",
+    "GSM2049069",
+    "GSM2049070",
+    "GSM2049071",
+    "GSM2049072",
+    "GSM2049073",
+    "GSM2049074",
+    "GSM2049075",
+    "GSM2049076",
+    "GSM2049077",
+    "GSM2049078",
+    "GSM2049079",
+    "GSM2049080",
+    "GSM2049081",
+    "GSM2049082",
+    "GSM2049083",
+    "GSM2049084",
+    "GSM2049085",
+    "GSM2049086",
+    "GSM2049087",
+    "GSM2049088",
+    "GSM2049089",
+    "GSM2049090",
+    "GSM2049091",
+    "GSM2049092",
+    "GSM2049093",
+    "GSM2049094",
+    "GSM2049095",
+    "GSM2049096",
+    "GSM2049097",
+    "GSM2049098",
+    "GSM2049099",
+    "GSM2049100",
+    "GSM2049101",
+    "GSM2049102",
+    "GSM2049103",
+    "GSM2049104",
+    "GSM2049105",
+    "GSM2049106"
+   ],
+   "blocking": "donor",
+   "restricted_to": {},
+   "confidence": 1.0,
+   "status": "confirmed",
+   "rationale": "50 pairs; patient number in the title."
+  }
+ ],
+ "markers": [
+  {
+   "symbol": "GPC3",
+   "direction": "up"
+  },
+  {
+   "symbol": "AFP",
+   "direction": "up"
+  },
+  {
+   "symbol": "SPP1",
+   "direction": "up"
+  },
+  {
+   "symbol": "MDK",
+   "direction": "up"
+  },
+  {
+   "symbol": "PEG10",
+   "direction": "up"
+  },
+  {
+   "symbol": "CLEC4G",
+   "direction": "down"
+  },
+  {
+   "symbol": "CLEC1B",
+   "direction": "down"
+  },
+  {
+   "symbol": "FCN3",
+   "direction": "down"
+  },
+  {
+   "symbol": "CRHBP",
+   "direction": "down"
+  },
+  {
+   "symbol": "CYP1A2",
+   "direction": "down"
+  }
+ ]
+}

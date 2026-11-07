@@ -24,7 +24,7 @@ For the hackathon, use **GEO as the sole data repository, an existing LLM, deter
 | Expression data     | Already-computed matrices; prioritize NCBI-generated gene counts                                                                                 |
 | Metadata            | Study description, sample annotations, experimental design, and processing information                                                           |
 | Downstream workflow | Python loading and expression-level QC; conditional differential expression                                                                      |
-| Exclusions          | FASTQ/BAM processing, microarrays, single-cell/single-nucleus, spatial data, derived pseudobulk, controlled-access data, and cross-study pooling |
+| Exclusions          | FASTQ/BAM processing, microarrays, single-cell/single-nucleus, spatial data, derived pseudobulk, controlled-access data, and pooling samples from different studies into one matrix. Comparing and meta-analysing per-study summary statistics across studies that answer the same contrast is in scope |
 | Stretch feature     | Import simple author-supplied CSV/TSV matrices with documented units and explicit sample mappings                                                |
 
 
@@ -70,7 +70,7 @@ This orientation matches PyDESeq2’s input contract: samples × genes containin
 - Check unique identifiers, dimensions, numeric values, missing values, and matrix-to-metadata correspondence. Report every exclusion.
 - Establish expression units from source evidence. Integer-looking values alone do not prove that a matrix contains counts.
 - Preserve original gene IDs and expression values. Do not silently merge duplicate symbols or convert normalized values into counts.
-- Keep studies separate.
+- Keep studies separate. Each study is fit on its own; cross-study synthesis consumes per-study summary statistics only.
 
 These checks are necessary even for NCBI-generated matrices: GEO explicitly warns about missing samples and studies containing assays or samples unsuitable for direct comparison. [NCBI](https://ncbi.nlm.nih.gov/geo/info/geo2r.html?utm_source=chatgpt.com)
 

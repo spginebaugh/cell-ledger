@@ -1,0 +1,136 @@
+{
+ "name": "psoriasis_lesional_vs_control",
+ "question": "Which genes differ between psoriasis lesional skin and control skin?",
+ "case_label": "psoriasis lesional skin",
+ "control_label": "control skin (healthy or non-lesional)",
+ "members": [
+  {
+   "gse": "GSE114286",
+   "contrast": "psoriasis_vs_healthy",
+   "stratum": "lesional_vs_healthy"
+  },
+  {
+   "gse": "GSE67785",
+   "contrast": "lesional_vs_nonlesional",
+   "stratum": "lesional_vs_nonlesional"
+  },
+  {
+   "gse": "GSE54456",
+   "contrast": "lesional_vs_healthy",
+   "stratum": "lesional_vs_healthy"
+  },
+  {
+   "gse": "GSE121212",
+   "contrast": "lesional_vs_healthy",
+   "stratum": "lesional_vs_healthy"
+  },
+  {
+   "gse": "GSE154200",
+   "contrast": "lesional_vs_nonlesional",
+   "stratum": "lesional_vs_nonlesional"
+  },
+  {
+   "gse": "GSE171012",
+   "contrast": "lesional_vs_healthy",
+   "stratum": "lesional_vs_healthy"
+  },
+  {
+   "gse": "GSE74697",
+   "contrast": "lesional_vs_healthy",
+   "stratum": "lesional_vs_healthy"
+  },
+  {
+   "gse": "GSE186063",
+   "contrast": "lesional_vs_nonlesional",
+   "stratum": "lesional_vs_nonlesional"
+  },
+  {
+   "gse": "GSE47944",
+   "contrast": "lesional_vs_nonlesional",
+   "stratum": "lesional_vs_nonlesional"
+  },
+  {
+   "gse": "GSE178197",
+   "contrast": "lesional_vs_nonlesional",
+   "stratum": "lesional_vs_nonlesional"
+  },
+  {
+   "gse": "GSE83645",
+   "contrast": "lesional_vs_nonlesional",
+   "stratum": "lesional_vs_nonlesional"
+  },
+  {
+   "gse": "GSE117405",
+   "contrast": "lesional_vs_healthy",
+   "stratum": "lesional_vs_healthy"
+  },
+  {
+   "gse": "GSE205748",
+   "contrast": "lesional_vs_healthy",
+   "stratum": "lesional_vs_healthy"
+  },
+  {
+   "gse": "GSE142582",
+   "contrast": "lesional_vs_healthy",
+   "stratum": "lesional_vs_healthy"
+  },
+  {
+   "gse": "GSE63979",
+   "contrast": "lesional_vs_healthy",
+   "stratum": "lesional_vs_healthy"
+  },
+  {
+   "gse": "GSE249936",
+   "contrast": "lesional_vs_nonlesional",
+   "stratum": "lesional_vs_nonlesional"
+  },
+  {
+   "gse": "GSE197056",
+   "contrast": "lesional_vs_nonlesional",
+   "stratum": "lesional_vs_nonlesional"
+  }
+ ],
+ "markers": [
+  {
+   "symbol": "S100A7",
+   "direction": "up"
+  },
+  {
+   "symbol": "S100A8",
+   "direction": "up"
+  },
+  {
+   "symbol": "S100A9",
+   "direction": "up"
+  },
+  {
+   "symbol": "DEFB4A",
+   "direction": "up"
+  },
+  {
+   "symbol": "KRT16",
+   "direction": "up"
+  },
+  {
+   "symbol": "PI3",
+   "direction": "up"
+  },
+  {
+   "symbol": "IL36G",
+   "direction": "up"
+  },
+  {
+   "symbol": "SERPINB4",
+   "direction": "up"
+  }
+ ],
+ "genes_of_interest": [
+  "IL17A",
+  "IL23A",
+  "IL36G",
+  "DEFB4A",
+  "KRT16",
+  "FLG",
+  "LOR"
+ ]
+}

@@ -24,8 +24,28 @@ def _load(path: Path) -> tuple[SampleSheet, list[Contrast]]:
     ]
 
 
+TEN = {
+    "GSE114286", "GSE67785", "GSE185492", "GSE79544", "GSE135631",
+    "GSE140343", "GSE232753", "GSE233547", "GSE111414", "GSE82227",
+}  # fmt: skip
+SETS = sorted((FIXTURES.parent / "query_sets").glob("*.json"))
+
+
 def test_ten_examples_present() -> None:
-    assert len(EXAMPLES) == 10
+    assert {p.stem for p in EXAMPLES} >= TEN
+
+
+@pytest.mark.parametrize("path", SETS, ids=lambda p: p.stem)
+def test_query_set_members_have_designs(path: Path) -> None:
+    from cell_ledger.compare import QuerySet
+
+    qs = QuerySet.model_validate_json(path.read_text())
+    assert qs.name == path.stem and len(qs.members) >= 3
+    designs = {p.stem for p in EXAMPLES}
+    for m in qs.members:
+        assert m.gse in designs, m.gse
+        _, contrasts = _load(FIXTURES / f"{m.gse}.json")
+        assert m.contrast in {c.name for c in contrasts}, (m.gse, m.contrast)
 
 
 @pytest.mark.parametrize("path", EXAMPLES, ids=lambda p: p.stem)
@@ -43,12 +63,21 @@ def test_example_is_de_ready(path: Path) -> None:
 
 
 @pytest.mark.parametrize("path", EXAMPLES, ids=lambda p: p.stem)
-def test_counts_columns_are_known_gsms(path: Path) -> None:
+def test_contrast_arms_have_counts(path: Path) -> None:
+    """Counts columns are GSMs; both arms of every contrast keep >= 3 quantified samples.
+
+    Sheets may deliberately leave out GSMs (other assays, other diseases, treated
+    arms), so counts columns outside the sheet are allowed and are ignored downstream.
+    """
     counts = DATA / path.stem / f"{path.stem}_raw_counts_GRCh38.p13_NCBI.tsv.gz"
     if not counts.exists():
         pytest.skip("local GEO data not downloaded (scripts/fetch_geo_examples.py)")
-    sheet, _ = _load(path)
+    sheet, contrasts = _load(path)
     with gzip.open(counts, "rt") as f:
         header = f.readline().rstrip("\n").split("\t")
     assert header[0] == "GeneID"
-    assert set(header[1:]) <= set(sheet.gsms)
+    cols = set(header[1:])
+    assert all(c.startswith("GSM") for c in cols)
+    assert cols & set(sheet.gsms)
+    for c in contrasts:
+        assert len(cols & set(c.case_gsms)) >= 3 and len(cols & set(c.control_gsms)) >= 3

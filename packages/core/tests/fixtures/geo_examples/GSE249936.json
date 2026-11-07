@@ -1,0 +1,892 @@
+{
+ "samplesheet": {
+  "gse": "GSE249936",
+  "assay": "bulk",
+  "title": "Gene expression analysis using RNA-Seq of dithranol-treated psoriasis",
+  "samples": [
+   {
+    "gsm": "GSM7967856",
+    "title": "A10_V1b",
+    "source_name": "skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": "none",
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "20",
+    "donor": "A10",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "Sex": "female",
+     "age": "20",
+     "disease state": "non-lesional skin",
+     "treatment": "none"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "Sex: female",
+     "age: 20",
+     "disease state: non-lesional skin",
+     "treatment: none"
+    ]
+   },
+   {
+    "gsm": "GSM7967857",
+    "title": "A11_V1b",
+    "source_name": "skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": "none",
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "52",
+    "donor": "A11",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "Sex": "male",
+     "age": "52",
+     "disease state": "non-lesional skin",
+     "treatment": "none"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "Sex: male",
+     "age: 52",
+     "disease state: non-lesional skin",
+     "treatment: none"
+    ]
+   },
+   {
+    "gsm": "GSM7967858",
+    "title": "A15_V1b",
+    "source_name": "skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": "none",
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "23",
+    "donor": "A15",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "Sex": "male",
+     "age": "23",
+     "disease state": "non-lesional skin",
+     "treatment": "none"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "Sex: male",
+     "age: 23",
+     "disease state: non-lesional skin",
+     "treatment: none"
+    ]
+   },
+   {
+    "gsm": "GSM7967859",
+    "title": "A7_V1b",
+    "source_name": "skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": "none",
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "59",
+    "donor": "A7",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "Sex": "male",
+     "age": "59",
+     "disease state": "non-lesional skin",
+     "treatment": "none"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "Sex: male",
+     "age: 59",
+     "disease state: non-lesional skin",
+     "treatment: none"
+    ]
+   },
+   {
+    "gsm": "GSM7967860",
+    "title": "A9_V1b",
+    "source_name": "skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": "none",
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "54",
+    "donor": "A9",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "Sex": "male",
+     "age": "54",
+     "disease state": "non-lesional skin",
+     "treatment": "none"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "Sex: male",
+     "age: 54",
+     "disease state: non-lesional skin",
+     "treatment: none"
+    ]
+   },
+   {
+    "gsm": "GSM7967861",
+    "title": "A1_V1a",
+    "source_name": "skin",
+    "group": "case",
+    "condition": "psoriasis skin lesion",
+    "treatment": "none",
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "29",
+    "donor": "A1",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: psoriasis skin lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "Sex": "female",
+     "age": "29",
+     "disease state": "psoriasis skin lesion",
+     "treatment": "none"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "Sex: female",
+     "age: 29",
+     "disease state: psoriasis skin lesion",
+     "treatment: none"
+    ]
+   },
+   {
+    "gsm": "GSM7967862",
+    "title": "A10_V1a",
+    "source_name": "skin",
+    "group": "case",
+    "condition": "psoriasis skin lesion",
+    "treatment": "none",
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "20",
+    "donor": "A10",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: psoriasis skin lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "Sex": "female",
+     "age": "20",
+     "disease state": "psoriasis skin lesion",
+     "treatment": "none"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "Sex: female",
+     "age: 20",
+     "disease state: psoriasis skin lesion",
+     "treatment: none"
+    ]
+   },
+   {
+    "gsm": "GSM7967863",
+    "title": "A11_V1a",
+    "source_name": "skin",
+    "group": "case",
+    "condition": "psoriasis skin lesion",
+    "treatment": "none",
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "52",
+    "donor": "A11",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: psoriasis skin lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "Sex": "male",
+     "age": "52",
+     "disease state": "psoriasis skin lesion",
+     "treatment": "none"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "Sex: male",
+     "age: 52",
+     "disease state: psoriasis skin lesion",
+     "treatment: none"
+    ]
+   },
+   {
+    "gsm": "GSM7967864",
+    "title": "A12_V1a",
+    "source_name": "skin",
+    "group": "case",
+    "condition": "psoriasis skin lesion",
+    "treatment": "none",
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "21",
+    "donor": "A12",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: psoriasis skin lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "Sex": "male",
+     "age": "21",
+     "disease state": "psoriasis skin lesion",
+     "treatment": "none"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "Sex: male",
+     "age: 21",
+     "disease state: psoriasis skin lesion",
+     "treatment: none"
+    ]
+   },
+   {
+    "gsm": "GSM7967865",
+    "title": "A15_V1a",
+    "source_name": "skin",
+    "group": "case",
+    "condition": "psoriasis skin lesion",
+    "treatment": "none",
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "23",
+    "donor": "A15",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: psoriasis skin lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "Sex": "male",
+     "age": "23",
+     "disease state": "psoriasis skin lesion",
+     "treatment": "none"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "Sex: male",
+     "age: 23",
+     "disease state: psoriasis skin lesion",
+     "treatment: none"
+    ]
+   },
+   {
+    "gsm": "GSM7967866",
+    "title": "A3_V1a",
+    "source_name": "skin",
+    "group": "case",
+    "condition": "psoriasis skin lesion",
+    "treatment": "none",
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "55",
+    "donor": "A3",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: psoriasis skin lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "Sex": "female",
+     "age": "55",
+     "disease state": "psoriasis skin lesion",
+     "treatment": "none"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "Sex: female",
+     "age: 55",
+     "disease state: psoriasis skin lesion",
+     "treatment: none"
+    ]
+   },
+   {
+    "gsm": "GSM7967867",
+    "title": "A7_V1a",
+    "source_name": "skin",
+    "group": "case",
+    "condition": "psoriasis skin lesion",
+    "treatment": "none",
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "59",
+    "donor": "A7",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: psoriasis skin lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "Sex": "male",
+     "age": "59",
+     "disease state": "psoriasis skin lesion",
+     "treatment": "none"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "Sex: male",
+     "age: 59",
+     "disease state: psoriasis skin lesion",
+     "treatment: none"
+    ]
+   },
+   {
+    "gsm": "GSM7967868",
+    "title": "A9_V1a",
+    "source_name": "skin",
+    "group": "case",
+    "condition": "psoriasis skin lesion",
+    "treatment": "none",
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "54",
+    "donor": "A9",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: psoriasis skin lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "Sex": "male",
+     "age": "54",
+     "disease state": "psoriasis skin lesion",
+     "treatment": "none"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "Sex: male",
+     "age: 54",
+     "disease state: psoriasis skin lesion",
+     "treatment: none"
+    ]
+   },
+   {
+    "gsm": "GSM7967869",
+    "title": "A1_V4",
+    "source_name": "skin",
+    "group": "other",
+    "condition": "psoriasis skin lesion after treatment",
+    "treatment": "dithranol",
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "29",
+    "donor": "A1",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: psoriasis skin lesion after treatment"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "Sex": "female",
+     "age": "29",
+     "disease state": "psoriasis skin lesion after treatment",
+     "treatment": "dithranol"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "Sex: female",
+     "age: 29",
+     "disease state: psoriasis skin lesion after treatment",
+     "treatment: dithranol"
+    ]
+   },
+   {
+    "gsm": "GSM7967870",
+    "title": "A10_V4",
+    "source_name": "skin",
+    "group": "other",
+    "condition": "psoriasis skin lesion after treatment",
+    "treatment": "dithranol",
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "20",
+    "donor": "A10",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: psoriasis skin lesion after treatment"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "Sex": "female",
+     "age": "20",
+     "disease state": "psoriasis skin lesion after treatment",
+     "treatment": "dithranol"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "Sex: female",
+     "age: 20",
+     "disease state: psoriasis skin lesion after treatment",
+     "treatment: dithranol"
+    ]
+   },
+   {
+    "gsm": "GSM7967871",
+    "title": "A11_V4",
+    "source_name": "skin",
+    "group": "other",
+    "condition": "psoriasis skin lesion after treatment",
+    "treatment": "dithranol",
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "52",
+    "donor": "A11",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: psoriasis skin lesion after treatment"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "Sex": "male",
+     "age": "52",
+     "disease state": "psoriasis skin lesion after treatment",
+     "treatment": "dithranol"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "Sex: male",
+     "age: 52",
+     "disease state: psoriasis skin lesion after treatment",
+     "treatment: dithranol"
+    ]
+   },
+   {
+    "gsm": "GSM7967872",
+    "title": "A12_V4",
+    "source_name": "skin",
+    "group": "other",
+    "condition": "psoriasis skin lesion after treatment",
+    "treatment": "dithranol",
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "21",
+    "donor": "A12",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: psoriasis skin lesion after treatment"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "Sex": "male",
+     "age": "21",
+     "disease state": "psoriasis skin lesion after treatment",
+     "treatment": "dithranol"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "Sex: male",
+     "age: 21",
+     "disease state: psoriasis skin lesion after treatment",
+     "treatment: dithranol"
+    ]
+   },
+   {
+    "gsm": "GSM7967873",
+    "title": "A15_V4",
+    "source_name": "skin",
+    "group": "other",
+    "condition": "psoriasis skin lesion after treatment",
+    "treatment": "dithranol",
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "23",
+    "donor": "A15",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: psoriasis skin lesion after treatment"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "Sex": "male",
+     "age": "23",
+     "disease state": "psoriasis skin lesion after treatment",
+     "treatment": "dithranol"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "Sex: male",
+     "age: 23",
+     "disease state: psoriasis skin lesion after treatment",
+     "treatment: dithranol"
+    ]
+   },
+   {
+    "gsm": "GSM7967874",
+    "title": "A3_V4",
+    "source_name": "skin",
+    "group": "other",
+    "condition": "psoriasis skin lesion after treatment",
+    "treatment": "dithranol",
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "55",
+    "donor": "A3",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: psoriasis skin lesion after treatment"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "Sex": "female",
+     "age": "55",
+     "disease state": "psoriasis skin lesion after treatment",
+     "treatment": "dithranol"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "Sex: female",
+     "age: 55",
+     "disease state: psoriasis skin lesion after treatment",
+     "treatment: dithranol"
+    ]
+   },
+   {
+    "gsm": "GSM7967875",
+    "title": "A7_V4",
+    "source_name": "skin",
+    "group": "other",
+    "condition": "psoriasis skin lesion after treatment",
+    "treatment": "dithranol",
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "59",
+    "donor": "A7",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: psoriasis skin lesion after treatment"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "Sex": "male",
+     "age": "59",
+     "disease state": "psoriasis skin lesion after treatment",
+     "treatment": "dithranol"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "Sex: male",
+     "age: 59",
+     "disease state: psoriasis skin lesion after treatment",
+     "treatment: dithranol"
+    ]
+   },
+   {
+    "gsm": "GSM7967876",
+    "title": "A9_V4",
+    "source_name": "skin",
+    "group": "other",
+    "condition": "psoriasis skin lesion after treatment",
+    "treatment": "dithranol",
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "54",
+    "donor": "A9",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: psoriasis skin lesion after treatment"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin",
+     "Sex": "male",
+     "age": "54",
+     "disease state": "psoriasis skin lesion after treatment",
+     "treatment": "dithranol"
+    },
+    "raw_lines": [
+     "tissue: skin",
+     "Sex: male",
+     "age: 54",
+     "disease state: psoriasis skin lesion after treatment",
+     "treatment: dithranol"
+    ]
+   }
+  ]
+ },
+ "contrasts": [
+  {
+   "gse": "GSE249936",
+   "name": "lesional_vs_nonlesional",
+   "case_label": "psoriasis lesional skin, untreated",
+   "control_label": "psoriasis non-lesional skin",
+   "case_gsms": [
+    "GSM7967861",
+    "GSM7967862",
+    "GSM7967863",
+    "GSM7967864",
+    "GSM7967865",
+    "GSM7967866",
+    "GSM7967867",
+    "GSM7967868"
+   ],
+   "control_gsms": [
+    "GSM7967856",
+    "GSM7967857",
+    "GSM7967858",
+    "GSM7967859",
+    "GSM7967860"
+   ],
+   "blocking": "donor",
+   "restricted_to": {},
+   "confidence": 1.0,
+   "status": "confirmed",
+   "rationale": "Dithranol-treated lesions kept as 'other'; 5 of 8 patients have both arms."
+  }
+ ],
+ "markers": [
+  {
+   "symbol": "S100A7",
+   "direction": "up"
+  },
+  {
+   "symbol": "S100A8",
+   "direction": "up"
+  },
+  {
+   "symbol": "S100A9",
+   "direction": "up"
+  },
+  {
+   "symbol": "DEFB4A",
+   "direction": "up"
+  },
+  {
+   "symbol": "KRT16",
+   "direction": "up"
+  },
+  {
+   "symbol": "PI3",
+   "direction": "up"
+  },
+  {
+   "symbol": "IL36G",
+   "direction": "up"
+  },
+  {
+   "symbol": "SERPINB4",
+   "direction": "up"
+  }
+ ]
+}

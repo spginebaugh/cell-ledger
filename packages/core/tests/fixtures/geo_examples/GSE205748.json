@@ -1,0 +1,969 @@
+{
+ "samplesheet": {
+  "gse": "GSE205748",
+  "assay": "bulk",
+  "title": "Psoriatic arthritis skin lesions and uninvolved bulk RNA-seq",
+  "samples": [
+   {
+    "gsm": "GSM6222612",
+    "title": "Healthy control skin 6 [HC_6]",
+    "source_name": "skin biopsy",
+    "group": "control",
+    "condition": "Healthy control skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: Healthy control skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin biopsy",
+     "tissue type": "Healthy control skin"
+    },
+    "raw_lines": [
+     "tissue: skin biopsy",
+     "tissue type: Healthy control skin"
+    ]
+   },
+   {
+    "gsm": "GSM6222613",
+    "title": "Healthy control skin 7 [HC_7]",
+    "source_name": "skin biopsy",
+    "group": "control",
+    "condition": "Healthy control skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: Healthy control skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin biopsy",
+     "tissue type": "Healthy control skin"
+    },
+    "raw_lines": [
+     "tissue: skin biopsy",
+     "tissue type: Healthy control skin"
+    ]
+   },
+   {
+    "gsm": "GSM6222614",
+    "title": "Healthy control skin 8 [HC_8]",
+    "source_name": "skin biopsy",
+    "group": "control",
+    "condition": "Healthy control skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: Healthy control skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin biopsy",
+     "tissue type": "Healthy control skin"
+    },
+    "raw_lines": [
+     "tissue: skin biopsy",
+     "tissue type: Healthy control skin"
+    ]
+   },
+   {
+    "gsm": "GSM6222615",
+    "title": "Healthy control skin 9 [HC_9]",
+    "source_name": "skin biopsy",
+    "group": "control",
+    "condition": "Healthy control skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: Healthy control skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin biopsy",
+     "tissue type": "Healthy control skin"
+    },
+    "raw_lines": [
+     "tissue: skin biopsy",
+     "tissue type: Healthy control skin"
+    ]
+   },
+   {
+    "gsm": "GSM6222616",
+    "title": "Healthy control skin 11 [HC_11]",
+    "source_name": "skin biopsy",
+    "group": "control",
+    "condition": "Healthy control skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: Healthy control skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin biopsy",
+     "tissue type": "Healthy control skin"
+    },
+    "raw_lines": [
+     "tissue: skin biopsy",
+     "tissue type: Healthy control skin"
+    ]
+   },
+   {
+    "gsm": "GSM6222617",
+    "title": "Healthy control skin 12 [HC_12]",
+    "source_name": "skin biopsy",
+    "group": "control",
+    "condition": "Healthy control skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: Healthy control skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin biopsy",
+     "tissue type": "Healthy control skin"
+    },
+    "raw_lines": [
+     "tissue: skin biopsy",
+     "tissue type: Healthy control skin"
+    ]
+   },
+   {
+    "gsm": "GSM6222618",
+    "title": "Healthy control skin 13 [HC_13]",
+    "source_name": "skin biopsy",
+    "group": "control",
+    "condition": "Healthy control skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: Healthy control skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin biopsy",
+     "tissue type": "Healthy control skin"
+    },
+    "raw_lines": [
+     "tissue: skin biopsy",
+     "tissue type: Healthy control skin"
+    ]
+   },
+   {
+    "gsm": "GSM6222619",
+    "title": "Healthy control skin 14 [HC_14]",
+    "source_name": "skin biopsy",
+    "group": "control",
+    "condition": "Healthy control skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: Healthy control skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin biopsy",
+     "tissue type": "Healthy control skin"
+    },
+    "raw_lines": [
+     "tissue: skin biopsy",
+     "tissue type: Healthy control skin"
+    ]
+   },
+   {
+    "gsm": "GSM6222620",
+    "title": "Healthy control skin 15 [HC_15]",
+    "source_name": "skin biopsy",
+    "group": "control",
+    "condition": "Healthy control skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: Healthy control skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin biopsy",
+     "tissue type": "Healthy control skin"
+    },
+    "raw_lines": [
+     "tissue: skin biopsy",
+     "tissue type: Healthy control skin"
+    ]
+   },
+   {
+    "gsm": "GSM6222621",
+    "title": "Psoriatic arthritis skin lesion 1 [PSA_L_1]",
+    "source_name": "skin biopsy",
+    "group": "case",
+    "condition": "Psoriatic arthritis skin lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: Psoriatic arthritis skin lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin biopsy",
+     "tissue type": "Psoriatic arthritis skin lesion"
+    },
+    "raw_lines": [
+     "tissue: skin biopsy",
+     "tissue type: Psoriatic arthritis skin lesion"
+    ]
+   },
+   {
+    "gsm": "GSM6222622",
+    "title": "Psoriatic arthritis skin lesion 2 [PSA_L_2]",
+    "source_name": "skin biopsy",
+    "group": "case",
+    "condition": "Psoriatic arthritis skin lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: Psoriatic arthritis skin lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin biopsy",
+     "tissue type": "Psoriatic arthritis skin lesion"
+    },
+    "raw_lines": [
+     "tissue: skin biopsy",
+     "tissue type: Psoriatic arthritis skin lesion"
+    ]
+   },
+   {
+    "gsm": "GSM6222623",
+    "title": "Psoriatic arthritis skin lesion 3 [PSA_L_3]",
+    "source_name": "skin biopsy",
+    "group": "case",
+    "condition": "Psoriatic arthritis skin lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: Psoriatic arthritis skin lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin biopsy",
+     "tissue type": "Psoriatic arthritis skin lesion"
+    },
+    "raw_lines": [
+     "tissue: skin biopsy",
+     "tissue type: Psoriatic arthritis skin lesion"
+    ]
+   },
+   {
+    "gsm": "GSM6222624",
+    "title": "Psoriatic arthritis skin lesion 4 [PSA_L_4]",
+    "source_name": "skin biopsy",
+    "group": "case",
+    "condition": "Psoriatic arthritis skin lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: Psoriatic arthritis skin lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin biopsy",
+     "tissue type": "Psoriatic arthritis skin lesion"
+    },
+    "raw_lines": [
+     "tissue: skin biopsy",
+     "tissue type: Psoriatic arthritis skin lesion"
+    ]
+   },
+   {
+    "gsm": "GSM6222625",
+    "title": "Psoriatic arthritis skin lesion 5 [PSA_L_5]",
+    "source_name": "skin biopsy",
+    "group": "case",
+    "condition": "Psoriatic arthritis skin lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: Psoriatic arthritis skin lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin biopsy",
+     "tissue type": "Psoriatic arthritis skin lesion"
+    },
+    "raw_lines": [
+     "tissue: skin biopsy",
+     "tissue type: Psoriatic arthritis skin lesion"
+    ]
+   },
+   {
+    "gsm": "GSM6222626",
+    "title": "Psoriatic arthritis skin lesion 7 [PSA_L_7]",
+    "source_name": "skin biopsy",
+    "group": "case",
+    "condition": "Psoriatic arthritis skin lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: Psoriatic arthritis skin lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin biopsy",
+     "tissue type": "Psoriatic arthritis skin lesion"
+    },
+    "raw_lines": [
+     "tissue: skin biopsy",
+     "tissue type: Psoriatic arthritis skin lesion"
+    ]
+   },
+   {
+    "gsm": "GSM6222627",
+    "title": "Psoriatic arthritis skin lesion 8 [PSA_L_8]",
+    "source_name": "skin biopsy",
+    "group": "case",
+    "condition": "Psoriatic arthritis skin lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: Psoriatic arthritis skin lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin biopsy",
+     "tissue type": "Psoriatic arthritis skin lesion"
+    },
+    "raw_lines": [
+     "tissue: skin biopsy",
+     "tissue type: Psoriatic arthritis skin lesion"
+    ]
+   },
+   {
+    "gsm": "GSM6222628",
+    "title": "Psoriatic arthritis skin lesion 10 [PSA_L_10]",
+    "source_name": "skin biopsy",
+    "group": "case",
+    "condition": "Psoriatic arthritis skin lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: Psoriatic arthritis skin lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin biopsy",
+     "tissue type": "Psoriatic arthritis skin lesion"
+    },
+    "raw_lines": [
+     "tissue: skin biopsy",
+     "tissue type: Psoriatic arthritis skin lesion"
+    ]
+   },
+   {
+    "gsm": "GSM6222629",
+    "title": "Psoriatic arthritis skin lesion 11 [PSA_L_11]",
+    "source_name": "skin biopsy",
+    "group": "case",
+    "condition": "Psoriatic arthritis skin lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: Psoriatic arthritis skin lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin biopsy",
+     "tissue type": "Psoriatic arthritis skin lesion"
+    },
+    "raw_lines": [
+     "tissue: skin biopsy",
+     "tissue type: Psoriatic arthritis skin lesion"
+    ]
+   },
+   {
+    "gsm": "GSM6222630",
+    "title": "Psoriatic arthritis skin uninvolved 1 [PSA_U_1]",
+    "source_name": "skin biopsy",
+    "group": "other",
+    "condition": "Psoriatic arthritis skin uninvolved",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: Psoriatic arthritis skin uninvolved"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin biopsy",
+     "tissue type": "Psoriatic arthritis skin uninvolved"
+    },
+    "raw_lines": [
+     "tissue: skin biopsy",
+     "tissue type: Psoriatic arthritis skin uninvolved"
+    ]
+   },
+   {
+    "gsm": "GSM6222631",
+    "title": "Psoriatic arthritis skin uninvolved 2 [PSA_U_2]",
+    "source_name": "skin biopsy",
+    "group": "other",
+    "condition": "Psoriatic arthritis skin uninvolved",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: Psoriatic arthritis skin uninvolved"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin biopsy",
+     "tissue type": "Psoriatic arthritis skin uninvolved"
+    },
+    "raw_lines": [
+     "tissue: skin biopsy",
+     "tissue type: Psoriatic arthritis skin uninvolved"
+    ]
+   },
+   {
+    "gsm": "GSM6222632",
+    "title": "Psoriatic arthritis skin uninvolved 3 [PSA_U_3]",
+    "source_name": "skin biopsy",
+    "group": "other",
+    "condition": "Psoriatic arthritis skin uninvolved",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: Psoriatic arthritis skin uninvolved"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin biopsy",
+     "tissue type": "Psoriatic arthritis skin uninvolved"
+    },
+    "raw_lines": [
+     "tissue: skin biopsy",
+     "tissue type: Psoriatic arthritis skin uninvolved"
+    ]
+   },
+   {
+    "gsm": "GSM6222633",
+    "title": "Psoriatic arthritis skin uninvolved 4 [PSA_U_4]",
+    "source_name": "skin biopsy",
+    "group": "other",
+    "condition": "Psoriatic arthritis skin uninvolved",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: Psoriatic arthritis skin uninvolved"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin biopsy",
+     "tissue type": "Psoriatic arthritis skin uninvolved"
+    },
+    "raw_lines": [
+     "tissue: skin biopsy",
+     "tissue type: Psoriatic arthritis skin uninvolved"
+    ]
+   },
+   {
+    "gsm": "GSM6222634",
+    "title": "Psoriatic arthritis skin uninvolved 5 [PSA_U_5]",
+    "source_name": "skin biopsy",
+    "group": "other",
+    "condition": "Psoriatic arthritis skin uninvolved",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: Psoriatic arthritis skin uninvolved"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin biopsy",
+     "tissue type": "Psoriatic arthritis skin uninvolved"
+    },
+    "raw_lines": [
+     "tissue: skin biopsy",
+     "tissue type: Psoriatic arthritis skin uninvolved"
+    ]
+   },
+   {
+    "gsm": "GSM6222635",
+    "title": "Psoriatic arthritis skin uninvolved 7 [PSA_U_7]",
+    "source_name": "skin biopsy",
+    "group": "other",
+    "condition": "Psoriatic arthritis skin uninvolved",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: Psoriatic arthritis skin uninvolved"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin biopsy",
+     "tissue type": "Psoriatic arthritis skin uninvolved"
+    },
+    "raw_lines": [
+     "tissue: skin biopsy",
+     "tissue type: Psoriatic arthritis skin uninvolved"
+    ]
+   },
+   {
+    "gsm": "GSM6222636",
+    "title": "Psoriatic arthritis skin uninvolved 8 [PSA_U_8]",
+    "source_name": "skin biopsy",
+    "group": "other",
+    "condition": "Psoriatic arthritis skin uninvolved",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: Psoriatic arthritis skin uninvolved"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin biopsy",
+     "tissue type": "Psoriatic arthritis skin uninvolved"
+    },
+    "raw_lines": [
+     "tissue: skin biopsy",
+     "tissue type: Psoriatic arthritis skin uninvolved"
+    ]
+   },
+   {
+    "gsm": "GSM6222637",
+    "title": "Psoriatic arthritis skin uninvolved 10 [PSA_U_10]",
+    "source_name": "skin biopsy",
+    "group": "other",
+    "condition": "Psoriatic arthritis skin uninvolved",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: Psoriatic arthritis skin uninvolved"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin biopsy",
+     "tissue type": "Psoriatic arthritis skin uninvolved"
+    },
+    "raw_lines": [
+     "tissue: skin biopsy",
+     "tissue type: Psoriatic arthritis skin uninvolved"
+    ]
+   },
+   {
+    "gsm": "GSM6222638",
+    "title": "Psoriatic arthritis skin uninvolved 11 [PSA_U_11]",
+    "source_name": "skin biopsy",
+    "group": "other",
+    "condition": "Psoriatic arthritis skin uninvolved",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: Psoriatic arthritis skin uninvolved"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "skin biopsy",
+     "tissue type": "Psoriatic arthritis skin uninvolved"
+    },
+    "raw_lines": [
+     "tissue: skin biopsy",
+     "tissue type: Psoriatic arthritis skin uninvolved"
+    ]
+   }
+  ]
+ },
+ "contrasts": [
+  {
+   "gse": "GSE205748",
+   "name": "lesional_vs_healthy",
+   "case_label": "psoriatic arthritis lesional skin",
+   "control_label": "healthy skin",
+   "case_gsms": [
+    "GSM6222621",
+    "GSM6222622",
+    "GSM6222623",
+    "GSM6222624",
+    "GSM6222625",
+    "GSM6222626",
+    "GSM6222627",
+    "GSM6222628",
+    "GSM6222629"
+   ],
+   "control_gsms": [
+    "GSM6222612",
+    "GSM6222613",
+    "GSM6222614",
+    "GSM6222615",
+    "GSM6222616",
+    "GSM6222617",
+    "GSM6222618",
+    "GSM6222619",
+    "GSM6222620"
+   ],
+   "blocking": null,
+   "restricted_to": {},
+   "confidence": 1.0,
+   "status": "confirmed",
+   "rationale": "Uninvolved PsA skin kept as 'other'."
+  }
+ ],
+ "markers": [
+  {
+   "symbol": "S100A7",
+   "direction": "up"
+  },
+  {
+   "symbol": "S100A8",
+   "direction": "up"
+  },
+  {
+   "symbol": "S100A9",
+   "direction": "up"
+  },
+  {
+   "symbol": "DEFB4A",
+   "direction": "up"
+  },
+  {
+   "symbol": "KRT16",
+   "direction": "up"
+  },
+  {
+   "symbol": "PI3",
+   "direction": "up"
+  },
+  {
+   "symbol": "IL36G",
+   "direction": "up"
+  },
+  {
+   "symbol": "SERPINB4",
+   "direction": "up"
+  }
+ ]
+}

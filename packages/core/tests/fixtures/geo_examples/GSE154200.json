@@ -1,0 +1,7180 @@
+{
+ "samplesheet": {
+  "gse": "GSE154200",
+  "assay": "bulk",
+  "title": "Skin transcriptome of non-communicable inflammatory skin diseases",
+  "samples": [
+   {
+    "gsm": "GSM4665838",
+    "title": "MUC2699",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "24.72328767",
+    "donor": "10079",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10079",
+     "age": "24.72328767",
+     "gender": "male",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10079",
+     "age: 24.72328767",
+     "gender: male",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665839",
+    "title": "MUC2700",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "24.72328767",
+    "donor": "10079",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10079",
+     "age": "24.72328767",
+     "gender": "male",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10079",
+     "age: 24.72328767",
+     "gender: male",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665848",
+    "title": "MUC2709",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "57.01369863",
+    "donor": "10119",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10119",
+     "age": "57.01369863",
+     "gender": "female",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10119",
+     "age: 57.01369863",
+     "gender: female",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665849",
+    "title": "MUC2710",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "57.01369863",
+    "donor": "10119",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10119",
+     "age": "57.01369863",
+     "gender": "female",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10119",
+     "age: 57.01369863",
+     "gender: female",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665860",
+    "title": "MUC2723",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "55.41917808",
+    "donor": "10158",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10158",
+     "age": "55.41917808",
+     "gender": "male",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10158",
+     "age: 55.41917808",
+     "gender: male",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665861",
+    "title": "MUC2724",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "55.41917808",
+    "donor": "10158",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10158",
+     "age": "55.41917808",
+     "gender": "male",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10158",
+     "age: 55.41917808",
+     "gender: male",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665862",
+    "title": "MUC2725",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "53.40547945",
+    "donor": "10159",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10159",
+     "age": "53.40547945",
+     "gender": "female",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10159",
+     "age: 53.40547945",
+     "gender: female",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665863",
+    "title": "MUC2726",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "53.40547945",
+    "donor": "10159",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10159",
+     "age": "53.40547945",
+     "gender": "female",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10159",
+     "age: 53.40547945",
+     "gender: female",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665874",
+    "title": "MUC2737",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "18.33424658",
+    "donor": "10002",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10002",
+     "age": "18.33424658",
+     "gender": "female",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10002",
+     "age: 18.33424658",
+     "gender: female",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665875",
+    "title": "MUC2738",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "18.33424658",
+    "donor": "10002",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10002",
+     "age": "18.33424658",
+     "gender": "female",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10002",
+     "age: 18.33424658",
+     "gender: female",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665876",
+    "title": "MUC2739",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "42.72054795",
+    "donor": "10006",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10006",
+     "age": "42.72054795",
+     "gender": "male",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10006",
+     "age: 42.72054795",
+     "gender: male",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665877",
+    "title": "MUC2740",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "42.72054795",
+    "donor": "10006",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10006",
+     "age": "42.72054795",
+     "gender": "male",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10006",
+     "age: 42.72054795",
+     "gender: male",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665878",
+    "title": "MUC2741",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "50.26027397",
+    "donor": "10013",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10013",
+     "age": "50.26027397",
+     "gender": "male",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10013",
+     "age: 50.26027397",
+     "gender: male",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665879",
+    "title": "MUC2742",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "50.26027397",
+    "donor": "10013",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10013",
+     "age": "50.26027397",
+     "gender": "male",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10013",
+     "age: 50.26027397",
+     "gender: male",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665880",
+    "title": "MUC2743",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "59.32328767",
+    "donor": "10019",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10019",
+     "age": "59.32328767",
+     "gender": "male",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10019",
+     "age: 59.32328767",
+     "gender: male",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665881",
+    "title": "MUC2744",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "59.32328767",
+    "donor": "10019",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10019",
+     "age": "59.32328767",
+     "gender": "male",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10019",
+     "age: 59.32328767",
+     "gender: male",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665882",
+    "title": "MUC2745",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "38.26027397",
+    "donor": "10030",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10030",
+     "age": "38.26027397",
+     "gender": "male",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10030",
+     "age: 38.26027397",
+     "gender: male",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665883",
+    "title": "MUC2746",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "38.26027397",
+    "donor": "10030",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10030",
+     "age": "38.26027397",
+     "gender": "male",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10030",
+     "age: 38.26027397",
+     "gender: male",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665884",
+    "title": "MUC2747",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "67.57534247",
+    "donor": "10033",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10033",
+     "age": "67.57534247",
+     "gender": "male",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10033",
+     "age: 67.57534247",
+     "gender: male",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665885",
+    "title": "MUC2748",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "67.57534247",
+    "donor": "10033",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10033",
+     "age": "67.57534247",
+     "gender": "male",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10033",
+     "age: 67.57534247",
+     "gender: male",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665886",
+    "title": "MUC2749",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "67.48219178",
+    "donor": "10034",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10034",
+     "age": "67.48219178",
+     "gender": "female",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10034",
+     "age: 67.48219178",
+     "gender: female",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665887",
+    "title": "MUC2750",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "67.48219178",
+    "donor": "10034",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10034",
+     "age": "67.48219178",
+     "gender": "female",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10034",
+     "age: 67.48219178",
+     "gender: female",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665888",
+    "title": "MUC2751",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "52.63287671",
+    "donor": "10036",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10036",
+     "age": "52.63287671",
+     "gender": "male",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10036",
+     "age: 52.63287671",
+     "gender: male",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665889",
+    "title": "MUC2752",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "52.63287671",
+    "donor": "10036",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10036",
+     "age": "52.63287671",
+     "gender": "male",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10036",
+     "age: 52.63287671",
+     "gender: male",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665890",
+    "title": "MUC2753",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "54.78356164",
+    "donor": "10046",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10046",
+     "age": "54.78356164",
+     "gender": "male",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10046",
+     "age: 54.78356164",
+     "gender: male",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665891",
+    "title": "MUC2754",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "54.78356164",
+    "donor": "10046",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10046",
+     "age": "54.78356164",
+     "gender": "male",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10046",
+     "age: 54.78356164",
+     "gender: male",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665892",
+    "title": "MUC2755",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "45.7890411",
+    "donor": "10049",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10049",
+     "age": "45.7890411",
+     "gender": "male",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10049",
+     "age: 45.7890411",
+     "gender: male",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665893",
+    "title": "MUC2756",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "45.7890411",
+    "donor": "10049",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10049",
+     "age": "45.7890411",
+     "gender": "male",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10049",
+     "age: 45.7890411",
+     "gender: male",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665894",
+    "title": "MUC2757",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "42.2",
+    "donor": "10051",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10051",
+     "age": "42.2",
+     "gender": "female",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10051",
+     "age: 42.2",
+     "gender: female",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665895",
+    "title": "MUC2758",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "42.2",
+    "donor": "10051",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10051",
+     "age": "42.2",
+     "gender": "female",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10051",
+     "age: 42.2",
+     "gender: female",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665896",
+    "title": "MUC2759",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "90.61917808",
+    "donor": "10052",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10052",
+     "age": "90.61917808",
+     "gender": "female",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10052",
+     "age: 90.61917808",
+     "gender: female",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665897",
+    "title": "MUC2760",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "90.61917808",
+    "donor": "10052",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10052",
+     "age": "90.61917808",
+     "gender": "female",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10052",
+     "age: 90.61917808",
+     "gender: female",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665898",
+    "title": "MUC2761",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "22.9890411",
+    "donor": "10056",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10056",
+     "age": "22.9890411",
+     "gender": "male",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10056",
+     "age: 22.9890411",
+     "gender: male",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665899",
+    "title": "MUC2762",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "22.9890411",
+    "donor": "10056",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10056",
+     "age": "22.9890411",
+     "gender": "male",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10056",
+     "age: 22.9890411",
+     "gender: male",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665900",
+    "title": "MUC2763",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "70.30684932",
+    "donor": "10058",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10058",
+     "age": "70.30684932",
+     "gender": "female",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10058",
+     "age: 70.30684932",
+     "gender: female",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665901",
+    "title": "MUC2764",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "70.30684932",
+    "donor": "10058",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10058",
+     "age": "70.30684932",
+     "gender": "female",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10058",
+     "age: 70.30684932",
+     "gender: female",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665902",
+    "title": "MUC2765",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "52.93150685",
+    "donor": "10060",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10060",
+     "age": "52.93150685",
+     "gender": "male",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10060",
+     "age: 52.93150685",
+     "gender: male",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665903",
+    "title": "MUC2766",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "52.93150685",
+    "donor": "10060",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10060",
+     "age": "52.93150685",
+     "gender": "male",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10060",
+     "age: 52.93150685",
+     "gender: male",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665904",
+    "title": "MUC2767",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "92.2109589",
+    "donor": "10064",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10064",
+     "age": "92.2109589",
+     "gender": "female",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10064",
+     "age: 92.2109589",
+     "gender: female",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665905",
+    "title": "MUC2768",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "92.2109589",
+    "donor": "10064",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10064",
+     "age": "92.2109589",
+     "gender": "female",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10064",
+     "age: 92.2109589",
+     "gender: female",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665906",
+    "title": "MUC2769",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "42.30410959",
+    "donor": "10067",
+    "batch": "1",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10067",
+     "age": "42.30410959",
+     "gender": "male",
+     "batch id": "1"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10067",
+     "age: 42.30410959",
+     "gender: male",
+     "batch id: 1"
+    ]
+   },
+   {
+    "gsm": "GSM4665907",
+    "title": "MUC2770",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "42.30410959",
+    "donor": "10067",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10067",
+     "age": "42.30410959",
+     "gender": "male",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10067",
+     "age: 42.30410959",
+     "gender: male",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665908",
+    "title": "MUC2771",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "31.68767123",
+    "donor": "10072",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10072",
+     "age": "31.68767123",
+     "gender": "female",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10072",
+     "age: 31.68767123",
+     "gender: female",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665909",
+    "title": "MUC2772",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "31.68767123",
+    "donor": "10072",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10072",
+     "age": "31.68767123",
+     "gender": "female",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10072",
+     "age: 31.68767123",
+     "gender: female",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665910",
+    "title": "MUC2773",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "41.79178082",
+    "donor": "10083",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10083",
+     "age": "41.79178082",
+     "gender": "female",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10083",
+     "age: 41.79178082",
+     "gender: female",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665911",
+    "title": "MUC2774",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "41.79178082",
+    "donor": "10083",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10083",
+     "age": "41.79178082",
+     "gender": "female",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10083",
+     "age: 41.79178082",
+     "gender: female",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665916",
+    "title": "MUC2779",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "55.22739726",
+    "donor": "10103",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10103",
+     "age": "55.22739726",
+     "gender": "male",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10103",
+     "age: 55.22739726",
+     "gender: male",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665917",
+    "title": "MUC2780",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "55.22739726",
+    "donor": "10103",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10103",
+     "age": "55.22739726",
+     "gender": "male",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10103",
+     "age: 55.22739726",
+     "gender: male",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665918",
+    "title": "MUC2781",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "53.49041096",
+    "donor": "10128",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10128",
+     "age": "53.49041096",
+     "gender": "female",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10128",
+     "age: 53.49041096",
+     "gender: female",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665919",
+    "title": "MUC2782",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "53.49041096",
+    "donor": "10128",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10128",
+     "age": "53.49041096",
+     "gender": "female",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10128",
+     "age: 53.49041096",
+     "gender: female",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665920",
+    "title": "MUC2783",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "63.69589041",
+    "donor": "10133",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10133",
+     "age": "63.69589041",
+     "gender": "male",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10133",
+     "age: 63.69589041",
+     "gender: male",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665921",
+    "title": "MUC2784",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "63.69589041",
+    "donor": "10133",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10133",
+     "age": "63.69589041",
+     "gender": "male",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10133",
+     "age: 63.69589041",
+     "gender: male",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665922",
+    "title": "MUC2785",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "67.49863014",
+    "donor": "10136",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10136",
+     "age": "67.49863014",
+     "gender": "female",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10136",
+     "age: 67.49863014",
+     "gender: female",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665923",
+    "title": "MUC2786",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "67.49863014",
+    "donor": "10136",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10136",
+     "age": "67.49863014",
+     "gender": "female",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10136",
+     "age: 67.49863014",
+     "gender: female",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665924",
+    "title": "MUC2787",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "68.61643836",
+    "donor": "10138",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10138",
+     "age": "68.61643836",
+     "gender": "female",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10138",
+     "age: 68.61643836",
+     "gender: female",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665925",
+    "title": "MUC2788",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "68.61643836",
+    "donor": "10138",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10138",
+     "age": "68.61643836",
+     "gender": "female",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10138",
+     "age: 68.61643836",
+     "gender: female",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665926",
+    "title": "MUC2789",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "46.8739726",
+    "donor": "10153",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10153",
+     "age": "46.8739726",
+     "gender": "female",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10153",
+     "age: 46.8739726",
+     "gender: female",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665927",
+    "title": "MUC2790",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "46.8739726",
+    "donor": "10153",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10153",
+     "age": "46.8739726",
+     "gender": "female",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10153",
+     "age: 46.8739726",
+     "gender: female",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665928",
+    "title": "MUC2791",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "55.42739726",
+    "donor": "10154",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10154",
+     "age": "55.42739726",
+     "gender": "female",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10154",
+     "age: 55.42739726",
+     "gender: female",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665929",
+    "title": "MUC2792",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "55.42739726",
+    "donor": "10154",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10154",
+     "age": "55.42739726",
+     "gender": "female",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10154",
+     "age: 55.42739726",
+     "gender: female",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665930",
+    "title": "MUC2793",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "56.98356164",
+    "donor": "10171",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10171",
+     "age": "56.98356164",
+     "gender": "male",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10171",
+     "age: 56.98356164",
+     "gender: male",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665931",
+    "title": "MUC2794",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "56.98356164",
+    "donor": "10171",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10171",
+     "age": "56.98356164",
+     "gender": "male",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10171",
+     "age: 56.98356164",
+     "gender: male",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665932",
+    "title": "MUC2795",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "90.96986301",
+    "donor": "10172",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10172",
+     "age": "90.96986301",
+     "gender": "female",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10172",
+     "age: 90.96986301",
+     "gender: female",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665933",
+    "title": "MUC2796",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "90.96986301",
+    "donor": "10172",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10172",
+     "age": "90.96986301",
+     "gender": "female",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10172",
+     "age: 90.96986301",
+     "gender: female",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665934",
+    "title": "MUC2797",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "51.56986301",
+    "donor": "10177",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10177",
+     "age": "51.56986301",
+     "gender": "male",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10177",
+     "age: 51.56986301",
+     "gender: male",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665935",
+    "title": "MUC2798",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "51.56986301",
+    "donor": "10177",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10177",
+     "age": "51.56986301",
+     "gender": "male",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10177",
+     "age: 51.56986301",
+     "gender: male",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665936",
+    "title": "MUC2799",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "47.4",
+    "donor": "10195",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10195",
+     "age": "47.4",
+     "gender": "male",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10195",
+     "age: 47.4",
+     "gender: male",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665937",
+    "title": "MUC2800",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "47.4",
+    "donor": "10195",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10195",
+     "age": "47.4",
+     "gender": "male",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10195",
+     "age: 47.4",
+     "gender: male",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665938",
+    "title": "MUC2801",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "54.31506849",
+    "donor": "10198",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10198",
+     "age": "54.31506849",
+     "gender": "male",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10198",
+     "age: 54.31506849",
+     "gender: male",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665939",
+    "title": "MUC2802",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "54.31506849",
+    "donor": "10198",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10198",
+     "age": "54.31506849",
+     "gender": "male",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10198",
+     "age: 54.31506849",
+     "gender: male",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665940",
+    "title": "MUC2803",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "44.11780822",
+    "donor": "10199",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10199",
+     "age": "44.11780822",
+     "gender": "female",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10199",
+     "age: 44.11780822",
+     "gender: female",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665941",
+    "title": "MUC2804",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "44.11780822",
+    "donor": "10199",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10199",
+     "age": "44.11780822",
+     "gender": "female",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10199",
+     "age: 44.11780822",
+     "gender: female",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665942",
+    "title": "MUC2805",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "38.52054795",
+    "donor": "10200",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10200",
+     "age": "38.52054795",
+     "gender": "male",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10200",
+     "age: 38.52054795",
+     "gender: male",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665943",
+    "title": "MUC2806",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "38.52054795",
+    "donor": "10200",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10200",
+     "age": "38.52054795",
+     "gender": "male",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10200",
+     "age: 38.52054795",
+     "gender: male",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665944",
+    "title": "MUC2807",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "49.74246575",
+    "donor": "10203",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10203",
+     "age": "49.74246575",
+     "gender": "male",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10203",
+     "age: 49.74246575",
+     "gender: male",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665945",
+    "title": "MUC2808",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "49.74246575",
+    "donor": "10203",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10203",
+     "age": "49.74246575",
+     "gender": "male",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10203",
+     "age: 49.74246575",
+     "gender: male",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665946",
+    "title": "MUC2809",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "27.58356164",
+    "donor": "10206",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10206",
+     "age": "27.58356164",
+     "gender": "female",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10206",
+     "age: 27.58356164",
+     "gender: female",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665947",
+    "title": "MUC2810",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "27.58356164",
+    "donor": "10206",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10206",
+     "age": "27.58356164",
+     "gender": "female",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10206",
+     "age: 27.58356164",
+     "gender: female",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665948",
+    "title": "MUC2811",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "65.75342466",
+    "donor": "10208",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10208",
+     "age": "65.75342466",
+     "gender": "female",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10208",
+     "age: 65.75342466",
+     "gender: female",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665949",
+    "title": "MUC2812",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "65.75342466",
+    "donor": "10208",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10208",
+     "age": "65.75342466",
+     "gender": "female",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10208",
+     "age: 65.75342466",
+     "gender: female",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665950",
+    "title": "MUC2813",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "50.69863014",
+    "donor": "10210",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10210",
+     "age": "50.69863014",
+     "gender": "female",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10210",
+     "age: 50.69863014",
+     "gender: female",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665951",
+    "title": "MUC2814",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "50.69863014",
+    "donor": "10210",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10210",
+     "age": "50.69863014",
+     "gender": "female",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10210",
+     "age: 50.69863014",
+     "gender: female",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665952",
+    "title": "MUC2815",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "39.40547945",
+    "donor": "10211",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10211",
+     "age": "39.40547945",
+     "gender": "male",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10211",
+     "age: 39.40547945",
+     "gender: male",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665953",
+    "title": "MUC2816",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "39.40547945",
+    "donor": "10211",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10211",
+     "age": "39.40547945",
+     "gender": "male",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10211",
+     "age: 39.40547945",
+     "gender: male",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665954",
+    "title": "MUC2817",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "58.4109589",
+    "donor": "10233",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10233",
+     "age": "58.4109589",
+     "gender": "male",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10233",
+     "age: 58.4109589",
+     "gender: male",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665955",
+    "title": "MUC2818",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "58.4109589",
+    "donor": "10233",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10233",
+     "age": "58.4109589",
+     "gender": "male",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10233",
+     "age: 58.4109589",
+     "gender: male",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665956",
+    "title": "MUC2819",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "42.81643836",
+    "donor": "10235",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10235",
+     "age": "42.81643836",
+     "gender": "female",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10235",
+     "age: 42.81643836",
+     "gender: female",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665957",
+    "title": "MUC2820",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "42.81643836",
+    "donor": "10235",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10235",
+     "age": "42.81643836",
+     "gender": "female",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10235",
+     "age: 42.81643836",
+     "gender: female",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665958",
+    "title": "MUC2821",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "88.72054795",
+    "donor": "10239",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10239",
+     "age": "88.72054795",
+     "gender": "female",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10239",
+     "age: 88.72054795",
+     "gender: female",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665959",
+    "title": "MUC2822",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "88.72054795",
+    "donor": "10239",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10239",
+     "age": "88.72054795",
+     "gender": "female",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10239",
+     "age: 88.72054795",
+     "gender: female",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665968",
+    "title": "MUC2840",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "54.64109589",
+    "donor": "10227",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10227",
+     "age": "54.64109589",
+     "gender": "male",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10227",
+     "age: 54.64109589",
+     "gender: male",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4665969",
+    "title": "MUC2841",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "54.64109589",
+    "donor": "10227",
+    "batch": "2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10227",
+     "age": "54.64109589",
+     "gender": "male",
+     "batch id": "2"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10227",
+     "age: 54.64109589",
+     "gender: male",
+     "batch id: 2"
+    ]
+   },
+   {
+    "gsm": "GSM4666077",
+    "title": "MUC3671",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "58.82465753",
+    "donor": "10482",
+    "batch": "4",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10482",
+     "age": "58.82465753",
+     "gender": "female",
+     "batch id": "4"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10482",
+     "age: 58.82465753",
+     "gender: female",
+     "batch id: 4"
+    ]
+   },
+   {
+    "gsm": "GSM4666078",
+    "title": "MUC3672",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "58.82465753",
+    "donor": "10482",
+    "batch": "4",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10482",
+     "age": "58.82465753",
+     "gender": "female",
+     "batch id": "4"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10482",
+     "age: 58.82465753",
+     "gender: female",
+     "batch id: 4"
+    ]
+   },
+   {
+    "gsm": "GSM4666109",
+    "title": "MUC3705",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "60.88767123",
+    "donor": "10429",
+    "batch": "4",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10429",
+     "age": "60.88767123",
+     "gender": "male",
+     "batch id": "4"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10429",
+     "age: 60.88767123",
+     "gender: male",
+     "batch id: 4"
+    ]
+   },
+   {
+    "gsm": "GSM4666110",
+    "title": "MUC3706",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "60.88767123",
+    "donor": "10429",
+    "batch": "4",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10429",
+     "age": "60.88767123",
+     "gender": "male",
+     "batch id": "4"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10429",
+     "age: 60.88767123",
+     "gender: male",
+     "batch id: 4"
+    ]
+   },
+   {
+    "gsm": "GSM4666117",
+    "title": "MUC3713",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "73.66849315",
+    "donor": "10419",
+    "batch": "4",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10419",
+     "age": "73.66849315",
+     "gender": "female",
+     "batch id": "4"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10419",
+     "age: 73.66849315",
+     "gender: female",
+     "batch id: 4"
+    ]
+   },
+   {
+    "gsm": "GSM4666118",
+    "title": "MUC3714",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "73.66849315",
+    "donor": "10419",
+    "batch": "4",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10419",
+     "age": "73.66849315",
+     "gender": "female",
+     "batch id": "4"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10419",
+     "age: 73.66849315",
+     "gender: female",
+     "batch id: 4"
+    ]
+   },
+   {
+    "gsm": "GSM4666151",
+    "title": "MUC3749",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "38.6630137",
+    "donor": "10282",
+    "batch": "4",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10282",
+     "age": "38.6630137",
+     "gender": "male",
+     "batch id": "4"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10282",
+     "age: 38.6630137",
+     "gender: male",
+     "batch id: 4"
+    ]
+   },
+   {
+    "gsm": "GSM4666152",
+    "title": "MUC3750",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "38.6630137",
+    "donor": "10282",
+    "batch": "4",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10282",
+     "age": "38.6630137",
+     "gender": "male",
+     "batch id": "4"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10282",
+     "age: 38.6630137",
+     "gender: male",
+     "batch id: 4"
+    ]
+   },
+   {
+    "gsm": "GSM4666165",
+    "title": "MUC4241",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "66.58630137",
+    "donor": "10297",
+    "batch": "5",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10297",
+     "age": "66.58630137",
+     "gender": "female",
+     "batch id": "5"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10297",
+     "age: 66.58630137",
+     "gender: female",
+     "batch id: 5"
+    ]
+   },
+   {
+    "gsm": "GSM4666166",
+    "title": "MUC4242",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "66.58630137",
+    "donor": "10297",
+    "batch": "5",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10297",
+     "age": "66.58630137",
+     "gender": "female",
+     "batch id": "5"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10297",
+     "age: 66.58630137",
+     "gender: female",
+     "batch id: 5"
+    ]
+   },
+   {
+    "gsm": "GSM4666167",
+    "title": "MUC4243",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "71.41917808",
+    "donor": "10298",
+    "batch": "5",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10298",
+     "age": "71.41917808",
+     "gender": "male",
+     "batch id": "5"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10298",
+     "age: 71.41917808",
+     "gender: male",
+     "batch id: 5"
+    ]
+   },
+   {
+    "gsm": "GSM4666168",
+    "title": "MUC4244",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "71.41917808",
+    "donor": "10298",
+    "batch": "5",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10298",
+     "age": "71.41917808",
+     "gender": "male",
+     "batch id": "5"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10298",
+     "age: 71.41917808",
+     "gender: male",
+     "batch id: 5"
+    ]
+   },
+   {
+    "gsm": "GSM4666169",
+    "title": "MUC4245",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "46.40273973",
+    "donor": "10307",
+    "batch": "5",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10307",
+     "age": "46.40273973",
+     "gender": "male",
+     "batch id": "5"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10307",
+     "age: 46.40273973",
+     "gender: male",
+     "batch id: 5"
+    ]
+   },
+   {
+    "gsm": "GSM4666170",
+    "title": "MUC4246",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "46.40273973",
+    "donor": "10307",
+    "batch": "5",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10307",
+     "age": "46.40273973",
+     "gender": "male",
+     "batch id": "5"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10307",
+     "age: 46.40273973",
+     "gender: male",
+     "batch id: 5"
+    ]
+   },
+   {
+    "gsm": "GSM4666177",
+    "title": "MUC4255",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "44.07123288",
+    "donor": "10327",
+    "batch": "5",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10327",
+     "age": "44.07123288",
+     "gender": "male",
+     "batch id": "5"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10327",
+     "age: 44.07123288",
+     "gender: male",
+     "batch id: 5"
+    ]
+   },
+   {
+    "gsm": "GSM4666178",
+    "title": "MUC4256",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "44.07123288",
+    "donor": "10327",
+    "batch": "5",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10327",
+     "age": "44.07123288",
+     "gender": "male",
+     "batch id": "5"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10327",
+     "age: 44.07123288",
+     "gender: male",
+     "batch id: 5"
+    ]
+   },
+   {
+    "gsm": "GSM4666179",
+    "title": "MUC4257",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "76.57808219",
+    "donor": "10343",
+    "batch": "5",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10343",
+     "age": "76.57808219",
+     "gender": "male",
+     "batch id": "5"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10343",
+     "age: 76.57808219",
+     "gender: male",
+     "batch id: 5"
+    ]
+   },
+   {
+    "gsm": "GSM4666180",
+    "title": "MUC4258",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "76.57808219",
+    "donor": "10343",
+    "batch": "5",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10343",
+     "age": "76.57808219",
+     "gender": "male",
+     "batch id": "5"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10343",
+     "age: 76.57808219",
+     "gender: male",
+     "batch id: 5"
+    ]
+   },
+   {
+    "gsm": "GSM4666183",
+    "title": "MUC4261",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "74.7260274",
+    "donor": "10354",
+    "batch": "5",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10354",
+     "age": "74.7260274",
+     "gender": "male",
+     "batch id": "5"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10354",
+     "age: 74.7260274",
+     "gender: male",
+     "batch id: 5"
+    ]
+   },
+   {
+    "gsm": "GSM4666184",
+    "title": "MUC4262",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "74.7260274",
+    "donor": "10354",
+    "batch": "5",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10354",
+     "age": "74.7260274",
+     "gender": "male",
+     "batch id": "5"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10354",
+     "age: 74.7260274",
+     "gender: male",
+     "batch id: 5"
+    ]
+   },
+   {
+    "gsm": "GSM4666187",
+    "title": "MUC4265",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "51.61369863",
+    "donor": "10369",
+    "batch": "5",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10369",
+     "age": "51.61369863",
+     "gender": "female",
+     "batch id": "5"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10369",
+     "age: 51.61369863",
+     "gender: female",
+     "batch id: 5"
+    ]
+   },
+   {
+    "gsm": "GSM4666188",
+    "title": "MUC4266",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "51.61369863",
+    "donor": "10369",
+    "batch": "5",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10369",
+     "age": "51.61369863",
+     "gender": "female",
+     "batch id": "5"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10369",
+     "age: 51.61369863",
+     "gender: female",
+     "batch id: 5"
+    ]
+   },
+   {
+    "gsm": "GSM4666189",
+    "title": "MUC4267",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "78.21643836",
+    "donor": "10372",
+    "batch": "5",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10372",
+     "age": "78.21643836",
+     "gender": "male",
+     "batch id": "5"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10372",
+     "age: 78.21643836",
+     "gender: male",
+     "batch id: 5"
+    ]
+   },
+   {
+    "gsm": "GSM4666190",
+    "title": "MUC4268",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "78.21643836",
+    "donor": "10372",
+    "batch": "5",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10372",
+     "age": "78.21643836",
+     "gender": "male",
+     "batch id": "5"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10372",
+     "age: 78.21643836",
+     "gender: male",
+     "batch id: 5"
+    ]
+   },
+   {
+    "gsm": "GSM4666191",
+    "title": "MUC4271",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "68.84109589",
+    "donor": "10379",
+    "batch": "5",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10379",
+     "age": "68.84109589",
+     "gender": "female",
+     "batch id": "5"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10379",
+     "age: 68.84109589",
+     "gender: female",
+     "batch id: 5"
+    ]
+   },
+   {
+    "gsm": "GSM4666192",
+    "title": "MUC4272",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "68.84109589",
+    "donor": "10379",
+    "batch": "5",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10379",
+     "age": "68.84109589",
+     "gender": "female",
+     "batch id": "5"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10379",
+     "age: 68.84109589",
+     "gender: female",
+     "batch id: 5"
+    ]
+   },
+   {
+    "gsm": "GSM4666193",
+    "title": "MUC4273",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "47.0739726",
+    "donor": "10384",
+    "batch": "5",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10384",
+     "age": "47.0739726",
+     "gender": "male",
+     "batch id": "5"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10384",
+     "age: 47.0739726",
+     "gender: male",
+     "batch id: 5"
+    ]
+   },
+   {
+    "gsm": "GSM4666194",
+    "title": "MUC4274",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "47.0739726",
+    "donor": "10384",
+    "batch": "5",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10384",
+     "age": "47.0739726",
+     "gender": "male",
+     "batch id": "5"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10384",
+     "age: 47.0739726",
+     "gender: male",
+     "batch id: 5"
+    ]
+   },
+   {
+    "gsm": "GSM4666195",
+    "title": "MUC4275",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "81.76164384",
+    "donor": "10386",
+    "batch": "5",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10386",
+     "age": "81.76164384",
+     "gender": "male",
+     "batch id": "5"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10386",
+     "age: 81.76164384",
+     "gender: male",
+     "batch id: 5"
+    ]
+   },
+   {
+    "gsm": "GSM4666196",
+    "title": "MUC4276",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "81.76164384",
+    "donor": "10386",
+    "batch": "5",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10386",
+     "age": "81.76164384",
+     "gender": "male",
+     "batch id": "5"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10386",
+     "age: 81.76164384",
+     "gender: male",
+     "batch id: 5"
+    ]
+   },
+   {
+    "gsm": "GSM4666213",
+    "title": "MUC4293",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "33.87123288",
+    "donor": "10456",
+    "batch": "5",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10456",
+     "age": "33.87123288",
+     "gender": "male",
+     "batch id": "5"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10456",
+     "age: 33.87123288",
+     "gender: male",
+     "batch id: 5"
+    ]
+   },
+   {
+    "gsm": "GSM4666214",
+    "title": "MUC4294",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "33.87123288",
+    "donor": "10456",
+    "batch": "5",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10456",
+     "age": "33.87123288",
+     "gender": "male",
+     "batch id": "5"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10456",
+     "age: 33.87123288",
+     "gender: male",
+     "batch id: 5"
+    ]
+   },
+   {
+    "gsm": "GSM4666217",
+    "title": "MUC4297",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "53.80273973",
+    "donor": "10461",
+    "batch": "5",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10461",
+     "age": "53.80273973",
+     "gender": "female",
+     "batch id": "5"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10461",
+     "age: 53.80273973",
+     "gender: female",
+     "batch id: 5"
+    ]
+   },
+   {
+    "gsm": "GSM4666218",
+    "title": "MUC4298",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "53.80273973",
+    "donor": "10461",
+    "batch": "5",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10461",
+     "age": "53.80273973",
+     "gender": "female",
+     "batch id": "5"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10461",
+     "age: 53.80273973",
+     "gender: female",
+     "batch id: 5"
+    ]
+   },
+   {
+    "gsm": "GSM4666223",
+    "title": "MUC4303",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "49.81643836",
+    "donor": "10465",
+    "batch": "5",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10465",
+     "age": "49.81643836",
+     "gender": "male",
+     "batch id": "5"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10465",
+     "age: 49.81643836",
+     "gender: male",
+     "batch id: 5"
+    ]
+   },
+   {
+    "gsm": "GSM4666224",
+    "title": "MUC4304",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "49.81643836",
+    "donor": "10465",
+    "batch": "5",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10465",
+     "age": "49.81643836",
+     "gender": "male",
+     "batch id": "5"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10465",
+     "age: 49.81643836",
+     "gender: male",
+     "batch id: 5"
+    ]
+   },
+   {
+    "gsm": "GSM4666227",
+    "title": "MUC4307",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "84.54794521",
+    "donor": "10489",
+    "batch": "5",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10489",
+     "age": "84.54794521",
+     "gender": "female",
+     "batch id": "5"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10489",
+     "age: 84.54794521",
+     "gender: female",
+     "batch id: 5"
+    ]
+   },
+   {
+    "gsm": "GSM4666228",
+    "title": "MUC4308",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "84.54794521",
+    "donor": "10489",
+    "batch": "5",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10489",
+     "age": "84.54794521",
+     "gender": "female",
+     "batch id": "5"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10489",
+     "age: 84.54794521",
+     "gender: female",
+     "batch id: 5"
+    ]
+   },
+   {
+    "gsm": "GSM4666303",
+    "title": "MUC7301",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "24.64109589",
+    "donor": "10631",
+    "batch": "6",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10631",
+     "age": "24.64109589",
+     "gender": "male",
+     "batch id": "6"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10631",
+     "age: 24.64109589",
+     "gender: male",
+     "batch id: 6"
+    ]
+   },
+   {
+    "gsm": "GSM4666304",
+    "title": "MUC7302",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "24.64109589",
+    "donor": "10631",
+    "batch": "6",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10631",
+     "age": "24.64109589",
+     "gender": "male",
+     "batch id": "6"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10631",
+     "age: 24.64109589",
+     "gender: male",
+     "batch id: 6"
+    ]
+   },
+   {
+    "gsm": "GSM4666307",
+    "title": "MUC7305",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "37.32328767",
+    "donor": "10633",
+    "batch": "6",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10633",
+     "age": "37.32328767",
+     "gender": "female",
+     "batch id": "6"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10633",
+     "age: 37.32328767",
+     "gender: female",
+     "batch id: 6"
+    ]
+   },
+   {
+    "gsm": "GSM4666308",
+    "title": "MUC7306",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "37.32328767",
+    "donor": "10633",
+    "batch": "6",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10633",
+     "age": "37.32328767",
+     "gender": "female",
+     "batch id": "6"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10633",
+     "age: 37.32328767",
+     "gender: female",
+     "batch id: 6"
+    ]
+   },
+   {
+    "gsm": "GSM4666319",
+    "title": "MUC7329",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "46.74520548",
+    "donor": "10691",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10691",
+     "age": "46.74520548",
+     "gender": "male",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10691",
+     "age: 46.74520548",
+     "gender: male",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666320",
+    "title": "MUC7330",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "46.74520548",
+    "donor": "10691",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10691",
+     "age": "46.74520548",
+     "gender": "male",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10691",
+     "age: 46.74520548",
+     "gender: male",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666325",
+    "title": "MUC7335",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "25.08767123",
+    "donor": "10668",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10668",
+     "age": "25.08767123",
+     "gender": "female",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10668",
+     "age: 25.08767123",
+     "gender: female",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666326",
+    "title": "MUC7336",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "25.08767123",
+    "donor": "10668",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10668",
+     "age": "25.08767123",
+     "gender": "female",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10668",
+     "age: 25.08767123",
+     "gender: female",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666327",
+    "title": "MUC7337",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "25.84109589",
+    "donor": "10665",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10665",
+     "age": "25.84109589",
+     "gender": "male",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10665",
+     "age: 25.84109589",
+     "gender: male",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666328",
+    "title": "MUC7338",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "25.84109589",
+    "donor": "10665",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10665",
+     "age": "25.84109589",
+     "gender": "male",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10665",
+     "age: 25.84109589",
+     "gender: male",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666329",
+    "title": "MUC7339",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "48.48767123",
+    "donor": "10656",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10656",
+     "age": "48.48767123",
+     "gender": "female",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10656",
+     "age: 48.48767123",
+     "gender: female",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666330",
+    "title": "MUC7340",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "48.48767123",
+    "donor": "10656",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10656",
+     "age": "48.48767123",
+     "gender": "female",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10656",
+     "age: 48.48767123",
+     "gender: female",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666333",
+    "title": "MUC7343",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "43.52328767",
+    "donor": "10650",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10650",
+     "age": "43.52328767",
+     "gender": "female",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10650",
+     "age: 43.52328767",
+     "gender: female",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666334",
+    "title": "MUC7344",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "43.52328767",
+    "donor": "10650",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10650",
+     "age": "43.52328767",
+     "gender": "female",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10650",
+     "age: 43.52328767",
+     "gender: female",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666335",
+    "title": "MUC7345",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "53.56164384",
+    "donor": "10649",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10649",
+     "age": "53.56164384",
+     "gender": "male",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10649",
+     "age: 53.56164384",
+     "gender: male",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666336",
+    "title": "MUC7346",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "53.56164384",
+    "donor": "10649",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10649",
+     "age": "53.56164384",
+     "gender": "male",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10649",
+     "age: 53.56164384",
+     "gender: male",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666337",
+    "title": "MUC7347",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "58.54794521",
+    "donor": "10646",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10646",
+     "age": "58.54794521",
+     "gender": "male",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10646",
+     "age: 58.54794521",
+     "gender: male",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666338",
+    "title": "MUC7348",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "58.54794521",
+    "donor": "10646",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10646",
+     "age": "58.54794521",
+     "gender": "male",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10646",
+     "age: 58.54794521",
+     "gender: male",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666339",
+    "title": "MUC7349",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "59.97534247",
+    "donor": "10645",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10645",
+     "age": "59.97534247",
+     "gender": "female",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10645",
+     "age: 59.97534247",
+     "gender: female",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666340",
+    "title": "MUC7350",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "59.97534247",
+    "donor": "10645",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10645",
+     "age": "59.97534247",
+     "gender": "female",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10645",
+     "age: 59.97534247",
+     "gender: female",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666343",
+    "title": "MUC7353",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "58.19726027",
+    "donor": "10630",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10630",
+     "age": "58.19726027",
+     "gender": "female",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10630",
+     "age: 58.19726027",
+     "gender: female",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666344",
+    "title": "MUC7354",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "58.19726027",
+    "donor": "10630",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10630",
+     "age": "58.19726027",
+     "gender": "female",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10630",
+     "age: 58.19726027",
+     "gender: female",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666345",
+    "title": "MUC7355",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "68.13150685",
+    "donor": "10626",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10626",
+     "age": "68.13150685",
+     "gender": "male",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10626",
+     "age: 68.13150685",
+     "gender: male",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666346",
+    "title": "MUC7356",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "68.13150685",
+    "donor": "10626",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10626",
+     "age": "68.13150685",
+     "gender": "male",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10626",
+     "age: 68.13150685",
+     "gender: male",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666347",
+    "title": "MUC7359",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "36.87123288",
+    "donor": "10620",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10620",
+     "age": "36.87123288",
+     "gender": "male",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10620",
+     "age: 36.87123288",
+     "gender: male",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666348",
+    "title": "MUC7360",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "36.87123288",
+    "donor": "10620",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10620",
+     "age": "36.87123288",
+     "gender": "male",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10620",
+     "age: 36.87123288",
+     "gender: male",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666349",
+    "title": "MUC7361",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "67.34246575",
+    "donor": "10616",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10616",
+     "age": "67.34246575",
+     "gender": "male",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10616",
+     "age: 67.34246575",
+     "gender: male",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666350",
+    "title": "MUC7362",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "67.34246575",
+    "donor": "10616",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10616",
+     "age": "67.34246575",
+     "gender": "male",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10616",
+     "age: 67.34246575",
+     "gender: male",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666351",
+    "title": "MUC7363",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "66.90410959",
+    "donor": "10615",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10615",
+     "age": "66.90410959",
+     "gender": "male",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10615",
+     "age: 66.90410959",
+     "gender: male",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666352",
+    "title": "MUC7364",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "66.90410959",
+    "donor": "10615",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10615",
+     "age": "66.90410959",
+     "gender": "male",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10615",
+     "age: 66.90410959",
+     "gender: male",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666353",
+    "title": "MUC7365",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "73.35068493",
+    "donor": "10609",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10609",
+     "age": "73.35068493",
+     "gender": "female",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10609",
+     "age: 73.35068493",
+     "gender: female",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666354",
+    "title": "MUC7366",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "73.35068493",
+    "donor": "10609",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10609",
+     "age": "73.35068493",
+     "gender": "female",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10609",
+     "age: 73.35068493",
+     "gender: female",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666355",
+    "title": "MUC7367",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "55.66849315",
+    "donor": "10602",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10602",
+     "age": "55.66849315",
+     "gender": "male",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10602",
+     "age: 55.66849315",
+     "gender: male",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666356",
+    "title": "MUC7368",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "55.66849315",
+    "donor": "10602",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10602",
+     "age": "55.66849315",
+     "gender": "male",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10602",
+     "age: 55.66849315",
+     "gender: male",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666359",
+    "title": "MUC7371",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "61.65753425",
+    "donor": "10590",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10590",
+     "age": "61.65753425",
+     "gender": "male",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10590",
+     "age: 61.65753425",
+     "gender: male",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666360",
+    "title": "MUC7372",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "61.65753425",
+    "donor": "10590",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10590",
+     "age": "61.65753425",
+     "gender": "male",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10590",
+     "age: 61.65753425",
+     "gender: male",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666361",
+    "title": "MUC7375",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "51.88219178",
+    "donor": "10578",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10578",
+     "age": "51.88219178",
+     "gender": "male",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10578",
+     "age: 51.88219178",
+     "gender: male",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666362",
+    "title": "MUC7376",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "51.88219178",
+    "donor": "10578",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10578",
+     "age": "51.88219178",
+     "gender": "male",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10578",
+     "age: 51.88219178",
+     "gender: male",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666365",
+    "title": "MUC7379",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "72.64657534",
+    "donor": "10249",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10249",
+     "age": "72.64657534",
+     "gender": "male",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10249",
+     "age: 72.64657534",
+     "gender: male",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666366",
+    "title": "MUC7380",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "72.64657534",
+    "donor": "10249",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10249",
+     "age": "72.64657534",
+     "gender": "male",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10249",
+     "age: 72.64657534",
+     "gender: male",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666368",
+    "title": "MUC7382",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "57.3369863",
+    "donor": "10542",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10542",
+     "age": "57.3369863",
+     "gender": "male",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10542",
+     "age: 57.3369863",
+     "gender: male",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666369",
+    "title": "MUC7383",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "42.44931507",
+    "donor": "10562",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10562",
+     "age": "42.44931507",
+     "gender": "female",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10562",
+     "age: 42.44931507",
+     "gender: female",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666370",
+    "title": "MUC7384",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "42.44931507",
+    "donor": "10562",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10562",
+     "age": "42.44931507",
+     "gender": "female",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10562",
+     "age: 42.44931507",
+     "gender: female",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666371",
+    "title": "MUC7385",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "39.33972603",
+    "donor": "10574",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10574",
+     "age": "39.33972603",
+     "gender": "male",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10574",
+     "age: 39.33972603",
+     "gender: male",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666372",
+    "title": "MUC7386",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "39.33972603",
+    "donor": "10574",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10574",
+     "age": "39.33972603",
+     "gender": "male",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10574",
+     "age: 39.33972603",
+     "gender: male",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666377",
+    "title": "MUC7391",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "65.8739726",
+    "donor": "10242",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10242",
+     "age": "65.8739726",
+     "gender": "female",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10242",
+     "age: 65.8739726",
+     "gender: female",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666378",
+    "title": "MUC7392",
+    "source_name": "non-lesional skin",
+    "group": "control",
+    "condition": "non-lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "65.8739726",
+    "donor": "10242",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10242",
+     "age": "65.8739726",
+     "gender": "female",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10242",
+     "age: 65.8739726",
+     "gender: female",
+     "batch id: 7"
+    ]
+   },
+   {
+    "gsm": "GSM4666379",
+    "title": "MUC7393",
+    "source_name": "lesional skin",
+    "group": "case",
+    "condition": "lesional skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "51.36164384",
+    "donor": "10078",
+    "batch": "7",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesional skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "psoriasis",
+     "patient id": "10078",
+     "age": "51.36164384",
+     "gender": "male",
+     "batch id": "7"
+    },
+    "raw_lines": [
+     "diagnosis: psoriasis",
+     "patient id: 10078",
+     "age: 51.36164384",
+     "gender: male",
+     "batch id: 7"
+    ]
+   }
+  ]
+ },
+ "contrasts": [
+  {
+   "gse": "GSE154200",
+   "name": "lesional_vs_nonlesional",
+   "case_label": "psoriasis lesional skin",
+   "control_label": "psoriasis non-lesional skin",
+   "case_gsms": [
+    "GSM4665838",
+    "GSM4665848",
+    "GSM4665860",
+    "GSM4665862",
+    "GSM4665874",
+    "GSM4665876",
+    "GSM4665878",
+    "GSM4665880",
+    "GSM4665882",
+    "GSM4665884",
+    "GSM4665886",
+    "GSM4665888",
+    "GSM4665890",
+    "GSM4665892",
+    "GSM4665894",
+    "GSM4665896",
+    "GSM4665898",
+    "GSM4665900",
+    "GSM4665902",
+    "GSM4665904",
+    "GSM4665906",
+    "GSM4665908",
+    "GSM4665910",
+    "GSM4665916",
+    "GSM4665918",
+    "GSM4665920",
+    "GSM4665922",
+    "GSM4665924",
+    "GSM4665926",
+    "GSM4665928",
+    "GSM4665930",
+    "GSM4665932",
+    "GSM4665934",
+    "GSM4665936",
+    "GSM4665938",
+    "GSM4665940",
+    "GSM4665942",
+    "GSM4665944",
+    "GSM4665946",
+    "GSM4665948",
+    "GSM4665950",
+    "GSM4665952",
+    "GSM4665954",
+    "GSM4665956",
+    "GSM4665958",
+    "GSM4665968",
+    "GSM4666077",
+    "GSM4666109",
+    "GSM4666117",
+    "GSM4666151",
+    "GSM4666165",
+    "GSM4666167",
+    "GSM4666169",
+    "GSM4666177",
+    "GSM4666179",
+    "GSM4666183",
+    "GSM4666187",
+    "GSM4666189",
+    "GSM4666191",
+    "GSM4666193",
+    "GSM4666195",
+    "GSM4666213",
+    "GSM4666217",
+    "GSM4666223",
+    "GSM4666227",
+    "GSM4666303",
+    "GSM4666307",
+    "GSM4666319",
+    "GSM4666325",
+    "GSM4666327",
+    "GSM4666329",
+    "GSM4666333",
+    "GSM4666335",
+    "GSM4666337",
+    "GSM4666339",
+    "GSM4666343",
+    "GSM4666345",
+    "GSM4666347",
+    "GSM4666349",
+    "GSM4666351",
+    "GSM4666353",
+    "GSM4666355",
+    "GSM4666359",
+    "GSM4666361",
+    "GSM4666365",
+    "GSM4666368",
+    "GSM4666369",
+    "GSM4666371",
+    "GSM4666377",
+    "GSM4666379"
+   ],
+   "control_gsms": [
+    "GSM4665839",
+    "GSM4665849",
+    "GSM4665861",
+    "GSM4665863",
+    "GSM4665875",
+    "GSM4665877",
+    "GSM4665879",
+    "GSM4665881",
+    "GSM4665883",
+    "GSM4665885",
+    "GSM4665887",
+    "GSM4665889",
+    "GSM4665891",
+    "GSM4665893",
+    "GSM4665895",
+    "GSM4665897",
+    "GSM4665899",
+    "GSM4665901",
+    "GSM4665903",
+    "GSM4665905",
+    "GSM4665907",
+    "GSM4665909",
+    "GSM4665911",
+    "GSM4665917",
+    "GSM4665919",
+    "GSM4665921",
+    "GSM4665923",
+    "GSM4665925",
+    "GSM4665927",
+    "GSM4665929",
+    "GSM4665931",
+    "GSM4665933",
+    "GSM4665935",
+    "GSM4665937",
+    "GSM4665939",
+    "GSM4665941",
+    "GSM4665943",
+    "GSM4665945",
+    "GSM4665947",
+    "GSM4665949",
+    "GSM4665951",
+    "GSM4665953",
+    "GSM4665955",
+    "GSM4665957",
+    "GSM4665959",
+    "GSM4665969",
+    "GSM4666078",
+    "GSM4666110",
+    "GSM4666118",
+    "GSM4666152",
+    "GSM4666166",
+    "GSM4666168",
+    "GSM4666170",
+    "GSM4666178",
+    "GSM4666180",
+    "GSM4666184",
+    "GSM4666188",
+    "GSM4666190",
+    "GSM4666192",
+    "GSM4666194",
+    "GSM4666196",
+    "GSM4666214",
+    "GSM4666218",
+    "GSM4666224",
+    "GSM4666228",
+    "GSM4666304",
+    "GSM4666308",
+    "GSM4666320",
+    "GSM4666326",
+    "GSM4666328",
+    "GSM4666330",
+    "GSM4666334",
+    "GSM4666336",
+    "GSM4666338",
+    "GSM4666340",
+    "GSM4666344",
+    "GSM4666346",
+    "GSM4666348",
+    "GSM4666350",
+    "GSM4666352",
+    "GSM4666354",
+    "GSM4666356",
+    "GSM4666360",
+    "GSM4666362",
+    "GSM4666366",
+    "GSM4666370",
+    "GSM4666372",
+    "GSM4666378"
+   ],
+   "blocking": "donor",
+   "restricted_to": {},
+   "confidence": 1.0,
+   "status": "confirmed",
+   "rationale": "Eczema arms excluded; paired by patient id; 7 sequencing batches."
+  }
+ ],
+ "markers": [
+  {
+   "symbol": "S100A7",
+   "direction": "up"
+  },
+  {
+   "symbol": "S100A8",
+   "direction": "up"
+  },
+  {
+   "symbol": "S100A9",
+   "direction": "up"
+  },
+  {
+   "symbol": "DEFB4A",
+   "direction": "up"
+  },
+  {
+   "symbol": "KRT16",
+   "direction": "up"
+  },
+  {
+   "symbol": "PI3",
+   "direction": "up"
+  },
+  {
+   "symbol": "IL36G",
+   "direction": "up"
+  },
+  {
+   "symbol": "SERPINB4",
+   "direction": "up"
+  }
+ ]
+}

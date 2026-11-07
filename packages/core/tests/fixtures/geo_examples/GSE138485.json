@@ -1,0 +1,2372 @@
+{
+ "samplesheet": {
+  "gse": "GSE138485",
+  "assay": "bulk",
+  "title": "Retrospective gene expression analysis of human RNA samples from Hepatocellular Carcinoma in relation with survival",
+  "samples": [
+   {
+    "gsm": "GSM4109609",
+    "title": "Tumor T_A_004",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "56",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_A_004"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh004A",
+     "age": "56",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh004A",
+     "age: 56",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109610",
+    "title": "Tumor T_B_005",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "43",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_B_005"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh005A",
+     "age": "43",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh005A",
+     "age: 43",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109611",
+    "title": "Tumor T_C_007",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "53",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_C_007"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh007A",
+     "age": "53",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh007A",
+     "age: 53",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109612",
+    "title": "Tumor T_D_009",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "52",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_D_009"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh009A",
+     "age": "52",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh009A",
+     "age: 52",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109613",
+    "title": "Tumor T_E_010",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "57",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_E_010"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh010A",
+     "age": "57",
+     "Sex": "female"
+    },
+    "raw_lines": [
+     "isolate: zfh010A",
+     "age: 57",
+     "Sex: female"
+    ]
+   },
+   {
+    "gsm": "GSM4109614",
+    "title": "Tumor T_F_011",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "60",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_F_011"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh011A",
+     "age": "60",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh011A",
+     "age: 60",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109615",
+    "title": "Tumor T_G_012",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "53",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_G_012"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh012A",
+     "age": "53",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh012A",
+     "age: 53",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109616",
+    "title": "Tumor T_H_013",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "50",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_H_013"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh013A",
+     "age": "50",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh013A",
+     "age: 50",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109617",
+    "title": "Tumor T_I_014",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "57",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_I_014"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh014A",
+     "age": "57",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh014A",
+     "age: 57",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109618",
+    "title": "Tumor T_J_017",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "65",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_J_017"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh017A",
+     "age": "65",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh017A",
+     "age: 65",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109619",
+    "title": "Tumor T_K_018",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "48",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_K_018"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh018A",
+     "age": "48",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh018A",
+     "age: 48",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109620",
+    "title": "Tumor T_L_019",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "47",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_L_019"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh019A",
+     "age": "47",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh019A",
+     "age: 47",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109621",
+    "title": "Tumor T_M_020",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "60",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_M_020"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh020A",
+     "age": "60",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh020A",
+     "age: 60",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109622",
+    "title": "Tumor T_N_021",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "60",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_N_021"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh021A",
+     "age": "60",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh021A",
+     "age: 60",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109623",
+    "title": "Tumor T_O_023",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "60",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_O_023"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh023A",
+     "age": "60",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh023A",
+     "age: 60",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109624",
+    "title": "Tumor T_P_025",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "57",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_P_025"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh025A",
+     "age": "57",
+     "Sex": "female"
+    },
+    "raw_lines": [
+     "isolate: zfh025A",
+     "age: 57",
+     "Sex: female"
+    ]
+   },
+   {
+    "gsm": "GSM4109625",
+    "title": "Tumor T_Q_026",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "57",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_Q_026"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh026A",
+     "age": "57",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh026A",
+     "age: 57",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109626",
+    "title": "Tumor T_R_027",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "51",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_R_027"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh027A",
+     "age": "51",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh027A",
+     "age: 51",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109627",
+    "title": "Tumor T_S_030",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "45",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_S_030"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh030A",
+     "age": "45",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh030A",
+     "age: 45",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109628",
+    "title": "Tumor T_T_031",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "34",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_T_031"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh031A",
+     "age": "34",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh031A",
+     "age: 34",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109629",
+    "title": "Tumor T_U_032",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "60",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_U_032"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh032A",
+     "age": "60",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh032A",
+     "age: 60",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109630",
+    "title": "Tumor T_V_033",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "56",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_V_033"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh033A",
+     "age": "56",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh033A",
+     "age: 56",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109631",
+    "title": "Tumor T_W_034",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "62",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_W_034"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh034A",
+     "age": "62",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh034A",
+     "age: 62",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109632",
+    "title": "Non Tumor NT_AA_004",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "56",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor NT_AA_004"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh004AP",
+     "age": "56",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh004AP",
+     "age: 56",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109633",
+    "title": "Non Tumor NT_BB_005",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "43",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor NT_BB_005"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh005AP",
+     "age": "43",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh005AP",
+     "age: 43",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109634",
+    "title": "Non Tumor NT_CC_007",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "53",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor NT_CC_007"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh007AP",
+     "age": "53",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh007AP",
+     "age: 53",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109635",
+    "title": "Non Tumor NT_DD_009",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "52",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor NT_DD_009"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh009AP",
+     "age": "52",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh009AP",
+     "age: 52",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109636",
+    "title": "Non Tumor NT_EE_010",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "57",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor NT_EE_010"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh010AP",
+     "age": "57",
+     "Sex": "female"
+    },
+    "raw_lines": [
+     "isolate: zfh010AP",
+     "age: 57",
+     "Sex: female"
+    ]
+   },
+   {
+    "gsm": "GSM4109637",
+    "title": "Non Tumor NT_FF_011",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "60",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor NT_FF_011"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh011AP",
+     "age": "60",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh011AP",
+     "age: 60",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109638",
+    "title": "Non Tumor NT_GG_012",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "53",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor NT_GG_012"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh012AP",
+     "age": "53",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh012AP",
+     "age: 53",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109639",
+    "title": "Non Tumor NT_HH_013",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "50",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor NT_HH_013"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh013AP",
+     "age": "50",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh013AP",
+     "age: 50",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109640",
+    "title": "Non Tumor NT_II_014",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "57",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor NT_II_014"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh014AP",
+     "age": "57",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh014AP",
+     "age: 57",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109641",
+    "title": "Non Tumor NT_JJ_017",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "65",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor NT_JJ_017"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh017AP",
+     "age": "65",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh017AP",
+     "age: 65",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109642",
+    "title": "Non Tumor NT_KK_018",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "48",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor NT_KK_018"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh018AP",
+     "age": "48",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh018AP",
+     "age: 48",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109643",
+    "title": "Non Tumor NT_LL_019",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "47",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor NT_LL_019"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh019AP",
+     "age": "47",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh019AP",
+     "age: 47",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109644",
+    "title": "Non Tumor NT_MM_020",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "60",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor NT_MM_020"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh020AP",
+     "age": "60",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh020AP",
+     "age: 60",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109645",
+    "title": "Non Tumor NT_NN_021",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "60",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor NT_NN_021"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh021AP",
+     "age": "60",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh021AP",
+     "age: 60",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109646",
+    "title": "Non Tumor NT_OO_023",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "60",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor NT_OO_023"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh023AP",
+     "age": "60",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh023AP",
+     "age: 60",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109647",
+    "title": "Non Tumor NT_PP_025",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "57",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor NT_PP_025"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh025AP",
+     "age": "57",
+     "Sex": "female"
+    },
+    "raw_lines": [
+     "isolate: zfh025AP",
+     "age: 57",
+     "Sex: female"
+    ]
+   },
+   {
+    "gsm": "GSM4109648",
+    "title": "Non Tumor NT_QQ_026",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "57",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor NT_QQ_026"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh026AP",
+     "age": "57",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh026AP",
+     "age: 57",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109649",
+    "title": "Non Tumor NT_RR_027",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "51",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor NT_RR_027"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh027AP",
+     "age": "51",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh027AP",
+     "age: 51",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109650",
+    "title": "Non Tumor NT_SS_030",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "45",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor NT_SS_030"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh030AP",
+     "age": "45",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh030AP",
+     "age: 45",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109651",
+    "title": "Non Tumor NT_TT_031",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "34",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor NT_TT_031"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh031AP",
+     "age": "34",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh031AP",
+     "age: 34",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109652",
+    "title": "Non Tumor NT_UU_032",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "60",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor NT_UU_032"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh032AP",
+     "age": "60",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh032AP",
+     "age: 60",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109653",
+    "title": "Non Tumor NT_VV_033",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "56",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor NT_VV_033"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh033AP",
+     "age": "56",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh033AP",
+     "age: 56",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4109654",
+    "title": "Non Tumor NT_WW_034",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "62",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor NT_WW_034"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh034AP",
+     "age": "62",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh034AP",
+     "age: 62",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4184958",
+    "title": "Tumor T_X_001",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "56",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_X_001"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh001A",
+     "age": "56",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh001A",
+     "age: 56",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4184959",
+    "title": "Tumor T_Y_003",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "57",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_Y_003"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh003A",
+     "age": "57",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh003A",
+     "age: 57",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4184960",
+    "title": "Tumor T_Z_006",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "50",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_Z_006"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh006A",
+     "age": "50",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh006A",
+     "age: 50",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4184961",
+    "title": "Tumor T_a_015",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "50",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_a_015"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh015A",
+     "age": "50",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh015A",
+     "age: 50",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4184962",
+    "title": "Tumor T_b_016",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "51",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_b_016"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh016A",
+     "age": "51",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh016A",
+     "age: 51",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4184963",
+    "title": "Tumor T_c_022",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "59",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_c_022"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh022A",
+     "age": "59",
+     "Sex": "female"
+    },
+    "raw_lines": [
+     "isolate: zfh022A",
+     "age: 59",
+     "Sex: female"
+    ]
+   },
+   {
+    "gsm": "GSM4184964",
+    "title": "Tumor T_d_024",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "39",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_d_024"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh024A",
+     "age": "39",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh024A",
+     "age: 39",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4184965",
+    "title": "Tumor T_e_028",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "61",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_e_028"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh028A",
+     "age": "61",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh028A",
+     "age: 61",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4184966",
+    "title": "Tumor T_f_029",
+    "source_name": "liver",
+    "group": "case",
+    "condition": "Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "52",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Tumor T_f_029"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh029A",
+     "age": "52",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh029A",
+     "age: 52",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4184967",
+    "title": "Non Tumor T_XX_001",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "56",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor T_XX_001"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh001AP",
+     "age": "56",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh001AP",
+     "age: 56",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4184968",
+    "title": "Non Tumor T_YY_003",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "57",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor T_YY_003"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh003AP",
+     "age": "57",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh003AP",
+     "age: 57",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4184969",
+    "title": "Non Tumor T_ZZ_006",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "50",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor T_ZZ_006"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh006AP",
+     "age": "50",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh006AP",
+     "age: 50",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4184970",
+    "title": "Non Tumor T_aa_015",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "50",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor T_aa_015"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh015AP",
+     "age": "50",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh015AP",
+     "age: 50",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4184971",
+    "title": "Non Tumor T_bb_016",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "51",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor T_bb_016"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh016AP",
+     "age": "51",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh016AP",
+     "age: 51",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4184972",
+    "title": "Non Tumor T_cc_022",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": "59",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor T_cc_022"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh022AP",
+     "age": "59",
+     "Sex": "female"
+    },
+    "raw_lines": [
+     "isolate: zfh022AP",
+     "age: 59",
+     "Sex: female"
+    ]
+   },
+   {
+    "gsm": "GSM4184973",
+    "title": "Non Tumor T_dd_024",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "39",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor T_dd_024"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh024AP",
+     "age": "39",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh024AP",
+     "age: 39",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4184974",
+    "title": "Non Tumor T_ee_028",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "61",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor T_ee_028"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh028AP",
+     "age": "61",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh028AP",
+     "age: 61",
+     "Sex: male"
+    ]
+   },
+   {
+    "gsm": "GSM4184975",
+    "title": "Non Tumor T_ff_029",
+    "source_name": "liver",
+    "group": "control",
+    "condition": "Non Tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": "52",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Non Tumor T_ff_029"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "isolate": "zfh029AP",
+     "age": "52",
+     "Sex": "male"
+    },
+    "raw_lines": [
+     "isolate: zfh029AP",
+     "age: 52",
+     "Sex: male"
+    ]
+   }
+  ]
+ },
+ "contrasts": [
+  {
+   "gse": "GSE138485",
+   "name": "tumor_vs_adjacent_normal",
+   "case_label": "HCC tumor",
+   "control_label": "adjacent non-tumor liver",
+   "case_gsms": [
+    "GSM4109609",
+    "GSM4109610",
+    "GSM4109611",
+    "GSM4109612",
+    "GSM4109613",
+    "GSM4109614",
+    "GSM4109615",
+    "GSM4109616",
+    "GSM4109617",
+    "GSM4109618",
+    "GSM4109619",
+    "GSM4109620",
+    "GSM4109621",
+    "GSM4109622",
+    "GSM4109623",
+    "GSM4109624",
+    "GSM4109625",
+    "GSM4109626",
+    "GSM4109627",
+    "GSM4109628",
+    "GSM4109629",
+    "GSM4109630",
+    "GSM4109631",
+    "GSM4184958",
+    "GSM4184959",
+    "GSM4184960",
+    "GSM4184961",
+    "GSM4184962",
+    "GSM4184963",
+    "GSM4184964",
+    "GSM4184965",
+    "GSM4184966"
+   ],
+   "control_gsms": [
+    "GSM4109632",
+    "GSM4109633",
+    "GSM4109634",
+    "GSM4109635",
+    "GSM4109636",
+    "GSM4109637",
+    "GSM4109638",
+    "GSM4109639",
+    "GSM4109640",
+    "GSM4109641",
+    "GSM4109642",
+    "GSM4109643",
+    "GSM4109644",
+    "GSM4109645",
+    "GSM4109646",
+    "GSM4109647",
+    "GSM4109648",
+    "GSM4109649",
+    "GSM4109650",
+    "GSM4109651",
+    "GSM4109652",
+    "GSM4109653",
+    "GSM4109654",
+    "GSM4184967",
+    "GSM4184968",
+    "GSM4184969",
+    "GSM4184970",
+    "GSM4184971",
+    "GSM4184972",
+    "GSM4184973",
+    "GSM4184974",
+    "GSM4184975"
+   ],
+   "blocking": null,
+   "restricted_to": {},
+   "confidence": 1.0,
+   "status": "confirmed",
+   "rationale": "No tissue characteristic: the label is the title prefix ('Tumor T_A_004' vs 'Non Tumor NT_JJ_017'), cited verbatim. Pairs cannot be recovered from the ids."
+  }
+ ],
+ "markers": [
+  {
+   "symbol": "GPC3",
+   "direction": "up"
+  },
+  {
+   "symbol": "AFP",
+   "direction": "up"
+  },
+  {
+   "symbol": "SPP1",
+   "direction": "up"
+  },
+  {
+   "symbol": "MDK",
+   "direction": "up"
+  },
+  {
+   "symbol": "PEG10",
+   "direction": "up"
+  },
+  {
+   "symbol": "CLEC4G",
+   "direction": "down"
+  },
+  {
+   "symbol": "CLEC1B",
+   "direction": "down"
+  },
+  {
+   "symbol": "FCN3",
+   "direction": "down"
+  },
+  {
+   "symbol": "CRHBP",
+   "direction": "down"
+  },
+  {
+   "symbol": "CYP1A2",
+   "direction": "down"
+  }
+ ]
+}

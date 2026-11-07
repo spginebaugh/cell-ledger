@@ -1,0 +1,919 @@
+{
+ "samplesheet": {
+  "gse": "GSE178197",
+  "assay": "bulk",
+  "title": "Non-invasive tape-stripping of psoriatic skin with high-resolution RNA profiling",
+  "samples": [
+   {
+    "gsm": "GSM5381535",
+    "title": "Sample_119894",
+    "source_name": "Skin",
+    "group": "other",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "201",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "protocol": "Biopsy",
+     "patient id": "201",
+     "tissue": "Normal"
+    },
+    "raw_lines": [
+     "protocol: Biopsy",
+     "patient id: 201",
+     "tissue: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM5381537",
+    "title": "Sample_119896",
+    "source_name": "Skin",
+    "group": "other",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "202",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "protocol": "Biopsy",
+     "patient id": "202",
+     "tissue": "Normal"
+    },
+    "raw_lines": [
+     "protocol: Biopsy",
+     "patient id: 202",
+     "tissue: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM5381539",
+    "title": "Sample_119898",
+    "source_name": "Skin",
+    "group": "other",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "203",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "protocol": "Biopsy",
+     "patient id": "203",
+     "tissue": "Normal"
+    },
+    "raw_lines": [
+     "protocol: Biopsy",
+     "patient id: 203",
+     "tissue: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM5381541",
+    "title": "Sample_119900",
+    "source_name": "Skin",
+    "group": "other",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "204",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "protocol": "Biopsy",
+     "patient id": "204",
+     "tissue": "Normal"
+    },
+    "raw_lines": [
+     "protocol: Biopsy",
+     "patient id: 204",
+     "tissue: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM5381543",
+    "title": "Sample_119902",
+    "source_name": "Skin",
+    "group": "other",
+    "condition": "Normal",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "205",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue: Normal"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "protocol": "Biopsy",
+     "patient id": "205",
+     "tissue": "Normal"
+    },
+    "raw_lines": [
+     "protocol: Biopsy",
+     "patient id: 205",
+     "tissue: Normal"
+    ]
+   },
+   {
+    "gsm": "GSM5381545",
+    "title": "Sample_119904",
+    "source_name": "Skin",
+    "group": "control",
+    "condition": "Uninvolved Skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "101",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue: Uninvolved Skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "protocol": "Biopsy",
+     "patient id": "101",
+     "tissue": "Uninvolved Skin"
+    },
+    "raw_lines": [
+     "protocol: Biopsy",
+     "patient id: 101",
+     "tissue: Uninvolved Skin"
+    ]
+   },
+   {
+    "gsm": "GSM5381547",
+    "title": "Sample_119906",
+    "source_name": "Skin",
+    "group": "case",
+    "condition": "Lesional Skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "101",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue: Lesional Skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "protocol": "Biopsy",
+     "patient id": "101",
+     "tissue": "Lesional Skin"
+    },
+    "raw_lines": [
+     "protocol: Biopsy",
+     "patient id: 101",
+     "tissue: Lesional Skin"
+    ]
+   },
+   {
+    "gsm": "GSM5381549",
+    "title": "Sample_119908",
+    "source_name": "Skin",
+    "group": "control",
+    "condition": "Uninvolved Skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "102",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue: Uninvolved Skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "protocol": "Biopsy",
+     "patient id": "102",
+     "tissue": "Uninvolved Skin"
+    },
+    "raw_lines": [
+     "protocol: Biopsy",
+     "patient id: 102",
+     "tissue: Uninvolved Skin"
+    ]
+   },
+   {
+    "gsm": "GSM5381551",
+    "title": "Sample_119910",
+    "source_name": "Skin",
+    "group": "case",
+    "condition": "Lesional Skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "102",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue: Lesional Skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "protocol": "Biopsy",
+     "patient id": "102",
+     "tissue": "Lesional Skin"
+    },
+    "raw_lines": [
+     "protocol: Biopsy",
+     "patient id: 102",
+     "tissue: Lesional Skin"
+    ]
+   },
+   {
+    "gsm": "GSM5381553",
+    "title": "Sample_119912",
+    "source_name": "Skin",
+    "group": "control",
+    "condition": "Uninvolved Skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "103",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue: Uninvolved Skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "protocol": "Biopsy",
+     "patient id": "103",
+     "tissue": "Uninvolved Skin"
+    },
+    "raw_lines": [
+     "protocol: Biopsy",
+     "patient id: 103",
+     "tissue: Uninvolved Skin"
+    ]
+   },
+   {
+    "gsm": "GSM5381555",
+    "title": "Sample_119914",
+    "source_name": "Skin",
+    "group": "case",
+    "condition": "Lesional Skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "103",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue: Lesional Skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "protocol": "Biopsy",
+     "patient id": "103",
+     "tissue": "Lesional Skin"
+    },
+    "raw_lines": [
+     "protocol: Biopsy",
+     "patient id: 103",
+     "tissue: Lesional Skin"
+    ]
+   },
+   {
+    "gsm": "GSM5381558",
+    "title": "Sample_119918",
+    "source_name": "Skin",
+    "group": "case",
+    "condition": "Lesional Skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "104",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue: Lesional Skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "protocol": "Biopsy",
+     "patient id": "104",
+     "tissue": "Lesional Skin"
+    },
+    "raw_lines": [
+     "protocol: Biopsy",
+     "patient id: 104",
+     "tissue: Lesional Skin"
+    ]
+   },
+   {
+    "gsm": "GSM5381560",
+    "title": "Sample_119920",
+    "source_name": "Skin",
+    "group": "control",
+    "condition": "Uninvolved Skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "105",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue: Uninvolved Skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "protocol": "Biopsy",
+     "patient id": "105",
+     "tissue": "Uninvolved Skin"
+    },
+    "raw_lines": [
+     "protocol: Biopsy",
+     "patient id: 105",
+     "tissue: Uninvolved Skin"
+    ]
+   },
+   {
+    "gsm": "GSM5381562",
+    "title": "Sample_119922",
+    "source_name": "Skin",
+    "group": "case",
+    "condition": "Lesional Skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "105",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue: Lesional Skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "protocol": "Biopsy",
+     "patient id": "105",
+     "tissue": "Lesional Skin"
+    },
+    "raw_lines": [
+     "protocol: Biopsy",
+     "patient id: 105",
+     "tissue: Lesional Skin"
+    ]
+   },
+   {
+    "gsm": "GSM5381564",
+    "title": "Sample_119924",
+    "source_name": "Skin",
+    "group": "control",
+    "condition": "Uninvolved Skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "106",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue: Uninvolved Skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "protocol": "Biopsy",
+     "patient id": "106",
+     "tissue": "Uninvolved Skin"
+    },
+    "raw_lines": [
+     "protocol: Biopsy",
+     "patient id: 106",
+     "tissue: Uninvolved Skin"
+    ]
+   },
+   {
+    "gsm": "GSM5381566",
+    "title": "Sample_119926",
+    "source_name": "Skin",
+    "group": "case",
+    "condition": "Lesional Skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "106",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue: Lesional Skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "protocol": "Biopsy",
+     "patient id": "106",
+     "tissue": "Lesional Skin"
+    },
+    "raw_lines": [
+     "protocol: Biopsy",
+     "patient id: 106",
+     "tissue: Lesional Skin"
+    ]
+   },
+   {
+    "gsm": "GSM5381568",
+    "title": "Sample_119928",
+    "source_name": "Skin",
+    "group": "control",
+    "condition": "Uninvolved Skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "107",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue: Uninvolved Skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "protocol": "Biopsy",
+     "patient id": "107",
+     "tissue": "Uninvolved Skin"
+    },
+    "raw_lines": [
+     "protocol: Biopsy",
+     "patient id: 107",
+     "tissue: Uninvolved Skin"
+    ]
+   },
+   {
+    "gsm": "GSM5381570",
+    "title": "Sample_119930",
+    "source_name": "Skin",
+    "group": "case",
+    "condition": "Lesional Skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "107",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue: Lesional Skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "protocol": "Biopsy",
+     "patient id": "107",
+     "tissue": "Lesional Skin"
+    },
+    "raw_lines": [
+     "protocol: Biopsy",
+     "patient id: 107",
+     "tissue: Lesional Skin"
+    ]
+   },
+   {
+    "gsm": "GSM5381572",
+    "title": "Sample_119932",
+    "source_name": "Skin",
+    "group": "control",
+    "condition": "Uninvolved Skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "108",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue: Uninvolved Skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "protocol": "Biopsy",
+     "patient id": "108",
+     "tissue": "Uninvolved Skin"
+    },
+    "raw_lines": [
+     "protocol: Biopsy",
+     "patient id: 108",
+     "tissue: Uninvolved Skin"
+    ]
+   },
+   {
+    "gsm": "GSM5381574",
+    "title": "Sample_119934",
+    "source_name": "Skin",
+    "group": "case",
+    "condition": "Lesional Skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "108",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue: Lesional Skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "protocol": "Biopsy",
+     "patient id": "108",
+     "tissue": "Lesional Skin"
+    },
+    "raw_lines": [
+     "protocol: Biopsy",
+     "patient id: 108",
+     "tissue: Lesional Skin"
+    ]
+   },
+   {
+    "gsm": "GSM5381576",
+    "title": "Sample_119936",
+    "source_name": "Skin",
+    "group": "control",
+    "condition": "Uninvolved Skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "109",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue: Uninvolved Skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "protocol": "Biopsy",
+     "patient id": "109",
+     "tissue": "Uninvolved Skin"
+    },
+    "raw_lines": [
+     "protocol: Biopsy",
+     "patient id: 109",
+     "tissue: Uninvolved Skin"
+    ]
+   },
+   {
+    "gsm": "GSM5381578",
+    "title": "Sample_119938",
+    "source_name": "Skin",
+    "group": "case",
+    "condition": "Lesional Skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "109",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue: Lesional Skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "protocol": "Biopsy",
+     "patient id": "109",
+     "tissue": "Lesional Skin"
+    },
+    "raw_lines": [
+     "protocol: Biopsy",
+     "patient id: 109",
+     "tissue: Lesional Skin"
+    ]
+   },
+   {
+    "gsm": "GSM5381580",
+    "title": "Sample_119940",
+    "source_name": "Skin",
+    "group": "control",
+    "condition": "Uninvolved Skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "110",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue: Uninvolved Skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "protocol": "Biopsy",
+     "patient id": "110",
+     "tissue": "Uninvolved Skin"
+    },
+    "raw_lines": [
+     "protocol: Biopsy",
+     "patient id: 110",
+     "tissue: Uninvolved Skin"
+    ]
+   },
+   {
+    "gsm": "GSM5381582",
+    "title": "Sample_119942",
+    "source_name": "Skin",
+    "group": "case",
+    "condition": "Lesional Skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "110",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue: Lesional Skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "protocol": "Biopsy",
+     "patient id": "110",
+     "tissue": "Lesional Skin"
+    },
+    "raw_lines": [
+     "protocol: Biopsy",
+     "patient id: 110",
+     "tissue: Lesional Skin"
+    ]
+   }
+  ]
+ },
+ "contrasts": [
+  {
+   "gse": "GSE178197",
+   "name": "lesional_vs_nonlesional",
+   "case_label": "psoriasis lesional skin biopsy",
+   "control_label": "psoriasis uninvolved skin biopsy",
+   "case_gsms": [
+    "GSM5381547",
+    "GSM5381551",
+    "GSM5381555",
+    "GSM5381558",
+    "GSM5381562",
+    "GSM5381566",
+    "GSM5381570",
+    "GSM5381574",
+    "GSM5381578",
+    "GSM5381582"
+   ],
+   "control_gsms": [
+    "GSM5381545",
+    "GSM5381549",
+    "GSM5381553",
+    "GSM5381560",
+    "GSM5381564",
+    "GSM5381568",
+    "GSM5381572",
+    "GSM5381576",
+    "GSM5381580"
+   ],
+   "blocking": "donor",
+   "restricted_to": {},
+   "confidence": 1.0,
+   "status": "confirmed",
+   "rationale": "Tape-strip protocols excluded; healthy biopsies are 'other'."
+  }
+ ],
+ "markers": [
+  {
+   "symbol": "S100A7",
+   "direction": "up"
+  },
+  {
+   "symbol": "S100A8",
+   "direction": "up"
+  },
+  {
+   "symbol": "S100A9",
+   "direction": "up"
+  },
+  {
+   "symbol": "DEFB4A",
+   "direction": "up"
+  },
+  {
+   "symbol": "KRT16",
+   "direction": "up"
+  },
+  {
+   "symbol": "PI3",
+   "direction": "up"
+  },
+  {
+   "symbol": "IL36G",
+   "direction": "up"
+  },
+  {
+   "symbol": "SERPINB4",
+   "direction": "up"
+  }
+ ]
+}

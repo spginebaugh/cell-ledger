@@ -1,0 +1,2556 @@
+{
+ "samplesheet": {
+  "gse": "GSE186063",
+  "assay": "bulk",
+  "title": "Multi-omics profiling reveals the interactions of host defense and hyper-keratinization in psoriasis",
+  "samples": [
+   {
+    "gsm": "GSM5629971",
+    "title": "103627-001-081",
+    "source_name": "lesion",
+    "group": "case",
+    "condition": "lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "41",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriasis",
+     "tissue": "Skin",
+     "age": "41",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriasis",
+     "tissue: Skin",
+     "age: 41",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5629972",
+    "title": "103627-001-082",
+    "source_name": "non-lesion",
+    "group": "control",
+    "condition": "non-lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "41",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriasis",
+     "tissue": "Skin",
+     "age": "41",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriasis",
+     "tissue: Skin",
+     "age: 41",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5629973",
+    "title": "103627-001-083",
+    "source_name": "normal skin",
+    "group": "other",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "46",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Ankylosing Spondylitis",
+     "tissue": "Skin",
+     "age": "46",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Ankylosing Spondylitis",
+     "tissue: Skin",
+     "age: 46",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5629974",
+    "title": "103627-001-084",
+    "source_name": "normal skin",
+    "group": "other",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "26",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Ankylosing Spondylitis",
+     "tissue": "Skin",
+     "age": "26",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Ankylosing Spondylitis",
+     "tissue: Skin",
+     "age: 26",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5629975",
+    "title": "103627-001-085",
+    "source_name": "lesion",
+    "group": "case",
+    "condition": "lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "50",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriatic Arthritis",
+     "tissue": "Skin",
+     "age": "50",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriatic Arthritis",
+     "tissue: Skin",
+     "age: 50",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5629976",
+    "title": "103627-001-086",
+    "source_name": "non-lesion",
+    "group": "control",
+    "condition": "non-lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "50",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriatic Arthritis",
+     "tissue": "Skin",
+     "age": "50",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriatic Arthritis",
+     "tissue: Skin",
+     "age: 50",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5629977",
+    "title": "103627-001-087",
+    "source_name": "lesion",
+    "group": "case",
+    "condition": "lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "52",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriatic Arthritis",
+     "tissue": "Skin",
+     "age": "52",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriatic Arthritis",
+     "tissue: Skin",
+     "age: 52",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5629978",
+    "title": "103627-001-088",
+    "source_name": "non-lesion",
+    "group": "control",
+    "condition": "non-lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "52",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriatic Arthritis",
+     "tissue": "Skin",
+     "age": "52",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriatic Arthritis",
+     "tissue: Skin",
+     "age: 52",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5629979",
+    "title": "103627-001-089",
+    "source_name": "normal skin",
+    "group": "other",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "49",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Ankylosing Spondylitis",
+     "tissue": "Skin",
+     "age": "49",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Ankylosing Spondylitis",
+     "tissue: Skin",
+     "age: 49",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5629980",
+    "title": "103627-001-090",
+    "source_name": "lesion",
+    "group": "case",
+    "condition": "lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Female",
+    "age": "20",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriasis",
+     "tissue": "Skin",
+     "age": "20",
+     "Sex": "Female"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriasis",
+     "tissue: Skin",
+     "age: 20",
+     "Sex: Female"
+    ]
+   },
+   {
+    "gsm": "GSM5629981",
+    "title": "103627-001-091",
+    "source_name": "non-lesion",
+    "group": "control",
+    "condition": "non-lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Female",
+    "age": "20",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriasis",
+     "tissue": "Skin",
+     "age": "20",
+     "Sex": "Female"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriasis",
+     "tissue: Skin",
+     "age: 20",
+     "Sex: Female"
+    ]
+   },
+   {
+    "gsm": "GSM5629982",
+    "title": "103627-001-092",
+    "source_name": "normal skin",
+    "group": "other",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Female",
+    "age": "47",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Ankylosing Spondylitis",
+     "tissue": "Skin",
+     "age": "47",
+     "Sex": "Female"
+    },
+    "raw_lines": [
+     "diagnosis: Ankylosing Spondylitis",
+     "tissue: Skin",
+     "age: 47",
+     "Sex: Female"
+    ]
+   },
+   {
+    "gsm": "GSM5629983",
+    "title": "103627-001-093",
+    "source_name": "lesion",
+    "group": "case",
+    "condition": "lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "50",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriatic Arthritis",
+     "tissue": "Skin",
+     "age": "50",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriatic Arthritis",
+     "tissue: Skin",
+     "age: 50",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5629984",
+    "title": "103627-001-094",
+    "source_name": "non-lesion",
+    "group": "control",
+    "condition": "non-lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "50",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriatic Arthritis",
+     "tissue": "Skin",
+     "age": "50",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriatic Arthritis",
+     "tissue: Skin",
+     "age: 50",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5629985",
+    "title": "103627-001-095",
+    "source_name": "normal skin",
+    "group": "other",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "49",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Ankylosing Spondylitis",
+     "tissue": "Skin",
+     "age": "49",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Ankylosing Spondylitis",
+     "tissue: Skin",
+     "age: 49",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5629986",
+    "title": "103627-001-096",
+    "source_name": "lesion",
+    "group": "case",
+    "condition": "lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Female",
+    "age": "24",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriasis",
+     "tissue": "Skin",
+     "age": "24",
+     "Sex": "Female"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriasis",
+     "tissue: Skin",
+     "age: 24",
+     "Sex: Female"
+    ]
+   },
+   {
+    "gsm": "GSM5629987",
+    "title": "103627-001-097",
+    "source_name": "non-lesion",
+    "group": "control",
+    "condition": "non-lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Female",
+    "age": "24",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriasis",
+     "tissue": "Skin",
+     "age": "24",
+     "Sex": "Female"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriasis",
+     "tissue: Skin",
+     "age: 24",
+     "Sex: Female"
+    ]
+   },
+   {
+    "gsm": "GSM5629988",
+    "title": "103627-001-098",
+    "source_name": "normal skin",
+    "group": "other",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "32",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Ankylosing Spondylitis",
+     "tissue": "Skin",
+     "age": "32",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Ankylosing Spondylitis",
+     "tissue: Skin",
+     "age: 32",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5629989",
+    "title": "103627-001-099",
+    "source_name": "lesion",
+    "group": "case",
+    "condition": "lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "29",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriatic Arthritis",
+     "tissue": "Skin",
+     "age": "29",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriatic Arthritis",
+     "tissue: Skin",
+     "age: 29",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5629990",
+    "title": "103627-001-100",
+    "source_name": "non-lesion",
+    "group": "control",
+    "condition": "non-lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "29",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriatic Arthritis",
+     "tissue": "Skin",
+     "age": "29",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriatic Arthritis",
+     "tissue: Skin",
+     "age: 29",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5629991",
+    "title": "103627-001-101",
+    "source_name": "normal skin",
+    "group": "other",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "54",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Ankylosing Spondylitis",
+     "tissue": "Skin",
+     "age": "54",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Ankylosing Spondylitis",
+     "tissue: Skin",
+     "age: 54",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5629992",
+    "title": "103627-001-102",
+    "source_name": "lesion",
+    "group": "case",
+    "condition": "lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "47",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriatic Arthritis",
+     "tissue": "Skin",
+     "age": "47",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriatic Arthritis",
+     "tissue: Skin",
+     "age: 47",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5629993",
+    "title": "103627-001-103",
+    "source_name": "non-lesion",
+    "group": "control",
+    "condition": "non-lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "47",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriatic Arthritis",
+     "tissue": "Skin",
+     "age": "47",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriatic Arthritis",
+     "tissue: Skin",
+     "age: 47",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5629994",
+    "title": "103627-001-104",
+    "source_name": "lesion",
+    "group": "case",
+    "condition": "lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "52",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriatic Arthritis",
+     "tissue": "Skin",
+     "age": "52",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriatic Arthritis",
+     "tissue: Skin",
+     "age: 52",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5629995",
+    "title": "103627-001-105",
+    "source_name": "non-lesion",
+    "group": "control",
+    "condition": "non-lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "52",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriatic Arthritis",
+     "tissue": "Skin",
+     "age": "52",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriatic Arthritis",
+     "tissue: Skin",
+     "age: 52",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5629996",
+    "title": "103627-001-106",
+    "source_name": "normal skin",
+    "group": "other",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Female",
+    "age": "35",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Ankylosing Spondylitis",
+     "tissue": "Skin",
+     "age": "35",
+     "Sex": "Female"
+    },
+    "raw_lines": [
+     "diagnosis: Ankylosing Spondylitis",
+     "tissue: Skin",
+     "age: 35",
+     "Sex: Female"
+    ]
+   },
+   {
+    "gsm": "GSM5629997",
+    "title": "103627-001-107",
+    "source_name": "normal skin",
+    "group": "other",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "45",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Ankylosing Spondylitis",
+     "tissue": "Skin",
+     "age": "45",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Ankylosing Spondylitis",
+     "tissue: Skin",
+     "age: 45",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5629998",
+    "title": "103627-001-108",
+    "source_name": "non-lesion",
+    "group": "control",
+    "condition": "non-lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Female",
+    "age": "41",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriatic Arthritis",
+     "tissue": "Skin",
+     "age": "41",
+     "Sex": "Female"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriatic Arthritis",
+     "tissue: Skin",
+     "age: 41",
+     "Sex: Female"
+    ]
+   },
+   {
+    "gsm": "GSM5629999",
+    "title": "103627-001-109",
+    "source_name": "non-lesion",
+    "group": "control",
+    "condition": "non-lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Female",
+    "age": "41",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriatic Arthritis",
+     "tissue": "Skin",
+     "age": "41",
+     "Sex": "Female"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriatic Arthritis",
+     "tissue: Skin",
+     "age: 41",
+     "Sex: Female"
+    ]
+   },
+   {
+    "gsm": "GSM5630000",
+    "title": "103627-001-110",
+    "source_name": "lesion",
+    "group": "case",
+    "condition": "lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Female",
+    "age": "28",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriatic Arthritis",
+     "tissue": "Skin",
+     "age": "28",
+     "Sex": "Female"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriatic Arthritis",
+     "tissue: Skin",
+     "age: 28",
+     "Sex: Female"
+    ]
+   },
+   {
+    "gsm": "GSM5630001",
+    "title": "103627-001-111",
+    "source_name": "non-lesion",
+    "group": "control",
+    "condition": "non-lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Female",
+    "age": "28",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriatic Arthritis",
+     "tissue": "Skin",
+     "age": "28",
+     "Sex": "Female"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriatic Arthritis",
+     "tissue: Skin",
+     "age: 28",
+     "Sex: Female"
+    ]
+   },
+   {
+    "gsm": "GSM5630002",
+    "title": "103627-001-112",
+    "source_name": "lesion",
+    "group": "case",
+    "condition": "lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "54",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriatic Arthritis",
+     "tissue": "Skin",
+     "age": "54",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriatic Arthritis",
+     "tissue: Skin",
+     "age: 54",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5630003",
+    "title": "103627-001-113",
+    "source_name": "non-lesion",
+    "group": "control",
+    "condition": "non-lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "54",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriatic Arthritis",
+     "tissue": "Skin",
+     "age": "54",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriatic Arthritis",
+     "tissue: Skin",
+     "age: 54",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5630004",
+    "title": "103627-001-114",
+    "source_name": "lesion",
+    "group": "case",
+    "condition": "lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "37",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriatic Arthritis",
+     "tissue": "Skin",
+     "age": "37",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriatic Arthritis",
+     "tissue: Skin",
+     "age: 37",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5630005",
+    "title": "103627-001-115",
+    "source_name": "non-lesion",
+    "group": "control",
+    "condition": "non-lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "37",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriatic Arthritis",
+     "tissue": "Skin",
+     "age": "37",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriatic Arthritis",
+     "tissue: Skin",
+     "age: 37",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5630006",
+    "title": "103627-001-116",
+    "source_name": "lesion",
+    "group": "case",
+    "condition": "lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Female",
+    "age": "48",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriasis",
+     "tissue": "Skin",
+     "age": "48",
+     "Sex": "Female"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriasis",
+     "tissue: Skin",
+     "age: 48",
+     "Sex: Female"
+    ]
+   },
+   {
+    "gsm": "GSM5630007",
+    "title": "103627-001-117",
+    "source_name": "non-lesion",
+    "group": "control",
+    "condition": "non-lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Female",
+    "age": "48",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriasis",
+     "tissue": "Skin",
+     "age": "48",
+     "Sex": "Female"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriasis",
+     "tissue: Skin",
+     "age: 48",
+     "Sex: Female"
+    ]
+   },
+   {
+    "gsm": "GSM5630008",
+    "title": "103627-001-118",
+    "source_name": "lesion",
+    "group": "case",
+    "condition": "lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "50",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriasis",
+     "tissue": "Skin",
+     "age": "50",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriasis",
+     "tissue: Skin",
+     "age: 50",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5630009",
+    "title": "103627-001-119",
+    "source_name": "non-lesion",
+    "group": "control",
+    "condition": "non-lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "50",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriasis",
+     "tissue": "Skin",
+     "age": "50",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriasis",
+     "tissue: Skin",
+     "age: 50",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5630010",
+    "title": "103627-001-120",
+    "source_name": "lesion",
+    "group": "case",
+    "condition": "lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "48",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriasis",
+     "tissue": "Skin",
+     "age": "48",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriasis",
+     "tissue: Skin",
+     "age: 48",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5630011",
+    "title": "103627-001-121",
+    "source_name": "non-lesion",
+    "group": "control",
+    "condition": "non-lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "48",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriasis",
+     "tissue": "Skin",
+     "age": "48",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriasis",
+     "tissue: Skin",
+     "age: 48",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5630012",
+    "title": "103627-001-122",
+    "source_name": "lesion",
+    "group": "case",
+    "condition": "lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Female",
+    "age": "53",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriasis",
+     "tissue": "Skin",
+     "age": "53",
+     "Sex": "Female"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriasis",
+     "tissue: Skin",
+     "age: 53",
+     "Sex: Female"
+    ]
+   },
+   {
+    "gsm": "GSM5630013",
+    "title": "103627-001-123",
+    "source_name": "non-lesion",
+    "group": "control",
+    "condition": "non-lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Female",
+    "age": "53",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriasis",
+     "tissue": "Skin",
+     "age": "53",
+     "Sex": "Female"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriasis",
+     "tissue: Skin",
+     "age: 53",
+     "Sex: Female"
+    ]
+   },
+   {
+    "gsm": "GSM5630014",
+    "title": "103627-001-124",
+    "source_name": "lesion",
+    "group": "case",
+    "condition": "lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "53",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriatic Arthritis",
+     "tissue": "Skin",
+     "age": "53",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriatic Arthritis",
+     "tissue: Skin",
+     "age: 53",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5630015",
+    "title": "103627-001-125",
+    "source_name": "non-lesion",
+    "group": "control",
+    "condition": "non-lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "53",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriatic Arthritis",
+     "tissue": "Skin",
+     "age": "53",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriatic Arthritis",
+     "tissue: Skin",
+     "age: 53",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5630016",
+    "title": "103627-001-126",
+    "source_name": "lesion",
+    "group": "case",
+    "condition": "lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Female",
+    "age": "63",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriasis",
+     "tissue": "Skin",
+     "age": "63",
+     "Sex": "Female"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriasis",
+     "tissue: Skin",
+     "age: 63",
+     "Sex: Female"
+    ]
+   },
+   {
+    "gsm": "GSM5630017",
+    "title": "103627-001-127",
+    "source_name": "non-lesion",
+    "group": "control",
+    "condition": "non-lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Female",
+    "age": "63",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriasis",
+     "tissue": "Skin",
+     "age": "63",
+     "Sex": "Female"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriasis",
+     "tissue: Skin",
+     "age: 63",
+     "Sex: Female"
+    ]
+   },
+   {
+    "gsm": "GSM5630018",
+    "title": "103627-001-128",
+    "source_name": "lesion",
+    "group": "case",
+    "condition": "lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "33",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriasis",
+     "tissue": "Skin",
+     "age": "33",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriasis",
+     "tissue: Skin",
+     "age: 33",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5630019",
+    "title": "103627-001-129",
+    "source_name": "non-lesion",
+    "group": "control",
+    "condition": "non-lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "33",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriasis",
+     "tissue": "Skin",
+     "age": "33",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriasis",
+     "tissue: Skin",
+     "age: 33",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5630020",
+    "title": "103627-001-130",
+    "source_name": "lesion",
+    "group": "case",
+    "condition": "lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "26",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriasis",
+     "tissue": "Skin",
+     "age": "26",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriasis",
+     "tissue: Skin",
+     "age: 26",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5630021",
+    "title": "103627-001-131",
+    "source_name": "non-lesion",
+    "group": "control",
+    "condition": "non-lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "26",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriasis",
+     "tissue": "Skin",
+     "age": "26",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriasis",
+     "tissue: Skin",
+     "age: 26",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5630022",
+    "title": "103627-001-132",
+    "source_name": "lesion",
+    "group": "case",
+    "condition": "lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Female",
+    "age": "61",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriatic Arthritis",
+     "tissue": "Skin",
+     "age": "61",
+     "Sex": "Female"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriatic Arthritis",
+     "tissue: Skin",
+     "age: 61",
+     "Sex: Female"
+    ]
+   },
+   {
+    "gsm": "GSM5630023",
+    "title": "103627-001-133",
+    "source_name": "non-lesion",
+    "group": "control",
+    "condition": "non-lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Female",
+    "age": "61",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriatic Arthritis",
+     "tissue": "Skin",
+     "age": "61",
+     "Sex": "Female"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriatic Arthritis",
+     "tissue: Skin",
+     "age: 61",
+     "Sex: Female"
+    ]
+   },
+   {
+    "gsm": "GSM5630024",
+    "title": "103627-001-134",
+    "source_name": "lesion",
+    "group": "case",
+    "condition": "lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Female",
+    "age": "56",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriasis",
+     "tissue": "Skin",
+     "age": "56",
+     "Sex": "Female"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriasis",
+     "tissue: Skin",
+     "age: 56",
+     "Sex: Female"
+    ]
+   },
+   {
+    "gsm": "GSM5630025",
+    "title": "103627-001-135",
+    "source_name": "non-lesion",
+    "group": "control",
+    "condition": "non-lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Female",
+    "age": "56",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriasis",
+     "tissue": "Skin",
+     "age": "56",
+     "Sex": "Female"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriasis",
+     "tissue: Skin",
+     "age: 56",
+     "Sex: Female"
+    ]
+   },
+   {
+    "gsm": "GSM5630026",
+    "title": "103627-001-136",
+    "source_name": "lesion",
+    "group": "case",
+    "condition": "lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "48",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriatic Arthritis",
+     "tissue": "Skin",
+     "age": "48",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriatic Arthritis",
+     "tissue: Skin",
+     "age: 48",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5630027",
+    "title": "103627-001-137",
+    "source_name": "non-lesion",
+    "group": "control",
+    "condition": "non-lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "48",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriatic Arthritis",
+     "tissue": "Skin",
+     "age": "48",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriatic Arthritis",
+     "tissue: Skin",
+     "age: 48",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5630028",
+    "title": "103627-001-138",
+    "source_name": "lesion",
+    "group": "case",
+    "condition": "lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Female",
+    "age": "51",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriatic Arthritis",
+     "tissue": "Skin",
+     "age": "51",
+     "Sex": "Female"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriatic Arthritis",
+     "tissue: Skin",
+     "age: 51",
+     "Sex: Female"
+    ]
+   },
+   {
+    "gsm": "GSM5630029",
+    "title": "103627-001-139",
+    "source_name": "non-lesion",
+    "group": "control",
+    "condition": "non-lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Female",
+    "age": "51",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriatic Arthritis",
+     "tissue": "Skin",
+     "age": "51",
+     "Sex": "Female"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriatic Arthritis",
+     "tissue: Skin",
+     "age: 51",
+     "Sex: Female"
+    ]
+   },
+   {
+    "gsm": "GSM5630030",
+    "title": "103627-001-140",
+    "source_name": "normal skin",
+    "group": "other",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "47",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Ankylosing Spondylitis",
+     "tissue": "Skin",
+     "age": "47",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Ankylosing Spondylitis",
+     "tissue: Skin",
+     "age: 47",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5630031",
+    "title": "103627-001-141",
+    "source_name": "lesion",
+    "group": "case",
+    "condition": "lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "34",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriasis",
+     "tissue": "Skin",
+     "age": "34",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriasis",
+     "tissue: Skin",
+     "age: 34",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5630032",
+    "title": "103627-001-142",
+    "source_name": "non-lesion",
+    "group": "control",
+    "condition": "non-lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "34",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriasis",
+     "tissue": "Skin",
+     "age": "34",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriasis",
+     "tissue: Skin",
+     "age: 34",
+     "Sex: Male"
+    ]
+   },
+   {
+    "gsm": "GSM5630033",
+    "title": "103627-001-143",
+    "source_name": "normal skin",
+    "group": "other",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Female",
+    "age": "48",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Ankylosing Spondylitis",
+     "tissue": "Skin",
+     "age": "48",
+     "Sex": "Female"
+    },
+    "raw_lines": [
+     "diagnosis: Ankylosing Spondylitis",
+     "tissue: Skin",
+     "age: 48",
+     "Sex: Female"
+    ]
+   },
+   {
+    "gsm": "GSM5630034",
+    "title": "103627-001-144",
+    "source_name": "lesion",
+    "group": "case",
+    "condition": "lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Female",
+    "age": "41",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriasis",
+     "tissue": "Skin",
+     "age": "41",
+     "Sex": "Female"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriasis",
+     "tissue: Skin",
+     "age: 41",
+     "Sex: Female"
+    ]
+   },
+   {
+    "gsm": "GSM5630035",
+    "title": "103627-001-145",
+    "source_name": "non-lesion",
+    "group": "control",
+    "condition": "non-lesion",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Female",
+    "age": "41",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "non-lesion"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Psoriasis",
+     "tissue": "Skin",
+     "age": "41",
+     "Sex": "Female"
+    },
+    "raw_lines": [
+     "diagnosis: Psoriasis",
+     "tissue: Skin",
+     "age: 41",
+     "Sex: Female"
+    ]
+   },
+   {
+    "gsm": "GSM5630036",
+    "title": "103627-001-146",
+    "source_name": "normal skin",
+    "group": "other",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "Male",
+    "age": "52",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "diagnosis": "Ankylosing Spondylitis",
+     "tissue": "Skin",
+     "age": "52",
+     "Sex": "Male"
+    },
+    "raw_lines": [
+     "diagnosis: Ankylosing Spondylitis",
+     "tissue: Skin",
+     "age: 52",
+     "Sex: Male"
+    ]
+   }
+  ]
+ },
+ "contrasts": [
+  {
+   "gse": "GSE186063",
+   "name": "lesional_vs_nonlesional",
+   "case_label": "psoriasis / PsA lesional skin",
+   "control_label": "psoriasis / PsA non-lesional skin",
+   "case_gsms": [
+    "GSM5629971",
+    "GSM5629975",
+    "GSM5629977",
+    "GSM5629980",
+    "GSM5629983",
+    "GSM5629986",
+    "GSM5629989",
+    "GSM5629992",
+    "GSM5629994",
+    "GSM5630000",
+    "GSM5630002",
+    "GSM5630004",
+    "GSM5630006",
+    "GSM5630008",
+    "GSM5630010",
+    "GSM5630012",
+    "GSM5630014",
+    "GSM5630016",
+    "GSM5630018",
+    "GSM5630020",
+    "GSM5630022",
+    "GSM5630024",
+    "GSM5630026",
+    "GSM5630028",
+    "GSM5630031",
+    "GSM5630034"
+   ],
+   "control_gsms": [
+    "GSM5629972",
+    "GSM5629976",
+    "GSM5629978",
+    "GSM5629981",
+    "GSM5629984",
+    "GSM5629987",
+    "GSM5629990",
+    "GSM5629993",
+    "GSM5629995",
+    "GSM5629998",
+    "GSM5629999",
+    "GSM5630001",
+    "GSM5630003",
+    "GSM5630005",
+    "GSM5630007",
+    "GSM5630009",
+    "GSM5630011",
+    "GSM5630013",
+    "GSM5630015",
+    "GSM5630017",
+    "GSM5630019",
+    "GSM5630021",
+    "GSM5630023",
+    "GSM5630025",
+    "GSM5630027",
+    "GSM5630029",
+    "GSM5630032",
+    "GSM5630035"
+   ],
+   "blocking": null,
+   "restricted_to": {},
+   "confidence": 1.0,
+   "status": "confirmed",
+   "rationale": "PsO and PsA pooled; AS 'normal skin' kept as 'other'. No patient id."
+  }
+ ],
+ "markers": [
+  {
+   "symbol": "S100A7",
+   "direction": "up"
+  },
+  {
+   "symbol": "S100A8",
+   "direction": "up"
+  },
+  {
+   "symbol": "S100A9",
+   "direction": "up"
+  },
+  {
+   "symbol": "DEFB4A",
+   "direction": "up"
+  },
+  {
+   "symbol": "KRT16",
+   "direction": "up"
+  },
+  {
+   "symbol": "PI3",
+   "direction": "up"
+  },
+  {
+   "symbol": "IL36G",
+   "direction": "up"
+  },
+  {
+   "symbol": "SERPINB4",
+   "direction": "up"
+  }
+ ]
+}

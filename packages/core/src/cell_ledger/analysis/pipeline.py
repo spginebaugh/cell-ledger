@@ -11,11 +11,13 @@ the report is still written.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import platform
 import shutil
 import traceback
+from collections import Counter
 from datetime import UTC, datetime
 from importlib.metadata import version
 from pathlib import Path
@@ -39,6 +41,7 @@ from cell_ledger.report.render import render_markdown
 from cell_ledger.samplesheet import Contrast, SampleSheet
 
 REPORT_JSON = "report.json"
+CONTEXT_FIELDS = ("tissue", "cell_type", "cell_line", "treatment", "time_point", "organism")
 
 
 class PipelineParams(BaseModel):
@@ -100,6 +103,60 @@ def _attach_qc_to_obs(adata: ad.AnnData, qc: QcResult) -> None:
         obs["pc1"], obs["pc2"] = coords[:, 0], coords[:, 1]
 
 
+def summarize_context(sheet: SampleSheet, gsms: list[str]) -> dict[str, str]:
+    """Modal non-empty value of each context field over ``gsms``, when it covers >= half of them."""
+    out: dict[str, str] = {}
+    samples = [sheet.by_gsm(g) for g in gsms if g in set(sheet.gsms)]
+    for field in CONTEXT_FIELDS:
+        values = [v for v in (getattr(s, field) for s in samples) if v]
+        if not values:
+            continue
+        top, n = Counter(values).most_common(1)[0]
+        if n * 2 >= len(samples):
+            out[field] = top
+    return out
+
+
+def _file_digest(path: str | Path) -> str:
+    h = hashlib.sha256()
+    with Path(path).open("rb") as f:
+        for chunk in iter(lambda: f.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def code_digest() -> str:
+    """sha256 over the analysis, report and samplesheet sources: a code change without a
+    version bump still invalidates cached runs."""
+    root = Path(__file__).resolve().parent.parent
+    h = hashlib.sha256()
+    for sub_dir in ("analysis", "report", "samplesheet"):
+        for f in sorted((root / sub_dir).glob("*.py")):
+            h.update(f.name.encode())
+            h.update(f.read_bytes())
+    return h.hexdigest()
+
+
+def compute_fingerprint(
+    counts_path: str | Path,
+    annotation_path: str | Path,
+    sheet: SampleSheet,
+    contrast: Contrast,
+    params: PipelineParams,
+) -> str:
+    """sha256 of everything a run depends on: input files, design, parameters, library
+    versions and the analysis code itself."""
+    h = hashlib.sha256()
+    h.update(_file_digest(counts_path).encode())
+    h.update(_file_digest(annotation_path).encode())
+    h.update(sheet.model_dump_json().encode())
+    h.update(contrast.model_dump_json().encode())
+    h.update(params.model_dump_json().encode())
+    h.update(json.dumps(_versions(), sort_keys=True).encode())
+    h.update(code_digest().encode())
+    return h.hexdigest()
+
+
 def run_pipeline(
     *,
     counts_path: str | Path,
@@ -126,6 +183,9 @@ def run_pipeline(
         params=params.model_dump(),
     )
     try:
+        report.fingerprint = compute_fingerprint(
+            counts_path, annotation_path, sheet, contrast, params
+        )
         _run(report, counts_path, annotation_path, sheet, contrast, work, params)
     except Exception as exc:
         report.status = "blocked"
@@ -170,6 +230,7 @@ def _run(
         annotation = load_annotation(annotation_path)
         adata, rec = build_anndata(counts, sheet, annotation, contrast)
         report.reconciliation = rec
+        report.context = summarize_context(sheet, rec.gsms_used)
     if rec.contrast_gsms_missing_from_counts:
         report.warnings.append(
             f"{len(rec.contrast_gsms_missing_from_counts)} contrast GSMs have no counts column "
@@ -240,10 +301,9 @@ def _run(
             min_per_group=params.min_per_group,
         )
         with step(steps, "deseq2", blocking=contrast.blocking, **de_params.model_dump()) as rec_de:
-            results, normed, de_summary, plan = run_de(
-                filtered, de_params, blocking=contrast.blocking
-            )
-            report.de = de_summary
+            fit = run_de(filtered, de_params, blocking=contrast.blocking)
+            results, normed, plan = fit.results, fit.normed, fit.plan
+            report.de = fit.summary
         report.warnings.extend(plan.warnings)
         report.warnings.extend(f"pydeseq2: {w}" for w in rec_de.warnings)
         if plan.pairing == "ignored":
@@ -251,21 +311,34 @@ def _run(
                 f"contrast declares pairing by {contrast.blocking!r} but it could not be "
                 "modelled; samples were treated as independent"
             )
+        if plan.unmodelled_dependence:
+            report.qualifications.append(plan.unmodelled_dependence)
+        if plan.collapsed:
+            n = sum(len(v) for v in plan.collapsed.values())
+            report.qualifications.append(
+                f"{n} samples repeat a {contrast.blocking} within an arm and were summed into "
+                f"{len(plan.collapsed)} observations before the fit; the fit has "
+                f"{fit.summary.summary.n_case_used} case and "
+                f"{fit.summary.summary.n_control_used} control observations"
+            )
         if plan.dropped:
             filtered = filtered[plan.kept].copy()
-            arms = arms.loc[plan.kept]
+        arms = fit.arms
         results.to_csv(out / "de_results.tsv", sep="\t")
         report.files["de_results"] = "de_results.tsv"
         normed_t = normed.T
         normed_t.index.name = "GeneID"
         normed_t.to_csv(out / "normalized_counts.tsv", sep="\t", float_format="%.3f")
         report.files["normalized_counts"] = "normalized_counts.tsv"
-        filtered.layers["normed_counts"] = normed.loc[
-            filtered.obs_names, filtered.var_names
-        ].to_numpy()
-        filtered.layers["log2_normed"] = (
-            log2_normalized(normed).loc[filtered.obs_names, filtered.var_names].to_numpy()
-        )
+        if not plan.collapsed:
+            filtered.layers["normed_counts"] = normed.loc[
+                filtered.obs_names, filtered.var_names
+            ].to_numpy()
+            filtered.layers["log2_normed"] = (
+                log2_normalized(normed).loc[filtered.obs_names, filtered.var_names].to_numpy()
+            )
+        else:
+            filtered.uns["collapsed"] = json.dumps(plan.collapsed)
 
         if params.run_enrichment:
             enr = EnrichmentParams(

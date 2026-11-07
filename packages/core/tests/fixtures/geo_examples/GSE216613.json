@@ -1,0 +1,272 @@
+{
+ "samplesheet": {
+  "gse": "GSE216613",
+  "assay": "bulk",
+  "title": "Transcriptome analysis between hepatocellular carcinoma and adjacent tissues",
+  "samples": [
+   {
+    "gsm": "GSM6682838",
+    "title": "N1",
+    "source_name": "hepatocellular carcinoma patient",
+    "group": "case",
+    "condition": "hepatocellular carcinoma",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient 1",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue: hepatocellular carcinoma"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "patient diagnosis": "hepatocellular carcinoma",
+     "tissue": "hepatocellular carcinoma"
+    },
+    "raw_lines": [
+     "patient diagnosis: hepatocellular carcinoma",
+     "tissue: hepatocellular carcinoma"
+    ]
+   },
+   {
+    "gsm": "GSM6682839",
+    "title": "N2",
+    "source_name": "hepatocellular carcinoma patient",
+    "group": "case",
+    "condition": "hepatocellular carcinoma",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient 2",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue: hepatocellular carcinoma"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "patient diagnosis": "hepatocellular carcinoma",
+     "tissue": "hepatocellular carcinoma"
+    },
+    "raw_lines": [
+     "patient diagnosis: hepatocellular carcinoma",
+     "tissue: hepatocellular carcinoma"
+    ]
+   },
+   {
+    "gsm": "GSM6682841",
+    "title": "N3",
+    "source_name": "hepatocellular carcinoma patient",
+    "group": "case",
+    "condition": "hepatocellular carcinoma",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient 3",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue: hepatocellular carcinoma"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "patient diagnosis": "hepatocellular carcinoma",
+     "tissue": "hepatocellular carcinoma"
+    },
+    "raw_lines": [
+     "patient diagnosis: hepatocellular carcinoma",
+     "tissue: hepatocellular carcinoma"
+    ]
+   },
+   {
+    "gsm": "GSM6682842",
+    "title": "P1",
+    "source_name": "hepatocellular carcinoma patient",
+    "group": "control",
+    "condition": "normal adjacent liver tissue",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient 1",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue: normal adjacent liver tissue"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "patient diagnosis": "hepatocellular carcinoma",
+     "tissue": "normal adjacent liver tissue"
+    },
+    "raw_lines": [
+     "patient diagnosis: hepatocellular carcinoma",
+     "tissue: normal adjacent liver tissue"
+    ]
+   },
+   {
+    "gsm": "GSM6682843",
+    "title": "P2",
+    "source_name": "hepatocellular carcinoma patient",
+    "group": "control",
+    "condition": "normal adjacent liver tissue",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient 2",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue: normal adjacent liver tissue"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "patient diagnosis": "hepatocellular carcinoma",
+     "tissue": "normal adjacent liver tissue"
+    },
+    "raw_lines": [
+     "patient diagnosis: hepatocellular carcinoma",
+     "tissue: normal adjacent liver tissue"
+    ]
+   },
+   {
+    "gsm": "GSM6682844",
+    "title": "P3",
+    "source_name": "hepatocellular carcinoma patient",
+    "group": "control",
+    "condition": "normal adjacent liver tissue",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient 3",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue: normal adjacent liver tissue"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "patient diagnosis": "hepatocellular carcinoma",
+     "tissue": "normal adjacent liver tissue"
+    },
+    "raw_lines": [
+     "patient diagnosis: hepatocellular carcinoma",
+     "tissue: normal adjacent liver tissue"
+    ]
+   }
+  ]
+ },
+ "contrasts": [
+  {
+   "gse": "GSE216613",
+   "name": "tumor_vs_adjacent_normal",
+   "case_label": "HCC tumor",
+   "control_label": "adjacent non-tumor liver",
+   "case_gsms": [
+    "GSM6682838",
+    "GSM6682839",
+    "GSM6682841"
+   ],
+   "control_gsms": [
+    "GSM6682842",
+    "GSM6682843",
+    "GSM6682844"
+   ],
+   "blocking": "donor",
+   "restricted_to": {},
+   "confidence": 1.0,
+   "status": "confirmed",
+   "rationale": "3 pairs. Titles N1-3 are the tumors and P1-3 the normals; the tissue field is explicit and wins over the title letter."
+  }
+ ],
+ "markers": [
+  {
+   "symbol": "GPC3",
+   "direction": "up"
+  },
+  {
+   "symbol": "AFP",
+   "direction": "up"
+  },
+  {
+   "symbol": "SPP1",
+   "direction": "up"
+  },
+  {
+   "symbol": "MDK",
+   "direction": "up"
+  },
+  {
+   "symbol": "PEG10",
+   "direction": "up"
+  },
+  {
+   "symbol": "CLEC4G",
+   "direction": "down"
+  },
+  {
+   "symbol": "CLEC1B",
+   "direction": "down"
+  },
+  {
+   "symbol": "FCN3",
+   "direction": "down"
+  },
+  {
+   "symbol": "CRHBP",
+   "direction": "down"
+  },
+  {
+   "symbol": "CYP1A2",
+   "direction": "down"
+  }
+ ]
+}

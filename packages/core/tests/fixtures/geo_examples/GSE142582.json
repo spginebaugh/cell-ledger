@@ -1,0 +1,625 @@
+{
+ "samplesheet": {
+  "gse": "GSE142582",
+  "assay": "bulk",
+  "title": "High-throughput transcriptome analysis of clinical psoriasis",
+  "samples": [
+   {
+    "gsm": "GSM4232382",
+    "title": "Healthy rep1 [NN_1]",
+    "source_name": "healthy skin control",
+    "group": "control",
+    "condition": "healthy skin control",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": "43",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue subtype: healthy skin control"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "healthy control",
+     "age": "43",
+     "tissue": "skin",
+     "tissue subtype": "healthy skin control"
+    },
+    "raw_lines": [
+     "subject status: healthy control",
+     "age: 43",
+     "tissue: skin",
+     "tissue subtype: healthy skin control"
+    ]
+   },
+   {
+    "gsm": "GSM4232383",
+    "title": "Healthy rep2 [NN_2]",
+    "source_name": "healthy skin control",
+    "group": "control",
+    "condition": "healthy skin control",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": "31",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue subtype: healthy skin control"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "healthy control",
+     "age": "31",
+     "tissue": "skin",
+     "tissue subtype": "healthy skin control"
+    },
+    "raw_lines": [
+     "subject status: healthy control",
+     "age: 31",
+     "tissue: skin",
+     "tissue subtype: healthy skin control"
+    ]
+   },
+   {
+    "gsm": "GSM4232384",
+    "title": "Healthy rep3 [NN_3]",
+    "source_name": "healthy skin control",
+    "group": "control",
+    "condition": "healthy skin control",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": "48",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue subtype: healthy skin control"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "healthy control",
+     "age": "48",
+     "tissue": "skin",
+     "tissue subtype": "healthy skin control"
+    },
+    "raw_lines": [
+     "subject status: healthy control",
+     "age: 48",
+     "tissue: skin",
+     "tissue subtype: healthy skin control"
+    ]
+   },
+   {
+    "gsm": "GSM4232385",
+    "title": "Healthy rep4 [NN_4]",
+    "source_name": "healthy skin control",
+    "group": "control",
+    "condition": "healthy skin control",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": "30",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue subtype: healthy skin control"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "healthy control",
+     "age": "30",
+     "tissue": "skin",
+     "tissue subtype": "healthy skin control"
+    },
+    "raw_lines": [
+     "subject status: healthy control",
+     "age: 30",
+     "tissue: skin",
+     "tissue subtype: healthy skin control"
+    ]
+   },
+   {
+    "gsm": "GSM4232386",
+    "title": "Healthy rep5 [NN_5]",
+    "source_name": "healthy skin control",
+    "group": "control",
+    "condition": "healthy skin control",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": "24",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue subtype: healthy skin control"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "healthy control",
+     "age": "24",
+     "tissue": "skin",
+     "tissue subtype": "healthy skin control"
+    },
+    "raw_lines": [
+     "subject status: healthy control",
+     "age: 24",
+     "tissue: skin",
+     "tissue subtype: healthy skin control"
+    ]
+   },
+   {
+    "gsm": "GSM4232387",
+    "title": "Psoriasis Non-lesion rep1 [PN_1]",
+    "source_name": "Psoriasis Non-lesion",
+    "group": "other",
+    "condition": "adjacent normal skin tissue (PN)",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": "33",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue subtype: adjacent normal skin tissue (PN)"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "age": "33",
+     "tissue": "skin",
+     "tissue subtype": "adjacent normal skin tissue (PN)"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "age: 33",
+     "tissue: skin",
+     "tissue subtype: adjacent normal skin tissue (PN)"
+    ]
+   },
+   {
+    "gsm": "GSM4232388",
+    "title": "Psoriasis Non-lesion rep2 [PN_2]",
+    "source_name": "Psoriasis Non-lesion",
+    "group": "other",
+    "condition": "adjacent normal skin tissue (PN)",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": "56",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue subtype: adjacent normal skin tissue (PN)"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "age": "56",
+     "tissue": "skin",
+     "tissue subtype": "adjacent normal skin tissue (PN)"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "age: 56",
+     "tissue: skin",
+     "tissue subtype: adjacent normal skin tissue (PN)"
+    ]
+   },
+   {
+    "gsm": "GSM4232389",
+    "title": "Psoriasis Non-lesion rep3 [PN_3]",
+    "source_name": "Psoriasis Non-lesion",
+    "group": "other",
+    "condition": "adjacent normal skin tissue (PN)",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": "20",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue subtype: adjacent normal skin tissue (PN)"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "age": "20",
+     "tissue": "skin",
+     "tissue subtype": "adjacent normal skin tissue (PN)"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "age: 20",
+     "tissue: skin",
+     "tissue subtype: adjacent normal skin tissue (PN)"
+    ]
+   },
+   {
+    "gsm": "GSM4232390",
+    "title": "Psoriasis Non-lesion rep4 [PN_4]",
+    "source_name": "Psoriasis Non-lesion",
+    "group": "other",
+    "condition": "adjacent normal skin tissue (PN)",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": "23",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue subtype: adjacent normal skin tissue (PN)"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "age": "23",
+     "tissue": "skin",
+     "tissue subtype": "adjacent normal skin tissue (PN)"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "age: 23",
+     "tissue: skin",
+     "tissue subtype: adjacent normal skin tissue (PN)"
+    ]
+   },
+   {
+    "gsm": "GSM4232391",
+    "title": "Psoriasis Non-lesion rep5 [PN_5]",
+    "source_name": "Psoriasis Non-lesion",
+    "group": "other",
+    "condition": "adjacent normal skin tissue (PN)",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": "42",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue subtype: adjacent normal skin tissue (PN)"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "age": "42",
+     "tissue": "skin",
+     "tissue subtype": "adjacent normal skin tissue (PN)"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "age: 42",
+     "tissue: skin",
+     "tissue subtype: adjacent normal skin tissue (PN)"
+    ]
+   },
+   {
+    "gsm": "GSM4232392",
+    "title": "Psoriasis lesion rep1 [PS_1]",
+    "source_name": "Psoriasis lesion",
+    "group": "case",
+    "condition": "Psoriatic plaque tissue (PS)",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": "33",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue subtype: Psoriatic plaque tissue (PS)"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "age": "33",
+     "tissue": "skin",
+     "tissue subtype": "Psoriatic plaque tissue (PS)"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "age: 33",
+     "tissue: skin",
+     "tissue subtype: Psoriatic plaque tissue (PS)"
+    ]
+   },
+   {
+    "gsm": "GSM4232393",
+    "title": "Psoriasis lesion rep2 [PS_2]",
+    "source_name": "Psoriasis lesion",
+    "group": "case",
+    "condition": "Psoriatic plaque tissue (PS)",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": "56",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue subtype: Psoriatic plaque tissue (PS)"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "age": "56",
+     "tissue": "skin",
+     "tissue subtype": "Psoriatic plaque tissue (PS)"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "age: 56",
+     "tissue: skin",
+     "tissue subtype: Psoriatic plaque tissue (PS)"
+    ]
+   },
+   {
+    "gsm": "GSM4232394",
+    "title": "Psoriasis lesion rep3 [PS_3]",
+    "source_name": "Psoriasis lesion",
+    "group": "case",
+    "condition": "Psoriatic plaque tissue (PS)",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": "20",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue subtype: Psoriatic plaque tissue (PS)"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "age": "20",
+     "tissue": "skin",
+     "tissue subtype": "Psoriatic plaque tissue (PS)"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "age: 20",
+     "tissue: skin",
+     "tissue subtype: Psoriatic plaque tissue (PS)"
+    ]
+   },
+   {
+    "gsm": "GSM4232395",
+    "title": "Psoriasis lesion rep4 [PS_4]",
+    "source_name": "Psoriasis lesion",
+    "group": "case",
+    "condition": "Psoriatic plaque tissue (PS)",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": "23",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue subtype: Psoriatic plaque tissue (PS)"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "age": "23",
+     "tissue": "skin",
+     "tissue subtype": "Psoriatic plaque tissue (PS)"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "age: 23",
+     "tissue: skin",
+     "tissue subtype: Psoriatic plaque tissue (PS)"
+    ]
+   },
+   {
+    "gsm": "GSM4232396",
+    "title": "Psoriasis lesion rep5 [PS_5]",
+    "source_name": "Psoriasis lesion",
+    "group": "case",
+    "condition": "Psoriatic plaque tissue (PS)",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": "42",
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue subtype: Psoriatic plaque tissue (PS)"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "age": "42",
+     "tissue": "skin",
+     "tissue subtype": "Psoriatic plaque tissue (PS)"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "age: 42",
+     "tissue: skin",
+     "tissue subtype: Psoriatic plaque tissue (PS)"
+    ]
+   }
+  ]
+ },
+ "contrasts": [
+  {
+   "gse": "GSE142582",
+   "name": "lesional_vs_healthy",
+   "case_label": "psoriasis plaque",
+   "control_label": "healthy skin",
+   "case_gsms": [
+    "GSM4232392",
+    "GSM4232393",
+    "GSM4232394",
+    "GSM4232395",
+    "GSM4232396"
+   ],
+   "control_gsms": [
+    "GSM4232382",
+    "GSM4232383",
+    "GSM4232384",
+    "GSM4232385",
+    "GSM4232386"
+   ],
+   "blocking": null,
+   "restricted_to": {},
+   "confidence": 1.0,
+   "status": "confirmed",
+   "rationale": "5 vs 5; adjacent non-lesional skin kept as 'other'."
+  }
+ ],
+ "markers": [
+  {
+   "symbol": "S100A7",
+   "direction": "up"
+  },
+  {
+   "symbol": "S100A8",
+   "direction": "up"
+  },
+  {
+   "symbol": "S100A9",
+   "direction": "up"
+  },
+  {
+   "symbol": "DEFB4A",
+   "direction": "up"
+  },
+  {
+   "symbol": "KRT16",
+   "direction": "up"
+  },
+  {
+   "symbol": "PI3",
+   "direction": "up"
+  },
+  {
+   "symbol": "IL36G",
+   "direction": "up"
+  },
+  {
+   "symbol": "SERPINB4",
+   "direction": "up"
+  }
+ ]
+}

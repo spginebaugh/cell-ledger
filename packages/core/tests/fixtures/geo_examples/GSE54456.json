@@ -1,0 +1,5628 @@
+{
+ "samplesheet": {
+  "gse": "GSE54456",
+  "assay": "bulk",
+  "title": "Transcriptome analysis of psoriasis in a large case-control sample:  RNA-seq provides insights into disease mechanisms",
+  "samples": [
+   {
+    "gsm": "GSM1315608",
+    "title": "CASP1234",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315609",
+    "title": "M3059",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315610",
+    "title": "M3171",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315612",
+    "title": "M3418",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315613",
+    "title": "M3978",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315615",
+    "title": "M4208",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315617",
+    "title": "M4257",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315618",
+    "title": "M4271",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315621",
+    "title": "M4277",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315623",
+    "title": "M4284",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315625",
+    "title": "M4288",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315627",
+    "title": "M4294",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315629",
+    "title": "M4298",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315630",
+    "title": "M4310",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315631",
+    "title": "M4334",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315632",
+    "title": "M4344",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315633",
+    "title": "M4356",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315634",
+    "title": "M4368",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315635",
+    "title": "M4379",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315636",
+    "title": "M4389",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315637",
+    "title": "M4390",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315638",
+    "title": "M4397",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315639",
+    "title": "M4459",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315640",
+    "title": "M4505",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315641",
+    "title": "M4532",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315642",
+    "title": "M4545",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315643",
+    "title": "M4616",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315644",
+    "title": "M4649",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315645",
+    "title": "M4689",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315646",
+    "title": "M4701",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315647",
+    "title": "M4708",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315648",
+    "title": "M4787",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315649",
+    "title": "M4874",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315650",
+    "title": "M4934",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315651",
+    "title": "M4977",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315652",
+    "title": "M4981",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315653",
+    "title": "M4999",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315654",
+    "title": "M5030",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315655",
+    "title": "M5063",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315656",
+    "title": "M5079",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315657",
+    "title": "M5130",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315658",
+    "title": "M5142",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315659",
+    "title": "M5144",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315660",
+    "title": "M5146",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315661",
+    "title": "M5177",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315662",
+    "title": "M5219",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315663",
+    "title": "M5223",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315664",
+    "title": "M5243",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315665",
+    "title": "M5247",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315666",
+    "title": "M5258",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315667",
+    "title": "M5286",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315668",
+    "title": "M5305",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315669",
+    "title": "M5324",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315670",
+    "title": "M5385",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315671",
+    "title": "M5414",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315672",
+    "title": "M5441",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315673",
+    "title": "M5478",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315674",
+    "title": "M5592",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315675",
+    "title": "M5611",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315676",
+    "title": "M5742",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315677",
+    "title": "M5766",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315678",
+    "title": "M582",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315679",
+    "title": "M5849",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315680",
+    "title": "M5883",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315681",
+    "title": "M5904",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315682",
+    "title": "M5917",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315683",
+    "title": "M5936",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315684",
+    "title": "M9003",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315685",
+    "title": "M6153",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315686",
+    "title": "M6171",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315687",
+    "title": "M6245",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315688",
+    "title": "M6346",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315689",
+    "title": "M6390",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315690",
+    "title": "M6690",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315691",
+    "title": "M6708",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315692",
+    "title": "M6782",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315693",
+    "title": "M6794",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315694",
+    "title": "M6844",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315695",
+    "title": "M6861",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315696",
+    "title": "M6953",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315697",
+    "title": "M7003",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315698",
+    "title": "M7168",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315699",
+    "title": "M7204",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315700",
+    "title": "M7252",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315701",
+    "title": "M7264",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315702",
+    "title": "M7305",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315703",
+    "title": "M7450",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315704",
+    "title": "M7473",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315705",
+    "title": "M7588",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315706",
+    "title": "M7600",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315707",
+    "title": "M7605",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315708",
+    "title": "M7642",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315709",
+    "title": "M7647",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315710",
+    "title": "M7651",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315711",
+    "title": "M7663",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315712",
+    "title": "M7664",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315713",
+    "title": "M7669",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315714",
+    "title": "M7670",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315715",
+    "title": "M7682",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315716",
+    "title": "M7684",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315717",
+    "title": "M7685",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315718",
+    "title": "M7701",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315719",
+    "title": "M7702",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315720",
+    "title": "M7704",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315721",
+    "title": "M7710",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315722",
+    "title": "M7711",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315723",
+    "title": "M7714",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315724",
+    "title": "M7715",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315725",
+    "title": "M7730",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315726",
+    "title": "M7731",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315727",
+    "title": "M7741",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315728",
+    "title": "M7742",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315729",
+    "title": "M7743",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315730",
+    "title": "M7744",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315731",
+    "title": "M7747",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315732",
+    "title": "M7748",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315733",
+    "title": "M7749",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315734",
+    "title": "M7767",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315735",
+    "title": "M7768",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315736",
+    "title": "M7772",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315737",
+    "title": "M777",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315738",
+    "title": "M7785",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315739",
+    "title": "M7786",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315740",
+    "title": "M7807",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315741",
+    "title": "M7825",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315742",
+    "title": "M7832",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315743",
+    "title": "M7834",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315744",
+    "title": "M7838",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315745",
+    "title": "M7874",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315746",
+    "title": "M7912",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315747",
+    "title": "M7972",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315748",
+    "title": "M8065",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315749",
+    "title": "M8221",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315750",
+    "title": "M8280",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315751",
+    "title": "M8282",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315752",
+    "title": "M8298",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315753",
+    "title": "M8376",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315754",
+    "title": "M8424",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315755",
+    "title": "M8470",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315756",
+    "title": "M8481",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315757",
+    "title": "M8483",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315758",
+    "title": "M8485",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315759",
+    "title": "M8487",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315760",
+    "title": "M8490",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315761",
+    "title": "M8492",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315762",
+    "title": "M8530",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315763",
+    "title": "M8554",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315764",
+    "title": "M8561",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315765",
+    "title": "M856",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315766",
+    "title": "M8610",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315767",
+    "title": "M8639",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315768",
+    "title": "M8646",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315769",
+    "title": "M8654",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315770",
+    "title": "M8659",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315771",
+    "title": "M8698",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315772",
+    "title": "M8702",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315773",
+    "title": "M8704",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315774",
+    "title": "M8719",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315775",
+    "title": "M8755",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315776",
+    "title": "M8771",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315777",
+    "title": "M8815",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315778",
+    "title": "M8825",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315779",
+    "title": "M8846",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315780",
+    "title": "M8868",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315781",
+    "title": "M8882",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315782",
+    "title": "M8883",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315783",
+    "title": "M8900",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315784",
+    "title": "M8979",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315785",
+    "title": "M9000",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315786",
+    "title": "M9004",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315787",
+    "title": "M9027",
+    "source_name": "normal_skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315788",
+    "title": "M9049",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315789",
+    "title": "M9081",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   },
+   {
+    "gsm": "GSM1315790",
+    "title": "M9132",
+    "source_name": "Psoriasis_skin",
+    "group": "case",
+    "condition": "lesional psoriatic skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional psoriatic skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue type": "lesional psoriatic skin"
+    },
+    "raw_lines": [
+     "tissue type: lesional psoriatic skin"
+    ]
+   }
+  ]
+ },
+ "contrasts": [
+  {
+   "gse": "GSE54456",
+   "name": "lesional_vs_healthy",
+   "case_label": "psoriasis lesional skin",
+   "control_label": "healthy skin",
+   "case_gsms": [
+    "GSM1315609",
+    "GSM1315610",
+    "GSM1315612",
+    "GSM1315613",
+    "GSM1315615",
+    "GSM1315617",
+    "GSM1315618",
+    "GSM1315623",
+    "GSM1315627",
+    "GSM1315629",
+    "GSM1315630",
+    "GSM1315631",
+    "GSM1315632",
+    "GSM1315633",
+    "GSM1315634",
+    "GSM1315636",
+    "GSM1315637",
+    "GSM1315638",
+    "GSM1315640",
+    "GSM1315641",
+    "GSM1315642",
+    "GSM1315643",
+    "GSM1315648",
+    "GSM1315650",
+    "GSM1315657",
+    "GSM1315661",
+    "GSM1315662",
+    "GSM1315666",
+    "GSM1315667",
+    "GSM1315670",
+    "GSM1315671",
+    "GSM1315672",
+    "GSM1315673",
+    "GSM1315674",
+    "GSM1315678",
+    "GSM1315679",
+    "GSM1315685",
+    "GSM1315686",
+    "GSM1315687",
+    "GSM1315688",
+    "GSM1315689",
+    "GSM1315690",
+    "GSM1315692",
+    "GSM1315693",
+    "GSM1315694",
+    "GSM1315695",
+    "GSM1315696",
+    "GSM1315697",
+    "GSM1315698",
+    "GSM1315699",
+    "GSM1315700",
+    "GSM1315701",
+    "GSM1315702",
+    "GSM1315703",
+    "GSM1315706",
+    "GSM1315737",
+    "GSM1315740",
+    "GSM1315741",
+    "GSM1315742",
+    "GSM1315743",
+    "GSM1315744",
+    "GSM1315746",
+    "GSM1315747",
+    "GSM1315748",
+    "GSM1315749",
+    "GSM1315750",
+    "GSM1315752",
+    "GSM1315753",
+    "GSM1315754",
+    "GSM1315755",
+    "GSM1315756",
+    "GSM1315757",
+    "GSM1315758",
+    "GSM1315759",
+    "GSM1315760",
+    "GSM1315761",
+    "GSM1315762",
+    "GSM1315763",
+    "GSM1315764",
+    "GSM1315765",
+    "GSM1315766",
+    "GSM1315769",
+    "GSM1315770",
+    "GSM1315771",
+    "GSM1315773",
+    "GSM1315775",
+    "GSM1315776",
+    "GSM1315777",
+    "GSM1315778",
+    "GSM1315788",
+    "GSM1315789",
+    "GSM1315790"
+   ],
+   "control_gsms": [
+    "GSM1315608",
+    "GSM1315621",
+    "GSM1315625",
+    "GSM1315635",
+    "GSM1315639",
+    "GSM1315644",
+    "GSM1315645",
+    "GSM1315646",
+    "GSM1315647",
+    "GSM1315649",
+    "GSM1315651",
+    "GSM1315652",
+    "GSM1315653",
+    "GSM1315654",
+    "GSM1315655",
+    "GSM1315656",
+    "GSM1315658",
+    "GSM1315659",
+    "GSM1315660",
+    "GSM1315663",
+    "GSM1315664",
+    "GSM1315665",
+    "GSM1315668",
+    "GSM1315669",
+    "GSM1315675",
+    "GSM1315676",
+    "GSM1315677",
+    "GSM1315680",
+    "GSM1315681",
+    "GSM1315682",
+    "GSM1315683",
+    "GSM1315684",
+    "GSM1315691",
+    "GSM1315704",
+    "GSM1315705",
+    "GSM1315707",
+    "GSM1315708",
+    "GSM1315709",
+    "GSM1315710",
+    "GSM1315711",
+    "GSM1315712",
+    "GSM1315713",
+    "GSM1315714",
+    "GSM1315715",
+    "GSM1315716",
+    "GSM1315717",
+    "GSM1315718",
+    "GSM1315719",
+    "GSM1315720",
+    "GSM1315721",
+    "GSM1315722",
+    "GSM1315723",
+    "GSM1315724",
+    "GSM1315725",
+    "GSM1315726",
+    "GSM1315727",
+    "GSM1315728",
+    "GSM1315729",
+    "GSM1315730",
+    "GSM1315731",
+    "GSM1315732",
+    "GSM1315733",
+    "GSM1315734",
+    "GSM1315735",
+    "GSM1315736",
+    "GSM1315738",
+    "GSM1315739",
+    "GSM1315745",
+    "GSM1315751",
+    "GSM1315767",
+    "GSM1315768",
+    "GSM1315772",
+    "GSM1315774",
+    "GSM1315779",
+    "GSM1315780",
+    "GSM1315781",
+    "GSM1315782",
+    "GSM1315783",
+    "GSM1315784",
+    "GSM1315785",
+    "GSM1315786",
+    "GSM1315787"
+   ],
+   "blocking": null,
+   "restricted_to": {},
+   "confidence": 1.0,
+   "status": "confirmed",
+   "rationale": "92 lesional vs 82 normal; the large case-control reference set."
+  }
+ ],
+ "markers": [
+  {
+   "symbol": "S100A7",
+   "direction": "up"
+  },
+  {
+   "symbol": "S100A8",
+   "direction": "up"
+  },
+  {
+   "symbol": "S100A9",
+   "direction": "up"
+  },
+  {
+   "symbol": "DEFB4A",
+   "direction": "up"
+  },
+  {
+   "symbol": "KRT16",
+   "direction": "up"
+  },
+  {
+   "symbol": "PI3",
+   "direction": "up"
+  },
+  {
+   "symbol": "IL36G",
+   "direction": "up"
+  },
+  {
+   "symbol": "SERPINB4",
+   "direction": "up"
+  }
+ ]
+}

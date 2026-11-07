@@ -1,0 +1,1252 @@
+{
+ "samplesheet": {
+  "gse": "GSE74697",
+  "assay": "bulk",
+  "title": "Long non-coding RNAs  in psoriatic and healthy skin",
+  "samples": [
+   {
+    "gsm": "GSM1930367",
+    "title": "C2",
+    "source_name": "Normal Skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "healthy control",
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "subject status: healthy control",
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1930368",
+    "title": "C3",
+    "source_name": "Normal Skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "healthy control",
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "subject status: healthy control",
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1930369",
+    "title": "C4",
+    "source_name": "Normal Skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "healthy control",
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "subject status: healthy control",
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1930370",
+    "title": "C5",
+    "source_name": "Normal Skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "healthy control",
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "subject status: healthy control",
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1930371",
+    "title": "C6",
+    "source_name": "Normal Skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "healthy control",
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "subject status: healthy control",
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1930372",
+    "title": "C8",
+    "source_name": "Normal Skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "healthy control",
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "subject status: healthy control",
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1930373",
+    "title": "C9",
+    "source_name": "Normal Skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "healthy control",
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "subject status: healthy control",
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1930374",
+    "title": "C10",
+    "source_name": "Normal Skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "healthy control",
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "subject status: healthy control",
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1930375",
+    "title": "C11",
+    "source_name": "Normal Skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "healthy control",
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "subject status: healthy control",
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1930376",
+    "title": "C12",
+    "source_name": "Normal Skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "healthy control",
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "subject status: healthy control",
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1930377",
+    "title": "C13",
+    "source_name": "Normal Skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "healthy control",
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "subject status: healthy control",
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1930378",
+    "title": "C15",
+    "source_name": "Normal Skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "healthy control",
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "subject status: healthy control",
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1930379",
+    "title": "107",
+    "source_name": "Normal Skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "healthy control",
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "subject status: healthy control",
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1930380",
+    "title": "M32ACtrl",
+    "source_name": "Normal Skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "healthy control",
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "subject status: healthy control",
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1930381",
+    "title": "V003ACtrl",
+    "source_name": "Normal Skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "healthy control",
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "subject status: healthy control",
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1930382",
+    "title": "V008",
+    "source_name": "Normal Skin",
+    "group": "control",
+    "condition": "normal skin",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: normal skin"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "healthy control",
+     "tissue type": "normal skin"
+    },
+    "raw_lines": [
+     "subject status: healthy control",
+     "tissue type: normal skin"
+    ]
+   },
+   {
+    "gsm": "GSM1930383",
+    "title": "HuMPre1",
+    "source_name": "Pre-Treated Psoriasis",
+    "group": "case",
+    "condition": "lesional skin from psoriasis patient",
+    "treatment": null,
+    "dose": null,
+    "time_point": "before adalimumab treatment",
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional skin from psoriasis patient"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "tissue type": "lesional skin from psoriasis patient",
+     "time point": "before adalimumab treatment"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "tissue type: lesional skin from psoriasis patient",
+     "time point: before adalimumab treatment"
+    ]
+   },
+   {
+    "gsm": "GSM1930384",
+    "title": "HuMPre2",
+    "source_name": "Pre-Treated Psoriasis",
+    "group": "case",
+    "condition": "lesional skin from psoriasis patient",
+    "treatment": null,
+    "dose": null,
+    "time_point": "before adalimumab treatment",
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional skin from psoriasis patient"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "tissue type": "lesional skin from psoriasis patient",
+     "time point": "before adalimumab treatment"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "tissue type: lesional skin from psoriasis patient",
+     "time point: before adalimumab treatment"
+    ]
+   },
+   {
+    "gsm": "GSM1930385",
+    "title": "HuMPre4",
+    "source_name": "Pre-Treated Psoriasis",
+    "group": "case",
+    "condition": "lesional skin from psoriasis patient",
+    "treatment": null,
+    "dose": null,
+    "time_point": "before adalimumab treatment",
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional skin from psoriasis patient"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "tissue type": "lesional skin from psoriasis patient",
+     "time point": "before adalimumab treatment"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "tissue type: lesional skin from psoriasis patient",
+     "time point: before adalimumab treatment"
+    ]
+   },
+   {
+    "gsm": "GSM1930386",
+    "title": "HuMPre5",
+    "source_name": "Pre-Treated Psoriasis",
+    "group": "case",
+    "condition": "lesional skin from psoriasis patient",
+    "treatment": null,
+    "dose": null,
+    "time_point": "before adalimumab treatment",
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional skin from psoriasis patient"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "tissue type": "lesional skin from psoriasis patient",
+     "time point": "before adalimumab treatment"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "tissue type: lesional skin from psoriasis patient",
+     "time point: before adalimumab treatment"
+    ]
+   },
+   {
+    "gsm": "GSM1930387",
+    "title": "HuMPre6",
+    "source_name": "Pre-Treated Psoriasis",
+    "group": "case",
+    "condition": "lesional skin from psoriasis patient",
+    "treatment": null,
+    "dose": null,
+    "time_point": "before adalimumab treatment",
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional skin from psoriasis patient"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "tissue type": "lesional skin from psoriasis patient",
+     "time point": "before adalimumab treatment"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "tissue type: lesional skin from psoriasis patient",
+     "time point: before adalimumab treatment"
+    ]
+   },
+   {
+    "gsm": "GSM1930388",
+    "title": "HuMPre8",
+    "source_name": "Pre-Treated Psoriasis",
+    "group": "case",
+    "condition": "lesional skin from psoriasis patient",
+    "treatment": null,
+    "dose": null,
+    "time_point": "before adalimumab treatment",
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional skin from psoriasis patient"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "tissue type": "lesional skin from psoriasis patient",
+     "time point": "before adalimumab treatment"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "tissue type: lesional skin from psoriasis patient",
+     "time point: before adalimumab treatment"
+    ]
+   },
+   {
+    "gsm": "GSM1930389",
+    "title": "HuMPre9",
+    "source_name": "Pre-Treated Psoriasis",
+    "group": "case",
+    "condition": "lesional skin from psoriasis patient",
+    "treatment": null,
+    "dose": null,
+    "time_point": "before adalimumab treatment",
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional skin from psoriasis patient"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "tissue type": "lesional skin from psoriasis patient",
+     "time point": "before adalimumab treatment"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "tissue type: lesional skin from psoriasis patient",
+     "time point: before adalimumab treatment"
+    ]
+   },
+   {
+    "gsm": "GSM1930390",
+    "title": "HuMPre14",
+    "source_name": "Pre-Treated Psoriasis",
+    "group": "case",
+    "condition": "lesional skin from psoriasis patient",
+    "treatment": null,
+    "dose": null,
+    "time_point": "before adalimumab treatment",
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional skin from psoriasis patient"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "tissue type": "lesional skin from psoriasis patient",
+     "time point": "before adalimumab treatment"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "tissue type: lesional skin from psoriasis patient",
+     "time point: before adalimumab treatment"
+    ]
+   },
+   {
+    "gsm": "GSM1930391",
+    "title": "HuMPre15",
+    "source_name": "Pre-Treated Psoriasis",
+    "group": "case",
+    "condition": "lesional skin from psoriasis patient",
+    "treatment": null,
+    "dose": null,
+    "time_point": "before adalimumab treatment",
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional skin from psoriasis patient"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "tissue type": "lesional skin from psoriasis patient",
+     "time point": "before adalimumab treatment"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "tissue type: lesional skin from psoriasis patient",
+     "time point: before adalimumab treatment"
+    ]
+   },
+   {
+    "gsm": "GSM1930392",
+    "title": "HuMPre17",
+    "source_name": "Pre-Treated Psoriasis",
+    "group": "case",
+    "condition": "lesional skin from psoriasis patient",
+    "treatment": null,
+    "dose": null,
+    "time_point": "before adalimumab treatment",
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional skin from psoriasis patient"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "tissue type": "lesional skin from psoriasis patient",
+     "time point": "before adalimumab treatment"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "tissue type: lesional skin from psoriasis patient",
+     "time point: before adalimumab treatment"
+    ]
+   },
+   {
+    "gsm": "GSM1930393",
+    "title": "HuMPre18",
+    "source_name": "Pre-Treated Psoriasis",
+    "group": "case",
+    "condition": "lesional skin from psoriasis patient",
+    "treatment": null,
+    "dose": null,
+    "time_point": "before adalimumab treatment",
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional skin from psoriasis patient"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "tissue type": "lesional skin from psoriasis patient",
+     "time point": "before adalimumab treatment"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "tissue type: lesional skin from psoriasis patient",
+     "time point: before adalimumab treatment"
+    ]
+   },
+   {
+    "gsm": "GSM1930394",
+    "title": "HuMPre19",
+    "source_name": "Pre-Treated Psoriasis",
+    "group": "case",
+    "condition": "lesional skin from psoriasis patient",
+    "treatment": null,
+    "dose": null,
+    "time_point": "before adalimumab treatment",
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional skin from psoriasis patient"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "tissue type": "lesional skin from psoriasis patient",
+     "time point": "before adalimumab treatment"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "tissue type: lesional skin from psoriasis patient",
+     "time point: before adalimumab treatment"
+    ]
+   },
+   {
+    "gsm": "GSM1930395",
+    "title": "HuMPre20",
+    "source_name": "Pre-Treated Psoriasis",
+    "group": "case",
+    "condition": "lesional skin from psoriasis patient",
+    "treatment": null,
+    "dose": null,
+    "time_point": "before adalimumab treatment",
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional skin from psoriasis patient"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "tissue type": "lesional skin from psoriasis patient",
+     "time point": "before adalimumab treatment"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "tissue type: lesional skin from psoriasis patient",
+     "time point: before adalimumab treatment"
+    ]
+   },
+   {
+    "gsm": "GSM1930396",
+    "title": "HuMPre22",
+    "source_name": "Pre-Treated Psoriasis",
+    "group": "case",
+    "condition": "lesional skin from psoriasis patient",
+    "treatment": null,
+    "dose": null,
+    "time_point": "before adalimumab treatment",
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional skin from psoriasis patient"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "tissue type": "lesional skin from psoriasis patient",
+     "time point": "before adalimumab treatment"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "tissue type: lesional skin from psoriasis patient",
+     "time point: before adalimumab treatment"
+    ]
+   },
+   {
+    "gsm": "GSM1930397",
+    "title": "HuMPre24",
+    "source_name": "Pre-Treated Psoriasis",
+    "group": "case",
+    "condition": "lesional skin from psoriasis patient",
+    "treatment": null,
+    "dose": null,
+    "time_point": "before adalimumab treatment",
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional skin from psoriasis patient"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "tissue type": "lesional skin from psoriasis patient",
+     "time point": "before adalimumab treatment"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "tissue type: lesional skin from psoriasis patient",
+     "time point: before adalimumab treatment"
+    ]
+   },
+   {
+    "gsm": "GSM1930398",
+    "title": "HuMPre25",
+    "source_name": "Pre-Treated Psoriasis",
+    "group": "case",
+    "condition": "lesional skin from psoriasis patient",
+    "treatment": null,
+    "dose": null,
+    "time_point": "before adalimumab treatment",
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional skin from psoriasis patient"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "tissue type": "lesional skin from psoriasis patient",
+     "time point": "before adalimumab treatment"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "tissue type: lesional skin from psoriasis patient",
+     "time point: before adalimumab treatment"
+    ]
+   },
+   {
+    "gsm": "GSM1930399",
+    "title": "HuMPre26",
+    "source_name": "Pre-Treated Psoriasis",
+    "group": "case",
+    "condition": "lesional skin from psoriasis patient",
+    "treatment": null,
+    "dose": null,
+    "time_point": "before adalimumab treatment",
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional skin from psoriasis patient"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "tissue type": "lesional skin from psoriasis patient",
+     "time point": "before adalimumab treatment"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "tissue type: lesional skin from psoriasis patient",
+     "time point: before adalimumab treatment"
+    ]
+   },
+   {
+    "gsm": "GSM1930400",
+    "title": "HuMPre30",
+    "source_name": "Pre-Treated Psoriasis",
+    "group": "case",
+    "condition": "lesional skin from psoriasis patient",
+    "treatment": null,
+    "dose": null,
+    "time_point": "before adalimumab treatment",
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: lesional skin from psoriasis patient"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "tissue type": "lesional skin from psoriasis patient",
+     "time point": "before adalimumab treatment"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "tissue type: lesional skin from psoriasis patient",
+     "time point: before adalimumab treatment"
+    ]
+   }
+  ]
+ },
+ "contrasts": [
+  {
+   "gse": "GSE74697",
+   "name": "lesional_vs_healthy",
+   "case_label": "psoriasis lesional skin, pre-treatment",
+   "control_label": "healthy skin",
+   "case_gsms": [
+    "GSM1930383",
+    "GSM1930384",
+    "GSM1930385",
+    "GSM1930386",
+    "GSM1930387",
+    "GSM1930388",
+    "GSM1930389",
+    "GSM1930390",
+    "GSM1930391",
+    "GSM1930392",
+    "GSM1930393",
+    "GSM1930394",
+    "GSM1930395",
+    "GSM1930396",
+    "GSM1930397",
+    "GSM1930398",
+    "GSM1930399",
+    "GSM1930400"
+   ],
+   "control_gsms": [
+    "GSM1930367",
+    "GSM1930368",
+    "GSM1930369",
+    "GSM1930370",
+    "GSM1930371",
+    "GSM1930372",
+    "GSM1930373",
+    "GSM1930374",
+    "GSM1930375",
+    "GSM1930376",
+    "GSM1930377",
+    "GSM1930378",
+    "GSM1930379",
+    "GSM1930380",
+    "GSM1930381",
+    "GSM1930382"
+   ],
+   "blocking": null,
+   "restricted_to": {},
+   "confidence": 1.0,
+   "status": "confirmed",
+   "rationale": "Post-adalimumab biopsies excluded."
+  }
+ ],
+ "markers": [
+  {
+   "symbol": "S100A7",
+   "direction": "up"
+  },
+  {
+   "symbol": "S100A8",
+   "direction": "up"
+  },
+  {
+   "symbol": "S100A9",
+   "direction": "up"
+  },
+  {
+   "symbol": "DEFB4A",
+   "direction": "up"
+  },
+  {
+   "symbol": "KRT16",
+   "direction": "up"
+  },
+  {
+   "symbol": "PI3",
+   "direction": "up"
+  },
+  {
+   "symbol": "IL36G",
+   "direction": "up"
+  },
+  {
+   "symbol": "SERPINB4",
+   "direction": "up"
+  }
+ ]
+}

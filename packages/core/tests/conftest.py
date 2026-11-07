@@ -102,6 +102,12 @@ def synthetic() -> Synthetic:
 
 
 @pytest.fixture(scope="session")
+def synthetic_factory():  # type: ignore[no-untyped-def]
+    """``make_synthetic`` for tests that need several independent datasets."""
+    return make_synthetic
+
+
+@pytest.fixture(scope="session")
 def synthetic_files(synthetic: Synthetic, tmp_path_factory: pytest.TempPathFactory):
     d = tmp_path_factory.mktemp("synthetic")
     counts = d / "GSE1_raw_counts.tsv.gz"

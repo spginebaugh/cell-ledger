@@ -1103,5 +1103,46 @@
    "rationale": "Paired tumor/adjacent from 15 patients."
   }
  ],
- "markers": []
+ "markers": [
+  {
+   "symbol": "GPC3",
+   "direction": "up"
+  },
+  {
+   "symbol": "AFP",
+   "direction": "up"
+  },
+  {
+   "symbol": "SPP1",
+   "direction": "up"
+  },
+  {
+   "symbol": "MDK",
+   "direction": "up"
+  },
+  {
+   "symbol": "PEG10",
+   "direction": "up"
+  },
+  {
+   "symbol": "CLEC4G",
+   "direction": "down"
+  },
+  {
+   "symbol": "CLEC1B",
+   "direction": "down"
+  },
+  {
+   "symbol": "FCN3",
+   "direction": "down"
+  },
+  {
+   "symbol": "CRHBP",
+   "direction": "down"
+  },
+  {
+   "symbol": "CYP1A2",
+   "direction": "down"
+  }
+ ]
 }

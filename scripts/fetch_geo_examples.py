@@ -7,7 +7,9 @@ data/geo/manifest.json with URLs, md5s and matrix checks.
 Use the FTP host: the /geo/download/ web endpoint answers HEAD with an empty 200
 whether or not a file exists and sometimes serves a reCAPTCHA page.
 
-    uv run python scripts/fetch_geo_examples.py [GSE ...]
+    uv run python scripts/fetch_geo_examples.py              # every set below
+    uv run python scripts/fetch_geo_examples.py --set hcc_tumor_vs_adjacent
+    uv run python scripts/fetch_geo_examples.py GSE82227 ...  # explicit accessions
 """
 
 from __future__ import annotations
@@ -24,6 +26,7 @@ import httpx
 
 from cell_ledger.geo import read_soft
 
+# Ten mixed-topic series used to build the single-dataset pipeline (one or two per topic).
 EXAMPLE_GSES = [
     "GSE114286",
     "GSE67785",
@@ -36,6 +39,65 @@ EXAMPLE_GSES = [
     "GSE111414",
     "GSE82227",
 ]
+
+# Multi-dataset sets: many series answering the same contrast, for the cross-dataset
+# comparison layer. Vetted from SOFT metadata on 2026-11-07 (GEO esearch with the
+# "rnaseq counts" filter); each has NCBI raw counts. Notes name the trap each one carries.
+QUERY_SETS: dict[str, list[str]] = {
+    # HCC tumor vs adjacent non-tumor liver tissue, almost all paired by patient.
+    "hcc_tumor_vs_adjacent": [
+        "GSE135631",  # 15 pairs (already in EXAMPLE_GSES)
+        "GSE77314",  # 50 pairs; `diagnosis`: Tumor / Normal
+        "GSE124535",  # 35 pairs; `tissue`: HCC / non-tumor
+        "GSE144269",  # 70 pairs, Mongolian cohort; `tumor/non-tumor`
+        "GSE202069",  # 41 tumor / 25 non-tumor, 17 tumors post anti-PD-1 (treatment sub-factor)
+        "GSE169289",  # 17 pairs
+        "GSE104310",  # 12 tumor / 8 non-tumor, paired by `individual`; HBV + cirrhosis covariates
+        "GSE202853",  # 10 pairs; SubSeries "[I]" of a SuperSeries (dependence check)
+        "GSE81550",  # 3 pairs: minimum group size
+        "GSE216613",  # 3 pairs; labels only in `tissue`, titles N1-3 / P1-3
+        "GSE154211",  # 5 pairs, HCV vs NBNC etiology sub-factor
+        "GSE77509",  # 20 adjacent / 20 primary / 20 PVTT: restrict to primary vs adjacent
+        "GSE105130",  # 25 tumor / 27 adjacent (two extra adjacent samples)
+        "GSE214846",  # 65 pairs
+        "GSE138485",  # 32 pairs; no tissue characteristic, tumor/normal only in sample title (trap)
+        "GSE146719",  # 6 RNA-seq + 6 miRNA-seq GSMs: mixed assay, drop the miRNA GSMs
+        "GSE87410",  # pan-cancer 50 pairs; `tissue`=liver only; NCBI quantified 8 of 12 liver GSMs
+    ],
+    # Psoriasis lesional skin vs control skin (healthy, or paired non-lesional).
+    "psoriasis_lesional_vs_control": [
+        "GSE114286",  # 18 lesional / 8 healthy (already in EXAMPLE_GSES)
+        "GSE67785",  # 14 PP / 14 PN paired (already in EXAMPLE_GSES)
+        "GSE54456",  # 92 lesional / 82 normal: the large case-control reference set
+        "GSE121212",  # PSO lesional / non-lesional / healthy; AD arm must be excluded
+        "GSE154200",  # 178 paired psoriasis lesional / non-lesional; eczema excluded; 7 batches
+        "GSE171012",  # bulk skin only (sorted T cells excluded); healthy vs pre-treatment lesional
+        "GSE74697",  # 18 pre-treatment lesional vs 16 normal; post-adalimumab samples excluded
+        "GSE186063",  # PsO + PsA lesion / non-lesion, AS skin as healthy
+        "GSE47944",  # explants: restrict to `treatment`=Untreated; Lesion / Nonlesion / Healthy
+        "GSE178197",  # restrict to `protocol`=Biopsy; tape-strip samples excluded
+        "GSE83645",  # 5 patients x 4 plaques + 1 uninvolved: pseudo-replication trap
+        "GSE117405",  # conventional psoriasis vs healthy; scalp / palmoplantar as other
+        "GSE205748",  # psoriatic arthritis lesion / uninvolved / healthy, 9 each
+        "GSE142582",  # 5 lesional / 5 non-lesional / 5 healthy
+        "GSE63979",  # 7 psoriatic / 8 normal / 27 uninvolved
+        "GSE249936",  # 8 untreated lesional / 5 non-lesional; dithranol-treated excluded
+        "GSE197056",  # LS vs NL at baseline in ustekinumab-resistant patients; W16 excluded
+    ],
+}
+
+
+def all_gses() -> list[str]:
+    seen: dict[str, None] = dict.fromkeys(EXAMPLE_GSES)
+    for gses in QUERY_SETS.values():
+        seen.update(dict.fromkeys(gses))
+    return list(seen)
+
+
+def sets_of(gse: str) -> list[str]:
+    return [name for name, gses in QUERY_SETS.items() if gse in gses]
+
+
 FTP = "https://ftp.ncbi.nlm.nih.gov/geo"
 ANNOT_URL = f"{FTP}/rnaseq_counts/annot/Human.GRCh38.p13.annot.tsv.gz"
 OUT = Path(__file__).parents[1] / "data" / "geo"
@@ -123,6 +185,7 @@ def main(gses: list[str]) -> None:
             check = check_counts(counts, gsms)
             manifest["datasets"][gse] = {
                 "title": series.title,
+                "query_sets": sets_of(gse),
                 "n_gsm_in_soft": len(gsms),
                 "library_strategy": sorted({s.library_strategy for s in series.samples}),
                 "files": {
@@ -151,5 +214,13 @@ def main(gses: list[str]) -> None:
     print(f"wrote {manifest_path}")
 
 
+def _parse(argv: list[str]) -> list[str]:
+    if argv[:1] == ["--set"]:
+        if len(argv) != 2 or argv[1] not in QUERY_SETS:
+            sys.exit(f"--set takes one of: {', '.join(QUERY_SETS)}")
+        return QUERY_SETS[argv[1]]
+    return argv or all_gses()
+
+
 if __name__ == "__main__":
-    main(sys.argv[1:] or EXAMPLE_GSES)
+    main(_parse(sys.argv[1:]))

@@ -1,0 +1,1060 @@
+{
+ "samplesheet": {
+  "gse": "GSE83645",
+  "assay": "bulk",
+  "title": "Transcriptome analysis for anatomically separate psoriatic plaques highlight individualized expression patterns",
+  "samples": [
+   {
+    "gsm": "GSM2211691",
+    "title": "21634",
+    "source_name": "arm_skin biopsy_psoriasis",
+    "group": "case",
+    "condition": "psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient1",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "patient id": "patient1",
+     "body part": "arm",
+     "tissue": "skin biopsy",
+     "tissue type": "psoriasis"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "patient id: patient1",
+     "body part: arm",
+     "tissue: skin biopsy",
+     "tissue type: psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM2211692",
+    "title": "21635",
+    "source_name": "abdomen_skin biopsy_psoriasis",
+    "group": "case",
+    "condition": "psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient1",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "patient id": "patient1",
+     "body part": "abdomen",
+     "tissue": "skin biopsy",
+     "tissue type": "psoriasis"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "patient id: patient1",
+     "body part: abdomen",
+     "tissue: skin biopsy",
+     "tissue type: psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM2211693",
+    "title": "21636",
+    "source_name": "back_skin biopsy_psoriasis",
+    "group": "case",
+    "condition": "psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient1",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "patient id": "patient1",
+     "body part": "back",
+     "tissue": "skin biopsy",
+     "tissue type": "psoriasis"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "patient id: patient1",
+     "body part: back",
+     "tissue: skin biopsy",
+     "tissue type: psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM2211694",
+    "title": "21637",
+    "source_name": "thigh_skin biopsy_psoriasis",
+    "group": "case",
+    "condition": "psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient1",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "patient id": "patient1",
+     "body part": "thigh",
+     "tissue": "skin biopsy",
+     "tissue type": "psoriasis"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "patient id: patient1",
+     "body part: thigh",
+     "tissue: skin biopsy",
+     "tissue type: psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM2211695",
+    "title": "21638",
+    "source_name": "thigh_skin biopsy_uninvolved",
+    "group": "control",
+    "condition": "uninvolved",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient1",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: uninvolved"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "patient id": "patient1",
+     "body part": "thigh",
+     "tissue": "skin biopsy",
+     "tissue type": "uninvolved"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "patient id: patient1",
+     "body part: thigh",
+     "tissue: skin biopsy",
+     "tissue type: uninvolved"
+    ]
+   },
+   {
+    "gsm": "GSM2211696",
+    "title": "21639",
+    "source_name": "back_skin biopsy_psoriasis",
+    "group": "case",
+    "condition": "psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient2",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "patient id": "patient2",
+     "body part": "back",
+     "tissue": "skin biopsy",
+     "tissue type": "psoriasis"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "patient id: patient2",
+     "body part: back",
+     "tissue: skin biopsy",
+     "tissue type: psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM2211697",
+    "title": "21640",
+    "source_name": "thigh_skin biopsy_psoriasis",
+    "group": "case",
+    "condition": "psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient2",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "patient id": "patient2",
+     "body part": "thigh",
+     "tissue": "skin biopsy",
+     "tissue type": "psoriasis"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "patient id: patient2",
+     "body part: thigh",
+     "tissue: skin biopsy",
+     "tissue type: psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM2211698",
+    "title": "21641",
+    "source_name": "arm_skin biopsy_psoriasis",
+    "group": "case",
+    "condition": "psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient2",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "patient id": "patient2",
+     "body part": "arm",
+     "tissue": "skin biopsy",
+     "tissue type": "psoriasis"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "patient id: patient2",
+     "body part: arm",
+     "tissue: skin biopsy",
+     "tissue type: psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM2211699",
+    "title": "21642",
+    "source_name": "arm_skin biopsy_psoriasis",
+    "group": "case",
+    "condition": "psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient2",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "patient id": "patient2",
+     "body part": "arm",
+     "tissue": "skin biopsy",
+     "tissue type": "psoriasis"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "patient id: patient2",
+     "body part: arm",
+     "tissue: skin biopsy",
+     "tissue type: psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM2211700",
+    "title": "21643",
+    "source_name": "buttock_skin biopsy_uninvolved",
+    "group": "control",
+    "condition": "uninvolved",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient2",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: uninvolved"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "patient id": "patient2",
+     "body part": "buttock",
+     "tissue": "skin biopsy",
+     "tissue type": "uninvolved"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "patient id: patient2",
+     "body part: buttock",
+     "tissue: skin biopsy",
+     "tissue type: uninvolved"
+    ]
+   },
+   {
+    "gsm": "GSM2211701",
+    "title": "21644",
+    "source_name": "arm_skin biopsy_psoriasis",
+    "group": "case",
+    "condition": "psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient3",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "patient id": "patient3",
+     "body part": "arm",
+     "tissue": "skin biopsy",
+     "tissue type": "psoriasis"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "patient id: patient3",
+     "body part: arm",
+     "tissue: skin biopsy",
+     "tissue type: psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM2211702",
+    "title": "21645",
+    "source_name": "arm_skin biopsy_psoriasis",
+    "group": "case",
+    "condition": "psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient3",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "patient id": "patient3",
+     "body part": "arm",
+     "tissue": "skin biopsy",
+     "tissue type": "psoriasis"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "patient id: patient3",
+     "body part: arm",
+     "tissue: skin biopsy",
+     "tissue type: psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM2211703",
+    "title": "21646",
+    "source_name": "thigh_skin biopsy_psoriasis",
+    "group": "case",
+    "condition": "psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient3",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "patient id": "patient3",
+     "body part": "thigh",
+     "tissue": "skin biopsy",
+     "tissue type": "psoriasis"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "patient id: patient3",
+     "body part: thigh",
+     "tissue: skin biopsy",
+     "tissue type: psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM2211704",
+    "title": "21647",
+    "source_name": "leg_skin biopsy_psoriasis",
+    "group": "case",
+    "condition": "psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient3",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "patient id": "patient3",
+     "body part": "leg",
+     "tissue": "skin biopsy",
+     "tissue type": "psoriasis"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "patient id: patient3",
+     "body part: leg",
+     "tissue: skin biopsy",
+     "tissue type: psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM2211705",
+    "title": "21648",
+    "source_name": "thigh_skin biopsy_uninvolved",
+    "group": "control",
+    "condition": "uninvolved",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient3",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: uninvolved"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "patient id": "patient3",
+     "body part": "thigh",
+     "tissue": "skin biopsy",
+     "tissue type": "uninvolved"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "patient id: patient3",
+     "body part: thigh",
+     "tissue: skin biopsy",
+     "tissue type: uninvolved"
+    ]
+   },
+   {
+    "gsm": "GSM2211706",
+    "title": "21649",
+    "source_name": "arm_skin biopsy_psoriasis",
+    "group": "case",
+    "condition": "psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient4",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "patient id": "patient4",
+     "body part": "arm",
+     "tissue": "skin biopsy",
+     "tissue type": "psoriasis"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "patient id: patient4",
+     "body part: arm",
+     "tissue: skin biopsy",
+     "tissue type: psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM2211707",
+    "title": "21650",
+    "source_name": "abdomen_skin biopsy_psoriasis",
+    "group": "case",
+    "condition": "psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient4",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "patient id": "patient4",
+     "body part": "abdomen",
+     "tissue": "skin biopsy",
+     "tissue type": "psoriasis"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "patient id: patient4",
+     "body part: abdomen",
+     "tissue: skin biopsy",
+     "tissue type: psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM2211708",
+    "title": "21651",
+    "source_name": "thigh_skin biopsy_psoriasis",
+    "group": "case",
+    "condition": "psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient4",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "patient id": "patient4",
+     "body part": "thigh",
+     "tissue": "skin biopsy",
+     "tissue type": "psoriasis"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "patient id: patient4",
+     "body part: thigh",
+     "tissue: skin biopsy",
+     "tissue type: psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM2211709",
+    "title": "21652",
+    "source_name": "leg_skin biopsy_psoriasis",
+    "group": "case",
+    "condition": "psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient4",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "patient id": "patient4",
+     "body part": "leg",
+     "tissue": "skin biopsy",
+     "tissue type": "psoriasis"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "patient id: patient4",
+     "body part: leg",
+     "tissue: skin biopsy",
+     "tissue type: psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM2211710",
+    "title": "21653",
+    "source_name": "thigh_skin biopsy_uninvolved",
+    "group": "control",
+    "condition": "uninvolved",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient4",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: uninvolved"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "patient id": "patient4",
+     "body part": "thigh",
+     "tissue": "skin biopsy",
+     "tissue type": "uninvolved"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "patient id: patient4",
+     "body part: thigh",
+     "tissue: skin biopsy",
+     "tissue type: uninvolved"
+    ]
+   },
+   {
+    "gsm": "GSM2211711",
+    "title": "21654",
+    "source_name": "abdomen_skin biopsy_psoriasis",
+    "group": "case",
+    "condition": "psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient5",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "patient id": "patient5",
+     "body part": "abdomen",
+     "tissue": "skin biopsy",
+     "tissue type": "psoriasis"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "patient id: patient5",
+     "body part: abdomen",
+     "tissue: skin biopsy",
+     "tissue type: psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM2211712",
+    "title": "21655",
+    "source_name": "back_skin biopsy_psoriasis",
+    "group": "case",
+    "condition": "psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient5",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "patient id": "patient5",
+     "body part": "back",
+     "tissue": "skin biopsy",
+     "tissue type": "psoriasis"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "patient id: patient5",
+     "body part: back",
+     "tissue: skin biopsy",
+     "tissue type: psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM2211713",
+    "title": "21656",
+    "source_name": "buttock_skin biopsy_psoriasis",
+    "group": "case",
+    "condition": "psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient5",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "patient id": "patient5",
+     "body part": "buttock",
+     "tissue": "skin biopsy",
+     "tissue type": "psoriasis"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "patient id: patient5",
+     "body part: buttock",
+     "tissue: skin biopsy",
+     "tissue type: psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM2211714",
+    "title": "21657",
+    "source_name": "thigh_skin biopsy_psoriasis",
+    "group": "case",
+    "condition": "psoriasis",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient5",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: psoriasis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "patient id": "patient5",
+     "body part": "thigh",
+     "tissue": "skin biopsy",
+     "tissue type": "psoriasis"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "patient id: patient5",
+     "body part: thigh",
+     "tissue: skin biopsy",
+     "tissue type: psoriasis"
+    ]
+   },
+   {
+    "gsm": "GSM2211715",
+    "title": "21658",
+    "source_name": "thigh_skin biopsy_uninvolved",
+    "group": "control",
+    "condition": "uninvolved",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "patient5",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tissue type: uninvolved"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "psoriasis patient",
+     "patient id": "patient5",
+     "body part": "thigh",
+     "tissue": "skin biopsy",
+     "tissue type": "uninvolved"
+    },
+    "raw_lines": [
+     "subject status: psoriasis patient",
+     "patient id: patient5",
+     "body part: thigh",
+     "tissue: skin biopsy",
+     "tissue type: uninvolved"
+    ]
+   }
+  ]
+ },
+ "contrasts": [
+  {
+   "gse": "GSE83645",
+   "name": "lesional_vs_nonlesional",
+   "case_label": "psoriasis plaque",
+   "control_label": "psoriasis uninvolved skin",
+   "case_gsms": [
+    "GSM2211691",
+    "GSM2211692",
+    "GSM2211693",
+    "GSM2211694",
+    "GSM2211696",
+    "GSM2211697",
+    "GSM2211698",
+    "GSM2211699",
+    "GSM2211701",
+    "GSM2211702",
+    "GSM2211703",
+    "GSM2211704",
+    "GSM2211706",
+    "GSM2211707",
+    "GSM2211708",
+    "GSM2211709",
+    "GSM2211711",
+    "GSM2211712",
+    "GSM2211713",
+    "GSM2211714"
+   ],
+   "control_gsms": [
+    "GSM2211695",
+    "GSM2211700",
+    "GSM2211705",
+    "GSM2211710",
+    "GSM2211715"
+   ],
+   "blocking": "donor",
+   "restricted_to": {},
+   "confidence": 1.0,
+   "status": "confirmed",
+   "rationale": "5 patients x 4 plaques + 1 uninvolved: plaques are summed per patient."
+  }
+ ],
+ "markers": [
+  {
+   "symbol": "S100A7",
+   "direction": "up"
+  },
+  {
+   "symbol": "S100A8",
+   "direction": "up"
+  },
+  {
+   "symbol": "S100A9",
+   "direction": "up"
+  },
+  {
+   "symbol": "DEFB4A",
+   "direction": "up"
+  },
+  {
+   "symbol": "KRT16",
+   "direction": "up"
+  },
+  {
+   "symbol": "PI3",
+   "direction": "up"
+  },
+  {
+   "symbol": "IL36G",
+   "direction": "up"
+  },
+  {
+   "symbol": "SERPINB4",
+   "direction": "up"
+  }
+ ]
+}

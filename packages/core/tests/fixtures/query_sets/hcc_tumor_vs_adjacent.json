@@ -1,0 +1,143 @@
+{
+ "name": "hcc_tumor_vs_adjacent",
+ "question": "Which genes differ between HCC tumor and adjacent non-tumor liver?",
+ "case_label": "HCC tumor",
+ "control_label": "adjacent non-tumor liver",
+ "members": [
+  {
+   "gse": "GSE135631",
+   "contrast": "tumor_vs_adjacent_normal",
+   "stratum": null
+  },
+  {
+   "gse": "GSE77314",
+   "contrast": "tumor_vs_adjacent_normal",
+   "stratum": null
+  },
+  {
+   "gse": "GSE124535",
+   "contrast": "tumor_vs_adjacent_normal",
+   "stratum": null
+  },
+  {
+   "gse": "GSE144269",
+   "contrast": "tumor_vs_adjacent_normal",
+   "stratum": null
+  },
+  {
+   "gse": "GSE202069",
+   "contrast": "tumor_vs_adjacent_normal",
+   "stratum": null
+  },
+  {
+   "gse": "GSE169289",
+   "contrast": "tumor_vs_adjacent_normal",
+   "stratum": null
+  },
+  {
+   "gse": "GSE104310",
+   "contrast": "tumor_vs_adjacent_normal",
+   "stratum": null
+  },
+  {
+   "gse": "GSE202853",
+   "contrast": "tumor_vs_adjacent_normal",
+   "stratum": null
+  },
+  {
+   "gse": "GSE81550",
+   "contrast": "tumor_vs_adjacent_normal",
+   "stratum": null
+  },
+  {
+   "gse": "GSE216613",
+   "contrast": "tumor_vs_adjacent_normal",
+   "stratum": null
+  },
+  {
+   "gse": "GSE154211",
+   "contrast": "tumor_vs_adjacent_normal",
+   "stratum": null
+  },
+  {
+   "gse": "GSE77509",
+   "contrast": "tumor_vs_adjacent_normal",
+   "stratum": null
+  },
+  {
+   "gse": "GSE105130",
+   "contrast": "tumor_vs_adjacent_normal",
+   "stratum": null
+  },
+  {
+   "gse": "GSE214846",
+   "contrast": "tumor_vs_adjacent_normal",
+   "stratum": null
+  },
+  {
+   "gse": "GSE138485",
+   "contrast": "tumor_vs_adjacent_normal",
+   "stratum": null
+  },
+  {
+   "gse": "GSE146719",
+   "contrast": "tumor_vs_adjacent_normal",
+   "stratum": null
+  },
+  {
+   "gse": "GSE87410",
+   "contrast": "tumor_vs_adjacent_normal",
+   "stratum": null
+  }
+ ],
+ "markers": [
+  {
+   "symbol": "GPC3",
+   "direction": "up"
+  },
+  {
+   "symbol": "AFP",
+   "direction": "up"
+  },
+  {
+   "symbol": "SPP1",
+   "direction": "up"
+  },
+  {
+   "symbol": "MDK",
+   "direction": "up"
+  },
+  {
+   "symbol": "PEG10",
+   "direction": "up"
+  },
+  {
+   "symbol": "CLEC4G",
+   "direction": "down"
+  },
+  {
+   "symbol": "CLEC1B",
+   "direction": "down"
+  },
+  {
+   "symbol": "FCN3",
+   "direction": "down"
+  },
+  {
+   "symbol": "CRHBP",
+   "direction": "down"
+  },
+  {
+   "symbol": "CYP1A2",
+   "direction": "down"
+  }
+ ],
+ "genes_of_interest": [
+  "GPC3",
+  "AFP",
+  "GLUL",
+  "CYP2E1",
+  "TERT",
+  "MKI67"
+ ]
+}

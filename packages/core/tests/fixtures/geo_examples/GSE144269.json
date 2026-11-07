@@ -1,0 +1,4828 @@
+{
+ "samplesheet": {
+  "gse": "GSE144269",
+  "assay": "bulk",
+  "title": "The genomic landscape of Mongolian hepatocellular carcinoma",
+  "samples": [
+   {
+    "gsm": "GSM4284605",
+    "title": "pat 10 tumor [HDV_10A_S33]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 10",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284606",
+    "title": "pat 10 non-tumor [HDV_10B_S37]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 10",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284607",
+    "title": "pat 11 tumor [HDV_11A_S34]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 11",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284608",
+    "title": "pat 11 non-tumor [HDV_11B_S6]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 11",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284609",
+    "title": "pat 12 tumor [HDV_12A_S54]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 12",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284610",
+    "title": "pat 12 non-tumor [HDV_12B_S46]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 12",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284611",
+    "title": "pat 13 tumor [HDV_13A_S56]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 13",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284612",
+    "title": "pat 13 non-tumor [HDV_13B_S1]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 13",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284613",
+    "title": "pat 14 tumor [HDV_14A_S39]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 14",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284614",
+    "title": "pat 14 non-tumor [HDV_14B_S30]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 14",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284615",
+    "title": "pat 15 tumor [HDV_15A_S11]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 15",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284616",
+    "title": "pat 15 non-tumor [HDV_15B_S34]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 15",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284617",
+    "title": "pat 16 tumor [HDV_16A_S58]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 16",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284618",
+    "title": "pat 16 non-tumor [HDV_16B_S7]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 16",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284619",
+    "title": "pat 17 tumor [HDV_17A_S16]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 17",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284620",
+    "title": "pat 17 non-tumor [HDV_17B_S11]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 17",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284621",
+    "title": "pat 18 tumor [HDV_18A_S21]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 18",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284622",
+    "title": "pat 18 non-tumor [HDV_18B_S49]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 18",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284623",
+    "title": "pat 19 tumor [HDV_19A_S30]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 19",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284624",
+    "title": "pat 19 non-tumor [HDV_19B_S12]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 19",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284625",
+    "title": "pat 1 tumor [HDV_1A_S13]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 1",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284626",
+    "title": "pat 1 non-tumor [HDV_1B_S4]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 1",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284627",
+    "title": "pat 20 tumor [HDV_20A_S60]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 20",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284628",
+    "title": "pat 20 non-tumor [HDV_20B_S57]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 20",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284629",
+    "title": "pat 21 tumor [HDV_21A_S26]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 21",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284630",
+    "title": "pat 21 non-tumor [HDV_21B_S52]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 21",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284631",
+    "title": "pat 22 tumor [HDV_22A_S31]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 22",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284632",
+    "title": "pat 22 non-tumor [HDV_22B_S55]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 22",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284633",
+    "title": "pat 23 tumor [HDV_23A_S42]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 23",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284634",
+    "title": "pat 23 non-tumor [HDV_23B_S58]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 23",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284635",
+    "title": "pat 24 tumor [HDV_24A_S45]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 24",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284636",
+    "title": "pat 24 non-tumor [HDV_24B_S17]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 24",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284637",
+    "title": "pat 25 tumor [HDV_25A_S62]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 25",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284638",
+    "title": "pat 25 non-tumor [HDV_25B_S22]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 25",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284639",
+    "title": "pat 26 tumor [HDV_26A_S10]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 26",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284640",
+    "title": "pat 26 non-tumor [HDV_26B_S27]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 26",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284641",
+    "title": "pat 27 tumor [HDV_27A_S57]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 27",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284642",
+    "title": "pat 27 non-tumor [HDV_27B_S59]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 27",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284643",
+    "title": "pat 28 tumor [HDV_28A_S48]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 28",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284644",
+    "title": "pat 28 non-tumor [HDV_28B_S60]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 28",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284645",
+    "title": "pat 29 tumor [HDV_29A_S64]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 29",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284646",
+    "title": "pat 29 non-tumor [HDV_29B_S61]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 29",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284647",
+    "title": "pat 2 tumor [HDV_2A_S38]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 2",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284648",
+    "title": "pat 2 non-tumor [HDV_2B_S10]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 2",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284649",
+    "title": "pat 30 tumor [HDV_30A_S2]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 30",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284650",
+    "title": "pat 30 non-tumor [HDV_30B_S62]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 30",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284651",
+    "title": "pat 31 tumor [HDV_31A_S66]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 31",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284652",
+    "title": "pat 31 non-tumor [HDV_31B_S70]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 31",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284653",
+    "title": "pat 32 tumor [HDV_32A_S52]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 32",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284654",
+    "title": "pat 32 non-tumor [HDV_32B_S31]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 32",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284655",
+    "title": "pat 33 tumor [HDV_33A_S68]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 33",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284656",
+    "title": "pat 33 non-tumor [HDV_33B_S63]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 33",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284657",
+    "title": "pat 34 tumor [HDV_34A_S35]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 34",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284658",
+    "title": "pat 34 non-tumor [HDV_34B_S64]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 34",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284659",
+    "title": "pat 35 tumor [HDV_35A_S15]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 35",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284660",
+    "title": "pat 35 non-tumor [HDV_35B_S16]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 35",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284661",
+    "title": "pat 36 tumor [HDV_36A_S20]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 36",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284662",
+    "title": "pat 36 non-tumor [HDV_36B_S35]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 36",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284663",
+    "title": "pat 37 tumor [HDV_37A_S5]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 37",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284664",
+    "title": "pat 37 non-tumor [HDV_37B_S38]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 37",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284665",
+    "title": "pat 38 tumor [HDV_38A_S9]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 38",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284666",
+    "title": "pat 38 non-tumor [HDV_38B_S40]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 38",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284667",
+    "title": "pat 39 tumor [HDV_39A_S59]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 39",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284668",
+    "title": "pat 39 non-tumor [HDV_39B_S42]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 39",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284669",
+    "title": "pat 3 tumor [HDV_3A_S18]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 3",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284670",
+    "title": "pat 3 non-tumor [HDV_3B_S15]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 3",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284671",
+    "title": "pat 40 tumor [HDV_40A_S14]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 40",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284672",
+    "title": "pat 40 non-tumor [HDV_40B_S44]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 40",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284673",
+    "title": "pat 41 tumor [HDV_41A_S19]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 41",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284674",
+    "title": "pat 41 non-tumor [HDV_41B_S2]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 41",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284675",
+    "title": "pat 42 tumor [HDV_42A_S25]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 42",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284676",
+    "title": "pat 42 non-tumor [HDV_42B_S8]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 42",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284677",
+    "title": "pat 43 tumor [HDV_43A_S67]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 43",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284678",
+    "title": "pat 43 non-tumor [HDV_43B_S13]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 43",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284679",
+    "title": "pat 44 tumor [HDV_44A_S61]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 44",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284680",
+    "title": "pat 44 non-tumor [HDV_44B_S65]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 44",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284681",
+    "title": "pat 45 tumor [HDV_45A_S63]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 45",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284682",
+    "title": "pat 45 non-tumor [HDV_45B_S18]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 45",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284683",
+    "title": "pat 46 tumor [HDV_46A_S37]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 46",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284684",
+    "title": "pat 46 non-tumor [HDV_46B_S23]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 46",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284685",
+    "title": "pat 47 tumor [HDV_47A_S41]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 47",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284686",
+    "title": "pat 47 non-tumor [HDV_47B_S28]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 47",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284687",
+    "title": "pat 48 tumor [HDV_48A_S69]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 48",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284688",
+    "title": "pat 48 non-tumor [HDV_48B_S32]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 48",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284689",
+    "title": "pat 49 tumor [HDV_49A_S70]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 49",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284690",
+    "title": "pat 49 non-tumor [HDV_49B_S66]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 49",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284691",
+    "title": "pat 4 tumor [HDV_4A_S23]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 4",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284692",
+    "title": "pat 4 non-tumor [HDV_4B_S20]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 4",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284693",
+    "title": "pat 50 tumor [HDV_50A_S3]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 50",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284694",
+    "title": "pat 50 non-tumor [HDV_50B_S36]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 50",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284695",
+    "title": "pat 51 tumor [HDV_51A_S7]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 51",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284696",
+    "title": "pat 51 non-tumor [HDV_51B_S39]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 51",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284697",
+    "title": "pat 52 tumor [HDV_52A_S12]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 52",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284698",
+    "title": "pat 52 non-tumor [HDV_52B_S41]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 52",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284699",
+    "title": "pat 53 tumor [HDV_53A_S17]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 53",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284700",
+    "title": "pat 53 non-tumor [HDV_53B_S21]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 53",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284701",
+    "title": "pat 54 tumor [HDV_54A_S50]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 54",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284702",
+    "title": "pat 54 non-tumor [HDV_54B_S43]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 54",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284703",
+    "title": "pat 55 tumor [HDV_55A_S22]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 55",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284704",
+    "title": "pat 55 non-tumor [HDV_55B_S45]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 55",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284705",
+    "title": "pat 56 tumor [HDV_56A_S51]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 56",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284706",
+    "title": "pat 56 non-tumor [HDV_56B_S68]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 56",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284707",
+    "title": "pat 57 tumor [HDV_57A_S65]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 57",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284708",
+    "title": "pat 57 non-tumor [HDV_57B_S3]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 57",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284709",
+    "title": "pat 58 tumor [HDV_58A_S44]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 58",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284710",
+    "title": "pat 58 non-tumor [HDV_58B_S51]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 58",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284711",
+    "title": "pat 59 tumor [HDV_59A_S47]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 59",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284712",
+    "title": "pat 59 non-tumor [HDV_59B_2_S69]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 59",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284713",
+    "title": "pat 5 tumor [HDV_5A_S24]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 5",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284714",
+    "title": "pat 5 non-tumor [HDV_5B_S25]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 5",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284715",
+    "title": "pat 60 tumor [HDV_60A_S27]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 60",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284716",
+    "title": "pat 60 non-tumor [HDV_60B_S47]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 60",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284717",
+    "title": "pat 61 tumor [HDV_61A_S32]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 61",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284718",
+    "title": "pat 61 non-tumor [HDV_61B_S1]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 61",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284719",
+    "title": "pat 62 tumor [HDV_62A_S36]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 62",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284720",
+    "title": "pat 62 non-tumor [HDV_62B_S9]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 62",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284721",
+    "title": "pat 63 tumor [HDV_63A_S40]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 63",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284722",
+    "title": "pat 63 non-tumor [HDV_63B_S53]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 63",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284723",
+    "title": "pat 64 tumor [HDV_64A_S43]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 64",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284724",
+    "title": "pat 64 non-tumor [HDV_64B_S14]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 64",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284725",
+    "title": "pat 65 tumor [HDV_65A_S46]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 65",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284726",
+    "title": "pat 65 non-tumor [HDV_65B_S19]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 65",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284727",
+    "title": "pat 66 tumor [HDV_66A_S49]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 66",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284728",
+    "title": "pat 66 non-tumor [HDV_66B_S24]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 66",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284729",
+    "title": "pat 67 tumor [HDV_67A_S4]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 67",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284730",
+    "title": "pat 67 non-tumor [HDV_67B_S56]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 67",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284731",
+    "title": "pat 68 tumor [HDV_68A_S50]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 68",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284732",
+    "title": "pat 68 non-tumor [HDV_68B_S5]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 68",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284733",
+    "title": "pat 69 tumor [HDV_69A_S8]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 69",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284734",
+    "title": "pat 69 non-tumor [HDV_69B_S48]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 69",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284735",
+    "title": "pat 6 tumor [HDV_6A_S29]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 6",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284736",
+    "title": "pat 6 non-tumor [HDV_6B_S29]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 6",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284737",
+    "title": "pat 70 tumor [HDV_70A_S53]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 70",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284738",
+    "title": "pat 70 non-tumor [HDV_70B_S67]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 70",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284739",
+    "title": "pat 7 tumor [HDV_7A_S28]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 7",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284740",
+    "title": "pat 7 non-tumor [HDV_7B_S54]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 7",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284741",
+    "title": "pat 8 tumor [HDV_8A_S55]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 8",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284742",
+    "title": "pat 8 non-tumor [HDV_8B_S33]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 8",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284743",
+    "title": "pat 9 tumor [HDV_9A_S6]",
+    "source_name": "liver tissue",
+    "group": "case",
+    "condition": "tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 9",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: tumor"
+    ]
+   },
+   {
+    "gsm": "GSM4284744",
+    "title": "pat 9 non-tumor [HDV_9B_S26]",
+    "source_name": "liver tissue",
+    "group": "control",
+    "condition": "non-tumor",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "liver",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "pat 9",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "tumor/non-tumor: non-tumor"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "subject status": "hepatocellular carcinoma patient",
+     "tumor/non-tumor": "non-tumor"
+    },
+    "raw_lines": [
+     "subject status: hepatocellular carcinoma patient",
+     "tumor/non-tumor: non-tumor"
+    ]
+   }
+  ]
+ },
+ "contrasts": [
+  {
+   "gse": "GSE144269",
+   "name": "tumor_vs_adjacent_normal",
+   "case_label": "HCC tumor",
+   "control_label": "adjacent non-tumor liver",
+   "case_gsms": [
+    "GSM4284605",
+    "GSM4284607",
+    "GSM4284609",
+    "GSM4284611",
+    "GSM4284613",
+    "GSM4284615",
+    "GSM4284617",
+    "GSM4284619",
+    "GSM4284621",
+    "GSM4284623",
+    "GSM4284625",
+    "GSM4284627",
+    "GSM4284629",
+    "GSM4284631",
+    "GSM4284633",
+    "GSM4284635",
+    "GSM4284637",
+    "GSM4284639",
+    "GSM4284641",
+    "GSM4284643",
+    "GSM4284645",
+    "GSM4284647",
+    "GSM4284649",
+    "GSM4284651",
+    "GSM4284653",
+    "GSM4284655",
+    "GSM4284657",
+    "GSM4284659",
+    "GSM4284661",
+    "GSM4284663",
+    "GSM4284665",
+    "GSM4284667",
+    "GSM4284669",
+    "GSM4284671",
+    "GSM4284673",
+    "GSM4284675",
+    "GSM4284677",
+    "GSM4284679",
+    "GSM4284681",
+    "GSM4284683",
+    "GSM4284685",
+    "GSM4284687",
+    "GSM4284689",
+    "GSM4284691",
+    "GSM4284693",
+    "GSM4284695",
+    "GSM4284697",
+    "GSM4284699",
+    "GSM4284701",
+    "GSM4284703",
+    "GSM4284705",
+    "GSM4284707",
+    "GSM4284709",
+    "GSM4284711",
+    "GSM4284713",
+    "GSM4284715",
+    "GSM4284717",
+    "GSM4284719",
+    "GSM4284721",
+    "GSM4284723",
+    "GSM4284725",
+    "GSM4284727",
+    "GSM4284729",
+    "GSM4284731",
+    "GSM4284733",
+    "GSM4284735",
+    "GSM4284737",
+    "GSM4284739",
+    "GSM4284741",
+    "GSM4284743"
+   ],
+   "control_gsms": [
+    "GSM4284606",
+    "GSM4284608",
+    "GSM4284610",
+    "GSM4284612",
+    "GSM4284614",
+    "GSM4284616",
+    "GSM4284618",
+    "GSM4284620",
+    "GSM4284622",
+    "GSM4284624",
+    "GSM4284626",
+    "GSM4284628",
+    "GSM4284630",
+    "GSM4284632",
+    "GSM4284634",
+    "GSM4284636",
+    "GSM4284638",
+    "GSM4284640",
+    "GSM4284642",
+    "GSM4284644",
+    "GSM4284646",
+    "GSM4284648",
+    "GSM4284650",
+    "GSM4284652",
+    "GSM4284654",
+    "GSM4284656",
+    "GSM4284658",
+    "GSM4284660",
+    "GSM4284662",
+    "GSM4284664",
+    "GSM4284666",
+    "GSM4284668",
+    "GSM4284670",
+    "GSM4284672",
+    "GSM4284674",
+    "GSM4284676",
+    "GSM4284678",
+    "GSM4284680",
+    "GSM4284682",
+    "GSM4284684",
+    "GSM4284686",
+    "GSM4284688",
+    "GSM4284690",
+    "GSM4284692",
+    "GSM4284694",
+    "GSM4284696",
+    "GSM4284698",
+    "GSM4284700",
+    "GSM4284702",
+    "GSM4284704",
+    "GSM4284706",
+    "GSM4284708",
+    "GSM4284710",
+    "GSM4284712",
+    "GSM4284714",
+    "GSM4284716",
+    "GSM4284718",
+    "GSM4284720",
+    "GSM4284722",
+    "GSM4284724",
+    "GSM4284726",
+    "GSM4284728",
+    "GSM4284730",
+    "GSM4284732",
+    "GSM4284734",
+    "GSM4284736",
+    "GSM4284738",
+    "GSM4284740",
+    "GSM4284742",
+    "GSM4284744"
+   ],
+   "blocking": "donor",
+   "restricted_to": {},
+   "confidence": 1.0,
+   "status": "confirmed",
+   "rationale": "70 pairs, Mongolian cohort."
+  }
+ ],
+ "markers": [
+  {
+   "symbol": "GPC3",
+   "direction": "up"
+  },
+  {
+   "symbol": "AFP",
+   "direction": "up"
+  },
+  {
+   "symbol": "SPP1",
+   "direction": "up"
+  },
+  {
+   "symbol": "MDK",
+   "direction": "up"
+  },
+  {
+   "symbol": "PEG10",
+   "direction": "up"
+  },
+  {
+   "symbol": "CLEC4G",
+   "direction": "down"
+  },
+  {
+   "symbol": "CLEC1B",
+   "direction": "down"
+  },
+  {
+   "symbol": "FCN3",
+   "direction": "down"
+  },
+  {
+   "symbol": "CRHBP",
+   "direction": "down"
+  },
+  {
+   "symbol": "CYP1A2",
+   "direction": "down"
+  }
+ ]
+}
