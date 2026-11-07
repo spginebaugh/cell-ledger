@@ -41,6 +41,12 @@
   --grid: #e3e9e7;
   --shadow: 0 1px 0 rgba(18, 28, 29, 0.04);
   --gutter: clamp(16px, 3vw, 48px);
+  --gutter-page: clamp(64px, 12vw, 192px);
+  /* Heading shadow cast to the lower right in the helix stain colours: teal nearest the
+     letter, then electric blue, then the deep navy of the shadow stop. */
+  --text-glow:
+    2px 2px 1px rgba(0, 190, 178, 0.3), 4px 4px 3px rgba(20, 140, 240, 0.22),
+    7px 7px 7px rgba(14, 60, 200, 0.16);
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
@@ -80,6 +86,9 @@
     --focus: #4fd1c5;
     --grid: #172729;
     --shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+    --text-glow:
+      2px 2px 1px rgba(0, 240, 220, 0.32), 4px 4px 3px rgba(40, 170, 255, 0.24),
+      7px 7px 7px rgba(16, 70, 230, 0.2);
     color-scheme: dark;
   }
 }
@@ -119,6 +128,9 @@
   --focus: #4fd1c5;
   --grid: #172729;
   --shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+  --text-glow:
+    2px 2px 1px rgba(0, 240, 220, 0.32), 4px 4px 3px rgba(40, 170, 255, 0.24),
+    7px 7px 7px rgba(16, 70, 230, 0.2);
   color-scheme: dark;
 }
 
@@ -165,6 +177,11 @@
   html {
     background: var(--bg);
   }
+  /* Own stacking context, so a fixed backdrop at negative z sits above the body background
+     and below everything the app renders. */
+  #root {
+    isolation: isolate;
+  }
   body {
     margin: 0;
     background:
@@ -187,6 +204,11 @@
     margin: 0;
     text-wrap: balance;
     color: var(--ink);
+  }
+  h1,
+  h2,
+  .wordmark {
+    text-shadow: var(--text-glow);
   }
   h1 {
     font-size: clamp(28px, 22px + 1vw, 34px);
@@ -281,4 +303,20 @@
 }
 .pulse {
   animation: cl-pulse 1.6s ease-in-out infinite;
+}
+
+/* Translucent surfaces live in the utilities layer so they win over bg-* on the same element. */
+@layer utilities {
+  /* A surface the backdrop shows through, blurred enough to keep the text crisp. */
+  .glass {
+    background: color-mix(in srgb, var(--surface) 62%, transparent);
+    -webkit-backdrop-filter: blur(10px) saturate(1.1);
+    backdrop-filter: blur(10px) saturate(1.1);
+  }
+  /* Nearly clear: the backdrop shows through almost unblurred; solid controls sit on top. */
+  .glass-clear {
+    background: color-mix(in srgb, var(--surface) 28%, transparent);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+  }
 }

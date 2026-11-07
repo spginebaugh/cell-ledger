@@ -1,12 +1,13 @@
 import { expect, test } from "@playwright/test";
 
-test("home page loads and reaches the API", async ({ page }) => {
+test("home page loads and reaches the API", async ({ page, request }) => {
   await page.goto("/");
   await expect(
     page.getByRole("heading", { name: /Ask a question a dataset can answer/ }),
   ).toBeVisible();
   await expect(page.getByLabel("Your question")).toBeVisible();
-  await expect(page.getByTestId("api-status")).toHaveText(/API ok/);
+  const health = await request.get("http://localhost:8000/api/health");
+  expect(await health.json()).toMatchObject({ status: "ok" });
 });
 
 test("a session can be opened by id and shows its sections", async ({ page, request }) => {

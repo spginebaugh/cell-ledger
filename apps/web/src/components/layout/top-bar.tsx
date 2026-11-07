@@ -42,7 +42,7 @@ export function CellMark({ className }: { className?: string }) {
 export function Wordmark({ className, size = 28 }: { className?: string; size?: number }) {
   return (
     <span
-      className={cn("font-display leading-none tracking-[-0.012em]", className)}
+      className={cn("wordmark font-display leading-none tracking-[-0.012em]", className)}
       style={{ fontSize: size, fontVariationSettings: '"opsz" 36' }}
     >
       <span className="font-bold text-ink-2">cell</span>{" "}
@@ -51,7 +51,16 @@ export function Wordmark({ className, size = 28 }: { className?: string; size?: 
   );
 }
 
-export function TopBar({ sessionId }: { sessionId?: string }) {
+export function TopBar({
+  sessionId,
+  glass = false,
+  tagline,
+}: {
+  sessionId?: string;
+  glass?: boolean;
+  /** A short line set under the wordmark in bold capitals, indented to the right. */
+  tagline?: string;
+}) {
   const { resolved, toggle } = useTheme();
   const [copied, setCopied] = useState(false);
   const copy = async () => {
@@ -65,16 +74,27 @@ export function TopBar({ sessionId }: { sessionId?: string }) {
     }
   };
   return (
-    <header className="sticky top-0 z-10 border-b border-line bg-surface">
+    <header
+      className={cn("sticky top-0 z-10 border-b border-line", glass ? "glass" : "bg-surface")}
+    >
       <div className="flex h-16 w-full items-center justify-between gap-4 px-[var(--gutter)]">
         <Link to="/" className="inline-flex items-center gap-3 no-underline">
           <CellMark className="h-10 w-10 shrink-0" />
-          <Wordmark />
+          {tagline ? (
+            <span className="flex flex-col items-start">
+              <Wordmark />
+              <span className="mt-2 hidden pl-8 text-[9px] font-bold uppercase leading-none tracking-[0.14em] text-ink-2 md:block">
+                {tagline}
+              </span>
+            </span>
+          ) : (
+            <Wordmark />
+          )}
         </Link>
         <div className="flex items-center gap-2">
           <Link
             to="/evals"
-            className="inline-flex h-[34px] items-center rounded-md border border-transparent px-3 text-[13px] font-semibold text-ink-2 no-underline hover:border-line-2 hover:text-ink"
+            className="inline-flex h-[34px] items-center rounded-md border border-transparent px-3 text-[12px] font-bold uppercase tracking-[0.1em] text-ink-2 no-underline hover:border-line-2 hover:text-ink"
             activeProps={{ className: "border-line-2 text-ink", "aria-current": "page" }}
           >
             Evals
@@ -116,7 +136,7 @@ export function Page({
     <main
       className={cn(
         "w-full pb-20 pt-6",
-        width === "wide" ? "px-[var(--gutter)]" : "mx-auto max-w-[760px] px-4 pt-10",
+        width === "wide" ? "px-[var(--gutter-page)]" : "mx-auto max-w-[760px] px-4 pt-10",
       )}
     >
       {children}
@@ -130,10 +150,10 @@ export function Footer() {
       <Link to="/" className="no-underline">
         <Wordmark size={18} />
       </Link>
-      <p className="max-w-[60ch] text-[13px] text-ink-2">
+      <p className="max-w-[64ch] text-[12px] font-bold uppercase leading-relaxed tracking-[0.1em] text-ink-2">
         Reproducible two-group analysis of public RNA-seq, with every number traceable to a file.
       </p>
-      <ul className="mt-2 flex flex-wrap justify-center text-[12px] text-ink-3">
+      <ul className="mt-2 flex flex-wrap justify-center text-[12px] font-bold uppercase tracking-[0.1em] text-ink-3">
         <li className="px-3">
           <a
             href="https://www.ncbi.nlm.nih.gov/geo/"

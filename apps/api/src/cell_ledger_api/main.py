@@ -127,7 +127,9 @@ def create_app(
                 effort=settings.anthropic_effort,
             )
             app.state.designer = Designer(
-                turn=runner, model=settings.anthropic_model, effort=settings.anthropic_effort
+                turn=runner,
+                model=settings.design_model or settings.anthropic_model,
+                effort=settings.design_effort or settings.anthropic_effort,
             )
             app.state.pipeline = Pipeline(
                 app.state.sessions, app.state.runs, app.state.comparisons, app.state.designer

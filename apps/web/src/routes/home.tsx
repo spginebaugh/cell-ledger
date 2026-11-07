@@ -1,17 +1,16 @@
-import { useQuery } from "@tanstack/react-query";
-import { Link, useNavigate } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { getHealth, updateSession } from "@/api/generated/sdk.gen";
+import { updateSession } from "@/api/generated/sdk.gen";
 import type { DiscoveryResult } from "@/api/generated/types.gen";
 import { DiscoveryView } from "@/components/home/discovery";
+import { HelixBackdrop } from "@/components/home/helix-backdrop";
 import { Footer, Page, TopBar } from "@/components/layout/top-bar";
 import { Button } from "@/components/ui/button";
-import { ColHead, ErrorBox, Panel } from "@/components/ui/card";
-import { Input, Label, Textarea } from "@/components/ui/input";
+import { ErrorBox, Panel } from "@/components/ui/card";
+import { Label, Textarea } from "@/components/ui/input";
 import { errorMessage, unwrap } from "@/lib/api";
-import { useAgentAvailable, useCollect, useCreateSession, useSession } from "@/lib/queries";
-import { lastSession, rememberSession } from "@/lib/storage";
+import { useAgentAvailable, useCollect, useCreateSession } from "@/lib/queries";
+import { rememberSession } from "@/lib/storage";
 import { guessGenes } from "@/lib/ui-state";
 import { useSse } from "@/lib/useSse";
 
@@ -24,21 +23,13 @@ const EXAMPLES = [
 export function HomePage() {
   const navigate = useNavigate();
   const agent = useAgentAvailable();
-  const health = useQuery({
-    queryKey: ["health"],
-    queryFn: async () => unwrap(await getHealth()),
-    retry: 1,
-  });
   const [question, setQuestion] = useState("");
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [genes, setGenes] = useState<string[]>([]);
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [answers, setAnswers] = useState<string[]>([]);
-  const [openId, setOpenId] = useState("");
   const [phase, setPhase] = useState<"ask" | "work">("ask");
   const create = useCreateSession();
-  const resumeId = lastSession();
-  const resume = useSession(resumeId ?? "", Boolean(resumeId));
   const sse = useSse<DiscoveryResult>();
   const collect = useCollect(sessionId ?? "");
 
@@ -110,24 +101,36 @@ export function HomePage() {
   };
 
   const busy = create.isPending || sse.status === "streaming";
-  const validId = /^[0-9a-f]{32}$/.test(openId.trim());
 
   return (
     <>
-      <TopBar sessionId={sessionId ?? undefined} />
+      <HelixBackdrop />
+      <TopBar
+        sessionId={sessionId ?? undefined}
+        glass
+        tagline="A specialist for public RNA-seq data"
+      />
       <Page>
         <div className="pt-4">
-          <p className="text-[13px] text-ink-2">A specialist for public RNA-seq data</p>
-          <h1 className="mt-2 max-w-[26ch]">Ask a question a dataset can answer.</h1>
-          <p className="mt-4 max-w-[64ch] text-ink-2">
-            cell ledger finds bulk RNA-seq series in NCBI GEO, checks which ones are actually
-            usable, labels their samples from the record with the evidence attached, and runs one
-            reproducible two-group analysis. Every number it shows can be traced back to a file.
+          <h1 className="mx-auto mt-2 max-w-[26ch] text-center">
+            Ask a question a dataset can answer.
+          </h1>
+          <p className="mt-5 text-center text-[12px] font-bold uppercase leading-relaxed tracking-[0.1em] text-ink-2">
+            Ask about a gene.
+            <br />
+            We find real public RNA-seq studies, check that they fit, and run one clean comparison.
+            <br />
+            Every number comes from a file you can open.
           </p>
         </div>
 
-        <Panel className="mt-8 p-5">
-          <Label htmlFor="question">Your question</Label>
+        <Panel className="glass glass-clear mt-8 p-5">
+          <Label
+            htmlFor="question"
+            className="text-[13px] font-bold uppercase leading-tight tracking-[0.1em]"
+          >
+            Your question
+          </Label>
           <Textarea
             id="question"
             rows={3}
@@ -137,7 +140,7 @@ export function HomePage() {
               if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) void submit();
             }}
             placeholder="Is gene X higher in cell type Y in disease Z?"
-            className="mt-1.5 text-[16px]"
+            className="mt-2 text-[16px]"
             disabled={phase === "work" && busy}
           />
           <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
@@ -214,54 +217,6 @@ export function HomePage() {
           </div>
         )}
 
-        <div className="mt-10 grid gap-4 md:grid-cols-2">
-          {resumeId && resume.data && (
-            <Panel>
-              <ColHead label="Pick up where you left off" />
-              <p className="line-clamp-2 text-[14px]">
-                {resume.data.question ?? "An untitled session"}
-              </p>
-              <Link
-                to="/s/$sessionId"
-                params={{ sessionId: resumeId }}
-                className="mt-3 inline-flex items-center gap-1 text-[13px] font-semibold text-accent-ink no-underline hover:underline"
-              >
-                Open session <span className="accession text-ink-3">{resumeId.slice(0, 8)}</span>
-                <ArrowRight size={14} />
-              </Link>
-            </Panel>
-          )}
-          <Panel>
-            <ColHead label="Open a session by id" />
-            <form
-              className="flex gap-2"
-              onSubmit={(e) => {
-                e.preventDefault();
-                if (validId)
-                  void navigate({ to: "/s/$sessionId", params: { sessionId: openId.trim() } });
-              }}
-            >
-              <Input
-                id="open-id"
-                aria-label="Session id"
-                value={openId}
-                onChange={(e) => setOpenId(e.target.value)}
-                placeholder="32 hex characters"
-                className="font-mono"
-              />
-              <Button type="submit" disabled={!validId}>
-                Open
-              </Button>
-            </form>
-          </Panel>
-        </div>
-
-        <p className="mt-8 text-[12px] text-ink-3" data-testid="api-status">
-          {health.isPending && "Checking the API…"}
-          {health.isError && `API unreachable: ${errorMessage(health.error)}`}
-          {health.data &&
-            `API ${health.data.status} · api ${health.data.api_version} · core ${health.data.core_version}`}
-        </p>
         <Footer />
       </Page>
     </>
