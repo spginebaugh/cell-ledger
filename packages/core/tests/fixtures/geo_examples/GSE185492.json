@@ -1,891 +1,795 @@
 {
- "samplesheet": {
-  "gse": "GSE185492",
-  "assay": "bulk",
-  "title": "RNA sequencing of gene expression in fibroblasts derived from idiopathic pulmonary fibrosis and control lungs",
-  "samples": [
-   {
-    "gsm": "GSM5616134",
-    "title": "CTR_Apex_1",
-    "source_name": "apical region of lung",
-    "group": "control",
-    "condition": "control donor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "lung",
-    "cell_type": "fibroblast",
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "diagnosis: control donor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "lung",
-     "cell type": "fibroblast",
-     "diagnosis": "control donor"
-    },
-    "raw_lines": [
-     "tissue: lung",
-     "cell type: fibroblast",
-     "diagnosis: control donor"
+  "samplesheet": {
+    "gse": "GSE185492",
+    "assay": "bulk",
+    "title": "RNA sequencing of gene expression in fibroblasts derived from idiopathic pulmonary fibrosis and control lungs",
+    "samples": [
+      {
+        "gsm": "GSM5616134",
+        "title": "CTR_Apex_1",
+        "source_name": "apical region of lung",
+        "group": "control",
+        "condition": "control donor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "lung",
+        "cell_type": "fibroblast",
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["diagnosis: control donor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "lung",
+          "cell type": "fibroblast",
+          "diagnosis": "control donor"
+        },
+        "raw_lines": ["tissue: lung", "cell type: fibroblast", "diagnosis: control donor"]
+      },
+      {
+        "gsm": "GSM5616135",
+        "title": "CTR_Apex_2",
+        "source_name": "apical region of lung",
+        "group": "control",
+        "condition": "control donor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "lung",
+        "cell_type": "fibroblast",
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["diagnosis: control donor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "lung",
+          "cell type": "fibroblast",
+          "diagnosis": "control donor"
+        },
+        "raw_lines": ["tissue: lung", "cell type: fibroblast", "diagnosis: control donor"]
+      },
+      {
+        "gsm": "GSM5616136",
+        "title": "CTR_Apex_3",
+        "source_name": "apical region of lung",
+        "group": "control",
+        "condition": "control donor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "lung",
+        "cell_type": "fibroblast",
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["diagnosis: control donor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "lung",
+          "cell type": "fibroblast",
+          "diagnosis": "control donor"
+        },
+        "raw_lines": ["tissue: lung", "cell type: fibroblast", "diagnosis: control donor"]
+      },
+      {
+        "gsm": "GSM5616137",
+        "title": "CTR_Apex_4",
+        "source_name": "apical region of lung",
+        "group": "control",
+        "condition": "control donor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "lung",
+        "cell_type": "fibroblast",
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["diagnosis: control donor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "lung",
+          "cell type": "fibroblast",
+          "diagnosis": "control donor"
+        },
+        "raw_lines": ["tissue: lung", "cell type: fibroblast", "diagnosis: control donor"]
+      },
+      {
+        "gsm": "GSM5616138",
+        "title": "CTR_Apex_5",
+        "source_name": "apical region of lung",
+        "group": "control",
+        "condition": "control donor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "lung",
+        "cell_type": "fibroblast",
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["diagnosis: control donor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "lung",
+          "cell type": "fibroblast",
+          "diagnosis": "control donor"
+        },
+        "raw_lines": ["tissue: lung", "cell type: fibroblast", "diagnosis: control donor"]
+      },
+      {
+        "gsm": "GSM5616139",
+        "title": "CTR_Apex_6",
+        "source_name": "apical region of lung",
+        "group": "control",
+        "condition": "control donor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "lung",
+        "cell_type": "fibroblast",
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["diagnosis: control donor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "lung",
+          "cell type": "fibroblast",
+          "diagnosis": "control donor"
+        },
+        "raw_lines": ["tissue: lung", "cell type: fibroblast", "diagnosis: control donor"]
+      },
+      {
+        "gsm": "GSM5616140",
+        "title": "IPF_Apex_1",
+        "source_name": "apical region of lung",
+        "group": "case",
+        "condition": "idiopathic pulmonary fibrosis (IPF)",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "lung",
+        "cell_type": "fibroblast",
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["diagnosis: idiopathic pulmonary fibrosis (IPF)"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "lung",
+          "cell type": "fibroblast",
+          "diagnosis": "idiopathic pulmonary fibrosis (IPF)"
+        },
+        "raw_lines": [
+          "tissue: lung",
+          "cell type: fibroblast",
+          "diagnosis: idiopathic pulmonary fibrosis (IPF)"
+        ]
+      },
+      {
+        "gsm": "GSM5616141",
+        "title": "IPF_Apex_2",
+        "source_name": "apical region of lung",
+        "group": "case",
+        "condition": "idiopathic pulmonary fibrosis (IPF)",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "lung",
+        "cell_type": "fibroblast",
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["diagnosis: idiopathic pulmonary fibrosis (IPF)"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "lung",
+          "cell type": "fibroblast",
+          "diagnosis": "idiopathic pulmonary fibrosis (IPF)"
+        },
+        "raw_lines": [
+          "tissue: lung",
+          "cell type: fibroblast",
+          "diagnosis: idiopathic pulmonary fibrosis (IPF)"
+        ]
+      },
+      {
+        "gsm": "GSM5616142",
+        "title": "IPF_Apex_3",
+        "source_name": "apical region of lung",
+        "group": "case",
+        "condition": "idiopathic pulmonary fibrosis (IPF)",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "lung",
+        "cell_type": "fibroblast",
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["diagnosis: idiopathic pulmonary fibrosis (IPF)"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "lung",
+          "cell type": "fibroblast",
+          "diagnosis": "idiopathic pulmonary fibrosis (IPF)"
+        },
+        "raw_lines": [
+          "tissue: lung",
+          "cell type: fibroblast",
+          "diagnosis: idiopathic pulmonary fibrosis (IPF)"
+        ]
+      },
+      {
+        "gsm": "GSM5616143",
+        "title": "IPF_Apex_4",
+        "source_name": "apical region of lung",
+        "group": "case",
+        "condition": "idiopathic pulmonary fibrosis (IPF)",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "lung",
+        "cell_type": "fibroblast",
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["diagnosis: idiopathic pulmonary fibrosis (IPF)"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "lung",
+          "cell type": "fibroblast",
+          "diagnosis": "idiopathic pulmonary fibrosis (IPF)"
+        },
+        "raw_lines": [
+          "tissue: lung",
+          "cell type: fibroblast",
+          "diagnosis: idiopathic pulmonary fibrosis (IPF)"
+        ]
+      },
+      {
+        "gsm": "GSM5616144",
+        "title": "IPF_Apex_5",
+        "source_name": "apical region of lung",
+        "group": "case",
+        "condition": "idiopathic pulmonary fibrosis (IPF)",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "lung",
+        "cell_type": "fibroblast",
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["diagnosis: idiopathic pulmonary fibrosis (IPF)"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "lung",
+          "cell type": "fibroblast",
+          "diagnosis": "idiopathic pulmonary fibrosis (IPF)"
+        },
+        "raw_lines": [
+          "tissue: lung",
+          "cell type: fibroblast",
+          "diagnosis: idiopathic pulmonary fibrosis (IPF)"
+        ]
+      },
+      {
+        "gsm": "GSM5616145",
+        "title": "IPF_Apex_6",
+        "source_name": "apical region of lung",
+        "group": "case",
+        "condition": "idiopathic pulmonary fibrosis (IPF)",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "lung",
+        "cell_type": "fibroblast",
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["diagnosis: idiopathic pulmonary fibrosis (IPF)"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "lung",
+          "cell type": "fibroblast",
+          "diagnosis": "idiopathic pulmonary fibrosis (IPF)"
+        },
+        "raw_lines": [
+          "tissue: lung",
+          "cell type: fibroblast",
+          "diagnosis: idiopathic pulmonary fibrosis (IPF)"
+        ]
+      },
+      {
+        "gsm": "GSM5616146",
+        "title": "CTR_Base_1",
+        "source_name": "basal region of lung",
+        "group": "control",
+        "condition": "control donor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "lung",
+        "cell_type": "fibroblast",
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["diagnosis: control donor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "lung",
+          "cell type": "fibroblast",
+          "diagnosis": "control donor"
+        },
+        "raw_lines": ["tissue: lung", "cell type: fibroblast", "diagnosis: control donor"]
+      },
+      {
+        "gsm": "GSM5616147",
+        "title": "CTR_Base_2",
+        "source_name": "basal region of lung",
+        "group": "control",
+        "condition": "control donor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "lung",
+        "cell_type": "fibroblast",
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["diagnosis: control donor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "lung",
+          "cell type": "fibroblast",
+          "diagnosis": "control donor"
+        },
+        "raw_lines": ["tissue: lung", "cell type: fibroblast", "diagnosis: control donor"]
+      },
+      {
+        "gsm": "GSM5616148",
+        "title": "CTR_Base_3",
+        "source_name": "basal region of lung",
+        "group": "control",
+        "condition": "control donor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "lung",
+        "cell_type": "fibroblast",
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["diagnosis: control donor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "lung",
+          "cell type": "fibroblast",
+          "diagnosis": "control donor"
+        },
+        "raw_lines": ["tissue: lung", "cell type: fibroblast", "diagnosis: control donor"]
+      },
+      {
+        "gsm": "GSM5616149",
+        "title": "CTR_Base_4",
+        "source_name": "basal region of lung",
+        "group": "control",
+        "condition": "control donor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "lung",
+        "cell_type": "fibroblast",
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["diagnosis: control donor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "lung",
+          "cell type": "fibroblast",
+          "diagnosis": "control donor"
+        },
+        "raw_lines": ["tissue: lung", "cell type: fibroblast", "diagnosis: control donor"]
+      },
+      {
+        "gsm": "GSM5616150",
+        "title": "CTR_Base_5",
+        "source_name": "basal region of lung",
+        "group": "control",
+        "condition": "control donor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "lung",
+        "cell_type": "fibroblast",
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["diagnosis: control donor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "lung",
+          "cell type": "fibroblast",
+          "diagnosis": "control donor"
+        },
+        "raw_lines": ["tissue: lung", "cell type: fibroblast", "diagnosis: control donor"]
+      },
+      {
+        "gsm": "GSM5616151",
+        "title": "CTR_Base_6",
+        "source_name": "basal region of lung",
+        "group": "control",
+        "condition": "control donor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "lung",
+        "cell_type": "fibroblast",
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["diagnosis: control donor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "lung",
+          "cell type": "fibroblast",
+          "diagnosis": "control donor"
+        },
+        "raw_lines": ["tissue: lung", "cell type: fibroblast", "diagnosis: control donor"]
+      },
+      {
+        "gsm": "GSM5616152",
+        "title": "IPF_Base_1",
+        "source_name": "basal region of lung",
+        "group": "case",
+        "condition": "idiopathic pulmonary fibrosis (IPF)",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "lung",
+        "cell_type": "fibroblast",
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["diagnosis: idiopathic pulmonary fibrosis (IPF)"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "lung",
+          "cell type": "fibroblast",
+          "diagnosis": "idiopathic pulmonary fibrosis (IPF)"
+        },
+        "raw_lines": [
+          "tissue: lung",
+          "cell type: fibroblast",
+          "diagnosis: idiopathic pulmonary fibrosis (IPF)"
+        ]
+      },
+      {
+        "gsm": "GSM5616153",
+        "title": "IPF_Base_2",
+        "source_name": "basal region of lung",
+        "group": "case",
+        "condition": "idiopathic pulmonary fibrosis (IPF)",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "lung",
+        "cell_type": "fibroblast",
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["diagnosis: idiopathic pulmonary fibrosis (IPF)"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "lung",
+          "cell type": "fibroblast",
+          "diagnosis": "idiopathic pulmonary fibrosis (IPF)"
+        },
+        "raw_lines": [
+          "tissue: lung",
+          "cell type: fibroblast",
+          "diagnosis: idiopathic pulmonary fibrosis (IPF)"
+        ]
+      },
+      {
+        "gsm": "GSM5616154",
+        "title": "IPF_Base_3",
+        "source_name": "basal region of lung",
+        "group": "case",
+        "condition": "idiopathic pulmonary fibrosis (IPF)",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "lung",
+        "cell_type": "fibroblast",
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["diagnosis: idiopathic pulmonary fibrosis (IPF)"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "lung",
+          "cell type": "fibroblast",
+          "diagnosis": "idiopathic pulmonary fibrosis (IPF)"
+        },
+        "raw_lines": [
+          "tissue: lung",
+          "cell type: fibroblast",
+          "diagnosis: idiopathic pulmonary fibrosis (IPF)"
+        ]
+      },
+      {
+        "gsm": "GSM5616155",
+        "title": "IPF_Base_4",
+        "source_name": "basal region of lung",
+        "group": "case",
+        "condition": "idiopathic pulmonary fibrosis (IPF)",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "lung",
+        "cell_type": "fibroblast",
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["diagnosis: idiopathic pulmonary fibrosis (IPF)"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "lung",
+          "cell type": "fibroblast",
+          "diagnosis": "idiopathic pulmonary fibrosis (IPF)"
+        },
+        "raw_lines": [
+          "tissue: lung",
+          "cell type: fibroblast",
+          "diagnosis: idiopathic pulmonary fibrosis (IPF)"
+        ]
+      },
+      {
+        "gsm": "GSM5616156",
+        "title": "IPF_Base_5",
+        "source_name": "basal region of lung",
+        "group": "case",
+        "condition": "idiopathic pulmonary fibrosis (IPF)",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "lung",
+        "cell_type": "fibroblast",
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["diagnosis: idiopathic pulmonary fibrosis (IPF)"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "lung",
+          "cell type": "fibroblast",
+          "diagnosis": "idiopathic pulmonary fibrosis (IPF)"
+        },
+        "raw_lines": [
+          "tissue: lung",
+          "cell type: fibroblast",
+          "diagnosis: idiopathic pulmonary fibrosis (IPF)"
+        ]
+      },
+      {
+        "gsm": "GSM5616157",
+        "title": "IPF_Base_6",
+        "source_name": "basal region of lung",
+        "group": "case",
+        "condition": "idiopathic pulmonary fibrosis (IPF)",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "lung",
+        "cell_type": "fibroblast",
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["diagnosis: idiopathic pulmonary fibrosis (IPF)"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "lung",
+          "cell type": "fibroblast",
+          "diagnosis": "idiopathic pulmonary fibrosis (IPF)"
+        },
+        "raw_lines": [
+          "tissue: lung",
+          "cell type: fibroblast",
+          "diagnosis: idiopathic pulmonary fibrosis (IPF)"
+        ]
+      }
     ]
-   },
-   {
-    "gsm": "GSM5616135",
-    "title": "CTR_Apex_2",
-    "source_name": "apical region of lung",
-    "group": "control",
-    "condition": "control donor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "lung",
-    "cell_type": "fibroblast",
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "diagnosis: control donor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "lung",
-     "cell type": "fibroblast",
-     "diagnosis": "control donor"
-    },
-    "raw_lines": [
-     "tissue: lung",
-     "cell type: fibroblast",
-     "diagnosis: control donor"
-    ]
-   },
-   {
-    "gsm": "GSM5616136",
-    "title": "CTR_Apex_3",
-    "source_name": "apical region of lung",
-    "group": "control",
-    "condition": "control donor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "lung",
-    "cell_type": "fibroblast",
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "diagnosis: control donor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "lung",
-     "cell type": "fibroblast",
-     "diagnosis": "control donor"
-    },
-    "raw_lines": [
-     "tissue: lung",
-     "cell type: fibroblast",
-     "diagnosis: control donor"
-    ]
-   },
-   {
-    "gsm": "GSM5616137",
-    "title": "CTR_Apex_4",
-    "source_name": "apical region of lung",
-    "group": "control",
-    "condition": "control donor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "lung",
-    "cell_type": "fibroblast",
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "diagnosis: control donor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "lung",
-     "cell type": "fibroblast",
-     "diagnosis": "control donor"
-    },
-    "raw_lines": [
-     "tissue: lung",
-     "cell type: fibroblast",
-     "diagnosis: control donor"
-    ]
-   },
-   {
-    "gsm": "GSM5616138",
-    "title": "CTR_Apex_5",
-    "source_name": "apical region of lung",
-    "group": "control",
-    "condition": "control donor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "lung",
-    "cell_type": "fibroblast",
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "diagnosis: control donor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "lung",
-     "cell type": "fibroblast",
-     "diagnosis": "control donor"
-    },
-    "raw_lines": [
-     "tissue: lung",
-     "cell type: fibroblast",
-     "diagnosis: control donor"
-    ]
-   },
-   {
-    "gsm": "GSM5616139",
-    "title": "CTR_Apex_6",
-    "source_name": "apical region of lung",
-    "group": "control",
-    "condition": "control donor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "lung",
-    "cell_type": "fibroblast",
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "diagnosis: control donor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "lung",
-     "cell type": "fibroblast",
-     "diagnosis": "control donor"
-    },
-    "raw_lines": [
-     "tissue: lung",
-     "cell type: fibroblast",
-     "diagnosis: control donor"
-    ]
-   },
-   {
-    "gsm": "GSM5616140",
-    "title": "IPF_Apex_1",
-    "source_name": "apical region of lung",
-    "group": "case",
-    "condition": "idiopathic pulmonary fibrosis (IPF)",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "lung",
-    "cell_type": "fibroblast",
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "diagnosis: idiopathic pulmonary fibrosis (IPF)"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "lung",
-     "cell type": "fibroblast",
-     "diagnosis": "idiopathic pulmonary fibrosis (IPF)"
-    },
-    "raw_lines": [
-     "tissue: lung",
-     "cell type: fibroblast",
-     "diagnosis: idiopathic pulmonary fibrosis (IPF)"
-    ]
-   },
-   {
-    "gsm": "GSM5616141",
-    "title": "IPF_Apex_2",
-    "source_name": "apical region of lung",
-    "group": "case",
-    "condition": "idiopathic pulmonary fibrosis (IPF)",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "lung",
-    "cell_type": "fibroblast",
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "diagnosis: idiopathic pulmonary fibrosis (IPF)"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "lung",
-     "cell type": "fibroblast",
-     "diagnosis": "idiopathic pulmonary fibrosis (IPF)"
-    },
-    "raw_lines": [
-     "tissue: lung",
-     "cell type: fibroblast",
-     "diagnosis: idiopathic pulmonary fibrosis (IPF)"
-    ]
-   },
-   {
-    "gsm": "GSM5616142",
-    "title": "IPF_Apex_3",
-    "source_name": "apical region of lung",
-    "group": "case",
-    "condition": "idiopathic pulmonary fibrosis (IPF)",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "lung",
-    "cell_type": "fibroblast",
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "diagnosis: idiopathic pulmonary fibrosis (IPF)"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "lung",
-     "cell type": "fibroblast",
-     "diagnosis": "idiopathic pulmonary fibrosis (IPF)"
-    },
-    "raw_lines": [
-     "tissue: lung",
-     "cell type: fibroblast",
-     "diagnosis: idiopathic pulmonary fibrosis (IPF)"
-    ]
-   },
-   {
-    "gsm": "GSM5616143",
-    "title": "IPF_Apex_4",
-    "source_name": "apical region of lung",
-    "group": "case",
-    "condition": "idiopathic pulmonary fibrosis (IPF)",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "lung",
-    "cell_type": "fibroblast",
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "diagnosis: idiopathic pulmonary fibrosis (IPF)"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "lung",
-     "cell type": "fibroblast",
-     "diagnosis": "idiopathic pulmonary fibrosis (IPF)"
-    },
-    "raw_lines": [
-     "tissue: lung",
-     "cell type: fibroblast",
-     "diagnosis: idiopathic pulmonary fibrosis (IPF)"
-    ]
-   },
-   {
-    "gsm": "GSM5616144",
-    "title": "IPF_Apex_5",
-    "source_name": "apical region of lung",
-    "group": "case",
-    "condition": "idiopathic pulmonary fibrosis (IPF)",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "lung",
-    "cell_type": "fibroblast",
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "diagnosis: idiopathic pulmonary fibrosis (IPF)"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "lung",
-     "cell type": "fibroblast",
-     "diagnosis": "idiopathic pulmonary fibrosis (IPF)"
-    },
-    "raw_lines": [
-     "tissue: lung",
-     "cell type: fibroblast",
-     "diagnosis: idiopathic pulmonary fibrosis (IPF)"
-    ]
-   },
-   {
-    "gsm": "GSM5616145",
-    "title": "IPF_Apex_6",
-    "source_name": "apical region of lung",
-    "group": "case",
-    "condition": "idiopathic pulmonary fibrosis (IPF)",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "lung",
-    "cell_type": "fibroblast",
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "diagnosis: idiopathic pulmonary fibrosis (IPF)"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "lung",
-     "cell type": "fibroblast",
-     "diagnosis": "idiopathic pulmonary fibrosis (IPF)"
-    },
-    "raw_lines": [
-     "tissue: lung",
-     "cell type: fibroblast",
-     "diagnosis: idiopathic pulmonary fibrosis (IPF)"
-    ]
-   },
-   {
-    "gsm": "GSM5616146",
-    "title": "CTR_Base_1",
-    "source_name": "basal region of lung",
-    "group": "control",
-    "condition": "control donor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "lung",
-    "cell_type": "fibroblast",
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "diagnosis: control donor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "lung",
-     "cell type": "fibroblast",
-     "diagnosis": "control donor"
-    },
-    "raw_lines": [
-     "tissue: lung",
-     "cell type: fibroblast",
-     "diagnosis: control donor"
-    ]
-   },
-   {
-    "gsm": "GSM5616147",
-    "title": "CTR_Base_2",
-    "source_name": "basal region of lung",
-    "group": "control",
-    "condition": "control donor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "lung",
-    "cell_type": "fibroblast",
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "diagnosis: control donor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "lung",
-     "cell type": "fibroblast",
-     "diagnosis": "control donor"
-    },
-    "raw_lines": [
-     "tissue: lung",
-     "cell type: fibroblast",
-     "diagnosis: control donor"
-    ]
-   },
-   {
-    "gsm": "GSM5616148",
-    "title": "CTR_Base_3",
-    "source_name": "basal region of lung",
-    "group": "control",
-    "condition": "control donor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "lung",
-    "cell_type": "fibroblast",
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "diagnosis: control donor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "lung",
-     "cell type": "fibroblast",
-     "diagnosis": "control donor"
-    },
-    "raw_lines": [
-     "tissue: lung",
-     "cell type: fibroblast",
-     "diagnosis: control donor"
-    ]
-   },
-   {
-    "gsm": "GSM5616149",
-    "title": "CTR_Base_4",
-    "source_name": "basal region of lung",
-    "group": "control",
-    "condition": "control donor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "lung",
-    "cell_type": "fibroblast",
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "diagnosis: control donor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "lung",
-     "cell type": "fibroblast",
-     "diagnosis": "control donor"
-    },
-    "raw_lines": [
-     "tissue: lung",
-     "cell type: fibroblast",
-     "diagnosis: control donor"
-    ]
-   },
-   {
-    "gsm": "GSM5616150",
-    "title": "CTR_Base_5",
-    "source_name": "basal region of lung",
-    "group": "control",
-    "condition": "control donor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "lung",
-    "cell_type": "fibroblast",
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "diagnosis: control donor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "lung",
-     "cell type": "fibroblast",
-     "diagnosis": "control donor"
-    },
-    "raw_lines": [
-     "tissue: lung",
-     "cell type: fibroblast",
-     "diagnosis: control donor"
-    ]
-   },
-   {
-    "gsm": "GSM5616151",
-    "title": "CTR_Base_6",
-    "source_name": "basal region of lung",
-    "group": "control",
-    "condition": "control donor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "lung",
-    "cell_type": "fibroblast",
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "diagnosis: control donor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "lung",
-     "cell type": "fibroblast",
-     "diagnosis": "control donor"
-    },
-    "raw_lines": [
-     "tissue: lung",
-     "cell type: fibroblast",
-     "diagnosis: control donor"
-    ]
-   },
-   {
-    "gsm": "GSM5616152",
-    "title": "IPF_Base_1",
-    "source_name": "basal region of lung",
-    "group": "case",
-    "condition": "idiopathic pulmonary fibrosis (IPF)",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "lung",
-    "cell_type": "fibroblast",
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "diagnosis: idiopathic pulmonary fibrosis (IPF)"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "lung",
-     "cell type": "fibroblast",
-     "diagnosis": "idiopathic pulmonary fibrosis (IPF)"
-    },
-    "raw_lines": [
-     "tissue: lung",
-     "cell type: fibroblast",
-     "diagnosis: idiopathic pulmonary fibrosis (IPF)"
-    ]
-   },
-   {
-    "gsm": "GSM5616153",
-    "title": "IPF_Base_2",
-    "source_name": "basal region of lung",
-    "group": "case",
-    "condition": "idiopathic pulmonary fibrosis (IPF)",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "lung",
-    "cell_type": "fibroblast",
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "diagnosis: idiopathic pulmonary fibrosis (IPF)"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "lung",
-     "cell type": "fibroblast",
-     "diagnosis": "idiopathic pulmonary fibrosis (IPF)"
-    },
-    "raw_lines": [
-     "tissue: lung",
-     "cell type: fibroblast",
-     "diagnosis: idiopathic pulmonary fibrosis (IPF)"
-    ]
-   },
-   {
-    "gsm": "GSM5616154",
-    "title": "IPF_Base_3",
-    "source_name": "basal region of lung",
-    "group": "case",
-    "condition": "idiopathic pulmonary fibrosis (IPF)",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "lung",
-    "cell_type": "fibroblast",
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "diagnosis: idiopathic pulmonary fibrosis (IPF)"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "lung",
-     "cell type": "fibroblast",
-     "diagnosis": "idiopathic pulmonary fibrosis (IPF)"
-    },
-    "raw_lines": [
-     "tissue: lung",
-     "cell type: fibroblast",
-     "diagnosis: idiopathic pulmonary fibrosis (IPF)"
-    ]
-   },
-   {
-    "gsm": "GSM5616155",
-    "title": "IPF_Base_4",
-    "source_name": "basal region of lung",
-    "group": "case",
-    "condition": "idiopathic pulmonary fibrosis (IPF)",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "lung",
-    "cell_type": "fibroblast",
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "diagnosis: idiopathic pulmonary fibrosis (IPF)"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "lung",
-     "cell type": "fibroblast",
-     "diagnosis": "idiopathic pulmonary fibrosis (IPF)"
-    },
-    "raw_lines": [
-     "tissue: lung",
-     "cell type: fibroblast",
-     "diagnosis: idiopathic pulmonary fibrosis (IPF)"
-    ]
-   },
-   {
-    "gsm": "GSM5616156",
-    "title": "IPF_Base_5",
-    "source_name": "basal region of lung",
-    "group": "case",
-    "condition": "idiopathic pulmonary fibrosis (IPF)",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "lung",
-    "cell_type": "fibroblast",
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "diagnosis: idiopathic pulmonary fibrosis (IPF)"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "lung",
-     "cell type": "fibroblast",
-     "diagnosis": "idiopathic pulmonary fibrosis (IPF)"
-    },
-    "raw_lines": [
-     "tissue: lung",
-     "cell type: fibroblast",
-     "diagnosis: idiopathic pulmonary fibrosis (IPF)"
-    ]
-   },
-   {
-    "gsm": "GSM5616157",
-    "title": "IPF_Base_6",
-    "source_name": "basal region of lung",
-    "group": "case",
-    "condition": "idiopathic pulmonary fibrosis (IPF)",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "lung",
-    "cell_type": "fibroblast",
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "diagnosis: idiopathic pulmonary fibrosis (IPF)"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "lung",
-     "cell type": "fibroblast",
-     "diagnosis": "idiopathic pulmonary fibrosis (IPF)"
-    },
-    "raw_lines": [
-     "tissue: lung",
-     "cell type: fibroblast",
-     "diagnosis: idiopathic pulmonary fibrosis (IPF)"
-    ]
-   }
-  ]
- },
- "contrasts": [
-  {
-   "gse": "GSE185492",
-   "name": "ipf_vs_control",
-   "case_label": "IPF lung fibroblasts",
-   "control_label": "control lung fibroblasts",
-   "case_gsms": [
-    "GSM5616140",
-    "GSM5616141",
-    "GSM5616142",
-    "GSM5616143",
-    "GSM5616144",
-    "GSM5616145",
-    "GSM5616152",
-    "GSM5616153",
-    "GSM5616154",
-    "GSM5616155",
-    "GSM5616156",
-    "GSM5616157"
-   ],
-   "control_gsms": [
-    "GSM5616134",
-    "GSM5616135",
-    "GSM5616136",
-    "GSM5616137",
-    "GSM5616138",
-    "GSM5616139",
-    "GSM5616146",
-    "GSM5616147",
-    "GSM5616148",
-    "GSM5616149",
-    "GSM5616150",
-    "GSM5616151"
-   ],
-   "blocking": null,
-   "restricted_to": {},
-   "confidence": 1.0,
-   "status": "confirmed",
-   "rationale": "Apex/base region sub-factor in titles ignored for v1."
-  }
- ],
- "markers": []
+  },
+  "contrasts": [
+    {
+      "gse": "GSE185492",
+      "name": "ipf_vs_control",
+      "case_label": "IPF lung fibroblasts",
+      "control_label": "control lung fibroblasts",
+      "case_gsms": [
+        "GSM5616140",
+        "GSM5616141",
+        "GSM5616142",
+        "GSM5616143",
+        "GSM5616144",
+        "GSM5616145",
+        "GSM5616152",
+        "GSM5616153",
+        "GSM5616154",
+        "GSM5616155",
+        "GSM5616156",
+        "GSM5616157"
+      ],
+      "control_gsms": [
+        "GSM5616134",
+        "GSM5616135",
+        "GSM5616136",
+        "GSM5616137",
+        "GSM5616138",
+        "GSM5616139",
+        "GSM5616146",
+        "GSM5616147",
+        "GSM5616148",
+        "GSM5616149",
+        "GSM5616150",
+        "GSM5616151"
+      ],
+      "blocking": null,
+      "restricted_to": {},
+      "confidence": 1.0,
+      "status": "confirmed",
+      "rationale": "Apex/base region sub-factor in titles ignored for v1."
+    }
+  ],
+  "markers": []
 }

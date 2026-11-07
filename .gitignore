@@ -15,6 +15,8 @@ apps/web/playwright-report/
 apps/web/test-results/
 apps/web/blob-report/
 apps/web/.vite/
+.playwright-cli/
+output/playwright/
 
 # data and run outputs (GEO downloads, analysis results)
 data/*
@@ -26,5 +28,14 @@ data/*
 !.env.example
 .DS_Store
 .idea/
+tmp/
+evals/private/
 .vscode/*
 !.vscode/extensions.json
+
+# Personal learning and roadmap tools (local only)
+/docs/course/
+/docs/roadmap/
+/scripts/roadmap_server.py
+/scripts/tests/test_roadmap.py
+/mise.local.toml

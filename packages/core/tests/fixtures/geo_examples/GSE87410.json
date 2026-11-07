@@ -1,526 +1,502 @@
 {
- "samplesheet": {
-  "gse": "GSE87410",
-  "assay": "bulk",
-  "title": "50 pairs of transcriptomes from 50 patients covering 9 types of cancer",
-  "samples": [
-   {
-    "gsm": "GSM2373827",
-    "title": "HCC_G0164_T",
-    "source_name": "hepatocellular carcinoma",
-    "group": "case",
-    "condition": "cancer",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "G0164",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "phenotype: cancer"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "liver",
-     "cell type": "hepatocellular carcinoma",
-     "tumor stage": "Early",
-     "phenotype": "cancer"
-    },
-    "raw_lines": [
-     "tissue: liver",
-     "cell type: hepatocellular carcinoma",
-     "tumor stage: Early",
-     "phenotype: cancer"
+  "samplesheet": {
+    "gse": "GSE87410",
+    "assay": "bulk",
+    "title": "50 pairs of transcriptomes from 50 patients covering 9 types of cancer",
+    "samples": [
+      {
+        "gsm": "GSM2373827",
+        "title": "HCC_G0164_T",
+        "source_name": "hepatocellular carcinoma",
+        "group": "case",
+        "condition": "cancer",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "G0164",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["phenotype: cancer"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "liver",
+          "cell type": "hepatocellular carcinoma",
+          "tumor stage": "Early",
+          "phenotype": "cancer"
+        },
+        "raw_lines": [
+          "tissue: liver",
+          "cell type: hepatocellular carcinoma",
+          "tumor stage: Early",
+          "phenotype: cancer"
+        ]
+      },
+      {
+        "gsm": "GSM2373828",
+        "title": "HCC_G0164_N",
+        "source_name": "hepatocellular carcinoma",
+        "group": "control",
+        "condition": "paracancer",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "G0164",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["phenotype: paracancer"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "liver",
+          "cell type": "hepatocellular carcinoma",
+          "tumor stage": "Early",
+          "phenotype": "paracancer"
+        },
+        "raw_lines": [
+          "tissue: liver",
+          "cell type: hepatocellular carcinoma",
+          "tumor stage: Early",
+          "phenotype: paracancer"
+        ]
+      },
+      {
+        "gsm": "GSM2373829",
+        "title": "HCC_G0213_T",
+        "source_name": "hepatocellular carcinoma",
+        "group": "case",
+        "condition": "cancer",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "G0213",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["phenotype: cancer"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "liver",
+          "cell type": "hepatocellular carcinoma",
+          "tumor stage": "Late",
+          "phenotype": "cancer"
+        },
+        "raw_lines": [
+          "tissue: liver",
+          "cell type: hepatocellular carcinoma",
+          "tumor stage: Late",
+          "phenotype: cancer"
+        ]
+      },
+      {
+        "gsm": "GSM2373830",
+        "title": "HCC_G0213_N",
+        "source_name": "hepatocellular carcinoma",
+        "group": "control",
+        "condition": "paracancer",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "G0213",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["phenotype: paracancer"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "liver",
+          "cell type": "hepatocellular carcinoma",
+          "tumor stage": "Late",
+          "phenotype": "paracancer"
+        },
+        "raw_lines": [
+          "tissue: liver",
+          "cell type: hepatocellular carcinoma",
+          "tumor stage: Late",
+          "phenotype: paracancer"
+        ]
+      },
+      {
+        "gsm": "GSM2373831",
+        "title": "HCC_G0218_T",
+        "source_name": "hepatocellular carcinoma",
+        "group": "case",
+        "condition": "cancer",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "G0218",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["phenotype: cancer"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "liver",
+          "cell type": "hepatocellular carcinoma",
+          "tumor stage": "Late",
+          "phenotype": "cancer"
+        },
+        "raw_lines": [
+          "tissue: liver",
+          "cell type: hepatocellular carcinoma",
+          "tumor stage: Late",
+          "phenotype: cancer"
+        ]
+      },
+      {
+        "gsm": "GSM2373832",
+        "title": "HCC_G0218_N",
+        "source_name": "hepatocellular carcinoma",
+        "group": "control",
+        "condition": "paracancer",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "G0218",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["phenotype: paracancer"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "liver",
+          "cell type": "hepatocellular carcinoma",
+          "tumor stage": "Late",
+          "phenotype": "paracancer"
+        },
+        "raw_lines": [
+          "tissue: liver",
+          "cell type: hepatocellular carcinoma",
+          "tumor stage: Late",
+          "phenotype: paracancer"
+        ]
+      },
+      {
+        "gsm": "GSM2373833",
+        "title": "HCC_G0224_T",
+        "source_name": "hepatocellular carcinoma",
+        "group": "case",
+        "condition": "cancer",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "G0224",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["phenotype: cancer"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "liver",
+          "cell type": "hepatocellular carcinoma",
+          "tumor stage": "Late",
+          "phenotype": "cancer"
+        },
+        "raw_lines": [
+          "tissue: liver",
+          "cell type: hepatocellular carcinoma",
+          "tumor stage: Late",
+          "phenotype: cancer"
+        ]
+      },
+      {
+        "gsm": "GSM2373834",
+        "title": "HCC_G0224_N",
+        "source_name": "hepatocellular carcinoma",
+        "group": "control",
+        "condition": "paracancer",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "G0224",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["phenotype: paracancer"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "liver",
+          "cell type": "hepatocellular carcinoma",
+          "tumor stage": "Late",
+          "phenotype": "paracancer"
+        },
+        "raw_lines": [
+          "tissue: liver",
+          "cell type: hepatocellular carcinoma",
+          "tumor stage: Late",
+          "phenotype: paracancer"
+        ]
+      },
+      {
+        "gsm": "GSM2373836",
+        "title": "HCC_G0228_T",
+        "source_name": "hepatocellular carcinoma",
+        "group": "case",
+        "condition": "cancer",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "G0228",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["phenotype: cancer"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "liver",
+          "cell type": "hepatocellular carcinoma",
+          "tumor stage": "Early",
+          "phenotype": "cancer"
+        },
+        "raw_lines": [
+          "tissue: liver",
+          "cell type: hepatocellular carcinoma",
+          "tumor stage: Early",
+          "phenotype: cancer"
+        ]
+      },
+      {
+        "gsm": "GSM2373838",
+        "title": "HCC_G0228_N",
+        "source_name": "hepatocellular carcinoma",
+        "group": "control",
+        "condition": "paracancer",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "G0228",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["phenotype: paracancer"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "liver",
+          "cell type": "hepatocellular carcinoma",
+          "tumor stage": "Early",
+          "phenotype": "paracancer"
+        },
+        "raw_lines": [
+          "tissue: liver",
+          "cell type: hepatocellular carcinoma",
+          "tumor stage: Early",
+          "phenotype: paracancer"
+        ]
+      },
+      {
+        "gsm": "GSM2373839",
+        "title": "HCC_G0267_T",
+        "source_name": "hepatocellular carcinoma",
+        "group": "case",
+        "condition": "cancer",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "G0267",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["phenotype: cancer"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "liver",
+          "cell type": "hepatocellular carcinoma",
+          "tumor stage": "Early",
+          "phenotype": "cancer"
+        },
+        "raw_lines": [
+          "tissue: liver",
+          "cell type: hepatocellular carcinoma",
+          "tumor stage: Early",
+          "phenotype: cancer"
+        ]
+      },
+      {
+        "gsm": "GSM2373840",
+        "title": "HCC_G0267_N",
+        "source_name": "hepatocellular carcinoma",
+        "group": "control",
+        "condition": "paracancer",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "G0267",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["phenotype: paracancer"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "liver",
+          "cell type": "hepatocellular carcinoma",
+          "tumor stage": "Early",
+          "phenotype": "paracancer"
+        },
+        "raw_lines": [
+          "tissue: liver",
+          "cell type: hepatocellular carcinoma",
+          "tumor stage: Early",
+          "phenotype: paracancer"
+        ]
+      }
     ]
-   },
-   {
-    "gsm": "GSM2373828",
-    "title": "HCC_G0164_N",
-    "source_name": "hepatocellular carcinoma",
-    "group": "control",
-    "condition": "paracancer",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "G0164",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "phenotype: paracancer"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "liver",
-     "cell type": "hepatocellular carcinoma",
-     "tumor stage": "Early",
-     "phenotype": "paracancer"
+  },
+  "contrasts": [
+    {
+      "gse": "GSE87410",
+      "name": "tumor_vs_adjacent_normal",
+      "case_label": "HCC tumor",
+      "control_label": "adjacent non-tumor liver",
+      "case_gsms": [
+        "GSM2373827",
+        "GSM2373829",
+        "GSM2373831",
+        "GSM2373833",
+        "GSM2373836",
+        "GSM2373839"
+      ],
+      "control_gsms": [
+        "GSM2373828",
+        "GSM2373830",
+        "GSM2373832",
+        "GSM2373834",
+        "GSM2373838",
+        "GSM2373840"
+      ],
+      "blocking": "donor",
+      "restricted_to": {
+        "tissue": "liver"
+      },
+      "confidence": 1.0,
+      "status": "confirmed",
+      "rationale": "Pan-cancer series: only the 6 liver pairs answer this question, and NCBI quantified 8 of those 12 GSMs (3 complete pairs)."
+    }
+  ],
+  "markers": [
+    {
+      "symbol": "GPC3",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue: liver",
-     "cell type: hepatocellular carcinoma",
-     "tumor stage: Early",
-     "phenotype: paracancer"
-    ]
-   },
-   {
-    "gsm": "GSM2373829",
-    "title": "HCC_G0213_T",
-    "source_name": "hepatocellular carcinoma",
-    "group": "case",
-    "condition": "cancer",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "G0213",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "phenotype: cancer"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "liver",
-     "cell type": "hepatocellular carcinoma",
-     "tumor stage": "Late",
-     "phenotype": "cancer"
+    {
+      "symbol": "AFP",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue: liver",
-     "cell type: hepatocellular carcinoma",
-     "tumor stage: Late",
-     "phenotype: cancer"
-    ]
-   },
-   {
-    "gsm": "GSM2373830",
-    "title": "HCC_G0213_N",
-    "source_name": "hepatocellular carcinoma",
-    "group": "control",
-    "condition": "paracancer",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "G0213",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "phenotype: paracancer"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "liver",
-     "cell type": "hepatocellular carcinoma",
-     "tumor stage": "Late",
-     "phenotype": "paracancer"
+    {
+      "symbol": "SPP1",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue: liver",
-     "cell type: hepatocellular carcinoma",
-     "tumor stage: Late",
-     "phenotype: paracancer"
-    ]
-   },
-   {
-    "gsm": "GSM2373831",
-    "title": "HCC_G0218_T",
-    "source_name": "hepatocellular carcinoma",
-    "group": "case",
-    "condition": "cancer",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "G0218",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "phenotype: cancer"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "liver",
-     "cell type": "hepatocellular carcinoma",
-     "tumor stage": "Late",
-     "phenotype": "cancer"
+    {
+      "symbol": "MDK",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue: liver",
-     "cell type: hepatocellular carcinoma",
-     "tumor stage: Late",
-     "phenotype: cancer"
-    ]
-   },
-   {
-    "gsm": "GSM2373832",
-    "title": "HCC_G0218_N",
-    "source_name": "hepatocellular carcinoma",
-    "group": "control",
-    "condition": "paracancer",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "G0218",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "phenotype: paracancer"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "liver",
-     "cell type": "hepatocellular carcinoma",
-     "tumor stage": "Late",
-     "phenotype": "paracancer"
+    {
+      "symbol": "PEG10",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue: liver",
-     "cell type: hepatocellular carcinoma",
-     "tumor stage: Late",
-     "phenotype: paracancer"
-    ]
-   },
-   {
-    "gsm": "GSM2373833",
-    "title": "HCC_G0224_T",
-    "source_name": "hepatocellular carcinoma",
-    "group": "case",
-    "condition": "cancer",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "G0224",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "phenotype: cancer"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "liver",
-     "cell type": "hepatocellular carcinoma",
-     "tumor stage": "Late",
-     "phenotype": "cancer"
+    {
+      "symbol": "CLEC4G",
+      "direction": "down"
     },
-    "raw_lines": [
-     "tissue: liver",
-     "cell type: hepatocellular carcinoma",
-     "tumor stage: Late",
-     "phenotype: cancer"
-    ]
-   },
-   {
-    "gsm": "GSM2373834",
-    "title": "HCC_G0224_N",
-    "source_name": "hepatocellular carcinoma",
-    "group": "control",
-    "condition": "paracancer",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "G0224",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "phenotype: paracancer"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "liver",
-     "cell type": "hepatocellular carcinoma",
-     "tumor stage": "Late",
-     "phenotype": "paracancer"
+    {
+      "symbol": "CLEC1B",
+      "direction": "down"
     },
-    "raw_lines": [
-     "tissue: liver",
-     "cell type: hepatocellular carcinoma",
-     "tumor stage: Late",
-     "phenotype: paracancer"
-    ]
-   },
-   {
-    "gsm": "GSM2373836",
-    "title": "HCC_G0228_T",
-    "source_name": "hepatocellular carcinoma",
-    "group": "case",
-    "condition": "cancer",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "G0228",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "phenotype: cancer"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "liver",
-     "cell type": "hepatocellular carcinoma",
-     "tumor stage": "Early",
-     "phenotype": "cancer"
+    {
+      "symbol": "FCN3",
+      "direction": "down"
     },
-    "raw_lines": [
-     "tissue: liver",
-     "cell type: hepatocellular carcinoma",
-     "tumor stage: Early",
-     "phenotype: cancer"
-    ]
-   },
-   {
-    "gsm": "GSM2373838",
-    "title": "HCC_G0228_N",
-    "source_name": "hepatocellular carcinoma",
-    "group": "control",
-    "condition": "paracancer",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "G0228",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "phenotype: paracancer"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "liver",
-     "cell type": "hepatocellular carcinoma",
-     "tumor stage": "Early",
-     "phenotype": "paracancer"
+    {
+      "symbol": "CRHBP",
+      "direction": "down"
     },
-    "raw_lines": [
-     "tissue: liver",
-     "cell type: hepatocellular carcinoma",
-     "tumor stage: Early",
-     "phenotype: paracancer"
-    ]
-   },
-   {
-    "gsm": "GSM2373839",
-    "title": "HCC_G0267_T",
-    "source_name": "hepatocellular carcinoma",
-    "group": "case",
-    "condition": "cancer",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "G0267",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "phenotype: cancer"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "liver",
-     "cell type": "hepatocellular carcinoma",
-     "tumor stage": "Early",
-     "phenotype": "cancer"
-    },
-    "raw_lines": [
-     "tissue: liver",
-     "cell type: hepatocellular carcinoma",
-     "tumor stage: Early",
-     "phenotype: cancer"
-    ]
-   },
-   {
-    "gsm": "GSM2373840",
-    "title": "HCC_G0267_N",
-    "source_name": "hepatocellular carcinoma",
-    "group": "control",
-    "condition": "paracancer",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "G0267",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "phenotype: paracancer"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "liver",
-     "cell type": "hepatocellular carcinoma",
-     "tumor stage": "Early",
-     "phenotype": "paracancer"
-    },
-    "raw_lines": [
-     "tissue: liver",
-     "cell type: hepatocellular carcinoma",
-     "tumor stage: Early",
-     "phenotype: paracancer"
-    ]
-   }
+    {
+      "symbol": "CYP1A2",
+      "direction": "down"
+    }
   ]
- },
- "contrasts": [
-  {
-   "gse": "GSE87410",
-   "name": "tumor_vs_adjacent_normal",
-   "case_label": "HCC tumor",
-   "control_label": "adjacent non-tumor liver",
-   "case_gsms": [
-    "GSM2373827",
-    "GSM2373829",
-    "GSM2373831",
-    "GSM2373833",
-    "GSM2373836",
-    "GSM2373839"
-   ],
-   "control_gsms": [
-    "GSM2373828",
-    "GSM2373830",
-    "GSM2373832",
-    "GSM2373834",
-    "GSM2373838",
-    "GSM2373840"
-   ],
-   "blocking": "donor",
-   "restricted_to": {
-    "tissue": "liver"
-   },
-   "confidence": 1.0,
-   "status": "confirmed",
-   "rationale": "Pan-cancer series: only the 6 liver pairs answer this question, and NCBI quantified 8 of those 12 GSMs (3 complete pairs)."
-  }
- ],
- "markers": [
-  {
-   "symbol": "GPC3",
-   "direction": "up"
-  },
-  {
-   "symbol": "AFP",
-   "direction": "up"
-  },
-  {
-   "symbol": "SPP1",
-   "direction": "up"
-  },
-  {
-   "symbol": "MDK",
-   "direction": "up"
-  },
-  {
-   "symbol": "PEG10",
-   "direction": "up"
-  },
-  {
-   "symbol": "CLEC4G",
-   "direction": "down"
-  },
-  {
-   "symbol": "CLEC1B",
-   "direction": "down"
-  },
-  {
-   "symbol": "FCN3",
-   "direction": "down"
-  },
-  {
-   "symbol": "CRHBP",
-   "direction": "down"
-  },
-  {
-   "symbol": "CYP1A2",
-   "direction": "down"
-  }
- ]
 }

@@ -5,6 +5,7 @@ description = "Find, triage, harmonize and analyze public GEO RNA-seq datasets"
 requires-python = ">=3.13,<3.14"
 dependencies = [
   "pydantic>=2.11",
+  "python-dotenv>=1",
   "httpx>=0.28",
   "pandas>=2.2",
   "numpy>=2.1",

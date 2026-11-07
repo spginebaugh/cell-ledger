@@ -1,1156 +1,1020 @@
 {
- "samplesheet": {
-  "gse": "GSE169289",
-  "assay": "bulk",
-  "title": "Transcriptome sequencing data of tumors and paired adjacent tissues from HCC patients",
-  "samples": [
-   {
-    "gsm": "GSM5194546",
-    "title": "RNA_P1N",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent tissue",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P1",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent tissue"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "Adjacent tissue"
-    },
-    "raw_lines": [
-     "tissue: Adjacent tissue"
+  "samplesheet": {
+    "gse": "GSE169289",
+    "assay": "bulk",
+    "title": "Transcriptome sequencing data of tumors and paired adjacent tissues from HCC patients",
+    "samples": [
+      {
+        "gsm": "GSM5194546",
+        "title": "RNA_P1N",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent tissue",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P1",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent tissue"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "Adjacent tissue"
+        },
+        "raw_lines": ["tissue: Adjacent tissue"]
+      },
+      {
+        "gsm": "GSM5194547",
+        "title": "RNA_P1T",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P1",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "tumor"
+        },
+        "raw_lines": ["tissue: tumor"]
+      },
+      {
+        "gsm": "GSM5194548",
+        "title": "RNA_P2N",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent tissue",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P2",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent tissue"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "Adjacent tissue"
+        },
+        "raw_lines": ["tissue: Adjacent tissue"]
+      },
+      {
+        "gsm": "GSM5194549",
+        "title": "RNA_P2T",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P2",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "tumor"
+        },
+        "raw_lines": ["tissue: tumor"]
+      },
+      {
+        "gsm": "GSM5194550",
+        "title": "RNA_P3N",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent tissue",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P3",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent tissue"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "Adjacent tissue"
+        },
+        "raw_lines": ["tissue: Adjacent tissue"]
+      },
+      {
+        "gsm": "GSM5194551",
+        "title": "RNA_P3T",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P3",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "tumor"
+        },
+        "raw_lines": ["tissue: tumor"]
+      },
+      {
+        "gsm": "GSM5194552",
+        "title": "RNA_P4N",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent tissue",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P4",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent tissue"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "Adjacent tissue"
+        },
+        "raw_lines": ["tissue: Adjacent tissue"]
+      },
+      {
+        "gsm": "GSM5194553",
+        "title": "RNA_P4T",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P4",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "tumor"
+        },
+        "raw_lines": ["tissue: tumor"]
+      },
+      {
+        "gsm": "GSM5194554",
+        "title": "RNA_P5N",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent tissue",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P5",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent tissue"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "Adjacent tissue"
+        },
+        "raw_lines": ["tissue: Adjacent tissue"]
+      },
+      {
+        "gsm": "GSM5194555",
+        "title": "RNA_P5T",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P5",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "tumor"
+        },
+        "raw_lines": ["tissue: tumor"]
+      },
+      {
+        "gsm": "GSM5194556",
+        "title": "RNA_P6N",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent tissue",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P6",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent tissue"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "Adjacent tissue"
+        },
+        "raw_lines": ["tissue: Adjacent tissue"]
+      },
+      {
+        "gsm": "GSM5194557",
+        "title": "RNA_P6T",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P6",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "tumor"
+        },
+        "raw_lines": ["tissue: tumor"]
+      },
+      {
+        "gsm": "GSM5194558",
+        "title": "RNA_P7N",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent tissue",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P7",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent tissue"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "Adjacent tissue"
+        },
+        "raw_lines": ["tissue: Adjacent tissue"]
+      },
+      {
+        "gsm": "GSM5194559",
+        "title": "RNA_P7T",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P7",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "tumor"
+        },
+        "raw_lines": ["tissue: tumor"]
+      },
+      {
+        "gsm": "GSM5194560",
+        "title": "RNA_P8N",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent tissue",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P8",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent tissue"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "Adjacent tissue"
+        },
+        "raw_lines": ["tissue: Adjacent tissue"]
+      },
+      {
+        "gsm": "GSM5194561",
+        "title": "RNA_P8T",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P8",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "tumor"
+        },
+        "raw_lines": ["tissue: tumor"]
+      },
+      {
+        "gsm": "GSM5194562",
+        "title": "RNA_P9N",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent tissue",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P9",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent tissue"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "Adjacent tissue"
+        },
+        "raw_lines": ["tissue: Adjacent tissue"]
+      },
+      {
+        "gsm": "GSM5194563",
+        "title": "RNA_P9T",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P9",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "tumor"
+        },
+        "raw_lines": ["tissue: tumor"]
+      },
+      {
+        "gsm": "GSM5194564",
+        "title": "RNA_P10PN",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent tissue",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P10P",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent tissue"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "Adjacent tissue"
+        },
+        "raw_lines": ["tissue: Adjacent tissue"]
+      },
+      {
+        "gsm": "GSM5194565",
+        "title": "RNA_P10PT",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P10P",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "tumor"
+        },
+        "raw_lines": ["tissue: tumor"]
+      },
+      {
+        "gsm": "GSM5194566",
+        "title": "RNA_P11PN",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent tissue",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P11P",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent tissue"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "Adjacent tissue"
+        },
+        "raw_lines": ["tissue: Adjacent tissue"]
+      },
+      {
+        "gsm": "GSM5194567",
+        "title": "RNA_P11PT",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P11P",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "tumor"
+        },
+        "raw_lines": ["tissue: tumor"]
+      },
+      {
+        "gsm": "GSM5194568",
+        "title": "RNA_P12PN",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent tissue",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P12P",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent tissue"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "Adjacent tissue"
+        },
+        "raw_lines": ["tissue: Adjacent tissue"]
+      },
+      {
+        "gsm": "GSM5194569",
+        "title": "RNA_P12PT",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P12P",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "tumor"
+        },
+        "raw_lines": ["tissue: tumor"]
+      },
+      {
+        "gsm": "GSM5194570",
+        "title": "RNA_P13PN",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent tissue",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P13P",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent tissue"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "Adjacent tissue"
+        },
+        "raw_lines": ["tissue: Adjacent tissue"]
+      },
+      {
+        "gsm": "GSM5194571",
+        "title": "RNA_P13PT",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P13P",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "tumor"
+        },
+        "raw_lines": ["tissue: tumor"]
+      },
+      {
+        "gsm": "GSM5194572",
+        "title": "RNA_P10RN",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent tissue",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P10R",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent tissue"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "Adjacent tissue"
+        },
+        "raw_lines": ["tissue: Adjacent tissue"]
+      },
+      {
+        "gsm": "GSM5194573",
+        "title": "RNA_P10RT",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P10R",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "tumor"
+        },
+        "raw_lines": ["tissue: tumor"]
+      },
+      {
+        "gsm": "GSM5194574",
+        "title": "RNA_P11RN",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent tissue",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P11R",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent tissue"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "Adjacent tissue"
+        },
+        "raw_lines": ["tissue: Adjacent tissue"]
+      },
+      {
+        "gsm": "GSM5194575",
+        "title": "RNA_P11RT",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P11R",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "tumor"
+        },
+        "raw_lines": ["tissue: tumor"]
+      },
+      {
+        "gsm": "GSM5194576",
+        "title": "RNA_P12RN",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent tissue",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P12R",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent tissue"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "Adjacent tissue"
+        },
+        "raw_lines": ["tissue: Adjacent tissue"]
+      },
+      {
+        "gsm": "GSM5194577",
+        "title": "RNA_P12RT",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P12R",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "tumor"
+        },
+        "raw_lines": ["tissue: tumor"]
+      },
+      {
+        "gsm": "GSM5194578",
+        "title": "RNA_P13RN",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent tissue",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P13R",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent tissue"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "Adjacent tissue"
+        },
+        "raw_lines": ["tissue: Adjacent tissue"]
+      },
+      {
+        "gsm": "GSM5194579",
+        "title": "RNA_P13RT",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P13R",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "tumor"
+        },
+        "raw_lines": ["tissue: tumor"]
+      }
     ]
-   },
-   {
-    "gsm": "GSM5194547",
-    "title": "RNA_P1T",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P1",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "tumor"
+  },
+  "contrasts": [
+    {
+      "gse": "GSE169289",
+      "name": "tumor_vs_adjacent_normal",
+      "case_label": "HCC tumor",
+      "control_label": "adjacent non-tumor liver",
+      "case_gsms": [
+        "GSM5194547",
+        "GSM5194549",
+        "GSM5194551",
+        "GSM5194553",
+        "GSM5194555",
+        "GSM5194557",
+        "GSM5194559",
+        "GSM5194561",
+        "GSM5194563",
+        "GSM5194565",
+        "GSM5194567",
+        "GSM5194569",
+        "GSM5194571",
+        "GSM5194573",
+        "GSM5194575",
+        "GSM5194577",
+        "GSM5194579"
+      ],
+      "control_gsms": [
+        "GSM5194546",
+        "GSM5194548",
+        "GSM5194550",
+        "GSM5194552",
+        "GSM5194554",
+        "GSM5194556",
+        "GSM5194558",
+        "GSM5194560",
+        "GSM5194562",
+        "GSM5194564",
+        "GSM5194566",
+        "GSM5194568",
+        "GSM5194570",
+        "GSM5194572",
+        "GSM5194574",
+        "GSM5194576",
+        "GSM5194578"
+      ],
+      "blocking": "donor",
+      "restricted_to": {},
+      "confidence": 1.0,
+      "status": "confirmed",
+      "rationale": "17 pairs: RNA_P1N / RNA_P1T for patients 1-9; patients 10-13 contribute a primary (P10PN / P10PT) and a recurrent (P10RN / P10RT) pair, blocked separately."
+    }
+  ],
+  "markers": [
+    {
+      "symbol": "GPC3",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue: tumor"
-    ]
-   },
-   {
-    "gsm": "GSM5194548",
-    "title": "RNA_P2N",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent tissue",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P2",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent tissue"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "Adjacent tissue"
+    {
+      "symbol": "AFP",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue: Adjacent tissue"
-    ]
-   },
-   {
-    "gsm": "GSM5194549",
-    "title": "RNA_P2T",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P2",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "tumor"
+    {
+      "symbol": "SPP1",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue: tumor"
-    ]
-   },
-   {
-    "gsm": "GSM5194550",
-    "title": "RNA_P3N",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent tissue",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P3",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent tissue"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "Adjacent tissue"
+    {
+      "symbol": "MDK",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue: Adjacent tissue"
-    ]
-   },
-   {
-    "gsm": "GSM5194551",
-    "title": "RNA_P3T",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P3",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "tumor"
+    {
+      "symbol": "PEG10",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue: tumor"
-    ]
-   },
-   {
-    "gsm": "GSM5194552",
-    "title": "RNA_P4N",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent tissue",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P4",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent tissue"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "Adjacent tissue"
+    {
+      "symbol": "CLEC4G",
+      "direction": "down"
     },
-    "raw_lines": [
-     "tissue: Adjacent tissue"
-    ]
-   },
-   {
-    "gsm": "GSM5194553",
-    "title": "RNA_P4T",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P4",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "tumor"
+    {
+      "symbol": "CLEC1B",
+      "direction": "down"
     },
-    "raw_lines": [
-     "tissue: tumor"
-    ]
-   },
-   {
-    "gsm": "GSM5194554",
-    "title": "RNA_P5N",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent tissue",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P5",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent tissue"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "Adjacent tissue"
+    {
+      "symbol": "FCN3",
+      "direction": "down"
     },
-    "raw_lines": [
-     "tissue: Adjacent tissue"
-    ]
-   },
-   {
-    "gsm": "GSM5194555",
-    "title": "RNA_P5T",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P5",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "tumor"
+    {
+      "symbol": "CRHBP",
+      "direction": "down"
     },
-    "raw_lines": [
-     "tissue: tumor"
-    ]
-   },
-   {
-    "gsm": "GSM5194556",
-    "title": "RNA_P6N",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent tissue",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P6",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent tissue"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "Adjacent tissue"
-    },
-    "raw_lines": [
-     "tissue: Adjacent tissue"
-    ]
-   },
-   {
-    "gsm": "GSM5194557",
-    "title": "RNA_P6T",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P6",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "tumor"
-    },
-    "raw_lines": [
-     "tissue: tumor"
-    ]
-   },
-   {
-    "gsm": "GSM5194558",
-    "title": "RNA_P7N",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent tissue",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P7",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent tissue"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "Adjacent tissue"
-    },
-    "raw_lines": [
-     "tissue: Adjacent tissue"
-    ]
-   },
-   {
-    "gsm": "GSM5194559",
-    "title": "RNA_P7T",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P7",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "tumor"
-    },
-    "raw_lines": [
-     "tissue: tumor"
-    ]
-   },
-   {
-    "gsm": "GSM5194560",
-    "title": "RNA_P8N",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent tissue",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P8",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent tissue"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "Adjacent tissue"
-    },
-    "raw_lines": [
-     "tissue: Adjacent tissue"
-    ]
-   },
-   {
-    "gsm": "GSM5194561",
-    "title": "RNA_P8T",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P8",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "tumor"
-    },
-    "raw_lines": [
-     "tissue: tumor"
-    ]
-   },
-   {
-    "gsm": "GSM5194562",
-    "title": "RNA_P9N",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent tissue",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P9",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent tissue"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "Adjacent tissue"
-    },
-    "raw_lines": [
-     "tissue: Adjacent tissue"
-    ]
-   },
-   {
-    "gsm": "GSM5194563",
-    "title": "RNA_P9T",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P9",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "tumor"
-    },
-    "raw_lines": [
-     "tissue: tumor"
-    ]
-   },
-   {
-    "gsm": "GSM5194564",
-    "title": "RNA_P10PN",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent tissue",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P10P",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent tissue"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "Adjacent tissue"
-    },
-    "raw_lines": [
-     "tissue: Adjacent tissue"
-    ]
-   },
-   {
-    "gsm": "GSM5194565",
-    "title": "RNA_P10PT",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P10P",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "tumor"
-    },
-    "raw_lines": [
-     "tissue: tumor"
-    ]
-   },
-   {
-    "gsm": "GSM5194566",
-    "title": "RNA_P11PN",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent tissue",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P11P",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent tissue"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "Adjacent tissue"
-    },
-    "raw_lines": [
-     "tissue: Adjacent tissue"
-    ]
-   },
-   {
-    "gsm": "GSM5194567",
-    "title": "RNA_P11PT",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P11P",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "tumor"
-    },
-    "raw_lines": [
-     "tissue: tumor"
-    ]
-   },
-   {
-    "gsm": "GSM5194568",
-    "title": "RNA_P12PN",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent tissue",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P12P",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent tissue"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "Adjacent tissue"
-    },
-    "raw_lines": [
-     "tissue: Adjacent tissue"
-    ]
-   },
-   {
-    "gsm": "GSM5194569",
-    "title": "RNA_P12PT",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P12P",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "tumor"
-    },
-    "raw_lines": [
-     "tissue: tumor"
-    ]
-   },
-   {
-    "gsm": "GSM5194570",
-    "title": "RNA_P13PN",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent tissue",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P13P",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent tissue"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "Adjacent tissue"
-    },
-    "raw_lines": [
-     "tissue: Adjacent tissue"
-    ]
-   },
-   {
-    "gsm": "GSM5194571",
-    "title": "RNA_P13PT",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P13P",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "tumor"
-    },
-    "raw_lines": [
-     "tissue: tumor"
-    ]
-   },
-   {
-    "gsm": "GSM5194572",
-    "title": "RNA_P10RN",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent tissue",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P10R",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent tissue"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "Adjacent tissue"
-    },
-    "raw_lines": [
-     "tissue: Adjacent tissue"
-    ]
-   },
-   {
-    "gsm": "GSM5194573",
-    "title": "RNA_P10RT",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P10R",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "tumor"
-    },
-    "raw_lines": [
-     "tissue: tumor"
-    ]
-   },
-   {
-    "gsm": "GSM5194574",
-    "title": "RNA_P11RN",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent tissue",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P11R",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent tissue"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "Adjacent tissue"
-    },
-    "raw_lines": [
-     "tissue: Adjacent tissue"
-    ]
-   },
-   {
-    "gsm": "GSM5194575",
-    "title": "RNA_P11RT",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P11R",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "tumor"
-    },
-    "raw_lines": [
-     "tissue: tumor"
-    ]
-   },
-   {
-    "gsm": "GSM5194576",
-    "title": "RNA_P12RN",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent tissue",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P12R",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent tissue"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "Adjacent tissue"
-    },
-    "raw_lines": [
-     "tissue: Adjacent tissue"
-    ]
-   },
-   {
-    "gsm": "GSM5194577",
-    "title": "RNA_P12RT",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P12R",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "tumor"
-    },
-    "raw_lines": [
-     "tissue: tumor"
-    ]
-   },
-   {
-    "gsm": "GSM5194578",
-    "title": "RNA_P13RN",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent tissue",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P13R",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent tissue"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "Adjacent tissue"
-    },
-    "raw_lines": [
-     "tissue: Adjacent tissue"
-    ]
-   },
-   {
-    "gsm": "GSM5194579",
-    "title": "RNA_P13RT",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P13R",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "tumor"
-    },
-    "raw_lines": [
-     "tissue: tumor"
-    ]
-   }
+    {
+      "symbol": "CYP1A2",
+      "direction": "down"
+    }
   ]
- },
- "contrasts": [
-  {
-   "gse": "GSE169289",
-   "name": "tumor_vs_adjacent_normal",
-   "case_label": "HCC tumor",
-   "control_label": "adjacent non-tumor liver",
-   "case_gsms": [
-    "GSM5194547",
-    "GSM5194549",
-    "GSM5194551",
-    "GSM5194553",
-    "GSM5194555",
-    "GSM5194557",
-    "GSM5194559",
-    "GSM5194561",
-    "GSM5194563",
-    "GSM5194565",
-    "GSM5194567",
-    "GSM5194569",
-    "GSM5194571",
-    "GSM5194573",
-    "GSM5194575",
-    "GSM5194577",
-    "GSM5194579"
-   ],
-   "control_gsms": [
-    "GSM5194546",
-    "GSM5194548",
-    "GSM5194550",
-    "GSM5194552",
-    "GSM5194554",
-    "GSM5194556",
-    "GSM5194558",
-    "GSM5194560",
-    "GSM5194562",
-    "GSM5194564",
-    "GSM5194566",
-    "GSM5194568",
-    "GSM5194570",
-    "GSM5194572",
-    "GSM5194574",
-    "GSM5194576",
-    "GSM5194578"
-   ],
-   "blocking": "donor",
-   "restricted_to": {},
-   "confidence": 1.0,
-   "status": "confirmed",
-   "rationale": "17 pairs: RNA_P1N / RNA_P1T for patients 1-9; patients 10-13 contribute a primary (P10PN / P10PT) and a recurrent (P10RN / P10RT) pair, blocked separately."
-  }
- ],
- "markers": [
-  {
-   "symbol": "GPC3",
-   "direction": "up"
-  },
-  {
-   "symbol": "AFP",
-   "direction": "up"
-  },
-  {
-   "symbol": "SPP1",
-   "direction": "up"
-  },
-  {
-   "symbol": "MDK",
-   "direction": "up"
-  },
-  {
-   "symbol": "PEG10",
-   "direction": "up"
-  },
-  {
-   "symbol": "CLEC4G",
-   "direction": "down"
-  },
-  {
-   "symbol": "CLEC1B",
-   "direction": "down"
-  },
-  {
-   "symbol": "FCN3",
-   "direction": "down"
-  },
-  {
-   "symbol": "CRHBP",
-   "direction": "down"
-  },
-  {
-   "symbol": "CYP1A2",
-   "direction": "down"
-  }
- ]
 }

@@ -1,0 +1,70 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "model": {
+      "minLength": 1,
+      "title": "Model",
+      "type": "string"
+    },
+    "source_access": {
+      "minLength": 1,
+      "title": "Source Access",
+      "type": "string"
+    },
+    "execution_access": {
+      "minLength": 1,
+      "title": "Execution Access",
+      "type": "string"
+    },
+    "time_budget_seconds": {
+      "exclusiveMinimum": 0,
+      "title": "Time Budget Seconds",
+      "type": "integer"
+    },
+    "token_budget": {
+      "exclusiveMinimum": 0,
+      "title": "Token Budget",
+      "type": "integer"
+    },
+    "protocol": {
+      "default": "frozen_pool",
+      "enum": [
+        "frozen_pool",
+        "live_search"
+      ],
+      "title": "Protocol",
+      "type": "string"
+    },
+    "snapshot_sha256": {
+      "title": "Snapshot Sha256",
+      "type": "string"
+    },
+    "prompt_sha256": {
+      "title": "Prompt Sha256",
+      "type": "string"
+    },
+    "attempt": {
+      "default": 1,
+      "minimum": 1,
+      "title": "Attempt",
+      "type": "integer"
+    },
+    "code_revision": {
+      "minLength": 1,
+      "title": "Code Revision",
+      "type": "string"
+    }
+  },
+  "required": [
+    "model",
+    "source_access",
+    "execution_access",
+    "time_budget_seconds",
+    "token_budget",
+    "snapshot_sha256",
+    "prompt_sha256",
+    "code_revision"
+  ],
+  "title": "Conditions",
+  "type": "object"
+}

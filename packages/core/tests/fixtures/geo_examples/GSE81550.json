@@ -1,272 +1,234 @@
 {
- "samplesheet": {
-  "gse": "GSE81550",
-  "assay": "bulk",
-  "title": "RNA-Seq expression profiling of hepatocellular carcinoma and adjacent non-tumor liver tissues",
-  "samples": [
-   {
-    "gsm": "GSM2157097",
-    "title": "HCC tissue_p1  [0FU_t]",
-    "source_name": "HCC tissue",
-    "group": "case",
-    "condition": "hepatocellular carcinoma (HCC)",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "p1",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: hepatocellular carcinoma (HCC)"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "hepatocellular carcinoma (HCC)",
-     "tumor stage": "stage II"
-    },
-    "raw_lines": [
-     "tissue type: hepatocellular carcinoma (HCC)",
-     "tumor stage: stage II"
+  "samplesheet": {
+    "gse": "GSE81550",
+    "assay": "bulk",
+    "title": "RNA-Seq expression profiling of hepatocellular carcinoma and adjacent non-tumor liver tissues",
+    "samples": [
+      {
+        "gsm": "GSM2157097",
+        "title": "HCC tissue_p1  [0FU_t]",
+        "source_name": "HCC tissue",
+        "group": "case",
+        "condition": "hepatocellular carcinoma (HCC)",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "p1",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: hepatocellular carcinoma (HCC)"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "hepatocellular carcinoma (HCC)",
+          "tumor stage": "stage II"
+        },
+        "raw_lines": ["tissue type: hepatocellular carcinoma (HCC)", "tumor stage: stage II"]
+      },
+      {
+        "gsm": "GSM2157098",
+        "title": "Adjacent liver tissue_p1 [0FU_nt]",
+        "source_name": "Adjacent liver tissue",
+        "group": "control",
+        "condition": "adjacent non-tumor tissue",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "p1",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: adjacent non-tumor tissue"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "adjacent non-tumor tissue",
+          "tumor stage": "stage II"
+        },
+        "raw_lines": ["tissue type: adjacent non-tumor tissue", "tumor stage: stage II"]
+      },
+      {
+        "gsm": "GSM2157099",
+        "title": "HCC tissue_p2 [0MB_t]",
+        "source_name": "HCC tissue",
+        "group": "case",
+        "condition": "hepatocellular carcinoma (HCC)",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "p2",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: hepatocellular carcinoma (HCC)"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "hepatocellular carcinoma (HCC)",
+          "tumor stage": "stage II"
+        },
+        "raw_lines": ["tissue type: hepatocellular carcinoma (HCC)", "tumor stage: stage II"]
+      },
+      {
+        "gsm": "GSM2157100",
+        "title": "Adjacent liver tissue_p2 [0MB_nt]",
+        "source_name": "Adjacent liver tissue",
+        "group": "control",
+        "condition": "adjacent non-tumor tissue",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "p2",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: adjacent non-tumor tissue"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "adjacent non-tumor tissue",
+          "tumor stage": "stage II"
+        },
+        "raw_lines": ["tissue type: adjacent non-tumor tissue", "tumor stage: stage II"]
+      },
+      {
+        "gsm": "GSM2157101",
+        "title": "HCC tissue_p3 [00Q_t]",
+        "source_name": "HCC tissue",
+        "group": "case",
+        "condition": "hepatocellular carcinoma (HCC)",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "p3",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: hepatocellular carcinoma (HCC)"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "hepatocellular carcinoma (HCC)",
+          "tumor stage": "stage I"
+        },
+        "raw_lines": ["tissue type: hepatocellular carcinoma (HCC)", "tumor stage: stage I"]
+      },
+      {
+        "gsm": "GSM2157102",
+        "title": "Adjacent liver tissue_p3 [00Q_nt]",
+        "source_name": "Adjacent liver tissue",
+        "group": "control",
+        "condition": "adjacent non-tumor tissue",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "p3",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: adjacent non-tumor tissue"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "adjacent non-tumor tissue",
+          "tumor stage": "stage I"
+        },
+        "raw_lines": ["tissue type: adjacent non-tumor tissue", "tumor stage: stage I"]
+      }
     ]
-   },
-   {
-    "gsm": "GSM2157098",
-    "title": "Adjacent liver tissue_p1 [0FU_nt]",
-    "source_name": "Adjacent liver tissue",
-    "group": "control",
-    "condition": "adjacent non-tumor tissue",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "p1",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: adjacent non-tumor tissue"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "adjacent non-tumor tissue",
-     "tumor stage": "stage II"
+  },
+  "contrasts": [
+    {
+      "gse": "GSE81550",
+      "name": "tumor_vs_adjacent_normal",
+      "case_label": "HCC tumor",
+      "control_label": "adjacent non-tumor liver",
+      "case_gsms": ["GSM2157097", "GSM2157099", "GSM2157101"],
+      "control_gsms": ["GSM2157098", "GSM2157100", "GSM2157102"],
+      "blocking": "donor",
+      "restricted_to": {},
+      "confidence": 1.0,
+      "status": "confirmed",
+      "rationale": "3 pairs: the minimum group size."
+    }
+  ],
+  "markers": [
+    {
+      "symbol": "GPC3",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue type: adjacent non-tumor tissue",
-     "tumor stage: stage II"
-    ]
-   },
-   {
-    "gsm": "GSM2157099",
-    "title": "HCC tissue_p2 [0MB_t]",
-    "source_name": "HCC tissue",
-    "group": "case",
-    "condition": "hepatocellular carcinoma (HCC)",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "p2",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: hepatocellular carcinoma (HCC)"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "hepatocellular carcinoma (HCC)",
-     "tumor stage": "stage II"
+    {
+      "symbol": "AFP",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue type: hepatocellular carcinoma (HCC)",
-     "tumor stage: stage II"
-    ]
-   },
-   {
-    "gsm": "GSM2157100",
-    "title": "Adjacent liver tissue_p2 [0MB_nt]",
-    "source_name": "Adjacent liver tissue",
-    "group": "control",
-    "condition": "adjacent non-tumor tissue",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "p2",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: adjacent non-tumor tissue"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "adjacent non-tumor tissue",
-     "tumor stage": "stage II"
+    {
+      "symbol": "SPP1",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue type: adjacent non-tumor tissue",
-     "tumor stage: stage II"
-    ]
-   },
-   {
-    "gsm": "GSM2157101",
-    "title": "HCC tissue_p3 [00Q_t]",
-    "source_name": "HCC tissue",
-    "group": "case",
-    "condition": "hepatocellular carcinoma (HCC)",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "p3",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: hepatocellular carcinoma (HCC)"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "hepatocellular carcinoma (HCC)",
-     "tumor stage": "stage I"
+    {
+      "symbol": "MDK",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue type: hepatocellular carcinoma (HCC)",
-     "tumor stage: stage I"
-    ]
-   },
-   {
-    "gsm": "GSM2157102",
-    "title": "Adjacent liver tissue_p3 [00Q_nt]",
-    "source_name": "Adjacent liver tissue",
-    "group": "control",
-    "condition": "adjacent non-tumor tissue",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "p3",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: adjacent non-tumor tissue"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "adjacent non-tumor tissue",
-     "tumor stage": "stage I"
+    {
+      "symbol": "PEG10",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue type: adjacent non-tumor tissue",
-     "tumor stage: stage I"
-    ]
-   }
+    {
+      "symbol": "CLEC4G",
+      "direction": "down"
+    },
+    {
+      "symbol": "CLEC1B",
+      "direction": "down"
+    },
+    {
+      "symbol": "FCN3",
+      "direction": "down"
+    },
+    {
+      "symbol": "CRHBP",
+      "direction": "down"
+    },
+    {
+      "symbol": "CYP1A2",
+      "direction": "down"
+    }
   ]
- },
- "contrasts": [
-  {
-   "gse": "GSE81550",
-   "name": "tumor_vs_adjacent_normal",
-   "case_label": "HCC tumor",
-   "control_label": "adjacent non-tumor liver",
-   "case_gsms": [
-    "GSM2157097",
-    "GSM2157099",
-    "GSM2157101"
-   ],
-   "control_gsms": [
-    "GSM2157098",
-    "GSM2157100",
-    "GSM2157102"
-   ],
-   "blocking": "donor",
-   "restricted_to": {},
-   "confidence": 1.0,
-   "status": "confirmed",
-   "rationale": "3 pairs: the minimum group size."
-  }
- ],
- "markers": [
-  {
-   "symbol": "GPC3",
-   "direction": "up"
-  },
-  {
-   "symbol": "AFP",
-   "direction": "up"
-  },
-  {
-   "symbol": "SPP1",
-   "direction": "up"
-  },
-  {
-   "symbol": "MDK",
-   "direction": "up"
-  },
-  {
-   "symbol": "PEG10",
-   "direction": "up"
-  },
-  {
-   "symbol": "CLEC4G",
-   "direction": "down"
-  },
-  {
-   "symbol": "CLEC1B",
-   "direction": "down"
-  },
-  {
-   "symbol": "FCN3",
-   "direction": "down"
-  },
-  {
-   "symbol": "CRHBP",
-   "direction": "down"
-  },
-  {
-   "symbol": "CYP1A2",
-   "direction": "down"
-  }
- ]
 }

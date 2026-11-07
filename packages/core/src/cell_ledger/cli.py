@@ -211,7 +211,17 @@ def compare_dirs(args: argparse.Namespace) -> int:
 
 
 def main(argv: list[str] | None = None) -> int:
-    p = argparse.ArgumentParser(prog="cell-ledger", description=__doc__)
+    argv = list(sys.argv[1:] if argv is None else argv)
+    if argv and argv[0] not in {"run", "run-all", "run-set", "compare", "-h", "--help"}:
+        from cell_ledger.topic_cli import main as topic_main
+
+        topic_main(argv[1:] if argv[0] == "topic" else argv)
+        return 0
+    p = argparse.ArgumentParser(
+        prog="cell-ledger",
+        description=__doc__,
+        epilog="For topic-to-bundle options: cell-ledger topic --help",
+    )
     sub = p.add_subparsers(dest="cmd", required=True)
 
     def common(sp: argparse.ArgumentParser) -> None:
