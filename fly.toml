@@ -18,10 +18,10 @@ kill_timeout = "60s"   # let an in-flight collect finish before the machine rest
   CELL_LEDGER_SESSION_TTL_HOURS = "24"
   CELL_LEDGER_MAX_DATASETS_PER_REQUEST = "10"
   CELL_LEDGER_MAX_CONCURRENT_DOWNLOADS = "3"
-  # Pipeline runs are subprocesses; each pydeseq2 fit wants a few GB. 2 runs x 2 CPUs fits
-  # the 4-CPU / 8 GB box below. On a 16 GB box use 4 runs (and shared-cpu-8x).
+  # Pipeline runs are subprocesses; each pydeseq2 fit wants a few GB and is CPU-bound.
+  # 2 runs x 4 dedicated CPUs fits the 8-CPU / 32 GB demo box below.
   CELL_LEDGER_MAX_CONCURRENT_RUNS = "2"
-  CELL_LEDGER_RUN_N_CPUS = "2"
+  CELL_LEDGER_RUN_N_CPUS = "4"
   CELL_LEDGER_RUN_TIMEOUT_MINUTES = "30"
   CELL_LEDGER_SWEEP_INTERVAL_MINUTES = "60"
   CELL_LEDGER_MAX_ATTEMPTS = "2"
@@ -59,6 +59,7 @@ kill_timeout = "60s"   # let an in-flight collect finish before the machine rest
     path = "/api/health"
 
 [[vm]]
-  size = "shared-cpu-4x"
-  memory = "8gb"
-  # Bigger: size = "shared-cpu-8x", memory = "16gb", and raise CELL_LEDGER_MAX_CONCURRENT_RUNS to 4.
+  # Demo size: dedicated cores make DESeq2 fits faster. Smaller and cheaper when not demoing:
+  # size = "shared-cpu-4x", memory = "8gb", CELL_LEDGER_RUN_N_CPUS = "2".
+  size = "performance-8x"
+  memory = "32gb"
