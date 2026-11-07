@@ -25,23 +25,32 @@ packages/core/       pure-Python pipeline library, no web deps (cell_ledger)
   cli.py             `cell-ledger run <GSE>` / `run-all` / `run-set <query set>` / `compare`
 scripts/             dev scripts: fetch example GEO datasets, build gold sample sheets
 docs/                specs and ADRs (adr-001: SampleSheet/Contrast contract), deploy.md
-Dockerfile, fly.toml one container (API + built UI) on one Fly machine with a /data volume
-data/                gitignored GEO cache and run outputs
+supabase/            local stack config + SQL migrations: Postgres is the source of truth for
+                     sessions/datasets/runs, Storage holds their files (docs/deploy.md)
+Dockerfile, fly.toml one container (API + built UI) on one Fly machine; /data is a cache volume
+data/                gitignored local cache: GEO downloads, annotation table, run outputs
 ```
 
 ## Setup
 
 ```sh
-mise install     # toolchains
-mise run setup   # uv sync, bun install, Playwright Chromium
+mise install              # toolchains (plus the Supabase CLI and Docker)
+mise run setup            # uv sync, bun install, Playwright Chromium
+mise run supabase:start   # local Postgres + Storage; applies supabase/migrations, creates the bucket
+cp .env.example .env      # already points at the local stack; add your NCBI key
 ```
+
+The API refuses to start without `CELL_LEDGER_DATABASE_URL` and the Supabase Storage
+settings: there is no files-only or memory-only mode, locally or deployed.
 
 ## Everyday tasks
 
 | Task                 | What it does                                                |
 | -------------------- | ----------------------------------------------------------- |
 | `mise run dev`       | API on :8000 and Vite on :5173 (Vite proxies `/api`)        |
-| `mise run test`      | pytest + vitest                                             |
+| `mise run supabase:start` / `:stop` / `:reset` | local Supabase stack (Studio on :57323); `reset` re-applies migrations |
+| `mise run db:migration -- <name>` | new SQL migration in `supabase/migrations`      |
+| `mise run test`      | pytest + vitest; the API tests run against the local stack  |
 | `mise run e2e`       | Playwright; boots api and web itself                        |
 | `mise run lint`      | ruff, pyright, Biome, tsc                                   |
 | `mise run fmt`       | auto-fix formatting everywhere                              |
@@ -51,7 +60,7 @@ mise run setup   # uv sync, bun install, Playwright Chromium
 | `mise run compare -- hcc_tumor_vs_adjacent` | run every member of a query set, then compare them (docs/pipeline.md) |
 | `mise run serve`     | production-shaped server on :8000: API + built UI, one origin, no reload |
 | `mise run docker:run`| run the exact Fly image locally with `.env` and `./data` mounted |
-| `mise run deploy`    | `fly deploy --ha=false`; first-time setup in docs/deploy.md |
+| `mise run deploy`    | lint, test, build image, `supabase db push`, `fly deploy --ha=false` (docs/deploy.md) |
 
 Run `mise run gen:api` after changing any FastAPI route or pydantic model so the
 frontend types stay in sync. The generated client is committed.

@@ -20,6 +20,8 @@ export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends 
 
 /**
  * Get Health
+ *
+ * 200 only when the API can reach Postgres; Fly and Docker health checks hit this.
  */
 export const getHealth = <ThrowOnError extends boolean = false>(options?: Options<GetHealthData, ThrowOnError>): RequestResult<GetHealthResponses, unknown, ThrowOnError> => (options?.client ?? client).get<GetHealthResponses, unknown, ThrowOnError>({ url: '/api/health', ...options });
 
@@ -83,7 +85,7 @@ export const getSession = <ThrowOnError extends boolean = false>(options: Option
 /**
  * List Datasets
  *
- * Everything collected so far plus what is still pending.
+ * Every dataset in the session with its current status.
  */
 export const listDatasets = <ThrowOnError extends boolean = false>(options: Options<ListDatasetsData, ThrowOnError>): RequestResult<ListDatasetsResponses, ListDatasetsErrors, ThrowOnError> => (options.client ?? client).get<ListDatasetsResponses, ListDatasetsErrors, ThrowOnError>({ url: '/api/sessions/{session_id}/datasets', ...options });
 
@@ -92,8 +94,8 @@ export const listDatasets = <ThrowOnError extends boolean = false>(options: Opti
  *
  * Start downloading the given series in the background.
  *
- * Returns at once with the session's ``pending`` list; poll ``listDatasets`` until the
- * accessions you asked for have left it. Each arrives ready, excluded or failed.
+ * Returns at once with every dataset in the session; poll ``listDatasets`` until the ones
+ * you asked for are no longer ``pending``. Each arrives ready, excluded or failed.
  */
 export const collectDatasets = <ThrowOnError extends boolean = false>(options: Options<CollectDatasetsData, ThrowOnError>): RequestResult<CollectDatasetsResponses, CollectDatasetsErrors, ThrowOnError> => (options.client ?? client).post<CollectDatasetsResponses, CollectDatasetsErrors, ThrowOnError>({
     url: '/api/sessions/{session_id}/datasets',

@@ -16,8 +16,8 @@ from cell_ledger_api.discovery import (
     find_series_on_web,
 )
 from cell_ledger_api.main import create_app
-from cell_ledger_api.settings import Settings
-from cell_ledger_api.storage import MemoryStore
+
+from .conftest import local_settings
 
 ESUMMARY = json.loads(
     (
@@ -108,9 +108,8 @@ def test_tool_requires_objective_with_exa_wording() -> None:
 
 
 def _client(tmp_path: Path, exa: Any) -> TestClient:
-    cfg = Settings(_env_file=None, data_dir=tmp_path)  # type: ignore[call-arg]
-    app = create_app(cfg, transport=_geo_transport(["200164073"]), store=MemoryStore(), exa=exa)
-    return TestClient(app)
+    cfg = local_settings(data_dir=tmp_path)
+    return TestClient(create_app(cfg, transport=_geo_transport(["200164073"]), exa=exa))
 
 
 def test_web_search_and_verify_endpoints(tmp_path: Path) -> None:

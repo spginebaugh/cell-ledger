@@ -30,8 +30,8 @@ async def start_run(session_id: SessionId, body: RunRequest, request: Request) -
 
 
 @router.get("", operation_id="listRuns")
-def list_runs(session_id: SessionId, request: Request) -> list[RunStatus]:
-    return service(request).statuses(session_id)
+async def list_runs(session_id: SessionId, request: Request) -> list[RunStatus]:
+    return await service(request).statuses(session_id)
 
 
 @router.get("/{gse}/{contrast}/files/{name:path}", operation_id="getRunFileUrl")

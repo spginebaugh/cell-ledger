@@ -1,51 +1,57 @@
-"""Object storage for session files.
+"""Supabase Storage: the durable copy of every session file.
 
-:class:`SupabaseStore` talks to the Supabase Storage REST API with the backend's
-secret key; :class:`MemoryStore` stands in for tests and for local runs without
-Supabase credentials. Paths are bucket-relative, e.g. ``<session>/geo/<GSE>/<file>``.
+Paths are bucket-relative, e.g. ``<session>/geo/<GSE>/<file>`` and
+``<session>/runs/<GSE>/<contrast>/<file>``. The API machine's disk is only a cache: a file
+that is not on disk is pulled back from here before the pipeline needs it, and the browser
+downloads through short-lived signed URLs so large files never stream through the API.
+
+Talks to the Storage REST API with the backend's secret key over its own httpx client; the
+same code runs against the local stack (``mise run supabase:start``) and the cloud.
 """
 
 from __future__ import annotations
 
 from collections.abc import AsyncIterator
 from pathlib import Path
-from typing import Protocol
 from urllib.parse import quote
 
 import httpx
 
 CHUNK = 1 << 20
+PAGE = 1000
 
 
-class ObjectStore(Protocol):
-    async def put(self, path: str, data: bytes, content_type: str) -> None: ...
-
-    async def put_file(self, path: str, file: Path, content_type: str) -> None:
-        """Upload a local file without reading it into memory at once."""
-        ...
-
-    async def delete_prefix(self, prefix: str) -> int: ...
-
-    async def signed_url(self, path: str, expires_in: int) -> str | None: ...
+class StorageUnavailable(RuntimeError):
+    pass
 
 
 class SupabaseStore:
-    def __init__(self, http: httpx.AsyncClient, url: str, secret_key: str, bucket: str) -> None:
-        self._http = http
-        self._base = f"{url.rstrip('/')}/storage/v1"
+    def __init__(self, url: str, secret_key: str, bucket: str) -> None:
         self._bucket = bucket
-        self._headers = {"apikey": secret_key, "Authorization": f"Bearer {secret_key}"}
+        self.base_url = f"{url.rstrip('/')}/storage/v1"
+        self._http = httpx.AsyncClient(
+            base_url=self.base_url,
+            headers={"apikey": secret_key, "Authorization": f"Bearer {secret_key}"},
+            timeout=httpx.Timeout(30, read=600),
+            follow_redirects=True,
+        )
+
+    async def aclose(self) -> None:
+        await self._http.aclose()
+
+    async def check(self) -> None:
+        """Fail fast at startup when the key or bucket is wrong."""
+        try:
+            r = await self._http.get(f"/bucket/{self._bucket}")
+        except httpx.HTTPError as e:
+            raise StorageUnavailable(f"Supabase Storage unreachable at {self.base_url}: {e}") from e
+        if r.status_code != 200:
+            raise StorageUnavailable(
+                f"Supabase bucket {self._bucket!r} not accessible ({r.status_code}): {r.text}"
+            )
 
     def _object(self, path: str) -> str:
-        return f"{self._base}/object/{self._bucket}/{quote(path)}"
-
-    async def put(self, path: str, data: bytes, content_type: str) -> None:
-        r = await self._http.post(
-            self._object(path),
-            content=data,
-            headers={**self._headers, "Content-Type": content_type, "x-upsert": "true"},
-        )
-        r.raise_for_status()
+        return f"/object/{self._bucket}/{quote(path)}"
 
     async def put_file(self, path: str, file: Path, content_type: str) -> None:
         # An explicit Content-Length makes httpx stream the body instead of chunking it,
@@ -60,16 +66,25 @@ class SupabaseStore:
         r = await self._http.post(
             self._object(path),
             content=body(),
-            headers={
-                **self._headers,
-                "Content-Type": content_type,
-                "Content-Length": str(size),
-                "x-upsert": "true",
-            },
+            headers={"Content-Type": content_type, "Content-Length": str(size), "x-upsert": "true"},
         )
         r.raise_for_status()
 
-    async def _list(self, prefix: str) -> list[str]:
+    async def get_file(self, path: str, dest: Path) -> bool:
+        """Stream an object to ``dest`` atomically. False when it does not exist."""
+        async with self._http.stream("GET", self._object(path)) as r:
+            if r.status_code in (400, 404):
+                return False
+            r.raise_for_status()
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            tmp = dest.with_name(dest.name + ".part")
+            with tmp.open("wb") as f:
+                async for chunk in r.aiter_bytes():
+                    f.write(chunk)
+            tmp.replace(dest)
+        return True
+
+    async def list(self, prefix: str) -> list[str]:
         """Every object path under ``prefix`` (Supabase lists one folder level at a time)."""
         paths: list[str] = []
         folders = [prefix.rstrip("/")]
@@ -78,9 +93,8 @@ class SupabaseStore:
             offset = 0
             while True:
                 r = await self._http.post(
-                    f"{self._base}/object/list/{self._bucket}",
-                    json={"prefix": folder, "limit": 1000, "offset": offset},
-                    headers=self._headers,
+                    f"/object/list/{self._bucket}",
+                    json={"prefix": folder, "limit": PAGE, "offset": offset},
                 )
                 r.raise_for_status()
                 entries = r.json()
@@ -88,50 +102,25 @@ class SupabaseStore:
                     full = f"{folder}/{e['name']}"
                     # Folders come back without an id.
                     (paths if e.get("id") else folders).append(full)
-                if len(entries) < 1000:
+                if len(entries) < PAGE:
                     break
-                offset += 1000
+                offset += PAGE
         return paths
 
     async def delete_prefix(self, prefix: str) -> int:
-        paths = await self._list(prefix)
-        for i in range(0, len(paths), 1000):
+        paths = await self.list(prefix)
+        for i in range(0, len(paths), PAGE):
             r = await self._http.request(
-                "DELETE",
-                f"{self._base}/object/{self._bucket}",
-                json={"prefixes": paths[i : i + 1000]},
-                headers=self._headers,
+                "DELETE", f"/object/{self._bucket}", json={"prefixes": paths[i : i + PAGE]}
             )
             r.raise_for_status()
         return len(paths)
 
     async def signed_url(self, path: str, expires_in: int) -> str | None:
         r = await self._http.post(
-            f"{self._base}/object/sign/{self._bucket}/{quote(path)}",
-            json={"expiresIn": expires_in},
-            headers=self._headers,
+            f"/object/sign/{self._bucket}/{quote(path)}", json={"expiresIn": expires_in}
         )
         if r.status_code in (400, 404):  # Supabase answers 400 for a missing object
             return None
         r.raise_for_status()
-        return f"{self._base}{r.json()['signedURL']}"
-
-
-class MemoryStore:
-    def __init__(self) -> None:
-        self.objects: dict[str, bytes] = {}
-
-    async def put(self, path: str, data: bytes, content_type: str) -> None:
-        self.objects[path] = data
-
-    async def put_file(self, path: str, file: Path, content_type: str) -> None:
-        self.objects[path] = file.read_bytes()
-
-    async def delete_prefix(self, prefix: str) -> int:
-        doomed = [p for p in self.objects if p.startswith(prefix.rstrip("/") + "/")]
-        for p in doomed:
-            del self.objects[p]
-        return len(doomed)
-
-    async def signed_url(self, path: str, expires_in: int) -> str | None:
-        return f"memory://{path}?expires_in={expires_in}" if path in self.objects else None
+        return f"{self.base_url}{r.json()['signedURL']}"

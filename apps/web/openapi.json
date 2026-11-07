@@ -11,6 +11,7 @@
           "health"
         ],
         "summary": "Get Health",
+        "description": "200 only when the API can reach Postgres; Fly and Docker health checks hit this.",
         "operationId": "getHealth",
         "responses": {
           "200": {
@@ -256,7 +257,7 @@
           "sessions"
         ],
         "summary": "Collect Datasets",
-        "description": "Start downloading the given series in the background.\n\nReturns at once with the session's ``pending`` list; poll ``listDatasets`` until the\naccessions you asked for have left it. Each arrives ready, excluded or failed.",
+        "description": "Start downloading the given series in the background.\n\nReturns at once with every dataset in the session; poll ``listDatasets`` until the ones\nyou asked for are no longer ``pending``. Each arrives ready, excluded or failed.",
         "operationId": "collectDatasets",
         "parameters": [
           {
@@ -286,7 +287,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SessionInfo"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DatasetStatus"
+                  },
+                  "title": "Response Collectdatasets"
                 }
               }
             }
@@ -308,7 +313,7 @@
           "sessions"
         ],
         "summary": "List Datasets",
-        "description": "Everything collected so far plus what is still pending.",
+        "description": "Every dataset in the session with its current status.",
         "operationId": "listDatasets",
         "parameters": [
           {
@@ -328,7 +333,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SessionDatasets"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DatasetStatus"
+                  },
+                  "title": "Response Listdatasets"
                 }
               }
             }
@@ -805,65 +814,6 @@
         ],
         "title": "CollectRequest"
       },
-      "CollectedDataset": {
-        "properties": {
-          "gse": {
-            "type": "string",
-            "title": "Gse"
-          },
-          "record": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/DatasetRecord"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "description": "None when the download itself failed; see error"
-          },
-          "error": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Error"
-          },
-          "uploaded": {
-            "type": "boolean",
-            "title": "Uploaded",
-            "default": false
-          },
-          "upload_error": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Upload Error"
-          },
-          "files": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "title": "Files",
-            "description": "names available for signed URLs"
-          }
-        },
-        "type": "object",
-        "required": [
-          "gse"
-        ],
-        "title": "CollectedDataset"
-      },
       "Contrast": {
         "properties": {
           "gse": {
@@ -1082,6 +1032,95 @@
           "status"
         ],
         "title": "DatasetRecord"
+      },
+      "DatasetStatus": {
+        "properties": {
+          "gse": {
+            "type": "string",
+            "title": "Gse"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "ready",
+              "excluded",
+              "failed"
+            ],
+            "title": "Status",
+            "description": "pending while downloading; poll until it moves"
+          },
+          "record": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DatasetRecord"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "GEO metadata and checks; None while pending or when failed"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          },
+          "uploaded": {
+            "type": "boolean",
+            "title": "Uploaded",
+            "default": false
+          },
+          "upload_error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Upload Error"
+          },
+          "files": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Files",
+            "description": "names available for signed URLs"
+          },
+          "requested_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Requested At"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finished At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "gse",
+          "status",
+          "requested_at"
+        ],
+        "title": "DatasetStatus"
       },
       "DeResultSummary": {
         "properties": {
@@ -1728,13 +1767,18 @@
           "core_version": {
             "type": "string",
             "title": "Core Version"
+          },
+          "database": {
+            "type": "string",
+            "title": "Database"
           }
         },
         "type": "object",
         "required": [
           "status",
           "api_version",
-          "core_version"
+          "core_version",
+          "database"
         ],
         "title": "Health"
       },
@@ -2095,15 +2139,8 @@
             "title": "Status"
           },
           "started_at": {
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "date-time"
-              },
-              {
-                "type": "null"
-              }
-            ],
+            "type": "string",
+            "format": "date-time",
             "title": "Started At"
           },
           "finished_at": {
@@ -2145,6 +2182,17 @@
             "title": "Uploaded",
             "default": false
           },
+          "upload_error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Upload Error"
+          },
           "files": {
             "items": {
               "type": "string"
@@ -2158,7 +2206,8 @@
         "required": [
           "gse",
           "contrast",
-          "status"
+          "status",
+          "started_at"
         ],
         "title": "RunStatus"
       },
@@ -2643,30 +2692,6 @@
         ],
         "title": "SearchResult"
       },
-      "SessionDatasets": {
-        "properties": {
-          "pending": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "title": "Pending"
-          },
-          "datasets": {
-            "items": {
-              "$ref": "#/components/schemas/CollectedDataset"
-            },
-            "type": "array",
-            "title": "Datasets"
-          }
-        },
-        "type": "object",
-        "required": [
-          "pending",
-          "datasets"
-        ],
-        "title": "SessionDatasets"
-      },
       "SessionInfo": {
         "properties": {
           "id": {
@@ -2677,14 +2702,6 @@
             "type": "string",
             "format": "date-time",
             "title": "Created At"
-          },
-          "pending": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "title": "Pending",
-            "description": "GSEs still being collected; poll until empty"
           }
         },
         "type": "object",

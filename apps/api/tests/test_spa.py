@@ -9,6 +9,8 @@ from fastapi.testclient import TestClient
 from cell_ledger_api.main import create_app
 from cell_ledger_api.settings import Settings
 
+from .conftest import local_settings
+
 NAV = {"accept": "text/html,application/xhtml+xml,*/*;q=0.8"}  # what a browser navigation sends
 API_CASES = [  # (method, path, expected status in both modes)
     ("GET", "/api/health", 200),
@@ -22,7 +24,7 @@ API_CASES = [  # (method, path, expected status in both modes)
 
 
 def _settings(tmp_path: Path, **kw: object) -> Settings:
-    return Settings(_env_file=None, data_dir=tmp_path / "data", **kw)  # type: ignore[call-arg]
+    return local_settings(data_dir=tmp_path / "data", **kw)
 
 
 @pytest.fixture

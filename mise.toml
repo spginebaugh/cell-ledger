@@ -21,26 +21,46 @@ run = [
   "bun run --cwd apps/web playwright install chromium",
 ]
 
+# ------------------------------------------------------------- supabase
+# The API needs Postgres and Storage to start. Locally that is this stack (Docker), on the
+# ports in supabase/config.toml; it applies supabase/migrations and creates the bucket, so it
+# is the same database and bucket the cloud project has. Tests run against it too.
+
+[tasks."supabase:start"]
+description = "Local Supabase: Postgres on :57322, Storage/API on :57321, Studio on :57323"
+run = "supabase start -x realtime,edge-runtime,vector,logflare,imgproxy,supavisor,mailpit"
+
+[tasks."supabase:stop"]
+run = "supabase stop"
+
+[tasks."supabase:reset"]
+description = "Wipe the local database and re-apply every migration (also recreates the bucket)"
+run = "supabase db reset"
+
+[tasks."supabase:status"]
+run = "supabase status"
+
+[tasks."db:migration"]
+description = "Create an empty migration: mise run db:migration -- add_thing"
+run = "supabase migration new \"$@\""
+
+[tasks."db:push"]
+description = "Apply pending migrations to the linked cloud project (see docs/deploy.md)"
+run = "supabase db push"
+
 # ------------------------------------------------------------------ dev
 
 [tasks."dev:api"]
 description = "FastAPI with auto-reload on :8000"
-run = "uv run uvicorn cell_ledger_api.main:app --reload --port 8000"
+run = "uv run uvicorn --factory cell_ledger_api.main:create_app --reload --port 8000"
 
 [tasks."dev:web"]
 description = "Vite dev server on :5173 (proxies /api to :8000)"
 run = "bun run --cwd apps/web dev"
 
 [tasks.dev]
-description = "Run api and web together"
+description = "Run api and web together (start the stack first: mise run supabase:start)"
 depends = ["dev:api", "dev:web"]
-
-[tasks."supabase:start"]
-description = "Local Supabase (Storage only) on :57321, Studio on :57323"
-run = "supabase start -x realtime,edge-runtime,vector,logflare,imgproxy,supavisor,mailpit"
-
-[tasks."supabase:stop"]
-run = "supabase stop"
 
 # ----------------------------------------------------------------- lint
 
@@ -66,6 +86,7 @@ run = ["uv run ruff check --fix .", "uv run ruff format .", "bun run biome check
 # ----------------------------------------------------------------- test
 
 [tasks."test:py"]
+description = "pytest (API tests need the local Supabase stack running)"
 run = "uv run pytest"
 
 [tasks."test:web"]
@@ -75,7 +96,7 @@ run = "bun run --cwd apps/web test"
 depends = ["test:py", "test:web"]
 
 [tasks.e2e]
-description = "Playwright end-to-end tests (boots api and web itself)"
+description = "Playwright end-to-end tests (boots api and web itself; needs the local stack)"
 run = "bun run --cwd apps/web e2e"
 
 # ----------------------------------------------------------- analysis
@@ -106,7 +127,7 @@ run = "bun run --cwd apps/web build"
 description = "Production-shaped server on :8000 from the local venv (API + built UI, no reload)"
 depends = ["build:web"]
 env = { CELL_LEDGER_WEB_DIST = "apps/web/dist" }
-run = "uv run uvicorn cell_ledger_api.main:app --host 0.0.0.0 --port 8000 --workers 1"
+run = "uv run uvicorn --factory cell_ledger_api.main:create_app --host 0.0.0.0 --port 8000 --workers 1"
 
 [tasks."docker:build"]
 description = "Build the exact image Fly deploys (tag cell-ledger:local)"
@@ -115,15 +136,22 @@ run = "docker build -t cell-ledger:local ."
 [tasks."docker:run"]
 description = "Run the image on :8000 with .env and ./data mounted at /data, like the Fly volume"
 depends = ["docker:build"]
+shell = "bash -c"
+# A .env pointing at the local stack (127.0.0.1) is rewritten to host.docker.internal so the
+# container can reach it. Signed URLs then carry that host too, so open them from the API box
+# or point .env at the cloud project when you want to click through from a browser.
 run = """
-docker run --rm -it -p 8000:8000 --env-file .env \
+docker run --rm -it -p 8000:8000 \
+  --env-file <(sed 's/127\\.0\\.0\\.1/host.docker.internal/g' .env) \
+  --add-host=host.docker.internal:host-gateway \
   -e CELL_LEDGER_DATA_DIR=/data -e CELL_LEDGER_WEB_DIST=/app/web -e CELL_LEDGER_CORS_ORIGINS='[]' \
   -v "$PWD/data:/data" cell-ledger:local
 """
 
 [tasks.deploy]
-description = "Deploy to Fly (single machine, never HA); see docs/deploy.md for first-time setup"
-run = "fly deploy --ha=false"
+description = "lint, test, build the image, push migrations, then deploy to Fly (single machine)"
+depends = ["lint", "test", "docker:build"]
+run = ["supabase db push", "fly deploy --ha=false"]
 
 [tasks."deploy:logs"]
 run = "fly logs"

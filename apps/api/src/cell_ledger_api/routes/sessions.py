@@ -3,7 +3,7 @@ from typing import Annotated
 from fastapi import APIRouter, HTTPException, Path, Request
 from pydantic import BaseModel, Field
 
-from cell_ledger_api.sessions import SESSION_ID, SessionDatasets, SessionInfo, SessionService
+from cell_ledger_api.sessions import SESSION_ID, DatasetStatus, SessionInfo, SessionService
 
 router = APIRouter(prefix="/sessions", tags=["sessions"])
 
@@ -35,23 +35,23 @@ async def signed(request: Request, session_id: str, rel: str) -> FileUrl:
 
 
 @router.post("", operation_id="createSession", status_code=201)
-def create_session(request: Request) -> SessionInfo:
-    return service(request).create()
+async def create_session(request: Request) -> SessionInfo:
+    return await service(request).create()
 
 
 @router.get("/{session_id}", operation_id="getSession")
-def get_session(session_id: SessionId, request: Request) -> SessionInfo:
-    return service(request).get(session_id)
+async def get_session(session_id: SessionId, request: Request) -> SessionInfo:
+    return await service(request).get(session_id)
 
 
 @router.post("/{session_id}/datasets", operation_id="collectDatasets", status_code=202)
 async def collect_datasets(
     session_id: SessionId, body: CollectRequest, request: Request
-) -> SessionInfo:
+) -> list[DatasetStatus]:
     """Start downloading the given series in the background.
 
-    Returns at once with the session's ``pending`` list; poll ``listDatasets`` until the
-    accessions you asked for have left it. Each arrives ready, excluded or failed.
+    Returns at once with every dataset in the session; poll ``listDatasets`` until the ones
+    you asked for are no longer ``pending``. Each arrives ready, excluded or failed.
     """
     limit = request.app.state.settings.max_datasets_per_request
     if len(body.gses) > limit:
@@ -60,9 +60,9 @@ async def collect_datasets(
 
 
 @router.get("/{session_id}/datasets", operation_id="listDatasets")
-def list_datasets(session_id: SessionId, request: Request) -> SessionDatasets:
-    """Everything collected so far plus what is still pending."""
-    return service(request).datasets(session_id)
+async def list_datasets(session_id: SessionId, request: Request) -> list[DatasetStatus]:
+    """Every dataset in the session with its current status."""
+    return await service(request).datasets(session_id)
 
 
 @router.get("/{session_id}/datasets/{gse}/files/{name:path}", operation_id="getDatasetFileUrl")

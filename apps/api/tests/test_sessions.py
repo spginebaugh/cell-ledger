@@ -1,95 +1,109 @@
-"""Session endpoints end to end against a fake GEO host and an in-memory store."""
+"""Session endpoints end to end: fake GEO host, real local Postgres and Storage."""
 
-import json
 from collections.abc import Callable
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
+from typing import Any
 
 import httpx
-import pytest
 from fastapi.testclient import TestClient
 
-from cell_ledger_api.main import create_app
 from cell_ledger_api.settings import Settings
-from cell_ledger_api.storage import MemoryStore
 
+from .conftest import ApiFactory, store_for
 
-@pytest.fixture
-def client(tmp_path: Path, store: MemoryStore, geo_transport: httpx.MockTransport):
-    cfg = Settings(_env_file=None, data_dir=tmp_path, max_datasets_per_request=2)  # type: ignore[call-arg]
-    app = create_app(cfg, transport=geo_transport, store=store)
-    with TestClient(app) as c:
-        yield c
+SIGN_PREFIX = "/storage/v1/object/sign/sessions/"
 
 
 def test_collect_list_link_and_delete(
     client: TestClient,
-    store: MemoryStore,
     tmp_path: Path,
-    wait_collected: Callable[..., dict],  # type: ignore[type-arg]
+    settings_for: Callable[..., Settings],
+    wait_collected: Callable[..., list[dict]],  # type: ignore[type-arg]
 ) -> None:
     sid = client.post("/api/sessions").json()["id"]
+    assert client.get(f"/api/sessions/{sid}").json()["id"] == sid
 
     r = client.post(f"/api/sessions/{sid}/datasets", json={"gses": ["GSE100001", "GSE100002"]})
     assert r.status_code == 202
-    assert r.json()["pending"] == ["GSE100001", "GSE100002"]
-    # Asking again for something already pending does not queue it twice (the fake host is
-    # instant, so a series may already have finished; only duplicates would be wrong).
+    assert [d["gse"] for d in r.json()] == ["GSE100001", "GSE100002"]
+    # Asking again for something already requested does not create a second row.
     r = client.post(f"/api/sessions/{sid}/datasets", json={"gses": ["GSE100001"]})
-    pending = r.json()["pending"]
-    assert r.status_code == 202 and len(pending) == len(set(pending))
+    assert r.status_code == 202 and len(r.json()) == 2
 
-    ready, missing = wait_collected(client, sid)["datasets"]
-    assert ready["record"]["status"] == "ready" and ready["uploaded"]
+    ready, missing = wait_collected(client, sid)
+    assert ready["status"] == "ready" and ready["uploaded"] and ready["finished_at"]
     assert ready["record"]["n_eligible"] == 1
     assert "GSE100001_family.soft.gz" in ready["files"]
+    assert missing["status"] == "excluded"
     assert missing["record"]["exclusions"] == ["no_ncbi_counts"]
-    assert client.get(f"/api/sessions/{sid}").json()["pending"] == []
 
-    # Local copy in the pipeline's layout, shared annotation, and the storage mirror.
+    # Local cache in the pipeline's layout plus the shared annotation table.
     local = tmp_path / "sessions" / sid / "geo" / "GSE100001"
-    assert (local / "GSE100001_raw_counts_GRCh38.p13_NCBI.tsv.gz").exists()
+    counts = local / "GSE100001_raw_counts_GRCh38.p13_NCBI.tsv.gz"
+    assert counts.exists()
     assert (tmp_path / "geo" / "annotation" / "Human.GRCh38.p13.annot.tsv.gz").exists()
-    assert f"{sid}/geo/GSE100001/GSE100001_family.soft.gz" in store.objects
-    assert f"{sid}/geo/GSE100002/dataset.json" in store.objects
 
-    listed = client.get(f"/api/sessions/{sid}/datasets").json()["datasets"]
-    assert [d["gse"] for d in listed] == ["GSE100001", "GSE100002"]
-
-    link = client.get(f"/api/sessions/{sid}/datasets/GSE100001/files/dataset.json")
-    assert link.status_code == 200 and link.json()["url"].startswith("memory://")
+    # The signed URL really downloads the mirrored object from Storage.
+    link = client.get(f"/api/sessions/{sid}/datasets/GSE100001/files/{counts.name}")
+    assert link.status_code == 200 and SIGN_PREFIX in link.json()["url"]
+    assert httpx.get(link.json()["url"]).content == counts.read_bytes()
     assert client.get(f"/api/sessions/{sid}/datasets/GSE100001/files/nope.txt").status_code == 404
 
     assert client.delete(f"/api/sessions/{sid}").status_code == 204
-    assert not store.objects and not (tmp_path / "sessions" / sid).exists()
+    assert not (tmp_path / "sessions" / sid).exists()
     assert client.get(f"/api/sessions/{sid}/datasets").status_code == 404
+    assert client.get(f"/api/sessions/{sid}").status_code == 404
+    assert _objects(settings_for(), sid) == []
+
+
+def _objects(cfg: Settings, prefix: str) -> list[str]:
+    import asyncio
+
+    async def go() -> list[str]:
+        store = store_for(cfg)
+        try:
+            return await store.list(prefix)
+        finally:
+            await store.aclose()
+
+    return asyncio.run(go())
 
 
 def test_failed_download_is_recorded_not_raised(
     client: TestClient,
-    wait_collected: Callable[..., dict],  # type: ignore[type-arg]
+    wait_collected: Callable[..., list[dict]],  # type: ignore[type-arg]
 ) -> None:
     """A series whose counts exist but whose SOFT file 404s ends up failed, not stuck."""
     sid = client.post("/api/sessions").json()["id"]
     client.post(f"/api/sessions/{sid}/datasets", json={"gses": ["GSE100003"]})
-    (d,) = wait_collected(client, sid)["datasets"]
-    assert d["record"] is None and "HTTPStatusError" in d["error"]
+    (d,) = wait_collected(client, sid)
+    assert d["status"] == "failed" and d["record"] is None
+    assert "HTTPStatusError" in d["error"]
+    # A failed dataset may be requested again (the fake host is instant, so it may already
+    # have failed again by the time we look: the proof is a later finished_at).
+    client.post(f"/api/sessions/{sid}/datasets", json={"gses": ["GSE100003"]})
+    (again,) = wait_collected(client, sid)
+    assert again["status"] == "failed" and again["finished_at"] > d["finished_at"]
 
 
-def test_restart_marks_pending_as_interrupted(
-    tmp_path: Path, store: MemoryStore, geo_transport: httpx.MockTransport
+def test_restart_redispatches_pending_and_gives_up_eventually(
+    api: ApiFactory,
+    pg: Callable[..., Any],
+    wait_collected: Callable[..., list[dict]],  # type: ignore[type-arg]
 ) -> None:
+    """Rows left pending by a dead process are collected by the next one, up to max_attempts."""
     sid = "b" * 32
-    d = tmp_path / "sessions" / sid
-    (d / "geo").mkdir(parents=True)
-    info = {"id": sid, "created_at": datetime.now(UTC).isoformat(), "pending": ["GSE100001"]}
-    (d / "session.json").write_text(json.dumps(info))
-
-    cfg = Settings(_env_file=None, data_dir=tmp_path)  # type: ignore[call-arg]
-    with TestClient(create_app(cfg, transport=geo_transport, store=store)) as c:
-        body = c.get(f"/api/sessions/{sid}/datasets").json()
-    assert body["pending"] == []
-    assert body["datasets"][0]["error"] == "interrupted by server restart"
+    pg("insert into sessions (id) values ($1)", sid)
+    pg(
+        "insert into datasets (session_id, gse, status, attempts) values "
+        "($1, 'GSE100001', 'pending', 0), ($1, 'GSE100003', 'pending', 2)",
+        sid,
+    )
+    with api(max_attempts=2) as c:
+        fresh, exhausted = wait_collected(c, sid)
+    assert fresh["gse"] == "GSE100001" and fresh["status"] == "ready"
+    assert exhausted["status"] == "failed" and "giving up" in exhausted["error"]
 
 
 def test_rejects_bad_input(client: TestClient) -> None:
@@ -99,6 +113,7 @@ def test_rejects_bad_input(client: TestClient) -> None:
     assert client.post(f"/api/sessions/{sid}/datasets", json={"gses": ["GSM1"]}).status_code == 422
     assert client.get("/api/sessions/../etc/datasets").status_code == 404
     assert client.get("/api/sessions/" + "0" * 32 + "/datasets").status_code == 404
+    assert client.delete("/api/sessions/" + "0" * 32).status_code == 404
 
 
 def test_search_endpoint(client: TestClient) -> None:
@@ -109,15 +124,36 @@ def test_search_endpoint(client: TestClient) -> None:
 
 
 def test_expired_sessions_swept_at_startup(
-    tmp_path: Path, store: MemoryStore, geo_transport: httpx.MockTransport
+    api: ApiFactory,
+    pg: Callable[..., Any],
+    settings_for: Callable[..., Settings],
+    tmp_path: Path,
 ) -> None:
-    old = tmp_path / "sessions" / ("a" * 32)
-    old.mkdir(parents=True)
-    created = (datetime.now(UTC) - timedelta(hours=48)).isoformat()
-    (old / "session.json").write_text(json.dumps({"id": "a" * 32, "created_at": created}))
-    store.objects[f"{'a' * 32}/geo/GSE1/dataset.json"] = b"{}"
+    import asyncio
 
-    cfg = Settings(_env_file=None, data_dir=tmp_path, session_ttl_hours=24)  # type: ignore[call-arg]
-    with TestClient(create_app(cfg, transport=geo_transport, store=store)):
+    sid = "a" * 32
+    pg(
+        "insert into sessions (id, created_at) values ($1, $2)",
+        sid,
+        datetime.now(UTC) - timedelta(hours=48),
+    )
+    pg("insert into datasets (session_id, gse, status) values ($1, 'GSE1', 'excluded')", sid)
+    obj = tmp_path / "dataset.json"
+    obj.write_text("{}")
+
+    async def put() -> None:
+        store = store_for(settings_for())
+        try:
+            await store.put_file(f"{sid}/geo/GSE1/dataset.json", obj, "application/json")
+        finally:
+            await store.aclose()
+
+    asyncio.run(put())
+    stale_dir = tmp_path / "sessions" / ("f" * 32)  # a cache folder with no row behind it
+    stale_dir.mkdir(parents=True)
+
+    with api(session_ttl_hours=24):
         pass
-    assert not old.exists() and not store.objects
+    assert pg("select 1 from sessions where id = $1", sid) == []
+    assert _objects(settings_for(), sid) == []
+    assert not stale_dir.exists()

@@ -1,35 +1,38 @@
-"""Pipeline runs inside a session: ``cell-ledger run`` as a subprocess, state on disk.
+"""Pipeline runs inside a session: ``cell-ledger run`` as a subprocess, state in Postgres.
 
-Layout under ``<session>/runs/<GSE>/``::
+Rows: one ``runs`` row per (session, GSE) holds the design and the process lifecycle
+(``running`` -> ``finished``); one ``run_contrasts`` row per contrast holds its verdict.
+Files: the pipeline works in the local cache and the finished contrast folder is mirrored
+to Storage at ``<session>/runs/<GSE>/<contrast>/<file>``::
 
-    design.json              what was submitted (samplesheet + contrasts + markers)
-    running.json             present while the subprocess is alive (RunMarker)
-    run.log                  subprocess stdout + stderr
-    <contrast>/report.json   written by the pipeline; status complete | qc_only | blocked
-    <contrast>/failed.json   written here when the process ended without a report
-    <contrast>/upload.json   mirror result for the contrast folder (UploadRecord)
+    <session>/runs/<GSE>/design.json         what was submitted, as `--design` reads it
+    <session>/runs/<GSE>/run.log             subprocess stdout + stderr
+    <session>/runs/<GSE>/<contrast>/report.json   written by the pipeline
 
 The subprocess keeps scanpy and pydeseq2 out of the API process: memory is returned when
 the run ends and a crash cannot take the server down. A semaphore caps concurrent runs
-because each fit wants a few GB. Clients poll :meth:`RunService.statuses`.
+because each fit wants a few GB. Clients poll :meth:`RunService.statuses`. A restart
+re-dispatches running rows (see :meth:`RunService.recover`).
 """
 
 from __future__ import annotations
 
 import asyncio
 import logging
+import shutil
 import sys
 from collections.abc import Sequence
-from datetime import UTC, datetime
+from datetime import datetime
 from pathlib import Path
-from typing import Literal
+from typing import Any, Literal
 
+import asyncpg
 import httpx
 from pydantic import BaseModel, Field
 
 from cell_ledger.report.models import AnalysisReport, MarkerExpectation
 from cell_ledger.samplesheet import Contrast, SampleSheet
-from cell_ledger_api.sessions import SessionService, upload_dir, write_json
+from cell_ledger_api.sessions import SessionService, upload_dir
 
 log = logging.getLogger(__name__)
 
@@ -47,23 +50,6 @@ class RunRequest(BaseModel):
     figures: bool = True
 
 
-class RunMarker(BaseModel):
-    started_at: datetime
-    contrasts: list[str]
-
-
-class UploadRecord(BaseModel):
-    uploaded: bool = False
-    error: str | None = None
-    files: list[str] = Field(default_factory=list)
-    finished_at: datetime
-
-
-class RunFailure(BaseModel):
-    error: str
-    finished_at: datetime
-
-
 RunState = Literal["running", "complete", "qc_only", "blocked", "failed"]
 
 
@@ -71,11 +57,12 @@ class RunStatus(BaseModel):
     gse: str
     contrast: str
     status: RunState
-    started_at: datetime | None = None
+    started_at: datetime
     finished_at: datetime | None = None
     error: str | None = Field(default=None, description="pipeline error or why the run failed")
     report: AnalysisReport | None = None
     uploaded: bool = False
+    upload_error: str | None = None
     files: list[str] = Field(default_factory=list, description="names available for signed URLs")
 
 
@@ -87,6 +74,26 @@ class CountsMissing(LookupError):
     pass
 
 
+def run_status(row: asyncpg.Record) -> RunStatus:
+    st = RunStatus(
+        gse=row["gse"],
+        contrast=row["contrast"],
+        status=row["status"],
+        started_at=row["started_at"],
+        finished_at=row["finished_at"],
+        error=row["error"],
+        uploaded=row["uploaded"],
+        upload_error=row["upload_error"],
+        files=list(row["files"]),
+    )
+    if row["report"]:
+        try:
+            st.report = AnalysisReport.model_validate(row["report"])
+        except ValueError as e:
+            st.status, st.error = "failed", f"unreadable report: {e}"
+    return st
+
+
 class RunService:
     def __init__(
         self,
@@ -96,41 +103,33 @@ class RunService:
         n_cpus: int | None = None,
         timeout_minutes: float = 30,
         command: Sequence[str] = DEFAULT_COMMAND,
+        max_attempts: int = 2,
     ) -> None:
         self._sessions = sessions
+        self._db = sessions.db
         self._sem = asyncio.Semaphore(max_concurrent)
         self._n_cpus = n_cpus
         self._timeout = timeout_minutes * 60
         self._command = tuple(command)
+        self._max_attempts = max_attempts
 
     def runs_dir(self, session_id: str) -> Path:
-        return self._sessions.dir(session_id) / "runs"
+        return self._sessions.local(session_id) / "runs"
 
     # ------------------------------------------------------------- start
 
     async def start(self, session_id: str, req: RunRequest) -> list[RunStatus]:
         gse = req.samplesheet.gse
-        counts = self._sessions.counts_path(session_id, gse)
+        await self._sessions.get(session_id)
+        counts = await self._sessions.counts_path(session_id, gse)
         if counts is None:
             raise CountsMissing(f"{gse} has no collected counts in this session")
-        if not self._sessions.annotation_path.exists():
-            raise CountsMissing("shared annotation table not downloaded yet")
-        out = self.runs_dir(session_id) / gse
-        out.mkdir(parents=True, exist_ok=True)
-        if (out / "running.json").exists():
-            raise RunConflict(f"a run for {gse} is already in progress")
+        await self._sessions.ensure_annotation()
         names = [c.name for c in req.contrasts]
-        for name in names:  # a rerun replaces the previous verdict for that contrast
-            (out / name / "failed.json").unlink(missing_ok=True)
-            (out / name / "upload.json").unlink(missing_ok=True)
-        write_json(out / "design.json", req)
-        marker = RunMarker(started_at=datetime.now(UTC), contrasts=names)
-        write_json(out / "running.json", marker)
+        if not await self._db.start_run(session_id, gse, req.model_dump(mode="json"), names):
+            raise RunConflict(f"a run for {gse} is already in progress")
         self._sessions.spawn(self._run(session_id, gse, counts, req))
-        return [
-            RunStatus(gse=gse, contrast=n, status="running", started_at=marker.started_at)
-            for n in names
-        ]
+        return [s for s in await self.statuses(session_id) if s.gse == gse and s.contrast in names]
 
     def _argv(self, gse: str, out: Path, counts: Path, req: RunRequest) -> list[str]:
         argv = [
@@ -158,6 +157,10 @@ class RunService:
 
     async def _run(self, session_id: str, gse: str, counts: Path, req: RunRequest) -> None:
         out = self.runs_dir(session_id) / gse
+        out.mkdir(parents=True, exist_ok=True)
+        for c in req.contrasts:  # a stale report must never be read as this run's result
+            shutil.rmtree(out / c.name, ignore_errors=True)
+        (out / "design.json").write_text(req.model_dump_json(indent=2))
         error: str | None = None
         async with self._sem:
             with (out / "run.log").open("ab") as logf:
@@ -175,98 +178,92 @@ class RunService:
                 else:
                     if rc not in (0, 1):  # 1 = ran but not 'complete'; the report says why
                         error = f"pipeline exited with code {rc}; see run.log"
-        now = datetime.now(UTC)
         for contrast in req.contrasts:
-            cdir = out / contrast.name
-            if not (cdir / "report.json").exists():
-                cdir.mkdir(parents=True, exist_ok=True)
-                write_json(
-                    cdir / "failed.json",
-                    RunFailure(
-                        error=error or "pipeline wrote no report; see run.log", finished_at=now
-                    ),
+            await self._finish_contrast(session_id, gse, out / contrast.name, error)
+        await self._db.finish_run(session_id, gse, error)
+
+    async def _finish_contrast(
+        self, session_id: str, gse: str, cdir: Path, run_error: str | None
+    ) -> None:
+        status: str = "failed"
+        error: str | None = run_error or "pipeline wrote no report; see run.log"
+        report: dict[str, Any] | None = None
+        report_path = cdir / "report.json"
+        if report_path.exists():
+            try:
+                parsed = AnalysisReport.model_validate_json(report_path.read_text())
+                status, error, report = parsed.status, parsed.error, parsed.model_dump(mode="json")
+            except ValueError as e:
+                error = f"unreadable report: {e}"
+        uploaded, upload_error, files = False, None, []
+        if cdir.is_dir():
+            try:
+                files = await upload_dir(
+                    self._sessions.store, f"{session_id}/runs/{gse}/{cdir.name}", cdir
                 )
-            upload = UploadRecord(finished_at=now)
-            if self._sessions.store is not None:
-                try:
-                    upload.files = await upload_dir(
-                        self._sessions.store, f"{session_id}/runs/{gse}/{contrast.name}", cdir
-                    )
-                    upload.uploaded = True
-                except httpx.HTTPError as e:
-                    upload.error = f"{type(e).__name__}: {e}"
-            write_json(cdir / "upload.json", upload)
-        (out / "running.json").unlink(missing_ok=True)
+                uploaded = True
+            except httpx.HTTPError as e:
+                upload_error = f"{type(e).__name__}: {e}"
+        await self._db.finish_contrast(
+            session_id,
+            gse,
+            cdir.name,
+            status=status,
+            error=error,
+            report=report,
+            uploaded=uploaded,
+            upload_error=upload_error,
+            files=files,
+        )
 
     # ------------------------------------------------------------ status
 
-    def statuses(self, session_id: str) -> list[RunStatus]:
-        root = self.runs_dir(session_id)
-        if not root.exists():
-            return []
-        out: list[RunStatus] = []
-        for gdir in sorted(p for p in root.iterdir() if p.is_dir()):
-            marker_path = gdir / "running.json"
-            marker = (
-                RunMarker.model_validate_json(marker_path.read_text())
-                if marker_path.exists()
-                else None
-            )
-            seen: set[str] = set()
-            # The pipeline builds each result in a sibling ".<contrast>.tmp-<pid>" folder and
-            # swaps it into place at the end; those are not contrasts.
-            for cdir in sorted(p for p in gdir.iterdir() if p.is_dir() and p.name[0] != "."):
-                seen.add(cdir.name)
-                out.append(self._status(gdir.name, cdir, marker))
-            if marker:  # contrasts whose folder the pipeline has not created yet
-                out += [
-                    RunStatus(
-                        gse=gdir.name, contrast=n, status="running", started_at=marker.started_at
-                    )
-                    for n in marker.contrasts
-                    if n not in seen
-                ]
-        return out
+    async def statuses(self, session_id: str) -> list[RunStatus]:
+        await self._sessions.get(session_id)
+        return [run_status(r) for r in await self._db.list_run_contrasts(session_id)]
 
-    def _status(self, gse: str, cdir: Path, marker: RunMarker | None) -> RunStatus:
-        st = RunStatus(gse=gse, contrast=cdir.name, status="running")
-        if marker and cdir.name in marker.contrasts:
-            st.started_at = marker.started_at
-            return st
-        if (cdir / "upload.json").exists():
-            up = UploadRecord.model_validate_json((cdir / "upload.json").read_text())
-            st.uploaded, st.files, st.finished_at = up.uploaded, up.files, up.finished_at
-            if up.error:
-                st.error = f"upload: {up.error}"
-        if (cdir / "report.json").exists():
-            try:
-                st.report = AnalysisReport.model_validate_json((cdir / "report.json").read_text())
-                st.status = st.report.status
-                st.error = st.report.error or st.error
-            except ValueError as e:
-                st.status, st.error = "failed", f"unreadable report: {e}"
-        elif (cdir / "failed.json").exists():
-            failure = RunFailure.model_validate_json((cdir / "failed.json").read_text())
-            st.status, st.error, st.finished_at = "failed", failure.error, failure.finished_at
-        else:
-            st.status, st.error = "failed", "no report and no failure record"
-        return st
+    # ---------------------------------------------------------- recovery
 
-    def recover(self) -> int:
-        """After a restart: every ``running.json`` is stale. Record the interruption."""
+    async def recover(self) -> int:
+        """Re-dispatch every run a restart interrupted, up to ``max_attempts`` times.
+        Counts come back from Storage if this machine lacks them. Returns the count."""
         n = 0
-        root = self._sessions.sessions_dir
-        for marker_path in root.glob("*/runs/GSE*/running.json") if root.exists() else []:
-            marker = RunMarker.model_validate_json(marker_path.read_text())
-            now = datetime.now(UTC)
-            for name in marker.contrasts:
-                cdir = marker_path.parent / name
-                if not (cdir / "report.json").exists():
-                    cdir.mkdir(parents=True, exist_ok=True)
-                    write_json(
-                        cdir / "failed.json",
-                        RunFailure(error="interrupted by server restart", finished_at=now),
-                    )
-                    n += 1
-            marker_path.unlink()
+        for row in await self._db.claim_running_runs():
+            sid, gse, attempts = row["session_id"], row["gse"], row["attempts"]
+            contrasts: list[str] = list(row["contrasts"])
+            if attempts > self._max_attempts:
+                await self._fail_all(
+                    sid, gse, contrasts, f"interrupted by server restart {attempts - 1} times"
+                )
+                continue
+            self._sessions.spawn(self._resume(sid, gse, RunRequest.model_validate(row["design"])))
+            n += 1
         return n
+
+    async def _resume(self, session_id: str, gse: str, req: RunRequest) -> None:
+        try:
+            counts = await self._sessions.counts_path(session_id, gse)
+            await self._sessions.ensure_annotation()
+        except httpx.HTTPError as e:
+            counts = None
+            log.warning("resume %s/%s: could not fetch inputs: %s", session_id, gse, e)
+        if counts is None:
+            names = [c.name for c in req.contrasts]
+            await self._fail_all(session_id, gse, names, "interrupted by restart; counts missing")
+            return
+        await self._run(session_id, gse, counts, req)
+
+    async def _fail_all(self, session_id: str, gse: str, contrasts: list[str], why: str) -> None:
+        for name in contrasts:
+            await self._db.finish_contrast(
+                session_id,
+                gse,
+                name,
+                status="failed",
+                error=why,
+                report=None,
+                uploaded=False,
+                upload_error=None,
+                files=[],
+            )
+        await self._db.finish_run(session_id, gse, why)

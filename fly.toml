@@ -1,6 +1,7 @@
-# Fly.io app: one machine, one persistent volume, same image as `mise run docker:run`.
-# Exactly one machine, always: session state lives on the local volume and the API runs a
-# single worker. Deploy with `--ha=false` (mise run deploy does) so Fly never adds a second.
+# Fly.io app: one machine, one volume as a file cache, same image as `mise run docker:run`.
+# State lives in Supabase (Postgres rows + Storage objects); the machine is disposable compute.
+# Still exactly one machine: the API runs a single worker and caps downloads and pipeline
+# subprocesses in-process. Deploy with `--ha=false` (mise run deploy does).
 # First-time setup is in docs/deploy.md.
 app = "cell-ledger"
 primary_region = "ord"
@@ -22,11 +23,13 @@ kill_timeout = "60s"   # let an in-flight collect finish before the machine rest
   CELL_LEDGER_MAX_CONCURRENT_RUNS = "2"
   CELL_LEDGER_RUN_N_CPUS = "2"
   CELL_LEDGER_RUN_TIMEOUT_MINUTES = "30"
+  CELL_LEDGER_SWEEP_INTERVAL_MINUTES = "60"
+  CELL_LEDGER_MAX_ATTEMPTS = "2"
   # UI and API share an origin, so nothing else needs CORS.
   CELL_LEDGER_CORS_ORIGINS = "[]"
 
 # Secrets (never in this file): `fly secrets set CELL_LEDGER_NCBI_API_KEY=... \
-#   CELL_LEDGER_SUPABASE_URL=... CELL_LEDGER_SUPABASE_SECRET_KEY=...`
+#   CELL_LEDGER_DATABASE_URL=... CELL_LEDGER_SUPABASE_URL=... CELL_LEDGER_SUPABASE_SECRET_KEY=...`
 
 [[mounts]]
   source = "cell_ledger_data"

@@ -111,38 +111,6 @@ export type CollectRequest = {
 };
 
 /**
- * CollectedDataset
- */
-export type CollectedDataset = {
-    /**
-     * Gse
-     */
-    gse: string;
-    /**
-     * None when the download itself failed; see error
-     */
-    record?: DatasetRecord | null;
-    /**
-     * Error
-     */
-    error?: string | null;
-    /**
-     * Uploaded
-     */
-    uploaded?: boolean;
-    /**
-     * Upload Error
-     */
-    upload_error?: string | null;
-    /**
-     * Files
-     *
-     * names available for signed URLs
-     */
-    files?: Array<string>;
-};
-
-/**
  * Contrast
  */
 export type Contrast = {
@@ -280,6 +248,52 @@ export type DatasetRecord = {
      * N Eligible
      */
     n_eligible?: number;
+};
+
+/**
+ * DatasetStatus
+ */
+export type DatasetStatus = {
+    /**
+     * Gse
+     */
+    gse: string;
+    /**
+     * Status
+     *
+     * pending while downloading; poll until it moves
+     */
+    status: 'pending' | 'ready' | 'excluded' | 'failed';
+    /**
+     * GEO metadata and checks; None while pending or when failed
+     */
+    record?: DatasetRecord | null;
+    /**
+     * Error
+     */
+    error?: string | null;
+    /**
+     * Uploaded
+     */
+    uploaded?: boolean;
+    /**
+     * Upload Error
+     */
+    upload_error?: string | null;
+    /**
+     * Files
+     *
+     * names available for signed URLs
+     */
+    files?: Array<string>;
+    /**
+     * Requested At
+     */
+    requested_at: string;
+    /**
+     * Finished At
+     */
+    finished_at?: string | null;
 };
 
 /**
@@ -686,6 +700,10 @@ export type Health = {
      * Core Version
      */
     core_version: string;
+    /**
+     * Database
+     */
+    database: string;
 };
 
 /**
@@ -929,7 +947,7 @@ export type RunStatus = {
     /**
      * Started At
      */
-    started_at?: string | null;
+    started_at: string;
     /**
      * Finished At
      */
@@ -945,6 +963,10 @@ export type RunStatus = {
      * Uploaded
      */
     uploaded?: boolean;
+    /**
+     * Upload Error
+     */
+    upload_error?: string | null;
     /**
      * Files
      *
@@ -1205,20 +1227,6 @@ export type SearchResult = {
 };
 
 /**
- * SessionDatasets
- */
-export type SessionDatasets = {
-    /**
-     * Pending
-     */
-    pending: Array<string>;
-    /**
-     * Datasets
-     */
-    datasets: Array<CollectedDataset>;
-};
-
-/**
  * SessionInfo
  */
 export type SessionInfo = {
@@ -1230,12 +1238,6 @@ export type SessionInfo = {
      * Created At
      */
     created_at: string;
-    /**
-     * Pending
-     *
-     * GSEs still being collected; poll until empty
-     */
-    pending?: Array<string>;
 };
 
 /**
@@ -1698,9 +1700,11 @@ export type ListDatasetsError = ListDatasetsErrors[keyof ListDatasetsErrors];
 
 export type ListDatasetsResponses = {
     /**
+     * Response Listdatasets
+     *
      * Successful Response
      */
-    200: SessionDatasets;
+    200: Array<DatasetStatus>;
 };
 
 export type ListDatasetsResponse = ListDatasetsResponses[keyof ListDatasetsResponses];
@@ -1728,9 +1732,11 @@ export type CollectDatasetsError = CollectDatasetsErrors[keyof CollectDatasetsEr
 
 export type CollectDatasetsResponses = {
     /**
+     * Response Collectdatasets
+     *
      * Successful Response
      */
-    202: SessionInfo;
+    202: Array<DatasetStatus>;
 };
 
 export type CollectDatasetsResponse = CollectDatasetsResponses[keyof CollectDatasetsResponses];

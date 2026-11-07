@@ -45,6 +45,6 @@ EXPOSE 8000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=20s \
     CMD python -c "import urllib.request,sys; sys.exit(urllib.request.urlopen('http://127.0.0.1:8000/api/health').status != 200)"
 
-# One worker on purpose: SessionService keeps locks and a download semaphore in-process,
-# and session state lives on the /data volume. Scale the machine, not the process count.
-CMD ["uvicorn", "cell_ledger_api.main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "1", "--proxy-headers", "--forwarded-allow-ips", "*"]
+# One worker on purpose: SessionService keeps locks and a download semaphore in-process.
+# State is in Supabase; /data is a cache. Scale the machine, not the process count.
+CMD ["uvicorn", "--factory", "cell_ledger_api.main:create_app", "--host", "0.0.0.0", "--port", "8000", "--workers", "1", "--proxy-headers", "--forwarded-allow-ips", "*"]

@@ -1,3 +1,4 @@
+import asyncio
 import logging
 from collections.abc import AsyncIterator, Sequence
 from contextlib import asynccontextmanager
@@ -10,84 +11,105 @@ from fastapi.responses import JSONResponse
 
 from cell_ledger.geo import GeoClient
 from cell_ledger_api import __version__
+from cell_ledger_api.db import Database
 from cell_ledger_api.discovery import ExaSearcher
 from cell_ledger_api.routes import geo, health, runs, sessions
 from cell_ledger_api.runs import DEFAULT_COMMAND, RunService
 from cell_ledger_api.sessions import SessionNotFound, SessionService
-from cell_ledger_api.settings import Settings, settings
+from cell_ledger_api.settings import Settings
 from cell_ledger_api.spa import SpaMount, SpaStaticFiles
-from cell_ledger_api.storage import ObjectStore, SupabaseStore
+from cell_ledger_api.storage import SupabaseStore
 
 log = logging.getLogger("cell_ledger_api")
 
 
-def _store(cfg: Settings, http: httpx.AsyncClient) -> ObjectStore | None:
-    if cfg.supabase_url and cfg.supabase_secret_key:
-        return SupabaseStore(
-            http, cfg.supabase_url, cfg.supabase_secret_key.get_secret_value(), cfg.supabase_bucket
-        )
-    log.warning("Supabase not configured: session files stay on local disk only")
-    return None
-
-
 def create_app(
-    cfg: Settings = settings,
+    cfg: Settings | None = None,
     *,
     transport: httpx.AsyncBaseTransport | None = None,
-    store: ObjectStore | None = None,
     run_command: Sequence[str] = DEFAULT_COMMAND,
     exa: ExaSearcher | None = None,
 ) -> FastAPI:
-    """``transport``, ``store``, ``run_command`` and ``exa`` let tests swap out GEO,
-    Supabase, the pipeline subprocess and Exa."""
+    """``transport`` swaps out NCBI GEO, ``run_command`` the pipeline subprocess and ``exa``
+    the web search. Postgres and Storage are never faked: tests run against the local
+    Supabase stack, which applies the same migrations and bucket as the cloud project."""
+    cfg = cfg if cfg is not None else Settings()  # type: ignore[call-arg]
+    settings = cfg
 
     @asynccontextmanager
     async def lifespan(app: FastAPI) -> AsyncIterator[None]:
+        db = await Database.connect(settings.database_url.get_secret_value())
+        store = SupabaseStore(
+            settings.supabase_url,
+            settings.supabase_secret_key.get_secret_value(),
+            settings.supabase_bucket,
+        )
+        await store.check()
         async with httpx.AsyncClient(
             transport=transport,
             timeout=httpx.Timeout(30, read=120),
             follow_redirects=True,
             headers={"User-Agent": f"cell-ledger/{__version__}"},
         ) as http:
-            key = cfg.ncbi_api_key.get_secret_value() if cfg.ncbi_api_key else None
-            app.state.settings = cfg
+            key = settings.ncbi_api_key.get_secret_value() if settings.ncbi_api_key else None
+            app.state.settings = settings
+            app.state.db = db
             app.state.geo = GeoClient(http, api_key=key)
             app.state.sessions = SessionService(
-                cfg.data_dir,
+                db,
+                store,
+                settings.data_dir,
                 http,
-                store if store is not None else _store(cfg, http),
-                max_concurrent=cfg.max_concurrent_downloads,
+                max_concurrent=settings.max_concurrent_downloads,
+                max_attempts=settings.max_attempts,
             )
             app.state.runs = RunService(
                 app.state.sessions,
-                max_concurrent=cfg.max_concurrent_runs,
-                n_cpus=cfg.run_n_cpus,
-                timeout_minutes=cfg.run_timeout_minutes,
+                max_concurrent=settings.max_concurrent_runs,
+                n_cpus=settings.run_n_cpus,
+                timeout_minutes=settings.run_timeout_minutes,
                 command=run_command,
+                max_attempts=settings.max_attempts,
             )
-            removed = await app.state.sessions.sweep(timedelta(hours=cfg.session_ttl_hours))
+            ttl = timedelta(hours=settings.session_ttl_hours)
+            removed = await app.state.sessions.sweep(ttl)
             if removed:
                 log.info("swept %d expired sessions", len(removed))
-            # Nothing survives a restart in flight: say so on disk rather than hang forever.
-            interrupted = app.state.sessions.recover() + app.state.runs.recover()
-            if interrupted:
-                log.warning("%d collect/run jobs were interrupted by the restart", interrupted)
+            resumed = await app.state.sessions.recover() + await app.state.runs.recover()
+            if resumed:
+                log.warning("re-dispatched %d collect/run jobs interrupted by the restart", resumed)
+
+            async def sweep_forever() -> None:
+                while True:
+                    await asyncio.sleep(settings.sweep_interval_minutes * 60)
+                    try:
+                        gone = await app.state.sessions.sweep(ttl)
+                        if gone:
+                            log.info("swept %d expired sessions", len(gone))
+                    except Exception:  # keep sweeping; the next pass retries
+                        log.exception("session sweep failed")
+
+            sweeper = asyncio.create_task(sweep_forever())
+
             own_exa = None
-            if exa is None and cfg.exa_api_key:
+            if exa is None and settings.exa_api_key:
                 from exa_py import AsyncExa
 
-                own_exa = AsyncExa(api_key=cfg.exa_api_key.get_secret_value())
+                own_exa = AsyncExa(api_key=settings.exa_api_key.get_secret_value())
             app.state.exa = exa if exa is not None else own_exa
             try:
                 yield
             finally:
+                sweeper.cancel()
                 if own_exa is not None:
                     await own_exa.aclose()
+                await store.aclose()
+                await db.close()
 
     app = FastAPI(title="cell-ledger", version=__version__, lifespan=lifespan)
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=cfg.cors_origins,
+        allow_origins=settings.cors_origins,
         allow_methods=["*"],
         allow_headers=["*"],
     )
@@ -96,17 +118,25 @@ def create_app(
     async def _session_not_found(request: Request, exc: SessionNotFound) -> JSONResponse:
         return JSONResponse({"detail": "session not found"}, status_code=404)
 
+    @app.exception_handler(httpx.HTTPError)
+    async def _storage_error(request: Request, exc: httpx.HTTPError) -> JSONResponse:
+        log.warning("storage request failed: %s", exc)
+        return JSONResponse({"detail": f"storage unavailable: {exc}"}, status_code=502)
+
     for r in (health.router, geo.router, sessions.router, runs.router):
         app.include_router(r, prefix="/api")
 
-    if cfg.web_dist is not None:
-        if not (cfg.web_dist / "index.html").is_file():
+    if settings.web_dist is not None:
+        if not (settings.web_dist / "index.html").is_file():
             raise RuntimeError(
-                f"CELL_LEDGER_WEB_DIST={cfg.web_dist} has no index.html; run `mise run build:web`"
+                f"CELL_LEDGER_WEB_DIST={settings.web_dist} has no index.html; "
+                "run `mise run build:web`"
             )
         # Not app.mount(): see spa.py for why the mount must refuse /api itself.
-        app.router.routes.append(SpaMount(SpaStaticFiles(cfg.web_dist)))
+        app.router.routes.append(SpaMount(SpaStaticFiles(settings.web_dist)))
     return app
 
 
-app = create_app()
+# uvicorn entry point (factory mode): `uvicorn --factory cell_ledger_api.main:create_app`.
+# Settings come from CELL_LEDGER_* and .env; missing database or storage settings fail
+# there, before anything listens. No module-level app, so importing this module reads no .env.

@@ -5,8 +5,26 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
+    """All runtime configuration. Local and Fly run the same image with the same variables.
+
+    Postgres and Supabase Storage are required: the database is the only record of sessions,
+    datasets and runs, and Storage is the only durable copy of their files. Starting without
+    either is a configuration error, not a degraded mode.
+    """
+
     model_config = SettingsConfigDict(env_prefix="CELL_LEDGER_", env_file=".env", extra="ignore")
 
+    # Postgres connection string (the Supabase project's; local stack:
+    # postgresql://postgres:postgres@127.0.0.1:57322/postgres).
+    database_url: SecretStr
+
+    # Supabase Storage: project URL, secret key (sb_secret_... / service_role) and bucket.
+    supabase_url: str
+    supabase_secret_key: SecretStr
+    supabase_bucket: str = "sessions"
+
+    # Local cache of GEO downloads and run outputs. Nothing here is the source of truth; it
+    # can be wiped and will be refilled from Storage or NCBI as needed.
     data_dir: Path = Path("data")
 
     # Built frontend (apps/web/dist). Set -> served from "/" on the same origin as the
@@ -19,11 +37,6 @@ class Settings(BaseSettings):
     # NCBI E-utilities: 10 requests/s with a key, 3 without.
     ncbi_api_key: SecretStr | None = None
 
-    # Supabase Storage for session files. Unset -> files stay on local disk only.
-    supabase_url: str | None = None
-    supabase_secret_key: SecretStr | None = None
-    supabase_bucket: str = "sessions"
-
     # Claude drives the clarifying/narrowing loop. Opus 5.5 defaults to medium effort.
     anthropic_api_key: SecretStr | None = None
     anthropic_model: str = "claude-opus-5-5"
@@ -34,8 +47,10 @@ class Settings(BaseSettings):
         default=None, validation_alias=AliasChoices("CELL_LEDGER_EXA_API_KEY", "EXA_API_KEY")
     )
 
-    # Sessions are ephemeral: local copies older than this are swept at startup.
+    # Sessions are ephemeral: rows, files and local copies older than this are deleted by
+    # the sweep, which runs at startup and then every sweep_interval_minutes.
     session_ttl_hours: float = 24
+    sweep_interval_minutes: float = 60
     max_datasets_per_request: int = 10
     max_concurrent_downloads: int = 3
 
@@ -45,5 +60,6 @@ class Settings(BaseSettings):
     run_n_cpus: int | None = None
     run_timeout_minutes: float = 30
 
-
-settings = Settings()
+    # Work interrupted by a restart is re-dispatched at boot, this many times at most, so a
+    # job that crashes the machine cannot restart it forever.
+    max_attempts: int = 2

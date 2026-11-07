@@ -17,7 +17,7 @@ export default defineConfig({
   // Boot the real API and the Vite dev server so e2e runs stand alone.
   webServer: [
     {
-      command: "uv run uvicorn cell_ledger_api.main:app --port 8000",
+      command: "uv run uvicorn --factory cell_ledger_api.main:create_app --port 8000",
       cwd: "../..",
       url: `${API_URL}/api/health`,
       reuseExistingServer: !process.env.CI,
