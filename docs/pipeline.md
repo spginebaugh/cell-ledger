@@ -135,7 +135,7 @@ the run would be given now.
 | 7 | pathways | Hallmark NES per dataset, merged only across enrichment tables with the same library name and GMT checksum (others listed as left out); terms ranked by sign consistency | |
 | 8 | pooled enrichment | GSEA preranked on the pooled z over pooled genes with a symbol, same library; the gene coverage is recorded | skipped with a warning on error |
 | 9 | leave one out, sensitivity | robust genes retained and Spearman of pooled z when each pooled dataset is dropped; for every flagged dataset, the synthesis with its membership reversed (Jaccard of robust sets, Spearman of pooled z) | |
-| 10 | write | `comparison.json` (canonical), `comparison.md`, `questions.md`, `gene_table.tsv`, `members.tsv`, `excluded.tsv`, `concordance.tsv`, `pathway_table.tsv`, `pooled_enrichment.tsv`, `strata/*.tsv`, `figures/` | |
+| 10 | write | `comparison.json` (canonical), `comparison.md`, `questions.md`, `gene_table.tsv`, `pooled_genes.json.gz` (for the UI), `members.tsv`, `excluded.tsv`, `concordance.tsv`, `pathway_table.tsv`, `pooled_enrichment.tsv`, `strata/*.tsv`, `figures/` | |
 
 Shrunk log2FC is never pooled: shrinkage pulls each dataset toward zero by a dataset-specific
 amount. With three datasets the HKSJ test has two degrees of freedom and is deliberately
@@ -145,6 +145,14 @@ Entrez GeneID on the shared NCBI annotation, so no symbol mapping happens.
 The random-effects estimate and the HKSJ interval are checked against
 `statsmodels.stats.meta_analysis.combine_effects` and by simulation (null calibration, power,
 missing genes) in `packages/core/tests/test_compare.py`.
+
+`pooled_genes.json.gz` is the browser's copy of the gene table: every pooled gene with its
+pooled log2FC, `-log10 padj`, agreement counts and robust flag, plus each included dataset's
+own log2FC, SE and significance call (set-aside datasets last, marked `pooled: false`), as
+gzipped column arrays. Values are quantised to what a plot can show (fold changes and SEs to
+0.01, `-log10 padj` to 0.1, capped at 300); the full-precision numbers stay in
+`gene_table.tsv`. The compare page draws the genome-wide agreement wall, the pooled volcano and
+per-gene forest readouts from this one file. Seventeen datasets by 23,000 genes is about 1.2 MB.
 
 ## Figures
 

@@ -9,17 +9,23 @@ import { cn } from "@/lib/utils";
 export function GeneAcrossCard({
   lookup,
   members,
+  hero = false,
 }: {
   lookup: GeneLookupAcross;
   members: string[];
+  /** the full-width version: a bigger name, a bigger forest */
+  hero?: boolean;
 }) {
   const tone = verdictTone(lookup.verdict);
   const m = lookup.meta;
   return (
-    <Panel className="px-4 py-3">
+    <Panel className={cn("px-4 py-3", hero && "px-6 py-5")}>
       <div className="flex min-h-[30px] items-center justify-between gap-3">
         <span
-          className="font-display text-[26px] font-medium leading-none"
+          className={cn(
+            "font-display font-medium leading-none",
+            hero ? "text-[40px]" : "text-[26px]",
+          )}
           style={{ fontVariationSettings: '"opsz" 48' }}
         >
           {lookup.symbol ?? lookup.query}
@@ -42,7 +48,7 @@ export function GeneAcrossCard({
       </div>
       {lookup.gene_id && (
         <div className="mt-3">
-          <Forest lookup={lookup} members={members} />
+          <Forest lookup={lookup} members={members} size={hero ? "hero" : "normal"} />
         </div>
       )}
       <Details summary="Details" className="mt-2">

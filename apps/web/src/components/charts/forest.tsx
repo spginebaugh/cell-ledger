@@ -1,19 +1,36 @@
-import { scaleLinear } from "d3-scale";
+import { scaleLinear, scaleSqrt } from "d3-scale";
 import { useState } from "react";
 import type { GeneLookupAcross } from "@/api/generated/types.gen";
 import { ChartTip } from "@/components/ui/tooltip";
 import { fmtLfc, fmtP } from "@/lib/format";
 import { AxisBottom, CHART, useMeasure } from "./common";
 
-/** One gene across datasets: a point ± 1.96·SE per member and the pooled estimate as a diamond. */
-export function Forest({ lookup, members }: { lookup: GeneLookupAcross; members: string[] }) {
+/** One gene across datasets: a point ± 1.96·SE per member and the pooled estimate as a
+ * diamond. Points are sized by the samples behind them, so a big study reads as a big dot.
+ * ``size="hero"`` is the full-width version for the gene the question asked about. */
+export function Forest({
+  lookup,
+  members,
+  size = "normal",
+}: {
+  lookup: GeneLookupAcross;
+  members: string[];
+  size?: "normal" | "hero";
+}) {
   const [ref, width] = useMeasure<HTMLDivElement>();
   const [hover, setHover] = useState<{ label: string; x: number; y: number } | null>(null);
-  const rowH = 24;
-  const m = { top: 6, right: 16, bottom: 40, left: 150 };
+  const hero = size === "hero";
+  const rowH = hero ? 30 : 24;
+  const m = { top: 6, right: 16, bottom: 40, left: hero ? 190 : 150 };
   const labelW = Math.min(m.left, Math.max(90, width * 0.32));
   const rows = members.map((lab) => ({ label: lab, e: lookup.effects?.[lab] }));
   const meta = lookup.meta;
+  const sizes = rows.map((r) => r.e?.n_samples ?? 0).filter((n) => n > 0);
+  const dotR = scaleSqrt()
+    .domain([Math.max(1, Math.min(...sizes, 1e9)), Math.max(2, ...sizes)])
+    .range(hero ? [4.5, 11] : [3.5, 7]);
+  const radius = (n: number | null | undefined) => (n ? dotR(n) : hero ? 6 : 4.5);
+  const dia = hero ? 10 : 7;
   const height = m.top + m.bottom + (rows.length + (meta?.pooled_log2fc != null ? 1 : 0)) * rowH;
   let lo = -1;
   let hi = 1;
@@ -64,8 +81,9 @@ export function Forest({ lookup, members }: { lookup: GeneLookupAcross; members:
                   y={y}
                   dy="0.32em"
                   textAnchor="end"
-                  fontSize={11}
+                  fontSize={hero ? 12 : 11}
                   fill={CHART.ink2}
+                  fontFamily="var(--font-mono)"
                 >
                   {r.label.split(":")[0]}
                 </text>
@@ -88,12 +106,12 @@ export function Forest({ lookup, members }: { lookup: GeneLookupAcross; members:
                       y1={y}
                       y2={y}
                       stroke={v > 0 ? CHART.case : CHART.control}
-                      strokeWidth={1.5}
+                      strokeWidth={hero ? 2 : 1.5}
                     />
                     <circle
                       cx={x(v)}
                       cy={y}
-                      r={4.5}
+                      r={radius(r.e?.n_samples)}
                       fill={v > 0 ? CHART.case : CHART.control}
                       stroke={CHART.surface}
                       strokeWidth={1.2}
@@ -124,14 +142,14 @@ export function Forest({ lookup, members }: { lookup: GeneLookupAcross; members:
                       y={y}
                       dy="0.32em"
                       textAnchor="end"
-                      fontSize={11}
+                      fontSize={hero ? 12 : 11}
                       fontWeight={600}
                       fill={CHART.ink}
                     >
                       pooled
                     </text>
                     <polygon
-                      points={`${x(l)},${y} ${x(p)},${y - 7} ${x(h)},${y} ${x(p)},${y + 7}`}
+                      points={`${x(l)},${y} ${x(p)},${y - dia} ${x(h)},${y} ${x(p)},${y + dia}`}
                       fill={CHART.ink}
                     />
                   </>
@@ -159,6 +177,7 @@ export function Forest({ lookup, members }: { lookup: GeneLookupAcross; members:
               <div className="text-ink-2">
                 log2FC {fmtLfc(e.log2fc)} · SE {e.se?.toFixed(2)} · padj {fmtP(e.padj)} ·{" "}
                 {lookup.per_member?.[hover.label]?.replaceAll("_", " ")}
+                {e.n_samples ? ` · ${e.n_samples} samples` : ""}
               </div>
             );
           })()}

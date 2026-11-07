@@ -2,9 +2,8 @@ import { useState } from "react";
 import type { GeneMeta } from "@/api/generated/types.gen";
 import { ChartTip } from "@/components/ui/tooltip";
 import { fmtLfc, fmtP } from "@/lib/format";
-import { CHART, Legend, useMeasure } from "./common";
+import { CHART, useMeasure } from "./common";
 
-const LFC_CAP = 3;
 const MIN_CELL = 18;
 const POOLED_GAP = 10;
 const RIGHT_PAD = 44; // the rotated "pooled" header overhangs its column
@@ -15,28 +14,56 @@ export function hasPerMemberEffects(rows: GeneMeta[]): boolean {
   return rows.length > 0 && rows.every((g) => g.effects && Object.keys(g.effects).length > 0);
 }
 
-function lfcColor(v: number): string {
-  const t = Math.max(-1, Math.min(1, v / LFC_CAP));
-  const pct = Math.round(20 + Math.abs(t) * 75);
-  return t >= 0
-    ? `color-mix(in oklab, var(--case) ${pct}%, var(--surface))`
-    : `color-mix(in oklab, var(--control) ${pct}%, var(--surface))`;
+const RAMP_LO = 12; // % of the arm colour at a fold change of 0
+const RAMP_HI = 96; // % at the cap
+
+function mix(arm: "case" | "control", pct: number): string {
+  return `color-mix(in oklab, var(--${arm}) ${pct}%, var(--surface))`;
+}
+
+/** Colour for one dataset's fold change: the arm hue for its sign, saturation for its size,
+ * on a ramp that saturates at ``cap``. */
+function lfcColor(v: number, cap: number): string {
+  const t = Math.min(1, Math.abs(v) / cap);
+  const pct = Math.round(RAMP_LO + t * (RAMP_HI - RAMP_LO));
+  return mix(v >= 0 ? "case" : "control", pct);
+}
+
+/** Where the ramp saturates: the 90th percentile of the fold changes on show, so the strip
+ * uses its whole range whether the genes move 2-fold or 200-fold. Never below 1. */
+export function colorCap(rows: GeneMeta[], members: string[]): number {
+  const mags: number[] = [];
+  for (const g of rows) {
+    if (g.pooled_log2fc != null) mags.push(Math.abs(g.pooled_log2fc));
+    for (const m of members) {
+      const v = g.effects?.[m]?.log2fc;
+      if (v != null) mags.push(Math.abs(v));
+    }
+  }
+  if (mags.length === 0) return 1;
+  mags.sort((a, b) => a - b);
+  const q = mags[Math.min(mags.length - 1, Math.floor(mags.length * 0.9))];
+  return Math.max(1, Math.ceil(q * 2) / 2);
 }
 
 /** The robust genes (rows) in every dataset (columns). Cell colour is that dataset's own
- * fold change; a solid cell is significant there, a faint one is not; × means untested.
+ * fold change, deeper for a bigger change and in the other arm's colour when that dataset went
+ * the other way; a solid cell is significant there, a faint one is not; × means untested.
  * The last column is the pooled estimate. Reading across a row: "this gene goes up in
- * seven of eight studies". */
+ * seven of eight studies". ``tone`` is the direction the strip holds, for its legend. */
 export function ReplicationStrip({
   rows,
   members,
   alpha,
+  tone = "case",
   n = 15,
   onSelect,
 }: {
   rows: GeneMeta[];
   members: string[];
   alpha: number;
+  /** which direction these genes move; the legend ramp takes that colour */
+  tone?: "case" | "control";
   n?: number;
   onSelect?: (symbol: string) => void;
 }) {
@@ -48,6 +75,8 @@ export function ReplicationStrip({
     y: number;
   } | null>(null);
   const shown = rows.slice(0, n);
+  const cap = colorCap(shown, members);
+  const other: "case" | "control" = tone === "case" ? "control" : "case";
   const labelW = Math.min(110, Math.max(72, width * 0.22));
   const headH = 60;
   const rowH = 22;
@@ -156,7 +185,7 @@ export function ReplicationStrip({
                           width={cell - gap}
                           height={rowH - gap}
                           rx={3}
-                          fill={lfcColor(v)}
+                          fill={lfcColor(v, cap)}
                           opacity={sig ? 1 : 0.35}
                           stroke={sig ? "transparent" : CHART.grid}
                         />
@@ -182,7 +211,7 @@ export function ReplicationStrip({
                     width={cell - gap}
                     height={rowH - gap}
                     rx={3}
-                    fill={lfcColor(g.pooled_log2fc ?? 0)}
+                    fill={lfcColor(g.pooled_log2fc ?? 0, cap)}
                     stroke={CHART.ink}
                     strokeWidth={1}
                   />
@@ -222,14 +251,28 @@ export function ReplicationStrip({
           )}
         </ChartTip>
       )}
-      <div className="mt-2 flex flex-wrap items-center justify-between gap-2 text-[12px] text-ink-2">
-        <Legend
-          items={[
-            { label: "higher in case", color: CHART.case },
-            { label: "higher in control", color: CHART.control },
-          ]}
-        />
-        <span>solid = padj &lt; {alpha} there; faint = not significant; × = not tested</span>
+      <div className="mt-2 flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-[12px] text-ink-2">
+        <span className="inline-flex items-center gap-2">
+          <span className="num">0</span>
+          <span
+            aria-hidden
+            className="inline-block h-2.5 w-16 rounded-sm"
+            style={{
+              background: `linear-gradient(to right, ${mix(tone, RAMP_LO)}, ${mix(tone, RAMP_HI)})`,
+            }}
+          />
+          <span className="num">≥ {cap.toFixed(1)}</span>
+          <span className="text-ink-3">log2FC in that dataset</span>
+          <span
+            aria-hidden
+            className="ml-2 inline-block h-2.5 w-2.5 rounded-sm"
+            style={{ background: mix(other, 70) }}
+          />
+          <span className="text-ink-3">went the other way</span>
+        </span>
+        <span className="text-ink-3">
+          solid = padj &lt; {alpha} there · faint = not significant · × = not tested
+        </span>
       </div>
     </div>
   );

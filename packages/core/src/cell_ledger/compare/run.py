@@ -27,6 +27,7 @@ from scipy.stats import spearmanr
 
 from cell_ledger.analysis.enrichment import EnrichmentParams, run_prerank
 from cell_ledger.compare import figures
+from cell_ledger.compare.browser import POOLED_GENES_FILE, write_pooled_genes
 from cell_ledger.compare.gate import GateResult, gate
 from cell_ledger.compare.load import RunData, load_run
 from cell_ledger.compare.meta import (
@@ -472,6 +473,17 @@ def _run(
         gm.effects = _effects(gm.gene_id, m)
     _wide_table(table, m).to_csv(out / "gene_table.tsv", sep="\t", float_format="%.5g")
     report.files["gene_table"] = "gene_table.tsv"
+    write_pooled_genes(
+        table,
+        all_m,
+        out / POOLED_GENES_FILE,
+        pooled=m.labels,
+        flags=flags,
+        alpha=params.alpha,
+        lfc_threshold=params.lfc_threshold,
+        min_studies=min_studies,
+    )
+    report.files["pooled_genes"] = POOLED_GENES_FILE
 
     # Strata: pooled again within each sub-question with at least two pooled members.
     by_stratum: dict[str, list[str]] = {}

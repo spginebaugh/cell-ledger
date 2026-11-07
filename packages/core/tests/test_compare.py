@@ -11,6 +11,7 @@ simulation.
 
 from __future__ import annotations
 
+import gzip
 import json
 import shutil
 from pathlib import Path
@@ -540,3 +541,40 @@ def test_lookups_markers_and_leave_one_out_on_a_clean_pool(
     assert all(
         x.spearman_pooled_z is not None and x.spearman_pooled_z > 0.8 for x in report.leave_one_out
     )
+
+
+def test_pooled_genes_file_is_quantised_and_covers_every_member(
+    runs: dict[str, Path], tmp_path: Path
+) -> None:
+    """The browser file: pooled genes only, every included dataset (set-aside ones last),
+    fold changes to 0.01, -log10 padj to 0.1, and the per-dataset flags the wall draws."""
+    params = NO_EXTRAS.model_copy(update={"reversed_concordance": -0.15})
+    out = tmp_path / "pooled"
+    report = _cmp(runs, out, (*GOOD, "GSE16"), params=params)
+    assert report.status == "complete", report.error
+    assert report.files["pooled_genes"] == "pooled_genes.json.gz"
+    with gzip.open(out / "pooled_genes.json.gz", "rt") as f:
+        doc = json.load(f)
+    table = pd.read_csv(out / "gene_table.tsv", sep="\t", index_col=0)
+    pooled = table.loc[table["pooled_log2fc"].notna()]
+    assert doc["n"] == len(pooled) == len(doc["gene_id"]) == len(doc["log2fc"])
+    labels = [m["label"] for m in doc["members"]]
+    assert len(labels) == 6 and labels[-1].startswith("GSE16:")
+    assert [m["pooled"] for m in doc["members"]] == [True] * 5 + [False]
+    assert doc["members"][-1]["flags"] == ["labels_reversed"]
+    assert all(m["n_samples"] > 0 for m in doc["members"])
+    for key in ("member_lfc", "member_se", "member_sig"):
+        assert len(doc[key]) == 6 and all(len(col) == doc["n"] for col in doc[key])
+    # quantisation: integers at the declared scales, recoverable to within half a unit
+    i = doc["gene_id"].index("10")
+    row = pooled.loc[10]
+    assert doc["symbol"][i] == "G10" and doc["robust"][i] == 1
+    assert abs(doc["log2fc"][i] / doc["lfc_scale"] - row["pooled_log2fc"]) <= 0.005
+    assert abs(doc["nlp"][i] / doc["nlp_scale"] + np.log10(row["padj"])) <= 0.05
+    assert doc["n_tested"][i] == row["n_tested"] == 5 and doc["n_sig"][i] == 5
+    j = labels.index(f"GSE11:{report.members[0].contrast}")
+    assert abs(doc["member_lfc"][j][i] / 100 - row[f"lfc__{labels[j]}"]) <= 0.005
+    assert doc["member_sig"][j][i] == int(row[f"padj__{labels[j]}"] < params.alpha)
+    # the swapped dataset points the other way for the planted gene
+    assert doc["member_lfc"][-1][i] is not None and doc["member_lfc"][-1][i] < 0
+    assert all(isinstance(v, int) for col in doc["member_lfc"] for v in col if v is not None)

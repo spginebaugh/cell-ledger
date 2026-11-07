@@ -1,6 +1,7 @@
 import { fireEvent, render } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type {
+  Concordance,
   EnrichmentTerm,
   GeneMeta,
   PathwaySynthesis,
@@ -8,6 +9,7 @@ import type {
 } from "@/api/generated/types.gen";
 import { armPurity, fromRawHeatmap } from "@/lib/heatmap";
 import { ExpressionHeatmap } from "../expression-heatmap";
+import { ConcordanceHeatmap } from "../heatmap";
 import { PathwayMatrix } from "../pathway-matrix";
 import { PathwayNetwork } from "../pathway-network";
 import { PcaScatter } from "../pca";
@@ -305,5 +307,55 @@ describe("PathwayNetwork", () => {
     expect(onSelectTerm).toHaveBeenCalledWith(terms[0]);
     fireEvent.click(getByLabelText("STAT1, in 2 of these sets"));
     expect(onSelectGene).toHaveBeenCalledWith("STAT1");
+  });
+});
+
+describe("ConcordanceHeatmap", () => {
+  const concordance: Concordance = {
+    members: ["GSE1:a", "GSE2:b", "GSE3:c", "GSE4:d"],
+    spearman: [
+      [1, 0.8, 0.7, -0.6],
+      [0.8, 1, 0.75, -0.5],
+      [0.7, 0.75, 1, null],
+      [-0.6, -0.5, null, 1],
+    ],
+    n_shared: [
+      [0, 15000, 14000, 13000],
+      [15000, 0, 14500, 12000],
+      [14000, 14500, 0, 0],
+      [13000, 12000, 0, 0],
+    ],
+    mean_to_others: {},
+  };
+
+  it("draws each pair once, below the diagonal, and names the pair on hover", () => {
+    const { getAllByRole, getByLabelText, getByText } = render(
+      <ConcordanceHeatmap concordance={concordance} />,
+    );
+    // 4 datasets → 6 pairs, no diagonal, no mirror
+    expect(getAllByRole("graphics-symbol")).toHaveLength(6);
+    expect(getAllByRole("graphics-symbol").filter((g) => g.textContent === "1.00")).toHaveLength(0);
+    expect(getByLabelText("GSE4 vs GSE3: not compared")).toBeInTheDocument();
+    fireEvent.mouseMove(getByLabelText("GSE2 vs GSE1: 0.80"), { clientX: 200, clientY: 60 });
+    expect(getByText(/correlation 0.80/)).toBeInTheDocument();
+    expect(getByText(/15,000 genes in both/)).toBeInTheDocument();
+  });
+
+  it("grows past a narrow container so every pair stays reachable by scrolling", () => {
+    Object.defineProperty(HTMLElement.prototype, "clientWidth", {
+      configurable: true,
+      get: () => 390,
+    });
+    const many = Array.from({ length: 17 }, (_, i) => `GSE${i}:x`);
+    const wide: Concordance = {
+      members: many,
+      spearman: many.map(() => many.map(() => 0.7)),
+      n_shared: many.map(() => many.map(() => 10000)),
+      mean_to_others: {},
+    };
+    const { container } = render(<ConcordanceHeatmap concordance={wide} />);
+    const svg = container.querySelector("svg");
+    expect(Number(svg?.getAttribute("width"))).toBeGreaterThan(26 * 17 + 72);
+    expect(svg?.parentElement?.className).toContain("overflow-x-auto");
   });
 });
