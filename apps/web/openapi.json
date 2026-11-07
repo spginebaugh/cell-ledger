@@ -934,7 +934,7 @@
           "agent"
         ],
         "summary": "Discover",
-        "description": "Stream Claude's search for datasets that answer the question (Server-Sent Events).\n\nEvents: ``thinking`` (delta), ``tool`` (name, input, summary), ``result`` (a\n``DiscoveryResult``), ``error`` (message), ``done``. The question is recorded on the\nsession.",
+        "description": "Stream Claude's search for datasets that answer the question (Server-Sent Events).\n\nEvents: ``thinking`` (delta), ``tool`` (name, input, summary), ``result`` (a\n``DiscoveryResult``), ``error`` (message), ``done``. The question is recorded on the\nsession. To answer the clarifying questions a result asked, post the same question again\nwith the answers in ``answers``.",
         "operationId": "discoverDatasets",
         "parameters": [
           {
@@ -1369,6 +1369,30 @@
             },
             "type": "array",
             "title": "Concerns"
+          },
+          "case": {
+            "items": {
+              "$ref": "#/components/schemas/Rule"
+            },
+            "type": "array",
+            "title": "Case",
+            "description": "rules selecting the case arm; a sample matching any"
+          },
+          "control": {
+            "items": {
+              "$ref": "#/components/schemas/Rule"
+            },
+            "type": "array",
+            "title": "Control",
+            "description": "rules selecting the control arm"
+          },
+          "unclear": {
+            "items": {
+              "$ref": "#/components/schemas/Rule"
+            },
+            "type": "array",
+            "title": "Unclear",
+            "description": "rules for samples that might belong to an arm but whose records do not settle it"
           }
         },
         "type": "object",
@@ -1380,7 +1404,36 @@
           "case_hint",
           "control_hint"
         ],
-        "title": "Candidate"
+        "title": "Candidate",
+        "description": "A recommended series and the rules that choose its samples (see :mod:`.samples`)."
+      },
+      "ClarifyingQuestion": {
+        "properties": {
+          "question": {
+            "type": "string",
+            "title": "Question",
+            "description": "one decision the user must make before datasets qualify"
+          },
+          "options": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Options",
+            "description": "suggested answers when the choice is enumerable (the tissues, control types or time points the results actually offer); empty for an open question"
+          },
+          "why": {
+            "type": "string",
+            "title": "Why",
+            "description": "what changes with the answer: which series would qualify"
+          }
+        },
+        "type": "object",
+        "required": [
+          "question",
+          "why"
+        ],
+        "title": "ClarifyingQuestion"
       },
       "CollectRequest": {
         "properties": {
@@ -1957,6 +2010,60 @@
         "title": "Concordance",
         "description": "Pairwise Spearman correlation of Wald statistics over genes tested in both runs.\n\n``mean_to_others`` is each run's mean against the other runs of its concordance\ngroup, leaving out runs flagged ``labels_reversed``."
       },
+      "Condition": {
+        "properties": {
+          "field": {
+            "type": "string",
+            "title": "Field",
+            "description": "a sample field exactly as listed (e.g. \"cell type\", \"title\", \"source_name\"), or \"series\" for a fact the summary or design states about every sample"
+          },
+          "equals": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Equals",
+            "description": "holds when the value is exactly one of these; copy values verbatim"
+          },
+          "contains": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Contains",
+            "description": "holds when the value contains one of these, ignoring case (for titles, long values shown cut with \"\u2026\", or \"series\" quotes)"
+          },
+          "min": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Min",
+            "description": "holds when the value's first number is at least this"
+          },
+          "max": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Max",
+            "description": "holds when the value's first number is at most this"
+          }
+        },
+        "type": "object",
+        "required": [
+          "field"
+        ],
+        "title": "Condition"
+      },
       "Contrast": {
         "properties": {
           "gse": {
@@ -2518,6 +2625,16 @@
             "maxLength": 2000,
             "minLength": 3,
             "title": "Question"
+          },
+          "answers": {
+            "items": {
+              "type": "string",
+              "maxLength": 2000
+            },
+            "type": "array",
+            "maxItems": 10,
+            "title": "Answers",
+            "description": "the user's answers to the clarifying questions an earlier discovery of this question asked, in order; each at most 2000 characters"
           }
         },
         "type": "object",
@@ -2541,20 +2658,25 @@
             "title": "Genes",
             "description": "gene symbols the question names"
           },
+          "out_of_scope": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Out Of Scope",
+            "description": "set, with the reason, when no human bulk RNA-seq series with raw counts in GEO can answer the question (another organism, single-cell, microarray, proteomics, not a gene expression question); candidates must then be empty"
+          },
           "clarifying_questions": {
             "items": {
-              "type": "string"
+              "$ref": "#/components/schemas/ClarifyingQuestion"
             },
             "type": "array",
             "title": "Clarifying Questions",
             "description": "what must be decided before choosing datasets; empty when clear"
-          },
-          "candidates": {
-            "items": {
-              "$ref": "#/components/schemas/Candidate"
-            },
-            "type": "array",
-            "title": "Candidates"
           },
           "rejected": {
             "items": {
@@ -2569,13 +2691,74 @@
             },
             "type": "array",
             "title": "Queries Tried"
+          },
+          "candidates": {
+            "items": {
+              "$ref": "#/components/schemas/Candidate"
+            },
+            "type": "array",
+            "title": "Candidates"
+          },
+          "trace": {
+            "$ref": "#/components/schemas/DiscoveryTrace"
+          },
+          "selections": {
+            "items": {
+              "$ref": "#/components/schemas/SampleSelection"
+            },
+            "type": "array",
+            "title": "Selections"
           }
         },
         "type": "object",
         "required": [
           "interpretation"
         ],
-        "title": "DiscoveryResult"
+        "title": "DiscoveryResult",
+        "description": "Claude's output plus what the code made of it: the trace, and each candidate's\nsamples (``selections``, same order as ``candidates``, then any candidate code set\naside for too few samples per arm)."
+      },
+      "DiscoveryTrace": {
+        "properties": {
+          "turns": {
+            "type": "integer",
+            "title": "Turns",
+            "default": 0
+          },
+          "calls": {
+            "items": {
+              "$ref": "#/components/schemas/ToolCall"
+            },
+            "type": "array",
+            "title": "Calls"
+          },
+          "seen": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Seen",
+            "description": "every accession GEO confirmed in this run"
+          },
+          "invented": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Invented",
+            "description": "accessions the model named that GEO never confirmed; dropped"
+          },
+          "usage": {
+            "$ref": "#/components/schemas/Usage"
+          },
+          "elapsed_seconds": {
+            "type": "number",
+            "title": "Elapsed Seconds",
+            "default": 0.0
+          }
+        },
+        "type": "object",
+        "title": "DiscoveryTrace",
+        "description": "Recorded by the code around the model, never self-reported: which queries ran, which\naccessions each returned, which Claude saw, and what it cost. The evals read this to tell\na search miss (never returned) from a judgment miss (returned, then rejected or ignored)."
       },
       "EnrichmentSummary": {
         "properties": {
@@ -4392,6 +4575,39 @@
         ],
         "title": "QueryStats"
       },
+      "QueryTrace": {
+        "properties": {
+          "query": {
+            "type": "string",
+            "title": "Query"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total",
+            "description": "eligible series in GEO matching this query"
+          },
+          "returned": {
+            "type": "integer",
+            "title": "Returned"
+          },
+          "gses": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Gses",
+            "description": "accessions this query returned, in GEO's order"
+          }
+        },
+        "type": "object",
+        "required": [
+          "query",
+          "total",
+          "returned",
+          "gses"
+        ],
+        "title": "QueryTrace"
+      },
       "Reconciliation": {
         "properties": {
           "n_counts_columns": {
@@ -4487,6 +4703,23 @@
           "why"
         ],
         "title": "Rejected"
+      },
+      "Rule": {
+        "properties": {
+          "all_of": {
+            "items": {
+              "$ref": "#/components/schemas/Condition"
+            },
+            "type": "array",
+            "title": "All Of",
+            "description": "the sample must meet every condition"
+          }
+        },
+        "type": "object",
+        "required": [
+          "all_of"
+        ],
+        "title": "Rule"
       },
       "RunProgress": {
         "properties": {
@@ -5196,6 +5429,79 @@
         "title": "SampleRecord",
         "description": "One GSM as GEO describes it. Values are verbatim from the SOFT file."
       },
+      "SampleSelection": {
+        "properties": {
+          "gse": {
+            "type": "string",
+            "title": "Gse"
+          },
+          "case_gsms": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Case Gsms"
+          },
+          "control_gsms": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Control Gsms"
+          },
+          "unclear_gsms": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Unclear Gsms",
+            "description": "samples that may belong but the record does not settle it, plus any the rules put in both arms"
+          },
+          "excluded_gsms": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Excluded Gsms",
+            "description": "every other sample"
+          },
+          "no_counts_gsms": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "No Counts Gsms"
+          },
+          "counts_checked": {
+            "type": "boolean",
+            "title": "Counts Checked",
+            "default": false
+          },
+          "case_rule": {
+            "type": "string",
+            "title": "Case Rule",
+            "default": ""
+          },
+          "control_rule": {
+            "type": "string",
+            "title": "Control Rule",
+            "default": ""
+          },
+          "problems": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Problems"
+          }
+        },
+        "type": "object",
+        "required": [
+          "gse"
+        ],
+        "title": "SampleSelection",
+        "description": "What code made of the agent's rules for one series. ``case_gsms`` and\n``control_gsms`` hold every sample the rules put in each arm; ``no_counts_gsms`` are\nthe selected samples the NCBI count table lacks (they cannot be analysed)."
+      },
       "SampleSheet": {
         "properties": {
           "gse": {
@@ -5502,6 +5808,102 @@
         ],
         "title": "StepRecord",
         "description": "One pipeline step: what ran, with which parameters, how long, and what it warned."
+      },
+      "ToolCall": {
+        "properties": {
+          "tool": {
+            "type": "string",
+            "title": "Tool"
+          },
+          "input": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Input"
+          },
+          "queries": {
+            "items": {
+              "$ref": "#/components/schemas/QueryTrace"
+            },
+            "type": "array",
+            "title": "Queries",
+            "description": "search_geo only"
+          },
+          "confirmed": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Confirmed",
+            "description": "accessions GEO confirmed eligible in this call"
+          },
+          "shown": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Shown",
+            "description": "the confirmed accessions whose records Claude saw"
+          },
+          "ineligible": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Ineligible",
+            "description": "nominated accessions GEO did not confirm"
+          },
+          "inspected": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Inspected",
+            "description": "inspect_series only: series whose samples Claude read"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          }
+        },
+        "type": "object",
+        "required": [
+          "tool"
+        ],
+        "title": "ToolCall",
+        "description": "One tool invocation as the code saw it: inputs, what GEO returned, what Claude was shown."
+      },
+      "Usage": {
+        "properties": {
+          "input_tokens": {
+            "type": "integer",
+            "title": "Input Tokens",
+            "default": 0
+          },
+          "output_tokens": {
+            "type": "integer",
+            "title": "Output Tokens",
+            "default": 0
+          },
+          "cache_read_input_tokens": {
+            "type": "integer",
+            "title": "Cache Read Input Tokens",
+            "default": 0
+          },
+          "cache_creation_input_tokens": {
+            "type": "integer",
+            "title": "Cache Creation Input Tokens",
+            "default": 0
+          }
+        },
+        "type": "object",
+        "title": "Usage"
       },
       "ValidationError": {
         "properties": {

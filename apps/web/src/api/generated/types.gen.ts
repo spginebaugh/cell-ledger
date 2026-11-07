@@ -175,6 +175,8 @@ export type Assay = 'bulk' | 'single_cell';
 
 /**
  * Candidate
+ *
+ * A recommended series and the rules that choose its samples (see :mod:`.samples`).
  */
 export type Candidate = {
     /**
@@ -211,6 +213,48 @@ export type Candidate = {
      * Concerns
      */
     concerns?: Array<string>;
+    /**
+     * Case
+     *
+     * rules selecting the case arm; a sample matching any
+     */
+    case?: Array<Rule>;
+    /**
+     * Control
+     *
+     * rules selecting the control arm
+     */
+    control?: Array<Rule>;
+    /**
+     * Unclear
+     *
+     * rules for samples that might belong to an arm but whose records do not settle it
+     */
+    unclear?: Array<Rule>;
+};
+
+/**
+ * ClarifyingQuestion
+ */
+export type ClarifyingQuestion = {
+    /**
+     * Question
+     *
+     * one decision the user must make before datasets qualify
+     */
+    question: string;
+    /**
+     * Options
+     *
+     * suggested answers when the choice is enumerable (the tissues, control types or time points the results actually offer); empty for an open question
+     */
+    options?: Array<string>;
+    /**
+     * Why
+     *
+     * what changes with the answer: which series would qualify
+     */
+    why: string;
 };
 
 /**
@@ -522,6 +566,42 @@ export type Concordance = {
     groups?: {
         [key: string]: string;
     };
+};
+
+/**
+ * Condition
+ */
+export type Condition = {
+    /**
+     * Field
+     *
+     * a sample field exactly as listed (e.g. "cell type", "title", "source_name"), or "series" for a fact the summary or design states about every sample
+     */
+    field: string;
+    /**
+     * Equals
+     *
+     * holds when the value is exactly one of these; copy values verbatim
+     */
+    equals?: Array<string>;
+    /**
+     * Contains
+     *
+     * holds when the value contains one of these, ignoring case (for titles, long values shown cut with "…", or "series" quotes)
+     */
+    contains?: Array<string>;
+    /**
+     * Min
+     *
+     * holds when the value's first number is at least this
+     */
+    min?: number | null;
+    /**
+     * Max
+     *
+     * holds when the value's first number is at most this
+     */
+    max?: number | null;
 };
 
 /**
@@ -881,10 +961,20 @@ export type DiscoverRequest = {
      * Question
      */
     question: string;
+    /**
+     * Answers
+     *
+     * the user's answers to the clarifying questions an earlier discovery of this question asked, in order; each at most 2000 characters
+     */
+    answers?: Array<string>;
 };
 
 /**
  * DiscoveryResult
+ *
+ * Claude's output plus what the code made of it: the trace, and each candidate's
+ * samples (``selections``, same order as ``candidates``, then any candidate code set
+ * aside for too few samples per arm).
  */
 export type DiscoveryResult = {
     /**
@@ -900,15 +990,17 @@ export type DiscoveryResult = {
      */
     genes?: Array<string>;
     /**
+     * Out Of Scope
+     *
+     * set, with the reason, when no human bulk RNA-seq series with raw counts in GEO can answer the question (another organism, single-cell, microarray, proteomics, not a gene expression question); candidates must then be empty
+     */
+    out_of_scope?: string | null;
+    /**
      * Clarifying Questions
      *
      * what must be decided before choosing datasets; empty when clear
      */
-    clarifying_questions?: Array<string>;
-    /**
-     * Candidates
-     */
-    candidates?: Array<Candidate>;
+    clarifying_questions?: Array<ClarifyingQuestion>;
     /**
      * Rejected
      */
@@ -917,6 +1009,50 @@ export type DiscoveryResult = {
      * Queries Tried
      */
     queries_tried?: Array<string>;
+    /**
+     * Candidates
+     */
+    candidates?: Array<Candidate>;
+    trace?: DiscoveryTrace;
+    /**
+     * Selections
+     */
+    selections?: Array<SampleSelection>;
+};
+
+/**
+ * DiscoveryTrace
+ *
+ * Recorded by the code around the model, never self-reported: which queries ran, which
+ * accessions each returned, which Claude saw, and what it cost. The evals read this to tell
+ * a search miss (never returned) from a judgment miss (returned, then rejected or ignored).
+ */
+export type DiscoveryTrace = {
+    /**
+     * Turns
+     */
+    turns?: number;
+    /**
+     * Calls
+     */
+    calls?: Array<ToolCall>;
+    /**
+     * Seen
+     *
+     * every accession GEO confirmed in this run
+     */
+    seen?: Array<string>;
+    /**
+     * Invented
+     *
+     * accessions the model named that GEO never confirmed; dropped
+     */
+    invented?: Array<string>;
+    usage?: Usage;
+    /**
+     * Elapsed Seconds
+     */
+    elapsed_seconds?: number;
 };
 
 /**
@@ -2039,6 +2175,32 @@ export type QueryStats = {
 };
 
 /**
+ * QueryTrace
+ */
+export type QueryTrace = {
+    /**
+     * Query
+     */
+    query: string;
+    /**
+     * Total
+     *
+     * eligible series in GEO matching this query
+     */
+    total: number;
+    /**
+     * Returned
+     */
+    returned: number;
+    /**
+     * Gses
+     *
+     * accessions this query returned, in GEO's order
+     */
+    gses: Array<string>;
+};
+
+/**
  * Reconciliation
  *
  * How the counts matrix columns lined up with the sample sheet and contrast.
@@ -2102,6 +2264,18 @@ export type Rejected = {
      * Why
      */
     why: string;
+};
+
+/**
+ * Rule
+ */
+export type Rule = {
+    /**
+     * All Of
+     *
+     * the sample must meet every condition
+     */
+    all_of: Array<Condition>;
 };
 
 /**
@@ -2486,6 +2660,60 @@ export type SampleRecord = {
 };
 
 /**
+ * SampleSelection
+ *
+ * What code made of the agent's rules for one series. ``case_gsms`` and
+ * ``control_gsms`` hold every sample the rules put in each arm; ``no_counts_gsms`` are
+ * the selected samples the NCBI count table lacks (they cannot be analysed).
+ */
+export type SampleSelection = {
+    /**
+     * Gse
+     */
+    gse: string;
+    /**
+     * Case Gsms
+     */
+    case_gsms?: Array<string>;
+    /**
+     * Control Gsms
+     */
+    control_gsms?: Array<string>;
+    /**
+     * Unclear Gsms
+     *
+     * samples that may belong but the record does not settle it, plus any the rules put in both arms
+     */
+    unclear_gsms?: Array<string>;
+    /**
+     * Excluded Gsms
+     *
+     * every other sample
+     */
+    excluded_gsms?: Array<string>;
+    /**
+     * No Counts Gsms
+     */
+    no_counts_gsms?: Array<string>;
+    /**
+     * Counts Checked
+     */
+    counts_checked?: boolean;
+    /**
+     * Case Rule
+     */
+    case_rule?: string;
+    /**
+     * Control Rule
+     */
+    control_rule?: string;
+    /**
+     * Problems
+     */
+    problems?: Array<string>;
+};
+
+/**
  * SampleSheet
  */
 export type SampleSheet = {
@@ -2670,6 +2898,80 @@ export type StepRecord = {
      * Warnings
      */
     warnings?: Array<string>;
+};
+
+/**
+ * ToolCall
+ *
+ * One tool invocation as the code saw it: inputs, what GEO returned, what Claude was shown.
+ */
+export type ToolCall = {
+    /**
+     * Tool
+     */
+    tool: string;
+    /**
+     * Input
+     */
+    input?: {
+        [key: string]: unknown;
+    };
+    /**
+     * Queries
+     *
+     * search_geo only
+     */
+    queries?: Array<QueryTrace>;
+    /**
+     * Confirmed
+     *
+     * accessions GEO confirmed eligible in this call
+     */
+    confirmed?: Array<string>;
+    /**
+     * Shown
+     *
+     * the confirmed accessions whose records Claude saw
+     */
+    shown?: Array<string>;
+    /**
+     * Ineligible
+     *
+     * nominated accessions GEO did not confirm
+     */
+    ineligible?: Array<string>;
+    /**
+     * Inspected
+     *
+     * inspect_series only: series whose samples Claude read
+     */
+    inspected?: Array<string>;
+    /**
+     * Error
+     */
+    error?: string | null;
+};
+
+/**
+ * Usage
+ */
+export type Usage = {
+    /**
+     * Input Tokens
+     */
+    input_tokens?: number;
+    /**
+     * Output Tokens
+     */
+    output_tokens?: number;
+    /**
+     * Cache Read Input Tokens
+     */
+    cache_read_input_tokens?: number;
+    /**
+     * Cache Creation Input Tokens
+     */
+    cache_creation_input_tokens?: number;
 };
 
 /**

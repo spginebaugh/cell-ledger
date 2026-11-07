@@ -16,7 +16,7 @@ from typing import Any
 from fastapi.testclient import TestClient
 
 from cell_ledger.geo.fetch import FileRecord
-from cell_ledger_api.agent import Agent
+from cell_ledger_api.agent.design import compile_design
 from cell_ledger_api.db import Database
 from cell_ledger_api.pipeline import comparison_name, design_request
 
@@ -193,7 +193,7 @@ def plant_finished_run(
     pg: Callable[..., Any], sid: str, gse: str, *, status: str = "complete", attempts: int = 0
 ) -> None:
     """A run row with one contrast in ``status``; ``running`` rows stand for an interrupted run."""
-    proposal, errors = Agent.compile(RECORD.model_copy(update={"gse": gse}), labels({}), ["IL17A"])
+    proposal, errors = compile_design(RECORD.model_copy(update={"gse": gse}), labels({}), ["IL17A"])
     assert proposal is not None and not errors
     design = proposal.design.model_dump_json()
     run_status = "running" if status == "running" else "finished"

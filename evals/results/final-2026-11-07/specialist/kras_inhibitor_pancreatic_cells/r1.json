@@ -1,0 +1,894 @@
+{
+  "case_id": "kras_inhibitor_pancreatic_cells",
+  "system": "specialist",
+  "repeat": 1,
+  "conditions": {
+    "system": "specialist",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "fingerprint": "dbb24587bd68bf9c9c274050bb2a4c1cc278c11cb8cbb8c22bb9c16b5f548ad7",
+    "web_search": true,
+    "code_revision": "4032f8cb3e85576661f421ff7f4f75aa87401b25",
+    "dirty": true,
+    "geo_cache": "/Users/scott/Documents/code/gauntlet-hackathon/cell-ledger/data/evals/geo-cache/all12-r2",
+    "case_sha256": "717de0119ef7d3c2ec20fb63abee9a57b2c3867e2060388f71f9e0027a7ac232",
+    "suite_sha256": "5c2b23011a22776e3ea3fab6976ae88635f0f4a277dbf5db35d8fa2bb07d1859",
+    "run_id": "all12-r2",
+    "started_at": "2026-11-07T15:04:10+00:00"
+  },
+  "turns": [
+    {
+      "answers": [],
+      "action": "proceed",
+      "output": {
+        "interpretation": "Human pancreatic cancer cell lines treated in culture with a direct KRAS inhibitor (MRTX1133, a pan-KRAS inhibitor, etc.) compared with DMSO/vehicle-treated cells of the same line at the same time point.",
+        "genes": [
+          "KRAS"
+        ],
+        "out_of_scope": null,
+        "clarifying_questions": [],
+        "rejected": [
+          {
+            "gse": "GSE269985",
+            "why": "Compares MRTX1133-resistant lines with parental lines, both without acute treatment. There is no vehicle-vs-inhibitor contrast."
+          },
+          {
+            "gse": "GSE234449",
+            "why": "Only 1 untreated parental SUIT2 sample against 2 MRTX1133-treated samples. That is too few, and pooling with the resistant line would mix up resistance status with treatment."
+          },
+          {
+            "gse": "GSE249914",
+            "why": "The samples are xenograft tumours (in vivo), not cells treated in culture."
+          },
+          {
+            "gse": "GSE238198",
+            "why": "Uses a MEK inhibitor (trametinib), not a direct KRAS inhibitor."
+          },
+          {
+            "gse": "GSE189545",
+            "why": "Lung cancer, not a KRAS inhibitor study in pancreatic lines."
+          },
+          {
+            "gse": "GSE202532",
+            "why": "Anoikis-resistance study with no KRAS inhibitor."
+          },
+          {
+            "gse": "GSE273116",
+            "why": "too few samples with counts per arm (case 3, control 2; at least 3 each)"
+          }
+        ],
+        "queries_tried": [
+          "MRTX1133 pancreatic cancer cell lines",
+          "KRAS G12D inhibitor pancreatic RNA-seq",
+          "sotorasib pancreatic cancer cells",
+          "pan-KRAS inhibitor pancreatic cancer",
+          "KRAS inhibitor PDAC cell line DMSO",
+          "RMC-6236 pancreatic",
+          "adagrasib MIA PaCa-2",
+          "RMC-7977 pancreatic",
+          "BI-2865 KRAS",
+          "KRAS G12C inhibitor MIA PaCa-2 RNA-seq",
+          "AMG510 pancreatic",
+          "KRAS G12D inhibitor PANC-1 AsPC-1 RNA-seq",
+          "HRS-4642 OR GFH375 OR zoldonrasib",
+          "KRAS inhibition pancreatic ductal adenocarcinoma transcriptome cell lines",
+          "web: MRTX1133 / BI-2865 / RMC-6236 pancreatic cell line RNA-seq GEO"
+        ],
+        "candidates": [
+          {
+            "gse": "GSE228010",
+            "title": "Pan KRAS inhibitor selectively inactivates oncogenic signaling and tumor growth",
+            "n_samples": 88,
+            "why": "Six PDAC cell lines (AsPC-1, Capan-1, HPAC, MIA PaCa-2, PANC-1, Panc 04.03) were each treated in vitro for 2 h with 5 µM of a pan-KRAS inhibitor or with DMSO, in duplicate. That gives 12 treated vs 12 vehicle samples at the same time point.",
+            "case_hint": "PDAC cell lines treated with the pan-KRAS inhibitor for 2 h (12 samples)",
+            "control_hint": "The same PDAC cell lines treated with DMSO for 2 h (12 samples)",
+            "concerns": [
+              "Only 2 replicates per line, so cell line should be a covariate (paired design).",
+              "The 2 h exposure captures only early transcriptional changes.",
+              "The PDAC set mixes KRAS genotypes, including at least one KRAS wild-type line according to the genotype field; consider leaving it out."
+            ],
+            "case": [
+              {
+                "all_of": [
+                  {
+                    "field": "cell type",
+                    "equals": [
+                      "PDAC"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  },
+                  {
+                    "field": "treatment",
+                    "equals": [
+                      "KRASi"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "control": [
+              {
+                "all_of": [
+                  {
+                    "field": "cell type",
+                    "equals": [
+                      "PDAC"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  },
+                  {
+                    "field": "treatment",
+                    "equals": [
+                      "DMSO"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "unclear": []
+          },
+          {
+            "gse": "GSE201412",
+            "title": "Anti-tumor efficacy of a potent and selective non-covalent KRASG12D inhibitor",
+            "n_samples": 105,
+            "why": "AsPC-1 cells (KRAS G12D PDAC) were treated in vitro with 100 nM MRTX1133 or DMSO for 24 h, 3 replicates each. The series also has xenograft and non-pancreatic samples, which are excluded.",
+            "case_hint": "In-vitro AsPC-1 cells, MRTX1133 100 nM for 24 h (3 samples)",
+            "control_hint": "In-vitro AsPC-1 cells, DMSO for 24 h (3 samples)",
+            "concerns": [
+              "Only one pancreatic line in vitro, at the minimum of 3 samples per arm.",
+              "The 3 h MRTX1133 samples have no matching 3 h DMSO control, so they are excluded."
+            ],
+            "case": [
+              {
+                "all_of": [
+                  {
+                    "field": "cell line",
+                    "equals": [
+                      "AsPC1"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  },
+                  {
+                    "field": "source_name",
+                    "equals": [
+                      "in-vitro cell line"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  },
+                  {
+                    "field": "treatment",
+                    "equals": [
+                      "MRTX1133 100nM 24h"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "control": [
+              {
+                "all_of": [
+                  {
+                    "field": "cell line",
+                    "equals": [
+                      "AsPC1"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  },
+                  {
+                    "field": "source_name",
+                    "equals": [
+                      "in-vitro cell line"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  },
+                  {
+                    "field": "treatment",
+                    "equals": [
+                      "DMSO 24h"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "unclear": []
+          }
+        ],
+        "trace": {
+          "turns": 4,
+          "calls": [
+            {
+              "tool": "search_geo",
+              "input": {
+                "queries": [
+                  "MRTX1133 pancreatic cancer cell lines",
+                  "KRAS G12D inhibitor pancreatic RNA-seq",
+                  "sotorasib pancreatic cancer cells",
+                  "pan-KRAS inhibitor pancreatic cancer",
+                  "KRAS inhibitor PDAC cell line DMSO",
+                  "RMC-6236 pancreatic",
+                  "adagrasib MIA PaCa-2"
+                ],
+                "since": 2018
+              },
+              "queries": [
+                {
+                  "query": "MRTX1133 pancreatic cancer cell lines",
+                  "total": 2,
+                  "returned": 2,
+                  "gses": [
+                    "GSE269985",
+                    "GSE234449"
+                  ]
+                },
+                {
+                  "query": "KRAS G12D inhibitor pancreatic RNA-seq",
+                  "total": 3,
+                  "returned": 3,
+                  "gses": [
+                    "GSE269985",
+                    "GSE273116",
+                    "GSE189545"
+                  ]
+                },
+                {
+                  "query": "sotorasib pancreatic cancer cells",
+                  "total": 2,
+                  "returned": 2,
+                  "gses": [
+                    "GSE269985",
+                    "GSE273116"
+                  ]
+                },
+                {
+                  "query": "pan-KRAS inhibitor pancreatic cancer",
+                  "total": 2,
+                  "returned": 2,
+                  "gses": [
+                    "GSE273116",
+                    "GSE249914"
+                  ]
+                },
+                {
+                  "query": "KRAS inhibitor PDAC cell line DMSO",
+                  "total": 2,
+                  "returned": 2,
+                  "gses": [
+                    "GSE238198",
+                    "GSE228010"
+                  ]
+                },
+                {
+                  "query": "RMC-6236 pancreatic",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                },
+                {
+                  "query": "adagrasib MIA PaCa-2",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                }
+              ],
+              "confirmed": [
+                "GSE269985",
+                "GSE234449",
+                "GSE273116",
+                "GSE189545",
+                "GSE249914",
+                "GSE238198",
+                "GSE228010"
+              ],
+              "shown": [
+                "GSE269985",
+                "GSE234449",
+                "GSE273116",
+                "GSE189545",
+                "GSE249914",
+                "GSE238198",
+                "GSE228010"
+              ],
+              "ineligible": [],
+              "inspected": [],
+              "error": null
+            },
+            {
+              "tool": "find_geo_series_on_web",
+              "input": {
+                "query": "MRTX1133 OR BI-2865 OR RMC-6236 pancreatic cancer cell line RNA-seq GEO",
+                "objective": "Find GEO series of human PDAC cell lines treated with direct KRAS inhibitors vs DMSO, bulk RNA-seq."
+              },
+              "queries": [],
+              "confirmed": [
+                "GSE234449",
+                "GSE201412"
+              ],
+              "shown": [
+                "GSE234449",
+                "GSE201412"
+              ],
+              "ineligible": [
+                "GSE315130",
+                "GSE301148",
+                "GSE249539",
+                "GSE303323",
+                "GSE270182",
+                "GSE270409",
+                "GSE270796",
+                "GSE271300",
+                "GSE271450",
+                "GSE271518",
+                "GSE271987",
+                "GSE273376",
+                "GSE275217",
+                "GSE282795",
+                "GSE290898",
+                "GSE291124",
+                "GSE292508",
+                "GSE293756",
+                "GSE293877",
+                "GSE293892",
+                "GSE294216",
+                "GSE294825",
+                "GSE295683",
+                "GSE315129"
+              ],
+              "inspected": [],
+              "error": null
+            },
+            {
+              "tool": "inspect_series",
+              "input": {
+                "gses": [
+                  "GSE269985",
+                  "GSE234449",
+                  "GSE273116",
+                  "GSE228010",
+                  "GSE201412"
+                ]
+              },
+              "queries": [],
+              "confirmed": [],
+              "shown": [],
+              "ineligible": [],
+              "inspected": [
+                "GSE269985",
+                "GSE234449",
+                "GSE273116",
+                "GSE228010",
+                "GSE201412"
+              ],
+              "error": null
+            },
+            {
+              "tool": "search_geo",
+              "input": {
+                "queries": [
+                  "RMC-7977 pancreatic",
+                  "BI-2865 KRAS",
+                  "KRAS G12C inhibitor MIA PaCa-2 RNA-seq",
+                  "AMG510 pancreatic",
+                  "KRAS G12D inhibitor PANC-1 AsPC-1 RNA-seq",
+                  "HRS-4642 OR GFH375 OR zoldonrasib",
+                  "KRAS inhibition pancreatic ductal adenocarcinoma transcriptome cell lines"
+                ],
+                "since": 2018
+              },
+              "queries": [
+                {
+                  "query": "RMC-7977 pancreatic",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                },
+                {
+                  "query": "BI-2865 KRAS",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                },
+                {
+                  "query": "KRAS G12C inhibitor MIA PaCa-2 RNA-seq",
+                  "total": 1,
+                  "returned": 1,
+                  "gses": [
+                    "GSE273116"
+                  ]
+                },
+                {
+                  "query": "AMG510 pancreatic",
+                  "total": 2,
+                  "returned": 2,
+                  "gses": [
+                    "GSE273116",
+                    "GSE269985"
+                  ]
+                },
+                {
+                  "query": "KRAS G12D inhibitor PANC-1 AsPC-1 RNA-seq",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                },
+                {
+                  "query": "HRS-4642 OR GFH375 OR zoldonrasib",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                },
+                {
+                  "query": "KRAS inhibition pancreatic ductal adenocarcinoma transcriptome cell lines",
+                  "total": 1,
+                  "returned": 1,
+                  "gses": [
+                    "GSE202532"
+                  ]
+                }
+              ],
+              "confirmed": [
+                "GSE273116",
+                "GSE269985",
+                "GSE202532"
+              ],
+              "shown": [
+                "GSE273116",
+                "GSE269985",
+                "GSE202532"
+              ],
+              "ineligible": [],
+              "inspected": [],
+              "error": null
+            }
+          ],
+          "seen": [
+            "GSE269985",
+            "GSE234449",
+            "GSE273116",
+            "GSE189545",
+            "GSE249914",
+            "GSE238198",
+            "GSE228010",
+            "GSE201412",
+            "GSE202532"
+          ],
+          "invented": [],
+          "usage": {
+            "input_tokens": 10,
+            "output_tokens": 3866,
+            "cache_read_input_tokens": 32800,
+            "cache_creation_input_tokens": 22563
+          },
+          "elapsed_seconds": 42.243
+        },
+        "selections": [
+          {
+            "gse": "GSE228010",
+            "case_gsms": [
+              "GSM7112374",
+              "GSM7112375",
+              "GSM7112382",
+              "GSM7112383",
+              "GSM7112418",
+              "GSM7112419",
+              "GSM7112430",
+              "GSM7112431",
+              "GSM7112442",
+              "GSM7112443",
+              "GSM7112446",
+              "GSM7112447"
+            ],
+            "control_gsms": [
+              "GSM7112372",
+              "GSM7112373",
+              "GSM7112380",
+              "GSM7112381",
+              "GSM7112416",
+              "GSM7112417",
+              "GSM7112428",
+              "GSM7112429",
+              "GSM7112440",
+              "GSM7112441",
+              "GSM7112444",
+              "GSM7112445"
+            ],
+            "unclear_gsms": [],
+            "excluded_gsms": [
+              "GSM7112376",
+              "GSM7112377",
+              "GSM7112378",
+              "GSM7112379",
+              "GSM7112384",
+              "GSM7112385",
+              "GSM7112386",
+              "GSM7112387",
+              "GSM7112388",
+              "GSM7112389",
+              "GSM7112390",
+              "GSM7112391",
+              "GSM7112392",
+              "GSM7112393",
+              "GSM7112394",
+              "GSM7112395",
+              "GSM7112396",
+              "GSM7112397",
+              "GSM7112398",
+              "GSM7112399",
+              "GSM7112400",
+              "GSM7112401",
+              "GSM7112402",
+              "GSM7112403",
+              "GSM7112404",
+              "GSM7112405",
+              "GSM7112406",
+              "GSM7112407",
+              "GSM7112408",
+              "GSM7112409",
+              "GSM7112410",
+              "GSM7112411",
+              "GSM7112412",
+              "GSM7112413",
+              "GSM7112414",
+              "GSM7112415",
+              "GSM7112420",
+              "GSM7112421",
+              "GSM7112422",
+              "GSM7112423",
+              "GSM7112424",
+              "GSM7112425",
+              "GSM7112426",
+              "GSM7112427",
+              "GSM7112432",
+              "GSM7112433",
+              "GSM7112434",
+              "GSM7112435",
+              "GSM7112436",
+              "GSM7112437",
+              "GSM7112438",
+              "GSM7112439",
+              "GSM7112448",
+              "GSM7112449",
+              "GSM7112450",
+              "GSM7112451",
+              "GSM7112452",
+              "GSM7112453",
+              "GSM7112454",
+              "GSM7112455",
+              "GSM7112456",
+              "GSM7112457",
+              "GSM7112458",
+              "GSM7112459"
+            ],
+            "no_counts_gsms": [],
+            "counts_checked": true,
+            "case_rule": "cell type = \"PDAC\" and treatment = \"KRASi\"",
+            "control_rule": "cell type = \"PDAC\" and treatment = \"DMSO\"",
+            "problems": []
+          },
+          {
+            "gse": "GSE201412",
+            "case_gsms": [
+              "GSM6063070",
+              "GSM6063071",
+              "GSM6063072"
+            ],
+            "control_gsms": [
+              "GSM6063067",
+              "GSM6063068",
+              "GSM6063069"
+            ],
+            "unclear_gsms": [],
+            "excluded_gsms": [
+              "GSM6062986",
+              "GSM6062987",
+              "GSM6062988",
+              "GSM6062989",
+              "GSM6062990",
+              "GSM6062991",
+              "GSM6062992",
+              "GSM6062993",
+              "GSM6062994",
+              "GSM6062995",
+              "GSM6062996",
+              "GSM6062997",
+              "GSM6062998",
+              "GSM6062999",
+              "GSM6063000",
+              "GSM6063001",
+              "GSM6063002",
+              "GSM6063003",
+              "GSM6063004",
+              "GSM6063005",
+              "GSM6063006",
+              "GSM6063007",
+              "GSM6063008",
+              "GSM6063009",
+              "GSM6063010",
+              "GSM6063011",
+              "GSM6063012",
+              "GSM6063013",
+              "GSM6063014",
+              "GSM6063015",
+              "GSM6063016",
+              "GSM6063017",
+              "GSM6063018",
+              "GSM6063019",
+              "GSM6063020",
+              "GSM6063021",
+              "GSM6063022",
+              "GSM6063023",
+              "GSM6063024",
+              "GSM6063025",
+              "GSM6063026",
+              "GSM6063027",
+              "GSM6063028",
+              "GSM6063029",
+              "GSM6063030",
+              "GSM6063031",
+              "GSM6063032",
+              "GSM6063033",
+              "GSM6063034",
+              "GSM6063035",
+              "GSM6063036",
+              "GSM6063037",
+              "GSM6063038",
+              "GSM6063039",
+              "GSM6063040",
+              "GSM6063041",
+              "GSM6063042",
+              "GSM6063043",
+              "GSM6063044",
+              "GSM6063045",
+              "GSM6063046",
+              "GSM6063047",
+              "GSM6063048",
+              "GSM6063049",
+              "GSM6063050",
+              "GSM6063051",
+              "GSM6063052",
+              "GSM6063053",
+              "GSM6063054",
+              "GSM6063055",
+              "GSM6063056",
+              "GSM6063057",
+              "GSM6063058",
+              "GSM6063059",
+              "GSM6063060",
+              "GSM6063061",
+              "GSM6063062",
+              "GSM6063063",
+              "GSM6063064",
+              "GSM6063065",
+              "GSM6063066",
+              "GSM6063073",
+              "GSM6063074",
+              "GSM6063075",
+              "GSM6063076",
+              "GSM6063077",
+              "GSM6063078",
+              "GSM6063079",
+              "GSM6063080",
+              "GSM6063081",
+              "GSM6063082",
+              "GSM6063083",
+              "GSM6063084",
+              "GSM6063085",
+              "GSM6063086",
+              "GSM6063087",
+              "GSM6063088",
+              "GSM6063089",
+              "GSM6063090"
+            ],
+            "no_counts_gsms": [],
+            "counts_checked": true,
+            "case_rule": "cell line = \"AsPC1\" and source_name = \"in-vitro cell line\" and treatment = \"MRTX1133 100nM 24h\"",
+            "control_rule": "cell line = \"AsPC1\" and source_name = \"in-vitro cell line\" and treatment = \"DMSO 24h\"",
+            "problems": []
+          },
+          {
+            "gse": "GSE273116",
+            "case_gsms": [
+              "GSM8422092",
+              "GSM8422093",
+              "GSM8422094"
+            ],
+            "control_gsms": [
+              "GSM8422089",
+              "GSM8422090",
+              "GSM8422091"
+            ],
+            "unclear_gsms": [],
+            "excluded_gsms": [
+              "GSM8422086",
+              "GSM8422087",
+              "GSM8422088",
+              "GSM8422095",
+              "GSM8422096",
+              "GSM8422097"
+            ],
+            "no_counts_gsms": [
+              "GSM8422090"
+            ],
+            "counts_checked": true,
+            "case_rule": "cell line = \"MIA paca II/SR\" and treatment = \"MCB-294\"",
+            "control_rule": "cell line = \"MIA paca II/SR\" and treatment = \"Vehicle\"",
+            "problems": []
+          }
+        ]
+      },
+      "elapsed_seconds": 42.24302400002489,
+      "input_tokens": 55373,
+      "output_tokens": 3866,
+      "web_search_requests": 0,
+      "web_fetch_requests": 0,
+      "error": null
+    }
+  ],
+  "final_action": "proceed",
+  "candidates": [
+    "GSE228010",
+    "GSE201412"
+  ],
+  "candidate_details": {
+    "GSE228010": {
+      "title": "Pan KRAS inhibitor selectively inactivates oncogenic signaling and tumor growth",
+      "why": "Six PDAC cell lines (AsPC-1, Capan-1, HPAC, MIA PaCa-2, PANC-1, Panc 04.03) were each treated in vitro for 2 h with 5 µM of a pan-KRAS inhibitor or with DMSO, in duplicate. That gives 12 treated vs 12 vehicle samples at the same time point.",
+      "case_hint": "PDAC cell lines treated with the pan-KRAS inhibitor for 2 h (12 samples)",
+      "control_hint": "The same PDAC cell lines treated with DMSO for 2 h (12 samples)"
+    },
+    "GSE201412": {
+      "title": "Anti-tumor efficacy of a potent and selective non-covalent KRASG12D inhibitor",
+      "why": "AsPC-1 cells (KRAS G12D PDAC) were treated in vitro with 100 nM MRTX1133 or DMSO for 24 h, 3 replicates each. The series also has xenograft and non-pancreatic samples, which are excluded.",
+      "case_hint": "In-vitro AsPC-1 cells, MRTX1133 100 nM for 24 h (3 samples)",
+      "control_hint": "In-vitro AsPC-1 cells, DMSO for 24 h (3 samples)"
+    }
+  },
+  "rejected": [
+    "GSE269985",
+    "GSE234449",
+    "GSE249914",
+    "GSE238198",
+    "GSE189545",
+    "GSE202532",
+    "GSE273116"
+  ],
+  "questions": [],
+  "out_of_scope": null,
+  "seen": [
+    "GSE269985",
+    "GSE234449",
+    "GSE273116",
+    "GSE189545",
+    "GSE249914",
+    "GSE238198",
+    "GSE228010",
+    "GSE201412",
+    "GSE202532"
+  ],
+  "per_query": {
+    "MRTX1133 pancreatic cancer cell lines": [
+      "GSE269985",
+      "GSE234449"
+    ],
+    "KRAS G12D inhibitor pancreatic RNA-seq": [
+      "GSE269985",
+      "GSE273116",
+      "GSE189545"
+    ],
+    "sotorasib pancreatic cancer cells": [
+      "GSE269985",
+      "GSE273116"
+    ],
+    "pan-KRAS inhibitor pancreatic cancer": [
+      "GSE273116",
+      "GSE249914"
+    ],
+    "KRAS inhibitor PDAC cell line DMSO": [
+      "GSE238198",
+      "GSE228010"
+    ],
+    "RMC-6236 pancreatic": [],
+    "adagrasib MIA PaCa-2": [],
+    "RMC-7977 pancreatic": [],
+    "BI-2865 KRAS": [],
+    "KRAS G12C inhibitor MIA PaCa-2 RNA-seq": [
+      "GSE273116"
+    ],
+    "AMG510 pancreatic": [
+      "GSE273116",
+      "GSE269985"
+    ],
+    "KRAS G12D inhibitor PANC-1 AsPC-1 RNA-seq": [],
+    "HRS-4642 OR GFH375 OR zoldonrasib": [],
+    "KRAS inhibition pancreatic ductal adenocarcinoma transcriptome cell lines": [
+      "GSE202532"
+    ]
+  },
+  "invented": [],
+  "selections": {
+    "GSE228010": {
+      "case": [
+        "GSM7112374",
+        "GSM7112375",
+        "GSM7112382",
+        "GSM7112383",
+        "GSM7112418",
+        "GSM7112419",
+        "GSM7112430",
+        "GSM7112431",
+        "GSM7112442",
+        "GSM7112443",
+        "GSM7112446",
+        "GSM7112447"
+      ],
+      "control": [
+        "GSM7112372",
+        "GSM7112373",
+        "GSM7112380",
+        "GSM7112381",
+        "GSM7112416",
+        "GSM7112417",
+        "GSM7112428",
+        "GSM7112429",
+        "GSM7112440",
+        "GSM7112441",
+        "GSM7112444",
+        "GSM7112445"
+      ],
+      "unclear": [],
+      "no_counts": []
+    },
+    "GSE201412": {
+      "case": [
+        "GSM6063070",
+        "GSM6063071",
+        "GSM6063072"
+      ],
+      "control": [
+        "GSM6063067",
+        "GSM6063068",
+        "GSM6063069"
+      ],
+      "unclear": [],
+      "no_counts": []
+    }
+  },
+  "verification": {
+    "eligible": [
+      "GSE228010",
+      "GSE201412"
+    ],
+    "exists_only": [],
+    "missing": [],
+    "invalid": []
+  },
+  "elapsed_seconds": 42.646,
+  "input_tokens": 55373,
+  "output_tokens": 3866,
+  "web_search_requests": 0,
+  "web_fetch_requests": 0,
+  "error": null
+}

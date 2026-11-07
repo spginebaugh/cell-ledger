@@ -1,0 +1,2269 @@
+{
+  "case_id": "pancreatic_cancer_broad",
+  "system": "specialist",
+  "repeat": 1,
+  "conditions": {
+    "system": "specialist",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "fingerprint": "dbb24587bd68bf9c9c274050bb2a4c1cc278c11cb8cbb8c22bb9c16b5f548ad7",
+    "web_search": true,
+    "code_revision": "4032f8cb3e85576661f421ff7f4f75aa87401b25",
+    "dirty": true,
+    "geo_cache": "/Users/scott/Documents/code/gauntlet-hackathon/cell-ledger/data/evals/geo-cache/all12-r2",
+    "case_sha256": "efc3fa2598f98d58164e237a45e4385e6aa7d415486dfb21a7cdd0ab9a3b610f",
+    "suite_sha256": "5c2b23011a22776e3ea3fab6976ae88635f0f4a277dbf5db35d8fa2bb07d1859",
+    "run_id": "all12-r2",
+    "started_at": "2026-11-07T15:04:10+00:00"
+  },
+  "turns": [
+    {
+      "answers": [],
+      "action": "ask",
+      "output": {
+        "interpretation": "\"Pancreatic cancer\" is too broad to turn into one comparison. The most likely reading is pancreatic ductal adenocarcinoma (PDAC) tumor tissue (case) vs adjacent non-tumor pancreas (control). Other readings would be treated vs untreated cells, or gene knockdown/knockout vs control in PDAC cell lines or organoids.",
+        "genes": [],
+        "out_of_scope": null,
+        "clarifying_questions": [
+          {
+            "question": "What comparison do you want to make?",
+            "options": [
+              "Tumor tissue vs adjacent normal pancreas, from patients",
+              "Drug-treated vs untreated PDAC cells",
+              "Gene knockdown/knockout/overexpression vs control in PDAC cells",
+              "Drug-resistant vs sensitive (parental) PDAC cells",
+              "Molecular subtype (classical vs basal-like) or metastatic vs primary tumor"
+            ],
+            "why": "Searches found about 260 matching series. Most are cell-line experiments with knockdown or drug treatment, usually with only 4 to 6 samples. A tumor vs adjacent normal search found 8 series, and I'd still need to check which have enough samples in each group (for example GSE119224, GSE171485, GSE196009, GSE130688, GSE241330). Your answer decides which group of series I check."
+          },
+          {
+            "question": "Which tumor type do you mean?",
+            "options": [
+              "Pancreatic ductal adenocarcinoma (PDAC)",
+              "Pancreatic neuroendocrine tumor (PanNET)",
+              "Precursor lesions (PanIN/IPMN)"
+            ],
+            "why": "Most hits are PDAC. A separate search found 20 series under pancreatic neuroendocrine tumor, and those would need different controls."
+          },
+          {
+            "question": "Which kind of samples do you want?",
+            "options": [
+              "Patient tumor tissue",
+              "Patient-derived organoids",
+              "Established cell lines (e.g. PANC-1, MIA PaCa-2, BxPC-3, AsPC-1)",
+              "Patient-derived or cell-line xenografts"
+            ],
+            "why": "Searches returned all of these, including 13 hits for PDAC organoids and several xenograft series. Mixing sample types would confound the comparison."
+          },
+          {
+            "question": "Do you have a particular gene, drug or pathway in mind?",
+            "options": [],
+            "why": "For the treatment or perturbation comparisons, this cuts more than 100 cell-line series down to the handful that are relevant."
+          }
+        ],
+        "rejected": [],
+        "queries_tried": [
+          "pancreatic ductal adenocarcinoma tumor vs normal",
+          "pancreatic cancer RNA-seq",
+          "PDAC organoids",
+          "pancreatic neuroendocrine tumor",
+          "pancreatic cancer cell line treatment",
+          "pancreatic cancer tumor adjacent normal tissue",
+          "PDAC patient tissue RNA-seq normal pancreas",
+          "pancreatic adenocarcinoma paired tumor non-tumor"
+        ],
+        "candidates": [],
+        "trace": {
+          "turns": 3,
+          "calls": [
+            {
+              "tool": "search_geo",
+              "input": {
+                "queries": [
+                  "pancreatic ductal adenocarcinoma tumor vs normal",
+                  "pancreatic cancer RNA-seq",
+                  "PDAC organoids",
+                  "pancreatic neuroendocrine tumor",
+                  "pancreatic cancer cell line treatment"
+                ],
+                "since": null
+              },
+              "queries": [
+                {
+                  "query": "pancreatic ductal adenocarcinoma tumor vs normal",
+                  "total": 3,
+                  "returned": 3,
+                  "gses": [
+                    "GSE181625",
+                    "GSE101726",
+                    "GSE64558"
+                  ]
+                },
+                {
+                  "query": "pancreatic cancer RNA-seq",
+                  "total": 167,
+                  "returned": 100,
+                  "gses": [
+                    "GSE273398",
+                    "GSE227567",
+                    "GSE273116",
+                    "GSE229230",
+                    "GSE242516",
+                    "GSE241330",
+                    "GSE269985",
+                    "GSE253929",
+                    "GSE253599",
+                    "GSE198444",
+                    "GSE192647",
+                    "GSE248494",
+                    "GSE235516",
+                    "GSE247243",
+                    "GSE262627",
+                    "GSE223152",
+                    "GSE168918",
+                    "GSE249914",
+                    "GSE238198",
+                    "GSE246925",
+                    "GSE252909",
+                    "GSE245941",
+                    "GSE228804",
+                    "GSE249726",
+                    "GSE248887",
+                    "GSE217965",
+                    "GSE159334",
+                    "GSE245819",
+                    "GSE242083",
+                    "GSE162078",
+                    "GSE241402",
+                    "GSE161208",
+                    "GSE234779",
+                    "GSE150223",
+                    "GSE150222",
+                    "GSE211468",
+                    "GSE215104",
+                    "GSE242916",
+                    "GSE242915",
+                    "GSE211587",
+                    "GSE181777",
+                    "GSE218546",
+                    "GSE208568",
+                    "GSE229091",
+                    "GSE207863",
+                    "GSE235548",
+                    "GSE237363",
+                    "GSE210541",
+                    "GSE152012",
+                    "GSE210562",
+                    "GSE211474",
+                    "GSE230039",
+                    "GSE232170",
+                    "GSE172303",
+                    "GSE202532",
+                    "GSE226307",
+                    "GSE207319",
+                    "GSE222890",
+                    "GSE181604",
+                    "GSE216567",
+                    "GSE216566",
+                    "GSE220446",
+                    "GSE217537",
+                    "GSE211398",
+                    "GSE193268",
+                    "GSE193411",
+                    "GSE212201",
+                    "GSE206261",
+                    "GSE213697",
+                    "GSE206999",
+                    "GSE189418",
+                    "GSE215344",
+                    "GSE214894",
+                    "GSE214325",
+                    "GSE184029",
+                    "GSE179250",
+                    "GSE212173",
+                    "GSE189764",
+                    "GSE207611",
+                    "GSE179057",
+                    "GSE135783",
+                    "GSE209938",
+                    "GSE206267",
+                    "GSE178398",
+                    "GSE201110",
+                    "GSE130688",
+                    "GSE178358",
+                    "GSE165949",
+                    "GSE165948",
+                    "GSE201876",
+                    "GSE185069",
+                    "GSE201358",
+                    "GSE180901",
+                    "GSE198192",
+                    "GSE192903",
+                    "GSE151195",
+                    "GSE185331",
+                    "GSE172356",
+                    "GSE174023",
+                    "GSE139184"
+                  ]
+                },
+                {
+                  "query": "PDAC organoids",
+                  "total": 13,
+                  "returned": 13,
+                  "gses": [
+                    "GSE269985",
+                    "GSE235548",
+                    "GSE139184",
+                    "GSE228801",
+                    "GSE243647",
+                    "GSE234449",
+                    "GSE212014",
+                    "GSE201427",
+                    "GSE187619",
+                    "GSE146722",
+                    "GSE169321",
+                    "GSE140490",
+                    "GSE114502"
+                  ]
+                },
+                {
+                  "query": "pancreatic neuroendocrine tumor",
+                  "total": 20,
+                  "returned": 20,
+                  "gses": [
+                    "GSE246925",
+                    "GSE178398",
+                    "GSE267722",
+                    "GSE200146",
+                    "GSE186947",
+                    "GSE183635",
+                    "GSE184398",
+                    "GSE156833",
+                    "GSE134195",
+                    "GSE159237",
+                    "GSE174701",
+                    "GSE138734",
+                    "GSE161087",
+                    "GSE133568",
+                    "GSE133567",
+                    "GSE118014",
+                    "GSE98894",
+                    "GSE102246",
+                    "GSE78519",
+                    "GSE45133"
+                  ]
+                },
+                {
+                  "query": "pancreatic cancer cell line treatment",
+                  "total": 196,
+                  "returned": 100,
+                  "gses": [
+                    "GSE273398",
+                    "GSE227567",
+                    "GSE273116",
+                    "GSE229230",
+                    "GSE242516",
+                    "GSE269985",
+                    "GSE253929",
+                    "GSE253599",
+                    "GSE198444",
+                    "GSE248494",
+                    "GSE235516",
+                    "GSE247243",
+                    "GSE262627",
+                    "GSE223152",
+                    "GSE168918",
+                    "GSE249914",
+                    "GSE238198",
+                    "GSE245941",
+                    "GSE228804",
+                    "GSE249726",
+                    "GSE248887",
+                    "GSE217965",
+                    "GSE245819",
+                    "GSE242083",
+                    "GSE162078",
+                    "GSE241402",
+                    "GSE234779",
+                    "GSE150223",
+                    "GSE150222",
+                    "GSE211468",
+                    "GSE215104",
+                    "GSE181777",
+                    "GSE218546",
+                    "GSE229091",
+                    "GSE207863",
+                    "GSE235548",
+                    "GSE237363",
+                    "GSE210541",
+                    "GSE210562",
+                    "GSE211474",
+                    "GSE230039",
+                    "GSE202532",
+                    "GSE226307",
+                    "GSE207319",
+                    "GSE222890",
+                    "GSE181604",
+                    "GSE216567",
+                    "GSE216566",
+                    "GSE217537",
+                    "GSE193268",
+                    "GSE212201",
+                    "GSE206261",
+                    "GSE213697",
+                    "GSE206999",
+                    "GSE189418",
+                    "GSE215344",
+                    "GSE214325",
+                    "GSE184029",
+                    "GSE212173",
+                    "GSE189764",
+                    "GSE207611",
+                    "GSE179057",
+                    "GSE209938",
+                    "GSE243647",
+                    "GSE234449",
+                    "GSE270676",
+                    "GSE259390",
+                    "GSE268817",
+                    "GSE252002",
+                    "GSE263949",
+                    "GSE240597",
+                    "GSE256455",
+                    "GSE246660",
+                    "GSE234737",
+                    "GSE235027",
+                    "GSE253662",
+                    "GSE252544",
+                    "GSE225011",
+                    "GSE146944",
+                    "GSE168020",
+                    "GSE223908",
+                    "GSE211585",
+                    "GSE242307",
+                    "GSE205767",
+                    "GSE210112",
+                    "GSE135686",
+                    "GSE155220",
+                    "GSE210540",
+                    "GSE154492",
+                    "GSE149981",
+                    "GSE218822",
+                    "GSE212883",
+                    "GSE225161",
+                    "GSE224882",
+                    "GSE207359",
+                    "GSE221250",
+                    "GSE220614",
+                    "GSE185837",
+                    "GSE212854",
+                    "GSE198002"
+                  ]
+                }
+              ],
+              "confirmed": [
+                "GSE181625",
+                "GSE101726",
+                "GSE64558",
+                "GSE273398",
+                "GSE227567",
+                "GSE273116",
+                "GSE229230",
+                "GSE242516",
+                "GSE241330",
+                "GSE269985",
+                "GSE253929",
+                "GSE253599",
+                "GSE198444",
+                "GSE192647",
+                "GSE248494",
+                "GSE235516",
+                "GSE247243",
+                "GSE262627",
+                "GSE223152",
+                "GSE168918",
+                "GSE249914",
+                "GSE238198",
+                "GSE246925",
+                "GSE252909",
+                "GSE245941",
+                "GSE228804",
+                "GSE249726",
+                "GSE248887",
+                "GSE217965",
+                "GSE159334",
+                "GSE245819",
+                "GSE242083",
+                "GSE162078",
+                "GSE241402",
+                "GSE161208",
+                "GSE234779",
+                "GSE150223",
+                "GSE150222",
+                "GSE211468",
+                "GSE215104",
+                "GSE242916",
+                "GSE242915",
+                "GSE211587",
+                "GSE181777",
+                "GSE218546",
+                "GSE208568",
+                "GSE229091",
+                "GSE207863",
+                "GSE235548",
+                "GSE237363",
+                "GSE210541",
+                "GSE152012",
+                "GSE210562",
+                "GSE211474",
+                "GSE230039",
+                "GSE232170",
+                "GSE172303",
+                "GSE202532",
+                "GSE226307",
+                "GSE207319",
+                "GSE222890",
+                "GSE181604",
+                "GSE216567",
+                "GSE216566",
+                "GSE220446",
+                "GSE217537",
+                "GSE211398",
+                "GSE193268",
+                "GSE193411",
+                "GSE212201",
+                "GSE206261",
+                "GSE213697",
+                "GSE206999",
+                "GSE189418",
+                "GSE215344",
+                "GSE214894",
+                "GSE214325",
+                "GSE184029",
+                "GSE179250",
+                "GSE212173",
+                "GSE189764",
+                "GSE207611",
+                "GSE179057",
+                "GSE135783",
+                "GSE209938",
+                "GSE206267",
+                "GSE178398",
+                "GSE201110",
+                "GSE130688",
+                "GSE178358",
+                "GSE165949",
+                "GSE165948",
+                "GSE201876",
+                "GSE185069",
+                "GSE201358",
+                "GSE180901",
+                "GSE198192",
+                "GSE192903",
+                "GSE151195",
+                "GSE185331",
+                "GSE172356",
+                "GSE174023",
+                "GSE139184",
+                "GSE228801",
+                "GSE243647",
+                "GSE234449",
+                "GSE212014",
+                "GSE201427",
+                "GSE187619",
+                "GSE146722",
+                "GSE169321",
+                "GSE140490",
+                "GSE114502",
+                "GSE267722",
+                "GSE200146",
+                "GSE186947",
+                "GSE183635",
+                "GSE184398",
+                "GSE156833",
+                "GSE134195",
+                "GSE159237",
+                "GSE174701",
+                "GSE138734",
+                "GSE161087",
+                "GSE133568",
+                "GSE133567",
+                "GSE118014",
+                "GSE98894",
+                "GSE102246",
+                "GSE78519",
+                "GSE45133",
+                "GSE270676",
+                "GSE259390",
+                "GSE268817",
+                "GSE252002",
+                "GSE263949",
+                "GSE240597",
+                "GSE256455",
+                "GSE246660",
+                "GSE234737",
+                "GSE235027",
+                "GSE253662",
+                "GSE252544",
+                "GSE225011",
+                "GSE146944",
+                "GSE168020",
+                "GSE223908",
+                "GSE211585",
+                "GSE242307",
+                "GSE205767",
+                "GSE210112",
+                "GSE135686",
+                "GSE155220",
+                "GSE210540",
+                "GSE154492",
+                "GSE149981",
+                "GSE218822",
+                "GSE212883",
+                "GSE225161",
+                "GSE224882",
+                "GSE207359",
+                "GSE221250",
+                "GSE220614",
+                "GSE185837",
+                "GSE212854",
+                "GSE198002"
+              ],
+              "shown": [
+                "GSE181625",
+                "GSE101726",
+                "GSE64558",
+                "GSE273398",
+                "GSE227567",
+                "GSE273116",
+                "GSE229230",
+                "GSE242516",
+                "GSE241330",
+                "GSE269985",
+                "GSE253929",
+                "GSE253599",
+                "GSE198444",
+                "GSE192647",
+                "GSE248494",
+                "GSE235516",
+                "GSE247243",
+                "GSE262627",
+                "GSE223152",
+                "GSE168918",
+                "GSE249914",
+                "GSE238198",
+                "GSE246925",
+                "GSE252909",
+                "GSE245941",
+                "GSE228804",
+                "GSE249726",
+                "GSE248887",
+                "GSE217965",
+                "GSE159334",
+                "GSE245819",
+                "GSE242083",
+                "GSE162078",
+                "GSE241402",
+                "GSE161208",
+                "GSE234779",
+                "GSE150223",
+                "GSE150222",
+                "GSE211468",
+                "GSE215104",
+                "GSE242916",
+                "GSE242915",
+                "GSE211587",
+                "GSE181777",
+                "GSE218546",
+                "GSE208568",
+                "GSE229091",
+                "GSE207863",
+                "GSE235548",
+                "GSE237363",
+                "GSE210541",
+                "GSE152012",
+                "GSE210562",
+                "GSE211474",
+                "GSE230039",
+                "GSE232170",
+                "GSE172303",
+                "GSE202532",
+                "GSE226307",
+                "GSE207319"
+              ],
+              "ineligible": [],
+              "inspected": [],
+              "error": null
+            },
+            {
+              "tool": "search_geo",
+              "input": {
+                "queries": [
+                  "pancreatic cancer tumor adjacent normal tissue",
+                  "PDAC patient tissue RNA-seq normal pancreas",
+                  "pancreatic adenocarcinoma paired tumor non-tumor"
+                ],
+                "since": null
+              },
+              "queries": [
+                {
+                  "query": "pancreatic cancer tumor adjacent normal tissue",
+                  "total": 8,
+                  "returned": 8,
+                  "gses": [
+                    "GSE241330",
+                    "GSE119224",
+                    "GSE220446",
+                    "GSE130688",
+                    "GSE196009",
+                    "GSE171485",
+                    "GSE162689",
+                    "GSE136569"
+                  ]
+                },
+                {
+                  "query": "PDAC patient tissue RNA-seq normal pancreas",
+                  "total": 2,
+                  "returned": 2,
+                  "gses": [
+                    "GSE247243",
+                    "GSE197465"
+                  ]
+                },
+                {
+                  "query": "pancreatic adenocarcinoma paired tumor non-tumor",
+                  "total": 1,
+                  "returned": 1,
+                  "gses": [
+                    "GSE130688"
+                  ]
+                }
+              ],
+              "confirmed": [
+                "GSE241330",
+                "GSE119224",
+                "GSE220446",
+                "GSE130688",
+                "GSE196009",
+                "GSE171485",
+                "GSE162689",
+                "GSE136569",
+                "GSE247243",
+                "GSE197465"
+              ],
+              "shown": [
+                "GSE241330",
+                "GSE119224",
+                "GSE220446",
+                "GSE130688",
+                "GSE196009",
+                "GSE171485",
+                "GSE162689",
+                "GSE136569",
+                "GSE247243",
+                "GSE197465"
+              ],
+              "ineligible": [],
+              "inspected": [],
+              "error": null
+            }
+          ],
+          "seen": [
+            "GSE181625",
+            "GSE101726",
+            "GSE64558",
+            "GSE273398",
+            "GSE227567",
+            "GSE273116",
+            "GSE229230",
+            "GSE242516",
+            "GSE241330",
+            "GSE269985",
+            "GSE253929",
+            "GSE253599",
+            "GSE198444",
+            "GSE192647",
+            "GSE248494",
+            "GSE235516",
+            "GSE247243",
+            "GSE262627",
+            "GSE223152",
+            "GSE168918",
+            "GSE249914",
+            "GSE238198",
+            "GSE246925",
+            "GSE252909",
+            "GSE245941",
+            "GSE228804",
+            "GSE249726",
+            "GSE248887",
+            "GSE217965",
+            "GSE159334",
+            "GSE245819",
+            "GSE242083",
+            "GSE162078",
+            "GSE241402",
+            "GSE161208",
+            "GSE234779",
+            "GSE150223",
+            "GSE150222",
+            "GSE211468",
+            "GSE215104",
+            "GSE242916",
+            "GSE242915",
+            "GSE211587",
+            "GSE181777",
+            "GSE218546",
+            "GSE208568",
+            "GSE229091",
+            "GSE207863",
+            "GSE235548",
+            "GSE237363",
+            "GSE210541",
+            "GSE152012",
+            "GSE210562",
+            "GSE211474",
+            "GSE230039",
+            "GSE232170",
+            "GSE172303",
+            "GSE202532",
+            "GSE226307",
+            "GSE207319",
+            "GSE222890",
+            "GSE181604",
+            "GSE216567",
+            "GSE216566",
+            "GSE220446",
+            "GSE217537",
+            "GSE211398",
+            "GSE193268",
+            "GSE193411",
+            "GSE212201",
+            "GSE206261",
+            "GSE213697",
+            "GSE206999",
+            "GSE189418",
+            "GSE215344",
+            "GSE214894",
+            "GSE214325",
+            "GSE184029",
+            "GSE179250",
+            "GSE212173",
+            "GSE189764",
+            "GSE207611",
+            "GSE179057",
+            "GSE135783",
+            "GSE209938",
+            "GSE206267",
+            "GSE178398",
+            "GSE201110",
+            "GSE130688",
+            "GSE178358",
+            "GSE165949",
+            "GSE165948",
+            "GSE201876",
+            "GSE185069",
+            "GSE201358",
+            "GSE180901",
+            "GSE198192",
+            "GSE192903",
+            "GSE151195",
+            "GSE185331",
+            "GSE172356",
+            "GSE174023",
+            "GSE139184",
+            "GSE228801",
+            "GSE243647",
+            "GSE234449",
+            "GSE212014",
+            "GSE201427",
+            "GSE187619",
+            "GSE146722",
+            "GSE169321",
+            "GSE140490",
+            "GSE114502",
+            "GSE267722",
+            "GSE200146",
+            "GSE186947",
+            "GSE183635",
+            "GSE184398",
+            "GSE156833",
+            "GSE134195",
+            "GSE159237",
+            "GSE174701",
+            "GSE138734",
+            "GSE161087",
+            "GSE133568",
+            "GSE133567",
+            "GSE118014",
+            "GSE98894",
+            "GSE102246",
+            "GSE78519",
+            "GSE45133",
+            "GSE270676",
+            "GSE259390",
+            "GSE268817",
+            "GSE252002",
+            "GSE263949",
+            "GSE240597",
+            "GSE256455",
+            "GSE246660",
+            "GSE234737",
+            "GSE235027",
+            "GSE253662",
+            "GSE252544",
+            "GSE225011",
+            "GSE146944",
+            "GSE168020",
+            "GSE223908",
+            "GSE211585",
+            "GSE242307",
+            "GSE205767",
+            "GSE210112",
+            "GSE135686",
+            "GSE155220",
+            "GSE210540",
+            "GSE154492",
+            "GSE149981",
+            "GSE218822",
+            "GSE212883",
+            "GSE225161",
+            "GSE224882",
+            "GSE207359",
+            "GSE221250",
+            "GSE220614",
+            "GSE185837",
+            "GSE212854",
+            "GSE198002",
+            "GSE119224",
+            "GSE196009",
+            "GSE171485",
+            "GSE162689",
+            "GSE136569",
+            "GSE197465"
+          ],
+          "invented": [],
+          "usage": {
+            "input_tokens": 8,
+            "output_tokens": 1489,
+            "cache_read_input_tokens": 23636,
+            "cache_creation_input_tokens": 21417
+          },
+          "elapsed_seconds": 20.081
+        },
+        "selections": []
+      },
+      "elapsed_seconds": 20.081597791984677,
+      "input_tokens": 45061,
+      "output_tokens": 1489,
+      "web_search_requests": 0,
+      "web_fetch_requests": 0,
+      "error": null
+    },
+    {
+      "answers": [
+        "Patient-derived organoids treated with a drug in culture, compared with the same organoids left untreated."
+      ],
+      "action": "proceed",
+      "output": {
+        "interpretation": "Pancreatic cancer (PDAC) patient-derived organoids treated with a drug in culture (case) vs the same organoid lines left untreated or given vehicle (control).",
+        "genes": [],
+        "out_of_scope": null,
+        "clarifying_questions": [],
+        "rejected": [
+          {
+            "gse": "GSE169321",
+            "why": "The FOLFIRINOX was given to patients before surgery (neoadjuvant), not to organoids in culture. Its organoids are separate patient lines, not treated and untreated pairs."
+          },
+          {
+            "gse": "GSE262627",
+            "why": "A circadian time course. Every sample was given dexamethasone only to synchronize the clock, so there is no untreated arm."
+          },
+          {
+            "gse": "GSE232170",
+            "why": "Compares extracellular-matrix (BME) types, not drugs."
+          },
+          {
+            "gse": "GSE212014",
+            "why": "Compares culture media (WNT vs PaTOM), not drug treatment."
+          },
+          {
+            "gse": "GSE187619",
+            "why": "Untreated organoids only; there is no treated arm."
+          },
+          {
+            "gse": "GSE228801",
+            "why": "Organoids are compared by subtype; there is no drug treatment."
+          },
+          {
+            "gse": "GSE243647",
+            "why": "Organoids co-cultured with stroma cells; no drug-treated vs untreated design."
+          },
+          {
+            "gse": "GSE269985",
+            "why": "Cell lines, compared as resistant-derived vs parental lines, not organoids."
+          },
+          {
+            "gse": "GSE234449",
+            "why": "SUIT2 cell line, not organoids."
+          },
+          {
+            "gse": "GSE240597",
+            "why": "CD18/HPAF cell line, not organoids."
+          },
+          {
+            "gse": "GSE140490",
+            "why": "PATU cell lines, not organoids."
+          },
+          {
+            "gse": "GSE273116",
+            "why": "MIA PaCa-2 cell line, not organoids."
+          },
+          {
+            "gse": "GSE249726",
+            "why": "AsPC1 cell line, not organoids."
+          },
+          {
+            "gse": "GSE140077",
+            "why": "Gemcitabine-resistant cell lines, not organoids."
+          },
+          {
+            "gse": "GSE229091",
+            "why": "Not a pancreatic cancer organoid drug study."
+          },
+          {
+            "gse": "GSE184125",
+            "why": "Colorectal cancer, not pancreatic."
+          }
+        ],
+        "queries_tried": [
+          "pancreatic cancer organoids drug treatment",
+          "PDAC patient-derived organoids treated",
+          "pancreatic ductal adenocarcinoma organoid gemcitabine",
+          "pancreatic cancer organoid inhibitor RNA-seq",
+          "PDO pancreatic chemotherapy response",
+          "pancreatic tumor organoids DMSO vehicle",
+          "PDAC organoids MRTX1133",
+          "pancreatic cancer organoids trametinib",
+          "pancreatic organoid treated irinotecan oxaliplatin 5-FU",
+          "pancreatic cancer patient-derived organoid knockdown drug",
+          "pancreatic adenocarcinoma organoids radiation",
+          "pancreatic cancer organoids treated",
+          "PDAC organoid cultures treated with",
+          "human pancreatic tumor organoids inhibitor transcriptome",
+          "pancreatic cancer patient-derived organoid gemcitabine resistance RNA-seq",
+          "PDAC organoids KRAS inhibitor",
+          "web: pancreatic cancer PDO drug treated vs untreated RNA-seq",
+          "web: PDAC PDO DMSO vs drug RNA sequencing"
+        ],
+        "candidates": [
+          {
+            "gse": "GSE235548",
+            "title": "Uncovering the hidden threat: single-organoid analysis reveals clinically relevant treatment-resistant and invasive subclones in pancreatic cancer",
+            "n_samples": 30,
+            "why": "PDAC patient-derived organoids treated in culture with gemcitabine plus paclitaxel (Gem-Pac). The untreated baseline samples come from the same three organoid lines (PDAC002, PDAC044, PDAC060).",
+            "case_hint": "Gem-Pac 400:80 nM treated organoids from PDAC002, PDAC044 and PDAC060 (7 samples).",
+            "control_hint": "Untreated baseline organoids from the same three lines, PDAC002, PDAC044 and PDAC060 (9 samples).",
+            "concerns": [
+              "The data are 3' QuantSeq libraries.",
+              "The design is paired by organoid line; the patient (cell line) should be modelled as a covariate.",
+              "Baseline samples from the other five organoid lines are left out because those lines have no treated counterpart."
+            ],
+            "case": [
+              {
+                "all_of": [
+                  {
+                    "field": "treatment",
+                    "equals": [
+                      "Gem-Pac 400:80 nM"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "control": [
+              {
+                "all_of": [
+                  {
+                    "field": "treatment",
+                    "equals": [
+                      "untreated"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  },
+                  {
+                    "field": "cell line",
+                    "equals": [
+                      "PDAC002",
+                      "PDAC044",
+                      "PDAC060"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "unclear": []
+          },
+          {
+            "gse": "GSE225011",
+            "title": "Triptolide analogs induced apoptosis on pancreatic cancer patient-derived organoids",
+            "n_samples": 32,
+            "why": "Two pancreatic cancer patient-derived organoid lines (U049MAI, U123M15-T) cultured with the triptolide analog CK21 or left untreated (No Rx), each at 3, 6, 9 and 12 h. The 12 h time point shows the strongest transcriptional response.",
+            "case_hint": "CK21-treated organoids at 12 h (4 samples: 2 lines × 2 replicates).",
+            "control_hint": "Untreated (No Rx) organoids at 12 h (4 samples).",
+            "concerns": [
+              "Only 2 organoid lines with 2 replicates each per time point.",
+              "The 3–9 h samples are listed as unclear; the authors report fewer than 10 DEGs at 3 h.",
+              "The genotype field says WT for all samples.",
+              "1 selected samples are not in the NCBI count table"
+            ],
+            "case": [
+              {
+                "all_of": [
+                  {
+                    "field": "treatment",
+                    "equals": [
+                      "CK21"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  },
+                  {
+                    "field": "title",
+                    "equals": [],
+                    "contains": [
+                      "12h culture"
+                    ],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "control": [
+              {
+                "all_of": [
+                  {
+                    "field": "treatment",
+                    "equals": [
+                      "No Rx"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  },
+                  {
+                    "field": "title",
+                    "equals": [],
+                    "contains": [
+                      "12h culture"
+                    ],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "unclear": [
+              {
+                "all_of": [
+                  {
+                    "field": "title",
+                    "equals": [],
+                    "contains": [
+                      "3h culture",
+                      "6h culture",
+                      "9h culture"
+                    ],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "trace": {
+          "turns": 5,
+          "calls": [
+            {
+              "tool": "search_geo",
+              "input": {
+                "queries": [
+                  "pancreatic cancer organoids drug treatment",
+                  "PDAC patient-derived organoids treated",
+                  "pancreatic ductal adenocarcinoma organoid gemcitabine",
+                  "pancreatic cancer organoid inhibitor RNA-seq",
+                  "PDO pancreatic chemotherapy response"
+                ],
+                "since": null
+              },
+              "queries": [
+                {
+                  "query": "pancreatic cancer organoids drug treatment",
+                  "total": 7,
+                  "returned": 7,
+                  "gses": [
+                    "GSE269985",
+                    "GSE262627",
+                    "GSE240597",
+                    "GSE243647",
+                    "GSE235548",
+                    "GSE232170",
+                    "GSE187619"
+                  ]
+                },
+                {
+                  "query": "PDAC patient-derived organoids treated",
+                  "total": 4,
+                  "returned": 4,
+                  "gses": [
+                    "GSE235548",
+                    "GSE234449",
+                    "GSE169321",
+                    "GSE140490"
+                  ]
+                },
+                {
+                  "query": "pancreatic ductal adenocarcinoma organoid gemcitabine",
+                  "total": 2,
+                  "returned": 2,
+                  "gses": [
+                    "GSE235548",
+                    "GSE228801"
+                  ]
+                },
+                {
+                  "query": "pancreatic cancer organoid inhibitor RNA-seq",
+                  "total": 2,
+                  "returned": 2,
+                  "gses": [
+                    "GSE269985",
+                    "GSE273116"
+                  ]
+                },
+                {
+                  "query": "PDO pancreatic chemotherapy response",
+                  "total": 1,
+                  "returned": 1,
+                  "gses": [
+                    "GSE212014"
+                  ]
+                }
+              ],
+              "confirmed": [
+                "GSE269985",
+                "GSE262627",
+                "GSE240597",
+                "GSE243647",
+                "GSE235548",
+                "GSE232170",
+                "GSE187619",
+                "GSE234449",
+                "GSE169321",
+                "GSE140490",
+                "GSE228801",
+                "GSE273116",
+                "GSE212014"
+              ],
+              "shown": [
+                "GSE269985",
+                "GSE262627",
+                "GSE240597",
+                "GSE243647",
+                "GSE235548",
+                "GSE232170",
+                "GSE187619",
+                "GSE234449",
+                "GSE169321",
+                "GSE140490",
+                "GSE228801",
+                "GSE273116",
+                "GSE212014"
+              ],
+              "ineligible": [],
+              "inspected": [],
+              "error": null
+            },
+            {
+              "tool": "find_geo_series_on_web",
+              "input": {
+                "query": "pancreatic cancer patient-derived organoids drug treated vs untreated RNA-seq GEO",
+                "objective": "Find GEO series of human PDAC patient-derived organoids treated with drug vs vehicle, bulk RNA-seq."
+              },
+              "queries": [],
+              "confirmed": [
+                "GSE225011",
+                "GSE232170",
+                "GSE169321"
+              ],
+              "shown": [
+                "GSE225011",
+                "GSE232170",
+                "GSE169321"
+              ],
+              "ineligible": [
+                "GSE193389",
+                "GSE202051",
+                "GSE199102"
+              ],
+              "inspected": [],
+              "error": null
+            },
+            {
+              "tool": "search_geo",
+              "input": {
+                "queries": [
+                  "pancreatic tumor organoids DMSO vehicle",
+                  "PDAC organoids MRTX1133",
+                  "pancreatic cancer organoids trametinib",
+                  "pancreatic organoid treated irinotecan oxaliplatin 5-FU",
+                  "pancreatic cancer patient-derived organoid knockdown drug",
+                  "pancreatic adenocarcinoma organoids radiation"
+                ],
+                "since": null
+              },
+              "queries": [
+                {
+                  "query": "pancreatic tumor organoids DMSO vehicle",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                },
+                {
+                  "query": "PDAC organoids MRTX1133",
+                  "total": 2,
+                  "returned": 2,
+                  "gses": [
+                    "GSE269985",
+                    "GSE234449"
+                  ]
+                },
+                {
+                  "query": "pancreatic cancer organoids trametinib",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                },
+                {
+                  "query": "pancreatic organoid treated irinotecan oxaliplatin 5-FU",
+                  "total": 1,
+                  "returned": 1,
+                  "gses": [
+                    "GSE169321"
+                  ]
+                },
+                {
+                  "query": "pancreatic cancer patient-derived organoid knockdown drug",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                },
+                {
+                  "query": "pancreatic adenocarcinoma organoids radiation",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                }
+              ],
+              "confirmed": [
+                "GSE269985",
+                "GSE234449",
+                "GSE169321"
+              ],
+              "shown": [
+                "GSE269985",
+                "GSE234449",
+                "GSE169321"
+              ],
+              "ineligible": [],
+              "inspected": [],
+              "error": null
+            },
+            {
+              "tool": "inspect_series",
+              "input": {
+                "gses": [
+                  "GSE269985",
+                  "GSE262627",
+                  "GSE240597",
+                  "GSE235548",
+                  "GSE232170",
+                  "GSE234449",
+                  "GSE140490",
+                  "GSE273116",
+                  "GSE225011",
+                  "GSE187619"
+                ]
+              },
+              "queries": [],
+              "confirmed": [],
+              "shown": [],
+              "ineligible": [],
+              "inspected": [
+                "GSE269985",
+                "GSE262627",
+                "GSE240597",
+                "GSE235548",
+                "GSE232170",
+                "GSE234449",
+                "GSE140490",
+                "GSE273116",
+                "GSE225011",
+                "GSE187619"
+              ],
+              "error": null
+            },
+            {
+              "tool": "inspect_series",
+              "input": {
+                "gses": [
+                  "GSE169321",
+                  "GSE212014",
+                  "GSE243647",
+                  "GSE228801"
+                ]
+              },
+              "queries": [],
+              "confirmed": [],
+              "shown": [],
+              "ineligible": [],
+              "inspected": [
+                "GSE169321",
+                "GSE212014",
+                "GSE243647",
+                "GSE228801"
+              ],
+              "error": null
+            },
+            {
+              "tool": "search_geo",
+              "input": {
+                "queries": [
+                  "pancreatic cancer organoids treated",
+                  "PDAC organoid cultures treated with",
+                  "human pancreatic tumor organoids inhibitor transcriptome",
+                  "pancreatic cancer patient-derived organoid gemcitabine resistance RNA-seq",
+                  "PDAC organoids KRAS inhibitor"
+                ],
+                "since": null
+              },
+              "queries": [
+                {
+                  "query": "pancreatic cancer organoids treated",
+                  "total": 9,
+                  "returned": 9,
+                  "gses": [
+                    "GSE273116",
+                    "GSE269985",
+                    "GSE240597",
+                    "GSE249726",
+                    "GSE225011",
+                    "GSE229091",
+                    "GSE235548",
+                    "GSE234449",
+                    "GSE184125"
+                  ]
+                },
+                {
+                  "query": "PDAC organoid cultures treated with",
+                  "total": 1,
+                  "returned": 1,
+                  "gses": [
+                    "GSE140490"
+                  ]
+                },
+                {
+                  "query": "human pancreatic tumor organoids inhibitor transcriptome",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                },
+                {
+                  "query": "pancreatic cancer patient-derived organoid gemcitabine resistance RNA-seq",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                },
+                {
+                  "query": "PDAC organoids KRAS inhibitor",
+                  "total": 2,
+                  "returned": 2,
+                  "gses": [
+                    "GSE269985",
+                    "GSE234449"
+                  ]
+                }
+              ],
+              "confirmed": [
+                "GSE273116",
+                "GSE269985",
+                "GSE240597",
+                "GSE249726",
+                "GSE225011",
+                "GSE229091",
+                "GSE235548",
+                "GSE234449",
+                "GSE184125",
+                "GSE140490"
+              ],
+              "shown": [
+                "GSE273116",
+                "GSE269985",
+                "GSE240597",
+                "GSE249726",
+                "GSE225011",
+                "GSE229091",
+                "GSE235548",
+                "GSE234449",
+                "GSE184125",
+                "GSE140490"
+              ],
+              "ineligible": [],
+              "inspected": [],
+              "error": null
+            },
+            {
+              "tool": "inspect_series",
+              "input": {
+                "gses": [
+                  "GSE249726"
+                ]
+              },
+              "queries": [],
+              "confirmed": [],
+              "shown": [],
+              "ineligible": [],
+              "inspected": [
+                "GSE249726"
+              ],
+              "error": null
+            },
+            {
+              "tool": "find_geo_series_on_web",
+              "input": {
+                "query": "PDAC patient-derived organoids treated DMSO vs drug RNA sequencing GEO accession",
+                "objective": "Human pancreatic cancer patient-derived organoids treated in vitro with a drug (chemo, KRAS inhibitor, MEK inhibitor, etc.) vs vehicle/untreated, bulk RNA-seq."
+              },
+              "queries": [],
+              "confirmed": [
+                "GSE235548",
+                "GSE169321",
+                "GSE140077"
+              ],
+              "shown": [
+                "GSE235548",
+                "GSE169321",
+                "GSE140077"
+              ],
+              "ineligible": [
+                "GSE193389",
+                "GSE246457",
+                "GSE271518"
+              ],
+              "inspected": [],
+              "error": null
+            }
+          ],
+          "seen": [
+            "GSE269985",
+            "GSE262627",
+            "GSE240597",
+            "GSE243647",
+            "GSE235548",
+            "GSE232170",
+            "GSE187619",
+            "GSE234449",
+            "GSE169321",
+            "GSE140490",
+            "GSE228801",
+            "GSE273116",
+            "GSE212014",
+            "GSE225011",
+            "GSE249726",
+            "GSE229091",
+            "GSE184125",
+            "GSE140077"
+          ],
+          "invented": [],
+          "usage": {
+            "input_tokens": 12,
+            "output_tokens": 3585,
+            "cache_read_input_tokens": 80991,
+            "cache_creation_input_tokens": 40384
+          },
+          "elapsed_seconds": 47.251
+        },
+        "selections": [
+          {
+            "gse": "GSE235548",
+            "case_gsms": [
+              "GSM7505101",
+              "GSM7505102",
+              "GSM7505103",
+              "GSM7505104",
+              "GSM7505105",
+              "GSM7505106",
+              "GSM7505107"
+            ],
+            "control_gsms": [
+              "GSM7505078",
+              "GSM7505079",
+              "GSM7505080",
+              "GSM7505081",
+              "GSM7505082",
+              "GSM7505083",
+              "GSM7505087",
+              "GSM7505088",
+              "GSM7505089"
+            ],
+            "unclear_gsms": [],
+            "excluded_gsms": [
+              "GSM7505084",
+              "GSM7505085",
+              "GSM7505086",
+              "GSM7505090",
+              "GSM7505091",
+              "GSM7505092",
+              "GSM7505093",
+              "GSM7505094",
+              "GSM7505095",
+              "GSM7505096",
+              "GSM7505097",
+              "GSM7505098",
+              "GSM7505099",
+              "GSM7505100"
+            ],
+            "no_counts_gsms": [],
+            "counts_checked": true,
+            "case_rule": "treatment = \"Gem-Pac 400:80 nM\"",
+            "control_rule": "treatment = \"untreated\" and cell line = \"PDAC002\" or \"PDAC044\" or \"PDAC060\"",
+            "problems": []
+          },
+          {
+            "gse": "GSE225011",
+            "case_gsms": [
+              "GSM7037075",
+              "GSM7037076",
+              "GSM7037091",
+              "GSM7037092"
+            ],
+            "control_gsms": [
+              "GSM7037073",
+              "GSM7037074",
+              "GSM7037089",
+              "GSM7037090"
+            ],
+            "unclear_gsms": [
+              "GSM7037061",
+              "GSM7037062",
+              "GSM7037063",
+              "GSM7037064",
+              "GSM7037065",
+              "GSM7037066",
+              "GSM7037067",
+              "GSM7037068",
+              "GSM7037069",
+              "GSM7037070",
+              "GSM7037071",
+              "GSM7037072",
+              "GSM7037077",
+              "GSM7037078",
+              "GSM7037079",
+              "GSM7037080",
+              "GSM7037081",
+              "GSM7037082",
+              "GSM7037083",
+              "GSM7037084",
+              "GSM7037085",
+              "GSM7037086",
+              "GSM7037087",
+              "GSM7037088"
+            ],
+            "excluded_gsms": [],
+            "no_counts_gsms": [
+              "GSM7037074"
+            ],
+            "counts_checked": true,
+            "case_rule": "treatment = \"CK21\" and title = contains \"12h culture\"",
+            "control_rule": "treatment = \"No Rx\" and title = contains \"12h culture\"",
+            "problems": []
+          }
+        ]
+      },
+      "elapsed_seconds": 47.250907958019525,
+      "input_tokens": 121387,
+      "output_tokens": 3585,
+      "web_search_requests": 0,
+      "web_fetch_requests": 0,
+      "error": null
+    }
+  ],
+  "final_action": "proceed",
+  "candidates": [
+    "GSE235548",
+    "GSE225011"
+  ],
+  "candidate_details": {
+    "GSE235548": {
+      "title": "Uncovering the hidden threat: single-organoid analysis reveals clinically relevant treatment-resistant and invasive subclones in pancreatic cancer",
+      "why": "PDAC patient-derived organoids treated in culture with gemcitabine plus paclitaxel (Gem-Pac). The untreated baseline samples come from the same three organoid lines (PDAC002, PDAC044, PDAC060).",
+      "case_hint": "Gem-Pac 400:80 nM treated organoids from PDAC002, PDAC044 and PDAC060 (7 samples).",
+      "control_hint": "Untreated baseline organoids from the same three lines, PDAC002, PDAC044 and PDAC060 (9 samples)."
+    },
+    "GSE225011": {
+      "title": "Triptolide analogs induced apoptosis on pancreatic cancer patient-derived organoids",
+      "why": "Two pancreatic cancer patient-derived organoid lines (U049MAI, U123M15-T) cultured with the triptolide analog CK21 or left untreated (No Rx), each at 3, 6, 9 and 12 h. The 12 h time point shows the strongest transcriptional response.",
+      "case_hint": "CK21-treated organoids at 12 h (4 samples: 2 lines × 2 replicates).",
+      "control_hint": "Untreated (No Rx) organoids at 12 h (4 samples)."
+    }
+  },
+  "rejected": [
+    "GSE169321",
+    "GSE262627",
+    "GSE232170",
+    "GSE212014",
+    "GSE187619",
+    "GSE228801",
+    "GSE243647",
+    "GSE269985",
+    "GSE234449",
+    "GSE240597",
+    "GSE140490",
+    "GSE273116",
+    "GSE249726",
+    "GSE140077",
+    "GSE229091",
+    "GSE184125"
+  ],
+  "questions": [
+    {
+      "question": "What comparison do you want to make?",
+      "options": [
+        "Tumor tissue vs adjacent normal pancreas, from patients",
+        "Drug-treated vs untreated PDAC cells",
+        "Gene knockdown/knockout/overexpression vs control in PDAC cells",
+        "Drug-resistant vs sensitive (parental) PDAC cells",
+        "Molecular subtype (classical vs basal-like) or metastatic vs primary tumor"
+      ],
+      "why": "Searches found about 260 matching series. Most are cell-line experiments with knockdown or drug treatment, usually with only 4 to 6 samples. A tumor vs adjacent normal search found 8 series, and I'd still need to check which have enough samples in each group (for example GSE119224, GSE171485, GSE196009, GSE130688, GSE241330). Your answer decides which group of series I check."
+    },
+    {
+      "question": "Which tumor type do you mean?",
+      "options": [
+        "Pancreatic ductal adenocarcinoma (PDAC)",
+        "Pancreatic neuroendocrine tumor (PanNET)",
+        "Precursor lesions (PanIN/IPMN)"
+      ],
+      "why": "Most hits are PDAC. A separate search found 20 series under pancreatic neuroendocrine tumor, and those would need different controls."
+    },
+    {
+      "question": "Which kind of samples do you want?",
+      "options": [
+        "Patient tumor tissue",
+        "Patient-derived organoids",
+        "Established cell lines (e.g. PANC-1, MIA PaCa-2, BxPC-3, AsPC-1)",
+        "Patient-derived or cell-line xenografts"
+      ],
+      "why": "Searches returned all of these, including 13 hits for PDAC organoids and several xenograft series. Mixing sample types would confound the comparison."
+    },
+    {
+      "question": "Do you have a particular gene, drug or pathway in mind?",
+      "options": [],
+      "why": "For the treatment or perturbation comparisons, this cuts more than 100 cell-line series down to the handful that are relevant."
+    }
+  ],
+  "out_of_scope": null,
+  "seen": [
+    "GSE181625",
+    "GSE101726",
+    "GSE64558",
+    "GSE273398",
+    "GSE227567",
+    "GSE273116",
+    "GSE229230",
+    "GSE242516",
+    "GSE241330",
+    "GSE269985",
+    "GSE253929",
+    "GSE253599",
+    "GSE198444",
+    "GSE192647",
+    "GSE248494",
+    "GSE235516",
+    "GSE247243",
+    "GSE262627",
+    "GSE223152",
+    "GSE168918",
+    "GSE249914",
+    "GSE238198",
+    "GSE246925",
+    "GSE252909",
+    "GSE245941",
+    "GSE228804",
+    "GSE249726",
+    "GSE248887",
+    "GSE217965",
+    "GSE159334",
+    "GSE245819",
+    "GSE242083",
+    "GSE162078",
+    "GSE241402",
+    "GSE161208",
+    "GSE234779",
+    "GSE150223",
+    "GSE150222",
+    "GSE211468",
+    "GSE215104",
+    "GSE242916",
+    "GSE242915",
+    "GSE211587",
+    "GSE181777",
+    "GSE218546",
+    "GSE208568",
+    "GSE229091",
+    "GSE207863",
+    "GSE235548",
+    "GSE237363",
+    "GSE210541",
+    "GSE152012",
+    "GSE210562",
+    "GSE211474",
+    "GSE230039",
+    "GSE232170",
+    "GSE172303",
+    "GSE202532",
+    "GSE226307",
+    "GSE207319",
+    "GSE222890",
+    "GSE181604",
+    "GSE216567",
+    "GSE216566",
+    "GSE220446",
+    "GSE217537",
+    "GSE211398",
+    "GSE193268",
+    "GSE193411",
+    "GSE212201",
+    "GSE206261",
+    "GSE213697",
+    "GSE206999",
+    "GSE189418",
+    "GSE215344",
+    "GSE214894",
+    "GSE214325",
+    "GSE184029",
+    "GSE179250",
+    "GSE212173",
+    "GSE189764",
+    "GSE207611",
+    "GSE179057",
+    "GSE135783",
+    "GSE209938",
+    "GSE206267",
+    "GSE178398",
+    "GSE201110",
+    "GSE130688",
+    "GSE178358",
+    "GSE165949",
+    "GSE165948",
+    "GSE201876",
+    "GSE185069",
+    "GSE201358",
+    "GSE180901",
+    "GSE198192",
+    "GSE192903",
+    "GSE151195",
+    "GSE185331",
+    "GSE172356",
+    "GSE174023",
+    "GSE139184",
+    "GSE228801",
+    "GSE243647",
+    "GSE234449",
+    "GSE212014",
+    "GSE201427",
+    "GSE187619",
+    "GSE146722",
+    "GSE169321",
+    "GSE140490",
+    "GSE114502",
+    "GSE267722",
+    "GSE200146",
+    "GSE186947",
+    "GSE183635",
+    "GSE184398",
+    "GSE156833",
+    "GSE134195",
+    "GSE159237",
+    "GSE174701",
+    "GSE138734",
+    "GSE161087",
+    "GSE133568",
+    "GSE133567",
+    "GSE118014",
+    "GSE98894",
+    "GSE102246",
+    "GSE78519",
+    "GSE45133",
+    "GSE270676",
+    "GSE259390",
+    "GSE268817",
+    "GSE252002",
+    "GSE263949",
+    "GSE240597",
+    "GSE256455",
+    "GSE246660",
+    "GSE234737",
+    "GSE235027",
+    "GSE253662",
+    "GSE252544",
+    "GSE225011",
+    "GSE146944",
+    "GSE168020",
+    "GSE223908",
+    "GSE211585",
+    "GSE242307",
+    "GSE205767",
+    "GSE210112",
+    "GSE135686",
+    "GSE155220",
+    "GSE210540",
+    "GSE154492",
+    "GSE149981",
+    "GSE218822",
+    "GSE212883",
+    "GSE225161",
+    "GSE224882",
+    "GSE207359",
+    "GSE221250",
+    "GSE220614",
+    "GSE185837",
+    "GSE212854",
+    "GSE198002",
+    "GSE119224",
+    "GSE196009",
+    "GSE171485",
+    "GSE162689",
+    "GSE136569",
+    "GSE197465",
+    "GSE184125",
+    "GSE140077"
+  ],
+  "per_query": {
+    "pancreatic ductal adenocarcinoma tumor vs normal": [
+      "GSE181625",
+      "GSE101726",
+      "GSE64558"
+    ],
+    "pancreatic cancer RNA-seq": [
+      "GSE273398",
+      "GSE227567",
+      "GSE273116",
+      "GSE229230",
+      "GSE242516",
+      "GSE241330",
+      "GSE269985",
+      "GSE253929",
+      "GSE253599",
+      "GSE198444",
+      "GSE192647",
+      "GSE248494",
+      "GSE235516",
+      "GSE247243",
+      "GSE262627",
+      "GSE223152",
+      "GSE168918",
+      "GSE249914",
+      "GSE238198",
+      "GSE246925",
+      "GSE252909",
+      "GSE245941",
+      "GSE228804",
+      "GSE249726",
+      "GSE248887",
+      "GSE217965",
+      "GSE159334",
+      "GSE245819",
+      "GSE242083",
+      "GSE162078",
+      "GSE241402",
+      "GSE161208",
+      "GSE234779",
+      "GSE150223",
+      "GSE150222",
+      "GSE211468",
+      "GSE215104",
+      "GSE242916",
+      "GSE242915",
+      "GSE211587",
+      "GSE181777",
+      "GSE218546",
+      "GSE208568",
+      "GSE229091",
+      "GSE207863",
+      "GSE235548",
+      "GSE237363",
+      "GSE210541",
+      "GSE152012",
+      "GSE210562",
+      "GSE211474",
+      "GSE230039",
+      "GSE232170",
+      "GSE172303",
+      "GSE202532",
+      "GSE226307",
+      "GSE207319",
+      "GSE222890",
+      "GSE181604",
+      "GSE216567",
+      "GSE216566",
+      "GSE220446",
+      "GSE217537",
+      "GSE211398",
+      "GSE193268",
+      "GSE193411",
+      "GSE212201",
+      "GSE206261",
+      "GSE213697",
+      "GSE206999",
+      "GSE189418",
+      "GSE215344",
+      "GSE214894",
+      "GSE214325",
+      "GSE184029",
+      "GSE179250",
+      "GSE212173",
+      "GSE189764",
+      "GSE207611",
+      "GSE179057",
+      "GSE135783",
+      "GSE209938",
+      "GSE206267",
+      "GSE178398",
+      "GSE201110",
+      "GSE130688",
+      "GSE178358",
+      "GSE165949",
+      "GSE165948",
+      "GSE201876",
+      "GSE185069",
+      "GSE201358",
+      "GSE180901",
+      "GSE198192",
+      "GSE192903",
+      "GSE151195",
+      "GSE185331",
+      "GSE172356",
+      "GSE174023",
+      "GSE139184"
+    ],
+    "PDAC organoids": [
+      "GSE269985",
+      "GSE235548",
+      "GSE139184",
+      "GSE228801",
+      "GSE243647",
+      "GSE234449",
+      "GSE212014",
+      "GSE201427",
+      "GSE187619",
+      "GSE146722",
+      "GSE169321",
+      "GSE140490",
+      "GSE114502"
+    ],
+    "pancreatic neuroendocrine tumor": [
+      "GSE246925",
+      "GSE178398",
+      "GSE267722",
+      "GSE200146",
+      "GSE186947",
+      "GSE183635",
+      "GSE184398",
+      "GSE156833",
+      "GSE134195",
+      "GSE159237",
+      "GSE174701",
+      "GSE138734",
+      "GSE161087",
+      "GSE133568",
+      "GSE133567",
+      "GSE118014",
+      "GSE98894",
+      "GSE102246",
+      "GSE78519",
+      "GSE45133"
+    ],
+    "pancreatic cancer cell line treatment": [
+      "GSE273398",
+      "GSE227567",
+      "GSE273116",
+      "GSE229230",
+      "GSE242516",
+      "GSE269985",
+      "GSE253929",
+      "GSE253599",
+      "GSE198444",
+      "GSE248494",
+      "GSE235516",
+      "GSE247243",
+      "GSE262627",
+      "GSE223152",
+      "GSE168918",
+      "GSE249914",
+      "GSE238198",
+      "GSE245941",
+      "GSE228804",
+      "GSE249726",
+      "GSE248887",
+      "GSE217965",
+      "GSE245819",
+      "GSE242083",
+      "GSE162078",
+      "GSE241402",
+      "GSE234779",
+      "GSE150223",
+      "GSE150222",
+      "GSE211468",
+      "GSE215104",
+      "GSE181777",
+      "GSE218546",
+      "GSE229091",
+      "GSE207863",
+      "GSE235548",
+      "GSE237363",
+      "GSE210541",
+      "GSE210562",
+      "GSE211474",
+      "GSE230039",
+      "GSE202532",
+      "GSE226307",
+      "GSE207319",
+      "GSE222890",
+      "GSE181604",
+      "GSE216567",
+      "GSE216566",
+      "GSE217537",
+      "GSE193268",
+      "GSE212201",
+      "GSE206261",
+      "GSE213697",
+      "GSE206999",
+      "GSE189418",
+      "GSE215344",
+      "GSE214325",
+      "GSE184029",
+      "GSE212173",
+      "GSE189764",
+      "GSE207611",
+      "GSE179057",
+      "GSE209938",
+      "GSE243647",
+      "GSE234449",
+      "GSE270676",
+      "GSE259390",
+      "GSE268817",
+      "GSE252002",
+      "GSE263949",
+      "GSE240597",
+      "GSE256455",
+      "GSE246660",
+      "GSE234737",
+      "GSE235027",
+      "GSE253662",
+      "GSE252544",
+      "GSE225011",
+      "GSE146944",
+      "GSE168020",
+      "GSE223908",
+      "GSE211585",
+      "GSE242307",
+      "GSE205767",
+      "GSE210112",
+      "GSE135686",
+      "GSE155220",
+      "GSE210540",
+      "GSE154492",
+      "GSE149981",
+      "GSE218822",
+      "GSE212883",
+      "GSE225161",
+      "GSE224882",
+      "GSE207359",
+      "GSE221250",
+      "GSE220614",
+      "GSE185837",
+      "GSE212854",
+      "GSE198002"
+    ],
+    "pancreatic cancer tumor adjacent normal tissue": [
+      "GSE241330",
+      "GSE119224",
+      "GSE220446",
+      "GSE130688",
+      "GSE196009",
+      "GSE171485",
+      "GSE162689",
+      "GSE136569"
+    ],
+    "PDAC patient tissue RNA-seq normal pancreas": [
+      "GSE247243",
+      "GSE197465"
+    ],
+    "pancreatic adenocarcinoma paired tumor non-tumor": [
+      "GSE130688"
+    ],
+    "pancreatic cancer organoids drug treatment": [
+      "GSE269985",
+      "GSE262627",
+      "GSE240597",
+      "GSE243647",
+      "GSE235548",
+      "GSE232170",
+      "GSE187619"
+    ],
+    "PDAC patient-derived organoids treated": [
+      "GSE235548",
+      "GSE234449",
+      "GSE169321",
+      "GSE140490"
+    ],
+    "pancreatic ductal adenocarcinoma organoid gemcitabine": [
+      "GSE235548",
+      "GSE228801"
+    ],
+    "pancreatic cancer organoid inhibitor RNA-seq": [
+      "GSE269985",
+      "GSE273116"
+    ],
+    "PDO pancreatic chemotherapy response": [
+      "GSE212014"
+    ],
+    "pancreatic tumor organoids DMSO vehicle": [],
+    "PDAC organoids MRTX1133": [
+      "GSE269985",
+      "GSE234449"
+    ],
+    "pancreatic cancer organoids trametinib": [],
+    "pancreatic organoid treated irinotecan oxaliplatin 5-FU": [
+      "GSE169321"
+    ],
+    "pancreatic cancer patient-derived organoid knockdown drug": [],
+    "pancreatic adenocarcinoma organoids radiation": [],
+    "pancreatic cancer organoids treated": [
+      "GSE273116",
+      "GSE269985",
+      "GSE240597",
+      "GSE249726",
+      "GSE225011",
+      "GSE229091",
+      "GSE235548",
+      "GSE234449",
+      "GSE184125"
+    ],
+    "PDAC organoid cultures treated with": [
+      "GSE140490"
+    ],
+    "human pancreatic tumor organoids inhibitor transcriptome": [],
+    "pancreatic cancer patient-derived organoid gemcitabine resistance RNA-seq": [],
+    "PDAC organoids KRAS inhibitor": [
+      "GSE269985",
+      "GSE234449"
+    ]
+  },
+  "invented": [],
+  "selections": {
+    "GSE235548": {
+      "case": [
+        "GSM7505101",
+        "GSM7505102",
+        "GSM7505103",
+        "GSM7505104",
+        "GSM7505105",
+        "GSM7505106",
+        "GSM7505107"
+      ],
+      "control": [
+        "GSM7505078",
+        "GSM7505079",
+        "GSM7505080",
+        "GSM7505081",
+        "GSM7505082",
+        "GSM7505083",
+        "GSM7505087",
+        "GSM7505088",
+        "GSM7505089"
+      ],
+      "unclear": [],
+      "no_counts": []
+    },
+    "GSE225011": {
+      "case": [
+        "GSM7037075",
+        "GSM7037076",
+        "GSM7037091",
+        "GSM7037092"
+      ],
+      "control": [
+        "GSM7037073",
+        "GSM7037074",
+        "GSM7037089",
+        "GSM7037090"
+      ],
+      "unclear": [
+        "GSM7037061",
+        "GSM7037062",
+        "GSM7037063",
+        "GSM7037064",
+        "GSM7037065",
+        "GSM7037066",
+        "GSM7037067",
+        "GSM7037068",
+        "GSM7037069",
+        "GSM7037070",
+        "GSM7037071",
+        "GSM7037072",
+        "GSM7037077",
+        "GSM7037078",
+        "GSM7037079",
+        "GSM7037080",
+        "GSM7037081",
+        "GSM7037082",
+        "GSM7037083",
+        "GSM7037084",
+        "GSM7037085",
+        "GSM7037086",
+        "GSM7037087",
+        "GSM7037088"
+      ],
+      "no_counts": [
+        "GSM7037074"
+      ]
+    }
+  },
+  "verification": {
+    "eligible": [
+      "GSE235548",
+      "GSE225011"
+    ],
+    "exists_only": [],
+    "missing": [],
+    "invalid": []
+  },
+  "elapsed_seconds": 67.334,
+  "input_tokens": 166448,
+  "output_tokens": 5074,
+  "web_search_requests": 0,
+  "web_fetch_requests": 0,
+  "error": null
+}

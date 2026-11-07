@@ -1,0 +1,256 @@
+{
+  "case_id": "kras_inhibitor_pdac_organoids",
+  "system": "baseline",
+  "repeat": 1,
+  "conditions": {
+    "system": "baseline",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "fingerprint": "4525537637e3a1e40449a050cb82f18b6802378efbf1170b5ac09c2e199b166c",
+    "web_search": true,
+    "code_revision": "4032f8cb3e85576661f421ff7f4f75aa87401b25",
+    "dirty": true,
+    "geo_cache": "/Users/scott/Documents/code/gauntlet-hackathon/cell-ledger/data/evals/geo-cache/all12-r2",
+    "case_sha256": "5d40e12ae568b59a5b1b4e76d6d5d1717ac5dbfadb3cb80cd47adea3b52aea17",
+    "suite_sha256": "5c2b23011a22776e3ea3fab6976ae88635f0f4a277dbf5db35d8fa2bb07d1859",
+    "run_id": "all12-r2",
+    "started_at": "2026-11-07T15:04:10+00:00"
+  },
+  "turns": [
+    {
+      "answers": [],
+      "action": "ask",
+      "output": {
+        "interpretation": "Two-group comparison: human patient-derived pancreatic cancer (PDAC) organoids treated in vitro with a KRAS inhibitor (case) versus the same organoid lines treated with vehicle, usually DMSO (control). This would be human bulk RNA-seq with NCBI raw counts, both arms in the same GEO series and at least 3 samples per arm. The inhibitor could be a KRAS G12D-selective drug such as MRTX1133, a G12C drug such as sotorasib or adagrasib, or a pan-RAS/RAS(ON) drug such as RMC-6236 (daraxonrasib) or RMC-7977. No candidates are listed because I could not open any GEO record to confirm which samples are organoids and which are bulk RNA-seq, or to copy GSM accessions. GEO pages returned a browser check (reCAPTCHA) and the search tool's usage limit ran out. Leads to check by hand in GEO: (1) the bulk RNA-seq series behind the 2026 Cancer Cell paper on KRAS G12D-targeted therapy and interferon signaling, which used MRTX1133 on the PDAC organoid DAC-67 (GSE not found); (2) GSE293756 (MUC1-C/KRAS-inhibitor resistance), whose paper used patient-derived organoids; (3) the RNA-seq series behind the paper on MYC amplification and pan-RAS inhibitor (RMC-7977) resistance, which used human PDAC organoids (GSE not found); (4) the bulk series in the GSE315129–GSE315131 group (RMC-6236 with or without tazemetostat), to see whether any human samples are organoids rather than cell lines.",
+        "genes": [
+          "KRAS"
+        ],
+        "out_of_scope": null,
+        "clarifying_questions": [
+          {
+            "question": "Which class of KRAS inhibitor should count as the treatment?",
+            "options": [
+              "KRAS G12D-selective (e.g., MRTX1133)",
+              "KRAS G12C-selective (sotorasib, adagrasib)",
+              "Pan-RAS / RAS(ON) multi-selective (RMC-6236/daraxonrasib, RMC-7977)",
+              "Any direct KRAS/RAS inhibitor"
+            ],
+            "why": "The drug classes act on different KRAS mutations, so pooling them changes the biology. A G12D-only scope limits the search to MRTX1133-type studies (e.g., the DAC-67 organoid work); a pan-RAS scope adds RMC-6236/RMC-7977 series."
+          },
+          {
+            "question": "Should only short-term treatment of drug-naive organoids count, or also organoids made resistant by long-term exposure?",
+            "options": [
+              "Acute treatment (hours to days) vs DMSO only",
+              "Also include drug-resistant organoids vs parental"
+            ],
+            "why": "Several of the leads are resistance studies (e.g., stepwise MRTX1133 dose escalation, MUC1-C). In those, comparing resistant with parental organoids is a different question from treated versus vehicle."
+          },
+          {
+            "question": "If too few organoid series exist, can other model types be used as a fallback?",
+            "options": [
+              "Organoids only",
+              "Also patient-derived cell lines (2D)",
+              "Also patient-derived xenografts (PDX)"
+            ],
+            "why": "Most public KRAS-inhibitor bulk RNA-seq in PDAC uses 2D cell lines or xenografts (e.g., GSE302981 and the RMC-6236 bulk series). Organoids are not interchangeable with these, so including them changes which series qualify."
+          }
+        ],
+        "rejected": [
+          {
+            "gse": "GSE228502",
+            "why": "Single-cell RNA-seq, and its models are murine pancreatic cancer cell lines and tumors, not human patient-derived organoids."
+          },
+          {
+            "gse": "GSE207352",
+            "why": "Isogenic engineered murine pancreatic organoids (WT/KC/KPC/KSC) screened mainly with perhexiline maleate. Not human patient-derived organoids, and not KRAS inhibitor vs vehicle in human samples."
+          },
+          {
+            "gse": "GSE315131",
+            "why": "Single-cell RNA-seq of mouse subcutaneous KPC tumors treated with an EZH2 inhibitor and RMC-6236. Not human, not organoids, not bulk."
+          },
+          {
+            "gse": "GSE315129",
+            "why": "ChIP-seq (H3K27ac) of pancreatic cancer cells, not RNA-seq."
+          },
+          {
+            "gse": "GSE303105",
+            "why": "Single-cell RNA-seq (RMC-6236 arm of the prolonged KRAS-MAPK inhibition study), not bulk."
+          },
+          {
+            "gse": "GSE302981",
+            "why": "Its description mentions bulk RNA-seq of human PDAC specimens and patient-derived cell lines treated mainly with the ERK inhibitor ulixertinib. Organoid samples were not apparent, and the main drug is an ERK inhibitor rather than a KRAS inhibitor. GEO sample records could not be checked."
+          },
+          {
+            "gse": "GSE290526",
+            "why": "Single-cell RNA-seq of models with acquired MRTX1133 resistance, not bulk RNA-seq of treated vs vehicle organoids."
+          },
+          {
+            "gse": "GSE63348",
+            "why": "Older organoid-model study (Boj et al. 2015) with no KRAS inhibitor treatment."
+          }
+        ],
+        "queries_tried": [
+          "GEO pancreatic cancer patient-derived organoids MRTX1133 RNA-seq",
+          "GEO PDAC organoids KRAS G12D inhibitor RNA-seq vehicle DMSO GSE",
+          "pancreatic organoids RMC-6236 RNA-seq GSE",
+          "PDAC organoids sotorasib OR adagrasib RNA-seq GSE",
+          "GSE patient-derived organoids pancreatic MRTX1133 bulk RNA-seq DMSO",
+          "human PDAC organoids KRAS inhibitor transcriptome GEO accession",
+          "pancreatic cancer organoids RMC-7977 RNA-seq GEO",
+          "PDAC patient-derived organoids pan-RAS inhibitor RNA sequencing deposited GEO",
+          "omicsdi pancreatic organoids KRAS inhibitor RNA-seq",
+          "pancreatic cancer organoid MRTX1133 resistance RNA-seq GSE",
+          "omicsdi PDAC patient-derived organoids MRTX1133 RNA-seq",
+          "GEO RNA-seq human PDAC organoids MRTX1133 DMSO 48 hours",
+          "pancreatic cancer organoids RMC-6236 DMSO bulk RNA-seq human GSE",
+          "GSE293756 MUC1-C KRAS inhibition organoids RNA-seq samples"
+        ],
+        "candidates": []
+      },
+      "elapsed_seconds": 99.4581106659607,
+      "input_tokens": 271751,
+      "output_tokens": 6005,
+      "web_search_requests": 14,
+      "web_fetch_requests": 6,
+      "error": null
+    },
+    {
+      "answers": [
+        "Patient-derived organoids only; cell lines or xenografts will not do."
+      ],
+      "action": "no_results",
+      "output": {
+        "interpretation": "Two-group comparison in human patient-derived pancreatic cancer (PDAC) organoids, bulk RNA-seq: case = organoids treated with a KRAS inhibitor (e.g., MRTX1133, sotorasib, adagrasib, RMC-6236/RMC-7977); control = the same organoids treated with vehicle (DMSO). I could not confirm any qualifying series. The GEO site blocked direct access to its records with a browser check, and my search tool ran out of uses before I could check the remaining leads. Because I could not copy sample accessions from GEO, I am not putting forward any candidates rather than guessing. The most promising lead to check by hand is the sotorasib + palbociclib PDAC study (Cell Death Dis 2025). It used a KRAS G12C patient-derived organoid (PDO-51T) and deposited RNA-seq as GSE301146 and GSE301148. Open those records and keep only PDO-51T samples treated with sotorasib vs DMSO, with at least 3 per arm. GSE279749 (PARP + KRAS G12D inhibitor, Nat Commun) and the data from the Fra-2/MRTX-1133 paper (PNAS) are also worth checking for human organoid arms.",
+        "genes": [
+          "KRAS"
+        ],
+        "out_of_scope": null,
+        "clarifying_questions": [],
+        "rejected": [
+          {
+            "gse": "GSE290487",
+            "why": "MRTX1133-resistant vs parental gastrointestinal models (including 3 patient-derived organoids) profiled by single-cell RNA-seq, not bulk; the contrast is resistant vs parental, not inhibitor vs vehicle."
+          },
+          {
+            "gse": "GSE228502",
+            "why": "Single-cell RNA-seq of pancreatic cancer cell lines and tumors treated with MRTX1133/MRTX849; not bulk RNA-seq of patient-derived organoids."
+          },
+          {
+            "gse": "GSE207352",
+            "why": "Organoid screen built on isogenic engineered murine pancreatic organoids; not human patient-derived organoids."
+          },
+          {
+            "gse": "GSE269985",
+            "why": "From the Cancer Discovery 2024 paper on resistance to KRAS inhibition, which relies on mouse KPC and PDX models; not confirmed to contain human patient-derived organoids treated with inhibitor vs vehicle."
+          },
+          {
+            "gse": "GSE269313",
+            "why": "Single-nucleus RNA-seq companion to GSE269985 (mouse/PDX tumors); not bulk RNA-seq of organoids."
+          },
+          {
+            "gse": "GSE311611",
+            "why": "From the sotorasib + palbociclib study, but it is the single-cell RNA-seq of mouse tumors treated with MRTX1133/palbociclib; wrong organism and assay."
+          },
+          {
+            "gse": "GSE301146",
+            "why": "Bulk RNA-seq from the sotorasib + palbociclib PDAC study, which used both cell lines (e.g., 51T-2D, a 2D line derived from an organoid) and PDO-51T organoids. I could not check on GEO whether the profiled samples are the organoids or the 2D/cell-line cultures, or whether there are at least 3 per arm. Check this by hand before using it."
+          },
+          {
+            "gse": "GSE301148",
+            "why": "Companion series to GSE301146 from the same study; same unresolved question of whether the samples are organoids or cell lines and how many replicates each arm has."
+          },
+          {
+            "gse": "GSE244142",
+            "why": "Single-nuclei RNA-seq series; not bulk RNA-seq."
+          },
+          {
+            "gse": "GSE315131",
+            "why": "Single-cell RNA-seq of the immune microenvironment in pancreatic tumors after EZH2 + KRAS inhibition; not bulk organoid data."
+          }
+        ],
+        "queries_tried": [
+          "GEO pancreatic cancer organoids MRTX1133 RNA-seq",
+          "patient-derived organoids PDAC KRAS inhibitor RNA-seq GSE",
+          "PDAC organoids RMC-6236 RNA-seq GEO",
+          "pancreatic organoids sotorasib adagrasib RNA-seq GSE",
+          "KRAS G12D inhibitor patient-derived organoids transcriptome GSE",
+          "human pancreatic cancer organoids MRTX1133 bulk RNA-seq DMSO GEO accession",
+          "patient-derived organoids pancreatic RMC-7977 RNA sequencing",
+          "pancreatic organoids KRAS G12C inhibitor RNA-seq palbociclib sotorasib GSE",
+          "human PDAC organoids KRAS inhibition transcriptional response classical basal RNA-seq",
+          "pancreatic tumor organoids MRTX1133 treatment RNA-seq Gene Expression Omnibus",
+          "PDAC patient-derived organoids pan-RAS inhibitor daraxonrasib RNA-seq",
+          "pancreatic cancer organoids KRAS inhibitor MYC RNA-seq vehicle organoids human"
+        ],
+        "candidates": []
+      },
+      "elapsed_seconds": 76.89443545800168,
+      "input_tokens": 197972,
+      "output_tokens": 4834,
+      "web_search_requests": 13,
+      "web_fetch_requests": 11,
+      "error": null
+    }
+  ],
+  "final_action": "no_results",
+  "candidates": [],
+  "candidate_details": {},
+  "rejected": [
+    "GSE290487",
+    "GSE228502",
+    "GSE207352",
+    "GSE269985",
+    "GSE269313",
+    "GSE311611",
+    "GSE301146",
+    "GSE301148",
+    "GSE244142",
+    "GSE315131"
+  ],
+  "questions": [
+    {
+      "question": "Which class of KRAS inhibitor should count as the treatment?",
+      "options": [
+        "KRAS G12D-selective (e.g., MRTX1133)",
+        "KRAS G12C-selective (sotorasib, adagrasib)",
+        "Pan-RAS / RAS(ON) multi-selective (RMC-6236/daraxonrasib, RMC-7977)",
+        "Any direct KRAS/RAS inhibitor"
+      ],
+      "why": "The drug classes act on different KRAS mutations, so pooling them changes the biology. A G12D-only scope limits the search to MRTX1133-type studies (e.g., the DAC-67 organoid work); a pan-RAS scope adds RMC-6236/RMC-7977 series."
+    },
+    {
+      "question": "Should only short-term treatment of drug-naive organoids count, or also organoids made resistant by long-term exposure?",
+      "options": [
+        "Acute treatment (hours to days) vs DMSO only",
+        "Also include drug-resistant organoids vs parental"
+      ],
+      "why": "Several of the leads are resistance studies (e.g., stepwise MRTX1133 dose escalation, MUC1-C). In those, comparing resistant with parental organoids is a different question from treated versus vehicle."
+    },
+    {
+      "question": "If too few organoid series exist, can other model types be used as a fallback?",
+      "options": [
+        "Organoids only",
+        "Also patient-derived cell lines (2D)",
+        "Also patient-derived xenografts (PDX)"
+      ],
+      "why": "Most public KRAS-inhibitor bulk RNA-seq in PDAC uses 2D cell lines or xenografts (e.g., GSE302981 and the RMC-6236 bulk series). Organoids are not interchangeable with these, so including them changes which series qualify."
+    }
+  ],
+  "out_of_scope": null,
+  "seen": [],
+  "per_query": {},
+  "invented": [],
+  "selections": {},
+  "verification": {
+    "eligible": [],
+    "exists_only": [],
+    "missing": [],
+    "invalid": []
+  },
+  "elapsed_seconds": 176.353,
+  "input_tokens": 469723,
+  "output_tokens": 10839,
+  "web_search_requests": 27,
+  "web_fetch_requests": 17,
+  "error": null
+}

@@ -115,3 +115,24 @@ async def test_verify_series_rejects_non_series_accessions() -> None:
     async with httpx.AsyncClient(transport=httpx.MockTransport(lambda r: httpx.Response(500))) as h:
         with pytest.raises(ValueError, match="GSM1"):
             await GeoClient(h).verify_series(["GSE1", "GSM1"])
+
+
+async def test_exists_series_ignores_eligibility() -> None:
+    calls: list[httpx.Request] = []
+
+    def handle(request: httpx.Request) -> httpx.Response:
+        calls.append(request)
+        if request.url.path.endswith("esearch.fcgi"):
+            return httpx.Response(
+                200, json={"esearchresult": {"count": "2", "idlist": ["200164073", "200250219"]}}
+            )
+        return httpx.Response(200, json=ESUMMARY)
+
+    async with httpx.AsyncClient(transport=httpx.MockTransport(handle)) as http:
+        found = await GeoClient(http).exists_series(["GSE250219", "GSE164073", "GSE1"])
+
+    # Both summarized series exist; GSE1 does not. The mouse+human series counts as existing.
+    assert found == ["GSE250219", "GSE164073"]
+    term = parse_qs(calls[0].content.decode())["term"][0]
+    assert term == "(GSE250219[ACCN] OR GSE164073[ACCN] OR GSE1[ACCN]) AND gse[ETYP]"
+    assert "rnaseq counts" not in term

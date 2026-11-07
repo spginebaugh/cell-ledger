@@ -1,5 +1,11 @@
 # Pancreatic cancer eval pilot — review draft
 
+> The runnable eval format changed after this draft: the discovery evals now live in
+> `evals/cases/` (see `evals/README.md`), and this pilot's search-stage decisions are carried
+> there as the draft case `evals/cases/pancreatic_cancer_broad.json`. The sample-level selection
+> expectations below belong to the design step, which is no longer evaluated. The evidence and
+> annotations in this folder remain the record behind that case's verdicts.
+
 ## Evaluation revision and validation status — November 7, 2026
 
 The evaluation implementation and reruns below refer to commit

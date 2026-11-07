@@ -11,7 +11,9 @@ from fastapi.responses import JSONResponse
 
 from cell_ledger.geo import GeoClient
 from cell_ledger_api import __version__
-from cell_ledger_api.agent import Agent, TurnRunner, sdk_turn_runner
+from cell_ledger_api.agent.design import Designer
+from cell_ledger_api.agent.discover import Discoverer
+from cell_ledger_api.agent.llm import TurnRunner, sdk_turn_runner
 from cell_ledger_api.compare import CompareService
 from cell_ledger_api.db import Database
 from cell_ledger_api.discovery import ExaSearcher
@@ -117,15 +119,18 @@ def create_app(
                     api_key=settings.anthropic_api_key.get_secret_value(), max_retries=2
                 )
                 runner = sdk_turn_runner(own_anthropic)
-            app.state.agent = Agent(
+            app.state.discoverer = Discoverer(
                 app.state.geo,
                 turn=runner,
                 exa=app.state.exa,  # type: ignore[arg-type]
                 model=settings.anthropic_model,
                 effort=settings.anthropic_effort,
             )
+            app.state.designer = Designer(
+                turn=runner, model=settings.anthropic_model, effort=settings.anthropic_effort
+            )
             app.state.pipeline = Pipeline(
-                app.state.sessions, app.state.runs, app.state.comparisons, app.state.agent
+                app.state.sessions, app.state.runs, app.state.comparisons, app.state.designer
             )
             # Recovery after the hooks are wired, so a re-dispatched download or run flows on.
             # Comparisons first: that step fails whatever is 'running', which at boot can only

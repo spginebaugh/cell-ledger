@@ -1,0 +1,2523 @@
+{
+  "case_id": "hcc_tumor_vs_adjacent",
+  "system": "specialist",
+  "repeat": 1,
+  "conditions": {
+    "system": "specialist",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "fingerprint": "dbb24587bd68bf9c9c274050bb2a4c1cc278c11cb8cbb8c22bb9c16b5f548ad7",
+    "web_search": true,
+    "code_revision": "4032f8cb3e85576661f421ff7f4f75aa87401b25",
+    "dirty": true,
+    "geo_cache": "/Users/scott/Documents/code/gauntlet-hackathon/cell-ledger/data/evals/geo-cache/all12-r2",
+    "case_sha256": "052b8203ab68390d6f12e8ef89b102781b2df50eaeb36f738bd108f55bb19d69",
+    "suite_sha256": "5c2b23011a22776e3ea3fab6976ae88635f0f4a277dbf5db35d8fa2bb07d1859",
+    "run_id": "all12-r2",
+    "started_at": "2026-11-07T15:04:10+00:00"
+  },
+  "turns": [
+    {
+      "answers": [],
+      "action": "ask",
+      "output": {
+        "interpretation": "Case: hepatocellular carcinoma (HCC) tumor tissue. Control: adjacent non-tumor liver tissue, from the same patients where the data allow. Both arms come from human surgical bulk RNA-seq series.",
+        "genes": [],
+        "out_of_scope": null,
+        "clarifying_questions": [
+          {
+            "question": "Should the analysis be limited to one HCC cause or patient population, or should it pool all of them?",
+            "options": [
+              "Any cause (pooled)",
+              "HBV-related HCC (mostly Chinese/Asian cohorts, e.g. GSE56545, GSE124535, GSE138485)",
+              "HCV-related HCC (only GSE81550, which has 3 pairs, too small)",
+              "Non-Asian cohorts (GSE202853 Hispanic, GSE176271 African/European American, GSE144269 Mongolian)"
+            ],
+            "why": "About 18 paired tumor/adjacent series qualify, more than the 10 the analysis can take. Most series do not record the cause per sample, and the sample counts differ a lot between these options."
+          },
+          {
+            "question": "Should tumors from patients with venous invasion (PVTT), recurrence or immunotherapy be included, or only standard resected primary tumors?",
+            "options": [
+              "Include all",
+              "Only resected primary tumors"
+            ],
+            "why": "This decides whether GSE69164 (stage III with PVTT), GSE56545 (transplant patients with or without recurrence) and GSE202069 (some patients given anti-PD-1) stay in."
+          }
+        ],
+        "rejected": [
+          {
+            "gse": "GSE113617",
+            "why": "Only 10 non-tumor samples against 68 tumors, and they are mostly unpaired."
+          },
+          {
+            "gse": "GSE65485",
+            "why": "Only 5 adjacent samples against 50 tumors."
+          },
+          {
+            "gse": "GSE148355",
+            "why": "The controls are normal liver from non-HCC patients plus premalignant lesions, not adjacent non-tumor liver."
+          },
+          {
+            "gse": "GSE77661",
+            "why": "Only one HCC/adjacent pair."
+          },
+          {
+            "gse": "GSE81550",
+            "why": "Only 3 pairs (HCV). Usable only if the user wants HCV-specific data."
+          },
+          {
+            "gse": "GSE33294",
+            "why": "Only 3 pairs."
+          },
+          {
+            "gse": "GSE128274",
+            "why": "Only 4 pairs, and the series mixes in small-RNA libraries."
+          },
+          {
+            "gse": "GSE216613",
+            "why": "Only 6 samples."
+          },
+          {
+            "gse": "GSE125469",
+            "why": "Only 6 samples, from a circRNA study."
+          },
+          {
+            "gse": "GSE190174",
+            "why": "miRNA sequencing."
+          },
+          {
+            "gse": "GSE112705",
+            "why": "Ribosome profiling study."
+          },
+          {
+            "gse": "GSE97214",
+            "why": "Qualifies (9 pairs) but was left out because of the 10-candidate cap."
+          },
+          {
+            "gse": "GSE169289",
+            "why": "Qualifies (17 pairs, rRNA-depleted, some recurrent tumors) but was left out because of the 10-candidate cap."
+          },
+          {
+            "gse": "GSE69164",
+            "why": "too few samples with counts per arm (case 0, control 0; at least 3 each)"
+          }
+        ],
+        "queries_tried": [
+          "hepatocellular carcinoma tumor adjacent non-tumor liver",
+          "HCC paired tumor and non-tumor tissue RNA-seq",
+          "liver cancer tumor versus paratumor",
+          "hepatocellular carcinoma adjacent normal liver tissue",
+          "HBV-related hepatocellular carcinoma tumor and peritumoral tissue",
+          "HCV hepatocellular carcinoma non-tumorous liver transcriptome",
+          "NAFLD NASH hepatocellular carcinoma tumor non-tumor RNA-seq",
+          "hepatocellular carcinoma paired adjacent tissue RNA sequencing"
+        ],
+        "candidates": [
+          {
+            "gse": "GSE144269",
+            "title": "The genomic landscape of Mongolian hepatocellular carcinoma",
+            "n_samples": 140,
+            "why": "The largest series found: 70 HCC tumors with matched non-tumor liver, all from surgery.",
+            "case_hint": "70 tumor samples",
+            "control_hint": "70 matched non-tumor samples",
+            "concerns": [
+              "Mongolian cohort with high HBV/HDV prevalence; clinical data are held in dbGaP, not GEO."
+            ],
+            "case": [
+              {
+                "all_of": [
+                  {
+                    "field": "tumor/non-tumor",
+                    "equals": [
+                      "tumor"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "control": [
+              {
+                "all_of": [
+                  {
+                    "field": "tumor/non-tumor",
+                    "equals": [
+                      "non-tumor"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "unclear": []
+          },
+          {
+            "gse": "GSE214846",
+            "title": "A novel risk score based on immune-related genes for hepatocellular carcinoma as a reliable prognostic biomarker and correlated with immune infiltration",
+            "n_samples": 130,
+            "why": "65 HCC tumors with paired paracancerous liver.",
+            "case_hint": "65 HCC tissues",
+            "control_hint": "65 paired paracancerous tissues",
+            "concerns": [
+              "Cause of HCC is not annotated."
+            ],
+            "case": [
+              {
+                "all_of": [
+                  {
+                    "field": "tissue",
+                    "equals": [
+                      "hepatocellular carcinoma"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "control": [
+              {
+                "all_of": [
+                  {
+                    "field": "tissue",
+                    "equals": [
+                      "paracancerous normal tissues"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "unclear": []
+          },
+          {
+            "gse": "GSE124535",
+            "title": "Gene expression profiles of 35 paired HCC and non-tumor tissues by RNA-seq data",
+            "n_samples": 70,
+            "why": "35 early-stage HCC tumors with paired non-tumor liver.",
+            "case_hint": "35 HCC",
+            "control_hint": "35 paired non-tumor",
+            "concerns": [
+              "All tumors are early stage."
+            ],
+            "case": [
+              {
+                "all_of": [
+                  {
+                    "field": "tissue",
+                    "equals": [
+                      "HCC"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "control": [
+              {
+                "all_of": [
+                  {
+                    "field": "tissue",
+                    "equals": [
+                      "non-tumor"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "unclear": []
+          },
+          {
+            "gse": "GSE138485",
+            "title": "Retrospective gene expression analysis of human RNA samples from Hepatocellular Carcinoma in relation with survival",
+            "n_samples": 64,
+            "why": "32 tumor/non-tumor pairs from the same patients.",
+            "case_hint": "32 tumors (titles start with 'Tumor')",
+            "control_hint": "32 non-tumor (titles start with 'Non Tumor')",
+            "concerns": [
+              "Some non-tumor titles use a 'T_' prefix. The rule therefore matches on 'Non Tumor' in the title.",
+              "9 samples matched both arms and were set aside: ['GSM4184967', 'GSM4184968', 'GSM4184969', 'GSM4184970', 'GSM4184971']"
+            ],
+            "case": [
+              {
+                "all_of": [
+                  {
+                    "field": "title",
+                    "equals": [],
+                    "contains": [
+                      "Tumor T_"
+                    ],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "control": [
+              {
+                "all_of": [
+                  {
+                    "field": "title",
+                    "equals": [],
+                    "contains": [
+                      "Non Tumor"
+                    ],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "unclear": []
+          },
+          {
+            "gse": "GSE202069",
+            "title": "RNA-seq data for tumor and adjacent non-tumor tissues from hepatocellular carcinoma patients with anti-PD-1 therapy",
+            "n_samples": 66,
+            "why": "41 resected HCC tumors and 25 adjacent non-tumor liver samples.",
+            "case_hint": "41 tumors",
+            "control_hint": "25 non-tumor",
+            "concerns": [
+              "Pairing is incomplete. 17 samples are labelled with anti-PD-1 treatment, and the records do not say when it was given relative to surgery."
+            ],
+            "case": [
+              {
+                "all_of": [
+                  {
+                    "field": "tissue",
+                    "equals": [
+                      "Tumor"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "control": [
+              {
+                "all_of": [
+                  {
+                    "field": "tissue",
+                    "equals": [
+                      "Nontumor"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "unclear": []
+          },
+          {
+            "gse": "GSE56545",
+            "title": "mRNA profiling  of Hepatocellular carcinoma (HCC)",
+            "n_samples": 42,
+            "why": "21 HBV-related HCC tumors, each paired with its adjacent normal liver, from transplant patients.",
+            "case_hint": "21 tumors (recurrent and non-recurrent patients)",
+            "control_hint": "21 adjacent normal",
+            "concerns": [
+              "Transplant (OLT) cohort, mostly cirrhotic and HBV-positive.",
+              "6 selected samples are not in the NCBI count table"
+            ],
+            "case": [
+              {
+                "all_of": [
+                  {
+                    "field": "tissue",
+                    "equals": [
+                      "HCC Non-recurrent Tumor",
+                      "HCC Recurrent Tumor"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "control": [
+              {
+                "all_of": [
+                  {
+                    "field": "tissue",
+                    "equals": [
+                      "HCC Non-recurrent Tumor's Adjacent Normal",
+                      "HCC Recurrent Tumor's Adjacent Normal",
+                      "HCC Recurrent Tumor's  Adjacent Normal"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "unclear": []
+          },
+          {
+            "gse": "GSE176271",
+            "title": "Integrative analysis of DNA methylation and microRNA expression reveals mechanisms of disparity in hepatocellular carcinoma [RNA-Seq]",
+            "n_samples": 32,
+            "why": "16 HCC tumors and 16 adjacent normal samples from a US cohort.",
+            "case_hint": "16 HCC",
+            "control_hint": "16 adjacent normal",
+            "concerns": [
+              "Race is split between African American and European American donors; consider it as a covariate.",
+              "4 selected samples are not in the NCBI count table"
+            ],
+            "case": [
+              {
+                "all_of": [
+                  {
+                    "field": "disease status",
+                    "equals": [
+                      "HCC"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "control": [
+              {
+                "all_of": [
+                  {
+                    "field": "disease status",
+                    "equals": [
+                      "Adjacent Normal"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "unclear": []
+          },
+          {
+            "gse": "GSE101432",
+            "title": "Comprehensive transcriptome analysis in human liver",
+            "n_samples": 52,
+            "why": "17 primary HCC tumors and 22 benign adjacent liver samples. Cell lines are excluded.",
+            "case_hint": "17 primary tumors",
+            "control_hint": "22 benign adjacent",
+            "concerns": [
+              "Some adjacent samples come from relapse cases, so not every control has a primary-tumor partner. The 5 relapse tumors are marked unclear."
+            ],
+            "case": [
+              {
+                "all_of": [
+                  {
+                    "field": "tissue type",
+                    "equals": [
+                      "Primary tumor"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "control": [
+              {
+                "all_of": [
+                  {
+                    "field": "tissue type",
+                    "equals": [
+                      "Benign adjacent"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "unclear": [
+              {
+                "all_of": [
+                  {
+                    "field": "tissue type",
+                    "equals": [
+                      "Relapse tumor"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "gse": "GSE202853",
+            "title": "Transcriptome analysis of hepatocellular carcinoma and adjacent non-tumor liver tissues [I]",
+            "n_samples": 20,
+            "why": "10 paired HCC/adjacent samples from Hispanic patients.",
+            "case_hint": "10 HCC tumors",
+            "control_hint": "10 adjacent normal liver",
+            "concerns": [
+              "Small cohort."
+            ],
+            "case": [
+              {
+                "all_of": [
+                  {
+                    "field": "tissue",
+                    "equals": [
+                      "Hepatocellular carcinoma"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "control": [
+              {
+                "all_of": [
+                  {
+                    "field": "tissue",
+                    "equals": [
+                      "normal liver"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "unclear": []
+          }
+        ],
+        "trace": {
+          "turns": 4,
+          "calls": [
+            {
+              "tool": "search_geo",
+              "input": {
+                "queries": [
+                  "hepatocellular carcinoma tumor adjacent non-tumor liver",
+                  "HCC paired tumor and non-tumor tissue RNA-seq",
+                  "liver cancer tumor versus paratumor",
+                  "hepatocellular carcinoma adjacent normal liver tissue"
+                ],
+                "since": null
+              },
+              "queries": [
+                {
+                  "query": "hepatocellular carcinoma tumor adjacent non-tumor liver",
+                  "total": 9,
+                  "returned": 9,
+                  "gses": [
+                    "GSE202069",
+                    "GSE202853",
+                    "GSE113617",
+                    "GSE190174",
+                    "GSE138485",
+                    "GSE97214",
+                    "GSE81550",
+                    "GSE69164",
+                    "GSE33294"
+                  ]
+                },
+                {
+                  "query": "HCC paired tumor and non-tumor tissue RNA-seq",
+                  "total": 3,
+                  "returned": 3,
+                  "gses": [
+                    "GSE33294",
+                    "GSE144269",
+                    "GSE124535"
+                  ]
+                },
+                {
+                  "query": "liver cancer tumor versus paratumor",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                },
+                {
+                  "query": "hepatocellular carcinoma adjacent normal liver tissue",
+                  "total": 11,
+                  "returned": 11,
+                  "gses": [
+                    "GSE202853",
+                    "GSE216613",
+                    "GSE214846",
+                    "GSE176271",
+                    "GSE148355",
+                    "GSE101432",
+                    "GSE125469",
+                    "GSE112705",
+                    "GSE77661",
+                    "GSE56545",
+                    "GSE65485"
+                  ]
+                }
+              ],
+              "confirmed": [
+                "GSE202069",
+                "GSE202853",
+                "GSE113617",
+                "GSE190174",
+                "GSE138485",
+                "GSE97214",
+                "GSE81550",
+                "GSE69164",
+                "GSE33294",
+                "GSE144269",
+                "GSE124535",
+                "GSE216613",
+                "GSE214846",
+                "GSE176271",
+                "GSE148355",
+                "GSE101432",
+                "GSE125469",
+                "GSE112705",
+                "GSE77661",
+                "GSE56545",
+                "GSE65485"
+              ],
+              "shown": [
+                "GSE202069",
+                "GSE202853",
+                "GSE113617",
+                "GSE190174",
+                "GSE138485",
+                "GSE97214",
+                "GSE81550",
+                "GSE69164",
+                "GSE33294",
+                "GSE144269",
+                "GSE124535",
+                "GSE216613",
+                "GSE214846",
+                "GSE176271",
+                "GSE148355",
+                "GSE101432",
+                "GSE125469",
+                "GSE112705",
+                "GSE77661",
+                "GSE56545",
+                "GSE65485"
+              ],
+              "ineligible": [],
+              "inspected": [],
+              "error": null
+            },
+            {
+              "tool": "search_geo",
+              "input": {
+                "queries": [
+                  "HBV-related hepatocellular carcinoma tumor and peritumoral tissue",
+                  "HCV hepatocellular carcinoma non-tumorous liver transcriptome",
+                  "NAFLD NASH hepatocellular carcinoma tumor non-tumor RNA-seq",
+                  "hepatocellular carcinoma paired adjacent tissue RNA sequencing"
+                ],
+                "since": null
+              },
+              "queries": [
+                {
+                  "query": "HBV-related hepatocellular carcinoma tumor and peritumoral tissue",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                },
+                {
+                  "query": "HCV hepatocellular carcinoma non-tumorous liver transcriptome",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                },
+                {
+                  "query": "NAFLD NASH hepatocellular carcinoma tumor non-tumor RNA-seq",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                },
+                {
+                  "query": "hepatocellular carcinoma paired adjacent tissue RNA sequencing",
+                  "total": 5,
+                  "returned": 5,
+                  "gses": [
+                    "GSE169289",
+                    "GSE202853",
+                    "GSE125469",
+                    "GSE128274",
+                    "GSE112705"
+                  ]
+                }
+              ],
+              "confirmed": [
+                "GSE169289",
+                "GSE202853",
+                "GSE125469",
+                "GSE128274",
+                "GSE112705"
+              ],
+              "shown": [
+                "GSE169289",
+                "GSE202853",
+                "GSE125469",
+                "GSE128274",
+                "GSE112705"
+              ],
+              "ineligible": [],
+              "inspected": [],
+              "error": null
+            },
+            {
+              "tool": "inspect_series",
+              "input": {
+                "gses": [
+                  "GSE124535",
+                  "GSE144269",
+                  "GSE202853",
+                  "GSE97214",
+                  "GSE138485",
+                  "GSE214846",
+                  "GSE176271",
+                  "GSE77661"
+                ]
+              },
+              "queries": [],
+              "confirmed": [],
+              "shown": [],
+              "ineligible": [],
+              "inspected": [
+                "GSE124535",
+                "GSE144269",
+                "GSE202853",
+                "GSE97214",
+                "GSE138485",
+                "GSE214846",
+                "GSE176271",
+                "GSE77661"
+              ],
+              "error": null
+            },
+            {
+              "tool": "inspect_series",
+              "input": {
+                "gses": [
+                  "GSE202069",
+                  "GSE113617",
+                  "GSE169289",
+                  "GSE148355",
+                  "GSE65485",
+                  "GSE56545",
+                  "GSE69164",
+                  "GSE101432",
+                  "GSE81550",
+                  "GSE128274"
+                ]
+              },
+              "queries": [],
+              "confirmed": [],
+              "shown": [],
+              "ineligible": [],
+              "inspected": [
+                "GSE202069",
+                "GSE113617",
+                "GSE169289",
+                "GSE148355",
+                "GSE65485",
+                "GSE56545",
+                "GSE69164",
+                "GSE101432",
+                "GSE81550",
+                "GSE128274"
+              ],
+              "error": null
+            }
+          ],
+          "seen": [
+            "GSE202069",
+            "GSE202853",
+            "GSE113617",
+            "GSE190174",
+            "GSE138485",
+            "GSE97214",
+            "GSE81550",
+            "GSE69164",
+            "GSE33294",
+            "GSE144269",
+            "GSE124535",
+            "GSE216613",
+            "GSE214846",
+            "GSE176271",
+            "GSE148355",
+            "GSE101432",
+            "GSE125469",
+            "GSE112705",
+            "GSE77661",
+            "GSE56545",
+            "GSE65485",
+            "GSE169289",
+            "GSE128274"
+          ],
+          "invented": [],
+          "usage": {
+            "input_tokens": 10,
+            "output_tokens": 5039,
+            "cache_read_input_tokens": 41060,
+            "cache_creation_input_tokens": 48756
+          },
+          "elapsed_seconds": 54.041
+        },
+        "selections": [
+          {
+            "gse": "GSE144269",
+            "case_gsms": [
+              "GSM4284605",
+              "GSM4284607",
+              "GSM4284609",
+              "GSM4284611",
+              "GSM4284613",
+              "GSM4284615",
+              "GSM4284617",
+              "GSM4284619",
+              "GSM4284621",
+              "GSM4284623",
+              "GSM4284625",
+              "GSM4284627",
+              "GSM4284629",
+              "GSM4284631",
+              "GSM4284633",
+              "GSM4284635",
+              "GSM4284637",
+              "GSM4284639",
+              "GSM4284641",
+              "GSM4284643",
+              "GSM4284645",
+              "GSM4284647",
+              "GSM4284649",
+              "GSM4284651",
+              "GSM4284653",
+              "GSM4284655",
+              "GSM4284657",
+              "GSM4284659",
+              "GSM4284661",
+              "GSM4284663",
+              "GSM4284665",
+              "GSM4284667",
+              "GSM4284669",
+              "GSM4284671",
+              "GSM4284673",
+              "GSM4284675",
+              "GSM4284677",
+              "GSM4284679",
+              "GSM4284681",
+              "GSM4284683",
+              "GSM4284685",
+              "GSM4284687",
+              "GSM4284689",
+              "GSM4284691",
+              "GSM4284693",
+              "GSM4284695",
+              "GSM4284697",
+              "GSM4284699",
+              "GSM4284701",
+              "GSM4284703",
+              "GSM4284705",
+              "GSM4284707",
+              "GSM4284709",
+              "GSM4284711",
+              "GSM4284713",
+              "GSM4284715",
+              "GSM4284717",
+              "GSM4284719",
+              "GSM4284721",
+              "GSM4284723",
+              "GSM4284725",
+              "GSM4284727",
+              "GSM4284729",
+              "GSM4284731",
+              "GSM4284733",
+              "GSM4284735",
+              "GSM4284737",
+              "GSM4284739",
+              "GSM4284741",
+              "GSM4284743"
+            ],
+            "control_gsms": [
+              "GSM4284606",
+              "GSM4284608",
+              "GSM4284610",
+              "GSM4284612",
+              "GSM4284614",
+              "GSM4284616",
+              "GSM4284618",
+              "GSM4284620",
+              "GSM4284622",
+              "GSM4284624",
+              "GSM4284626",
+              "GSM4284628",
+              "GSM4284630",
+              "GSM4284632",
+              "GSM4284634",
+              "GSM4284636",
+              "GSM4284638",
+              "GSM4284640",
+              "GSM4284642",
+              "GSM4284644",
+              "GSM4284646",
+              "GSM4284648",
+              "GSM4284650",
+              "GSM4284652",
+              "GSM4284654",
+              "GSM4284656",
+              "GSM4284658",
+              "GSM4284660",
+              "GSM4284662",
+              "GSM4284664",
+              "GSM4284666",
+              "GSM4284668",
+              "GSM4284670",
+              "GSM4284672",
+              "GSM4284674",
+              "GSM4284676",
+              "GSM4284678",
+              "GSM4284680",
+              "GSM4284682",
+              "GSM4284684",
+              "GSM4284686",
+              "GSM4284688",
+              "GSM4284690",
+              "GSM4284692",
+              "GSM4284694",
+              "GSM4284696",
+              "GSM4284698",
+              "GSM4284700",
+              "GSM4284702",
+              "GSM4284704",
+              "GSM4284706",
+              "GSM4284708",
+              "GSM4284710",
+              "GSM4284712",
+              "GSM4284714",
+              "GSM4284716",
+              "GSM4284718",
+              "GSM4284720",
+              "GSM4284722",
+              "GSM4284724",
+              "GSM4284726",
+              "GSM4284728",
+              "GSM4284730",
+              "GSM4284732",
+              "GSM4284734",
+              "GSM4284736",
+              "GSM4284738",
+              "GSM4284740",
+              "GSM4284742",
+              "GSM4284744"
+            ],
+            "unclear_gsms": [],
+            "excluded_gsms": [],
+            "no_counts_gsms": [],
+            "counts_checked": true,
+            "case_rule": "tumor/non-tumor = \"tumor\"",
+            "control_rule": "tumor/non-tumor = \"non-tumor\"",
+            "problems": []
+          },
+          {
+            "gse": "GSE214846",
+            "case_gsms": [
+              "GSM6616574",
+              "GSM6616575",
+              "GSM6616576",
+              "GSM6616577",
+              "GSM6616578",
+              "GSM6616579",
+              "GSM6616580",
+              "GSM6616581",
+              "GSM6616582",
+              "GSM6616583",
+              "GSM6616584",
+              "GSM6616585",
+              "GSM6616586",
+              "GSM6616587",
+              "GSM6616588",
+              "GSM6616589",
+              "GSM6616590",
+              "GSM6616591",
+              "GSM6616592",
+              "GSM6616593",
+              "GSM6616594",
+              "GSM6616595",
+              "GSM6616596",
+              "GSM6616597",
+              "GSM6616598",
+              "GSM6616599",
+              "GSM6616600",
+              "GSM6616601",
+              "GSM6616602",
+              "GSM6616603",
+              "GSM6616604",
+              "GSM6616605",
+              "GSM6616606",
+              "GSM6616607",
+              "GSM6616608",
+              "GSM6616609",
+              "GSM6616610",
+              "GSM6616611",
+              "GSM6616612",
+              "GSM6616613",
+              "GSM6616614",
+              "GSM6616615",
+              "GSM6616616",
+              "GSM6616617",
+              "GSM6616618",
+              "GSM6616619",
+              "GSM6616620",
+              "GSM6616621",
+              "GSM6616622",
+              "GSM6616623",
+              "GSM6616624",
+              "GSM6616625",
+              "GSM6616626",
+              "GSM6616627",
+              "GSM6616628",
+              "GSM6616629",
+              "GSM6616630",
+              "GSM6616631",
+              "GSM6616632",
+              "GSM6616633",
+              "GSM6616634",
+              "GSM6616635",
+              "GSM6616636",
+              "GSM6616637",
+              "GSM6616638"
+            ],
+            "control_gsms": [
+              "GSM6616639",
+              "GSM6616640",
+              "GSM6616641",
+              "GSM6616642",
+              "GSM6616643",
+              "GSM6616644",
+              "GSM6616645",
+              "GSM6616646",
+              "GSM6616647",
+              "GSM6616648",
+              "GSM6616649",
+              "GSM6616650",
+              "GSM6616651",
+              "GSM6616652",
+              "GSM6616653",
+              "GSM6616654",
+              "GSM6616655",
+              "GSM6616656",
+              "GSM6616657",
+              "GSM6616658",
+              "GSM6616659",
+              "GSM6616660",
+              "GSM6616661",
+              "GSM6616662",
+              "GSM6616663",
+              "GSM6616664",
+              "GSM6616665",
+              "GSM6616666",
+              "GSM6616667",
+              "GSM6616668",
+              "GSM6616669",
+              "GSM6616670",
+              "GSM6616671",
+              "GSM6616672",
+              "GSM6616673",
+              "GSM6616674",
+              "GSM6616675",
+              "GSM6616676",
+              "GSM6616677",
+              "GSM6616678",
+              "GSM6616679",
+              "GSM6616680",
+              "GSM6616681",
+              "GSM6616682",
+              "GSM6616683",
+              "GSM6616684",
+              "GSM6616685",
+              "GSM6616686",
+              "GSM6616687",
+              "GSM6616688",
+              "GSM6616689",
+              "GSM6616690",
+              "GSM6616691",
+              "GSM6616692",
+              "GSM6616693",
+              "GSM6616694",
+              "GSM6616695",
+              "GSM6616696",
+              "GSM6616697",
+              "GSM6616698",
+              "GSM6616699",
+              "GSM6616700",
+              "GSM6616701",
+              "GSM6616702",
+              "GSM6616703"
+            ],
+            "unclear_gsms": [],
+            "excluded_gsms": [],
+            "no_counts_gsms": [],
+            "counts_checked": true,
+            "case_rule": "tissue = \"hepatocellular carcinoma\"",
+            "control_rule": "tissue = \"paracancerous normal tissues\"",
+            "problems": []
+          },
+          {
+            "gse": "GSE124535",
+            "case_gsms": [
+              "GSM3536084",
+              "GSM3536085",
+              "GSM3536086",
+              "GSM3536087",
+              "GSM3536088",
+              "GSM3536089",
+              "GSM3536090",
+              "GSM3536091",
+              "GSM3536092",
+              "GSM3536093",
+              "GSM3536094",
+              "GSM3536095",
+              "GSM3536096",
+              "GSM3536097",
+              "GSM3536098",
+              "GSM3536099",
+              "GSM3536100",
+              "GSM3536101",
+              "GSM3536102",
+              "GSM3536103",
+              "GSM3536104",
+              "GSM3536105",
+              "GSM3536106",
+              "GSM3536107",
+              "GSM3536108",
+              "GSM3536109",
+              "GSM3536110",
+              "GSM3536111",
+              "GSM3536112",
+              "GSM3536113",
+              "GSM3536114",
+              "GSM3536115",
+              "GSM3536116",
+              "GSM3536117",
+              "GSM3536118"
+            ],
+            "control_gsms": [
+              "GSM3536049",
+              "GSM3536050",
+              "GSM3536051",
+              "GSM3536052",
+              "GSM3536053",
+              "GSM3536054",
+              "GSM3536055",
+              "GSM3536056",
+              "GSM3536057",
+              "GSM3536058",
+              "GSM3536059",
+              "GSM3536060",
+              "GSM3536061",
+              "GSM3536062",
+              "GSM3536063",
+              "GSM3536064",
+              "GSM3536065",
+              "GSM3536066",
+              "GSM3536067",
+              "GSM3536068",
+              "GSM3536069",
+              "GSM3536070",
+              "GSM3536071",
+              "GSM3536072",
+              "GSM3536073",
+              "GSM3536074",
+              "GSM3536075",
+              "GSM3536076",
+              "GSM3536077",
+              "GSM3536078",
+              "GSM3536079",
+              "GSM3536080",
+              "GSM3536081",
+              "GSM3536082",
+              "GSM3536083"
+            ],
+            "unclear_gsms": [],
+            "excluded_gsms": [],
+            "no_counts_gsms": [],
+            "counts_checked": true,
+            "case_rule": "tissue = \"HCC\"",
+            "control_rule": "tissue = \"non-tumor\"",
+            "problems": []
+          },
+          {
+            "gse": "GSE138485",
+            "case_gsms": [
+              "GSM4109609",
+              "GSM4109610",
+              "GSM4109611",
+              "GSM4109612",
+              "GSM4109613",
+              "GSM4109614",
+              "GSM4109615",
+              "GSM4109616",
+              "GSM4109617",
+              "GSM4109618",
+              "GSM4109619",
+              "GSM4109620",
+              "GSM4109621",
+              "GSM4109622",
+              "GSM4109623",
+              "GSM4109624",
+              "GSM4109625",
+              "GSM4109626",
+              "GSM4109627",
+              "GSM4109628",
+              "GSM4109629",
+              "GSM4109630",
+              "GSM4109631",
+              "GSM4184958",
+              "GSM4184959",
+              "GSM4184960",
+              "GSM4184961",
+              "GSM4184962",
+              "GSM4184963",
+              "GSM4184964",
+              "GSM4184965",
+              "GSM4184966"
+            ],
+            "control_gsms": [
+              "GSM4109632",
+              "GSM4109633",
+              "GSM4109634",
+              "GSM4109635",
+              "GSM4109636",
+              "GSM4109637",
+              "GSM4109638",
+              "GSM4109639",
+              "GSM4109640",
+              "GSM4109641",
+              "GSM4109642",
+              "GSM4109643",
+              "GSM4109644",
+              "GSM4109645",
+              "GSM4109646",
+              "GSM4109647",
+              "GSM4109648",
+              "GSM4109649",
+              "GSM4109650",
+              "GSM4109651",
+              "GSM4109652",
+              "GSM4109653",
+              "GSM4109654"
+            ],
+            "unclear_gsms": [
+              "GSM4184967",
+              "GSM4184968",
+              "GSM4184969",
+              "GSM4184970",
+              "GSM4184971",
+              "GSM4184972",
+              "GSM4184973",
+              "GSM4184974",
+              "GSM4184975"
+            ],
+            "excluded_gsms": [],
+            "no_counts_gsms": [],
+            "counts_checked": true,
+            "case_rule": "title = contains \"Tumor T_\"",
+            "control_rule": "title = contains \"Non Tumor\"",
+            "problems": [
+              "9 samples matched both arms and were set aside: ['GSM4184967', 'GSM4184968', 'GSM4184969', 'GSM4184970', 'GSM4184971']"
+            ]
+          },
+          {
+            "gse": "GSE202069",
+            "case_gsms": [
+              "GSM6093769",
+              "GSM6093770",
+              "GSM6093771",
+              "GSM6093772",
+              "GSM6093773",
+              "GSM6093774",
+              "GSM6093775",
+              "GSM6093776",
+              "GSM6093777",
+              "GSM6093778",
+              "GSM6093779",
+              "GSM6093780",
+              "GSM6093781",
+              "GSM6093782",
+              "GSM6093783",
+              "GSM6093784",
+              "GSM6093785",
+              "GSM6093786",
+              "GSM6093787",
+              "GSM6093788",
+              "GSM6093789",
+              "GSM6093790",
+              "GSM6093791",
+              "GSM6093792",
+              "GSM6093793",
+              "GSM6093794",
+              "GSM6093795",
+              "GSM6093796",
+              "GSM6093797",
+              "GSM6093810",
+              "GSM6093811",
+              "GSM6093812",
+              "GSM6093813",
+              "GSM6093814",
+              "GSM6093815",
+              "GSM6093816",
+              "GSM6093817",
+              "GSM6093818",
+              "GSM6093819",
+              "GSM6093820",
+              "GSM6093821"
+            ],
+            "control_gsms": [
+              "GSM6093756",
+              "GSM6093757",
+              "GSM6093758",
+              "GSM6093759",
+              "GSM6093760",
+              "GSM6093761",
+              "GSM6093762",
+              "GSM6093763",
+              "GSM6093764",
+              "GSM6093765",
+              "GSM6093766",
+              "GSM6093767",
+              "GSM6093768",
+              "GSM6093798",
+              "GSM6093799",
+              "GSM6093800",
+              "GSM6093801",
+              "GSM6093802",
+              "GSM6093803",
+              "GSM6093804",
+              "GSM6093805",
+              "GSM6093806",
+              "GSM6093807",
+              "GSM6093808",
+              "GSM6093809"
+            ],
+            "unclear_gsms": [],
+            "excluded_gsms": [],
+            "no_counts_gsms": [],
+            "counts_checked": true,
+            "case_rule": "tissue = \"Tumor\"",
+            "control_rule": "tissue = \"Nontumor\"",
+            "problems": []
+          },
+          {
+            "gse": "GSE56545",
+            "case_gsms": [
+              "GSM1363506",
+              "GSM1363508",
+              "GSM1363510",
+              "GSM1363512",
+              "GSM1363514",
+              "GSM1363516",
+              "GSM1363518",
+              "GSM1363520",
+              "GSM1363522",
+              "GSM1363524",
+              "GSM1363526",
+              "GSM1363528",
+              "GSM1363530",
+              "GSM1363532",
+              "GSM1363534",
+              "GSM1363536",
+              "GSM1363538",
+              "GSM1363540",
+              "GSM1363542",
+              "GSM1363544",
+              "GSM1363546"
+            ],
+            "control_gsms": [
+              "GSM1363505",
+              "GSM1363507",
+              "GSM1363509",
+              "GSM1363511",
+              "GSM1363513",
+              "GSM1363515",
+              "GSM1363517",
+              "GSM1363519",
+              "GSM1363521",
+              "GSM1363523",
+              "GSM1363525",
+              "GSM1363527",
+              "GSM1363529",
+              "GSM1363531",
+              "GSM1363533",
+              "GSM1363535",
+              "GSM1363537",
+              "GSM1363539",
+              "GSM1363541",
+              "GSM1363543",
+              "GSM1363545"
+            ],
+            "unclear_gsms": [],
+            "excluded_gsms": [],
+            "no_counts_gsms": [
+              "GSM1363514",
+              "GSM1363534",
+              "GSM1363536",
+              "GSM1363538",
+              "GSM1363531",
+              "GSM1363545"
+            ],
+            "counts_checked": true,
+            "case_rule": "tissue = \"HCC Non-recurrent Tumor\" or \"HCC Recurrent Tumor\"",
+            "control_rule": "tissue = \"HCC Non-recurrent Tumor's Adjacent Normal\" or \"HCC Recurrent Tumor's Adjacent Normal\" or \"HCC Recurrent Tumor's  Adjacent Normal\"",
+            "problems": []
+          },
+          {
+            "gse": "GSE176271",
+            "case_gsms": [
+              "GSM5361266",
+              "GSM5361268",
+              "GSM5361270",
+              "GSM5361272",
+              "GSM5361274",
+              "GSM5361276",
+              "GSM5361278",
+              "GSM5361280",
+              "GSM5361282",
+              "GSM5361284",
+              "GSM5361286",
+              "GSM5361288",
+              "GSM5361290",
+              "GSM5361292",
+              "GSM5361294",
+              "GSM5361296"
+            ],
+            "control_gsms": [
+              "GSM5361267",
+              "GSM5361269",
+              "GSM5361271",
+              "GSM5361273",
+              "GSM5361275",
+              "GSM5361277",
+              "GSM5361279",
+              "GSM5361281",
+              "GSM5361283",
+              "GSM5361285",
+              "GSM5361287",
+              "GSM5361289",
+              "GSM5361291",
+              "GSM5361293",
+              "GSM5361295",
+              "GSM5361297"
+            ],
+            "unclear_gsms": [],
+            "excluded_gsms": [],
+            "no_counts_gsms": [
+              "GSM5361266",
+              "GSM5361278",
+              "GSM5361296",
+              "GSM5361291"
+            ],
+            "counts_checked": true,
+            "case_rule": "disease status = \"HCC\"",
+            "control_rule": "disease status = \"Adjacent Normal\"",
+            "problems": []
+          },
+          {
+            "gse": "GSE101432",
+            "case_gsms": [
+              "GSM2702846",
+              "GSM2702847",
+              "GSM2702848",
+              "GSM2702849",
+              "GSM2702850",
+              "GSM2702851",
+              "GSM2702852",
+              "GSM2702853",
+              "GSM2702854",
+              "GSM2702855",
+              "GSM2702856",
+              "GSM2702857",
+              "GSM2702858",
+              "GSM2702859",
+              "GSM2702860",
+              "GSM2702861",
+              "GSM2702862"
+            ],
+            "control_gsms": [
+              "GSM2702824",
+              "GSM2702825",
+              "GSM2702826",
+              "GSM2702827",
+              "GSM2702828",
+              "GSM2702829",
+              "GSM2702830",
+              "GSM2702831",
+              "GSM2702832",
+              "GSM2702833",
+              "GSM2702834",
+              "GSM2702835",
+              "GSM2702836",
+              "GSM2702837",
+              "GSM2702838",
+              "GSM2702839",
+              "GSM2702840",
+              "GSM2702841",
+              "GSM2702842",
+              "GSM2702843",
+              "GSM2702844",
+              "GSM2702845"
+            ],
+            "unclear_gsms": [
+              "GSM2702863",
+              "GSM2702864",
+              "GSM2702865",
+              "GSM2702866",
+              "GSM2702867"
+            ],
+            "excluded_gsms": [
+              "GSM2702868",
+              "GSM2702869",
+              "GSM2702870",
+              "GSM2702871",
+              "GSM2702872",
+              "GSM2702873",
+              "GSM2702874",
+              "GSM2702875"
+            ],
+            "no_counts_gsms": [],
+            "counts_checked": true,
+            "case_rule": "tissue type = \"Primary tumor\"",
+            "control_rule": "tissue type = \"Benign adjacent\"",
+            "problems": []
+          },
+          {
+            "gse": "GSE202853",
+            "case_gsms": [
+              "GSM6134590",
+              "GSM6134592",
+              "GSM6134594",
+              "GSM6134596",
+              "GSM6134598",
+              "GSM6134600",
+              "GSM6134602",
+              "GSM6134604",
+              "GSM6134606",
+              "GSM6134608"
+            ],
+            "control_gsms": [
+              "GSM6134591",
+              "GSM6134593",
+              "GSM6134595",
+              "GSM6134597",
+              "GSM6134599",
+              "GSM6134601",
+              "GSM6134603",
+              "GSM6134605",
+              "GSM6134607",
+              "GSM6134609"
+            ],
+            "unclear_gsms": [],
+            "excluded_gsms": [],
+            "no_counts_gsms": [],
+            "counts_checked": true,
+            "case_rule": "tissue = \"Hepatocellular carcinoma\"",
+            "control_rule": "tissue = \"normal liver\"",
+            "problems": []
+          },
+          {
+            "gse": "GSE69164",
+            "case_gsms": [
+              "GSM1694192",
+              "GSM1694195",
+              "GSM1694198",
+              "GSM1694201",
+              "GSM1694204",
+              "GSM1694207",
+              "GSM1694210",
+              "GSM1694213",
+              "GSM1694216",
+              "GSM1694219",
+              "GSM1694222"
+            ],
+            "control_gsms": [
+              "GSM1694191",
+              "GSM1694194",
+              "GSM1694197",
+              "GSM1694200",
+              "GSM1694203",
+              "GSM1694206",
+              "GSM1694209",
+              "GSM1694212",
+              "GSM1694215",
+              "GSM1694218",
+              "GSM1694221"
+            ],
+            "unclear_gsms": [],
+            "excluded_gsms": [
+              "GSM1694193",
+              "GSM1694196",
+              "GSM1694199",
+              "GSM1694202",
+              "GSM1694205",
+              "GSM1694208",
+              "GSM1694211",
+              "GSM1694214",
+              "GSM1694217",
+              "GSM1694220",
+              "GSM1694223"
+            ],
+            "no_counts_gsms": [
+              "GSM1694192",
+              "GSM1694195",
+              "GSM1694198",
+              "GSM1694201",
+              "GSM1694204",
+              "GSM1694207",
+              "GSM1694210",
+              "GSM1694213",
+              "GSM1694216",
+              "GSM1694219",
+              "GSM1694222",
+              "GSM1694191",
+              "GSM1694194",
+              "GSM1694197",
+              "GSM1694200",
+              "GSM1694203",
+              "GSM1694206",
+              "GSM1694209",
+              "GSM1694212",
+              "GSM1694215",
+              "GSM1694218",
+              "GSM1694221"
+            ],
+            "counts_checked": true,
+            "case_rule": "tissue = \"Primary tumor\"",
+            "control_rule": "tissue = \"Adjacent non-tumor\"",
+            "problems": []
+          }
+        ]
+      },
+      "elapsed_seconds": 54.04188874998363,
+      "input_tokens": 89826,
+      "output_tokens": 5039,
+      "web_search_requests": 0,
+      "web_fetch_requests": 0,
+      "error": null
+    }
+  ],
+  "final_action": "ask",
+  "candidates": [
+    "GSE144269",
+    "GSE214846",
+    "GSE124535",
+    "GSE138485",
+    "GSE202069",
+    "GSE56545",
+    "GSE176271",
+    "GSE101432",
+    "GSE202853"
+  ],
+  "candidate_details": {
+    "GSE144269": {
+      "title": "The genomic landscape of Mongolian hepatocellular carcinoma",
+      "why": "The largest series found: 70 HCC tumors with matched non-tumor liver, all from surgery.",
+      "case_hint": "70 tumor samples",
+      "control_hint": "70 matched non-tumor samples"
+    },
+    "GSE214846": {
+      "title": "A novel risk score based on immune-related genes for hepatocellular carcinoma as a reliable prognostic biomarker and correlated with immune infiltration",
+      "why": "65 HCC tumors with paired paracancerous liver.",
+      "case_hint": "65 HCC tissues",
+      "control_hint": "65 paired paracancerous tissues"
+    },
+    "GSE124535": {
+      "title": "Gene expression profiles of 35 paired HCC and non-tumor tissues by RNA-seq data",
+      "why": "35 early-stage HCC tumors with paired non-tumor liver.",
+      "case_hint": "35 HCC",
+      "control_hint": "35 paired non-tumor"
+    },
+    "GSE138485": {
+      "title": "Retrospective gene expression analysis of human RNA samples from Hepatocellular Carcinoma in relation with survival",
+      "why": "32 tumor/non-tumor pairs from the same patients.",
+      "case_hint": "32 tumors (titles start with 'Tumor')",
+      "control_hint": "32 non-tumor (titles start with 'Non Tumor')"
+    },
+    "GSE202069": {
+      "title": "RNA-seq data for tumor and adjacent non-tumor tissues from hepatocellular carcinoma patients with anti-PD-1 therapy",
+      "why": "41 resected HCC tumors and 25 adjacent non-tumor liver samples.",
+      "case_hint": "41 tumors",
+      "control_hint": "25 non-tumor"
+    },
+    "GSE56545": {
+      "title": "mRNA profiling  of Hepatocellular carcinoma (HCC)",
+      "why": "21 HBV-related HCC tumors, each paired with its adjacent normal liver, from transplant patients.",
+      "case_hint": "21 tumors (recurrent and non-recurrent patients)",
+      "control_hint": "21 adjacent normal"
+    },
+    "GSE176271": {
+      "title": "Integrative analysis of DNA methylation and microRNA expression reveals mechanisms of disparity in hepatocellular carcinoma [RNA-Seq]",
+      "why": "16 HCC tumors and 16 adjacent normal samples from a US cohort.",
+      "case_hint": "16 HCC",
+      "control_hint": "16 adjacent normal"
+    },
+    "GSE101432": {
+      "title": "Comprehensive transcriptome analysis in human liver",
+      "why": "17 primary HCC tumors and 22 benign adjacent liver samples. Cell lines are excluded.",
+      "case_hint": "17 primary tumors",
+      "control_hint": "22 benign adjacent"
+    },
+    "GSE202853": {
+      "title": "Transcriptome analysis of hepatocellular carcinoma and adjacent non-tumor liver tissues [I]",
+      "why": "10 paired HCC/adjacent samples from Hispanic patients.",
+      "case_hint": "10 HCC tumors",
+      "control_hint": "10 adjacent normal liver"
+    }
+  },
+  "rejected": [
+    "GSE113617",
+    "GSE65485",
+    "GSE148355",
+    "GSE77661",
+    "GSE81550",
+    "GSE33294",
+    "GSE128274",
+    "GSE216613",
+    "GSE125469",
+    "GSE190174",
+    "GSE112705",
+    "GSE97214",
+    "GSE169289",
+    "GSE69164"
+  ],
+  "questions": [
+    {
+      "question": "Should the analysis be limited to one HCC cause or patient population, or should it pool all of them?",
+      "options": [
+        "Any cause (pooled)",
+        "HBV-related HCC (mostly Chinese/Asian cohorts, e.g. GSE56545, GSE124535, GSE138485)",
+        "HCV-related HCC (only GSE81550, which has 3 pairs, too small)",
+        "Non-Asian cohorts (GSE202853 Hispanic, GSE176271 African/European American, GSE144269 Mongolian)"
+      ],
+      "why": "About 18 paired tumor/adjacent series qualify, more than the 10 the analysis can take. Most series do not record the cause per sample, and the sample counts differ a lot between these options."
+    },
+    {
+      "question": "Should tumors from patients with venous invasion (PVTT), recurrence or immunotherapy be included, or only standard resected primary tumors?",
+      "options": [
+        "Include all",
+        "Only resected primary tumors"
+      ],
+      "why": "This decides whether GSE69164 (stage III with PVTT), GSE56545 (transplant patients with or without recurrence) and GSE202069 (some patients given anti-PD-1) stay in."
+    }
+  ],
+  "out_of_scope": null,
+  "seen": [
+    "GSE202069",
+    "GSE202853",
+    "GSE113617",
+    "GSE190174",
+    "GSE138485",
+    "GSE97214",
+    "GSE81550",
+    "GSE69164",
+    "GSE33294",
+    "GSE144269",
+    "GSE124535",
+    "GSE216613",
+    "GSE214846",
+    "GSE176271",
+    "GSE148355",
+    "GSE101432",
+    "GSE125469",
+    "GSE112705",
+    "GSE77661",
+    "GSE56545",
+    "GSE65485",
+    "GSE169289",
+    "GSE128274"
+  ],
+  "per_query": {
+    "hepatocellular carcinoma tumor adjacent non-tumor liver": [
+      "GSE202069",
+      "GSE202853",
+      "GSE113617",
+      "GSE190174",
+      "GSE138485",
+      "GSE97214",
+      "GSE81550",
+      "GSE69164",
+      "GSE33294"
+    ],
+    "HCC paired tumor and non-tumor tissue RNA-seq": [
+      "GSE33294",
+      "GSE144269",
+      "GSE124535"
+    ],
+    "liver cancer tumor versus paratumor": [],
+    "hepatocellular carcinoma adjacent normal liver tissue": [
+      "GSE202853",
+      "GSE216613",
+      "GSE214846",
+      "GSE176271",
+      "GSE148355",
+      "GSE101432",
+      "GSE125469",
+      "GSE112705",
+      "GSE77661",
+      "GSE56545",
+      "GSE65485"
+    ],
+    "HBV-related hepatocellular carcinoma tumor and peritumoral tissue": [],
+    "HCV hepatocellular carcinoma non-tumorous liver transcriptome": [],
+    "NAFLD NASH hepatocellular carcinoma tumor non-tumor RNA-seq": [],
+    "hepatocellular carcinoma paired adjacent tissue RNA sequencing": [
+      "GSE169289",
+      "GSE202853",
+      "GSE125469",
+      "GSE128274",
+      "GSE112705"
+    ]
+  },
+  "invented": [],
+  "selections": {
+    "GSE144269": {
+      "case": [
+        "GSM4284605",
+        "GSM4284607",
+        "GSM4284609",
+        "GSM4284611",
+        "GSM4284613",
+        "GSM4284615",
+        "GSM4284617",
+        "GSM4284619",
+        "GSM4284621",
+        "GSM4284623",
+        "GSM4284625",
+        "GSM4284627",
+        "GSM4284629",
+        "GSM4284631",
+        "GSM4284633",
+        "GSM4284635",
+        "GSM4284637",
+        "GSM4284639",
+        "GSM4284641",
+        "GSM4284643",
+        "GSM4284645",
+        "GSM4284647",
+        "GSM4284649",
+        "GSM4284651",
+        "GSM4284653",
+        "GSM4284655",
+        "GSM4284657",
+        "GSM4284659",
+        "GSM4284661",
+        "GSM4284663",
+        "GSM4284665",
+        "GSM4284667",
+        "GSM4284669",
+        "GSM4284671",
+        "GSM4284673",
+        "GSM4284675",
+        "GSM4284677",
+        "GSM4284679",
+        "GSM4284681",
+        "GSM4284683",
+        "GSM4284685",
+        "GSM4284687",
+        "GSM4284689",
+        "GSM4284691",
+        "GSM4284693",
+        "GSM4284695",
+        "GSM4284697",
+        "GSM4284699",
+        "GSM4284701",
+        "GSM4284703",
+        "GSM4284705",
+        "GSM4284707",
+        "GSM4284709",
+        "GSM4284711",
+        "GSM4284713",
+        "GSM4284715",
+        "GSM4284717",
+        "GSM4284719",
+        "GSM4284721",
+        "GSM4284723",
+        "GSM4284725",
+        "GSM4284727",
+        "GSM4284729",
+        "GSM4284731",
+        "GSM4284733",
+        "GSM4284735",
+        "GSM4284737",
+        "GSM4284739",
+        "GSM4284741",
+        "GSM4284743"
+      ],
+      "control": [
+        "GSM4284606",
+        "GSM4284608",
+        "GSM4284610",
+        "GSM4284612",
+        "GSM4284614",
+        "GSM4284616",
+        "GSM4284618",
+        "GSM4284620",
+        "GSM4284622",
+        "GSM4284624",
+        "GSM4284626",
+        "GSM4284628",
+        "GSM4284630",
+        "GSM4284632",
+        "GSM4284634",
+        "GSM4284636",
+        "GSM4284638",
+        "GSM4284640",
+        "GSM4284642",
+        "GSM4284644",
+        "GSM4284646",
+        "GSM4284648",
+        "GSM4284650",
+        "GSM4284652",
+        "GSM4284654",
+        "GSM4284656",
+        "GSM4284658",
+        "GSM4284660",
+        "GSM4284662",
+        "GSM4284664",
+        "GSM4284666",
+        "GSM4284668",
+        "GSM4284670",
+        "GSM4284672",
+        "GSM4284674",
+        "GSM4284676",
+        "GSM4284678",
+        "GSM4284680",
+        "GSM4284682",
+        "GSM4284684",
+        "GSM4284686",
+        "GSM4284688",
+        "GSM4284690",
+        "GSM4284692",
+        "GSM4284694",
+        "GSM4284696",
+        "GSM4284698",
+        "GSM4284700",
+        "GSM4284702",
+        "GSM4284704",
+        "GSM4284706",
+        "GSM4284708",
+        "GSM4284710",
+        "GSM4284712",
+        "GSM4284714",
+        "GSM4284716",
+        "GSM4284718",
+        "GSM4284720",
+        "GSM4284722",
+        "GSM4284724",
+        "GSM4284726",
+        "GSM4284728",
+        "GSM4284730",
+        "GSM4284732",
+        "GSM4284734",
+        "GSM4284736",
+        "GSM4284738",
+        "GSM4284740",
+        "GSM4284742",
+        "GSM4284744"
+      ],
+      "unclear": [],
+      "no_counts": []
+    },
+    "GSE214846": {
+      "case": [
+        "GSM6616574",
+        "GSM6616575",
+        "GSM6616576",
+        "GSM6616577",
+        "GSM6616578",
+        "GSM6616579",
+        "GSM6616580",
+        "GSM6616581",
+        "GSM6616582",
+        "GSM6616583",
+        "GSM6616584",
+        "GSM6616585",
+        "GSM6616586",
+        "GSM6616587",
+        "GSM6616588",
+        "GSM6616589",
+        "GSM6616590",
+        "GSM6616591",
+        "GSM6616592",
+        "GSM6616593",
+        "GSM6616594",
+        "GSM6616595",
+        "GSM6616596",
+        "GSM6616597",
+        "GSM6616598",
+        "GSM6616599",
+        "GSM6616600",
+        "GSM6616601",
+        "GSM6616602",
+        "GSM6616603",
+        "GSM6616604",
+        "GSM6616605",
+        "GSM6616606",
+        "GSM6616607",
+        "GSM6616608",
+        "GSM6616609",
+        "GSM6616610",
+        "GSM6616611",
+        "GSM6616612",
+        "GSM6616613",
+        "GSM6616614",
+        "GSM6616615",
+        "GSM6616616",
+        "GSM6616617",
+        "GSM6616618",
+        "GSM6616619",
+        "GSM6616620",
+        "GSM6616621",
+        "GSM6616622",
+        "GSM6616623",
+        "GSM6616624",
+        "GSM6616625",
+        "GSM6616626",
+        "GSM6616627",
+        "GSM6616628",
+        "GSM6616629",
+        "GSM6616630",
+        "GSM6616631",
+        "GSM6616632",
+        "GSM6616633",
+        "GSM6616634",
+        "GSM6616635",
+        "GSM6616636",
+        "GSM6616637",
+        "GSM6616638"
+      ],
+      "control": [
+        "GSM6616639",
+        "GSM6616640",
+        "GSM6616641",
+        "GSM6616642",
+        "GSM6616643",
+        "GSM6616644",
+        "GSM6616645",
+        "GSM6616646",
+        "GSM6616647",
+        "GSM6616648",
+        "GSM6616649",
+        "GSM6616650",
+        "GSM6616651",
+        "GSM6616652",
+        "GSM6616653",
+        "GSM6616654",
+        "GSM6616655",
+        "GSM6616656",
+        "GSM6616657",
+        "GSM6616658",
+        "GSM6616659",
+        "GSM6616660",
+        "GSM6616661",
+        "GSM6616662",
+        "GSM6616663",
+        "GSM6616664",
+        "GSM6616665",
+        "GSM6616666",
+        "GSM6616667",
+        "GSM6616668",
+        "GSM6616669",
+        "GSM6616670",
+        "GSM6616671",
+        "GSM6616672",
+        "GSM6616673",
+        "GSM6616674",
+        "GSM6616675",
+        "GSM6616676",
+        "GSM6616677",
+        "GSM6616678",
+        "GSM6616679",
+        "GSM6616680",
+        "GSM6616681",
+        "GSM6616682",
+        "GSM6616683",
+        "GSM6616684",
+        "GSM6616685",
+        "GSM6616686",
+        "GSM6616687",
+        "GSM6616688",
+        "GSM6616689",
+        "GSM6616690",
+        "GSM6616691",
+        "GSM6616692",
+        "GSM6616693",
+        "GSM6616694",
+        "GSM6616695",
+        "GSM6616696",
+        "GSM6616697",
+        "GSM6616698",
+        "GSM6616699",
+        "GSM6616700",
+        "GSM6616701",
+        "GSM6616702",
+        "GSM6616703"
+      ],
+      "unclear": [],
+      "no_counts": []
+    },
+    "GSE124535": {
+      "case": [
+        "GSM3536084",
+        "GSM3536085",
+        "GSM3536086",
+        "GSM3536087",
+        "GSM3536088",
+        "GSM3536089",
+        "GSM3536090",
+        "GSM3536091",
+        "GSM3536092",
+        "GSM3536093",
+        "GSM3536094",
+        "GSM3536095",
+        "GSM3536096",
+        "GSM3536097",
+        "GSM3536098",
+        "GSM3536099",
+        "GSM3536100",
+        "GSM3536101",
+        "GSM3536102",
+        "GSM3536103",
+        "GSM3536104",
+        "GSM3536105",
+        "GSM3536106",
+        "GSM3536107",
+        "GSM3536108",
+        "GSM3536109",
+        "GSM3536110",
+        "GSM3536111",
+        "GSM3536112",
+        "GSM3536113",
+        "GSM3536114",
+        "GSM3536115",
+        "GSM3536116",
+        "GSM3536117",
+        "GSM3536118"
+      ],
+      "control": [
+        "GSM3536049",
+        "GSM3536050",
+        "GSM3536051",
+        "GSM3536052",
+        "GSM3536053",
+        "GSM3536054",
+        "GSM3536055",
+        "GSM3536056",
+        "GSM3536057",
+        "GSM3536058",
+        "GSM3536059",
+        "GSM3536060",
+        "GSM3536061",
+        "GSM3536062",
+        "GSM3536063",
+        "GSM3536064",
+        "GSM3536065",
+        "GSM3536066",
+        "GSM3536067",
+        "GSM3536068",
+        "GSM3536069",
+        "GSM3536070",
+        "GSM3536071",
+        "GSM3536072",
+        "GSM3536073",
+        "GSM3536074",
+        "GSM3536075",
+        "GSM3536076",
+        "GSM3536077",
+        "GSM3536078",
+        "GSM3536079",
+        "GSM3536080",
+        "GSM3536081",
+        "GSM3536082",
+        "GSM3536083"
+      ],
+      "unclear": [],
+      "no_counts": []
+    },
+    "GSE138485": {
+      "case": [
+        "GSM4109609",
+        "GSM4109610",
+        "GSM4109611",
+        "GSM4109612",
+        "GSM4109613",
+        "GSM4109614",
+        "GSM4109615",
+        "GSM4109616",
+        "GSM4109617",
+        "GSM4109618",
+        "GSM4109619",
+        "GSM4109620",
+        "GSM4109621",
+        "GSM4109622",
+        "GSM4109623",
+        "GSM4109624",
+        "GSM4109625",
+        "GSM4109626",
+        "GSM4109627",
+        "GSM4109628",
+        "GSM4109629",
+        "GSM4109630",
+        "GSM4109631",
+        "GSM4184958",
+        "GSM4184959",
+        "GSM4184960",
+        "GSM4184961",
+        "GSM4184962",
+        "GSM4184963",
+        "GSM4184964",
+        "GSM4184965",
+        "GSM4184966"
+      ],
+      "control": [
+        "GSM4109632",
+        "GSM4109633",
+        "GSM4109634",
+        "GSM4109635",
+        "GSM4109636",
+        "GSM4109637",
+        "GSM4109638",
+        "GSM4109639",
+        "GSM4109640",
+        "GSM4109641",
+        "GSM4109642",
+        "GSM4109643",
+        "GSM4109644",
+        "GSM4109645",
+        "GSM4109646",
+        "GSM4109647",
+        "GSM4109648",
+        "GSM4109649",
+        "GSM4109650",
+        "GSM4109651",
+        "GSM4109652",
+        "GSM4109653",
+        "GSM4109654"
+      ],
+      "unclear": [
+        "GSM4184967",
+        "GSM4184968",
+        "GSM4184969",
+        "GSM4184970",
+        "GSM4184971",
+        "GSM4184972",
+        "GSM4184973",
+        "GSM4184974",
+        "GSM4184975"
+      ],
+      "no_counts": []
+    },
+    "GSE202069": {
+      "case": [
+        "GSM6093769",
+        "GSM6093770",
+        "GSM6093771",
+        "GSM6093772",
+        "GSM6093773",
+        "GSM6093774",
+        "GSM6093775",
+        "GSM6093776",
+        "GSM6093777",
+        "GSM6093778",
+        "GSM6093779",
+        "GSM6093780",
+        "GSM6093781",
+        "GSM6093782",
+        "GSM6093783",
+        "GSM6093784",
+        "GSM6093785",
+        "GSM6093786",
+        "GSM6093787",
+        "GSM6093788",
+        "GSM6093789",
+        "GSM6093790",
+        "GSM6093791",
+        "GSM6093792",
+        "GSM6093793",
+        "GSM6093794",
+        "GSM6093795",
+        "GSM6093796",
+        "GSM6093797",
+        "GSM6093810",
+        "GSM6093811",
+        "GSM6093812",
+        "GSM6093813",
+        "GSM6093814",
+        "GSM6093815",
+        "GSM6093816",
+        "GSM6093817",
+        "GSM6093818",
+        "GSM6093819",
+        "GSM6093820",
+        "GSM6093821"
+      ],
+      "control": [
+        "GSM6093756",
+        "GSM6093757",
+        "GSM6093758",
+        "GSM6093759",
+        "GSM6093760",
+        "GSM6093761",
+        "GSM6093762",
+        "GSM6093763",
+        "GSM6093764",
+        "GSM6093765",
+        "GSM6093766",
+        "GSM6093767",
+        "GSM6093768",
+        "GSM6093798",
+        "GSM6093799",
+        "GSM6093800",
+        "GSM6093801",
+        "GSM6093802",
+        "GSM6093803",
+        "GSM6093804",
+        "GSM6093805",
+        "GSM6093806",
+        "GSM6093807",
+        "GSM6093808",
+        "GSM6093809"
+      ],
+      "unclear": [],
+      "no_counts": []
+    },
+    "GSE56545": {
+      "case": [
+        "GSM1363506",
+        "GSM1363508",
+        "GSM1363510",
+        "GSM1363512",
+        "GSM1363514",
+        "GSM1363516",
+        "GSM1363518",
+        "GSM1363520",
+        "GSM1363522",
+        "GSM1363524",
+        "GSM1363526",
+        "GSM1363528",
+        "GSM1363530",
+        "GSM1363532",
+        "GSM1363534",
+        "GSM1363536",
+        "GSM1363538",
+        "GSM1363540",
+        "GSM1363542",
+        "GSM1363544",
+        "GSM1363546"
+      ],
+      "control": [
+        "GSM1363505",
+        "GSM1363507",
+        "GSM1363509",
+        "GSM1363511",
+        "GSM1363513",
+        "GSM1363515",
+        "GSM1363517",
+        "GSM1363519",
+        "GSM1363521",
+        "GSM1363523",
+        "GSM1363525",
+        "GSM1363527",
+        "GSM1363529",
+        "GSM1363531",
+        "GSM1363533",
+        "GSM1363535",
+        "GSM1363537",
+        "GSM1363539",
+        "GSM1363541",
+        "GSM1363543",
+        "GSM1363545"
+      ],
+      "unclear": [],
+      "no_counts": [
+        "GSM1363514",
+        "GSM1363534",
+        "GSM1363536",
+        "GSM1363538",
+        "GSM1363531",
+        "GSM1363545"
+      ]
+    },
+    "GSE176271": {
+      "case": [
+        "GSM5361266",
+        "GSM5361268",
+        "GSM5361270",
+        "GSM5361272",
+        "GSM5361274",
+        "GSM5361276",
+        "GSM5361278",
+        "GSM5361280",
+        "GSM5361282",
+        "GSM5361284",
+        "GSM5361286",
+        "GSM5361288",
+        "GSM5361290",
+        "GSM5361292",
+        "GSM5361294",
+        "GSM5361296"
+      ],
+      "control": [
+        "GSM5361267",
+        "GSM5361269",
+        "GSM5361271",
+        "GSM5361273",
+        "GSM5361275",
+        "GSM5361277",
+        "GSM5361279",
+        "GSM5361281",
+        "GSM5361283",
+        "GSM5361285",
+        "GSM5361287",
+        "GSM5361289",
+        "GSM5361291",
+        "GSM5361293",
+        "GSM5361295",
+        "GSM5361297"
+      ],
+      "unclear": [],
+      "no_counts": [
+        "GSM5361266",
+        "GSM5361278",
+        "GSM5361296",
+        "GSM5361291"
+      ]
+    },
+    "GSE101432": {
+      "case": [
+        "GSM2702846",
+        "GSM2702847",
+        "GSM2702848",
+        "GSM2702849",
+        "GSM2702850",
+        "GSM2702851",
+        "GSM2702852",
+        "GSM2702853",
+        "GSM2702854",
+        "GSM2702855",
+        "GSM2702856",
+        "GSM2702857",
+        "GSM2702858",
+        "GSM2702859",
+        "GSM2702860",
+        "GSM2702861",
+        "GSM2702862"
+      ],
+      "control": [
+        "GSM2702824",
+        "GSM2702825",
+        "GSM2702826",
+        "GSM2702827",
+        "GSM2702828",
+        "GSM2702829",
+        "GSM2702830",
+        "GSM2702831",
+        "GSM2702832",
+        "GSM2702833",
+        "GSM2702834",
+        "GSM2702835",
+        "GSM2702836",
+        "GSM2702837",
+        "GSM2702838",
+        "GSM2702839",
+        "GSM2702840",
+        "GSM2702841",
+        "GSM2702842",
+        "GSM2702843",
+        "GSM2702844",
+        "GSM2702845"
+      ],
+      "unclear": [
+        "GSM2702863",
+        "GSM2702864",
+        "GSM2702865",
+        "GSM2702866",
+        "GSM2702867"
+      ],
+      "no_counts": []
+    },
+    "GSE202853": {
+      "case": [
+        "GSM6134590",
+        "GSM6134592",
+        "GSM6134594",
+        "GSM6134596",
+        "GSM6134598",
+        "GSM6134600",
+        "GSM6134602",
+        "GSM6134604",
+        "GSM6134606",
+        "GSM6134608"
+      ],
+      "control": [
+        "GSM6134591",
+        "GSM6134593",
+        "GSM6134595",
+        "GSM6134597",
+        "GSM6134599",
+        "GSM6134601",
+        "GSM6134603",
+        "GSM6134605",
+        "GSM6134607",
+        "GSM6134609"
+      ],
+      "unclear": [],
+      "no_counts": []
+    }
+  },
+  "verification": {
+    "eligible": [
+      "GSE144269",
+      "GSE214846",
+      "GSE124535",
+      "GSE138485",
+      "GSE202069",
+      "GSE56545",
+      "GSE176271",
+      "GSE101432",
+      "GSE202853"
+    ],
+    "exists_only": [],
+    "missing": [],
+    "invalid": []
+  },
+  "elapsed_seconds": 59.528,
+  "input_tokens": 89826,
+  "output_tokens": 5039,
+  "web_search_requests": 0,
+  "web_fetch_requests": 0,
+  "error": null
+}

@@ -1,14 +1,15 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
 import { ChevronLeft } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import type { EnrichmentTerm } from "@/api/generated/types.gen";
 import { EnrichmentBars } from "@/components/charts/enrichment-bars";
+import { GenePanel, type SelectedGene } from "@/components/gene/gene-panel";
 import { Footer, Page, TopBar } from "@/components/layout/top-bar";
 import { AnswerPanel, StatusBanner } from "@/components/run/answer-panel";
 import { ComparisonPanel } from "@/components/run/design-panel";
 import { Downloads, MarkdownFile } from "@/components/run/downloads";
 import { LiveStepper } from "@/components/run/steps";
-import { VolcanoPanel } from "@/components/run/volcano-panel";
+import { useVolcanoTable, VolcanoPanel } from "@/components/run/volcano-panel";
 import { StatusChip } from "@/components/ui/badge";
 import { ColHead, ErrorBox, Panel, Pill, Section, Skeleton } from "@/components/ui/card";
 import { errorMessage } from "@/lib/api";
@@ -25,6 +26,38 @@ export function RunPage() {
   const [term, setTerm] = useState<EnrichmentTerm | null>(null);
   const [focus, setFocus] = useState<string | null>(null);
 
+  // The open gene panel is addressed by ?gene=SYMBOL so a gene can be linked to. The GeneID
+  // is kept alongside when the selection came from a click; a linked symbol is resolved.
+  const { gene: geneParam } = runRoute.useSearch();
+  const navigate = useNavigate({ from: runRoute.fullPath });
+  const [selectedEntrez, setSelectedEntrez] = useState<{ symbol: string; entrez: string } | null>(
+    null,
+  );
+  const selected: SelectedGene | null = useMemo(
+    () =>
+      geneParam
+        ? {
+            symbol: geneParam,
+            entrez:
+              selectedEntrez?.symbol.toUpperCase() === geneParam.toUpperCase()
+                ? selectedEntrez.entrez
+                : null,
+          }
+        : null,
+    [geneParam, selectedEntrez],
+  );
+  const selectGene = useCallback(
+    (symbol: string | null, entrez?: string) => {
+      setSelectedEntrez(symbol && entrez ? { symbol, entrez } : null);
+      navigate({
+        search: (prev) => ({ ...prev, gene: symbol ?? undefined }),
+        replace: true,
+        resetScroll: false,
+      });
+    },
+    [navigate],
+  );
+
   useEffect(() => {
     document.title = `${gse} ${contrast.replaceAll("_", " ")} · cell ledger`;
   }, [gse, contrast]);
@@ -35,6 +68,22 @@ export function RunPage() {
   const proposal = datasets.data?.find((d) => d.gse === gse)?.proposal ?? null;
   const urls = view?.urls ?? {};
   const nFiles = Object.keys(urls).length;
+
+  // Shared with VolcanoPanel through the query cache; used to resolve a partner symbol to
+  // its GeneID when the panel asks to jump to it.
+  const volcano = useVolcanoTable(urls["volcano.json.gz"]);
+  const geneIdBySymbol = useMemo(() => {
+    const m = new Map<string, string>();
+    volcano.data?.symbol.forEach((s, i) => {
+      if (s) m.set(s.toUpperCase(), volcano.data?.geneId[i] ?? "");
+    });
+    return m;
+  }, [volcano.data]);
+  const canPick = useCallback((s: string) => geneIdBySymbol.has(s.toUpperCase()), [geneIdBySymbol]);
+  const pick = useCallback(
+    (s: string) => selectGene(s, geneIdBySymbol.get(s.toUpperCase())),
+    [selectGene, geneIdBySymbol],
+  );
 
   const focusGene = (symbol: string | null) => {
     setFocus(symbol);
@@ -51,6 +100,13 @@ export function RunPage() {
   return (
     <>
       <TopBar sessionId={sessionId} />
+      <GenePanel
+        gene={selected}
+        onClose={() => selectGene(null)}
+        onPick={pick}
+        canPick={canPick}
+        themeKey={resolved}
+      />
       <Page>
         <div className="flex items-center justify-between gap-2 text-[13px]">
           <Link
@@ -123,7 +179,7 @@ export function RunPage() {
                   <>
                     <Section
                       title="The Answer"
-                      info="A verdict for each gene the question named, drawn from this dataset alone. Select a gene to locate it in the plots."
+                      info="A verdict for each gene the question named, drawn from this dataset alone. Select a gene to locate it in the plots, or click a point on the volcano to open its gene."
                     >
                       <AnswerPanel report={report} onFocus={focusGene} focus={focus} />
                       {report.markers && (
@@ -155,6 +211,8 @@ export function RunPage() {
                                 term={term}
                                 focus={focus}
                                 onFocus={focusGene}
+                                selected={selected?.symbol ?? null}
+                                onSelect={(symbol, geneId) => selectGene(symbol, geneId)}
                                 themeKey={resolved}
                               />
                             </div>

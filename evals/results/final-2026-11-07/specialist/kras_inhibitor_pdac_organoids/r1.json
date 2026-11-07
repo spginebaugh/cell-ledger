@@ -1,0 +1,934 @@
+{
+  "case_id": "kras_inhibitor_pdac_organoids",
+  "system": "specialist",
+  "repeat": 1,
+  "conditions": {
+    "system": "specialist",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "fingerprint": "dbb24587bd68bf9c9c274050bb2a4c1cc278c11cb8cbb8c22bb9c16b5f548ad7",
+    "web_search": true,
+    "code_revision": "4032f8cb3e85576661f421ff7f4f75aa87401b25",
+    "dirty": true,
+    "geo_cache": "/Users/scott/Documents/code/gauntlet-hackathon/cell-ledger/data/evals/geo-cache/all12-r2",
+    "case_sha256": "5d40e12ae568b59a5b1b4e76d6d5d1717ac5dbfadb3cb80cd47adea3b52aea17",
+    "suite_sha256": "5c2b23011a22776e3ea3fab6976ae88635f0f4a277dbf5db35d8fa2bb07d1859",
+    "run_id": "all12-r2",
+    "started_at": "2026-11-07T15:04:10+00:00"
+  },
+  "turns": [
+    {
+      "answers": [],
+      "action": "ask",
+      "output": {
+        "interpretation": "Patient-derived pancreatic cancer (PDAC) organoids treated with a KRAS inhibitor (e.g. MRTX1133, sotorasib, adagrasib, a pan-KRAS/RAS inhibitor) versus the same organoids treated with vehicle (DMSO).",
+        "genes": [
+          "KRAS"
+        ],
+        "out_of_scope": null,
+        "clarifying_questions": [
+          {
+            "question": "I found no GEO series with raw counts that profiles patient-derived pancreatic cancer organoids treated with a KRAS inhibitor versus vehicle. Would you accept pancreatic cancer cell lines grown in 2D instead?",
+            "options": [
+              "Organoids only: no dataset qualifies",
+              "Accept 2D PDAC cell lines treated with a KRAS inhibitor vs vehicle (1 series: GSE273116, MIA PaCa-2 sotorasib-resistant cells, MCB-294 vs vehicle, 3 vs 3)",
+              "Accept KRAS-inhibitor-resistant vs parental cell lines (GSE269985)"
+            ],
+            "why": "Only cell-line series exist. GSE273116 has 3 vehicle and 3 pan-KRAS inhibitor (MCB-294) samples, but in a sotorasib-resistant MIA PaCa-2 derivative. GSE269985 compares MRTX1133-resistant lines with parental lines, with no acute treatment vs vehicle. GSE234449 has too few untreated parental SUIT2 samples (1)."
+          }
+        ],
+        "rejected": [
+          {
+            "gse": "GSE234449",
+            "why": "SUIT2 cell line, not organoids. Only 1 untreated parental sample vs 2 MRTX1133-treated, so fewer than 3 per arm."
+          },
+          {
+            "gse": "GSE269985",
+            "why": "Cell lines (PANC-1, Panc 02.03, plus mouse lines). Compares MRTX1133-resistant with parental lines; no vehicle-vs-drug arm and no organoids."
+          },
+          {
+            "gse": "GSE273116",
+            "why": "MIA PaCa-2 cell line (sotorasib-resistant derivative) treated with pan-KRAS inhibitor MCB-294 vs vehicle. Not patient-derived organoids."
+          },
+          {
+            "gse": "GSE232170",
+            "why": "Human PDAC organoids grown in different basement membrane extracts. No KRAS inhibitor treatment."
+          },
+          {
+            "gse": "GSE235548",
+            "why": "Human PDAC organoids treated with gemcitabine-paclitaxel, not a KRAS inhibitor."
+          },
+          {
+            "gse": "GSE262627",
+            "why": "Circadian transcriptome study, not KRAS inhibitor treatment of organoids."
+          },
+          {
+            "gse": "GSE184125",
+            "why": "Colorectal cancer, GSK-3β inhibitor."
+          },
+          {
+            "gse": "GSE188212",
+            "why": "Colorectal organoid microRNA study."
+          },
+          {
+            "gse": "GSE353716",
+            "why": "Failed GEO verification as human bulk RNA-seq with raw counts."
+          }
+        ],
+        "queries_tried": [
+          "pancreatic cancer organoids KRAS inhibitor",
+          "PDAC organoid MRTX1133",
+          "pancreatic ductal adenocarcinoma organoid KRAS G12D inhibitor RNA-seq",
+          "patient-derived organoids pancreatic sotorasib adagrasib",
+          "pancreatic organoid RMC-6236 pan-RAS inhibitor",
+          "Mechanisms of resistance to oncogenic KRAS inhibition in pancreatic cancer",
+          "PDAC organoids KRAS G12C inhibitor RNA-seq",
+          "pancreatic tumoroids MRTX1133 DMSO",
+          "pancreatic cancer patient-derived organoids RNA-seq drug treatment",
+          "PDO pancreatic KRAS",
+          "pancreatic organoids trametinib ERK inhibitor RNA-seq",
+          "KRAS G12D inhibitor organoids",
+          "pancreatic cancer organoid MAPK inhibition transcriptome",
+          "HRS-4642 OR zoldonrasib OR daraxonrasib pancreatic",
+          "web: PDAC patient-derived organoids KRAS inhibitor MRTX1133 RNA-seq GEO",
+          "web: PDAC organoids KRAS G12D / pan-RAS inhibitor vs DMSO RNA sequencing"
+        ],
+        "candidates": [],
+        "trace": {
+          "turns": 5,
+          "calls": [
+            {
+              "tool": "search_geo",
+              "input": {
+                "queries": [
+                  "pancreatic cancer organoids KRAS inhibitor",
+                  "PDAC organoid MRTX1133",
+                  "pancreatic ductal adenocarcinoma organoid KRAS G12D inhibitor RNA-seq",
+                  "patient-derived organoids pancreatic sotorasib adagrasib",
+                  "pancreatic organoid RMC-6236 pan-RAS inhibitor"
+                ],
+                "since": 2018
+              },
+              "queries": [
+                {
+                  "query": "pancreatic cancer organoids KRAS inhibitor",
+                  "total": 4,
+                  "returned": 4,
+                  "gses": [
+                    "GSE273116",
+                    "GSE269985",
+                    "GSE234449",
+                    "GSE184125"
+                  ]
+                },
+                {
+                  "query": "PDAC organoid MRTX1133",
+                  "total": 2,
+                  "returned": 2,
+                  "gses": [
+                    "GSE269985",
+                    "GSE234449"
+                  ]
+                },
+                {
+                  "query": "pancreatic ductal adenocarcinoma organoid KRAS G12D inhibitor RNA-seq",
+                  "total": 1,
+                  "returned": 1,
+                  "gses": [
+                    "GSE269985"
+                  ]
+                },
+                {
+                  "query": "patient-derived organoids pancreatic sotorasib adagrasib",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                },
+                {
+                  "query": "pancreatic organoid RMC-6236 pan-RAS inhibitor",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                }
+              ],
+              "confirmed": [
+                "GSE273116",
+                "GSE269985",
+                "GSE234449",
+                "GSE184125"
+              ],
+              "shown": [
+                "GSE273116",
+                "GSE269985",
+                "GSE234449",
+                "GSE184125"
+              ],
+              "ineligible": [],
+              "inspected": [],
+              "error": null
+            },
+            {
+              "tool": "find_geo_series_on_web",
+              "input": {
+                "query": "patient-derived pancreatic cancer organoids KRAS inhibitor MRTX1133 RNA-seq GEO",
+                "objective": "Find GEO series with bulk RNA-seq of human PDAC patient-derived organoids treated with KRAS inhibitor (MRTX1133, sotorasib, adagrasib, RMC-6236) vs DMSO."
+              },
+              "queries": [],
+              "confirmed": [
+                "GSE269985",
+                "GSE234449"
+              ],
+              "shown": [
+                "GSE269985",
+                "GSE234449"
+              ],
+              "ineligible": [
+                "GSE290526",
+                "GSE249539",
+                "GSE303323",
+                "GSE290487",
+                "GSE205013"
+              ],
+              "inspected": [],
+              "error": null
+            },
+            {
+              "tool": "inspect_series",
+              "input": {
+                "gses": [
+                  "GSE269985",
+                  "GSE234449",
+                  "GSE273116"
+                ]
+              },
+              "queries": [],
+              "confirmed": [],
+              "shown": [],
+              "ineligible": [],
+              "inspected": [
+                "GSE269985",
+                "GSE234449",
+                "GSE273116"
+              ],
+              "error": null
+            },
+            {
+              "tool": "search_geo",
+              "input": {
+                "queries": [
+                  "Mechanisms of resistance to oncogenic KRAS inhibition in pancreatic cancer",
+                  "PDAC organoids KRAS G12C inhibitor RNA-seq",
+                  "pancreatic tumoroids MRTX1133 DMSO"
+                ],
+                "since": 2020
+              },
+              "queries": [
+                {
+                  "query": "Mechanisms of resistance to oncogenic KRAS inhibition in pancreatic cancer",
+                  "total": 1,
+                  "returned": 1,
+                  "gses": [
+                    "GSE269985"
+                  ]
+                },
+                {
+                  "query": "PDAC organoids KRAS G12C inhibitor RNA-seq",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                },
+                {
+                  "query": "pancreatic tumoroids MRTX1133 DMSO",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                }
+              ],
+              "confirmed": [
+                "GSE269985"
+              ],
+              "shown": [
+                "GSE269985"
+              ],
+              "ineligible": [],
+              "inspected": [],
+              "error": null
+            },
+            {
+              "tool": "verify_geo_series",
+              "input": {
+                "gses": [
+                  "GSE353716"
+                ]
+              },
+              "queries": [],
+              "confirmed": [],
+              "shown": [],
+              "ineligible": [
+                "GSE353716"
+              ],
+              "inspected": [],
+              "error": null
+            },
+            {
+              "tool": "search_geo",
+              "input": {
+                "queries": [
+                  "pancreatic cancer patient-derived organoids RNA-seq drug treatment",
+                  "PDO pancreatic KRAS",
+                  "pancreatic organoids trametinib ERK inhibitor RNA-seq",
+                  "KRAS G12D inhibitor organoids",
+                  "pancreatic cancer organoid MAPK inhibition transcriptome",
+                  "HRS-4642 OR zoldonrasib OR daraxonrasib pancreatic"
+                ],
+                "since": 2018
+              },
+              "queries": [
+                {
+                  "query": "pancreatic cancer patient-derived organoids RNA-seq drug treatment",
+                  "total": 3,
+                  "returned": 3,
+                  "gses": [
+                    "GSE262627",
+                    "GSE235548",
+                    "GSE232170"
+                  ]
+                },
+                {
+                  "query": "PDO pancreatic KRAS",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                },
+                {
+                  "query": "pancreatic organoids trametinib ERK inhibitor RNA-seq",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                },
+                {
+                  "query": "KRAS G12D inhibitor organoids",
+                  "total": 4,
+                  "returned": 4,
+                  "gses": [
+                    "GSE273116",
+                    "GSE269985",
+                    "GSE188212",
+                    "GSE184125"
+                  ]
+                },
+                {
+                  "query": "pancreatic cancer organoid MAPK inhibition transcriptome",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                },
+                {
+                  "query": "HRS-4642 OR zoldonrasib OR daraxonrasib pancreatic",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                }
+              ],
+              "confirmed": [
+                "GSE262627",
+                "GSE235548",
+                "GSE232170",
+                "GSE273116",
+                "GSE269985",
+                "GSE188212",
+                "GSE184125"
+              ],
+              "shown": [
+                "GSE262627",
+                "GSE235548",
+                "GSE232170",
+                "GSE273116",
+                "GSE269985",
+                "GSE188212",
+                "GSE184125"
+              ],
+              "ineligible": [],
+              "inspected": [],
+              "error": null
+            },
+            {
+              "tool": "find_geo_series_on_web",
+              "input": {
+                "query": "PDAC patient-derived organoids treated with KRAS G12D inhibitor or pan-RAS inhibitor RNA sequencing DMSO GEO accession",
+                "objective": "Find GEO human bulk RNA-seq of pancreatic cancer patient-derived organoids treated with KRAS/RAS inhibitors (MRTX1133, RMC-6236, RMC-7977, sotorasib, adagrasib, BI-2865) versus DMSO vehicle."
+              },
+              "queries": [],
+              "confirmed": [
+                "GSE273116",
+                "GSE269985",
+                "GSE234449"
+              ],
+              "shown": [
+                "GSE273116",
+                "GSE269985",
+                "GSE234449"
+              ],
+              "ineligible": [
+                "GSE249539",
+                "GSE271518",
+                "GSE303323"
+              ],
+              "inspected": [],
+              "error": null
+            },
+            {
+              "tool": "inspect_series",
+              "input": {
+                "gses": [
+                  "GSE232170",
+                  "GSE235548"
+                ]
+              },
+              "queries": [],
+              "confirmed": [],
+              "shown": [],
+              "ineligible": [],
+              "inspected": [
+                "GSE232170",
+                "GSE235548"
+              ],
+              "error": null
+            }
+          ],
+          "seen": [
+            "GSE273116",
+            "GSE269985",
+            "GSE234449",
+            "GSE184125",
+            "GSE262627",
+            "GSE235548",
+            "GSE232170",
+            "GSE188212"
+          ],
+          "invented": [],
+          "usage": {
+            "input_tokens": 12,
+            "output_tokens": 2989,
+            "cache_read_input_tokens": 40012,
+            "cache_creation_input_tokens": 21259
+          },
+          "elapsed_seconds": 38.622
+        },
+        "selections": []
+      },
+      "elapsed_seconds": 38.62221216701437,
+      "input_tokens": 61283,
+      "output_tokens": 2989,
+      "web_search_requests": 0,
+      "web_fetch_requests": 0,
+      "error": null
+    },
+    {
+      "answers": [
+        "Patient-derived organoids only; cell lines or xenografts will not do."
+      ],
+      "action": "no_results",
+      "output": {
+        "interpretation": "Patient-derived human pancreatic cancer (PDAC) organoids treated with a KRAS inhibitor (e.g. MRTX1133, sotorasib/adagrasib, pan-RAS/KRAS inhibitors) are the case arm, and the same organoids given vehicle or left untreated are the control arm.",
+        "genes": [
+          "KRAS"
+        ],
+        "out_of_scope": null,
+        "clarifying_questions": [],
+        "rejected": [
+          {
+            "gse": "GSE234449",
+            "why": "MRTX1133 vs untreated RNA-seq, but only in SUIT2 and mouse FC1242 cell lines, not organoids. Its human treated-vs-untreated arms are also too small: 1 untreated parental sample, 2 treated."
+          },
+          {
+            "gse": "GSE269985",
+            "why": "Cell lines only (Panc 02.03, PANC-1, mouse KPC lines). It compares parental vs MRTX1133-resistant cells, with no acute drug-vs-vehicle comparison and no organoids."
+          },
+          {
+            "gse": "GSE273116",
+            "why": "MIA PaCa-2 cell line and its sotorasib-resistant derivative treated with a pan-KRAS inhibitor or degrader. No organoids."
+          },
+          {
+            "gse": "GSE235548",
+            "why": "Patient-derived PDAC organoids, but they were treated with gemcitabine-paclitaxel chemotherapy, not a KRAS inhibitor."
+          },
+          {
+            "gse": "GSE232170",
+            "why": "Human PDAC organoids grown in different basement membrane extracts. No KRAS inhibitor treatment."
+          },
+          {
+            "gse": "GSE184125",
+            "why": "Colorectal cancer study testing a GSK-3β inhibitor, not a pancreatic study with a KRAS inhibitor."
+          },
+          {
+            "gse": "GSE262627",
+            "why": "Circadian transcriptome study of pancreatic adenocarcinoma. No KRAS inhibitor treatment."
+          },
+          {
+            "gse": "GSE353716",
+            "why": "SuperSeries that GEO reported as not eligible (not human bulk RNA-seq with raw counts)."
+          }
+        ],
+        "queries_tried": [
+          "pancreatic cancer organoids KRAS inhibitor",
+          "PDAC organoid MRTX1133",
+          "pancreatic ductal adenocarcinoma organoids sotorasib adagrasib",
+          "patient-derived organoids KRAS G12D inhibitor RNA-seq",
+          "pancreatic organoid RMC-6236 pan-RAS inhibitor",
+          "PDAC organoids KRAS inhibition vehicle DMSO",
+          "Mechanisms of resistance to oncogenic KRAS inhibition in pancreatic cancer",
+          "pancreatic tumor organoids KRAS G12C inhibitor transcriptome",
+          "PDAC patient-derived organoids RMC-7977",
+          "pancreatic cancer organoids ERK MEK KRAS inhibitor RNA-seq",
+          "pancreatic cancer organoids drug treatment RNA-seq",
+          "PDAC organoids KRAS",
+          "tumor organoids KRAS G12D MRTX1133 human",
+          "pancreatic organoids daraxonrasib",
+          "web: patient-derived pancreatic cancer organoids KRAS inhibitor MRTX1133 RNA-seq GEO",
+          "web: PDAC patient-derived organoids treated MRTX1133 OR RMC-6236 OR adagrasib RNA sequencing GEO accession"
+        ],
+        "candidates": [],
+        "trace": {
+          "turns": 5,
+          "calls": [
+            {
+              "tool": "search_geo",
+              "input": {
+                "queries": [
+                  "pancreatic cancer organoids KRAS inhibitor",
+                  "PDAC organoid MRTX1133",
+                  "pancreatic ductal adenocarcinoma organoids sotorasib adagrasib",
+                  "patient-derived organoids KRAS G12D inhibitor RNA-seq",
+                  "pancreatic organoid RMC-6236 pan-RAS inhibitor",
+                  "PDAC organoids KRAS inhibition vehicle DMSO"
+                ],
+                "since": 2015
+              },
+              "queries": [
+                {
+                  "query": "pancreatic cancer organoids KRAS inhibitor",
+                  "total": 4,
+                  "returned": 4,
+                  "gses": [
+                    "GSE273116",
+                    "GSE269985",
+                    "GSE234449",
+                    "GSE184125"
+                  ]
+                },
+                {
+                  "query": "PDAC organoid MRTX1133",
+                  "total": 2,
+                  "returned": 2,
+                  "gses": [
+                    "GSE269985",
+                    "GSE234449"
+                  ]
+                },
+                {
+                  "query": "pancreatic ductal adenocarcinoma organoids sotorasib adagrasib",
+                  "total": 1,
+                  "returned": 1,
+                  "gses": [
+                    "GSE269985"
+                  ]
+                },
+                {
+                  "query": "patient-derived organoids KRAS G12D inhibitor RNA-seq",
+                  "total": 1,
+                  "returned": 1,
+                  "gses": [
+                    "GSE273116"
+                  ]
+                },
+                {
+                  "query": "pancreatic organoid RMC-6236 pan-RAS inhibitor",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                },
+                {
+                  "query": "PDAC organoids KRAS inhibition vehicle DMSO",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                }
+              ],
+              "confirmed": [
+                "GSE273116",
+                "GSE269985",
+                "GSE234449",
+                "GSE184125"
+              ],
+              "shown": [
+                "GSE273116",
+                "GSE269985",
+                "GSE234449",
+                "GSE184125"
+              ],
+              "ineligible": [],
+              "inspected": [],
+              "error": null
+            },
+            {
+              "tool": "find_geo_series_on_web",
+              "input": {
+                "query": "patient-derived pancreatic cancer organoids KRAS inhibitor MRTX1133 RNA-seq GEO",
+                "objective": "Find GEO series of human patient-derived PDAC organoids treated with KRAS inhibitors (MRTX1133, adagrasib, sotorasib, RMC-6236, RMC-7977) vs vehicle with bulk RNA-seq."
+              },
+              "queries": [],
+              "confirmed": [
+                "GSE269985",
+                "GSE234449"
+              ],
+              "shown": [
+                "GSE269985",
+                "GSE234449"
+              ],
+              "ineligible": [
+                "GSE290526",
+                "GSE249539",
+                "GSE303323",
+                "GSE290487",
+                "GSE205013"
+              ],
+              "inspected": [],
+              "error": null
+            },
+            {
+              "tool": "inspect_series",
+              "input": {
+                "gses": [
+                  "GSE269985",
+                  "GSE234449",
+                  "GSE273116"
+                ]
+              },
+              "queries": [],
+              "confirmed": [],
+              "shown": [],
+              "ineligible": [],
+              "inspected": [
+                "GSE269985",
+                "GSE234449",
+                "GSE273116"
+              ],
+              "error": null
+            },
+            {
+              "tool": "search_geo",
+              "input": {
+                "queries": [
+                  "Mechanisms of resistance to oncogenic KRAS inhibition in pancreatic cancer",
+                  "pancreatic tumor organoids KRAS G12C inhibitor transcriptome",
+                  "PDAC patient-derived organoids RMC-7977",
+                  "pancreatic cancer organoids ERK MEK KRAS inhibitor RNA-seq"
+                ],
+                "since": 2018
+              },
+              "queries": [
+                {
+                  "query": "Mechanisms of resistance to oncogenic KRAS inhibition in pancreatic cancer",
+                  "total": 1,
+                  "returned": 1,
+                  "gses": [
+                    "GSE269985"
+                  ]
+                },
+                {
+                  "query": "pancreatic tumor organoids KRAS G12C inhibitor transcriptome",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                },
+                {
+                  "query": "PDAC patient-derived organoids RMC-7977",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                },
+                {
+                  "query": "pancreatic cancer organoids ERK MEK KRAS inhibitor RNA-seq",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                }
+              ],
+              "confirmed": [
+                "GSE269985"
+              ],
+              "shown": [
+                "GSE269985"
+              ],
+              "ineligible": [],
+              "inspected": [],
+              "error": null
+            },
+            {
+              "tool": "verify_geo_series",
+              "input": {
+                "gses": [
+                  "GSE353716"
+                ]
+              },
+              "queries": [],
+              "confirmed": [],
+              "shown": [],
+              "ineligible": [
+                "GSE353716"
+              ],
+              "inspected": [],
+              "error": null
+            },
+            {
+              "tool": "search_geo",
+              "input": {
+                "queries": [
+                  "pancreatic cancer organoids drug treatment RNA-seq",
+                  "PDAC organoids KRAS",
+                  "tumor organoids KRAS G12D MRTX1133 human",
+                  "pancreatic organoids daraxonrasib"
+                ],
+                "since": 2019
+              },
+              "queries": [
+                {
+                  "query": "pancreatic cancer organoids drug treatment RNA-seq",
+                  "total": 4,
+                  "returned": 4,
+                  "gses": [
+                    "GSE269985",
+                    "GSE262627",
+                    "GSE235548",
+                    "GSE232170"
+                  ]
+                },
+                {
+                  "query": "PDAC organoids KRAS",
+                  "total": 3,
+                  "returned": 3,
+                  "gses": [
+                    "GSE269985",
+                    "GSE235548",
+                    "GSE234449"
+                  ]
+                },
+                {
+                  "query": "tumor organoids KRAS G12D MRTX1133 human",
+                  "total": 1,
+                  "returned": 1,
+                  "gses": [
+                    "GSE269985"
+                  ]
+                },
+                {
+                  "query": "pancreatic organoids daraxonrasib",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                }
+              ],
+              "confirmed": [
+                "GSE269985",
+                "GSE262627",
+                "GSE235548",
+                "GSE232170",
+                "GSE234449"
+              ],
+              "shown": [
+                "GSE269985",
+                "GSE262627",
+                "GSE235548",
+                "GSE232170",
+                "GSE234449"
+              ],
+              "ineligible": [],
+              "inspected": [],
+              "error": null
+            },
+            {
+              "tool": "find_geo_series_on_web",
+              "input": {
+                "query": "PDAC patient-derived organoids treated MRTX1133 OR RMC-6236 OR adagrasib RNA sequencing GEO accession",
+                "objective": "Human PDAC patient-derived organoid bulk RNA-seq with KRAS inhibitor vs DMSO; exclude cell lines, mouse."
+              },
+              "queries": [],
+              "confirmed": [
+                "GSE234449"
+              ],
+              "shown": [
+                "GSE234449"
+              ],
+              "ineligible": [
+                "GSE303323",
+                "GSE249539",
+                "GSE293756",
+                "GSE318496",
+                "GSE290526",
+                "GSE290487",
+                "GSE207352",
+                "GSE246457"
+              ],
+              "inspected": [],
+              "error": null
+            },
+            {
+              "tool": "inspect_series",
+              "input": {
+                "gses": [
+                  "GSE235548",
+                  "GSE232170"
+                ]
+              },
+              "queries": [],
+              "confirmed": [],
+              "shown": [],
+              "ineligible": [],
+              "inspected": [
+                "GSE235548",
+                "GSE232170"
+              ],
+              "error": null
+            }
+          ],
+          "seen": [
+            "GSE273116",
+            "GSE269985",
+            "GSE234449",
+            "GSE184125",
+            "GSE262627",
+            "GSE235548",
+            "GSE232170"
+          ],
+          "invented": [],
+          "usage": {
+            "input_tokens": 12,
+            "output_tokens": 2413,
+            "cache_read_input_tokens": 39626,
+            "cache_creation_input_tokens": 20372
+          },
+          "elapsed_seconds": 36.915
+        },
+        "selections": []
+      },
+      "elapsed_seconds": 36.91542183398269,
+      "input_tokens": 60010,
+      "output_tokens": 2413,
+      "web_search_requests": 0,
+      "web_fetch_requests": 0,
+      "error": null
+    }
+  ],
+  "final_action": "no_results",
+  "candidates": [],
+  "candidate_details": {},
+  "rejected": [
+    "GSE234449",
+    "GSE269985",
+    "GSE273116",
+    "GSE235548",
+    "GSE232170",
+    "GSE184125",
+    "GSE262627",
+    "GSE353716"
+  ],
+  "questions": [
+    {
+      "question": "I found no GEO series with raw counts that profiles patient-derived pancreatic cancer organoids treated with a KRAS inhibitor versus vehicle. Would you accept pancreatic cancer cell lines grown in 2D instead?",
+      "options": [
+        "Organoids only: no dataset qualifies",
+        "Accept 2D PDAC cell lines treated with a KRAS inhibitor vs vehicle (1 series: GSE273116, MIA PaCa-2 sotorasib-resistant cells, MCB-294 vs vehicle, 3 vs 3)",
+        "Accept KRAS-inhibitor-resistant vs parental cell lines (GSE269985)"
+      ],
+      "why": "Only cell-line series exist. GSE273116 has 3 vehicle and 3 pan-KRAS inhibitor (MCB-294) samples, but in a sotorasib-resistant MIA PaCa-2 derivative. GSE269985 compares MRTX1133-resistant lines with parental lines, with no acute treatment vs vehicle. GSE234449 has too few untreated parental SUIT2 samples (1)."
+    }
+  ],
+  "out_of_scope": null,
+  "seen": [
+    "GSE273116",
+    "GSE269985",
+    "GSE234449",
+    "GSE184125",
+    "GSE262627",
+    "GSE235548",
+    "GSE232170",
+    "GSE188212"
+  ],
+  "per_query": {
+    "pancreatic cancer organoids KRAS inhibitor": [
+      "GSE273116",
+      "GSE269985",
+      "GSE234449",
+      "GSE184125"
+    ],
+    "PDAC organoid MRTX1133": [
+      "GSE269985",
+      "GSE234449"
+    ],
+    "pancreatic ductal adenocarcinoma organoid KRAS G12D inhibitor RNA-seq": [
+      "GSE269985"
+    ],
+    "patient-derived organoids pancreatic sotorasib adagrasib": [],
+    "pancreatic organoid RMC-6236 pan-RAS inhibitor": [],
+    "Mechanisms of resistance to oncogenic KRAS inhibition in pancreatic cancer": [
+      "GSE269985"
+    ],
+    "PDAC organoids KRAS G12C inhibitor RNA-seq": [],
+    "pancreatic tumoroids MRTX1133 DMSO": [],
+    "pancreatic cancer patient-derived organoids RNA-seq drug treatment": [
+      "GSE262627",
+      "GSE235548",
+      "GSE232170"
+    ],
+    "PDO pancreatic KRAS": [],
+    "pancreatic organoids trametinib ERK inhibitor RNA-seq": [],
+    "KRAS G12D inhibitor organoids": [
+      "GSE273116",
+      "GSE269985",
+      "GSE188212",
+      "GSE184125"
+    ],
+    "pancreatic cancer organoid MAPK inhibition transcriptome": [],
+    "HRS-4642 OR zoldonrasib OR daraxonrasib pancreatic": [],
+    "pancreatic ductal adenocarcinoma organoids sotorasib adagrasib": [
+      "GSE269985"
+    ],
+    "patient-derived organoids KRAS G12D inhibitor RNA-seq": [
+      "GSE273116"
+    ],
+    "PDAC organoids KRAS inhibition vehicle DMSO": [],
+    "pancreatic tumor organoids KRAS G12C inhibitor transcriptome": [],
+    "PDAC patient-derived organoids RMC-7977": [],
+    "pancreatic cancer organoids ERK MEK KRAS inhibitor RNA-seq": [],
+    "pancreatic cancer organoids drug treatment RNA-seq": [
+      "GSE269985",
+      "GSE262627",
+      "GSE235548",
+      "GSE232170"
+    ],
+    "PDAC organoids KRAS": [
+      "GSE269985",
+      "GSE235548",
+      "GSE234449"
+    ],
+    "tumor organoids KRAS G12D MRTX1133 human": [
+      "GSE269985"
+    ],
+    "pancreatic organoids daraxonrasib": []
+  },
+  "invented": [],
+  "selections": {},
+  "verification": {
+    "eligible": [],
+    "exists_only": [],
+    "missing": [],
+    "invalid": []
+  },
+  "elapsed_seconds": 75.538,
+  "input_tokens": 121293,
+  "output_tokens": 5402,
+  "web_search_requests": 0,
+  "web_fetch_requests": 0,
+  "error": null
+}

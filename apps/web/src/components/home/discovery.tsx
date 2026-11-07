@@ -88,12 +88,36 @@ export function DiscoveryView({
             )}
           </Panel>
 
+          {result.out_of_scope && (
+            <Notice tone="amber" title="Out of Scope: Not a Question cell ledger Can Answer">
+              {result.out_of_scope} It only works with human bulk RNA-seq series in GEO that have
+              NCBI raw counts.
+            </Notice>
+          )}
+
           {(result.clarifying_questions ?? []).length > 0 && (
             <Panel className="border-l-[3px] border-l-amber p-5">
               <h3 className="text-amber">Before choosing datasets, the specialist asks</h3>
-              <ul className="mt-2 list-disc space-y-1 pl-5 text-[13px] text-ink-2">
+              <ul className="mt-2 space-y-3 text-[13px]">
                 {(result.clarifying_questions ?? []).map((q) => (
-                  <li key={q}>{q}</li>
+                  <li key={q.question}>
+                    <p className="font-medium">{q.question}</p>
+                    <p className="mt-0.5 text-[13px] text-ink-2">{q.why}</p>
+                    {(q.options ?? []).length > 0 && (
+                      <div className="mt-1.5 flex flex-wrap gap-1.5">
+                        {(q.options ?? []).map((o) => (
+                          <button
+                            key={o}
+                            type="button"
+                            onClick={() => setAnswers((a) => (a ? `${a}\n${o}` : o))}
+                            className="h-7 rounded-md border border-line-2 bg-surface-2 px-2.5 text-[12px] text-ink-2 hover:border-accent hover:text-ink"
+                          >
+                            {o}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </li>
                 ))}
               </ul>
               <Label htmlFor="disc-answers" className="mt-3">
@@ -117,7 +141,7 @@ export function DiscoveryView({
             </Panel>
           )}
 
-          {candidates.length === 0 ? (
+          {candidates.length === 0 && !result.out_of_scope ? (
             <Notice tone="amber" title="No usable dataset came back from GEO">
               The search tried {(result.queries_tried ?? []).length} wordings. Broaden the question
               (organism, synonyms, drop a control requirement) and search again.

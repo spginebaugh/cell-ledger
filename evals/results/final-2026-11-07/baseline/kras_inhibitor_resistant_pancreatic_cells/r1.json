@@ -1,0 +1,363 @@
+{
+  "case_id": "kras_inhibitor_resistant_pancreatic_cells",
+  "system": "baseline",
+  "repeat": 1,
+  "conditions": {
+    "system": "baseline",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "fingerprint": "4525537637e3a1e40449a050cb82f18b6802378efbf1170b5ac09c2e199b166c",
+    "web_search": true,
+    "code_revision": "4032f8cb3e85576661f421ff7f4f75aa87401b25",
+    "dirty": true,
+    "geo_cache": "/Users/scott/Documents/code/gauntlet-hackathon/cell-ledger/data/evals/geo-cache/all12-r2",
+    "case_sha256": "518255fff60c54cd8faff61079a1b532803664e7a8caec1fe90a2f9dda9bc2a8",
+    "suite_sha256": "5c2b23011a22776e3ea3fab6976ae88635f0f4a277dbf5db35d8fa2bb07d1859",
+    "run_id": "all12-r2",
+    "started_at": "2026-11-07T15:04:10+00:00"
+  },
+  "turns": [
+    {
+      "answers": [],
+      "action": "ask",
+      "output": {
+        "interpretation": "Two-group comparison: human pancreatic cancer (PDAC) cell lines that acquired resistance to a KRAS inhibitor after long-term exposure (case) versus the parental, drug-naive line they came from (control), compared within the same series and the same cell line. Cell lines only, so no organoids, PDX or mouse KPC lines. The parental and resistant sublines should be matched, with at least 3 replicates per arm. Bulk RNA-seq with NCBI raw counts.",
+        "genes": [],
+        "out_of_scope": null,
+        "clarifying_questions": [
+          {
+            "question": "Which drug classes count as a 'KRAS inhibitor' for the resistant arm?",
+            "options": [
+              "Mutant-selective KRAS G12D inhibitors only (e.g., MRTX1133)",
+              "Mutant-selective KRAS G12C inhibitors only (sotorasib/adagrasib)",
+              "Any mutant-selective KRAS inhibitor (G12C or G12D)",
+              "Also include pan-RAS / RAS(ON) multi-selective inhibitors (daraxonrasib/RMC-6236)",
+              "Also include KRAS degraders (e.g., the G12C PROTAC LC-2)"
+            ],
+            "why": "This decides which series qualify. GSE294216, GSE279749/GSE309596 and GSE318496 involve MRTX1133 (G12D). GSE178479 relates to sotorasib (G12C). GSE335219 involves daraxonrasib (RAS(ON) multi-selective). GSE314343 involves the KRAS G12C degrader LC-2."
+          },
+          {
+            "question": "Should each resistant line be compared only with its own parental line (one analysis per cell line), or should several cell lines be pooled into one resistant-vs-parental contrast?",
+            "options": [
+              "One cell line per analysis (e.g., PANC-1 resistant vs PANC-1 parental)",
+              "Pool cell lines, with cell line as a covariate"
+            ],
+            "why": "Several series contain more than one cell line, or human and mouse lines together. Whether pooling is allowed changes which samples go into each arm and whether series with fewer than 3 replicates per line still qualify."
+          }
+        ],
+        "rejected": [
+          {
+            "gse": "GSE228502",
+            "why": "Single-cell RNA-seq of PDAC lines and tumors treated with MRTX1133/MRTX849. It is not bulk RNA-seq and has no acquired-resistance vs parental design."
+          },
+          {
+            "gse": "GSE315130",
+            "why": "Short-term treatment with DMSO, tazemetostat, RMC-6236 or the combination in human and mouse PDAC cells and tumors. It has no resistant sublines."
+          },
+          {
+            "gse": "GSE315131",
+            "why": "Single-cell RNA-seq of the immune microenvironment after EZH2 plus KRAS inhibition. It is not bulk and not a resistance model."
+          },
+          {
+            "gse": "GSE270796",
+            "why": "MIA PaCa-2 profiled under KRAS G12C inhibitor treatment (transcriptional pause release / complement activation study). It appears to be an acute-treatment design, not acquired resistance vs parental. Use it only if GEO shows resistant sublines."
+          },
+          {
+            "gse": "GSE263536",
+            "why": "Study of an allele-agnostic mutant-KRAS inhibitor using treatment and xenograft (CDX) models. No acquired-resistant cell line vs parental design was identified."
+          }
+        ],
+        "queries_tried": [
+          "GEO RNA-seq MRTX1133 resistant pancreatic cancer cell lines parental",
+          "GEO RNA-seq sotorasib resistant MIA PaCa-2 parental",
+          "GSE MRTX1133 resistance PDAC RNA-seq",
+          "GEO adagrasib resistant pancreatic cancer cells RNA-seq",
+          "GSE KRAS inhibitor acquired resistance pancreatic cancer RNA-seq parental",
+          "RMC-6236 resistant pancreatic cancer cell lines RNA-seq GEO",
+          "MRTX1133 resistant PANC-1 RNA-seq GSE accession",
+          "MRTX1133-resistant cells RNA sequencing data deposited GEO GSE pancreatic",
+          "sotorasib resistant pancreatic cancer cells RNA-seq Gene Expression Omnibus",
+          "KRAS G12D inhibitor resistant AsPC-1 HPAC RNA-seq GEO",
+          "daraxonrasib resistant pancreatic cancer cell lines RNA-seq GEO accession",
+          "MRTX1133 resistant SW1990 Panc 04.03 RNA-seq GEO",
+          "adagrasib resistant MIA PaCa-2 RNA-seq GEO accession"
+        ],
+        "candidates": [
+          {
+            "gse": "GSE294216",
+            "title": "RNA-seq of MRTX1133-resistant vs parental PDAC cells (study: Resistance to the KRAS G12D inhibitor MRTX1133 is associated with increased sensitivity to BET inhibition)",
+            "n_samples": 0,
+            "why": "The authors made MRTX1133-resistant PANC-1 ('PANC1K') and 2138 ('2138K') lines by long-term exposure and RNA-sequenced them alongside their parental lines. This is exactly the acquired-resistance vs parental design.",
+            "case_hint": "PANC-1 MRTX1133-resistant (PANC1K) samples",
+            "control_hint": "PANC-1 parental samples",
+            "concerns": [
+              "I could not open the GEO record because NCBI blocked automated access, so the sample count (0 is a placeholder) and the GSM lists are unverified. Fill them in from the GEO sample table.",
+              "2138 is probably a mouse KPC-derived line. If so, exclude it and use only the PANC-1 pair.",
+              "Replicates per arm (at least 3) and whether NCBI raw counts exist still need checking."
+            ],
+            "case_gsms": [],
+            "control_gsms": []
+          },
+          {
+            "gse": "GSE279749",
+            "title": "RNA-seq linked to 'Combination of PARP and KRAS G12D inhibitors ... MRTX1133-resistant models' (Nat Commun 2026); companion series GSE309596",
+            "n_samples": 0,
+            "why": "The paper generated MRTX1133-resistant sublines from KRAS G12D PDAC lines and compared them with the parental lines. One of these two linked series likely holds the resistant-vs-parental RNA-seq.",
+            "case_hint": "MRTX1133-resistant subline samples (one human PDAC line at a time)",
+            "control_hint": "Matching parental line samples",
+            "concerns": [
+              "GSM lists and sample count unverified because GEO could not be accessed.",
+              "I could not tell which of GSE279749 and GSE309596 holds the resistant-vs-parental samples. The other may be acute-treatment RNA-seq only.",
+              "Replicates per arm and raw-count availability not confirmed."
+            ],
+            "case_gsms": [],
+            "control_gsms": []
+          },
+          {
+            "gse": "GSE318496",
+            "title": "RNA-seq for 'Fra-2 controls the response to the KRAS inhibitor MRTX-1133 in PDAC' (PNAS)",
+            "n_samples": 0,
+            "why": "The authors built a KRAS inhibitor-resistant (KRASi-res) AsPC-1 model by chronic MRTX1133 exposure, which can be compared with parental AsPC-1.",
+            "case_hint": "AsPC-1 KRASi-res (MRTX1133-resistant) samples",
+            "control_hint": "AsPC-1 parental samples",
+            "concerns": [
+              "Not verified that the deposited RNA-seq includes the KRASi-res vs parental samples rather than only Fra-2 knockdown or acute-treatment samples.",
+              "GSM lists, replicate numbers and raw counts unverified."
+            ],
+            "case_gsms": [],
+            "control_gsms": []
+          },
+          {
+            "gse": "GSE269313",
+            "title": "Series linked to Dilly et al., 'Mechanisms of Resistance to Oncogenic KRAS Inhibition in Pancreatic Cancer' (Cancer Discov 2024); companion series GSE269985",
+            "n_samples": 0,
+            "why": "The study built isogenic parental and MRTX1133-resistant PDAC lines and ran bulk RNA-seq on them.",
+            "case_hint": "Human MRTX1133-resistant PDAC line samples",
+            "control_hint": "Matching human parental line samples",
+            "concerns": [
+              "Much of this study used mouse KPC lines. The human subset may be in only one of the two series, or the bulk RNA-seq may be mouse only. Check the organism.",
+              "GSM lists and sample counts unverified."
+            ],
+            "case_gsms": [],
+            "control_gsms": []
+          },
+          {
+            "gse": "GSE335219",
+            "title": "RNA-seq for 'Acquired resistance to the RAS(ON) multi-selective inhibitor daraxonrasib ...' (Nat Med 2026)",
+            "n_samples": 0,
+            "why": "It includes daraxonrasib-resistant vs parental HPAC PDAC cells. It qualifies only if pan-RAS / RAS(ON) inhibitors count as 'KRAS inhibitors'.",
+            "case_hint": "HPAC daraxonrasib-resistant samples",
+            "control_hint": "HPAC parental samples",
+            "concerns": [
+              "Daraxonrasib is a pan-RAS(ON) inhibitor, not a KRAS-selective one (see the clarifying question).",
+              "GSM lists, sample count and replicates unverified; the series may also contain patient ctDNA or other assays."
+            ],
+            "case_gsms": [],
+            "control_gsms": []
+          },
+          {
+            "gse": "GSE314343",
+            "title": "RNA-seq for 'PADI-dependent mitochondrial adaptation drives resistance to KRAS inhibitors' (Cell Reports)",
+            "n_samples": 0,
+            "why": "It includes MIA PaCa-2 (KRAS G12C) cells resistant to the KRAS G12C degrader LC-2 (LC2x3-resistant) and parental MIA PaCa-2, which were cross-resistant to sotorasib.",
+            "case_hint": "MIA PaCa-2 LC-2-resistant samples",
+            "control_hint": "MIA PaCa-2 parental samples",
+            "concerns": [
+              "The selecting drug is a KRAS degrader, not a small-molecule inhibitor (see the clarifying question).",
+              "Not verified that the resistant-vs-parental samples are what was deposited; GSM lists unverified."
+            ],
+            "case_gsms": [],
+            "control_gsms": []
+          },
+          {
+            "gse": "GSE178479",
+            "title": "Series used in a bioinformatics study of sotorasib-resistant PDAC (Front Med 2023)",
+            "n_samples": 0,
+            "why": "A secondary analysis used this series to compare sotorasib-resistant pancreatic cancer cells with their controls, so it may hold G12C inhibitor-resistant vs parental MIA PaCa-2.",
+            "case_hint": "Sotorasib (AMG510)-resistant pancreatic cancer cell line samples",
+            "control_hint": "Parental, sensitive line samples",
+            "concerns": [
+              "Design not verified. It could compare sotorasib-treated vs untreated cells rather than acquired-resistant vs parental lines.",
+              "Platform and NCBI raw-count availability not confirmed; GSM lists unverified."
+            ],
+            "case_gsms": [],
+            "control_gsms": []
+          }
+        ]
+      },
+      "elapsed_seconds": 115.87961770797847,
+      "input_tokens": 226368,
+      "output_tokens": 8063,
+      "web_search_requests": 14,
+      "web_fetch_requests": 20,
+      "error": null
+    },
+    {
+      "answers": [
+        "Any KRAS inhibitor. Compare each resistant derivative with its own parental line, human cell lines only, as the series has them."
+      ],
+      "action": "proceed",
+      "output": {
+        "interpretation": "Within each series, compare human pancreatic cancer (PDAC) cell lines that acquired resistance to a KRAS inhibitor (any inhibitor, e.g. MRTX1133, sotorasib, adagrasib, RMC-6236) through chronic or dose-escalating exposure (case) with their own drug-naive parental line (control). Use human cell lines only, with each resistant derivative matched to its own parent. Note: I could not open any GEO record, so none of the series below is confirmed and no sample (GSM) accessions are listed.",
+        "genes": [],
+        "out_of_scope": null,
+        "clarifying_questions": [],
+        "rejected": [
+          {
+            "gse": "GSE228502",
+            "why": "Single-cell RNA-seq of a mouse Kras G12D pancreatic cancer line treated short-term with MRTX1133 or MRTX849. Wrong organism, not bulk RNA-seq and not acquired resistance."
+          },
+          {
+            "gse": "GSE269313",
+            "why": "Single-nucleus RNA-seq from Dilly et al. (Cancer Discovery 2024) on MRTX1133 resistance. Not bulk RNA-seq."
+          },
+          {
+            "gse": "GSE279749",
+            "why": "Based on the paper's description: bulk RNA-seq of AsPC-1, PANC-1 and SW1990 cells given acute MRTX1133 treatment. That compares drug-treated with untreated cells, not acquired-resistant derivatives with their parents. Not checked in GEO."
+          },
+          {
+            "gse": "GSE309596",
+            "why": "Single-cell RNA-seq from the same study as GSE279749 (PARP plus KRAS G12D inhibitors). Not bulk RNA-seq."
+          },
+          {
+            "gse": "GSE309499",
+            "why": "HDAC5 deletion causing intrinsic resistance to MRTX1133. This is a genetic knockout compared with wild-type, not acquired drug resistance compared with the parental line."
+          },
+          {
+            "gse": "GSE309501",
+            "why": "Same HDAC5-deficiency study (intrinsic resistance caused by a knockout), so it is not an acquired-resistance comparison."
+          },
+          {
+            "gse": "GSE293877",
+            "why": "RNA-seq from the HDAC5-deficiency study: knockout-driven intrinsic resistance to MRTX1133, not acquired resistance."
+          },
+          {
+            "gse": "GSE315130",
+            "why": "Human and mouse PDAC cells and tumors given short-term DMSO, tazemetostat, RMC-6236 or the combination. These are treatment arms, not acquired-resistant lines compared with parents."
+          },
+          {
+            "gse": "GSE263780",
+            "why": "Single-cell RNA-seq from a pan-KRAS inhibitor study in mouse models. Not human bulk RNA-seq."
+          },
+          {
+            "gse": "GSE263536",
+            "why": "Spatial transcriptomics, not bulk RNA-seq of cell lines."
+          },
+          {
+            "gse": "GSE293756",
+            "why": "The title suggests PDAC that is resistant to KRAS inhibition (anti-MUC1-C ADC study), but I could not open the record. Whether it holds human resistant-versus-parental cell line pairs with at least 3 replicates each and NCBI raw counts is unknown, so I left it out rather than guess."
+          },
+          {
+            "gse": "E-MTAB-12144",
+            "why": "Sotorasib-resistant cells, but deposited in ArrayExpress, not GEO, so it has no NCBI-generated counts."
+          }
+        ],
+        "queries_tried": [
+          "GEO pancreatic cancer KRAS G12C inhibitor resistant cell line RNA-seq parental",
+          "GSE MRTX1133 resistant pancreatic cancer cells RNA-seq",
+          "GSE sotorasib resistant MIA PaCa-2 RNA-seq",
+          "GSE adagrasib resistant pancreatic cancer RNA-seq",
+          "GSE RMC-6236 resistant pancreatic cancer cell RNA-seq",
+          "acquired resistance KRAS G12D inhibitor pancreatic cancer cell lines RNA-seq GEO accession",
+          "Direct GEO record fetches for GSE293756, GSE269985, GSE279749 and others failed (fetch not permitted); the search quota then ran out, so no GEO record or sample (GSM) list could be checked"
+        ],
+        "candidates": [
+          {
+            "gse": "GSE269985",
+            "title": "Bulk RNA-seq from 'Mechanisms of Resistance to Oncogenic KRAS Inhibition in Pancreatic Cancer' (Dilly et al., Cancer Discovery 2024); exact GEO title not checked",
+            "n_samples": 0,
+            "why": "The paper made MRTX1133 (KRAS G12D inhibitor) acquired-resistant derivatives of 2 human and 3 mouse PDAC lines by dose escalation. It ran bulk mRNA-seq on parental and resistant lines in triplicate and compared each resistant line with its own parent. The data availability statement names GSE269985 as the bulk RNA-seq series. Each human pair fits the question exactly.",
+            "case_hint": "The MRTX1133-resistant derivatives of the 2 human PDAC lines (sample names likely end in '.R'), untreated or vehicle, 3 replicates each",
+            "control_hint": "The matched human parental lines, untreated or vehicle, 3 replicates each; compare each resistant derivative only with its own parent",
+            "concerns": [
+              "I could not open the GEO record, so the sample count, sample (GSM) accessions, sample labels and whether NCBI-generated raw counts exist are all unconfirmed. n_samples is set to 0 as a placeholder.",
+              "The series probably mixes human and mouse (KPCY 6499C4, 6694C2 and others) lines. If GEO splits it by organism, only the human samples (or a human sub-series) apply, and NCBI counts are made only for human samples.",
+              "The paper does not clearly name which 2 human lines were made resistant. It describes HPAC and Panc 05.04 as sensitive lines, so these are plausible but not confirmed.",
+              "Samples may include MRTX1133-treated timepoints. Use only matched untreated or vehicle samples for both arms.",
+              "Run each human pair as its own comparison; the 2 resistant lines should not be pooled across parents."
+            ],
+            "case_gsms": [],
+            "control_gsms": []
+          }
+        ]
+      },
+      "elapsed_seconds": 79.8651049999753,
+      "input_tokens": 236566,
+      "output_tokens": 5961,
+      "web_search_requests": 6,
+      "web_fetch_requests": 16,
+      "error": null
+    }
+  ],
+  "final_action": "proceed",
+  "candidates": [
+    "GSE269985"
+  ],
+  "candidate_details": {
+    "GSE269985": {
+      "title": "Bulk RNA-seq from 'Mechanisms of Resistance to Oncogenic KRAS Inhibition in Pancreatic Cancer' (Dilly et al., Cancer Discovery 2024); exact GEO title not checked",
+      "why": "The paper made MRTX1133 (KRAS G12D inhibitor) acquired-resistant derivatives of 2 human and 3 mouse PDAC lines by dose escalation. It ran bulk mRNA-seq on parental and resistant lines in triplicate and compared each resistant line with its own parent. The data availability statement names GSE269985 as the bulk RNA-seq series. Each human pair fits the question exactly.",
+      "case_hint": "The MRTX1133-resistant derivatives of the 2 human PDAC lines (sample names likely end in '.R'), untreated or vehicle, 3 replicates each",
+      "control_hint": "The matched human parental lines, untreated or vehicle, 3 replicates each; compare each resistant derivative only with its own parent"
+    }
+  },
+  "rejected": [
+    "GSE228502",
+    "GSE269313",
+    "GSE279749",
+    "GSE309596",
+    "GSE309499",
+    "GSE309501",
+    "GSE293877",
+    "GSE315130",
+    "GSE263780",
+    "GSE263536",
+    "GSE293756",
+    "E-MTAB-12144"
+  ],
+  "questions": [
+    {
+      "question": "Which drug classes count as a 'KRAS inhibitor' for the resistant arm?",
+      "options": [
+        "Mutant-selective KRAS G12D inhibitors only (e.g., MRTX1133)",
+        "Mutant-selective KRAS G12C inhibitors only (sotorasib/adagrasib)",
+        "Any mutant-selective KRAS inhibitor (G12C or G12D)",
+        "Also include pan-RAS / RAS(ON) multi-selective inhibitors (daraxonrasib/RMC-6236)",
+        "Also include KRAS degraders (e.g., the G12C PROTAC LC-2)"
+      ],
+      "why": "This decides which series qualify. GSE294216, GSE279749/GSE309596 and GSE318496 involve MRTX1133 (G12D). GSE178479 relates to sotorasib (G12C). GSE335219 involves daraxonrasib (RAS(ON) multi-selective). GSE314343 involves the KRAS G12C degrader LC-2."
+    },
+    {
+      "question": "Should each resistant line be compared only with its own parental line (one analysis per cell line), or should several cell lines be pooled into one resistant-vs-parental contrast?",
+      "options": [
+        "One cell line per analysis (e.g., PANC-1 resistant vs PANC-1 parental)",
+        "Pool cell lines, with cell line as a covariate"
+      ],
+      "why": "Several series contain more than one cell line, or human and mouse lines together. Whether pooling is allowed changes which samples go into each arm and whether series with fewer than 3 replicates per line still qualify."
+    }
+  ],
+  "out_of_scope": null,
+  "seen": [],
+  "per_query": {},
+  "invented": [],
+  "selections": {
+    "GSE269985": {
+      "case": [],
+      "control": []
+    }
+  },
+  "verification": {
+    "eligible": [
+      "GSE269985"
+    ],
+    "exists_only": [],
+    "missing": [],
+    "invalid": []
+  },
+  "elapsed_seconds": 195.746,
+  "input_tokens": 462934,
+  "output_tokens": 14024,
+  "web_search_requests": 20,
+  "web_fetch_requests": 36,
+  "error": null
+}

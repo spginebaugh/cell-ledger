@@ -16,6 +16,10 @@ export type VolcanoProps = {
   highlight: Set<string>;
   /** one gene the user searched for; drawn larger with a label */
   focus: string | null;
+  /** the gene whose panel is open; ringed like focus */
+  selected?: string | null;
+  /** a point was clicked */
+  onSelect?: (symbol: string, geneId: string) => void;
   labelTop?: number;
   themeKey?: string;
 };
@@ -28,6 +32,8 @@ export function Volcano({
   lfc,
   highlight,
   focus,
+  selected = null,
+  onSelect,
   labelTop = 12,
   themeKey,
 }: VolcanoProps) {
@@ -109,12 +115,13 @@ export function Volcano({
       const i = symbolIndex.get(s.toUpperCase());
       if (i !== undefined) top.add(i);
     }
-    if (focus) {
-      const i = symbolIndex.get(focus.toUpperCase());
+    for (const s of [focus, selected]) {
+      if (!s) continue;
+      const i = symbolIndex.get(s.toUpperCase());
       if (i !== undefined) top.add(i);
     }
     return top;
-  }, [table, alpha, lfc, labelTop, highlight, focus, symbolIndex]);
+  }, [table, alpha, lfc, labelTop, highlight, focus, selected, symbolIndex]);
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: themeKey forces a redraw when the CSS variables change
   useEffect(() => {
@@ -138,7 +145,8 @@ export function Volcano({
       if (i !== undefined) hi.add(i);
     }
     const focusIdx = focus ? symbolIndex.get(focus.toUpperCase()) : undefined;
-    const dimOthers = hi.size > 0 || focusIdx !== undefined;
+    const selectedIdx = selected ? symbolIndex.get(selected.toUpperCase()) : undefined;
+    const dimOthers = hi.size > 0 || focusIdx !== undefined || selectedIdx !== undefined;
     // pass 1: not significant
     ctx.globalAlpha = dimOthers ? 0.25 : 0.55;
     ctx.fillStyle = cMuted;
@@ -176,18 +184,21 @@ export function Volcano({
       ctx.stroke();
     };
     for (const i of hi) ring(i, 4);
-    if (focusIdx !== undefined) {
-      ring(focusIdx, 6);
-      const px = x(table.log2fc[focusIdx]);
-      const py = y(yCap(table.negLog[focusIdx]));
-      if (!Number.isNaN(py)) {
-        ctx.strokeStyle = cInk;
-        ctx.lineWidth = 1.5;
-        ctx.beginPath();
-        ctx.arc(px, py, 9, 0, Math.PI * 2);
-        ctx.stroke();
-      }
-    }
+    const outer = (i: number, dashed: boolean) => {
+      ring(i, 6);
+      const px = x(table.log2fc[i]);
+      const py = y(yCap(table.negLog[i]));
+      if (Number.isNaN(py)) return;
+      ctx.strokeStyle = cInk;
+      ctx.lineWidth = 1.5;
+      ctx.setLineDash(dashed ? [3, 2] : []);
+      ctx.beginPath();
+      ctx.arc(px, py, 9, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.setLineDash([]);
+    };
+    if (selectedIdx !== undefined && selectedIdx !== focusIdx) outer(selectedIdx, true);
+    if (focusIdx !== undefined) outer(focusIdx, false);
     // labels
     ctx.font = "11px IBM Plex Sans, system-ui, sans-serif";
     ctx.textBaseline = "bottom";
@@ -207,15 +218,36 @@ export function Volcano({
       ctx.fillStyle = cInk;
       ctx.fillText(s, px, py);
     }
-  }, [table, alpha, lfc, highlight, focus, labelled, symbolIndex, width, x, y, yCap, themeKey]);
+  }, [
+    table,
+    alpha,
+    lfc,
+    highlight,
+    focus,
+    selected,
+    labelled,
+    symbolIndex,
+    width,
+    x,
+    y,
+    yCap,
+    themeKey,
+  ]);
 
-  const onMove = (e: React.MouseEvent) => {
-    if (!tree) return;
+  const hitAt = (e: React.MouseEvent) => {
+    if (!tree) return null;
     const r = e.currentTarget.getBoundingClientRect();
-    const px = e.clientX - r.left;
-    const py = e.clientY - r.top;
-    const hit = tree.find(px, py, 8);
+    return tree.find(e.clientX - r.left, e.clientY - r.top, 8) ?? null;
+  };
+  const onMove = (e: React.MouseEvent) => {
+    const hit = hitAt(e);
     setHover(hit ? { i: hit.i, x: hit.x, y: hit.y } : null);
+  };
+  const onClick = (e: React.MouseEvent) => {
+    const hit = hitAt(e);
+    if (!hit || !onSelect) return;
+    const s = table.symbol[hit.i];
+    if (s) onSelect(s, table.geneId[hit.i]);
   };
 
   return (
@@ -268,11 +300,16 @@ export function Volcano({
           <canvas
             ref={canvasRef}
             style={{ width, height }}
-            className="relative block cursor-crosshair"
+            className={
+              hover && onSelect
+                ? "relative block cursor-pointer"
+                : "relative block cursor-crosshair"
+            }
             role="img"
-            aria-label={`Volcano plot: ${counts.up} genes higher in case, ${counts.down} higher in control`}
+            aria-label={`Volcano plot: ${counts.up} genes higher in case, ${counts.down} higher in control${onSelect ? ". Click a point to open its gene." : ""}`}
             onMouseMove={onMove}
             onMouseLeave={() => setHover(null)}
+            onClick={onClick}
           />
         </>
       )}
@@ -283,6 +320,9 @@ export function Volcano({
             log2FC {fmtLfc(table.log2fc[hover.i])} · padj {fmtP(table.padj[hover.i])}
           </div>
           <div className="accession text-ink-3">GeneID {table.geneId[hover.i]}</div>
+          {onSelect && table.symbol[hover.i] && (
+            <div className="mt-0.5 text-ink-3">Click to open the gene</div>
+          )}
         </ChartTip>
       )}
       <div className="mt-2 flex flex-wrap items-center justify-between gap-2">

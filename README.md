@@ -16,7 +16,8 @@ package.json         bun workspace root + Biome
 apps/api/            FastAPI service and agent runtime        (cell_ledger_api)
   sessions.py        sessions and GEO collection; runs.py pipeline subprocesses with live progress
   compare.py         cross-dataset comparisons over a session's runs
-  agent.py           Claude: discover datasets for a question, design a contrast (SSE streams)
+  agent/             Claude: discover datasets for a question (tools.py: its GEO tools),
+                     design a contrast (design.py); llm.py holds what both share
 apps/web/            React + Vite + TanStack Router/Query + Tailwind, d3 charts, vitest, Playwright
 packages/core/       pure-Python pipeline library, no web deps (cell_ledger)
   geo/               GEO search and metadata retrieval
@@ -29,6 +30,7 @@ packages/core/       pure-Python pipeline library, no web deps (cell_ledger)
   bulk.py, bundle.py  standalone preparation validation and export
   pipeline.py        standalone topic-to-bundle preparation
   interpretation.py  structured interpretation with source evidence
+evals/               discovery evals: cases, specialist and baseline runners, scorer (evals/README.md)
 scripts/             dev scripts: fetch example GEO datasets, build gold sample sheets
 docs/                specs and ADRs (adr-001: SampleSheet/Contrast contract), deploy.md
 supabase/            local stack config + SQL migrations: Postgres is the source of truth for
@@ -58,6 +60,7 @@ settings: there is no files-only or memory-only mode, locally or deployed.
 | `mise run db:migration -- <name>` | new SQL migration in `supabase/migrations`      |
 | `mise run test`      | pytest + vitest; the API tests run against the local stack  |
 | `mise run e2e`       | Playwright; boots api and web itself                        |
+| `mise run eval -- --system both` | discovery evals vs a web-search baseline (evals/README.md); `eval:score`, `eval:queue` |
 | `mise run lint`      | ruff, pyright, Biome, tsc                                   |
 | `mise run fmt`       | auto-fix formatting everywhere                              |
 | `mise run gen:api`   | export OpenAPI schema and regenerate `apps/web/src/api/generated` |
@@ -77,8 +80,10 @@ The user does two things: ask, then tick the datasets to download. Everything af
 runs on its own (`apps/api/src/cell_ledger_api/pipeline.py`).
 
 1. **Discover** (`POST /api/sessions/{id}/discover`, SSE): Claude searches GEO (and the web via
-   Exa when configured) and returns candidate series with reasons, or clarifying questions the
-   user answers before choosing. Only accessions GEO confirmed in that run can be reported.
+   Exa when configured) and returns candidate series with reasons, or clarifying questions (with
+   options) the user answers before choosing; the answers go back in the request's `answers`
+   field. Only accessions GEO confirmed in that run can be reported, and the result carries a
+   trace of every query and what it returned.
 2. **Collect** (`POST .../datasets`): counts and metadata are downloaded, checked and mirrored
    to Storage. This is the last click.
 3. **Design** (automatic, per ready dataset): Claude labels every sample from its GEO record
@@ -91,6 +96,12 @@ runs on its own (`apps/api/src/cell_ledger_api/pipeline.py`).
    and signed URLs for every file (including `volcano.json.gz`, the browser-side DE table).
 5. **Compare** (automatic, once every run is done and two or more completed): pooled effects
    across the session's runs, one comparison per session.
+
+On a run page, clicking a point on the volcano plot opens a gene panel (`?gene=SYMBOL`, also
+at `/gene/SYMBOL` on its own). It is independent of the dataset: the browser fetches public
+annotation directly from mygene.info, the Human Protein Atlas, UniProt, GTEx, AlphaFold DB and
+STRING, and draws the subcellular location on the HPA cell and tissue expression on the
+Expression Atlas body (both vendored under `apps/web/public/gene/`, CC BY 4.0).
 
 The API still accepts `POST .../runs` and `POST .../comparisons` directly (the tests use
 them), but the UI has no manual path: without `CELL_LEDGER_ANTHROPIC_API_KEY` discovery

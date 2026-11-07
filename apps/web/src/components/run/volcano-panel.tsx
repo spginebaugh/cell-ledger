@@ -24,6 +24,8 @@ export function VolcanoPanel({
   term,
   focus,
   onFocus,
+  selected = null,
+  onSelect,
   themeKey,
 }: {
   url: string | undefined;
@@ -32,6 +34,8 @@ export function VolcanoPanel({
   term: EnrichmentTerm | null;
   focus: string | null;
   onFocus: (symbol: string | null) => void;
+  selected?: string | null;
+  onSelect?: (symbol: string, geneId: string) => void;
   themeKey: string;
 }) {
   const q = useVolcanoTable(url);
@@ -129,6 +133,8 @@ export function VolcanoPanel({
         lfc={lfc}
         highlight={highlight}
         focus={focus}
+        selected={selected}
+        onSelect={onSelect}
         themeKey={themeKey}
       />
     </div>

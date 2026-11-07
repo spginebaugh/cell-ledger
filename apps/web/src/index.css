@@ -131,102 +131,107 @@
   --radius-lg: 6px;
 }
 
-/* ------------------------------------------------------------------- base */
-html {
-  background: var(--bg);
+/* ------------------------------------------------------------------- base
+   In @layer base so that utility classes can override any of it. */
+@layer base {
+  html {
+    background: var(--bg);
+  }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1100px 520px at 12% -8%, var(--bg-glow), transparent 65%), var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  /* Heading scale: one face, one weight, three sizes. */
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: -0.005em;
+    margin: 0;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+  h1 {
+    font-size: clamp(28px, 22px + 1vw, 34px);
+    line-height: 1.15;
+    font-variation-settings: "opsz" 72;
+  }
+  /* Arm labels come from the record in whatever case it used; a title still opens with a capital. */
+  h1::first-letter {
+    text-transform: uppercase;
+  }
+  h2 {
+    font-size: 22px;
+    line-height: 1.25;
+    font-variation-settings: "opsz" 36;
+    color: var(--accent-ink);
+  }
+  h3 {
+    font-size: 17px;
+    line-height: 1.3;
+    font-variation-settings: "opsz" 24;
+  }
+  a {
+    color: inherit;
+  }
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+    border-radius: 3px;
+  }
+  ::selection {
+    background: var(--accent-soft);
+  }
+  .accession {
+    font-family: var(--font-mono);
+    font-size: 0.93em;
+  }
+  .num {
+    font-variant-numeric: tabular-nums;
+  }
+  /* Pills and tags capitalise each word. */
+  .tag,
+  .pill {
+    text-transform: capitalize;
+  }
+  .prose p {
+    margin: 0 0 0.75em;
+  }
+  .prose h1,
+  .prose h2,
+  .prose h3 {
+    margin: 1.2em 0 0.4em;
+    font-style: normal;
+    color: var(--ink);
+  }
+  .prose table {
+    border-collapse: collapse;
+    font-size: 0.9em;
+  }
+  .prose td,
+  .prose th {
+    border-bottom: 1px solid var(--line);
+    padding: 0.25em 0.6em;
+    text-align: left;
+  }
+  .prose code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    background: var(--surface-2);
+    padding: 0 0.25em;
+    border-radius: 3px;
+  }
 }
-body {
-  margin: 0;
-  background: radial-gradient(1100px 520px at 12% -8%, var(--bg-glow), transparent 65%), var(--bg);
-  color: var(--ink);
-  font-family: var(--font-sans);
-  font-size: 14px;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-/* Heading scale: one face, one weight, three sizes. */
-h1,
-h2,
-h3 {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-style: italic;
-  letter-spacing: -0.005em;
-  margin: 0;
-  text-wrap: balance;
-  color: var(--ink);
-}
-h1 {
-  font-size: clamp(28px, 22px + 1vw, 34px);
-  line-height: 1.15;
-  font-variation-settings: "opsz" 72;
-}
-/* Arm labels come from the record in whatever case it used; a title still opens with a capital. */
-h1::first-letter {
-  text-transform: uppercase;
-}
-h2 {
-  font-size: 22px;
-  line-height: 1.25;
-  font-variation-settings: "opsz" 36;
-  color: var(--accent-ink);
-}
-h3 {
-  font-size: 17px;
-  line-height: 1.3;
-  font-variation-settings: "opsz" 24;
-}
-a {
-  color: inherit;
-}
-:focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 2px;
-  border-radius: 3px;
-}
-::selection {
-  background: var(--accent-soft);
-}
-.accession {
-  font-family: var(--font-mono);
-  font-size: 0.93em;
-}
-.num {
-  font-variant-numeric: tabular-nums;
-}
-/* Pills and tags capitalise each word. */
-.tag,
-.pill {
-  text-transform: capitalize;
-}
-.prose p {
-  margin: 0 0 0.75em;
-}
-.prose h1,
-.prose h2,
-.prose h3 {
-  margin: 1.2em 0 0.4em;
-  font-style: normal;
-  color: var(--ink);
-}
-.prose table {
-  border-collapse: collapse;
-  font-size: 0.9em;
-}
-.prose td,
-.prose th {
-  border-bottom: 1px solid var(--line);
-  padding: 0.25em 0.6em;
-  text-align: left;
-}
-.prose code {
-  font-family: var(--font-mono);
-  font-size: 0.9em;
-  background: var(--surface-2);
-  padding: 0 0.25em;
-  border-radius: 3px;
-}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

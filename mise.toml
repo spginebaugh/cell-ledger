@@ -95,9 +95,28 @@ run = "bun run --cwd apps/web test"
 [tasks.test]
 depends = ["test:py", "test:web"]
 
+# ----------------------------------------------------------------- evals
+# Discovery evals (evals/README.md): the specialist and a web-search baseline on the same cases.
+
 [tasks.eval]
-description = "Offline integrity checks with machine-readable results (not a biology benchmark)"
-run = "uv run python evals/run.py"
+description = "Run the discovery evals: mise run eval -- --system both [--case ID] [--repeats 3]"
+run = "uv run python -m evals.run run \"$@\""
+
+[tasks."eval:validate"]
+description = "Check every case file in evals/cases"
+run = "uv run python -m evals.run validate"
+
+[tasks."eval:score"]
+description = "Re-score saved runs: mise run eval:score -- data/evals/runs/<run_id>"
+run = "uv run python -m evals.run score \"$@\""
+
+[tasks."eval:show"]
+description = "A series as the agent reads it, plus every GSM and its count coverage: mise run eval:show -- GSE262627"
+run = "uv run python -m evals.run show \"$@\""
+
+[tasks."eval:queue"]
+description = "Candidates waiting for a human relevance verdict"
+run = "uv run python -m evals.run queue"
 
 [tasks.e2e]
 description = "Playwright end-to-end tests (boots api and web itself; needs the local stack)"

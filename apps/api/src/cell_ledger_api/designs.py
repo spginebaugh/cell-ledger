@@ -1,6 +1,6 @@
 """The design that goes into a run, and the agent's proposal that wraps it.
 
-These live apart from ``runs.py`` and ``agent.py`` because a dataset row carries its
+These live apart from ``runs.py`` and ``agent/design.py`` because a dataset row carries its
 proposal (``sessions.py``) while the run service carries its design: both need the models,
 neither should import the other.
 """

@@ -13,6 +13,7 @@
     "gen:api": "openapi-ts"
   },
   "dependencies": {
+    "3dmol": "2.5.5",
     "@tailwindcss/vite": "4.3.5",
     "@tanstack/react-query": "^5.107.1",
     "@tanstack/react-router": "1.170.46",

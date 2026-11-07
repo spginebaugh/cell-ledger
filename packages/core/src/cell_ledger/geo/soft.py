@@ -19,7 +19,13 @@ class GeoSample(BaseModel):
     organism: str = ""
     platform: str = ""
     library_strategy: str = ""
+    library_source: str = ""
+    molecule: str = ""
     characteristics: list[str] = Field(default_factory=list)
+    description: str = ""
+    growth_protocol: str = ""
+    treatment_protocol: str = ""
+    extract_protocol: str = ""
 
     def characteristics_dict(self) -> dict[str, str]:
         """``"key: value"`` lines as a dict; a repeated key gets a numeric suffix."""
@@ -42,6 +48,9 @@ class GeoSeries(BaseModel):
     overall_design: str = ""
     pubmed_ids: list[str] = Field(default_factory=list)
     supplementary_files: list[str] = Field(default_factory=list)
+    relations: list[str] = Field(
+        default_factory=list, description='e.g. "SuperSeries of: GSE123", "SubSeries of: GSE9"'
+    )
     samples: list[GeoSample] = Field(default_factory=list)
 
 
@@ -51,6 +60,15 @@ _SAMPLE_SCALARS = {
     "!Sample_organism_ch1": "organism",
     "!Sample_platform_id": "platform",
     "!Sample_library_strategy": "library_strategy",
+    "!Sample_library_source": "library_source",
+    "!Sample_molecule_ch1": "molecule",
+}
+# Free-text fields GEO may split over several lines; the lines are joined with a space.
+_SAMPLE_TEXTS = {
+    "!Sample_description": "description",
+    "!Sample_growth_protocol_ch1": "growth_protocol",
+    "!Sample_treatment_protocol_ch1": "treatment_protocol",
+    "!Sample_extract_protocol_ch1": "extract_protocol",
 }
 
 
@@ -58,6 +76,7 @@ def parse_soft(text: str) -> GeoSeries:
     gse, title = "", ""
     pubmed_ids: list[str] = []
     supplementary_files: list[str] = []
+    relations: list[str] = []
     summary: list[str] = []
     design: list[str] = []
     samples: list[GeoSample] = []
@@ -86,12 +105,18 @@ def parse_soft(text: str) -> GeoSeries:
                 pubmed_ids.append(value)
             elif key.startswith("supplementary_file"):
                 supplementary_files.append(value)
+            elif key == "relation":
+                relations.append(value)
         elif section == "sample" and cur is not None:
             key, _, value = line.partition(" = ")
             if key == "!Sample_characteristics_ch1":
                 cur.characteristics.append(value)
             elif key in _SAMPLE_SCALARS:
                 setattr(cur, _SAMPLE_SCALARS[key], value)
+            elif key in _SAMPLE_TEXTS:
+                attr = _SAMPLE_TEXTS[key]
+                prev = getattr(cur, attr)
+                setattr(cur, attr, f"{prev} {value}" if prev else value)
 
     return GeoSeries(
         gse=gse,
@@ -100,6 +125,7 @@ def parse_soft(text: str) -> GeoSeries:
         overall_design=" ".join(design),
         pubmed_ids=pubmed_ids,
         supplementary_files=supplementary_files,
+        relations=relations,
         samples=samples,
     )
 

@@ -74,8 +74,11 @@ export function HomePage() {
     if (!sessionId) return;
     const all = [...answers, reply.trim()].filter(Boolean);
     setAnswers(all);
-    const q = `${question.trim()}\n\nClarification from the user: ${all.join("\n")}`;
-    void sse.start(`/api/sessions/${sessionId}/discover`, { question: q });
+    // The question stays as typed; the answers ride along as their own field.
+    void sse.start(`/api/sessions/${sessionId}/discover`, {
+      question: question.trim(),
+      answers: all,
+    });
   };
 
   const [saveError, setSaveError] = useState<string | null>(null);

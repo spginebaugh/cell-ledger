@@ -1,0 +1,254 @@
+{
+  "case_id": "hcc_tumor_vs_adjacent",
+  "system": "baseline",
+  "repeat": 1,
+  "conditions": {
+    "system": "baseline",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "fingerprint": "4525537637e3a1e40449a050cb82f18b6802378efbf1170b5ac09c2e199b166c",
+    "web_search": true,
+    "code_revision": "4032f8cb3e85576661f421ff7f4f75aa87401b25",
+    "dirty": true,
+    "geo_cache": "/Users/scott/Documents/code/gauntlet-hackathon/cell-ledger/data/evals/geo-cache/all12-r2",
+    "case_sha256": "052b8203ab68390d6f12e8ef89b102781b2df50eaeb36f738bd108f55bb19d69",
+    "suite_sha256": "5c2b23011a22776e3ea3fab6976ae88635f0f4a277dbf5db35d8fa2bb07d1859",
+    "run_id": "all12-r2",
+    "started_at": "2026-11-07T15:04:10+00:00"
+  },
+  "turns": [
+    {
+      "answers": [],
+      "action": "ask",
+      "output": {
+        "interpretation": "Compare HCC tumor tissue (case) with matched adjacent non-tumor liver tissue (control) from human surgical resections, using bulk RNA-seq. The question is broad: well over 10 public GEO series qualify, and they differ by etiology, patient population and whether samples are paired. I have not pulled sample lists yet. GSM accessions will be added once the scope is narrowed.",
+        "genes": [],
+        "out_of_scope": null,
+        "clarifying_questions": [
+          {
+            "question": "Should the analysis be limited to one underlying liver disease (etiology)?",
+            "options": [
+              "HBV-associated HCC only",
+              "HCV-associated HCC only",
+              "NAFLD/NASH or alcohol-related HCC",
+              "Any etiology (mixed cohorts)"
+            ],
+            "why": "Etiology shapes both the tumor and the background liver. HBV-heavy East Asian cohorts (e.g., GSE77314, GSE94660, GSE124535, GSE214846) would qualify for an HBV-only question but not for HCV or NAFLD. Mixed cohorts (e.g., GSE144269) only fit an 'any etiology' scope."
+          },
+          {
+            "question": "Do you need strictly paired tumor/adjacent samples from the same patients?",
+            "options": [
+              "Paired only (same patient, both tissues)",
+              "Unpaired is acceptable"
+            ],
+            "why": "Paired-only drops series where the tumor and non-tumor sets come from different patients or are unbalanced. It also allows a patient-blocked design."
+          },
+          {
+            "question": "What counts as the control tissue?",
+            "options": [
+              "Adjacent non-tumor liver only (often cirrhotic or fibrotic)",
+              "Also accept histologically normal liver from non-HCC donors"
+            ],
+            "why": "Cirrhotic adjacent liver and healthy donor liver are not interchangeable. Series that include, for example, normal liver from liver-transplant donors would only contribute samples if healthy liver is accepted."
+          },
+          {
+            "question": "Which 10 or fewer series should be used, or should the largest paired cohorts be prioritized?",
+            "options": [
+              "Largest paired cohorts first",
+              "Cohorts that match one ethnicity or region",
+              "Early-stage or resectable tumors only"
+            ],
+            "why": "At least about 10–15 qualifying series exist, so a cap of 10 needs a selection rule."
+          }
+        ],
+        "rejected": [
+          {
+            "gse": "GSE326201",
+            "why": "Single-cell/single-nucleus RNA-seq, not bulk."
+          }
+        ],
+        "queries_tried": [
+          "GEO RNA-seq hepatocellular carcinoma tumor paired adjacent non-tumor liver GSE",
+          "GSE77314 HCC tumor adjacent normal RNA-seq",
+          "GSE144269 hepatocellular carcinoma RNA-seq paired tumor non-tumor"
+        ],
+        "candidates": [
+          {
+            "gse": "GSE77314",
+            "title": "RNA-seq of paired HCC tumor and adjacent normal liver tissues",
+            "n_samples": 100,
+            "why": "Reported as 50 paired tumor/adjacent-normal samples from HCC patients (mostly HBV), bulk RNA-seq on Illumina (GPL9052).",
+            "case_hint": "Samples labeled tumor",
+            "control_hint": "Samples labeled normal/adjacent non-tumor from the same patients",
+            "concerns": [
+              "Older platform. Need to confirm NCBI-generated raw counts are available.",
+              "GSM lists not yet pulled; check them against the GEO record."
+            ],
+            "case_gsms": [],
+            "control_gsms": []
+          },
+          {
+            "gse": "GSE144269",
+            "title": "RNA-seq of paired hepatocellular carcinoma tumor and non-tumor tissues",
+            "n_samples": 140,
+            "why": "70 paired HCC tumor/non-tumor bulk RNA-seq samples; widely used for tumor vs adjacent differential expression.",
+            "case_hint": "Tumor samples",
+            "control_hint": "Matched non-tumor liver samples",
+            "concerns": [
+              "Mixed etiology",
+              "GSM lists not yet pulled"
+            ],
+            "case_gsms": [],
+            "control_gsms": []
+          },
+          {
+            "gse": "GSE214846",
+            "title": "HCC and adjacent non-HCC tissue RNA-seq",
+            "n_samples": 130,
+            "why": "Reported as 65 pairs of HCC and adjacent non-HCC tissue (GPL24676, NovaSeq).",
+            "case_hint": "HCC tumor tissue",
+            "control_hint": "Adjacent non-HCC tissue",
+            "concerns": [
+              "Check that NCBI raw counts are available",
+              "GSM lists not yet pulled"
+            ],
+            "case_gsms": [],
+            "control_gsms": []
+          },
+          {
+            "gse": "GSE104310",
+            "title": "Paired HCC tumor/adjacent RNA-seq",
+            "n_samples": 0,
+            "why": "Used in the literature as an independent paired tumor/adjacent bulk RNA-seq cohort.",
+            "case_hint": "Tumor",
+            "control_hint": "Adjacent non-tumor",
+            "concerns": [
+              "Sample count and NCBI counts not yet checked (n_samples is a placeholder 0)",
+              "May include HBV-only or NAFLD subsets"
+            ],
+            "case_gsms": [],
+            "control_gsms": []
+          }
+        ]
+      },
+      "elapsed_seconds": 33.105954458005726,
+      "input_tokens": 36256,
+      "output_tokens": 2462,
+      "web_search_requests": 3,
+      "web_fetch_requests": 1,
+      "error": null
+    }
+  ],
+  "final_action": "ask",
+  "candidates": [
+    "GSE77314",
+    "GSE144269",
+    "GSE214846",
+    "GSE104310"
+  ],
+  "candidate_details": {
+    "GSE77314": {
+      "title": "RNA-seq of paired HCC tumor and adjacent normal liver tissues",
+      "why": "Reported as 50 paired tumor/adjacent-normal samples from HCC patients (mostly HBV), bulk RNA-seq on Illumina (GPL9052).",
+      "case_hint": "Samples labeled tumor",
+      "control_hint": "Samples labeled normal/adjacent non-tumor from the same patients"
+    },
+    "GSE144269": {
+      "title": "RNA-seq of paired hepatocellular carcinoma tumor and non-tumor tissues",
+      "why": "70 paired HCC tumor/non-tumor bulk RNA-seq samples; widely used for tumor vs adjacent differential expression.",
+      "case_hint": "Tumor samples",
+      "control_hint": "Matched non-tumor liver samples"
+    },
+    "GSE214846": {
+      "title": "HCC and adjacent non-HCC tissue RNA-seq",
+      "why": "Reported as 65 pairs of HCC and adjacent non-HCC tissue (GPL24676, NovaSeq).",
+      "case_hint": "HCC tumor tissue",
+      "control_hint": "Adjacent non-HCC tissue"
+    },
+    "GSE104310": {
+      "title": "Paired HCC tumor/adjacent RNA-seq",
+      "why": "Used in the literature as an independent paired tumor/adjacent bulk RNA-seq cohort.",
+      "case_hint": "Tumor",
+      "control_hint": "Adjacent non-tumor"
+    }
+  },
+  "rejected": [
+    "GSE326201"
+  ],
+  "questions": [
+    {
+      "question": "Should the analysis be limited to one underlying liver disease (etiology)?",
+      "options": [
+        "HBV-associated HCC only",
+        "HCV-associated HCC only",
+        "NAFLD/NASH or alcohol-related HCC",
+        "Any etiology (mixed cohorts)"
+      ],
+      "why": "Etiology shapes both the tumor and the background liver. HBV-heavy East Asian cohorts (e.g., GSE77314, GSE94660, GSE124535, GSE214846) would qualify for an HBV-only question but not for HCV or NAFLD. Mixed cohorts (e.g., GSE144269) only fit an 'any etiology' scope."
+    },
+    {
+      "question": "Do you need strictly paired tumor/adjacent samples from the same patients?",
+      "options": [
+        "Paired only (same patient, both tissues)",
+        "Unpaired is acceptable"
+      ],
+      "why": "Paired-only drops series where the tumor and non-tumor sets come from different patients or are unbalanced. It also allows a patient-blocked design."
+    },
+    {
+      "question": "What counts as the control tissue?",
+      "options": [
+        "Adjacent non-tumor liver only (often cirrhotic or fibrotic)",
+        "Also accept histologically normal liver from non-HCC donors"
+      ],
+      "why": "Cirrhotic adjacent liver and healthy donor liver are not interchangeable. Series that include, for example, normal liver from liver-transplant donors would only contribute samples if healthy liver is accepted."
+    },
+    {
+      "question": "Which 10 or fewer series should be used, or should the largest paired cohorts be prioritized?",
+      "options": [
+        "Largest paired cohorts first",
+        "Cohorts that match one ethnicity or region",
+        "Early-stage or resectable tumors only"
+      ],
+      "why": "At least about 10–15 qualifying series exist, so a cap of 10 needs a selection rule."
+    }
+  ],
+  "out_of_scope": null,
+  "seen": [],
+  "per_query": {},
+  "invented": [],
+  "selections": {
+    "GSE77314": {
+      "case": [],
+      "control": []
+    },
+    "GSE144269": {
+      "case": [],
+      "control": []
+    },
+    "GSE214846": {
+      "case": [],
+      "control": []
+    },
+    "GSE104310": {
+      "case": [],
+      "control": []
+    }
+  },
+  "verification": {
+    "eligible": [
+      "GSE77314",
+      "GSE144269",
+      "GSE214846",
+      "GSE104310"
+    ],
+    "exists_only": [],
+    "missing": [],
+    "invalid": []
+  },
+  "elapsed_seconds": 33.509,
+  "input_tokens": 36256,
+  "output_tokens": 2462,
+  "web_search_requests": 3,
+  "web_fetch_requests": 1,
+  "error": null
+}

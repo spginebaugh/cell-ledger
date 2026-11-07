@@ -1,0 +1,347 @@
+{
+  "case_id": "liver_cancer_broad",
+  "system": "baseline",
+  "repeat": 1,
+  "conditions": {
+    "system": "baseline",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "fingerprint": "4525537637e3a1e40449a050cb82f18b6802378efbf1170b5ac09c2e199b166c",
+    "web_search": true,
+    "code_revision": "4032f8cb3e85576661f421ff7f4f75aa87401b25",
+    "dirty": true,
+    "geo_cache": "/Users/scott/Documents/code/gauntlet-hackathon/cell-ledger/data/evals/geo-cache/all12-r2",
+    "case_sha256": "310ff2b40ef91cad73894c6c73ca189531914a5c86f75fc66e441d84bd360754",
+    "suite_sha256": "5c2b23011a22776e3ea3fab6976ae88635f0f4a277dbf5db35d8fa2bb07d1859",
+    "run_id": "all12-r2",
+    "started_at": "2026-11-07T15:04:10+00:00"
+  },
+  "turns": [
+    {
+      "answers": [],
+      "action": "ask",
+      "output": {
+        "interpretation": "\"Liver cancer\" is not yet a two-group comparison. The most likely meaning is human liver tumour tissue (usually hepatocellular carcinoma, HCC) compared with matched adjacent non-tumour liver tissue, measured by bulk RNA-seq. Other comparisons are also possible: a different liver cancer type (such as cholangiocarcinoma or hepatoblastoma), tumour compared with healthy donor liver, liver cancer cell lines with a treatment or gene change compared with controls, or one patient subgroup compared with another. Each of these leads to different series and samples. No gene was named.",
+        "genes": [],
+        "out_of_scope": null,
+        "clarifying_questions": [
+          {
+            "question": "Which type of liver cancer do you mean?",
+            "options": [
+              "Hepatocellular carcinoma (HCC)",
+              "Intrahepatic cholangiocarcinoma",
+              "Hepatoblastoma (pediatric)",
+              "Fibrolamellar carcinoma",
+              "Liver metastases"
+            ],
+            "why": "Each tumour type is covered by different series. Pediatric hepatoblastoma and adult HCC samples cannot be pooled."
+          },
+          {
+            "question": "Which two groups should be compared?",
+            "options": [
+              "Tumour vs matched adjacent non-tumour liver from the same patients",
+              "Tumour vs healthy donor liver",
+              "Liver cancer cell line with a treatment, knockdown or knockout vs its control",
+              "One tumour subgroup vs another (for example by cause, recurrence, stage or response to treatment)"
+            ],
+            "why": "Paired tumour vs adjacent-tissue designs point to HCC tissue series that I have not yet checked for NCBI raw counts. GSE77314, GSE94660, GSE124535 and GSE144269 are typical examples. A cell-line comparison would draw on completely different series, such as HepG2 or Huh7 knockdown experiments."
+          },
+          {
+            "question": "If you mean HCC tissue, should the samples be limited to one cause of disease?",
+            "options": [
+              "Any cause",
+              "Hepatitis B related",
+              "Hepatitis C related",
+              "Fatty liver disease (NAFLD/MASLD) related",
+              "Alcohol related"
+            ],
+            "why": "Many HCC RNA-seq series come from mostly hepatitis B cohorts. Limiting to one cause changes which series and which samples qualify."
+          },
+          {
+            "question": "Is there a specific gene or pathway you want to look at?",
+            "options": [],
+            "why": "A target gene could favour certain designs, such as cell-line perturbations of that gene. It would also help narrow the many qualifying tissue series to 10 or fewer."
+          }
+        ],
+        "rejected": [
+          {
+            "gse": "GSE76427",
+            "why": "Microarray, not RNA-seq."
+          },
+          {
+            "gse": "GSE14520",
+            "why": "Microarray, not RNA-seq."
+          },
+          {
+            "gse": "GSE36376",
+            "why": "Microarray, not RNA-seq."
+          },
+          {
+            "gse": "GSE326201",
+            "why": "Single-cell RNA-seq, not bulk."
+          }
+        ],
+        "queries_tried": [
+          "GEO RNA-seq hepatocellular carcinoma tumor vs adjacent non-tumor paired GSE",
+          "GSE77314 hepatocellular carcinoma RNA-seq 50 paired"
+        ],
+        "candidates": []
+      },
+      "elapsed_seconds": 26.638626875006594,
+      "input_tokens": 36189,
+      "output_tokens": 1862,
+      "web_search_requests": 2,
+      "web_fetch_requests": 1,
+      "error": null
+    },
+    {
+      "answers": [
+        "Hepatoblastoma in children: tumor tissue versus non-tumor liver tissue."
+      ],
+      "action": "proceed",
+      "output": {
+        "interpretation": "Pediatric hepatoblastoma (HB): primary tumor tissue (case) compared with non-tumor liver tissue (control), using human bulk RNA-seq from patient tissue. Cell lines, PDX models, organoids and single-cell data are excluded. Both arms must come from the same GEO series and the series must have NCBI-generated raw counts.",
+        "genes": [],
+        "out_of_scope": null,
+        "clarifying_questions": [],
+        "rejected": [
+          {
+            "gse": "GSE131329",
+            "why": "Hepatoblastoma tumor vs non-cancerous liver, but run on a microarray (Affymetrix GPL6244), not RNA-seq."
+          },
+          {
+            "gse": "GSE75271",
+            "why": "Hepatoblastoma expression data from a microarray, not bulk RNA-seq."
+          },
+          {
+            "gse": "GSE180664",
+            "why": "Used in the literature as a hepatoblastoma tumor/adjacent dataset, but it appears to belong to the single-cell/multi-omic HB study (GSE180666 family). It is not standard bulk RNA-seq, so it is excluded unless a bulk subseries is confirmed."
+          },
+          {
+            "gse": "GSE180666",
+            "why": "Single-cell RNA-seq of hepatoblastoma and normal liver, not bulk."
+          },
+          {
+            "gse": "GSE81928",
+            "why": "Hepatoblastoma (n≈23) vs normal liver (n=3). I could not confirm that it is RNA-seq with NCBI counts, and the source and age of the normal liver are unclear. Use it only after checking the GEO record."
+          },
+          {
+            "gse": "GSE138485",
+            "why": "Adult hepatocellular carcinoma vs non-tumor liver, not pediatric hepatoblastoma."
+          },
+          {
+            "gse": "GSE76427",
+            "why": "Adult HCC microarray, wrong tumor type and platform."
+          }
+        ],
+        "queries_tried": [
+          "hepatoblastoma RNA-seq GEO GSE tumor non-tumor liver",
+          "hepatoblastoma transcriptome sequencing GSE paired normal liver",
+          "GSE hepatoblastoma RNA-seq children",
+          "hepatoblastoma GSE104766",
+          "hepatoblastoma GSE133039 RNA-seq",
+          "hepatoblastoma GSE151347",
+          "hepatoblastoma GSE89775",
+          "GSE104766 GSM hepatoblastoma tumor sample",
+          "GSE104766 hepatoblastoma non-tumor liver samples",
+          "GSE133039 GSM hepatoblastoma",
+          "GSE89775 GSM hepatoblastoma normal liver",
+          "GSE151347 SP8 hepatoblastoma RNA-seq samples",
+          "GSE81928 hepatoblastoma RNA-seq",
+          "hepatoblastoma RNA-seq GEO normal liver adjacent bulk 2023",
+          "hepatoblastoma RNA-seq GSE tumor paired non-tumorous liver 2022"
+        ],
+        "candidates": [
+          {
+            "gse": "GSE104766",
+            "title": "Hepatoblastoma RNA-seq of tumors and matched non-tumor liver (Hooks et al., proliferative HB study)",
+            "n_samples": 60,
+            "why": "Bulk RNA-seq of pediatric HB primary tumors with matched non-tumor liver from the same patients. Published reports describe it as about 30 tumors and 30 non-tumor samples, and it is widely used for HB-vs-non-tumor differential expression.",
+            "case_hint": "Samples annotated as hepatoblastoma tumor (T)",
+            "control_hint": "Samples annotated as non-tumor (adjacent) liver (NT)",
+            "concerns": [
+              "The GEO sample pages were blocked by a reCAPTCHA, so I could not copy GSM accessions. Assign them from the series sample table.",
+              "Confirm that NCBI raw counts are available for this series.",
+              "The pairs are matched, so a paired design (patient as a covariate) is recommended.",
+              "Some tumors were treated with chemotherapy before resection; check the sample characteristics."
+            ],
+            "case_gsms": [],
+            "control_gsms": []
+          },
+          {
+            "gse": "GSE133039",
+            "title": "Epigenetic footprint enables molecular risk stratification of hepatoblastoma (RNA-seq)",
+            "n_samples": 0,
+            "why": "Bulk RNA-seq of pediatric HB tumors plus non-tumor liver from the Carrillo-Reixach et al. 2020 study. Several papers use it for HB-vs-paraneoplastic-liver differential expression.",
+            "case_hint": "Hepatoblastoma tumor samples",
+            "control_hint": "Non-tumor (adjacent) liver samples",
+            "concerns": [
+              "I could not check the sample count or GSM accessions because the GEO page was blocked. n_samples=0 means 'not verified', not zero samples.",
+              "Confirm that there are at least 3 non-tumor samples and that NCBI raw counts exist.",
+              "Check for and exclude any HCC or HB-with-carcinoma-features samples in the series."
+            ],
+            "case_gsms": [],
+            "control_gsms": []
+          },
+          {
+            "gse": "GSE89775",
+            "title": "Loss of EGFR-DDEF1 signaling in metastatic and unresectable hepatoblastoma",
+            "n_samples": 13,
+            "why": "Illumina HiSeq 2500 RNA-seq whose stated design is a comparison of normal liver and hepatoblastoma tissue. It has 10 HB tumors (from children with unresectable disease getting liver transplants) and 3 normal liver controls, with SRA raw data.",
+            "case_hint": "The 10 hepatoblastoma tumor samples",
+            "control_hint": "The 3 normal liver samples",
+            "concerns": [
+              "Only 3 controls, the bare minimum.",
+              "The controls are described as 'normal liver', and it is not clear whether they are pediatric or from the same patients. They may not be non-tumor liver from HB patients.",
+              "I could not copy GSM accessions because the GEO page was blocked.",
+              "Confirm that NCBI raw counts are available. The submitter supplied only normalized counts."
+            ],
+            "case_gsms": [],
+            "control_gsms": []
+          },
+          {
+            "gse": "GSE151347",
+            "title": "SP8 promotes an aggressive phenotype in hepatoblastoma via FGF8 activation",
+            "n_samples": 0,
+            "why": "Bulk RNA-seq of pediatric HB tumor tissue that is listed in GEO with an SRA Run Selector. It may also contain non-tumor liver samples, which would allow tumor-vs-non-tumor DE.",
+            "case_hint": "Hepatoblastoma tumor tissue samples",
+            "control_hint": "Non-tumor / normal liver samples, if present",
+            "concerns": [
+              "I could not confirm whether the series has at least 3 non-tumor liver samples. If it has none, it does not qualify.",
+              "Sample count and GSM accessions were not checked (GEO page blocked). n_samples=0 means 'not verified'.",
+              "Exclude any cell-line samples."
+            ],
+            "case_gsms": [],
+            "control_gsms": []
+          }
+        ]
+      },
+      "elapsed_seconds": 108.35496741696261,
+      "input_tokens": 213274,
+      "output_tokens": 6519,
+      "web_search_requests": 15,
+      "web_fetch_requests": 17,
+      "error": null
+    }
+  ],
+  "final_action": "proceed",
+  "candidates": [
+    "GSE104766",
+    "GSE133039",
+    "GSE89775",
+    "GSE151347"
+  ],
+  "candidate_details": {
+    "GSE104766": {
+      "title": "Hepatoblastoma RNA-seq of tumors and matched non-tumor liver (Hooks et al., proliferative HB study)",
+      "why": "Bulk RNA-seq of pediatric HB primary tumors with matched non-tumor liver from the same patients. Published reports describe it as about 30 tumors and 30 non-tumor samples, and it is widely used for HB-vs-non-tumor differential expression.",
+      "case_hint": "Samples annotated as hepatoblastoma tumor (T)",
+      "control_hint": "Samples annotated as non-tumor (adjacent) liver (NT)"
+    },
+    "GSE133039": {
+      "title": "Epigenetic footprint enables molecular risk stratification of hepatoblastoma (RNA-seq)",
+      "why": "Bulk RNA-seq of pediatric HB tumors plus non-tumor liver from the Carrillo-Reixach et al. 2020 study. Several papers use it for HB-vs-paraneoplastic-liver differential expression.",
+      "case_hint": "Hepatoblastoma tumor samples",
+      "control_hint": "Non-tumor (adjacent) liver samples"
+    },
+    "GSE89775": {
+      "title": "Loss of EGFR-DDEF1 signaling in metastatic and unresectable hepatoblastoma",
+      "why": "Illumina HiSeq 2500 RNA-seq whose stated design is a comparison of normal liver and hepatoblastoma tissue. It has 10 HB tumors (from children with unresectable disease getting liver transplants) and 3 normal liver controls, with SRA raw data.",
+      "case_hint": "The 10 hepatoblastoma tumor samples",
+      "control_hint": "The 3 normal liver samples"
+    },
+    "GSE151347": {
+      "title": "SP8 promotes an aggressive phenotype in hepatoblastoma via FGF8 activation",
+      "why": "Bulk RNA-seq of pediatric HB tumor tissue that is listed in GEO with an SRA Run Selector. It may also contain non-tumor liver samples, which would allow tumor-vs-non-tumor DE.",
+      "case_hint": "Hepatoblastoma tumor tissue samples",
+      "control_hint": "Non-tumor / normal liver samples, if present"
+    }
+  },
+  "rejected": [
+    "GSE131329",
+    "GSE75271",
+    "GSE180664",
+    "GSE180666",
+    "GSE81928",
+    "GSE138485",
+    "GSE76427"
+  ],
+  "questions": [
+    {
+      "question": "Which type of liver cancer do you mean?",
+      "options": [
+        "Hepatocellular carcinoma (HCC)",
+        "Intrahepatic cholangiocarcinoma",
+        "Hepatoblastoma (pediatric)",
+        "Fibrolamellar carcinoma",
+        "Liver metastases"
+      ],
+      "why": "Each tumour type is covered by different series. Pediatric hepatoblastoma and adult HCC samples cannot be pooled."
+    },
+    {
+      "question": "Which two groups should be compared?",
+      "options": [
+        "Tumour vs matched adjacent non-tumour liver from the same patients",
+        "Tumour vs healthy donor liver",
+        "Liver cancer cell line with a treatment, knockdown or knockout vs its control",
+        "One tumour subgroup vs another (for example by cause, recurrence, stage or response to treatment)"
+      ],
+      "why": "Paired tumour vs adjacent-tissue designs point to HCC tissue series that I have not yet checked for NCBI raw counts. GSE77314, GSE94660, GSE124535 and GSE144269 are typical examples. A cell-line comparison would draw on completely different series, such as HepG2 or Huh7 knockdown experiments."
+    },
+    {
+      "question": "If you mean HCC tissue, should the samples be limited to one cause of disease?",
+      "options": [
+        "Any cause",
+        "Hepatitis B related",
+        "Hepatitis C related",
+        "Fatty liver disease (NAFLD/MASLD) related",
+        "Alcohol related"
+      ],
+      "why": "Many HCC RNA-seq series come from mostly hepatitis B cohorts. Limiting to one cause changes which series and which samples qualify."
+    },
+    {
+      "question": "Is there a specific gene or pathway you want to look at?",
+      "options": [],
+      "why": "A target gene could favour certain designs, such as cell-line perturbations of that gene. It would also help narrow the many qualifying tissue series to 10 or fewer."
+    }
+  ],
+  "out_of_scope": null,
+  "seen": [],
+  "per_query": {},
+  "invented": [],
+  "selections": {
+    "GSE104766": {
+      "case": [],
+      "control": []
+    },
+    "GSE133039": {
+      "case": [],
+      "control": []
+    },
+    "GSE89775": {
+      "case": [],
+      "control": []
+    },
+    "GSE151347": {
+      "case": [],
+      "control": []
+    }
+  },
+  "verification": {
+    "eligible": [
+      "GSE104766",
+      "GSE133039",
+      "GSE89775",
+      "GSE151347"
+    ],
+    "exists_only": [],
+    "missing": [],
+    "invalid": []
+  },
+  "elapsed_seconds": 134.995,
+  "input_tokens": 249463,
+  "output_tokens": 8381,
+  "web_search_requests": 17,
+  "web_fetch_requests": 18,
+  "error": null
+}

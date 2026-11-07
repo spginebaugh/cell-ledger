@@ -72,6 +72,13 @@ export function TopBar({ sessionId }: { sessionId?: string }) {
           <Wordmark />
         </Link>
         <div className="flex items-center gap-2">
+          <Link
+            to="/evals"
+            className="inline-flex h-[34px] items-center rounded-md border border-transparent px-3 text-[13px] font-semibold text-ink-2 no-underline hover:border-line-2 hover:text-ink"
+            activeProps={{ className: "border-line-2 text-ink", "aria-current": "page" }}
+          >
+            Evals
+          </Link>
           {sessionId && (
             <button
               type="button"

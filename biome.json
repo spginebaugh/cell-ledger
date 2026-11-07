@@ -14,6 +14,7 @@
       "!**/test-results",
       "!apps/web/src/api/generated",
       "!apps/web/openapi.json",
+      "!apps/web/public",
       "!evals/schemas",
       "!evals/review_drafts",
       "!.venv",
