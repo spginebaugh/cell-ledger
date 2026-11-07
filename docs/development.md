@@ -28,6 +28,7 @@ settings: there is no files-only or memory-only mode, locally or deployed.
 | `mise run data:fetch`| download every example and query-set GEO dataset into `data/geo` |
 | `mise run analyze -- GSE82227` | run the pipeline on one dataset (see docs/pipeline.md) |
 | `mise run compare -- hcc_tumor_vs_adjacent` | run every member of a query set, then compare them (docs/pipeline.md) |
+| `mise run validate:published` | rerun the published-DE validation behind the Evals page (docs/validation/README.md) |
 | `mise run serve`     | production-shaped server on :8000: API + built UI, one origin, no reload |
 | `mise run docker:run`| run the exact Fly image locally with `.env` and `./data` mounted |
 | `mise run deploy`    | lint, test, build image, `supabase db push`, `fly deploy --ha=false` (docs/deploy.md) |

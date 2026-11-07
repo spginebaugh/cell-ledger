@@ -106,6 +106,11 @@ it and, within each series, which samples belong in each arm.
 Run on 2026-11-07 with `claude-opus-5-5` (medium effort), one run per case. The sealed results
 are in `evals/results/final-2026-11-07`, and the method is described in [evals/README.md](evals/README.md).
 
+The same page also checks the analysis step: the pipeline rerun on three GEO series whose
+authors published differential expression tables, with the pipeline's log2 fold change plotted
+against the authors' for every comparison (R² 0.71 to 0.96). The write-up and the scripts to
+reproduce it are in [docs/validation](docs/validation/README.md).
+
 ## Architecture
 
 ```mermaid
