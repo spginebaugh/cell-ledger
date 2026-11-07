@@ -54,6 +54,9 @@ Emit = Callable[[Event], Awaitable[None]]
 
 MAX_TURNS = 8
 MAX_TOKENS = 16000
+# A design labels every sample with quoted evidence, so its JSON grows with the series;
+# thinking shares this budget. Streaming keeps a long response within request timeouts.
+DESIGN_MAX_TOKENS = 64000
 
 
 # ----------------------------------------------------------------------------- models
@@ -581,6 +584,7 @@ class Agent:
         messages: list[BetaMessageParam] = [{"role": "user", "content": prompt}]
         params = self._params(
             system=SYSTEM_DESIGN,
+            max_tokens=DESIGN_MAX_TOKENS,
             output_config={"effort": self._effort, "format": to_json_output_format(DesignOutput)},
         )
         proposal: DesignProposal | None = None
@@ -589,6 +593,12 @@ class Agent:
             message = await self._turn({**params, "messages": messages}, emit)
             if message.stop_reason == "refusal":
                 raise AgentUnavailable("the model declined this request")
+            if message.stop_reason == "max_tokens":
+                errors = [
+                    f"the design was cut off at {DESIGN_MAX_TOKENS} tokens "
+                    f"({len(record.samples)} samples)"
+                ]
+                break
             text = "".join(b.text for b in message.content if b.type == "text")
             try:
                 out = DesignOutput.model_validate_json(text)
