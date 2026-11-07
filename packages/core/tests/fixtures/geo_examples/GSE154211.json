@@ -1,448 +1,366 @@
 {
- "samplesheet": {
-  "gse": "GSE154211",
-  "assay": "bulk",
-  "title": "RNA-Seq analysis of HCV-related HCC and NBNC-HCC tumor and non-tumor part gene analysis",
-  "samples": [
-   {
-    "gsm": "GSM4666960",
-    "title": "450N",
-    "source_name": "NBNC-HCC",
-    "group": "control",
-    "condition": "Non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "patient 450",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "section: Non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "liver",
-     "section": "Non-tumor",
-     "etiology": "NBNC",
-     "bclc stage": "0"
-    },
-    "raw_lines": [
-     "tissue: liver",
-     "section: Non-tumor",
-     "etiology: NBNC",
-     "bclc stage: 0"
+  "samplesheet": {
+    "gse": "GSE154211",
+    "assay": "bulk",
+    "title": "RNA-Seq analysis of HCV-related HCC and NBNC-HCC tumor and non-tumor part gene analysis",
+    "samples": [
+      {
+        "gsm": "GSM4666960",
+        "title": "450N",
+        "source_name": "NBNC-HCC",
+        "group": "control",
+        "condition": "Non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "patient 450",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["section: Non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "liver",
+          "section": "Non-tumor",
+          "etiology": "NBNC",
+          "bclc stage": "0"
+        },
+        "raw_lines": ["tissue: liver", "section: Non-tumor", "etiology: NBNC", "bclc stage: 0"]
+      },
+      {
+        "gsm": "GSM4666961",
+        "title": "450T",
+        "source_name": "NBNC-HCC",
+        "group": "case",
+        "condition": "Tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "patient 450",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["section: Tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "liver",
+          "section": "Tumor",
+          "etiology": "NBNC",
+          "bclc stage": "0"
+        },
+        "raw_lines": ["tissue: liver", "section: Tumor", "etiology: NBNC", "bclc stage: 0"]
+      },
+      {
+        "gsm": "GSM4666962",
+        "title": "475N",
+        "source_name": "HCV-HCC",
+        "group": "control",
+        "condition": "Non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "patient 475",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["section: Non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "liver",
+          "section": "Non-tumor",
+          "etiology": "HCV",
+          "bclc stage": "B"
+        },
+        "raw_lines": ["tissue: liver", "section: Non-tumor", "etiology: HCV", "bclc stage: B"]
+      },
+      {
+        "gsm": "GSM4666963",
+        "title": "475T",
+        "source_name": "HCV-HCC",
+        "group": "case",
+        "condition": "Tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "patient 475",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["section: Tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "liver",
+          "section": "Tumor",
+          "etiology": "HCV",
+          "bclc stage": "B"
+        },
+        "raw_lines": ["tissue: liver", "section: Tumor", "etiology: HCV", "bclc stage: B"]
+      },
+      {
+        "gsm": "GSM4666964",
+        "title": "519N",
+        "source_name": "HCV-HCC",
+        "group": "control",
+        "condition": "Non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "patient 519",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["section: Non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "liver",
+          "section": "Non-tumor",
+          "etiology": "HCV",
+          "bclc stage": "A"
+        },
+        "raw_lines": ["tissue: liver", "section: Non-tumor", "etiology: HCV", "bclc stage: A"]
+      },
+      {
+        "gsm": "GSM4666965",
+        "title": "519T",
+        "source_name": "HCV-HCC",
+        "group": "case",
+        "condition": "Tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "patient 519",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["section: Tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "liver",
+          "section": "Tumor",
+          "etiology": "HCV",
+          "bclc stage": "A"
+        },
+        "raw_lines": ["tissue: liver", "section: Tumor", "etiology: HCV", "bclc stage: A"]
+      },
+      {
+        "gsm": "GSM4666966",
+        "title": "565N",
+        "source_name": "NBNC-HCC",
+        "group": "control",
+        "condition": "Non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "patient 565",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["section: Non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "liver",
+          "section": "Non-tumor",
+          "etiology": "NBNC",
+          "bclc stage": "B"
+        },
+        "raw_lines": ["tissue: liver", "section: Non-tumor", "etiology: NBNC", "bclc stage: B"]
+      },
+      {
+        "gsm": "GSM4666967",
+        "title": "565T",
+        "source_name": "NBNC-HCC",
+        "group": "case",
+        "condition": "Tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "patient 565",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["section: Tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "liver",
+          "section": "Tumor",
+          "etiology": "NBNC",
+          "bclc stage": "B"
+        },
+        "raw_lines": ["tissue: liver", "section: Tumor", "etiology: NBNC", "bclc stage: B"]
+      },
+      {
+        "gsm": "GSM4666968",
+        "title": "569N",
+        "source_name": "NBNC-HCC",
+        "group": "control",
+        "condition": "Non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "patient 569",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["section: Non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "liver",
+          "section": "Non-tumor",
+          "etiology": "NBNC",
+          "bclc stage": "0"
+        },
+        "raw_lines": ["tissue: liver", "section: Non-tumor", "etiology: NBNC", "bclc stage: 0"]
+      },
+      {
+        "gsm": "GSM4666969",
+        "title": "569T",
+        "source_name": "NBNC-HCC",
+        "group": "case",
+        "condition": "Tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "patient 569",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["section: Tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "liver",
+          "section": "Tumor",
+          "etiology": "NBNC",
+          "bclc stage": "0"
+        },
+        "raw_lines": ["tissue: liver", "section: Tumor", "etiology: NBNC", "bclc stage: 0"]
+      }
     ]
-   },
-   {
-    "gsm": "GSM4666961",
-    "title": "450T",
-    "source_name": "NBNC-HCC",
-    "group": "case",
-    "condition": "Tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "patient 450",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "section: Tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "liver",
-     "section": "Tumor",
-     "etiology": "NBNC",
-     "bclc stage": "0"
+  },
+  "contrasts": [
+    {
+      "gse": "GSE154211",
+      "name": "tumor_vs_adjacent_normal",
+      "case_label": "HCC tumor",
+      "control_label": "adjacent non-tumor liver",
+      "case_gsms": ["GSM4666961", "GSM4666963", "GSM4666965", "GSM4666967", "GSM4666969"],
+      "control_gsms": ["GSM4666960", "GSM4666962", "GSM4666964", "GSM4666966", "GSM4666968"],
+      "blocking": "donor",
+      "restricted_to": {},
+      "confidence": 1.0,
+      "status": "confirmed",
+      "rationale": "5 pairs; etiology (HCV vs NBNC) is a sub-factor kept in raw."
+    }
+  ],
+  "markers": [
+    {
+      "symbol": "GPC3",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue: liver",
-     "section: Tumor",
-     "etiology: NBNC",
-     "bclc stage: 0"
-    ]
-   },
-   {
-    "gsm": "GSM4666962",
-    "title": "475N",
-    "source_name": "HCV-HCC",
-    "group": "control",
-    "condition": "Non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "patient 475",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "section: Non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "liver",
-     "section": "Non-tumor",
-     "etiology": "HCV",
-     "bclc stage": "B"
+    {
+      "symbol": "AFP",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue: liver",
-     "section: Non-tumor",
-     "etiology: HCV",
-     "bclc stage: B"
-    ]
-   },
-   {
-    "gsm": "GSM4666963",
-    "title": "475T",
-    "source_name": "HCV-HCC",
-    "group": "case",
-    "condition": "Tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "patient 475",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "section: Tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "liver",
-     "section": "Tumor",
-     "etiology": "HCV",
-     "bclc stage": "B"
+    {
+      "symbol": "SPP1",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue: liver",
-     "section: Tumor",
-     "etiology: HCV",
-     "bclc stage: B"
-    ]
-   },
-   {
-    "gsm": "GSM4666964",
-    "title": "519N",
-    "source_name": "HCV-HCC",
-    "group": "control",
-    "condition": "Non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "patient 519",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "section: Non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "liver",
-     "section": "Non-tumor",
-     "etiology": "HCV",
-     "bclc stage": "A"
+    {
+      "symbol": "MDK",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue: liver",
-     "section: Non-tumor",
-     "etiology: HCV",
-     "bclc stage: A"
-    ]
-   },
-   {
-    "gsm": "GSM4666965",
-    "title": "519T",
-    "source_name": "HCV-HCC",
-    "group": "case",
-    "condition": "Tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "patient 519",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "section: Tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "liver",
-     "section": "Tumor",
-     "etiology": "HCV",
-     "bclc stage": "A"
+    {
+      "symbol": "PEG10",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue: liver",
-     "section: Tumor",
-     "etiology: HCV",
-     "bclc stage: A"
-    ]
-   },
-   {
-    "gsm": "GSM4666966",
-    "title": "565N",
-    "source_name": "NBNC-HCC",
-    "group": "control",
-    "condition": "Non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "patient 565",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "section: Non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "liver",
-     "section": "Non-tumor",
-     "etiology": "NBNC",
-     "bclc stage": "B"
+    {
+      "symbol": "CLEC4G",
+      "direction": "down"
     },
-    "raw_lines": [
-     "tissue: liver",
-     "section: Non-tumor",
-     "etiology: NBNC",
-     "bclc stage: B"
-    ]
-   },
-   {
-    "gsm": "GSM4666967",
-    "title": "565T",
-    "source_name": "NBNC-HCC",
-    "group": "case",
-    "condition": "Tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "patient 565",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "section: Tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "liver",
-     "section": "Tumor",
-     "etiology": "NBNC",
-     "bclc stage": "B"
+    {
+      "symbol": "CLEC1B",
+      "direction": "down"
     },
-    "raw_lines": [
-     "tissue: liver",
-     "section: Tumor",
-     "etiology: NBNC",
-     "bclc stage: B"
-    ]
-   },
-   {
-    "gsm": "GSM4666968",
-    "title": "569N",
-    "source_name": "NBNC-HCC",
-    "group": "control",
-    "condition": "Non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "patient 569",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "section: Non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "liver",
-     "section": "Non-tumor",
-     "etiology": "NBNC",
-     "bclc stage": "0"
+    {
+      "symbol": "FCN3",
+      "direction": "down"
     },
-    "raw_lines": [
-     "tissue: liver",
-     "section: Non-tumor",
-     "etiology: NBNC",
-     "bclc stage: 0"
-    ]
-   },
-   {
-    "gsm": "GSM4666969",
-    "title": "569T",
-    "source_name": "NBNC-HCC",
-    "group": "case",
-    "condition": "Tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "patient 569",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "section: Tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "liver",
-     "section": "Tumor",
-     "etiology": "NBNC",
-     "bclc stage": "0"
+    {
+      "symbol": "CRHBP",
+      "direction": "down"
     },
-    "raw_lines": [
-     "tissue: liver",
-     "section: Tumor",
-     "etiology: NBNC",
-     "bclc stage: 0"
-    ]
-   }
+    {
+      "symbol": "CYP1A2",
+      "direction": "down"
+    }
   ]
- },
- "contrasts": [
-  {
-   "gse": "GSE154211",
-   "name": "tumor_vs_adjacent_normal",
-   "case_label": "HCC tumor",
-   "control_label": "adjacent non-tumor liver",
-   "case_gsms": [
-    "GSM4666961",
-    "GSM4666963",
-    "GSM4666965",
-    "GSM4666967",
-    "GSM4666969"
-   ],
-   "control_gsms": [
-    "GSM4666960",
-    "GSM4666962",
-    "GSM4666964",
-    "GSM4666966",
-    "GSM4666968"
-   ],
-   "blocking": "donor",
-   "restricted_to": {},
-   "confidence": 1.0,
-   "status": "confirmed",
-   "rationale": "5 pairs; etiology (HCV vs NBNC) is a sub-factor kept in raw."
-  }
- ],
- "markers": [
-  {
-   "symbol": "GPC3",
-   "direction": "up"
-  },
-  {
-   "symbol": "AFP",
-   "direction": "up"
-  },
-  {
-   "symbol": "SPP1",
-   "direction": "up"
-  },
-  {
-   "symbol": "MDK",
-   "direction": "up"
-  },
-  {
-   "symbol": "PEG10",
-   "direction": "up"
-  },
-  {
-   "symbol": "CLEC4G",
-   "direction": "down"
-  },
-  {
-   "symbol": "CLEC1B",
-   "direction": "down"
-  },
-  {
-   "symbol": "FCN3",
-   "direction": "down"
-  },
-  {
-   "symbol": "CRHBP",
-   "direction": "down"
-  },
-  {
-   "symbol": "CYP1A2",
-   "direction": "down"
-  }
- ]
 }

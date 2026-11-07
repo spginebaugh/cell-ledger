@@ -1,1377 +1,1209 @@
 {
- "samplesheet": {
-  "gse": "GSE63979",
-  "assay": "bulk",
-  "title": "Analysis of long non-coding RNAs highlights tissue-specific expression patterns and epigenetic profiles in normal and psoriatic skin",
-  "samples": [
-   {
-    "gsm": "GSM1561610",
-    "title": "M9036_normal",
-    "source_name": "skin",
-    "group": "control",
-    "condition": "normal skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: normal skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "normal skin"
-    },
-    "raw_lines": [
-     "tissue type: normal skin"
+  "samplesheet": {
+    "gse": "GSE63979",
+    "assay": "bulk",
+    "title": "Analysis of long non-coding RNAs highlights tissue-specific expression patterns and epigenetic profiles in normal and psoriatic skin",
+    "samples": [
+      {
+        "gsm": "GSM1561610",
+        "title": "M9036_normal",
+        "source_name": "skin",
+        "group": "control",
+        "condition": "normal skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: normal skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "normal skin"
+        },
+        "raw_lines": ["tissue type: normal skin"]
+      },
+      {
+        "gsm": "GSM1561611",
+        "title": "M9037_normal",
+        "source_name": "skin",
+        "group": "control",
+        "condition": "normal skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: normal skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "normal skin"
+        },
+        "raw_lines": ["tissue type: normal skin"]
+      },
+      {
+        "gsm": "GSM1561612",
+        "title": "M9048_normal",
+        "source_name": "skin",
+        "group": "control",
+        "condition": "normal skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: normal skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "normal skin"
+        },
+        "raw_lines": ["tissue type: normal skin"]
+      },
+      {
+        "gsm": "GSM1561613",
+        "title": "M4124_normal",
+        "source_name": "skin",
+        "group": "control",
+        "condition": "normal skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: normal skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "normal skin"
+        },
+        "raw_lines": ["tissue type: normal skin"]
+      },
+      {
+        "gsm": "GSM1561614",
+        "title": "M953_psoriatic",
+        "source_name": "skin",
+        "group": "case",
+        "condition": "psoriatic skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: psoriatic skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "psoriatic skin"
+        },
+        "raw_lines": ["tissue type: psoriatic skin"]
+      },
+      {
+        "gsm": "GSM1561615",
+        "title": "M3023_psoriatic",
+        "source_name": "skin",
+        "group": "case",
+        "condition": "psoriatic skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: psoriatic skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "psoriatic skin"
+        },
+        "raw_lines": ["tissue type: psoriatic skin"]
+      },
+      {
+        "gsm": "GSM1561616",
+        "title": "M3822_psoriatic",
+        "source_name": "skin",
+        "group": "case",
+        "condition": "psoriatic skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: psoriatic skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "psoriatic skin"
+        },
+        "raw_lines": ["tissue type: psoriatic skin"]
+      },
+      {
+        "gsm": "GSM1561617",
+        "title": "M5064_normal",
+        "source_name": "skin",
+        "group": "control",
+        "condition": "normal skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: normal skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "normal skin"
+        },
+        "raw_lines": ["tissue type: normal skin"]
+      },
+      {
+        "gsm": "GSM1561618",
+        "title": "M4247_psoriatic",
+        "source_name": "skin",
+        "group": "case",
+        "condition": "psoriatic skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: psoriatic skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "psoriatic skin"
+        },
+        "raw_lines": ["tissue type: psoriatic skin"]
+      },
+      {
+        "gsm": "GSM1561619",
+        "title": "M7832_uninvolved",
+        "source_name": "skin",
+        "group": "other",
+        "condition": "Uninvolved skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: Uninvolved skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "Uninvolved skin"
+        },
+        "raw_lines": ["tissue type: Uninvolved skin"]
+      },
+      {
+        "gsm": "GSM1561620",
+        "title": "M8481_uninvolved",
+        "source_name": "skin",
+        "group": "other",
+        "condition": "Uninvolved skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: Uninvolved skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "Uninvolved skin"
+        },
+        "raw_lines": ["tissue type: Uninvolved skin"]
+      },
+      {
+        "gsm": "GSM1561621",
+        "title": "M8483_uninvolved",
+        "source_name": "skin",
+        "group": "other",
+        "condition": "Uninvolved skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: Uninvolved skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "Uninvolved skin"
+        },
+        "raw_lines": ["tissue type: Uninvolved skin"]
+      },
+      {
+        "gsm": "GSM1561622",
+        "title": "M8485_uninvolved",
+        "source_name": "skin",
+        "group": "other",
+        "condition": "Uninvolved skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: Uninvolved skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "Uninvolved skin"
+        },
+        "raw_lines": ["tissue type: Uninvolved skin"]
+      },
+      {
+        "gsm": "GSM1561623",
+        "title": "M4992_normal",
+        "source_name": "skin",
+        "group": "control",
+        "condition": "normal skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: normal skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "normal skin"
+        },
+        "raw_lines": ["tissue type: normal skin"]
+      },
+      {
+        "gsm": "GSM1561624",
+        "title": "M6346_uninvolved",
+        "source_name": "skin",
+        "group": "other",
+        "condition": "Uninvolved skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: Uninvolved skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "Uninvolved skin"
+        },
+        "raw_lines": ["tissue type: Uninvolved skin"]
+      },
+      {
+        "gsm": "GSM1561625",
+        "title": "M7807_uninvolved",
+        "source_name": "skin",
+        "group": "other",
+        "condition": "Uninvolved skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: Uninvolved skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "Uninvolved skin"
+        },
+        "raw_lines": ["tissue type: Uninvolved skin"]
+      },
+      {
+        "gsm": "GSM1561626",
+        "title": "M856_uninvolved",
+        "source_name": "skin",
+        "group": "other",
+        "condition": "Uninvolved skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: Uninvolved skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "Uninvolved skin"
+        },
+        "raw_lines": ["tissue type: Uninvolved skin"]
+      },
+      {
+        "gsm": "GSM1561627",
+        "title": "M4390_uninvolved",
+        "source_name": "skin",
+        "group": "other",
+        "condition": "Uninvolved skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: Uninvolved skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "Uninvolved skin"
+        },
+        "raw_lines": ["tissue type: Uninvolved skin"]
+      },
+      {
+        "gsm": "GSM1561628",
+        "title": "M4271_uninvolved",
+        "source_name": "skin",
+        "group": "other",
+        "condition": "Uninvolved skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: Uninvolved skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "Uninvolved skin"
+        },
+        "raw_lines": ["tissue type: Uninvolved skin"]
+      },
+      {
+        "gsm": "GSM1561629",
+        "title": "M7264_uninvolved",
+        "source_name": "skin",
+        "group": "other",
+        "condition": "Uninvolved skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: Uninvolved skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "Uninvolved skin"
+        },
+        "raw_lines": ["tissue type: Uninvolved skin"]
+      },
+      {
+        "gsm": "GSM1561630",
+        "title": "M7305_uninvolved",
+        "source_name": "skin",
+        "group": "other",
+        "condition": "Uninvolved skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: Uninvolved skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "Uninvolved skin"
+        },
+        "raw_lines": ["tissue type: Uninvolved skin"]
+      },
+      {
+        "gsm": "GSM1561631",
+        "title": "M8704_uninvolved",
+        "source_name": "skin",
+        "group": "other",
+        "condition": "Uninvolved skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: Uninvolved skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "Uninvolved skin"
+        },
+        "raw_lines": ["tissue type: Uninvolved skin"]
+      },
+      {
+        "gsm": "GSM1561632",
+        "title": "M8771_uninvolved",
+        "source_name": "skin",
+        "group": "other",
+        "condition": "Uninvolved skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: Uninvolved skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "Uninvolved skin"
+        },
+        "raw_lines": ["tissue type: Uninvolved skin"]
+      },
+      {
+        "gsm": "GSM1561633",
+        "title": "M5130_uninvolved",
+        "source_name": "skin",
+        "group": "other",
+        "condition": "Uninvolved skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: Uninvolved skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "Uninvolved skin"
+        },
+        "raw_lines": ["tissue type: Uninvolved skin"]
+      },
+      {
+        "gsm": "GSM1561634",
+        "title": "M5219_uninvolved",
+        "source_name": "skin",
+        "group": "other",
+        "condition": "Uninvolved skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: Uninvolved skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "Uninvolved skin"
+        },
+        "raw_lines": ["tissue type: Uninvolved skin"]
+      },
+      {
+        "gsm": "GSM1561635",
+        "title": "M6844_uninvolved",
+        "source_name": "skin",
+        "group": "other",
+        "condition": "Uninvolved skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: Uninvolved skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "Uninvolved skin"
+        },
+        "raw_lines": ["tissue type: Uninvolved skin"]
+      },
+      {
+        "gsm": "GSM1561636",
+        "title": "M7838_uninvolved",
+        "source_name": "skin",
+        "group": "other",
+        "condition": "Uninvolved skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: Uninvolved skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "Uninvolved skin"
+        },
+        "raw_lines": ["tissue type: Uninvolved skin"]
+      },
+      {
+        "gsm": "GSM1561637",
+        "title": "M7912_uninvolved",
+        "source_name": "skin",
+        "group": "other",
+        "condition": "Uninvolved skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: Uninvolved skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "Uninvolved skin"
+        },
+        "raw_lines": ["tissue type: Uninvolved skin"]
+      },
+      {
+        "gsm": "GSM1561638",
+        "title": "M8487_uninvolved",
+        "source_name": "skin",
+        "group": "other",
+        "condition": "Uninvolved skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: Uninvolved skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "Uninvolved skin"
+        },
+        "raw_lines": ["tissue type: Uninvolved skin"]
+      },
+      {
+        "gsm": "GSM1561639",
+        "title": "M8554_uninvolved",
+        "source_name": "skin",
+        "group": "other",
+        "condition": "Uninvolved skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: Uninvolved skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "Uninvolved skin"
+        },
+        "raw_lines": ["tissue type: Uninvolved skin"]
+      },
+      {
+        "gsm": "GSM1561640",
+        "title": "M9132_uninvolved",
+        "source_name": "skin",
+        "group": "other",
+        "condition": "Uninvolved skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: Uninvolved skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "Uninvolved skin"
+        },
+        "raw_lines": ["tissue type: Uninvolved skin"]
+      },
+      {
+        "gsm": "GSM1561641",
+        "title": "M5997_psoriatic",
+        "source_name": "skin",
+        "group": "case",
+        "condition": "psoriatic skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: psoriatic skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "psoriatic skin"
+        },
+        "raw_lines": ["tissue type: psoriatic skin"]
+      },
+      {
+        "gsm": "GSM1561642",
+        "title": "M8815_uninvolved",
+        "source_name": "skin",
+        "group": "other",
+        "condition": "Uninvolved skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: Uninvolved skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "Uninvolved skin"
+        },
+        "raw_lines": ["tissue type: Uninvolved skin"]
+      },
+      {
+        "gsm": "GSM1561643",
+        "title": "M9081_uninvolved",
+        "source_name": "skin",
+        "group": "other",
+        "condition": "Uninvolved skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: Uninvolved skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "Uninvolved skin"
+        },
+        "raw_lines": ["tissue type: Uninvolved skin"]
+      },
+      {
+        "gsm": "GSM1561644",
+        "title": "M8755_uninvolved",
+        "source_name": "skin",
+        "group": "other",
+        "condition": "Uninvolved skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: Uninvolved skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "Uninvolved skin"
+        },
+        "raw_lines": ["tissue type: Uninvolved skin"]
+      },
+      {
+        "gsm": "GSM1561645",
+        "title": "M8470_uninvolved",
+        "source_name": "skin",
+        "group": "other",
+        "condition": "Uninvolved skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: Uninvolved skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "Uninvolved skin"
+        },
+        "raw_lines": ["tissue type: Uninvolved skin"]
+      },
+      {
+        "gsm": "GSM1561646",
+        "title": "M8492_uninvolved",
+        "source_name": "skin",
+        "group": "other",
+        "condition": "Uninvolved skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: Uninvolved skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "Uninvolved skin"
+        },
+        "raw_lines": ["tissue type: Uninvolved skin"]
+      },
+      {
+        "gsm": "GSM1561647",
+        "title": "M5385_uninvolved",
+        "source_name": "skin",
+        "group": "other",
+        "condition": "Uninvolved skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: Uninvolved skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "Uninvolved skin"
+        },
+        "raw_lines": ["tissue type: Uninvolved skin"]
+      },
+      {
+        "gsm": "GSM1561648",
+        "title": "M5050_normal",
+        "source_name": "skin",
+        "group": "control",
+        "condition": "normal skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: normal skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "normal skin"
+        },
+        "raw_lines": ["tissue type: normal skin"]
+      },
+      {
+        "gsm": "GSM1561649",
+        "title": "M4618_normal",
+        "source_name": "skin",
+        "group": "control",
+        "condition": "normal skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: normal skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "normal skin"
+        },
+        "raw_lines": ["tissue type: normal skin"]
+      },
+      {
+        "gsm": "GSM1561650",
+        "title": "CASP499_psoriatic",
+        "source_name": "skin",
+        "group": "case",
+        "condition": "psoriatic skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: psoriatic skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "psoriatic skin"
+        },
+        "raw_lines": ["tissue type: psoriatic skin"]
+      },
+      {
+        "gsm": "GSM1561651",
+        "title": "6490_psoriatic",
+        "source_name": "skin",
+        "group": "case",
+        "condition": "psoriatic skin",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "skin",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": null,
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: psoriatic skin"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "psoriatic skin"
+        },
+        "raw_lines": ["tissue type: psoriatic skin"]
+      }
     ]
-   },
-   {
-    "gsm": "GSM1561611",
-    "title": "M9037_normal",
-    "source_name": "skin",
-    "group": "control",
-    "condition": "normal skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: normal skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "normal skin"
+  },
+  "contrasts": [
+    {
+      "gse": "GSE63979",
+      "name": "lesional_vs_healthy",
+      "case_label": "psoriasis lesional skin",
+      "control_label": "healthy skin",
+      "case_gsms": [
+        "GSM1561614",
+        "GSM1561615",
+        "GSM1561616",
+        "GSM1561618",
+        "GSM1561641",
+        "GSM1561650",
+        "GSM1561651"
+      ],
+      "control_gsms": [
+        "GSM1561610",
+        "GSM1561611",
+        "GSM1561612",
+        "GSM1561613",
+        "GSM1561617",
+        "GSM1561623",
+        "GSM1561648",
+        "GSM1561649"
+      ],
+      "blocking": null,
+      "restricted_to": {},
+      "confidence": 1.0,
+      "status": "confirmed",
+      "rationale": "7 vs 8; 27 uninvolved samples kept as 'other'."
+    }
+  ],
+  "markers": [
+    {
+      "symbol": "S100A7",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue type: normal skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561612",
-    "title": "M9048_normal",
-    "source_name": "skin",
-    "group": "control",
-    "condition": "normal skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: normal skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "normal skin"
+    {
+      "symbol": "S100A8",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue type: normal skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561613",
-    "title": "M4124_normal",
-    "source_name": "skin",
-    "group": "control",
-    "condition": "normal skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: normal skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "normal skin"
+    {
+      "symbol": "S100A9",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue type: normal skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561614",
-    "title": "M953_psoriatic",
-    "source_name": "skin",
-    "group": "case",
-    "condition": "psoriatic skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: psoriatic skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "psoriatic skin"
+    {
+      "symbol": "DEFB4A",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue type: psoriatic skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561615",
-    "title": "M3023_psoriatic",
-    "source_name": "skin",
-    "group": "case",
-    "condition": "psoriatic skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: psoriatic skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "psoriatic skin"
+    {
+      "symbol": "KRT16",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue type: psoriatic skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561616",
-    "title": "M3822_psoriatic",
-    "source_name": "skin",
-    "group": "case",
-    "condition": "psoriatic skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: psoriatic skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "psoriatic skin"
+    {
+      "symbol": "PI3",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue type: psoriatic skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561617",
-    "title": "M5064_normal",
-    "source_name": "skin",
-    "group": "control",
-    "condition": "normal skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: normal skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "normal skin"
+    {
+      "symbol": "IL36G",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue type: normal skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561618",
-    "title": "M4247_psoriatic",
-    "source_name": "skin",
-    "group": "case",
-    "condition": "psoriatic skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: psoriatic skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "psoriatic skin"
-    },
-    "raw_lines": [
-     "tissue type: psoriatic skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561619",
-    "title": "M7832_uninvolved",
-    "source_name": "skin",
-    "group": "other",
-    "condition": "Uninvolved skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: Uninvolved skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "Uninvolved skin"
-    },
-    "raw_lines": [
-     "tissue type: Uninvolved skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561620",
-    "title": "M8481_uninvolved",
-    "source_name": "skin",
-    "group": "other",
-    "condition": "Uninvolved skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: Uninvolved skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "Uninvolved skin"
-    },
-    "raw_lines": [
-     "tissue type: Uninvolved skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561621",
-    "title": "M8483_uninvolved",
-    "source_name": "skin",
-    "group": "other",
-    "condition": "Uninvolved skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: Uninvolved skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "Uninvolved skin"
-    },
-    "raw_lines": [
-     "tissue type: Uninvolved skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561622",
-    "title": "M8485_uninvolved",
-    "source_name": "skin",
-    "group": "other",
-    "condition": "Uninvolved skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: Uninvolved skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "Uninvolved skin"
-    },
-    "raw_lines": [
-     "tissue type: Uninvolved skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561623",
-    "title": "M4992_normal",
-    "source_name": "skin",
-    "group": "control",
-    "condition": "normal skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: normal skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "normal skin"
-    },
-    "raw_lines": [
-     "tissue type: normal skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561624",
-    "title": "M6346_uninvolved",
-    "source_name": "skin",
-    "group": "other",
-    "condition": "Uninvolved skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: Uninvolved skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "Uninvolved skin"
-    },
-    "raw_lines": [
-     "tissue type: Uninvolved skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561625",
-    "title": "M7807_uninvolved",
-    "source_name": "skin",
-    "group": "other",
-    "condition": "Uninvolved skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: Uninvolved skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "Uninvolved skin"
-    },
-    "raw_lines": [
-     "tissue type: Uninvolved skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561626",
-    "title": "M856_uninvolved",
-    "source_name": "skin",
-    "group": "other",
-    "condition": "Uninvolved skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: Uninvolved skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "Uninvolved skin"
-    },
-    "raw_lines": [
-     "tissue type: Uninvolved skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561627",
-    "title": "M4390_uninvolved",
-    "source_name": "skin",
-    "group": "other",
-    "condition": "Uninvolved skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: Uninvolved skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "Uninvolved skin"
-    },
-    "raw_lines": [
-     "tissue type: Uninvolved skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561628",
-    "title": "M4271_uninvolved",
-    "source_name": "skin",
-    "group": "other",
-    "condition": "Uninvolved skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: Uninvolved skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "Uninvolved skin"
-    },
-    "raw_lines": [
-     "tissue type: Uninvolved skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561629",
-    "title": "M7264_uninvolved",
-    "source_name": "skin",
-    "group": "other",
-    "condition": "Uninvolved skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: Uninvolved skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "Uninvolved skin"
-    },
-    "raw_lines": [
-     "tissue type: Uninvolved skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561630",
-    "title": "M7305_uninvolved",
-    "source_name": "skin",
-    "group": "other",
-    "condition": "Uninvolved skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: Uninvolved skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "Uninvolved skin"
-    },
-    "raw_lines": [
-     "tissue type: Uninvolved skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561631",
-    "title": "M8704_uninvolved",
-    "source_name": "skin",
-    "group": "other",
-    "condition": "Uninvolved skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: Uninvolved skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "Uninvolved skin"
-    },
-    "raw_lines": [
-     "tissue type: Uninvolved skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561632",
-    "title": "M8771_uninvolved",
-    "source_name": "skin",
-    "group": "other",
-    "condition": "Uninvolved skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: Uninvolved skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "Uninvolved skin"
-    },
-    "raw_lines": [
-     "tissue type: Uninvolved skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561633",
-    "title": "M5130_uninvolved",
-    "source_name": "skin",
-    "group": "other",
-    "condition": "Uninvolved skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: Uninvolved skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "Uninvolved skin"
-    },
-    "raw_lines": [
-     "tissue type: Uninvolved skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561634",
-    "title": "M5219_uninvolved",
-    "source_name": "skin",
-    "group": "other",
-    "condition": "Uninvolved skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: Uninvolved skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "Uninvolved skin"
-    },
-    "raw_lines": [
-     "tissue type: Uninvolved skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561635",
-    "title": "M6844_uninvolved",
-    "source_name": "skin",
-    "group": "other",
-    "condition": "Uninvolved skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: Uninvolved skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "Uninvolved skin"
-    },
-    "raw_lines": [
-     "tissue type: Uninvolved skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561636",
-    "title": "M7838_uninvolved",
-    "source_name": "skin",
-    "group": "other",
-    "condition": "Uninvolved skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: Uninvolved skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "Uninvolved skin"
-    },
-    "raw_lines": [
-     "tissue type: Uninvolved skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561637",
-    "title": "M7912_uninvolved",
-    "source_name": "skin",
-    "group": "other",
-    "condition": "Uninvolved skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: Uninvolved skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "Uninvolved skin"
-    },
-    "raw_lines": [
-     "tissue type: Uninvolved skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561638",
-    "title": "M8487_uninvolved",
-    "source_name": "skin",
-    "group": "other",
-    "condition": "Uninvolved skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: Uninvolved skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "Uninvolved skin"
-    },
-    "raw_lines": [
-     "tissue type: Uninvolved skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561639",
-    "title": "M8554_uninvolved",
-    "source_name": "skin",
-    "group": "other",
-    "condition": "Uninvolved skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: Uninvolved skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "Uninvolved skin"
-    },
-    "raw_lines": [
-     "tissue type: Uninvolved skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561640",
-    "title": "M9132_uninvolved",
-    "source_name": "skin",
-    "group": "other",
-    "condition": "Uninvolved skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: Uninvolved skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "Uninvolved skin"
-    },
-    "raw_lines": [
-     "tissue type: Uninvolved skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561641",
-    "title": "M5997_psoriatic",
-    "source_name": "skin",
-    "group": "case",
-    "condition": "psoriatic skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: psoriatic skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "psoriatic skin"
-    },
-    "raw_lines": [
-     "tissue type: psoriatic skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561642",
-    "title": "M8815_uninvolved",
-    "source_name": "skin",
-    "group": "other",
-    "condition": "Uninvolved skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: Uninvolved skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "Uninvolved skin"
-    },
-    "raw_lines": [
-     "tissue type: Uninvolved skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561643",
-    "title": "M9081_uninvolved",
-    "source_name": "skin",
-    "group": "other",
-    "condition": "Uninvolved skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: Uninvolved skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "Uninvolved skin"
-    },
-    "raw_lines": [
-     "tissue type: Uninvolved skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561644",
-    "title": "M8755_uninvolved",
-    "source_name": "skin",
-    "group": "other",
-    "condition": "Uninvolved skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: Uninvolved skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "Uninvolved skin"
-    },
-    "raw_lines": [
-     "tissue type: Uninvolved skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561645",
-    "title": "M8470_uninvolved",
-    "source_name": "skin",
-    "group": "other",
-    "condition": "Uninvolved skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: Uninvolved skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "Uninvolved skin"
-    },
-    "raw_lines": [
-     "tissue type: Uninvolved skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561646",
-    "title": "M8492_uninvolved",
-    "source_name": "skin",
-    "group": "other",
-    "condition": "Uninvolved skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: Uninvolved skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "Uninvolved skin"
-    },
-    "raw_lines": [
-     "tissue type: Uninvolved skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561647",
-    "title": "M5385_uninvolved",
-    "source_name": "skin",
-    "group": "other",
-    "condition": "Uninvolved skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: Uninvolved skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "Uninvolved skin"
-    },
-    "raw_lines": [
-     "tissue type: Uninvolved skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561648",
-    "title": "M5050_normal",
-    "source_name": "skin",
-    "group": "control",
-    "condition": "normal skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: normal skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "normal skin"
-    },
-    "raw_lines": [
-     "tissue type: normal skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561649",
-    "title": "M4618_normal",
-    "source_name": "skin",
-    "group": "control",
-    "condition": "normal skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: normal skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "normal skin"
-    },
-    "raw_lines": [
-     "tissue type: normal skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561650",
-    "title": "CASP499_psoriatic",
-    "source_name": "skin",
-    "group": "case",
-    "condition": "psoriatic skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: psoriatic skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "psoriatic skin"
-    },
-    "raw_lines": [
-     "tissue type: psoriatic skin"
-    ]
-   },
-   {
-    "gsm": "GSM1561651",
-    "title": "6490_psoriatic",
-    "source_name": "skin",
-    "group": "case",
-    "condition": "psoriatic skin",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "skin",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": null,
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: psoriatic skin"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "psoriatic skin"
-    },
-    "raw_lines": [
-     "tissue type: psoriatic skin"
-    ]
-   }
+    {
+      "symbol": "SERPINB4",
+      "direction": "up"
+    }
   ]
- },
- "contrasts": [
-  {
-   "gse": "GSE63979",
-   "name": "lesional_vs_healthy",
-   "case_label": "psoriasis lesional skin",
-   "control_label": "healthy skin",
-   "case_gsms": [
-    "GSM1561614",
-    "GSM1561615",
-    "GSM1561616",
-    "GSM1561618",
-    "GSM1561641",
-    "GSM1561650",
-    "GSM1561651"
-   ],
-   "control_gsms": [
-    "GSM1561610",
-    "GSM1561611",
-    "GSM1561612",
-    "GSM1561613",
-    "GSM1561617",
-    "GSM1561623",
-    "GSM1561648",
-    "GSM1561649"
-   ],
-   "blocking": null,
-   "restricted_to": {},
-   "confidence": 1.0,
-   "status": "confirmed",
-   "rationale": "7 vs 8; 27 uninvolved samples kept as 'other'."
-  }
- ],
- "markers": [
-  {
-   "symbol": "S100A7",
-   "direction": "up"
-  },
-  {
-   "symbol": "S100A8",
-   "direction": "up"
-  },
-  {
-   "symbol": "S100A9",
-   "direction": "up"
-  },
-  {
-   "symbol": "DEFB4A",
-   "direction": "up"
-  },
-  {
-   "symbol": "KRT16",
-   "direction": "up"
-  },
-  {
-   "symbol": "PI3",
-   "direction": "up"
-  },
-  {
-   "symbol": "IL36G",
-   "direction": "up"
-  },
-  {
-   "symbol": "SERPINB4",
-   "direction": "up"
-  }
- ]
 }

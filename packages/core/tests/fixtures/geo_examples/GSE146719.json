@@ -1,260 +1,228 @@
 {
- "samplesheet": {
-  "gse": "GSE146719",
-  "assay": "bulk",
-  "title": "Transcriptome analysis in hepatocellular carcinoma (HCC) tissues",
-  "samples": [
-   {
-    "gsm": "GSM4404637",
-    "title": "HCC tissue 1 [RNA-seq]",
-    "source_name": "138011T",
-    "group": "case",
-    "condition": "tumor tissue",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "138011",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: tumor tissue"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "tumor tissue"
-    },
-    "raw_lines": [
-     "tissue type: tumor tissue"
+  "samplesheet": {
+    "gse": "GSE146719",
+    "assay": "bulk",
+    "title": "Transcriptome analysis in hepatocellular carcinoma (HCC) tissues",
+    "samples": [
+      {
+        "gsm": "GSM4404637",
+        "title": "HCC tissue 1 [RNA-seq]",
+        "source_name": "138011T",
+        "group": "case",
+        "condition": "tumor tissue",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "138011",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: tumor tissue"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "tumor tissue"
+        },
+        "raw_lines": ["tissue type: tumor tissue"]
+      },
+      {
+        "gsm": "GSM4404638",
+        "title": "pared non-tumorous tissue 1 [RNA-seq]",
+        "source_name": "138011N",
+        "group": "control",
+        "condition": "paird non-tumor tissue",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "138011",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: paird non-tumor tissue"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "paird non-tumor tissue"
+        },
+        "raw_lines": ["tissue type: paird non-tumor tissue"]
+      },
+      {
+        "gsm": "GSM4404639",
+        "title": "HCC tissue 2 [RNA-seq]",
+        "source_name": "138228T",
+        "group": "case",
+        "condition": "tumor tissue",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "138228",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: tumor tissue"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "tumor tissue"
+        },
+        "raw_lines": ["tissue type: tumor tissue"]
+      },
+      {
+        "gsm": "GSM4404640",
+        "title": "pared non-tumorous tissue 2 [RNA-seq]",
+        "source_name": "138228N",
+        "group": "control",
+        "condition": "paird non-tumor tissue",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "138228",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: paird non-tumor tissue"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "paird non-tumor tissue"
+        },
+        "raw_lines": ["tissue type: paird non-tumor tissue"]
+      },
+      {
+        "gsm": "GSM4404641",
+        "title": "HCC tissue 3 [RNA-seq]",
+        "source_name": "138239T",
+        "group": "case",
+        "condition": "tumor tissue",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "138239",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: tumor tissue"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "tumor tissue"
+        },
+        "raw_lines": ["tissue type: tumor tissue"]
+      },
+      {
+        "gsm": "GSM4404642",
+        "title": "pared non-tumorous tissue 3 [RNA-seq]",
+        "source_name": "138239N",
+        "group": "control",
+        "condition": "paird non-tumor tissue",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "138239",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue type: paird non-tumor tissue"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue type": "paird non-tumor tissue"
+        },
+        "raw_lines": ["tissue type: paird non-tumor tissue"]
+      }
     ]
-   },
-   {
-    "gsm": "GSM4404638",
-    "title": "pared non-tumorous tissue 1 [RNA-seq]",
-    "source_name": "138011N",
-    "group": "control",
-    "condition": "paird non-tumor tissue",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "138011",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: paird non-tumor tissue"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "paird non-tumor tissue"
+  },
+  "contrasts": [
+    {
+      "gse": "GSE146719",
+      "name": "tumor_vs_adjacent_normal",
+      "case_label": "HCC tumor",
+      "control_label": "adjacent non-tumor liver",
+      "case_gsms": ["GSM4404637", "GSM4404639", "GSM4404641"],
+      "control_gsms": ["GSM4404638", "GSM4404640", "GSM4404642"],
+      "blocking": "donor",
+      "restricted_to": {},
+      "confidence": 1.0,
+      "status": "confirmed",
+      "rationale": "3 pairs of RNA-seq; the 6 miRNA-seq GSMs are another assay, excluded."
+    }
+  ],
+  "markers": [
+    {
+      "symbol": "GPC3",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue type: paird non-tumor tissue"
-    ]
-   },
-   {
-    "gsm": "GSM4404639",
-    "title": "HCC tissue 2 [RNA-seq]",
-    "source_name": "138228T",
-    "group": "case",
-    "condition": "tumor tissue",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "138228",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: tumor tissue"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "tumor tissue"
+    {
+      "symbol": "AFP",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue type: tumor tissue"
-    ]
-   },
-   {
-    "gsm": "GSM4404640",
-    "title": "pared non-tumorous tissue 2 [RNA-seq]",
-    "source_name": "138228N",
-    "group": "control",
-    "condition": "paird non-tumor tissue",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "138228",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: paird non-tumor tissue"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "paird non-tumor tissue"
+    {
+      "symbol": "SPP1",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue type: paird non-tumor tissue"
-    ]
-   },
-   {
-    "gsm": "GSM4404641",
-    "title": "HCC tissue 3 [RNA-seq]",
-    "source_name": "138239T",
-    "group": "case",
-    "condition": "tumor tissue",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "138239",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: tumor tissue"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "tumor tissue"
+    {
+      "symbol": "MDK",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue type: tumor tissue"
-    ]
-   },
-   {
-    "gsm": "GSM4404642",
-    "title": "pared non-tumorous tissue 3 [RNA-seq]",
-    "source_name": "138239N",
-    "group": "control",
-    "condition": "paird non-tumor tissue",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "138239",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue type: paird non-tumor tissue"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue type": "paird non-tumor tissue"
+    {
+      "symbol": "PEG10",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue type: paird non-tumor tissue"
-    ]
-   }
+    {
+      "symbol": "CLEC4G",
+      "direction": "down"
+    },
+    {
+      "symbol": "CLEC1B",
+      "direction": "down"
+    },
+    {
+      "symbol": "FCN3",
+      "direction": "down"
+    },
+    {
+      "symbol": "CRHBP",
+      "direction": "down"
+    },
+    {
+      "symbol": "CYP1A2",
+      "direction": "down"
+    }
   ]
- },
- "contrasts": [
-  {
-   "gse": "GSE146719",
-   "name": "tumor_vs_adjacent_normal",
-   "case_label": "HCC tumor",
-   "control_label": "adjacent non-tumor liver",
-   "case_gsms": [
-    "GSM4404637",
-    "GSM4404639",
-    "GSM4404641"
-   ],
-   "control_gsms": [
-    "GSM4404638",
-    "GSM4404640",
-    "GSM4404642"
-   ],
-   "blocking": "donor",
-   "restricted_to": {},
-   "confidence": 1.0,
-   "status": "confirmed",
-   "rationale": "3 pairs of RNA-seq; the 6 miRNA-seq GSMs are another assay, excluded."
-  }
- ],
- "markers": [
-  {
-   "symbol": "GPC3",
-   "direction": "up"
-  },
-  {
-   "symbol": "AFP",
-   "direction": "up"
-  },
-  {
-   "symbol": "SPP1",
-   "direction": "up"
-  },
-  {
-   "symbol": "MDK",
-   "direction": "up"
-  },
-  {
-   "symbol": "PEG10",
-   "direction": "up"
-  },
-  {
-   "symbol": "CLEC4G",
-   "direction": "down"
-  },
-  {
-   "symbol": "CLEC1B",
-   "direction": "down"
-  },
-  {
-   "symbol": "FCN3",
-   "direction": "down"
-  },
-  {
-   "symbol": "CRHBP",
-   "direction": "down"
-  },
-  {
-   "symbol": "CYP1A2",
-   "direction": "down"
-  }
- ]
 }

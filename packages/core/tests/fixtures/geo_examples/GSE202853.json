@@ -1,748 +1,648 @@
 {
- "samplesheet": {
-  "gse": "GSE202853",
-  "assay": "bulk",
-  "title": "Transcriptome analysis of hepatocellular carcinoma and adjacent non-tumor liver tissues [I]",
-  "samples": [
-   {
-    "gsm": "GSM6134590",
-    "title": "HCC_1_N",
-    "source_name": "liver tumor",
-    "group": "case",
-    "condition": "Hepatocellular carcinoma",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": "female",
-    "age": null,
-    "donor": "HCC_1",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Hepatocellular carcinoma"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "Hepatocellular carcinoma",
-     "gender": "female"
-    },
-    "raw_lines": [
-     "tissue: Hepatocellular carcinoma",
-     "gender: female"
+  "samplesheet": {
+    "gse": "GSE202853",
+    "assay": "bulk",
+    "title": "Transcriptome analysis of hepatocellular carcinoma and adjacent non-tumor liver tissues [I]",
+    "samples": [
+      {
+        "gsm": "GSM6134590",
+        "title": "HCC_1_N",
+        "source_name": "liver tumor",
+        "group": "case",
+        "condition": "Hepatocellular carcinoma",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": "female",
+        "age": null,
+        "donor": "HCC_1",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Hepatocellular carcinoma"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "Hepatocellular carcinoma",
+          "gender": "female"
+        },
+        "raw_lines": ["tissue: Hepatocellular carcinoma", "gender: female"]
+      },
+      {
+        "gsm": "GSM6134591",
+        "title": "HCC_1_T",
+        "source_name": "normal liver tissue adjacent to tumor",
+        "group": "control",
+        "condition": "normal liver",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": "female",
+        "age": null,
+        "donor": "HCC_1",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: normal liver"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "normal liver",
+          "gender": "female"
+        },
+        "raw_lines": ["tissue: normal liver", "gender: female"]
+      },
+      {
+        "gsm": "GSM6134592",
+        "title": "HCC_12_N",
+        "source_name": "liver tumor",
+        "group": "case",
+        "condition": "Hepatocellular carcinoma",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": "male",
+        "age": null,
+        "donor": "HCC_12",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Hepatocellular carcinoma"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "Hepatocellular carcinoma",
+          "gender": "male"
+        },
+        "raw_lines": ["tissue: Hepatocellular carcinoma", "gender: male"]
+      },
+      {
+        "gsm": "GSM6134593",
+        "title": "HCC_12_T",
+        "source_name": "normal liver tissue adjacent to tumor",
+        "group": "control",
+        "condition": "normal liver",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": "male",
+        "age": null,
+        "donor": "HCC_12",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: normal liver"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "normal liver",
+          "gender": "male"
+        },
+        "raw_lines": ["tissue: normal liver", "gender: male"]
+      },
+      {
+        "gsm": "GSM6134594",
+        "title": "HCC_13_N",
+        "source_name": "liver tumor",
+        "group": "case",
+        "condition": "Hepatocellular carcinoma",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": "male",
+        "age": null,
+        "donor": "HCC_13",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Hepatocellular carcinoma"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "Hepatocellular carcinoma",
+          "gender": "male"
+        },
+        "raw_lines": ["tissue: Hepatocellular carcinoma", "gender: male"]
+      },
+      {
+        "gsm": "GSM6134595",
+        "title": "HCC_13_T",
+        "source_name": "normal liver tissue adjacent to tumor",
+        "group": "control",
+        "condition": "normal liver",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": "male",
+        "age": null,
+        "donor": "HCC_13",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: normal liver"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "normal liver",
+          "gender": "male"
+        },
+        "raw_lines": ["tissue: normal liver", "gender: male"]
+      },
+      {
+        "gsm": "GSM6134596",
+        "title": "HCC_15_N",
+        "source_name": "liver tumor",
+        "group": "case",
+        "condition": "Hepatocellular carcinoma",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": "male",
+        "age": null,
+        "donor": "HCC_15",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Hepatocellular carcinoma"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "Hepatocellular carcinoma",
+          "gender": "male"
+        },
+        "raw_lines": ["tissue: Hepatocellular carcinoma", "gender: male"]
+      },
+      {
+        "gsm": "GSM6134597",
+        "title": "HCC_15_T",
+        "source_name": "normal liver tissue adjacent to tumor",
+        "group": "control",
+        "condition": "normal liver",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": "male",
+        "age": null,
+        "donor": "HCC_15",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: normal liver"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "normal liver",
+          "gender": "male"
+        },
+        "raw_lines": ["tissue: normal liver", "gender: male"]
+      },
+      {
+        "gsm": "GSM6134598",
+        "title": "HCC_19_N",
+        "source_name": "liver tumor",
+        "group": "case",
+        "condition": "Hepatocellular carcinoma",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": "male",
+        "age": null,
+        "donor": "HCC_19",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Hepatocellular carcinoma"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "Hepatocellular carcinoma",
+          "gender": "male"
+        },
+        "raw_lines": ["tissue: Hepatocellular carcinoma", "gender: male"]
+      },
+      {
+        "gsm": "GSM6134599",
+        "title": "HCC_19_T",
+        "source_name": "normal liver tissue adjacent to tumor",
+        "group": "control",
+        "condition": "normal liver",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": "male",
+        "age": null,
+        "donor": "HCC_19",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: normal liver"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "normal liver",
+          "gender": "male"
+        },
+        "raw_lines": ["tissue: normal liver", "gender: male"]
+      },
+      {
+        "gsm": "GSM6134600",
+        "title": "HCC_34_N",
+        "source_name": "liver tumor",
+        "group": "case",
+        "condition": "Hepatocellular carcinoma",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": "female",
+        "age": null,
+        "donor": "HCC_34",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Hepatocellular carcinoma"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "Hepatocellular carcinoma",
+          "gender": "female"
+        },
+        "raw_lines": ["tissue: Hepatocellular carcinoma", "gender: female"]
+      },
+      {
+        "gsm": "GSM6134601",
+        "title": "HCC_34_T",
+        "source_name": "normal liver tissue adjacent to tumor",
+        "group": "control",
+        "condition": "normal liver",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": "female",
+        "age": null,
+        "donor": "HCC_34",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: normal liver"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "normal liver",
+          "gender": "female"
+        },
+        "raw_lines": ["tissue: normal liver", "gender: female"]
+      },
+      {
+        "gsm": "GSM6134602",
+        "title": "HCC_36_N",
+        "source_name": "liver tumor",
+        "group": "case",
+        "condition": "Hepatocellular carcinoma",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": "female",
+        "age": null,
+        "donor": "HCC_36",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Hepatocellular carcinoma"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "Hepatocellular carcinoma",
+          "gender": "female"
+        },
+        "raw_lines": ["tissue: Hepatocellular carcinoma", "gender: female"]
+      },
+      {
+        "gsm": "GSM6134603",
+        "title": "HCC_36_T",
+        "source_name": "normal liver tissue adjacent to tumor",
+        "group": "control",
+        "condition": "normal liver",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": "female",
+        "age": null,
+        "donor": "HCC_36",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: normal liver"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "normal liver",
+          "gender": "female"
+        },
+        "raw_lines": ["tissue: normal liver", "gender: female"]
+      },
+      {
+        "gsm": "GSM6134604",
+        "title": "HCC_37_N",
+        "source_name": "liver tumor",
+        "group": "case",
+        "condition": "Hepatocellular carcinoma",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": "male",
+        "age": null,
+        "donor": "HCC_37",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Hepatocellular carcinoma"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "Hepatocellular carcinoma",
+          "gender": "male"
+        },
+        "raw_lines": ["tissue: Hepatocellular carcinoma", "gender: male"]
+      },
+      {
+        "gsm": "GSM6134605",
+        "title": "HCC_37_T",
+        "source_name": "normal liver tissue adjacent to tumor",
+        "group": "control",
+        "condition": "normal liver",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": "male",
+        "age": null,
+        "donor": "HCC_37",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: normal liver"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "normal liver",
+          "gender": "male"
+        },
+        "raw_lines": ["tissue: normal liver", "gender: male"]
+      },
+      {
+        "gsm": "GSM6134606",
+        "title": "HCC_77_N",
+        "source_name": "liver tumor",
+        "group": "case",
+        "condition": "Hepatocellular carcinoma",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": "male",
+        "age": null,
+        "donor": "HCC_77",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Hepatocellular carcinoma"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "Hepatocellular carcinoma",
+          "gender": "male"
+        },
+        "raw_lines": ["tissue: Hepatocellular carcinoma", "gender: male"]
+      },
+      {
+        "gsm": "GSM6134607",
+        "title": "HCC_77_T",
+        "source_name": "normal liver tissue adjacent to tumor",
+        "group": "control",
+        "condition": "normal liver",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": "male",
+        "age": null,
+        "donor": "HCC_77",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: normal liver"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "normal liver",
+          "gender": "male"
+        },
+        "raw_lines": ["tissue: normal liver", "gender: male"]
+      },
+      {
+        "gsm": "GSM6134608",
+        "title": "HCC_122_N",
+        "source_name": "liver tumor",
+        "group": "case",
+        "condition": "Hepatocellular carcinoma",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": "male",
+        "age": null,
+        "donor": "HCC_122",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Hepatocellular carcinoma"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "Hepatocellular carcinoma",
+          "gender": "male"
+        },
+        "raw_lines": ["tissue: Hepatocellular carcinoma", "gender: male"]
+      },
+      {
+        "gsm": "GSM6134609",
+        "title": "HCC_122_T",
+        "source_name": "normal liver tissue adjacent to tumor",
+        "group": "control",
+        "condition": "normal liver",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": "male",
+        "age": null,
+        "donor": "HCC_122",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: normal liver"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "normal liver",
+          "gender": "male"
+        },
+        "raw_lines": ["tissue: normal liver", "gender: male"]
+      }
     ]
-   },
-   {
-    "gsm": "GSM6134591",
-    "title": "HCC_1_T",
-    "source_name": "normal liver tissue adjacent to tumor",
-    "group": "control",
-    "condition": "normal liver",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": "female",
-    "age": null,
-    "donor": "HCC_1",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: normal liver"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "normal liver",
-     "gender": "female"
+  },
+  "contrasts": [
+    {
+      "gse": "GSE202853",
+      "name": "tumor_vs_adjacent_normal",
+      "case_label": "HCC tumor",
+      "control_label": "adjacent non-tumor liver",
+      "case_gsms": [
+        "GSM6134590",
+        "GSM6134592",
+        "GSM6134594",
+        "GSM6134596",
+        "GSM6134598",
+        "GSM6134600",
+        "GSM6134602",
+        "GSM6134604",
+        "GSM6134606",
+        "GSM6134608"
+      ],
+      "control_gsms": [
+        "GSM6134591",
+        "GSM6134593",
+        "GSM6134595",
+        "GSM6134597",
+        "GSM6134599",
+        "GSM6134601",
+        "GSM6134603",
+        "GSM6134605",
+        "GSM6134607",
+        "GSM6134609"
+      ],
+      "blocking": "donor",
+      "restricted_to": {},
+      "confidence": 1.0,
+      "status": "confirmed",
+      "rationale": "10 pairs; SubSeries [I] of a SuperSeries, so check GSM overlap."
+    }
+  ],
+  "markers": [
+    {
+      "symbol": "GPC3",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue: normal liver",
-     "gender: female"
-    ]
-   },
-   {
-    "gsm": "GSM6134592",
-    "title": "HCC_12_N",
-    "source_name": "liver tumor",
-    "group": "case",
-    "condition": "Hepatocellular carcinoma",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": "male",
-    "age": null,
-    "donor": "HCC_12",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Hepatocellular carcinoma"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "Hepatocellular carcinoma",
-     "gender": "male"
+    {
+      "symbol": "AFP",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue: Hepatocellular carcinoma",
-     "gender: male"
-    ]
-   },
-   {
-    "gsm": "GSM6134593",
-    "title": "HCC_12_T",
-    "source_name": "normal liver tissue adjacent to tumor",
-    "group": "control",
-    "condition": "normal liver",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": "male",
-    "age": null,
-    "donor": "HCC_12",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: normal liver"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "normal liver",
-     "gender": "male"
+    {
+      "symbol": "SPP1",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue: normal liver",
-     "gender: male"
-    ]
-   },
-   {
-    "gsm": "GSM6134594",
-    "title": "HCC_13_N",
-    "source_name": "liver tumor",
-    "group": "case",
-    "condition": "Hepatocellular carcinoma",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": "male",
-    "age": null,
-    "donor": "HCC_13",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Hepatocellular carcinoma"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "Hepatocellular carcinoma",
-     "gender": "male"
+    {
+      "symbol": "MDK",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue: Hepatocellular carcinoma",
-     "gender: male"
-    ]
-   },
-   {
-    "gsm": "GSM6134595",
-    "title": "HCC_13_T",
-    "source_name": "normal liver tissue adjacent to tumor",
-    "group": "control",
-    "condition": "normal liver",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": "male",
-    "age": null,
-    "donor": "HCC_13",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: normal liver"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "normal liver",
-     "gender": "male"
+    {
+      "symbol": "PEG10",
+      "direction": "up"
     },
-    "raw_lines": [
-     "tissue: normal liver",
-     "gender: male"
-    ]
-   },
-   {
-    "gsm": "GSM6134596",
-    "title": "HCC_15_N",
-    "source_name": "liver tumor",
-    "group": "case",
-    "condition": "Hepatocellular carcinoma",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": "male",
-    "age": null,
-    "donor": "HCC_15",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Hepatocellular carcinoma"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "Hepatocellular carcinoma",
-     "gender": "male"
+    {
+      "symbol": "CLEC4G",
+      "direction": "down"
     },
-    "raw_lines": [
-     "tissue: Hepatocellular carcinoma",
-     "gender: male"
-    ]
-   },
-   {
-    "gsm": "GSM6134597",
-    "title": "HCC_15_T",
-    "source_name": "normal liver tissue adjacent to tumor",
-    "group": "control",
-    "condition": "normal liver",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": "male",
-    "age": null,
-    "donor": "HCC_15",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: normal liver"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "normal liver",
-     "gender": "male"
+    {
+      "symbol": "CLEC1B",
+      "direction": "down"
     },
-    "raw_lines": [
-     "tissue: normal liver",
-     "gender: male"
-    ]
-   },
-   {
-    "gsm": "GSM6134598",
-    "title": "HCC_19_N",
-    "source_name": "liver tumor",
-    "group": "case",
-    "condition": "Hepatocellular carcinoma",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": "male",
-    "age": null,
-    "donor": "HCC_19",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Hepatocellular carcinoma"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "Hepatocellular carcinoma",
-     "gender": "male"
+    {
+      "symbol": "FCN3",
+      "direction": "down"
     },
-    "raw_lines": [
-     "tissue: Hepatocellular carcinoma",
-     "gender: male"
-    ]
-   },
-   {
-    "gsm": "GSM6134599",
-    "title": "HCC_19_T",
-    "source_name": "normal liver tissue adjacent to tumor",
-    "group": "control",
-    "condition": "normal liver",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": "male",
-    "age": null,
-    "donor": "HCC_19",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: normal liver"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "normal liver",
-     "gender": "male"
+    {
+      "symbol": "CRHBP",
+      "direction": "down"
     },
-    "raw_lines": [
-     "tissue: normal liver",
-     "gender: male"
-    ]
-   },
-   {
-    "gsm": "GSM6134600",
-    "title": "HCC_34_N",
-    "source_name": "liver tumor",
-    "group": "case",
-    "condition": "Hepatocellular carcinoma",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": "female",
-    "age": null,
-    "donor": "HCC_34",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Hepatocellular carcinoma"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "Hepatocellular carcinoma",
-     "gender": "female"
-    },
-    "raw_lines": [
-     "tissue: Hepatocellular carcinoma",
-     "gender: female"
-    ]
-   },
-   {
-    "gsm": "GSM6134601",
-    "title": "HCC_34_T",
-    "source_name": "normal liver tissue adjacent to tumor",
-    "group": "control",
-    "condition": "normal liver",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": "female",
-    "age": null,
-    "donor": "HCC_34",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: normal liver"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "normal liver",
-     "gender": "female"
-    },
-    "raw_lines": [
-     "tissue: normal liver",
-     "gender: female"
-    ]
-   },
-   {
-    "gsm": "GSM6134602",
-    "title": "HCC_36_N",
-    "source_name": "liver tumor",
-    "group": "case",
-    "condition": "Hepatocellular carcinoma",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": "female",
-    "age": null,
-    "donor": "HCC_36",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Hepatocellular carcinoma"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "Hepatocellular carcinoma",
-     "gender": "female"
-    },
-    "raw_lines": [
-     "tissue: Hepatocellular carcinoma",
-     "gender: female"
-    ]
-   },
-   {
-    "gsm": "GSM6134603",
-    "title": "HCC_36_T",
-    "source_name": "normal liver tissue adjacent to tumor",
-    "group": "control",
-    "condition": "normal liver",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": "female",
-    "age": null,
-    "donor": "HCC_36",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: normal liver"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "normal liver",
-     "gender": "female"
-    },
-    "raw_lines": [
-     "tissue: normal liver",
-     "gender: female"
-    ]
-   },
-   {
-    "gsm": "GSM6134604",
-    "title": "HCC_37_N",
-    "source_name": "liver tumor",
-    "group": "case",
-    "condition": "Hepatocellular carcinoma",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": "male",
-    "age": null,
-    "donor": "HCC_37",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Hepatocellular carcinoma"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "Hepatocellular carcinoma",
-     "gender": "male"
-    },
-    "raw_lines": [
-     "tissue: Hepatocellular carcinoma",
-     "gender: male"
-    ]
-   },
-   {
-    "gsm": "GSM6134605",
-    "title": "HCC_37_T",
-    "source_name": "normal liver tissue adjacent to tumor",
-    "group": "control",
-    "condition": "normal liver",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": "male",
-    "age": null,
-    "donor": "HCC_37",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: normal liver"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "normal liver",
-     "gender": "male"
-    },
-    "raw_lines": [
-     "tissue: normal liver",
-     "gender: male"
-    ]
-   },
-   {
-    "gsm": "GSM6134606",
-    "title": "HCC_77_N",
-    "source_name": "liver tumor",
-    "group": "case",
-    "condition": "Hepatocellular carcinoma",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": "male",
-    "age": null,
-    "donor": "HCC_77",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Hepatocellular carcinoma"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "Hepatocellular carcinoma",
-     "gender": "male"
-    },
-    "raw_lines": [
-     "tissue: Hepatocellular carcinoma",
-     "gender: male"
-    ]
-   },
-   {
-    "gsm": "GSM6134607",
-    "title": "HCC_77_T",
-    "source_name": "normal liver tissue adjacent to tumor",
-    "group": "control",
-    "condition": "normal liver",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": "male",
-    "age": null,
-    "donor": "HCC_77",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: normal liver"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "normal liver",
-     "gender": "male"
-    },
-    "raw_lines": [
-     "tissue: normal liver",
-     "gender: male"
-    ]
-   },
-   {
-    "gsm": "GSM6134608",
-    "title": "HCC_122_N",
-    "source_name": "liver tumor",
-    "group": "case",
-    "condition": "Hepatocellular carcinoma",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": "male",
-    "age": null,
-    "donor": "HCC_122",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Hepatocellular carcinoma"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "Hepatocellular carcinoma",
-     "gender": "male"
-    },
-    "raw_lines": [
-     "tissue: Hepatocellular carcinoma",
-     "gender: male"
-    ]
-   },
-   {
-    "gsm": "GSM6134609",
-    "title": "HCC_122_T",
-    "source_name": "normal liver tissue adjacent to tumor",
-    "group": "control",
-    "condition": "normal liver",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": "male",
-    "age": null,
-    "donor": "HCC_122",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: normal liver"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "normal liver",
-     "gender": "male"
-    },
-    "raw_lines": [
-     "tissue: normal liver",
-     "gender: male"
-    ]
-   }
+    {
+      "symbol": "CYP1A2",
+      "direction": "down"
+    }
   ]
- },
- "contrasts": [
-  {
-   "gse": "GSE202853",
-   "name": "tumor_vs_adjacent_normal",
-   "case_label": "HCC tumor",
-   "control_label": "adjacent non-tumor liver",
-   "case_gsms": [
-    "GSM6134590",
-    "GSM6134592",
-    "GSM6134594",
-    "GSM6134596",
-    "GSM6134598",
-    "GSM6134600",
-    "GSM6134602",
-    "GSM6134604",
-    "GSM6134606",
-    "GSM6134608"
-   ],
-   "control_gsms": [
-    "GSM6134591",
-    "GSM6134593",
-    "GSM6134595",
-    "GSM6134597",
-    "GSM6134599",
-    "GSM6134601",
-    "GSM6134603",
-    "GSM6134605",
-    "GSM6134607",
-    "GSM6134609"
-   ],
-   "blocking": "donor",
-   "restricted_to": {},
-   "confidence": 1.0,
-   "status": "confirmed",
-   "rationale": "10 pairs; SubSeries [I] of a SuperSeries, so check GSM overlap."
-  }
- ],
- "markers": [
-  {
-   "symbol": "GPC3",
-   "direction": "up"
-  },
-  {
-   "symbol": "AFP",
-   "direction": "up"
-  },
-  {
-   "symbol": "SPP1",
-   "direction": "up"
-  },
-  {
-   "symbol": "MDK",
-   "direction": "up"
-  },
-  {
-   "symbol": "PEG10",
-   "direction": "up"
-  },
-  {
-   "symbol": "CLEC4G",
-   "direction": "down"
-  },
-  {
-   "symbol": "CLEC1B",
-   "direction": "down"
-  },
-  {
-   "symbol": "FCN3",
-   "direction": "down"
-  },
-  {
-   "symbol": "CRHBP",
-   "direction": "down"
-  },
-  {
-   "symbol": "CYP1A2",
-   "direction": "down"
-  }
- ]
 }

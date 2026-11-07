@@ -1,2448 +1,2098 @@
 {
- "samplesheet": {
-  "gse": "GSE124535",
-  "assay": "bulk",
-  "title": "Gene expression profiles of 35 paired HCC and non-tumor tissues by RNA-seq data",
-  "samples": [
-   {
-    "gsm": "GSM3536049",
-    "title": "L001P",
-    "source_name": "L001P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L001",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536050",
-    "title": "L003P",
-    "source_name": "L003P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L003",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536051",
-    "title": "L004P",
-    "source_name": "L004P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L004",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536052",
-    "title": "L005P",
-    "source_name": "L005P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L005",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536053",
-    "title": "L008P",
-    "source_name": "L008P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L008",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536054",
-    "title": "L010P",
-    "source_name": "L010P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L010",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536055",
-    "title": "L012P",
-    "source_name": "L012P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L012",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536056",
-    "title": "L014P",
-    "source_name": "L014P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L014",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536057",
-    "title": "L016P",
-    "source_name": "L016P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L016",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536058",
-    "title": "L017P",
-    "source_name": "L017P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L017",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536059",
-    "title": "L019P",
-    "source_name": "L019P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L019",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536060",
-    "title": "L021P",
-    "source_name": "L021P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L021",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536061",
-    "title": "L023P",
-    "source_name": "L023P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L023",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536062",
-    "title": "L024P",
-    "source_name": "L024P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L024",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536063",
-    "title": "L025P",
-    "source_name": "L025P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L025",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536064",
-    "title": "L026P",
-    "source_name": "L026P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L026",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536065",
-    "title": "L028P",
-    "source_name": "L028P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L028",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536066",
-    "title": "L030P",
-    "source_name": "L030P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L030",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536067",
-    "title": "L032P",
-    "source_name": "L032P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L032",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536068",
-    "title": "L033P",
-    "source_name": "L033P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L033",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536069",
-    "title": "L035P",
-    "source_name": "L035P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L035",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536070",
-    "title": "L037P",
-    "source_name": "L037P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L037",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536071",
-    "title": "L038P",
-    "source_name": "L038P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L038",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536072",
-    "title": "L039P",
-    "source_name": "L039P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L039",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536073",
-    "title": "L040P",
-    "source_name": "L040P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L040",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536074",
-    "title": "L041P",
-    "source_name": "L041P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L041",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536075",
-    "title": "L042P",
-    "source_name": "L042P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L042",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536076",
-    "title": "L076P",
-    "source_name": "L076P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L076",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536077",
-    "title": "L044P",
-    "source_name": "L044P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L044",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536078",
-    "title": "L045P",
-    "source_name": "L045P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L045",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536079",
-    "title": "L046P",
-    "source_name": "L046P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L046",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536080",
-    "title": "L047P",
-    "source_name": "L047P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L047",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536081",
-    "title": "L048P",
-    "source_name": "L048P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L048",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536082",
-    "title": "L052P",
-    "source_name": "L052P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L052",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536083",
-    "title": "L056P",
-    "source_name": "L056P",
-    "group": "control",
-    "condition": "non-tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L056",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: non-tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "non-tumor",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: non-tumor",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536084",
-    "title": "L001T",
-    "source_name": "L001T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L001",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536085",
-    "title": "L003T",
-    "source_name": "L003T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L003",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536086",
-    "title": "L004T",
-    "source_name": "L004T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L004",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536087",
-    "title": "L005T",
-    "source_name": "L005T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L005",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536088",
-    "title": "L008T",
-    "source_name": "L008T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L008",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536089",
-    "title": "L010T",
-    "source_name": "L010T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L010",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536090",
-    "title": "L012T",
-    "source_name": "L012T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L012",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536091",
-    "title": "L014T",
-    "source_name": "L014T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L014",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536092",
-    "title": "L016T",
-    "source_name": "L016T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L016",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536093",
-    "title": "L017T",
-    "source_name": "L017T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L017",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536094",
-    "title": "L019T",
-    "source_name": "L019T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L019",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536095",
-    "title": "L021T",
-    "source_name": "L021T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L021",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536096",
-    "title": "L023T",
-    "source_name": "L023T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L023",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536097",
-    "title": "L024T",
-    "source_name": "L024T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L024",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536098",
-    "title": "L025T",
-    "source_name": "L025T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L025",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536099",
-    "title": "L026T",
-    "source_name": "L026T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L026",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536100",
-    "title": "L028T",
-    "source_name": "L028T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L028",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536101",
-    "title": "L030T",
-    "source_name": "L030T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L030",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536102",
-    "title": "L032T",
-    "source_name": "L032T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L032",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536103",
-    "title": "L033T",
-    "source_name": "L033T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L033",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536104",
-    "title": "L035T",
-    "source_name": "L035T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L035",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536105",
-    "title": "L037T",
-    "source_name": "L037T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L037",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536106",
-    "title": "L038T",
-    "source_name": "L038T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L038",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536107",
-    "title": "L039T",
-    "source_name": "L039T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L039",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536108",
-    "title": "L040T",
-    "source_name": "L040T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L040",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536109",
-    "title": "L041T",
-    "source_name": "L041T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L041",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536110",
-    "title": "L042T",
-    "source_name": "L042T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L042",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536111",
-    "title": "L076T",
-    "source_name": "L076T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L076",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536112",
-    "title": "L044T",
-    "source_name": "L044T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L044",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536113",
-    "title": "L045T",
-    "source_name": "L045T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L045",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536114",
-    "title": "L046T",
-    "source_name": "L046T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L046",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536115",
-    "title": "L047T",
-    "source_name": "L047T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L047",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536116",
-    "title": "L048T",
-    "source_name": "L048T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L048",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536117",
-    "title": "L052T",
-    "source_name": "L052T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L052",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   },
-   {
-    "gsm": "GSM3536118",
-    "title": "L056T",
-    "source_name": "L056T",
-    "group": "case",
-    "condition": "HCC",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "L056",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: HCC"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "tissue": "HCC",
-     "tumor stage": "early stage"
-    },
-    "raw_lines": [
-     "tissue: HCC",
-     "tumor stage: early stage"
-    ]
-   }
+  "samplesheet": {
+    "gse": "GSE124535",
+    "assay": "bulk",
+    "title": "Gene expression profiles of 35 paired HCC and non-tumor tissues by RNA-seq data",
+    "samples": [
+      {
+        "gsm": "GSM3536049",
+        "title": "L001P",
+        "source_name": "L001P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L001",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536050",
+        "title": "L003P",
+        "source_name": "L003P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L003",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536051",
+        "title": "L004P",
+        "source_name": "L004P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L004",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536052",
+        "title": "L005P",
+        "source_name": "L005P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L005",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536053",
+        "title": "L008P",
+        "source_name": "L008P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L008",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536054",
+        "title": "L010P",
+        "source_name": "L010P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L010",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536055",
+        "title": "L012P",
+        "source_name": "L012P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L012",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536056",
+        "title": "L014P",
+        "source_name": "L014P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L014",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536057",
+        "title": "L016P",
+        "source_name": "L016P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L016",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536058",
+        "title": "L017P",
+        "source_name": "L017P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L017",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536059",
+        "title": "L019P",
+        "source_name": "L019P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L019",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536060",
+        "title": "L021P",
+        "source_name": "L021P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L021",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536061",
+        "title": "L023P",
+        "source_name": "L023P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L023",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536062",
+        "title": "L024P",
+        "source_name": "L024P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L024",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536063",
+        "title": "L025P",
+        "source_name": "L025P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L025",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536064",
+        "title": "L026P",
+        "source_name": "L026P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L026",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536065",
+        "title": "L028P",
+        "source_name": "L028P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L028",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536066",
+        "title": "L030P",
+        "source_name": "L030P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L030",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536067",
+        "title": "L032P",
+        "source_name": "L032P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L032",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536068",
+        "title": "L033P",
+        "source_name": "L033P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L033",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536069",
+        "title": "L035P",
+        "source_name": "L035P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L035",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536070",
+        "title": "L037P",
+        "source_name": "L037P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L037",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536071",
+        "title": "L038P",
+        "source_name": "L038P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L038",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536072",
+        "title": "L039P",
+        "source_name": "L039P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L039",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536073",
+        "title": "L040P",
+        "source_name": "L040P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L040",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536074",
+        "title": "L041P",
+        "source_name": "L041P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L041",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536075",
+        "title": "L042P",
+        "source_name": "L042P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L042",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536076",
+        "title": "L076P",
+        "source_name": "L076P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L076",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536077",
+        "title": "L044P",
+        "source_name": "L044P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L044",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536078",
+        "title": "L045P",
+        "source_name": "L045P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L045",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536079",
+        "title": "L046P",
+        "source_name": "L046P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L046",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536080",
+        "title": "L047P",
+        "source_name": "L047P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L047",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536081",
+        "title": "L048P",
+        "source_name": "L048P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L048",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536082",
+        "title": "L052P",
+        "source_name": "L052P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L052",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536083",
+        "title": "L056P",
+        "source_name": "L056P",
+        "group": "control",
+        "condition": "non-tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L056",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: non-tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "non-tumor",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: non-tumor", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536084",
+        "title": "L001T",
+        "source_name": "L001T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L001",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536085",
+        "title": "L003T",
+        "source_name": "L003T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L003",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536086",
+        "title": "L004T",
+        "source_name": "L004T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L004",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536087",
+        "title": "L005T",
+        "source_name": "L005T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L005",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536088",
+        "title": "L008T",
+        "source_name": "L008T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L008",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536089",
+        "title": "L010T",
+        "source_name": "L010T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L010",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536090",
+        "title": "L012T",
+        "source_name": "L012T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L012",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536091",
+        "title": "L014T",
+        "source_name": "L014T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L014",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536092",
+        "title": "L016T",
+        "source_name": "L016T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L016",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536093",
+        "title": "L017T",
+        "source_name": "L017T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L017",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536094",
+        "title": "L019T",
+        "source_name": "L019T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L019",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536095",
+        "title": "L021T",
+        "source_name": "L021T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L021",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536096",
+        "title": "L023T",
+        "source_name": "L023T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L023",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536097",
+        "title": "L024T",
+        "source_name": "L024T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L024",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536098",
+        "title": "L025T",
+        "source_name": "L025T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L025",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536099",
+        "title": "L026T",
+        "source_name": "L026T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L026",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536100",
+        "title": "L028T",
+        "source_name": "L028T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L028",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536101",
+        "title": "L030T",
+        "source_name": "L030T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L030",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536102",
+        "title": "L032T",
+        "source_name": "L032T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L032",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536103",
+        "title": "L033T",
+        "source_name": "L033T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L033",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536104",
+        "title": "L035T",
+        "source_name": "L035T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L035",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536105",
+        "title": "L037T",
+        "source_name": "L037T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L037",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536106",
+        "title": "L038T",
+        "source_name": "L038T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L038",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536107",
+        "title": "L039T",
+        "source_name": "L039T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L039",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536108",
+        "title": "L040T",
+        "source_name": "L040T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L040",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536109",
+        "title": "L041T",
+        "source_name": "L041T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L041",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536110",
+        "title": "L042T",
+        "source_name": "L042T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L042",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536111",
+        "title": "L076T",
+        "source_name": "L076T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L076",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536112",
+        "title": "L044T",
+        "source_name": "L044T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L044",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536113",
+        "title": "L045T",
+        "source_name": "L045T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L045",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536114",
+        "title": "L046T",
+        "source_name": "L046T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L046",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536115",
+        "title": "L047T",
+        "source_name": "L047T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L047",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536116",
+        "title": "L048T",
+        "source_name": "L048T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L048",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536117",
+        "title": "L052T",
+        "source_name": "L052T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L052",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      },
+      {
+        "gsm": "GSM3536118",
+        "title": "L056T",
+        "source_name": "L056T",
+        "group": "case",
+        "condition": "HCC",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "L056",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: HCC"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "tissue": "HCC",
+          "tumor stage": "early stage"
+        },
+        "raw_lines": ["tissue: HCC", "tumor stage: early stage"]
+      }
+    ]
+  },
+  "contrasts": [
+    {
+      "gse": "GSE124535",
+      "name": "tumor_vs_adjacent_normal",
+      "case_label": "HCC tumor",
+      "control_label": "adjacent non-tumor liver",
+      "case_gsms": [
+        "GSM3536084",
+        "GSM3536085",
+        "GSM3536086",
+        "GSM3536087",
+        "GSM3536088",
+        "GSM3536089",
+        "GSM3536090",
+        "GSM3536091",
+        "GSM3536092",
+        "GSM3536093",
+        "GSM3536094",
+        "GSM3536095",
+        "GSM3536096",
+        "GSM3536097",
+        "GSM3536098",
+        "GSM3536099",
+        "GSM3536100",
+        "GSM3536101",
+        "GSM3536102",
+        "GSM3536103",
+        "GSM3536104",
+        "GSM3536105",
+        "GSM3536106",
+        "GSM3536107",
+        "GSM3536108",
+        "GSM3536109",
+        "GSM3536110",
+        "GSM3536111",
+        "GSM3536112",
+        "GSM3536113",
+        "GSM3536114",
+        "GSM3536115",
+        "GSM3536116",
+        "GSM3536117",
+        "GSM3536118"
+      ],
+      "control_gsms": [
+        "GSM3536049",
+        "GSM3536050",
+        "GSM3536051",
+        "GSM3536052",
+        "GSM3536053",
+        "GSM3536054",
+        "GSM3536055",
+        "GSM3536056",
+        "GSM3536057",
+        "GSM3536058",
+        "GSM3536059",
+        "GSM3536060",
+        "GSM3536061",
+        "GSM3536062",
+        "GSM3536063",
+        "GSM3536064",
+        "GSM3536065",
+        "GSM3536066",
+        "GSM3536067",
+        "GSM3536068",
+        "GSM3536069",
+        "GSM3536070",
+        "GSM3536071",
+        "GSM3536072",
+        "GSM3536073",
+        "GSM3536074",
+        "GSM3536075",
+        "GSM3536076",
+        "GSM3536077",
+        "GSM3536078",
+        "GSM3536079",
+        "GSM3536080",
+        "GSM3536081",
+        "GSM3536082",
+        "GSM3536083"
+      ],
+      "blocking": "donor",
+      "restricted_to": {},
+      "confidence": 1.0,
+      "status": "confirmed",
+      "rationale": "35 early-stage pairs; L001P (peritumoral) / L001T share the patient code."
+    }
+  ],
+  "markers": [
+    {
+      "symbol": "GPC3",
+      "direction": "up"
+    },
+    {
+      "symbol": "AFP",
+      "direction": "up"
+    },
+    {
+      "symbol": "SPP1",
+      "direction": "up"
+    },
+    {
+      "symbol": "MDK",
+      "direction": "up"
+    },
+    {
+      "symbol": "PEG10",
+      "direction": "up"
+    },
+    {
+      "symbol": "CLEC4G",
+      "direction": "down"
+    },
+    {
+      "symbol": "CLEC1B",
+      "direction": "down"
+    },
+    {
+      "symbol": "FCN3",
+      "direction": "down"
+    },
+    {
+      "symbol": "CRHBP",
+      "direction": "down"
+    },
+    {
+      "symbol": "CYP1A2",
+      "direction": "down"
+    }
   ]
- },
- "contrasts": [
-  {
-   "gse": "GSE124535",
-   "name": "tumor_vs_adjacent_normal",
-   "case_label": "HCC tumor",
-   "control_label": "adjacent non-tumor liver",
-   "case_gsms": [
-    "GSM3536084",
-    "GSM3536085",
-    "GSM3536086",
-    "GSM3536087",
-    "GSM3536088",
-    "GSM3536089",
-    "GSM3536090",
-    "GSM3536091",
-    "GSM3536092",
-    "GSM3536093",
-    "GSM3536094",
-    "GSM3536095",
-    "GSM3536096",
-    "GSM3536097",
-    "GSM3536098",
-    "GSM3536099",
-    "GSM3536100",
-    "GSM3536101",
-    "GSM3536102",
-    "GSM3536103",
-    "GSM3536104",
-    "GSM3536105",
-    "GSM3536106",
-    "GSM3536107",
-    "GSM3536108",
-    "GSM3536109",
-    "GSM3536110",
-    "GSM3536111",
-    "GSM3536112",
-    "GSM3536113",
-    "GSM3536114",
-    "GSM3536115",
-    "GSM3536116",
-    "GSM3536117",
-    "GSM3536118"
-   ],
-   "control_gsms": [
-    "GSM3536049",
-    "GSM3536050",
-    "GSM3536051",
-    "GSM3536052",
-    "GSM3536053",
-    "GSM3536054",
-    "GSM3536055",
-    "GSM3536056",
-    "GSM3536057",
-    "GSM3536058",
-    "GSM3536059",
-    "GSM3536060",
-    "GSM3536061",
-    "GSM3536062",
-    "GSM3536063",
-    "GSM3536064",
-    "GSM3536065",
-    "GSM3536066",
-    "GSM3536067",
-    "GSM3536068",
-    "GSM3536069",
-    "GSM3536070",
-    "GSM3536071",
-    "GSM3536072",
-    "GSM3536073",
-    "GSM3536074",
-    "GSM3536075",
-    "GSM3536076",
-    "GSM3536077",
-    "GSM3536078",
-    "GSM3536079",
-    "GSM3536080",
-    "GSM3536081",
-    "GSM3536082",
-    "GSM3536083"
-   ],
-   "blocking": "donor",
-   "restricted_to": {},
-   "confidence": 1.0,
-   "status": "confirmed",
-   "rationale": "35 early-stage pairs; L001P (peritumoral) / L001T share the patient code."
-  }
- ],
- "markers": [
-  {
-   "symbol": "GPC3",
-   "direction": "up"
-  },
-  {
-   "symbol": "AFP",
-   "direction": "up"
-  },
-  {
-   "symbol": "SPP1",
-   "direction": "up"
-  },
-  {
-   "symbol": "MDK",
-   "direction": "up"
-  },
-  {
-   "symbol": "PEG10",
-   "direction": "up"
-  },
-  {
-   "symbol": "CLEC4G",
-   "direction": "down"
-  },
-  {
-   "symbol": "CLEC1B",
-   "direction": "down"
-  },
-  {
-   "symbol": "FCN3",
-   "direction": "down"
-  },
-  {
-   "symbol": "CRHBP",
-   "direction": "down"
-  },
-  {
-   "symbol": "CYP1A2",
-   "direction": "down"
-  }
- ]
 }

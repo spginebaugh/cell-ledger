@@ -10,7 +10,10 @@
       "!**/test-results",
       "!apps/web/src/api/generated",
       "!apps/web/openapi.json",
+      "!evals/schemas",
+      "!evals/review_drafts",
       "!.venv",
+      "!.claude",
       "!data",
       "!**/*.md"
     ]

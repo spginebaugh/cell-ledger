@@ -1,1148 +1,968 @@
 {
- "samplesheet": {
-  "gse": "GSE135631",
-  "assay": "bulk",
-  "title": "RNA-Seq data of tumors and paired adjacent tissues from 15 HCC patients",
-  "samples": [
-   {
-    "gsm": "GSM4023793",
-    "title": "Sample_067754N",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent normal",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "67754",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent normal"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "individual": "67754",
-     "disease state": "HCC",
-     "tissue": "Adjacent normal"
-    },
-    "raw_lines": [
-     "individual: 67754",
-     "disease state: HCC",
-     "tissue: Adjacent normal"
+  "samplesheet": {
+    "gse": "GSE135631",
+    "assay": "bulk",
+    "title": "RNA-Seq data of tumors and paired adjacent tissues from 15 HCC patients",
+    "samples": [
+      {
+        "gsm": "GSM4023793",
+        "title": "Sample_067754N",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent normal",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "67754",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent normal"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "individual": "67754",
+          "disease state": "HCC",
+          "tissue": "Adjacent normal"
+        },
+        "raw_lines": ["individual: 67754", "disease state: HCC", "tissue: Adjacent normal"]
+      },
+      {
+        "gsm": "GSM4023794",
+        "title": "Sample_067754T",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "67754",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "individual": "67754",
+          "disease state": "HCC",
+          "tissue": "tumor"
+        },
+        "raw_lines": ["individual: 67754", "disease state: HCC", "tissue: tumor"]
+      },
+      {
+        "gsm": "GSM4023795",
+        "title": "Sample_070103N",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent normal",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "70103",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent normal"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "individual": "70103",
+          "disease state": "HCC",
+          "tissue": "Adjacent normal"
+        },
+        "raw_lines": ["individual: 70103", "disease state: HCC", "tissue: Adjacent normal"]
+      },
+      {
+        "gsm": "GSM4023796",
+        "title": "Sample_070103T",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "70103",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "individual": "70103",
+          "disease state": "HCC",
+          "tissue": "tumor"
+        },
+        "raw_lines": ["individual: 70103", "disease state: HCC", "tissue: tumor"]
+      },
+      {
+        "gsm": "GSM4023797",
+        "title": "Sample_070785N",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent normal",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "70785",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent normal"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "individual": "70785",
+          "disease state": "HCC",
+          "tissue": "Adjacent normal"
+        },
+        "raw_lines": ["individual: 70785", "disease state: HCC", "tissue: Adjacent normal"]
+      },
+      {
+        "gsm": "GSM4023798",
+        "title": "Sample_070785T",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "70785",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "individual": "70785",
+          "disease state": "HCC",
+          "tissue": "tumor"
+        },
+        "raw_lines": ["individual: 70785", "disease state: HCC", "tissue: tumor"]
+      },
+      {
+        "gsm": "GSM4023799",
+        "title": "Sample_070880N",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent normal",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "70880",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent normal"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "individual": "70880",
+          "disease state": "HCC",
+          "tissue": "Adjacent normal"
+        },
+        "raw_lines": ["individual: 70880", "disease state: HCC", "tissue: Adjacent normal"]
+      },
+      {
+        "gsm": "GSM4023800",
+        "title": "Sample_070880T",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "70880",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "individual": "70880",
+          "disease state": "HCC",
+          "tissue": "tumor"
+        },
+        "raw_lines": ["individual: 70880", "disease state: HCC", "tissue: tumor"]
+      },
+      {
+        "gsm": "GSM4023801",
+        "title": "Sample_074607N",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent normal",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "74607",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent normal"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "individual": "74607",
+          "disease state": "HCC",
+          "tissue": "Adjacent normal"
+        },
+        "raw_lines": ["individual: 74607", "disease state: HCC", "tissue: Adjacent normal"]
+      },
+      {
+        "gsm": "GSM4023802",
+        "title": "Sample_074607T",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "74607",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "individual": "74607",
+          "disease state": "HCC",
+          "tissue": "tumor"
+        },
+        "raw_lines": ["individual: 74607", "disease state: HCC", "tissue: tumor"]
+      },
+      {
+        "gsm": "GSM4023803",
+        "title": "Sample_074720N",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent normal",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "74720",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent normal"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "individual": "74720",
+          "disease state": "HCC",
+          "tissue": "Adjacent normal"
+        },
+        "raw_lines": ["individual: 74720", "disease state: HCC", "tissue: Adjacent normal"]
+      },
+      {
+        "gsm": "GSM4023804",
+        "title": "Sample_074720T",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "74720",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "individual": "74720",
+          "disease state": "HCC",
+          "tissue": "tumor"
+        },
+        "raw_lines": ["individual: 74720", "disease state: HCC", "tissue: tumor"]
+      },
+      {
+        "gsm": "GSM4023805",
+        "title": "Sample_074848N",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent normal",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "74848",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent normal"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "individual": "74848",
+          "disease state": "HCC",
+          "tissue": "Adjacent normal"
+        },
+        "raw_lines": ["individual: 74848", "disease state: HCC", "tissue: Adjacent normal"]
+      },
+      {
+        "gsm": "GSM4023806",
+        "title": "Sample_074848T",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "74848",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "individual": "74848",
+          "disease state": "HCC",
+          "tissue": "tumor"
+        },
+        "raw_lines": ["individual: 74848", "disease state: HCC", "tissue: tumor"]
+      },
+      {
+        "gsm": "GSM4023807",
+        "title": "Sample_075199N",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent normal",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "75199",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent normal"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "individual": "75199",
+          "disease state": "HCC",
+          "tissue": "Adjacent normal"
+        },
+        "raw_lines": ["individual: 75199", "disease state: HCC", "tissue: Adjacent normal"]
+      },
+      {
+        "gsm": "GSM4023808",
+        "title": "Sample_075199T",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "75199",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "individual": "75199",
+          "disease state": "HCC",
+          "tissue": "tumor"
+        },
+        "raw_lines": ["individual: 75199", "disease state: HCC", "tissue: tumor"]
+      },
+      {
+        "gsm": "GSM4023809",
+        "title": "Sample_P070913N",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent normal",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P070913",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent normal"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "individual": "P070913",
+          "disease state": "HCC",
+          "tissue": "Adjacent normal"
+        },
+        "raw_lines": ["individual: P070913", "disease state: HCC", "tissue: Adjacent normal"]
+      },
+      {
+        "gsm": "GSM4023810",
+        "title": "Sample_P070913T",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P070913",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "individual": "P070913",
+          "disease state": "HCC",
+          "tissue": "tumor"
+        },
+        "raw_lines": ["individual: P070913", "disease state: HCC", "tissue: tumor"]
+      },
+      {
+        "gsm": "GSM4023811",
+        "title": "Sample_P079741N",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent normal",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P079741",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent normal"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "individual": "P079741",
+          "disease state": "HCC",
+          "tissue": "Adjacent normal"
+        },
+        "raw_lines": ["individual: P079741", "disease state: HCC", "tissue: Adjacent normal"]
+      },
+      {
+        "gsm": "GSM4023812",
+        "title": "Sample_P079741T",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P079741",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "individual": "P079741",
+          "disease state": "HCC",
+          "tissue": "tumor"
+        },
+        "raw_lines": ["individual: P079741", "disease state: HCC", "tissue: tumor"]
+      },
+      {
+        "gsm": "GSM4023813",
+        "title": "Sample_P079779N",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent normal",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P079779",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent normal"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "individual": "P079779",
+          "disease state": "HCC",
+          "tissue": "Adjacent normal"
+        },
+        "raw_lines": ["individual: P079779", "disease state: HCC", "tissue: Adjacent normal"]
+      },
+      {
+        "gsm": "GSM4023814",
+        "title": "Sample_P079779T",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P079779",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "individual": "P079779",
+          "disease state": "HCC",
+          "tissue": "tumor"
+        },
+        "raw_lines": ["individual: P079779", "disease state: HCC", "tissue: tumor"]
+      },
+      {
+        "gsm": "GSM4023815",
+        "title": "Sample_P116019N",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent normal",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P116019",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent normal"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "individual": "P116019",
+          "disease state": "HCC",
+          "tissue": "Adjacent normal"
+        },
+        "raw_lines": ["individual: P116019", "disease state: HCC", "tissue: Adjacent normal"]
+      },
+      {
+        "gsm": "GSM4023816",
+        "title": "Sample_P116019T",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "P116019",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "individual": "P116019",
+          "disease state": "HCC",
+          "tissue": "tumor"
+        },
+        "raw_lines": ["individual: P116019", "disease state: HCC", "tissue: tumor"]
+      },
+      {
+        "gsm": "GSM4023817",
+        "title": "Sample_R079741N",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent normal",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "R079741",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent normal"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "individual": "R079741",
+          "disease state": "HCC",
+          "tissue": "Adjacent normal"
+        },
+        "raw_lines": ["individual: R079741", "disease state: HCC", "tissue: Adjacent normal"]
+      },
+      {
+        "gsm": "GSM4023818",
+        "title": "Sample_R079741T",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "R079741",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "individual": "R079741",
+          "disease state": "HCC",
+          "tissue": "tumor"
+        },
+        "raw_lines": ["individual: R079741", "disease state: HCC", "tissue: tumor"]
+      },
+      {
+        "gsm": "GSM4023819",
+        "title": "Sample_R079779N",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent normal",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "R079779",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent normal"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "individual": "R079779",
+          "disease state": "HCC",
+          "tissue": "Adjacent normal"
+        },
+        "raw_lines": ["individual: R079779", "disease state: HCC", "tissue: Adjacent normal"]
+      },
+      {
+        "gsm": "GSM4023820",
+        "title": "Sample_R079779T",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "R079779",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "individual": "R079779",
+          "disease state": "HCC",
+          "tissue": "tumor"
+        },
+        "raw_lines": ["individual: R079779", "disease state: HCC", "tissue: tumor"]
+      },
+      {
+        "gsm": "GSM4023821",
+        "title": "Sample_R116019N",
+        "source_name": "Adjacent tissue",
+        "group": "control",
+        "condition": "Adjacent normal",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "R116019",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: Adjacent normal"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "individual": "R116019",
+          "disease state": "HCC",
+          "tissue": "Adjacent normal"
+        },
+        "raw_lines": ["individual: R116019", "disease state: HCC", "tissue: Adjacent normal"]
+      },
+      {
+        "gsm": "GSM4023822",
+        "title": "Sample_R116019T",
+        "source_name": "tumor",
+        "group": "case",
+        "condition": "tumor",
+        "treatment": null,
+        "dose": null,
+        "time_point": null,
+        "tissue": "liver",
+        "cell_type": null,
+        "cell_line": null,
+        "genotype": null,
+        "sex": null,
+        "age": null,
+        "donor": "R116019",
+        "batch": null,
+        "organism": "Homo sapiens",
+        "replicate": null,
+        "evidence": ["tissue: tumor"],
+        "confidence": 1.0,
+        "needs_review": false,
+        "raw": {
+          "individual": "R116019",
+          "disease state": "HCC",
+          "tissue": "tumor"
+        },
+        "raw_lines": ["individual: R116019", "disease state: HCC", "tissue: tumor"]
+      }
     ]
-   },
-   {
-    "gsm": "GSM4023794",
-    "title": "Sample_067754T",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "67754",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "individual": "67754",
-     "disease state": "HCC",
-     "tissue": "tumor"
+  },
+  "contrasts": [
+    {
+      "gse": "GSE135631",
+      "name": "tumor_vs_adjacent_normal",
+      "case_label": "HCC tumor",
+      "control_label": "adjacent normal liver",
+      "case_gsms": [
+        "GSM4023794",
+        "GSM4023796",
+        "GSM4023798",
+        "GSM4023800",
+        "GSM4023802",
+        "GSM4023804",
+        "GSM4023806",
+        "GSM4023808",
+        "GSM4023810",
+        "GSM4023812",
+        "GSM4023814",
+        "GSM4023816",
+        "GSM4023818",
+        "GSM4023820",
+        "GSM4023822"
+      ],
+      "control_gsms": [
+        "GSM4023793",
+        "GSM4023795",
+        "GSM4023797",
+        "GSM4023799",
+        "GSM4023801",
+        "GSM4023803",
+        "GSM4023805",
+        "GSM4023807",
+        "GSM4023809",
+        "GSM4023811",
+        "GSM4023813",
+        "GSM4023815",
+        "GSM4023817",
+        "GSM4023819",
+        "GSM4023821"
+      ],
+      "blocking": "donor",
+      "restricted_to": {},
+      "confidence": 1.0,
+      "status": "confirmed",
+      "rationale": "Paired tumor/adjacent from 15 patients."
+    }
+  ],
+  "markers": [
+    {
+      "symbol": "GPC3",
+      "direction": "up"
     },
-    "raw_lines": [
-     "individual: 67754",
-     "disease state: HCC",
-     "tissue: tumor"
-    ]
-   },
-   {
-    "gsm": "GSM4023795",
-    "title": "Sample_070103N",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent normal",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "70103",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent normal"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "individual": "70103",
-     "disease state": "HCC",
-     "tissue": "Adjacent normal"
+    {
+      "symbol": "AFP",
+      "direction": "up"
     },
-    "raw_lines": [
-     "individual: 70103",
-     "disease state: HCC",
-     "tissue: Adjacent normal"
-    ]
-   },
-   {
-    "gsm": "GSM4023796",
-    "title": "Sample_070103T",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "70103",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "individual": "70103",
-     "disease state": "HCC",
-     "tissue": "tumor"
+    {
+      "symbol": "SPP1",
+      "direction": "up"
     },
-    "raw_lines": [
-     "individual: 70103",
-     "disease state: HCC",
-     "tissue: tumor"
-    ]
-   },
-   {
-    "gsm": "GSM4023797",
-    "title": "Sample_070785N",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent normal",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "70785",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent normal"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "individual": "70785",
-     "disease state": "HCC",
-     "tissue": "Adjacent normal"
+    {
+      "symbol": "MDK",
+      "direction": "up"
     },
-    "raw_lines": [
-     "individual: 70785",
-     "disease state: HCC",
-     "tissue: Adjacent normal"
-    ]
-   },
-   {
-    "gsm": "GSM4023798",
-    "title": "Sample_070785T",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "70785",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "individual": "70785",
-     "disease state": "HCC",
-     "tissue": "tumor"
+    {
+      "symbol": "PEG10",
+      "direction": "up"
     },
-    "raw_lines": [
-     "individual: 70785",
-     "disease state: HCC",
-     "tissue: tumor"
-    ]
-   },
-   {
-    "gsm": "GSM4023799",
-    "title": "Sample_070880N",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent normal",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "70880",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent normal"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "individual": "70880",
-     "disease state": "HCC",
-     "tissue": "Adjacent normal"
+    {
+      "symbol": "CLEC4G",
+      "direction": "down"
     },
-    "raw_lines": [
-     "individual: 70880",
-     "disease state: HCC",
-     "tissue: Adjacent normal"
-    ]
-   },
-   {
-    "gsm": "GSM4023800",
-    "title": "Sample_070880T",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "70880",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "individual": "70880",
-     "disease state": "HCC",
-     "tissue": "tumor"
+    {
+      "symbol": "CLEC1B",
+      "direction": "down"
     },
-    "raw_lines": [
-     "individual: 70880",
-     "disease state: HCC",
-     "tissue: tumor"
-    ]
-   },
-   {
-    "gsm": "GSM4023801",
-    "title": "Sample_074607N",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent normal",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "74607",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent normal"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "individual": "74607",
-     "disease state": "HCC",
-     "tissue": "Adjacent normal"
+    {
+      "symbol": "FCN3",
+      "direction": "down"
     },
-    "raw_lines": [
-     "individual: 74607",
-     "disease state: HCC",
-     "tissue: Adjacent normal"
-    ]
-   },
-   {
-    "gsm": "GSM4023802",
-    "title": "Sample_074607T",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "74607",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "individual": "74607",
-     "disease state": "HCC",
-     "tissue": "tumor"
+    {
+      "symbol": "CRHBP",
+      "direction": "down"
     },
-    "raw_lines": [
-     "individual: 74607",
-     "disease state: HCC",
-     "tissue: tumor"
-    ]
-   },
-   {
-    "gsm": "GSM4023803",
-    "title": "Sample_074720N",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent normal",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "74720",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent normal"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "individual": "74720",
-     "disease state": "HCC",
-     "tissue": "Adjacent normal"
-    },
-    "raw_lines": [
-     "individual: 74720",
-     "disease state: HCC",
-     "tissue: Adjacent normal"
-    ]
-   },
-   {
-    "gsm": "GSM4023804",
-    "title": "Sample_074720T",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "74720",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "individual": "74720",
-     "disease state": "HCC",
-     "tissue": "tumor"
-    },
-    "raw_lines": [
-     "individual: 74720",
-     "disease state: HCC",
-     "tissue: tumor"
-    ]
-   },
-   {
-    "gsm": "GSM4023805",
-    "title": "Sample_074848N",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent normal",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "74848",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent normal"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "individual": "74848",
-     "disease state": "HCC",
-     "tissue": "Adjacent normal"
-    },
-    "raw_lines": [
-     "individual: 74848",
-     "disease state: HCC",
-     "tissue: Adjacent normal"
-    ]
-   },
-   {
-    "gsm": "GSM4023806",
-    "title": "Sample_074848T",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "74848",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "individual": "74848",
-     "disease state": "HCC",
-     "tissue": "tumor"
-    },
-    "raw_lines": [
-     "individual: 74848",
-     "disease state: HCC",
-     "tissue: tumor"
-    ]
-   },
-   {
-    "gsm": "GSM4023807",
-    "title": "Sample_075199N",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent normal",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "75199",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent normal"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "individual": "75199",
-     "disease state": "HCC",
-     "tissue": "Adjacent normal"
-    },
-    "raw_lines": [
-     "individual: 75199",
-     "disease state: HCC",
-     "tissue: Adjacent normal"
-    ]
-   },
-   {
-    "gsm": "GSM4023808",
-    "title": "Sample_075199T",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "75199",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "individual": "75199",
-     "disease state": "HCC",
-     "tissue": "tumor"
-    },
-    "raw_lines": [
-     "individual: 75199",
-     "disease state: HCC",
-     "tissue: tumor"
-    ]
-   },
-   {
-    "gsm": "GSM4023809",
-    "title": "Sample_P070913N",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent normal",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P070913",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent normal"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "individual": "P070913",
-     "disease state": "HCC",
-     "tissue": "Adjacent normal"
-    },
-    "raw_lines": [
-     "individual: P070913",
-     "disease state: HCC",
-     "tissue: Adjacent normal"
-    ]
-   },
-   {
-    "gsm": "GSM4023810",
-    "title": "Sample_P070913T",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P070913",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "individual": "P070913",
-     "disease state": "HCC",
-     "tissue": "tumor"
-    },
-    "raw_lines": [
-     "individual: P070913",
-     "disease state: HCC",
-     "tissue: tumor"
-    ]
-   },
-   {
-    "gsm": "GSM4023811",
-    "title": "Sample_P079741N",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent normal",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P079741",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent normal"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "individual": "P079741",
-     "disease state": "HCC",
-     "tissue": "Adjacent normal"
-    },
-    "raw_lines": [
-     "individual: P079741",
-     "disease state: HCC",
-     "tissue: Adjacent normal"
-    ]
-   },
-   {
-    "gsm": "GSM4023812",
-    "title": "Sample_P079741T",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P079741",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "individual": "P079741",
-     "disease state": "HCC",
-     "tissue": "tumor"
-    },
-    "raw_lines": [
-     "individual: P079741",
-     "disease state: HCC",
-     "tissue: tumor"
-    ]
-   },
-   {
-    "gsm": "GSM4023813",
-    "title": "Sample_P079779N",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent normal",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P079779",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent normal"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "individual": "P079779",
-     "disease state": "HCC",
-     "tissue": "Adjacent normal"
-    },
-    "raw_lines": [
-     "individual: P079779",
-     "disease state: HCC",
-     "tissue: Adjacent normal"
-    ]
-   },
-   {
-    "gsm": "GSM4023814",
-    "title": "Sample_P079779T",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P079779",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "individual": "P079779",
-     "disease state": "HCC",
-     "tissue": "tumor"
-    },
-    "raw_lines": [
-     "individual: P079779",
-     "disease state: HCC",
-     "tissue: tumor"
-    ]
-   },
-   {
-    "gsm": "GSM4023815",
-    "title": "Sample_P116019N",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent normal",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P116019",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent normal"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "individual": "P116019",
-     "disease state": "HCC",
-     "tissue": "Adjacent normal"
-    },
-    "raw_lines": [
-     "individual: P116019",
-     "disease state: HCC",
-     "tissue: Adjacent normal"
-    ]
-   },
-   {
-    "gsm": "GSM4023816",
-    "title": "Sample_P116019T",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "P116019",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "individual": "P116019",
-     "disease state": "HCC",
-     "tissue": "tumor"
-    },
-    "raw_lines": [
-     "individual: P116019",
-     "disease state: HCC",
-     "tissue: tumor"
-    ]
-   },
-   {
-    "gsm": "GSM4023817",
-    "title": "Sample_R079741N",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent normal",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "R079741",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent normal"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "individual": "R079741",
-     "disease state": "HCC",
-     "tissue": "Adjacent normal"
-    },
-    "raw_lines": [
-     "individual: R079741",
-     "disease state: HCC",
-     "tissue: Adjacent normal"
-    ]
-   },
-   {
-    "gsm": "GSM4023818",
-    "title": "Sample_R079741T",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "R079741",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "individual": "R079741",
-     "disease state": "HCC",
-     "tissue": "tumor"
-    },
-    "raw_lines": [
-     "individual: R079741",
-     "disease state: HCC",
-     "tissue: tumor"
-    ]
-   },
-   {
-    "gsm": "GSM4023819",
-    "title": "Sample_R079779N",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent normal",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "R079779",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent normal"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "individual": "R079779",
-     "disease state": "HCC",
-     "tissue": "Adjacent normal"
-    },
-    "raw_lines": [
-     "individual: R079779",
-     "disease state: HCC",
-     "tissue: Adjacent normal"
-    ]
-   },
-   {
-    "gsm": "GSM4023820",
-    "title": "Sample_R079779T",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "R079779",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "individual": "R079779",
-     "disease state": "HCC",
-     "tissue": "tumor"
-    },
-    "raw_lines": [
-     "individual: R079779",
-     "disease state: HCC",
-     "tissue: tumor"
-    ]
-   },
-   {
-    "gsm": "GSM4023821",
-    "title": "Sample_R116019N",
-    "source_name": "Adjacent tissue",
-    "group": "control",
-    "condition": "Adjacent normal",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "R116019",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: Adjacent normal"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "individual": "R116019",
-     "disease state": "HCC",
-     "tissue": "Adjacent normal"
-    },
-    "raw_lines": [
-     "individual: R116019",
-     "disease state: HCC",
-     "tissue: Adjacent normal"
-    ]
-   },
-   {
-    "gsm": "GSM4023822",
-    "title": "Sample_R116019T",
-    "source_name": "tumor",
-    "group": "case",
-    "condition": "tumor",
-    "treatment": null,
-    "dose": null,
-    "time_point": null,
-    "tissue": "liver",
-    "cell_type": null,
-    "cell_line": null,
-    "genotype": null,
-    "sex": null,
-    "age": null,
-    "donor": "R116019",
-    "batch": null,
-    "organism": "Homo sapiens",
-    "replicate": null,
-    "evidence": [
-     "tissue: tumor"
-    ],
-    "confidence": 1.0,
-    "needs_review": false,
-    "raw": {
-     "individual": "R116019",
-     "disease state": "HCC",
-     "tissue": "tumor"
-    },
-    "raw_lines": [
-     "individual: R116019",
-     "disease state: HCC",
-     "tissue: tumor"
-    ]
-   }
+    {
+      "symbol": "CYP1A2",
+      "direction": "down"
+    }
   ]
- },
- "contrasts": [
-  {
-   "gse": "GSE135631",
-   "name": "tumor_vs_adjacent_normal",
-   "case_label": "HCC tumor",
-   "control_label": "adjacent normal liver",
-   "case_gsms": [
-    "GSM4023794",
-    "GSM4023796",
-    "GSM4023798",
-    "GSM4023800",
-    "GSM4023802",
-    "GSM4023804",
-    "GSM4023806",
-    "GSM4023808",
-    "GSM4023810",
-    "GSM4023812",
-    "GSM4023814",
-    "GSM4023816",
-    "GSM4023818",
-    "GSM4023820",
-    "GSM4023822"
-   ],
-   "control_gsms": [
-    "GSM4023793",
-    "GSM4023795",
-    "GSM4023797",
-    "GSM4023799",
-    "GSM4023801",
-    "GSM4023803",
-    "GSM4023805",
-    "GSM4023807",
-    "GSM4023809",
-    "GSM4023811",
-    "GSM4023813",
-    "GSM4023815",
-    "GSM4023817",
-    "GSM4023819",
-    "GSM4023821"
-   ],
-   "blocking": "donor",
-   "restricted_to": {},
-   "confidence": 1.0,
-   "status": "confirmed",
-   "rationale": "Paired tumor/adjacent from 15 patients."
-  }
- ],
- "markers": [
-  {
-   "symbol": "GPC3",
-   "direction": "up"
-  },
-  {
-   "symbol": "AFP",
-   "direction": "up"
-  },
-  {
-   "symbol": "SPP1",
-   "direction": "up"
-  },
-  {
-   "symbol": "MDK",
-   "direction": "up"
-  },
-  {
-   "symbol": "PEG10",
-   "direction": "up"
-  },
-  {
-   "symbol": "CLEC4G",
-   "direction": "down"
-  },
-  {
-   "symbol": "CLEC1B",
-   "direction": "down"
-  },
-  {
-   "symbol": "FCN3",
-   "direction": "down"
-  },
-  {
-   "symbol": "CRHBP",
-   "direction": "down"
-  },
-  {
-   "symbol": "CYP1A2",
-   "direction": "down"
-  }
- ]
 }
