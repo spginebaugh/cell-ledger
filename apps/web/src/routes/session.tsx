@@ -76,7 +76,7 @@ export function SessionPage() {
             )}
 
             <Section
-              title="Datasets"
+              title="Individual Datasets"
               info="Each series is downloaded from NCBI and checked, then the specialist labels its samples and chooses the one contrast that answers the question. Runnable contrasts start at once; the rest are set aside with the reason."
             >
               {datasets.isPending && <Skeleton className="h-24" />}
@@ -98,18 +98,6 @@ export function SessionPage() {
             </Section>
 
             <Section
-              id="runs"
-              title="Runs"
-              info="One per dataset with a runnable contrast. A run polls the pipeline while it works and links to its result when done."
-            >
-              {runs.isPending ? (
-                <Skeleton className="h-20" />
-              ) : (
-                <RunsList sessionId={sessionId} runs={rs} />
-              )}
-            </Section>
-
-            <Section
               title="Across Datasets"
               info="When every run is done, the complete ones are pooled to see what replicates."
             >
@@ -122,6 +110,18 @@ export function SessionPage() {
                   completeRuns={completeDatasets}
                   settled={settled}
                 />
+              )}
+            </Section>
+
+            <Section
+              id="runs"
+              title="Runs"
+              info="One per dataset with a runnable contrast. A run polls the pipeline while it works and links to its result when done."
+            >
+              {runs.isPending ? (
+                <Skeleton className="h-20" />
+              ) : (
+                <RunsList sessionId={sessionId} runs={rs} />
               )}
             </Section>
           </>

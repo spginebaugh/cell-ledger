@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Loader2 } from "lucide-react";
 import type { ComparisonStatus } from "@/api/generated/types.gen";
 import { StatusChip } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -19,13 +19,23 @@ export function ComparisonsSection({
   settled: boolean;
 }) {
   if (comparisons.length === 0) {
+    if (!settled) {
+      return (
+        <Empty
+          title={
+            <span className="inline-flex items-center gap-2" role="status">
+              <Loader2 size={14} className="animate-spin text-ink-3" aria-hidden />
+              Waiting for all individual datasets to finish analysis
+            </span>
+          }
+        />
+      );
+    }
     return (
-      <Empty title={settled ? "No comparison" : "No comparison yet"}>
-        {settled
-          ? completeRuns === 1
-            ? "Only one dataset produced a result, so there is nothing to pool; that run is the answer."
-            : "No dataset produced a result to pool."
-          : "Once every run is done, the complete ones are pooled to see what replicates."}
+      <Empty title="No comparison">
+        {completeRuns === 1
+          ? "Only one dataset produced a result, so there is nothing to pool; that run is the answer."
+          : "No dataset produced a result to pool."}
       </Empty>
     );
   }
