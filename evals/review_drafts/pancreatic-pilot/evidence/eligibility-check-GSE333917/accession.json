@@ -1,0 +1,43 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=gds&term=GSE333917%5BACCN%5D&retmode=json",
+  "checked_at": "2026-11-07T05:15:55.576006+00:00",
+  "status": 200,
+  "response": {
+    "header": {
+      "type": "esearch",
+      "version": "0.3"
+    },
+    "esearchresult": {
+      "count": "14",
+      "retmax": "14",
+      "retstart": "0",
+      "idlist": [
+        "200333917",
+        "100024676",
+        "309777387",
+        "309777386",
+        "309777385",
+        "309777384",
+        "309777383",
+        "309777382",
+        "309777381",
+        "309777380",
+        "309777379",
+        "309777378",
+        "309777377",
+        "309777376"
+      ],
+      "translationset": [],
+      "translationstack": [
+        {
+          "term": "GSE333917[ACCN]",
+          "field": "ACCN",
+          "count": "14",
+          "explode": "N"
+        },
+        "GROUP"
+      ],
+      "querytranslation": "GSE333917[ACCN]"
+    }
+  }
+}

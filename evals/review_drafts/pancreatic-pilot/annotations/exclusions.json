@@ -1,0 +1,38 @@
+[
+  {
+    "gse": "GSE333917",
+    "eligible": false,
+    "rationale": "Excluded from the confirmed NCBI-generated-counts search scope: no count-filter match or NCBI count download link at the saved check. Evidence: data/evals/eligibility-check-GSE333917/. Retained as an exclusion example; researcher-supplied files remain unassessed.",
+    "scope": "User-approved eligibility exclusion only; other judgments not completed."
+  },
+  {
+    "gse": "GSE246958",
+    "eligible": false,
+    "rationale": "Excluded under the confirmed NCBI-generated-counts requirement: no NCBI count-filter match or corresponding download link at the saved check. Evidence: data/evals/eligibility-check-GSE246958/. Researcher-supplied count table does not satisfy this requirement; no judgment of scientific validity.",
+    "scope": "User-approved eligibility exclusion only; other judgments not completed."
+  },
+  {
+    "gse": "GSE348821",
+    "eligible": false,
+    "rationale": "Excluded under the confirmed NCBI-generated-counts requirement: no NCBI count-filter match or corresponding download link at the saved check. Evidence: data/evals/eligibility-check-GSE348821/. Researcher-supplied count table does not satisfy this requirement; no judgment of scientific validity.",
+    "scope": "User-approved eligibility exclusion only; other judgments not completed."
+  },
+  {
+    "gse": "GSE327169",
+    "eligible": false,
+    "rationale": "Excluded under the confirmed NCBI-generated-counts requirement: no NCBI count-filter match or corresponding download link for this SuperSeries at the saved check. Evidence: data/evals/eligibility-check-GSE327169/. Linked SubSeries require independent assessment; no judgment of scientific validity.",
+    "scope": "User-approved eligibility exclusion only; other judgments not completed."
+  },
+  {
+    "gse": "GSE326458",
+    "eligible": false,
+    "rationale": "Excluded under the confirmed bulk RNA-seq requirement: the saved study design describes isolated single nuclei and joint snATAC/snRNA libraries using the 10X Genomics platform. This is a single-nucleus multiome experiment, not bulk RNA-seq. Evidence: data/evals/pancreatic-pilot/public/snapshot.json, GSE326458 overall_design and sample extraction protocols. Count-table availability and scientific relevance are not adjudicated by this decision.",
+    "scope": "User-approved eligibility exclusion only; other judgments not completed."
+  },
+  {
+    "gse": "GSE326455",
+    "eligible": false,
+    "rationale": "Excluded under the confirmed bulk RNA-seq requirement: the saved study design explicitly describes single-nucleus RNA-seq using the 10X Genomics platform. Evidence: data/evals/pancreatic-pilot/public/snapshot.json, GSE326455 overall_design and sample extraction protocols. Count-table availability and scientific relevance are not adjudicated by this decision.",
+    "scope": "User-approved eligibility exclusion only; other judgments not completed."
+  }
+]

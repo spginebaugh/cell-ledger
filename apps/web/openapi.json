@@ -26,6 +26,90 @@
         }
       }
     },
+    "/api/geo/web-search": {
+      "post": {
+        "tags": [
+          "geo"
+        ],
+        "summary": "Search Geo On Web",
+        "description": "Exa web search for GEO series; only GEO-verified, eligible series come back.",
+        "operationId": "searchGeoOnWeb",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebSearchRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WebSearchResult"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/geo/verify": {
+      "post": {
+        "tags": [
+          "geo"
+        ],
+        "summary": "Verify Geo Series",
+        "description": "Which of these accessions exist and pass the eligibility filter.",
+        "operationId": "verifyGeoSeries",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VerifyResult"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/geo/search": {
       "post": {
         "tags": [
@@ -2686,6 +2770,149 @@
           "type"
         ],
         "title": "ValidationError"
+      },
+      "VerifyRequest": {
+        "properties": {
+          "gses": {
+            "items": {
+              "type": "string",
+              "pattern": "^[Gg][Ss][Ee]\\d+$"
+            },
+            "type": "array",
+            "maxItems": 500,
+            "minItems": 1,
+            "title": "Gses"
+          }
+        },
+        "type": "object",
+        "required": [
+          "gses"
+        ],
+        "title": "VerifyRequest"
+      },
+      "VerifyResult": {
+        "properties": {
+          "hits": {
+            "items": {
+              "$ref": "#/components/schemas/GeoSeriesHit"
+            },
+            "type": "array",
+            "title": "Hits",
+            "description": "Accessions that exist and pass the filter"
+          },
+          "ineligible": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Ineligible",
+            "description": "Accessions that do not exist or fail the filter"
+          }
+        },
+        "type": "object",
+        "required": [
+          "hits",
+          "ineligible"
+        ],
+        "title": "VerifyResult"
+      },
+      "WebSearchRequest": {
+        "properties": {
+          "query": {
+            "type": "string",
+            "maxLength": 500,
+            "minLength": 1,
+            "title": "Query"
+          },
+          "objective": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Objective"
+          }
+        },
+        "type": "object",
+        "required": [
+          "query",
+          "objective"
+        ],
+        "title": "WebSearchRequest"
+      },
+      "WebSearchResult": {
+        "properties": {
+          "query": {
+            "type": "string",
+            "title": "Query"
+          },
+          "objective": {
+            "type": "string",
+            "title": "Objective"
+          },
+          "nominated": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Nominated",
+            "description": "Accessions Exa returned, before GEO checks"
+          },
+          "verified": {
+            "items": {
+              "$ref": "#/components/schemas/WebSeriesHit"
+            },
+            "type": "array",
+            "title": "Verified"
+          },
+          "rejected": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Rejected",
+            "description": "Nominated but missing from GEO or ineligible"
+          },
+          "exa_cost_dollars": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Exa Cost Dollars"
+          }
+        },
+        "type": "object",
+        "required": [
+          "query",
+          "objective",
+          "nominated",
+          "verified",
+          "rejected"
+        ],
+        "title": "WebSearchResult"
+      },
+      "WebSeriesHit": {
+        "properties": {
+          "hit": {
+            "$ref": "#/components/schemas/GeoSeriesHit"
+          },
+          "found_at": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Found At",
+            "description": "Pages where Exa found the accession"
+          }
+        },
+        "type": "object",
+        "required": [
+          "hit",
+          "found_at"
+        ],
+        "title": "WebSeriesHit"
       }
     }
   }

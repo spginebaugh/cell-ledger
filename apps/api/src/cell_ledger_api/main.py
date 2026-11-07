@@ -10,6 +10,7 @@ from fastapi.responses import JSONResponse
 
 from cell_ledger.geo import GeoClient
 from cell_ledger_api import __version__
+from cell_ledger_api.discovery import ExaSearcher
 from cell_ledger_api.routes import geo, health, runs, sessions
 from cell_ledger_api.runs import DEFAULT_COMMAND, RunService
 from cell_ledger_api.sessions import SessionNotFound, SessionService
@@ -35,9 +36,10 @@ def create_app(
     transport: httpx.AsyncBaseTransport | None = None,
     store: ObjectStore | None = None,
     run_command: Sequence[str] = DEFAULT_COMMAND,
+    exa: ExaSearcher | None = None,
 ) -> FastAPI:
-    """``transport``, ``store`` and ``run_command`` let tests swap out GEO, Supabase and
-    the pipeline subprocess."""
+    """``transport``, ``store``, ``run_command`` and ``exa`` let tests swap out GEO,
+    Supabase, the pipeline subprocess and Exa."""
 
     @asynccontextmanager
     async def lifespan(app: FastAPI) -> AsyncIterator[None]:
@@ -70,7 +72,17 @@ def create_app(
             interrupted = app.state.sessions.recover() + app.state.runs.recover()
             if interrupted:
                 log.warning("%d collect/run jobs were interrupted by the restart", interrupted)
-            yield
+            own_exa = None
+            if exa is None and cfg.exa_api_key:
+                from exa_py import AsyncExa
+
+                own_exa = AsyncExa(api_key=cfg.exa_api_key.get_secret_value())
+            app.state.exa = exa if exa is not None else own_exa
+            try:
+                yield
+            finally:
+                if own_exa is not None:
+                    await own_exa.aclose()
 
     app = FastAPI(title="cell-ledger", version=__version__, lifespan=lifespan)
     app.add_middleware(

@@ -1,6 +1,13 @@
 """GEO search, download and metadata parsing (NCBI E-utilities + GEO FTP)."""
 
-from cell_ledger.geo.client import ELIGIBILITY, GeoClient, GeoSeriesHit, QueryStats, SearchResult
+from cell_ledger.geo.client import (
+    ELIGIBILITY,
+    GeoClient,
+    GeoSeriesHit,
+    QueryStats,
+    SearchResult,
+    VerifyResult,
+)
 from cell_ledger.geo.fetch import (
     DatasetExclusion,
     DatasetRecord,
@@ -25,6 +32,7 @@ __all__ = [
     "SampleExclusion",
     "SampleRecord",
     "SearchResult",
+    "VerifyResult",
     "ensure_annotation",
     "fetch_series",
     "parse_soft",

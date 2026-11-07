@@ -9,6 +9,7 @@ hit records which queries matched it.
 from __future__ import annotations
 
 import asyncio
+import re
 import time
 from collections.abc import Sequence
 from datetime import date, datetime
@@ -27,6 +28,8 @@ ELIGIBILITY = (
 )
 
 SUMMARY_BATCH = 200
+VERIFY_BATCH = 100
+_GSE = re.compile(r"GSE\d+")
 MAX_ATTEMPTS = 3
 RETRY_STATUS = {429, 500, 502, 503, 504}
 
@@ -59,6 +62,11 @@ class QueryStats(BaseModel):
 class SearchResult(BaseModel):
     queries: list[QueryStats]
     hits: list[GeoSeriesHit]
+
+
+class VerifyResult(BaseModel):
+    hits: list[GeoSeriesHit] = Field(description="Accessions that exist and pass the filter")
+    ineligible: list[str] = Field(description="Accessions that do not exist or fail the filter")
 
 
 class RateLimiter:
@@ -147,6 +155,35 @@ class GeoClient:
             for uid in ids:
                 matched.setdefault(uid, []).append(query)
 
+        return SearchResult(queries=stats, hits=await self._summaries(matched))
+
+    async def verify_series(self, gses: Sequence[str]) -> VerifyResult:
+        """Check accessions against :data:`ELIGIBILITY` in one search per batch.
+
+        Use this on accessions from any outside source (web search, an LLM, a paper):
+        only those that exist and pass the filter come back as hits.
+        """
+        wanted = list(dict.fromkeys(g.strip().upper() for g in gses))
+        bad = [g for g in wanted if not _GSE.fullmatch(g)]
+        if bad:
+            raise ValueError(f"not GEO series accessions: {bad}")
+        matched: dict[str, list[str]] = {}
+        for i in range(0, len(wanted), VERIFY_BATCH):
+            batch = wanted[i : i + VERIFY_BATCH]
+            ors = " OR ".join(f"{g}[ACCN]" for g in batch)
+            body = await self._call(
+                "esearch.fcgi",
+                {"db": "gds", "term": f"({ors}) AND {ELIGIBILITY}", "retmax": str(len(batch))},
+                post=True,
+            )
+            for uid in body["esearchresult"]["idlist"]:
+                matched[uid] = []
+        hits = await self._summaries(matched)
+        eligible = {h.gse for h in hits}
+        return VerifyResult(hits=hits, ineligible=[g for g in wanted if g not in eligible])
+
+    async def _summaries(self, matched: dict[str, list[str]]) -> list[GeoSeriesHit]:
+        """esummary for gds uids, batched; keeps the order of ``matched``."""
         hits: list[GeoSeriesHit] = []
         uids = list(matched)
         for i in range(0, len(uids), SUMMARY_BATCH):
@@ -156,7 +193,7 @@ class GeoClient:
             )
             result = body["result"]
             hits.extend(_to_hit(result[uid], matched[uid]) for uid in batch if uid in result)
-        return SearchResult(queries=stats, hits=hits)
+        return hits
 
 
 def _split(value: str) -> list[str]:

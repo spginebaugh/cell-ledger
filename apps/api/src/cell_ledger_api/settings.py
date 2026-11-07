@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from pydantic import SecretStr
+from pydantic import AliasChoices, Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -23,6 +23,16 @@ class Settings(BaseSettings):
     supabase_url: str | None = None
     supabase_secret_key: SecretStr | None = None
     supabase_bucket: str = "sessions"
+
+    # Claude drives the clarifying/narrowing loop. Opus 5.5 defaults to medium effort.
+    anthropic_api_key: SecretStr | None = None
+    anthropic_model: str = "claude-opus-5-5"
+    anthropic_effort: str = "medium"
+
+    # Exa semantic search over GEO pages; every hit is re-verified against GEO.
+    exa_api_key: SecretStr | None = Field(
+        default=None, validation_alias=AliasChoices("CELL_LEDGER_EXA_API_KEY", "EXA_API_KEY")
+    )
 
     # Sessions are ephemeral: local copies older than this are swept at startup.
     session_ttl_hours: float = 24

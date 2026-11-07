@@ -1,0 +1,11 @@
+{
+  "url": "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE273398&type=rnaseq_counts",
+  "checked_at": "2026-11-07T05:50:09.785474+00:00",
+  "status": 200,
+  "count_links": [
+    "/geo/download/?type=rnaseq_counts&amp;acc=GSE273398&amp;format=file&amp;file=GSE273398_raw_counts_GRCh38.p13_NCBI.tsv.gz",
+    "/geo/download/?type=rnaseq_counts&amp;acc=GSE273398&amp;format=file&amp;file=GSE273398_norm_counts_FPKM_GRCh38.p13_NCBI.tsv.gz",
+    "/geo/download/?type=rnaseq_counts&amp;acc=GSE273398&amp;format=file&amp;file=GSE273398_norm_counts_TPM_GRCh38.p13_NCBI.tsv.gz",
+    "/geo/download/?format=file&amp;type=rnaseq_counts&amp;file=Human.GRCh38.p13.annot.tsv.gz"
+  ]
+}

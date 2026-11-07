@@ -2,7 +2,7 @@
 
 import type { Client, ClientMeta, Options as Options2, RequestResult, TDataShape } from './client';
 import { client } from './client.gen';
-import type { CollectDatasetsData, CollectDatasetsErrors, CollectDatasetsResponses, CreateSessionData, CreateSessionResponses, DeleteSessionData, DeleteSessionErrors, DeleteSessionResponses, GetDatasetFileUrlData, GetDatasetFileUrlErrors, GetDatasetFileUrlResponses, GetHealthData, GetHealthResponses, GetRunFileUrlData, GetRunFileUrlErrors, GetRunFileUrlResponses, GetSessionData, GetSessionErrors, GetSessionResponses, ListDatasetsData, ListDatasetsErrors, ListDatasetsResponses, ListRunsData, ListRunsErrors, ListRunsResponses, SearchGeoData, SearchGeoErrors, SearchGeoResponses, StartRunData, StartRunErrors, StartRunResponses } from './types.gen';
+import type { CollectDatasetsData, CollectDatasetsErrors, CollectDatasetsResponses, CreateSessionData, CreateSessionResponses, DeleteSessionData, DeleteSessionErrors, DeleteSessionResponses, GetDatasetFileUrlData, GetDatasetFileUrlErrors, GetDatasetFileUrlResponses, GetHealthData, GetHealthResponses, GetRunFileUrlData, GetRunFileUrlErrors, GetRunFileUrlResponses, GetSessionData, GetSessionErrors, GetSessionResponses, ListDatasetsData, ListDatasetsErrors, ListDatasetsResponses, ListRunsData, ListRunsErrors, ListRunsResponses, SearchGeoData, SearchGeoErrors, SearchGeoOnWebData, SearchGeoOnWebErrors, SearchGeoOnWebResponses, SearchGeoResponses, StartRunData, StartRunErrors, StartRunResponses, VerifyGeoSeriesData, VerifyGeoSeriesErrors, VerifyGeoSeriesResponses } from './types.gen';
 
 export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends boolean = boolean, TResponse = unknown> = Options2<TData, ThrowOnError, TResponse> & {
     /**
@@ -22,6 +22,34 @@ export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends 
  * Get Health
  */
 export const getHealth = <ThrowOnError extends boolean = false>(options?: Options<GetHealthData, ThrowOnError>): RequestResult<GetHealthResponses, unknown, ThrowOnError> => (options?.client ?? client).get<GetHealthResponses, unknown, ThrowOnError>({ url: '/api/health', ...options });
+
+/**
+ * Search Geo On Web
+ *
+ * Exa web search for GEO series; only GEO-verified, eligible series come back.
+ */
+export const searchGeoOnWeb = <ThrowOnError extends boolean = false>(options: Options<SearchGeoOnWebData, ThrowOnError>): RequestResult<SearchGeoOnWebResponses, SearchGeoOnWebErrors, ThrowOnError> => (options.client ?? client).post<SearchGeoOnWebResponses, SearchGeoOnWebErrors, ThrowOnError>({
+    url: '/api/geo/web-search',
+    ...options,
+    headers: {
+        'Content-Type': 'application/json',
+        ...options.headers
+    }
+});
+
+/**
+ * Verify Geo Series
+ *
+ * Which of these accessions exist and pass the eligibility filter.
+ */
+export const verifyGeoSeries = <ThrowOnError extends boolean = false>(options: Options<VerifyGeoSeriesData, ThrowOnError>): RequestResult<VerifyGeoSeriesResponses, VerifyGeoSeriesErrors, ThrowOnError> => (options.client ?? client).post<VerifyGeoSeriesResponses, VerifyGeoSeriesErrors, ThrowOnError>({
+    url: '/api/geo/verify',
+    ...options,
+    headers: {
+        'Content-Type': 'application/json',
+        ...options.headers
+    }
+});
 
 /**
  * Search Geo

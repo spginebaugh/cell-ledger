@@ -1,0 +1,25 @@
+{
+  "gse": "GSE333917",
+  "checked_at": "2026-11-07T05:15:56.173519+00:00",
+  "exists": true,
+  "human_evidence": "All 12 samples in the saved snapshot report Homo sapiens.",
+  "bulk_evidence": "Saved study design describes cell-line RNA-seq experiments; bulk interpretation supported, but conflicting processing metadata remains unresolved.",
+  "ncbi_raw_counts_index_match": false,
+  "ncbi_raw_counts_download_link_found": false,
+  "submitter_spreadsheets": [
+    "GSE333917_processed-cf.xlsx",
+    "GSE333917_processed-m.xlsx"
+  ],
+  "proposed_eligible": false,
+  "reason": "Does not meet the stated NCBI-generated raw-count requirement at the time checked.",
+  "review_status": "Eligibility exclusion accepted after user reported team confirmation of search scope; other judgments remain pending.",
+  "limits": "Mandee exact query/function has not been run; checked stated counts requirement independently. No assertion that counts will never become available or that submitter spreadsheets are unusable.",
+  "evidence_files": [
+    "accession.json",
+    "counts.json",
+    "human_sequencing_counts.json",
+    "count_listing.json",
+    "count_listing.response.txt"
+  ],
+  "eligible": false
+}

@@ -1,0 +1,1487 @@
+{
+  "checked_at": "2026-11-07T06:02:19.138750+00:00",
+  "source_commit": "4a7d8ae5128bff85fffd11101796c25dc438da31",
+  "request": {
+    "queries": [
+      "pancreatic cancer",
+      "PDAC"
+    ],
+    "limit_per_query": 50,
+    "since": null
+  },
+  "response": {
+    "queries": [
+      {
+        "query": "pancreatic cancer",
+        "term": "(pancreatic cancer) AND \"Homo sapiens\"[Organism] AND \"expression profiling by high throughput sequencing\"[DataSet Type] AND gse[ETYP] AND \"rnaseq counts\"[Filter]",
+        "total": 328,
+        "returned": 50
+      },
+      {
+        "query": "PDAC",
+        "term": "(PDAC) AND \"Homo sapiens\"[Organism] AND \"expression profiling by high throughput sequencing\"[DataSet Type] AND gse[ETYP] AND \"rnaseq counts\"[Filter]",
+        "total": 178,
+        "returned": 50
+      }
+    ],
+    "hits": [
+      {
+        "gse": "GSE273398",
+        "title": "A CLIC1 network coordinates matrix stiffness and the Warburg effect to promote tumor growth in pancreatic cancer. Zheng et al.",
+        "summary": "Pancreatic ductal adenocarcinoma (PDAC) features substantial matrix stiffening and reprogrammed glucose metabolism, particularly the Warburg effect. However, the complex interplay between these traits and their impact on tumor advancement remains inadequately explored. Here, we integrated clinical, cellular, and bioinformatics approaches to explore the connection between matrix stiffness and the Warburg effect in PDAC, identifying CLIC1 as a key mediator. Elevated CLIC1 expression, induced by matrix stiffness through Wnt/β-catenin/TCF4 signaling, signifies poorer prognostic outcomes in PDAC. Functionally, CLIC1 serves as a catalyst for glycolytic metabolism, propelling tumor proliferation. Mechanistically, CLIC1 fortifies HIF1α stability by curbing hydroxylation via ROS. Collectively, PDAC cells elevate CLIC1 levels in a matrix stiffness-responsive manner, bolstering the Warburg effect to drive tumor growth via ROS/HIF1α signaling. Our insights highlight opportunities for targeted therapies that concurrently address matrix properties and metabolic rewiring, with CLIC1 emerging as a promising intervention point.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 6,
+        "published": "2024-08-01",
+        "pubmed_ids": [],
+        "matched_queries": [
+          "pancreatic cancer",
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE227567",
+        "title": "CA19-9-positive extracellular vesicles are the risk for cancer-associated thrombosis in pancreatic cancer",
+        "summary": "To investigate the effect of pancreatic cancer cell-derived EVs on HUVEC, we performed gene expression analysis of HUVEC treated with or without EVs for 5h.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 8,
+        "published": "2024-08-01",
+        "pubmed_ids": [
+          "39131719"
+        ],
+        "matched_queries": [
+          "pancreatic cancer"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE273116",
+        "title": "A pan-KRAS inhibitor and its derived degrader elicit multifaceted anti-tumor efficacy in KRAS-driven cancers [bulk RNA-seq]",
+        "summary": "KRAS is the most frequently mutated oncogene in human cancers, but to date, only KRASG12C inhibitors have been FDA-approved. Small-molecule inhibitors that target other more prevalent KRAS mutations are in urgent clinical need. Here, we report a highly potent pan-KRAS inhibitor, MCB-294, that selectively targets KRAS, but not HRAS or NRAS. Molecular profiling studies show that MCB-294 binds to and inhibits several KRAS mutants, including G12D, G12C, G12V, thereby disabling KRAS oncogenic signaling. MCB-294 is well tolerated in mice and exhibits remarkable therapeutic efficacy against the growth of a comprehensive range of KRAS-driven cancer cell lines, patient-derived organoids, and tumor xenografts and prolongs mouse survival. By employing an MCB-294 derivative as the KRAS binder, we further identify a VHL-based pan-KRAS degrader, MCB-36, that efficiently degrades KRAS in vitro and in vivo through the ubiquitin-proteasome system. Importantly, MCB-294 and MCB-36 not only effectively kill KRASG12C inhibitor-resistant cells, but also reshape the tumor microenvironment by boosting T cell-mediated anti-tumor immunity. Taken together, our findings demonstrate a successful and feasible strategy for targeting pan-KRAS to impair multifaceted features of KRAS-driven cancers.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 12,
+        "published": "2024-07-30",
+        "pubmed_ids": [],
+        "matched_queries": [
+          "pancreatic cancer"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE229230",
+        "title": "Targeting novel m6A reader KHSRP impairs pancreatic ductal adenocarcinoma progression via attenuating FAK signaling",
+        "summary": "We report KH-type splicing regulatory protein (KHSRP) as a novel m6A reader with oncogenic functions in pancreatic ductal adenocarcinoma (PDAC). KHSRP recognizes and stabilizes its target mRNAs (e.g., MET, ITGAV and ITGB1) in an m6A-dependent manner, therefore activating downstream FAK signaling and promoting PDAC progression. Targeting KHSRP shows promising anti-tumoral effects in vitro and in vivo, indicating that KHSRP may serve as a therapeutic target for PDAC.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing",
+          "Other"
+        ],
+        "n_samples": 31,
+        "published": "2024-07-30",
+        "pubmed_ids": [],
+        "matched_queries": [
+          "pancreatic cancer",
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE242516",
+        "title": "MARK2/MARK3 kinases are catalytic co-dependencies of YAP/TAZ in human cancer [RNA-seq]",
+        "summary": "The effect of gene perturbation on the transcriptome was evaluated in human Cas9 expressing cancer cell lines",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 180,
+        "published": "2024-07-20",
+        "pubmed_ids": [
+          "39058094"
+        ],
+        "matched_queries": [
+          "pancreatic cancer"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE241330",
+        "title": "Difference of expression profile between tumor tissue and adjacent tissue in patients with pancreatic cancer",
+        "summary": "In order to explore the differences between tumor tissues and adjacent tissues of pancreatic cancer patients, we plan to find the differences in expression profiles between tumor tissues and adjacent tissues of pancreatic cancer patients by sequencing",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 6,
+        "published": "2024-07-03",
+        "pubmed_ids": [
+          "37620449"
+        ],
+        "matched_queries": [
+          "pancreatic cancer"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE241328",
+        "title": "The influence of DDX18 high expression in PDAC cells Hs766T on the expression of other intracellular molecules",
+        "summary": "DDX18 promotes the occurrence and development of pancreatic cancer and the maintenance of stem cell characteristics, but the mechanism through which these effects are accomplished is still unclear. The purpose of this sequencing is to screen the differential genes affected by DDX18 expression",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 6,
+        "published": "2024-07-03",
+        "pubmed_ids": [
+          "37620449"
+        ],
+        "matched_queries": [
+          "pancreatic cancer",
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE270676",
+        "title": "Gomisin G inhibits pancreatic cancer cell growth through the Hippo-YAP signaling pathway",
+        "summary": "Purpose: The purpose of this study was to investigate the effect of Gomisin G on the transcription level of pancreatic cancer cells SW1990.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 4,
+        "published": "2024-06-29",
+        "pubmed_ids": [],
+        "matched_queries": [
+          "pancreatic cancer"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE259390",
+        "title": "ADRA2A is a suppressor of the basal-like/squamous subtype and reduces disease aggressiveness of pancreatic cancer",
+        "summary": "Pancreatic cancer is a heterogeneous disease and consists of distinct subtypes. Here, we investigated candidate suppressor genes of the basal-like/squamous subtype, a more aggressive molecular subtype of pancreatic ductal adenocarcinoma (PDAC). Through an integrated transcriptome analysis, we identified the ADRA2A, as being downregulated in the basal-like/squamous PDAC using a discovery and validation approach. ADRA2A downregulation is associated with decreased patient survival. The goal of this study was to identify ADRA2A-induced molecular signatures in PDAC.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 8,
+        "published": "2024-06-28",
+        "pubmed_ids": [
+          "38903083"
+        ],
+        "matched_queries": [
+          "pancreatic cancer",
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE269985",
+        "title": "Mechanisms of resistance to oncogenic KRAS inhibition in pancreatic cancer [dataset 2]",
+        "summary": "KRAS inhibitors demonstrate clinical efficacy in pancreatic ductal adenocarcinoma (PDAC); however, resistance is common. Among patients with KRASG12C-mutant PDAC treated with adagrasib or sotorasib, mutations in PIK3CA and KRAS, and amplifications of KRASG12C, MYC, MET, EGFR, and CDK6 emerged at acquired resistance. In PDAC cell lines and organoid models treated with the KRASG12D inhibitor MRTX1133, epithelial-to-mesenchymal transition and PI3K-AKT-mTOR signaling associate with resistance to therapy. MRTX1133 treatment of the KrasLSL-G12D/+;Trp53LSL-R172H/+;p48-Cre (KPC) mouse model yielded deep tumor regressions, but drug resistance ultimately emerged, accompanied by amplifications of Kras, Yap1, Myc, and Cdk6/Abcb1a/b, and co-evolution of drug-resistant transcriptional programs. Moreover, in KPC and PDX models, mesenchymal and basal-like cell states displayed increased response to KRAS inhibition compared to the classical state. Combination treatment with KRASG12D inhibition and chemotherapy significantly improved tumor control in PDAC mouse models. Collectively, these data elucidate co-evolving resistance mechanisms to KRAS inhibition and support multiple combination therapy strategies.",
+        "taxa": [
+          "Homo sapiens",
+          "Mus musculus"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 30,
+        "published": "2024-06-17",
+        "pubmed_ids": [
+          "38975874"
+        ],
+        "matched_queries": [
+          "pancreatic cancer",
+          "PDAC"
+        ],
+        "mixed_organism": true
+      },
+      {
+        "gse": "GSE253929",
+        "title": "ROR2 regulates cellular plasticity in pancreatic neoplasia and adenocarcinoma [RNA-seq siROR2 ]",
+        "summary": "Cellular plasticity is a hallmark of pancreatic ductal adenocarcinoma (PDAC) starting from the conversion of normal cells to precancerous lesions to the progression of carcinoma subtypes associated with aggressiveness and therapeutic response. We found that normal acinar cell differentiation, maintained by the transcription factor Pdx1, suppresses a broad gastric cell identity that is maintained in metaplasia, neoplasia, and the classical subtype of PDAC in mouse and human. We have identified the receptor tyrosine kinase Ror2 as marker of a gastric metaplasia (SPEM)-like identity in the pancreas. Ablation of Ror2 in a mouse model of pancreatic tumorigenesis promoted a switch to a gastric pit cell identity that largely persisted through progression to carcinoma. In both human and mouse pancreatic cancer, ROR2 activity continued to antagonize the gastric pit cell identity, strongly promoting an epithelial to mesenchymal transition, conferring resistance to KRAS inhibition, and vulnerability to AKT inhibition.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 12,
+        "published": "2024-06-17",
+        "pubmed_ids": [
+          "38975886"
+        ],
+        "matched_queries": [
+          "pancreatic cancer",
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE253599",
+        "title": "ROR2 regulates cellular plasticity in pancreatic neoplasia and adenocarcinoma (RNA-Seq)",
+        "summary": "Cellular plasticity is a hallmark of pancreatic ductal adenocarcinoma (PDAC) starting from the conversion of normal cells to precancerous lesions to the progression of carcinoma subtypes associated with aggressiveness and therapeutic response. We found that normal acinar cell differentiation, maintained by the transcription factor Pdx1, suppresses a broad gastric cell identity that is maintained in metaplasia, neoplasia, and the classical subtype of PDAC in mouse and human. We have identified the receptor tyrosine kinase Ror2 as marker of a gastric metaplasia (SPEM)-like identity in the pancreas. Ablation of Ror2 in a mouse model of pancreatic tumorigenesis promoted a switch to a gastric pit cell identity that largely persisted through progression to carcinoma. In both human and mouse pancreatic cancer, ROR2 activity continued to antagonize the gastric pit cell identity, strongly promoting an epithelial to mesenchymal transition, conferring resistance to KRAS inhibition, and vulnerability to AKT inhibition.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 12,
+        "published": "2024-06-17",
+        "pubmed_ids": [
+          "38975886"
+        ],
+        "matched_queries": [
+          "pancreatic cancer",
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE198444",
+        "title": "Inhibition of histone acetyltransferase attenuates 3D chromatin-mediated insulin signaling in pancreatic cancer (RNAseq dataset)",
+        "summary": "Inhibition of histone acetyltransferase has been widely used to be effectively treat cancers in many studies. However, it’s not clear how the downstream signaling responds to the inhibitor in pancreatic cancer. Here we performed Hi-C experiments and RNA-seq to canonical and patient-derived pancreatic cancer cells with the treatment of small molecule inhibitor ICG-001 which has dual function to block both WNT signaling and histone acetyltransferase. This is RNA-seq dataset.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 24,
+        "published": "2024-06-10",
+        "pubmed_ids": [
+          "38927910"
+        ],
+        "matched_queries": [
+          "pancreatic cancer"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE268817",
+        "title": "Genes associated with mitogen-activated protein kinase activity in pancreatic cancer cells",
+        "summary": "We performed a transcriptome analysis to determine what genes were altered in expression when U0126, MAP2K inhibitor, was administered to cells of human pancreatic cancer cell lines. Five genes including ETV5, ETV4, COL13A1, HIST1H4L/H4C13, and WDR62 were found to be particularly downregulated by the inhibition of MAPK pathway, meaning that these genes were preferentially upregulated by the active MAPK. The expression of ETV5 was most modulated, suggesting that ETV5 is strongly associated with the MAPK activity and may play a role in human pancreatic cancer.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 6,
+        "published": "2024-06-05",
+        "pubmed_ids": [
+          "40204967"
+        ],
+        "matched_queries": [
+          "pancreatic cancer"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE192647",
+        "title": "Transcriptome analysis of pancreatic cancer patients with low and high metabolic tumor volume (MTV)",
+        "summary": "Transcriptome wide-comparison between MTV-low and -high groups was performed with three types: 1) cancer to normal site ratio, cancer site, and normal site. Among three types of comparison, the cancer-to-normal site ratio was the most informative. 211 genes were generally upregulated, and 166 genes were downregulated in the MTV-high group compared to the MTV-low group. Of 211 upregulated gens, 44 showed more than a 2-fold difference and statistical significance. On the other hand, of 166 downregulated genes, 56 showed more than a 2-fold difference and statistical significance. In functional annotation analysis, the GO terms of the upregulated genes were enriched to Wnt signaling (GO: 0035567, 0060070, 0060071), sister chromatid cohesion (GO: 0007062), and cell division (GO: 0000278, 0051301) trends (Figure 1E-a), whereas those of the downregulated genes were enriched to rRNA processing (GO: 0006364), translation (GO: 0006412, 0006413), nuclear-transcribed mRNA catabolic process (GO: 0000184) trends (Figure 1E-b). 28 upregulated genes belonged to Wnt signaling or Cell division, while 22 downregulated genes belonged to rRNA processing.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 28,
+        "published": "2024-05-22",
+        "pubmed_ids": [
+          "38741142"
+        ],
+        "matched_queries": [
+          "pancreatic cancer"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE262562",
+        "title": "Necroptosis enhances 'Don’t eat me' signal and induces macrophage extracellular traps to promote pancreatic cancer liver metastasis [THP1-derived macrophages]",
+        "summary": "We delved into the consequences of macrophages that co-cultured with PDAC cells with Vector/MLKL overexpression. We treated THP1 derived macrophages with PANC1 cells with Vector/MLKL overexpression.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 6,
+        "published": "2024-05-06",
+        "pubmed_ids": [],
+        "matched_queries": [
+          "pancreatic cancer",
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE248494",
+        "title": "Necroptosis enhances “Don’t eat me” signal and induces macrophage extracellular traps to promote pancreatic cancer liver metastasis",
+        "summary": "We delved into the consequences of METs formation. We treated wild-type PANC-1 with METs-containing CM and performed RNA-seq.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 6,
+        "published": "2024-05-06",
+        "pubmed_ids": [],
+        "matched_queries": [
+          "pancreatic cancer",
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE252002",
+        "title": "In vitro drug screening of RAF/MEK/ERK Inhibitors in two PDA Cell Lines",
+        "summary": "In this study 14 different RAF, MEK, or ERK inhibitors were tested in ASPC1 and PANC1 PDA cell lines",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 152,
+        "published": "2024-04-28",
+        "pubmed_ids": [
+          "38588697",
+          "39533066"
+        ],
+        "matched_queries": [
+          "pancreatic cancer"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE235516",
+        "title": "ZDHHC20-Mediated S-Palmitoylation of YTHDF3 Stabilizes MYC mRNA to Promote Pancreatic Cancer Progression",
+        "summary": "Post-translational modifications of malignant transformation and tumor maintenance in pancreatic ductal adenocarcinoma (PDAC) in the context of KRAS signaling remains largely unexplored. Here, we used the KPC mouse model to examine the effect of palmitoylation on pancreatic cancer progression. ZDHHC20, upregulated by KRAS, is abnormally overexpressed and associated with poor prognosis in patients with pancreatic cancer. Dysregulation of ZDHHC20 promotes pancreatic cancer progression in a palmitoylation-dependent manner. ZDHHC20 inhibits lysosomal localization and degradation of YTHDF3 through S-palmitoylation of Cys474, which can result in abnormal accumulation of the oncogenic product MYC and thereby promote the malignant phenotypes of cancer cells. Further, we designed a biologically active YTHDF3-derived peptide to competitively inhibit YTHDF3 palmitoylation mediated by ZDHHC20, which in turn downregulated MYC expression and inhibited the progression of KRAS mutant pancreatic cancer. Thus, these findings highlight the therapeutic potential of targeting the ZDHHC20-YTHDF3-MYC signaling axis in pancreatic cancer.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 6,
+        "published": "2024-04-22",
+        "pubmed_ids": [
+          "38821916"
+        ],
+        "matched_queries": [
+          "pancreatic cancer",
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE263949",
+        "title": "mRNA profile of PANC-1 treated with CAF-derived Evs",
+        "summary": "Perineural invasion (PNI) is a unique biological feature of pancreatic cancer and is a key cause of pancreatic cancer metastasis, recurrence and poor postoperative survival, but its mechanism is largely unclarified. Clinical sample analysis and endoscopic ultrasonographic elasticity scoring indicated that cancer-associated fibroblasts (CAFs) are closely related to the occurrence of PNI. Furthermore, CAF-derived extracellular vesicles played an extremely important role in PNI in a dorsal root ganglion (DRG) coculture model and sciatic nerve model. Next, we demonstrated that CAFs promoted PNI via extracellular vesicle transmission of PNI-associated transcript (PIAT). To determine how CAF EVs exert its function, we performed mRNA sequencing on PANC-1 treated with CAFs-derived EVs",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 6,
+        "published": "2024-04-20",
+        "pubmed_ids": [],
+        "matched_queries": [
+          "pancreatic cancer"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE201176",
+        "title": "Transcriptomic profiling of highly- and lowly- metastasizing pancreatic ductal carcinoma cells [mRNAseq shNPTX1]",
+        "summary": "To interrogate transcriptomic changes in highly liver metastatic pancreatic ductal carcinoma cells as relative to their isogenic lowly metastatic cells",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 11,
+        "published": "2024-04-20",
+        "pubmed_ids": [
+          "39028915"
+        ],
+        "matched_queries": [
+          "pancreatic cancer"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE201175",
+        "title": "Transcriptomic profiling of highly- and lowly- metastasizing pancreatic ductal carcinoma cells [mRNAseq in vivo selection]",
+        "summary": "To interrogate transcriptomic changes in highly liver metastatic pancreatic ductal carcinoma cells as relative to their isogenic lowly metastatic cells",
+        "taxa": [
+          "Homo sapiens",
+          "Mus musculus"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 12,
+        "published": "2024-04-20",
+        "pubmed_ids": [
+          "39028915"
+        ],
+        "matched_queries": [
+          "pancreatic cancer"
+        ],
+        "mixed_organism": true
+      },
+      {
+        "gse": "GSE149000",
+        "title": "Sequencing of AsPC-1 cells with CYP3A5 expression modulation",
+        "summary": "Purpose: To understand the transcriptome-wide effect of CYP3A5 knockdown or over-expression in AsPC-1 cells",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 12,
+        "published": "2024-04-17",
+        "pubmed_ids": [
+          "38560501"
+        ],
+        "matched_queries": [
+          "pancreatic cancer"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE247243",
+        "title": "Sendai virus is robust and consistent in delivering genes into human pancreatic cancer cells.",
+        "summary": "Pancreatic ductal adenocarcinoma (PDAC) is highly intratumorally heterogeneous and has several subtypes. Effective gene delivery to all PDAC cells is essential for modulating gene expression and identifying potential gene-based therapeutic targets in PDAC. Most current gene delivery systems for pancreatic cells are optimized for islet or acinar cells. Lentiviral vectors are the current main gene delivery vectors for PDAC, but their transduction efficiencies vary depending on pancreatic cell type, and are especially poor for the classical subtype of PDAC cells from both primary tumors and cell lines. Herein, we systemically compare transduction efficiencies of glycoprotein G of vesicular stomatitis virus (VSV-G)-pseudotyped lentiviral and Sendai viral vectors in human normal pancreatic ductal and PDAC cells. We find that the Sendai viral vector gives the most robust gene delivery efficiency regardless of PDAC cell type. Therefore, we propose using Sendai viral vectors for transducing ectopic genes into PDAC cells.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 15,
+        "published": "2024-04-08",
+        "pubmed_ids": [],
+        "matched_queries": [
+          "pancreatic cancer",
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE262627",
+        "title": "Circadian transcriptome of pancreatic adenocarcinoma unravels chronotherapeutic targets.",
+        "summary": "Pancreatic ductal adenocarcinoma (PDA) is a lethal cancer characterized by a poor outcome and an increasing incidence. A significant majority (>80%) of newly diagnosed cases are deemed unresectable, leaving chemotherapy as the sole viable option, though with only moderate success. This necessitates the identification of improved therapeutic options for PDA. We hypothesized that there are temporal variations in cancer-relevant processes within PDA tumors, offering insights into the optimal timing of drug administration—a concept termed chronotherapy. In this study, we explored the presence of the circadian transcriptome in PDA using patient-derived organoids (PDOs) and validated these findings by comparing PDA data from TCGA with non-cancerous healthy pancreas data from GTeX. Several PDA-associated pathways (cell cycle, stress response, Rho GTPase signaling) and cancer driver hub genes (EGFR, JUN) exhibited a cancer-specific rhythmic pattern intricately linked to the circadian clock. Through the integration of multiple functional measurements for rhythmic cancer driver genes, we identified top chronotherapy targets and validated key findings in molecularly divergent pancreatic cancer cell lines. Testing the chemotherapeutic efficacy of clinically relevant drugs further revealed temporal variations that correlated with drug-target cycling. Collectively, our study unravels the PDA circadian transcriptome and highlights a potential approach for optimizing chrono-chemotherapeutic efficacy.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 68,
+        "published": "2024-03-27",
+        "pubmed_ids": [],
+        "matched_queries": [
+          "pancreatic cancer"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE240597",
+        "title": "Connectivity Mapping-based Identification and Pre-clinical Evaluation of ISOX: A Novel Therapeutic for Pancreatic Cancer",
+        "summary": "Pancreatic Cancer (PC) remains highly lethal due to limited therapeutic options. Here we utilize a genomic-data-driven Connectivity Mapping (CMAP) to identify a drug closer to real-world PC targeting. ISOX emerged as a top potential drug from the CMAP pipeline across human PC tissues, cell lines, tumoroids, and patient-derived xenografts datasets. Here, we use PC cells, human and mouse tumoroids, and in vivo mouse models to test the ability of ISOX alone and in combination with 5FU to inhibit tumor growth. Transcriptomic and pathway analysis of the ISOX-LINCS signature identified the various pathways as targets for ISOX, suggesting a multiple-target action. Specifically, we discovered that genetic and pharmacological targeting of HDAC6 affected non-histone protein cMYC acetylation leading to cMYC instability, thereby disrupting PC stem cells. Finally, KrasG12D harboring organoids and mice responded effectively against ISOX and 5FU treatment by enhancing survival and controlling metastasis incidence. Overall, our data validate ISOX as a novel drug to treat advanced PC patients without toxicity to normal cells",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 24,
+        "published": "2024-03-13",
+        "pubmed_ids": [
+          "38454151"
+        ],
+        "matched_queries": [
+          "pancreatic cancer"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE223152",
+        "title": "PRMT1 promotes pancreatic cancer development and resistance to chemotherapy",
+        "summary": "Pancreatic ductal adenocarcinoma (PDAC) remains one of the most lethal types of cancer, and novel treatment regimens are direly needed. Epigenetic regulation contributes to the development of various cancer types, but its role in the development of, and potential as a therapeutic target for, PDAC remains underexplored. Here, we show that PRMT1 is highly expressed in murine and human pancreatic cancer and is essential for cancer cell proliferation and tumorigenesis. Deletion of PRMT1 delays pancreatic cancer development in a KRAS-dependent mouse model, and multi-omics analyses reveal that the PRMT1 depletion leads to global changes in chromatin accessibility and transcription, resulting in reduced glycolysis and a decrease in tumorigenic capacity. Pharmacological inhibition of PRMT1 in combination with gemcitabine has a synergistic effect on pancreatic tumor growth in vitro and in vivo. Collectively, our findings implicate PRMT1 as a key regulator of pancreatic cancer development and a promising target for combination therapy. ",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 4,
+        "published": "2024-03-09",
+        "pubmed_ids": [
+          "38460517"
+        ],
+        "matched_queries": [
+          "pancreatic cancer",
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE168918",
+        "title": "TMPRSS4 promotes cell proliferation and inhibits apoptosis in pancreatic ductal adenocarcinoma by activating ERK1/2 signaling pathway",
+        "summary": "Transmembrane protease serine 4 (TMPRSS4) is upregulated in various kinds of human cancers, including pancreatic cancer. However, its biological function in pancreatic ductal adenocarcinoma (PDAC) remains unclear. In the current study, real-time qPCR, immunohistochemical staining, Western blotting, and database (Cancer Genome Atlas and Gene Expression) analysis revealed remarkable overexpression of TMPRSS4 in PDAC tissue as compared to non-tumor tissue. The TMPRSS4 overexpression was associated with poor prognosis of PDAC patients. Moreover, multivariate analysis revealed that TMPRSS4 serves as an independent risk factor in PDAC. We performed gain-and loss-of-function analysis and found that TMPRSS4 promotes cellular proliferation and inhibits apoptosis of PDAC cells both in vitro and in vivo. Furthermore, we showed that TMPRSS4 might promote cell proliferation and inhibit apoptosis through activating ERK1/2 signaling pathway in pancreatic cancer cells. These findings were validated by using ERK1/2 phosphorylation inhibitor SCH772984 both in vitro and in vivo. Taken together, this study suggests that TMPRSS4 is a proto-oncogene, which promotes initiation and progression of PDAC by controlling cell proliferation and apoptosis. Our findings indicate that TMPRSS4 could be a promising prognostic biomarker and a therapeutic target for the treatment of pancreatic cancer.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 6,
+        "published": "2024-03-07",
+        "pubmed_ids": [],
+        "matched_queries": [
+          "pancreatic cancer",
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE256455",
+        "title": "The effects of Eupalinolide B on PANC-1 cells.",
+        "summary": "Eupalinolide B (EB), a compound isolated from Eupatorium lindleyanum, has been evaluated for its anticancer effects on pancreatic cancer cells and xenograft models. Our research presents a multi-faceted investigation of EB, including assessments of its impact on cell viability, proliferation, migration, invasion, and potential mechanisms of action.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 8,
+        "published": "2024-02-28",
+        "pubmed_ids": [
+          "39100694"
+        ],
+        "matched_queries": [
+          "pancreatic cancer"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE249914",
+        "title": "Differential mRNA expression analysis of H358 and AsPC-1 cell xenograft mouse model after MCB-294 treatment",
+        "summary": "The mechanism of action of a pan-Kras inhibitor MCB-294 remains unknown. We determined gene expression profiling in H358 and AsPC-1 cell line xenograft mouse models after MCB-294 treatment using RNA-seq analysis.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 29,
+        "published": "2024-02-22",
+        "pubmed_ids": [],
+        "matched_queries": [
+          "pancreatic cancer"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE238198",
+        "title": "Activation of endogenous retroviruses and induction of viral mimicry by MEK1/2 inhibition in pancreatic cancer [RNA-seq]",
+        "summary": "While pancreatic ductal adenocarcinomas (PDAC) are addicted to KRAS-activating mutations, inhibitors of downstream effectors in the KRAS pathway, such as the clinically approved MEK1/2 kinases inhibitor Trametinib, are devoid of significant therapeutic effects. Nevertheless, the extensive rewiring of regulatory circuits driven by the attenuation of the KRAS pathway can induce novel functional states and vulnerabilities of potential therapeutic relevance. An in-depth molecular analysis of the transcriptional and epigenomic alterations occurring in PDAC cells in the initial hours after MEK1/2 inhibition by Trametinib, unveiled a massive induction of a large number of retroelements, in particular endogenous retroviruses (ERVs), that in these cells escaped epigenetic silencing. In turn, the increased abundance of ERV-derived double stranded RNAs induced a strong Interferon (IFN) response. Pathway deconvolution allowed us to track ERV activation to the early induction of the transcription factor ELF3, which extensively bound and activated non-silenced retroelements and synergized with IRF1 (Interferon regulatory factor 1) in the activation of interferons and IFN-stimulated genes. Trametinib-induced viral mimicry in PDAC may be exploited in the design of combination therapies in immuno-oncology.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 72,
+        "published": "2024-02-19",
+        "pubmed_ids": [
+          "38536927"
+        ],
+        "matched_queries": [
+          "pancreatic cancer",
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE246660",
+        "title": "LMO3 is a suppressor of the basal-like/squamous PDAC subtype and reduces disease aggressiveness of pancreatic cancer through glycerol 3-phosphate metabolism",
+        "summary": "Pancreatic cancer is a heterogenous disease and consists of distinct subtypes. Here, we searched for candidate suppressor genes of the basal-like/squamous subtype, a more aggressive molecular subtype of pancreatic ductal adenocarcinoma (PDAC). Through an integrated transcriptome analysis, we identified the LMO3, as being downregulated in the basal-like/squamous PDAC using a discovery and validation approach. LMO3 downregulation associated with decreased patient survival. The goal of this study was aimed to identify LMO3 induced molecular signatures in PDAC.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 8,
+        "published": "2024-02-08",
+        "pubmed_ids": [
+          "38366633"
+        ],
+        "matched_queries": [
+          "pancreatic cancer",
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE234737",
+        "title": "The RNA binding protein QKI guides a pro-mesenchymal splicing program driving a subtype switch and limiting outcome in pancreatic cancer [PANC-1 and HPAF-II]",
+        "summary": "Transcriptomic analyses have identified two molecular PDAC subtypes, one of which, namely basal-like subtype, is associated with chemoresistance and worse clinical outcomes. Splicing dysregulation is known to contribute to PDAC malignancy. Functional studies in PDAC cells lines identified the splicing factor QKI as a key determinant of a basal-like splicing signature associated with increased tumor aggressiveness. Our studies demonstrate that QKI represses splicing events associated with the classical subtype and improved clinical outcome, while promoting basal-like events associated with shorter survival.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 12,
+        "published": "2024-02-05",
+        "pubmed_ids": [
+          "38325381"
+        ],
+        "matched_queries": [
+          "pancreatic cancer",
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE246925",
+        "title": "Statistical algorithm enabled high precision tumor biomarker discovery for circulating extracellular vesicle-based cancer liquid biopsy ",
+        "summary": "Circulating extracellular vesicles (EVs) have gained significant attention for discovering tumor biomarkers. However, isolating EVs with well-defined homogeneous populations from complex biological samples is challenging. Different methods have been found to derive different EV populations carrying different biomolecules, which significantly confound biomarker discovery for developing clinical diagnostics. Building a rigorous EV isolation and standardizing assessment platform associated with -omics is essential to overcome this challenge. We introduced a novel isolation approach using a pH-responsive peptide conjugated with NanoPom magnetic beads (ExCy) for homogeneous EV isolation. Additionally, we introduced the first statistical algorithm for EV quality assessment (ExoQuality Index, EQI), which enables multi-assay quantification to provide a consistent and accurate definition of EV purity and quality; ExoQuality’s algorithm intakes multi-assay information to deconvolute complex EV heterogeneity. We analyzed our next generation sequencing on EV RNAs from pancreatic cancer patient plasma using four isolation methods; results highlighting ExCy’s isolation and EQI assessment improved biomarker identification. We identified a novel EV tumor biomarker, ATP6V0B, validated with Quantitative PCR (qPCR) by screening a pilot cohort of 23 individuals. With random forest modeling the ATP6V0B cycling threshold, we reported an AUC of 0.91, showcasing an enabling and clinically translatable liquid biopsy approach using circulating EVs.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 28,
+        "published": "2024-01-31",
+        "pubmed_ids": [],
+        "matched_queries": [
+          "pancreatic cancer"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE235027",
+        "title": "Altered histone acetylation patterns in pancreatic cancer cell lines induce subtype-specific transcriptomic and phenotypic changes.",
+        "summary": "Background: Pancreatic ductal adenocarcinoma (PDAC) is often diagnosed at advanced tumor stages with chemotherapy as the only treatment option. Large-scale gene expression studies have defined two major PDAC subtypes, a classical and basal-like, which differ in their response to chemotherapy. The transcriptional networks, which define the molecular PDAC subtypes, are regulated by epigenetic modifications. Given the reversible nature of the epigenome, we aim to determine if drug-induced epigenetic reprogramming of pancreatic cancer cells affects PDAC subtype identity and chemosensitivity.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 21,
+        "published": "2024-01-31",
+        "pubmed_ids": [
+          "38240084"
+        ],
+        "matched_queries": [
+          "pancreatic cancer",
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE243879",
+        "title": "ELAPOR1 induces the classical/progenitor subtype and contributes to reduced disease aggressiveness through metabolic reprogramming in pancreatic cancer",
+        "summary": "Pancreatic cancer is a heterogenous disease and consists of distinct subtypes. Here, we searched for candidate suppressor genes of the basal-like/squamous subtype, a more aggressive molecular subtype of pancreatic ductal adenocarcinoma (PDAC). Through an integrated transcriptome analysis, we identified the ELAPOR1/KIAA1324, as being downregulated in the basal-like/squamous PDAC using a discovery and validation approach. ELAPOR1 downregulation associated with decreased patient survival. The goal of this study was aimed to identify ELAPOR1 induced molecular signatures in PDAC.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 8,
+        "published": "2024-01-30",
+        "pubmed_ids": [
+          "38630934"
+        ],
+        "matched_queries": [
+          "pancreatic cancer",
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE253662",
+        "title": "Cytidine deaminase resolves replicative stress and protects pancreatic cancer from DNA-targeting drugs I",
+        "summary": "Cytidine deaminase (CDA) functions in the pyrimidine salvage pathway for DNA and RNA synthesis and has been shown to protect cancer cells from deoxycytidine-based chemotherapies. In this study, we observed that CDA was overexpressed in pancreatic adenocarcinoma from patients at baseline and was essential for experimental tumor growth. Mechanistic investigations revealed that CDA localized to replication forks where it increased replication speed, improved replication fork restart efficiency, reduced endogenous replication stress, minimized DNA breaks, and regulated genetic stability during DNA replication. In cellular pancreatic cancer models, high CDA expression correlated with resistance to DNA-damaging agents. Silencing CDA in patient-derived primary cultures in vitro and in orthotopic xenografts in vivo increased replication stress and sensitized pancreatic adenocarcinoma cells to oxaliplatin. This study sheds light on the role of CDA in pancreatic adenocarcinoma, offering insights into how this tumor type modulates replication stress. These findings suggest that CDA expression could potentially predict therapeutic efficacy and that targeting CDA induces intolerable levels of replication stress in cancer cells, particularly when combined with DNA-targeted therapies",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 15,
+        "published": "2024-01-24",
+        "pubmed_ids": [
+          "38294491"
+        ],
+        "matched_queries": [
+          "pancreatic cancer"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE252909",
+        "title": "Pancreatic cancer xenograft tumor RNA sequencing and pathologic differentiation of matched human tumors.",
+        "summary": "Epithelial to mesenchymal transition (EMT) in pancreatic cancer is believed to correlate with metastatic probability and aggressiveness. In the clinical setting, tumor staging and grading reflect tumor aggressiveness, tumor invasion, and gross metastasis and are used to guide treatment options. These data were analyzed to correlate commonly used laboratory RNA sequencing analysis with clinically defined differentiation status. This dataset provides evidence that mesenchymal genes are enriched in xenograft tumors from poorly differentiated human tumors.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 28,
+        "published": "2024-01-15",
+        "pubmed_ids": [
+          "38471099"
+        ],
+        "matched_queries": [
+          "pancreatic cancer",
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE252544",
+        "title": "Cytidine deaminase resolves replicative stress and protects pancreatic cancer from DNA-targeting drugs",
+        "summary": "Cytidine deaminase (CDA) functions in the pyrimidine salvage pathway for DNA and RNA synthesis and has been shown to protect cancer cells from deoxycytidine-based chemotherapies. In this study, we observed that CDA was overexpressed in pancreatic adenocarcinoma from patients at baseline and was essential for experimental tumor growth. Mechanistic investigations revealed that CDA localized to replication forks where it increased replication speed, improved replication fork restart efficiency, reduced endogenous replication stress, minimized DNA breaks, and regulated genetic stability during DNA replication. In cellular pancreatic cancer models, high CDA expression correlated with resistance to DNA-damaging agents. Silencing CDA in patient-derived primary cultures in vitro and in orthotopic xenografts in vivo increased replication stress and sensitized pancreatic adenocarcinoma cells to oxaliplatin. This study sheds light on the role of CDA in pancreatic adenocarcinoma, offering insights into how this tumor type modulates replication stress. These findings suggest that CDA expression could potentially predict therapeutic efficacy and that targeting CDA induces intolerable levels of replication stress in cancer cells, particularly when combined with DNA-targeted therapies",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 6,
+        "published": "2024-01-15",
+        "pubmed_ids": [
+          "38294491"
+        ],
+        "matched_queries": [
+          "pancreatic cancer"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE226448",
+        "title": "Folfirinox-dependent reprogramming of macrophages by primary pancreatic cancer CAFs",
+        "summary": "The pancreatic cancer tumor microenvironment is dominated primarily by cancer-associated fibroblasts (CAFs) and tumor associated macrophages (TAMs). The interecellular dialogue between CAFs and TAMs and the resulting impact on chemoresistance, specifically to Folfirinox, remains poorly understood. In this study, we sought to understand the impact of primary PDAC CAFs on macrophage reprogramming in a folfirinox-dependent manner and performed various cellular assays (viability, immunophenotyping, phagocytosis, secretory profile analysis) and transcriptomic analysis.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 12,
+        "published": "2024-01-10",
+        "pubmed_ids": [
+          "38167013"
+        ],
+        "matched_queries": [
+          "pancreatic cancer",
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE252667",
+        "title": "CPSF3 inhibition blocks pancreatic cancer cell proliferation through disruption of core histone mRNA processing",
+        "summary": "Pancreatic ductal adenocarcinoma (PDAC) is a lethal disease with limited effective treatment options, potentiating the importance of uncovering novel drug targets. Here, we target Cleavage and Polyadenylation Specificity Factor 3 (CPSF3), the 3’ endonuclease that catalyzes mRNA cleavage during polyadenylation and histone mRNA processing. We find that CPSF3 is highly expressed in PDAC and is associated with poor prognosis. CPSF3 knockdown blocks PDAC cell proliferation and colony formation in vitro and tumor growth in vivo. Chemical inhibition of CPSF3 by the small molecule JTE-607 also attenuates PDAC cell proliferation and colony formation, while it has no effect on cell proliferation of non-transformed immortalized control pancreatic cells. Mechanistically, JTE-607 induces transcriptional read-through in replication-dependent histones, reduces core histone expression, destabilizes chromatin structure and arrests cells in the S-phase of the cell cycle. Therefore, CPSF3 represents a potential therapeutic target for the treatment of PDAC.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 12,
+        "published": "2024-01-06",
+        "pubmed_ids": [
+          "38191171"
+        ],
+        "matched_queries": [
+          "pancreatic cancer",
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE245941",
+        "title": "Spatial tumor immune heterogeneity facilitates subtype co-existence and therapy response via AP1 dichotomy in pancreatic cancer [RNA-seq]",
+        "summary": "Pancreatic ductal adenocarcinoma (PDAC) displays a high degree of spatial subtype heterogeneity. This intratumoral co-existence of classical and basal-like programs is evident in multi-scale transcriptomic and spatial analyses of resected, advanced-stage and chemotherapy-treated specimens and reciprocally linked to a diverse stromal immune microenvironment as well as worse clinical outcome. However, the underlying mechanisms of intratumoral subtype heterogeneity remain largely unclear. Here, by combining preclinical models, multi-center clinical, bulk and compartment-specific transcriptomic, proteomic, and bioimaging data from human specimens, we identified an interplay between neoplastic intrinsic AP1 transcription factor dichotomy and extrinsic CD68+ macrophages as a driver of intratumoral subtype co-existence along with an immunosuppressive tumor microenvironment with T cell exclusion. Our ATAC , ChIP-, and RNA-seq analyses revealed that JUNB/AP1- and HDAC-mediated epigenetic programs repress pro-inflammatory immune signatures in tumor cells, antagonizing cJUN/AP1 signaling to favor a therapy-responsive classical neoplastic identity. Through the tumor microenvironment, this dichotomous regulation was further amplified via regional macrophage populations. Moreover, CD68+/TNF-α+ cells associated with a reactive phenotype and reduced CD8+ T cell infiltration in human PDAC tumors. Consequently, combined anti-TNF-α immunotherapy and chemotherapy resulted in reduced macrophage counts and promoted CD3+/CD8+ T cell infiltration in basal-like PDAC, leading to improved survival in preclinical murine models. We conclude that tumor cell intrinsic epigenetic programs, together with extrinsic microenvironmental cues, facilitate intratumoral subtype heterogeneity and disease progression.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 12,
+        "published": "2023-12-31",
+        "pubmed_ids": [
+          "39762215"
+        ],
+        "matched_queries": [
+          "pancreatic cancer",
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE228804",
+        "title": "Engrailed-1 Promotes Pancreatic Cancer Metastasis [RNA-Seq]",
+        "summary": "Engrailed-1 (EN1) is a critical homeodomain transcription factor (TF) required for neuronal survival, and EN1 expression has been shown to promote aggressive forms of triple negative breast cancer. Here, we report that EN1 is aberrantly expressed in a subset of pancreatic ductal adenocarcinoma (PDA) patients with poor outcomes. EN1 predominantly repressed its target genes through direct binding to gene enhancers and promoters, implicating a role in the cellular response to the stimulation of mesenchymal cell properties. Gain- and loss-of-function experiments demonstrated that EN1 promoted PDA transformation and metastasis in vitro and in vivo. Our findings nominate the targeting of EN1 and downstream pathways in aggressive PDA.",
+        "taxa": [
+          "Homo sapiens",
+          "Mus musculus"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 14,
+        "published": "2023-12-19",
+        "pubmed_ids": [
+          "38110836"
+        ],
+        "matched_queries": [
+          "pancreatic cancer"
+        ],
+        "mixed_organism": true
+      },
+      {
+        "gse": "GSE249726",
+        "title": "Pien Tze Huang Targets Cancer Proliferation and Inhibits Growth of Patient-derived Organoid and Xenograft Tumors in Pancreatic Cancer",
+        "summary": "We used RNA-sequencing (RNA-Seq) to analyze gene expression in PC cells treated with PZH. Next, we confirmed these findings on the protein level using Western blot and immunofluorescence. Finally, we analyzed the proliferative impact of PC cells treated with PZH using MTT and flow cytometric assays and verified it with PC patient-derived organoids (PDOs) and xenograft mice models.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 6,
+        "published": "2023-12-12",
+        "pubmed_ids": [],
+        "matched_queries": [
+          "pancreatic cancer"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE248887",
+        "title": "DKK1-SE promotes pancreatic cancer progression by recruiting AP1 to activate the target gene DKK1",
+        "summary": "Super Enhancers are a class of DNA Cis-regulatory elements that can regulate cell identity, cell fate, stem cell pluripotency, and even tumorigenesis.Increasing evidence shows that epigenetic modifications play an important role in the pathogenesis of various types of cancer. However, current research is far from sufficient to reveal the complex mechanisms behind epigenetic modifications.The aim of this study is to explore the function and mechanism of a new Super Enhancer in Pancreatic ductal adenocarcinoma (PDAC) tumors. By using epigenetic modification and chromatin interaction information, we found a new Super Enhancer enriched with abnormal active histone modifications in PDAC tumors and cells, called DKK1-super-enhancer (DKK1-SE).DKK1-SE was grouped according to the activity modification information, and the e1 component was identified as the main active unit by dual luciferase reporter gene system and dCas9-KRAB system.DNA motif analysis and core site deletion assay revealed that the e1 component possessed AP1 transcription factor family binding sites.Mechanically, AP1 activates DKK1 transcriptional activity by recruiting JUND and FOSL2 to induce enhancer chromatin remodeling.CRISPR/ Cas9-mediated deletion of DKK1-SE resulted in significant downregulation of its target gene DKK1.Analysis of TCGA data of PDAC tumors combined with immunohistochemical results of PDAC patients demonstrated that DKK1 was closely related to malignant clinical features of PDAC.Bioinformatics analysis of RNA-seq data showed that DKK1 was mainly related to tumor-related biological functions such as extracellular matrix, cell adhesion, angiogenesis, and cell proliferation.Cell malignant phenotype assay showed that deletion or interference of DKK1-SE significantly inhibited the proliferation, colony formation, migration and invasion of PANC-1, and these phenomena were partially alleviated after restoring DKK1 expression in DKK1-SE deficient cells.Experiments of Subcutaneous transplantation tumor in nude mice and Orthotopic transplantation tumor model showed that DKK1-SE deletion not only inhibited tumor proliferation, but also reduced the complexity of tumor microenvironment, resulting in less angiogenesis of tumor tissues and reduced fibrosis degree.In conclusion, DKK1-SE drives the expression of DKK1 by recruiting AP1 family transcription factors, which plays a carcinogenic role in PDAC tumors and enhances the complexity of the tumor microenvironment.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 6,
+        "published": "2023-12-12",
+        "pubmed_ids": [],
+        "matched_queries": [
+          "pancreatic cancer",
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE217965",
+        "title": "Depletion of Nrf2 in pancreatic cancer cells shifts arginine metabolism into the phosphocreatine energy system",
+        "summary": "Depletion of Nrf2 leads to an increase in cellular ROS, reduced glutathione and thiols, and profound reprogramming of metabolism. Unbiased transcriptome analyses show that key enzymes of glycolysis, pentose phosphate pathway, and glutathione cycle are significantly downregulated, while enzymes of arginine and medium-chain fatty acids metabolism are upregulated. Besides glutamine, pancreatic cancer cells deficient of Nrf2 axis become highly dependent on arginine, which is channelled into the synthesis of phosphocreatine and polyamines. Key enzymes of the creatine pathway, gatm and ckb, are more expressed and more active in Nrf2(-/-) than in WT cells. This metabolism shift creates an energy buffer that enables pancreatic cancer cells to handle increased energy demand. Metabolomic analysis showed that 12% of the creatine pool is phosphorylated in Nrf2(-/-) cells, while the level drops to < 0.1% in WT cells. The inhibition of the creatine pathway with cyclocreatine in Nrf2(-/-) cells, reduces by 43% the ATP level and by 70% invasion rate in matrigel. Furthermore, we found that combination therapies that can target simultaneously the creatine pathway and the KRAS G12D-Nrf2 axis produce a stronger anticancer effect than monotherapies. Taken together, our data provide the basis for the rationale design of new combination therapies against pancreatic cancer. The KRAS G12D-Nrf2 axis controls redox homeostasis and metabolism in PDAC cells. Suppression of KRAS G12D-Nrf2 decreases glycolysis, PPP and glutathione cycle and promotes a metabolic shift of arginine into the synthesis of phosphocreatine",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 6,
+        "published": "2023-12-12",
+        "pubmed_ids": [
+          "38144458"
+        ],
+        "matched_queries": [
+          "pancreatic cancer",
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE159334",
+        "title": "Dual-hit strategy for therapeutic targeting of pancreatic cancer in patient-derived xenograft tumors",
+        "summary": "Paracrine activation of pro-fibrotic sonic hedgehog (sHH) signaling in pancreatic ductal adenocarcinoma (PDAC) results in stromal amplification that compromises tumor drug delivery, efficacy, and patient survival. Interdiction of sHH-mediated tumor-stroma crosstalk with smoothened inhibitors transiently increases tumor permeability and macromolecule delivery. Using diffusion-weighted magnetic resonance (DW-MR) imaging, we demonstrate in multiple patient-derived xenografts (PDX) that responders to short-term sHH inhibitor exposure show increased permeability with proportionate increases in tumor diffusivity. However, a subset of PDXs fails to respond. Responders show co-induction of epithelial-mesenchymal transition (EMT), elevated FGF drive, and distinctly higher nuclear localization of fibroblast growth factor receptor (FGFR1). A pan-FGFR inhibitor (NVP-BGJ398) reverses EMT and nuclear FGFR1 accumulation without compromising the tumor priming effect. This dual-hit strategy of SMO and FGFR inhibition provides a clinically-translatable approach to compromise the profound impermeability of PDAC tumors. Furthermore, clinical deployment of DW-MR imaging could fulfill the essential clinical requirement for patient stratification",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 6,
+        "published": "2023-12-12",
+        "pubmed_ids": [],
+        "matched_queries": [
+          "pancreatic cancer",
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE245819",
+        "title": "Inhibition of ADAM9 mediates KRAS-related pathways in pancreatic cancer cells",
+        "summary": "Kirsten rat sarcoma virus (KRAS) signaling drives pancreatic ductal adenocarcinoma (PDAC) malignancy, which is an unmet clinical need. Here we identify a disintegrin and metalloproteinase domain 9 (ADAM9) as a modulator of PDAC progression via stabilization of wild-type and mutant KRAS proteins. Mechanistically, ADAM9 loss increases the interaction of KRAS with plasminogen activator inhibitor-1 (PAI-1), which functions as a selective autophagy receptor in conjunction with LC3, triggering the lysosomal degradation of KRAS. Suppression of ADAM9 by a small molecule inhibitor restricts disease progression in spontaneous models, and the combination with gemcitabine elicits dramatic regression of patient-derived tumors. Our findings provide a promising strategy to target the KRAS signaling cascade and demonstrate a potential modality to enhance sensitivity to chemotherapy in PDAC.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 2,
+        "published": "2023-12-11",
+        "pubmed_ids": [],
+        "matched_queries": [
+          "pancreatic cancer",
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE242083",
+        "title": "Med12 ablation promotes anti-tumor function by enhancing tumor intrinsic immunogenicity in Pancreatic ductal adenocarcinoma [human RNA-seq]",
+        "summary": "Pancreatic ductal adenocarcinoma (PDAC) is one of the most lethal cancers with limited treatment options, including checkpoint blockade (ICB) immunotherapy. Epigenetic dysregulation is a defining feature of tumorigenesis and contributes to immune escape. However, little is known about whether and how epigenetic regulators evade immune surveillance in PDAC. Here, we identified Med12, a subunit of RNA polymerase II, as a mediator of immune escape in PDAC with in vivo CRISPR-Cas9 Screening. In murine PDAC models, Med12 loss effectively promoted infiltration and cytotoxicity of CD8+ T cells and NK cells，thereby sensitized to ICB and led to a marked extension of survival. Mechanistically, Med12 loss derepressed endogenous retroelements via impairing H3K9me3 and increasing H3K27Ac modification, triggering cytosolic RNA-sensing and DNA-sensing pathways as well as the type I interferon pathways. Moreover, Med12 depletion induced H3K27Ac gain in the Med12-binding domains, further enhanced the interferon-related genes transcription. Our results demonstrated the role of Med12 in suppressing tumor-intrinsic immunogenicity, thus provided a potential target or marker for immunotherapy of PDAC.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 36,
+        "published": "2023-11-30",
+        "pubmed_ids": [],
+        "matched_queries": [
+          "pancreatic cancer",
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE225011",
+        "title": "Triptolide analogs induced apoptosis on pancreatic cancer patient-derived organoids",
+        "summary": "Investigate the MOA of triptolide analog-CK21 in pancreatic cancer. Time course transcriptomic profiling of tumor organoids treated with CK21 in vitro revealed <10 differentially expressed genes (DEGs) at 3 h and ~8,000 DEGs at 12 h. Overall inhibition of general RNA transcription was observed, and Ingenuity pathway analysis together with functional cellular assays confirmed inhibition of the NF-κB pathway, increased oxidative phosphorylation and mitochondrial dysfunction, leading ultimately to increased reactive oxygen species (ROS) production, reduced B-cell-lymphoma protein 2 (BCL2) expression, and mitochondrial-mediated tumor cell apoptosis.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 32,
+        "published": "2023-11-24",
+        "pubmed_ids": [
+          "37877568"
+        ],
+        "matched_queries": [
+          "pancreatic cancer"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE267702",
+        "title": "LINC01133 promotes pancreatic ductal adenocarcinoma epithelial-mesenchymal transition mediated by SPP1 through binding to Arp3",
+        "summary": "Pancreatic ductal adenocarcinoma (PDAC) is a lethal disease with limited treatment methods. Long non-coding RNAs (lncRNAs) have been found involved in tumorigenic and progression. The present study revealed that LINC01133, a fewly reported lncRNA, was one of 16 hub genes that could predict PDAC patients' prognosis. LINC01133 was over-expressed in PDAC tumors compared to adjacent pancreas, and could promote PDAC proliferation and metastasis in vitro and in vivo, as well as inhibited PDAC apoptosis. LINC01133 expression positively correlated to secreted phosphoprotein 1 (SPP1) expression, leading to an enhanced epithelial-mesenchymal transition (EMT) process. LINC01133 bound with actin-related protein 3 (Arp3), the complex reduced SPP1 mRNA degradation which increased SPP1 mRNA level, ultimately leading to PDAC proliferation. This research revealed a novel mechanism of PDAC development and provided a potential prognosis indicator that may benefit PDAC patients.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 6,
+        "published": "2024-07-17",
+        "pubmed_ids": [
+          "38987572"
+        ],
+        "matched_queries": [
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE239414",
+        "title": "SAMD1 suppresses epithelial-mesenchymal transition pathways in pancreatic ductal adenocarcinoma [RNA-Seq]",
+        "summary": "Pancreatic ductal adenocarcinoma (PDAC) poses a significant threat due to its tendency to evade early detection, frequent metastasis, and the subsequent challenges in devising effective treatments. Processes that govern epithelial-mesenchymal transition (EMT) in PDAC hold promise for advancing novel therapeutic strategies. SAMD1 (SAM domain-containing protein 1) is a CpG island-binding protein that plays a pivotal role in the repression of its target genes. Here, we revealed that SAMD1 acts as a repressor of genes associated with epithelial-mesenchymal transition (EMT). Upon deletion of SAMD1 in PDAC cells, we observed significantly increased migration rates. SAMD1 exerts its effects by binding to specific genomic targets, including CDH2, encoding N-cadherin, which emerged as a driver of enhanced migration upon SAMD1 knockout. Furthermore, we discovered the FBXO11-containing E3 ubiquitin ligase complex as an interactor and negative regulator of SAMD1, which inhibits SAMD1 chromatin binding genome-wide. High FBXO11 expression in PDAC is associated with poor prognosis and increased expression of EMT-related genes, underlining an antagonistic relationship between SAMD1 and FBXO11. In summary, our findings provide insights into the regulation of EMT-related genes in PDAC, shedding light on the intricate role of SAMD1 and its interplay with FBXO11 in this cancer type.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 6,
+        "published": "2024-06-27",
+        "pubmed_ids": [
+          "39137238"
+        ],
+        "matched_queries": [
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE268948",
+        "title": "Enhanced Collagen Secretion in Epithelial Cancer Cells is associated with L1CAM Deficiency",
+        "summary": "Collagen, a critical component of the tumor microenvironment (TME), significantly influences cancer-associated fibrosis, tissue stiffness, immune response, and metastasis. Pancreatic ductal adenocarcinoma (PDAC) is characterized by excessive collagen deposition, and effective therapies remain limited. Our research challenges conventional understanding by highlighting the remarkable ability of specific tumor epithelial populations, particularly those with low levels of L1 cell adhesion molecule (L1CAM) expression (L1low), to actively modulate collagen dynamics within the TME. Transcriptome analysis of PDAC cells with varying L1 expression reveals shifts in collagen-related pathways, with heightened expression of collagen 17A1 (COL17A1) in L1low cells. Alongside, L1low cells exhibit enhanced migratory capacity. In an orthotopic mouse model, L1low cancer cells demonstrate increased collagen deposition, resistance to gemcitabine treatment, and an elevated propensity for liver metastases. Treatment with Tranilast, an anti-fibrotic drug, significantly reduces tumor volume and collagen deposition while enhancing L1 expression. This, in turn, mitigates tumor invasiveness and suppresses metastases formation. Overall, our study uncovers a novel role for L1CAM in PDAC aggressiveness and fibrosis, revealing a new epithelial population capable of collagen secretion and challenging the traditional notion that this function is solely attributed to stromal cells.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 6,
+        "published": "2024-06-11",
+        "pubmed_ids": [
+          "40770187"
+        ],
+        "matched_queries": [
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE235244",
+        "title": "Senescent cancer-associated fibroblasts in pancreatic adenocarcinoma suppress CD8+ T cell activation and inhibit response to immune checkpoint therapy [hPDAC]",
+        "summary": "Senescent cells appear within tumors and their stroma, exerting complex pro- and anti-tumorigenic functions. The effects of senescent tumor stromal cells are mostly unknown, as is the potential for targeting such senescent cells for improved therapy. Here we uncover the presence of a senescent subset of cancer-associated fibroblasts (CAFs) within pancreatic adenocarcinomas and in premalignant pancreatic lesions. Senescent CAFs show reduced proliferation, and are often associated with the inflammatory CAF (iCAF) subtype. We isolated and characterized senescent CAFs from mouse models and directly from human patients, and found that they express elevated levels of immune-regulatory genes. In a panel of mouse PDACs, high levels of senescent CAFs correlated with low T cell infiltration. Removal of senescent CAFs from PDAC stroma, either genetically or through treatment with the senolytic drug ABT-199 (venetoclax), a Bcl2 inhibitor, increased rates of activated cytotoxic CD8+ T cells within tumors. Conversely, activation of CAF senescence within PDACs led to reduced CD8+ T cell numbers. Media from senescent PDAC CAFs inhibited T cell proliferation and activation. We show that implanted PDAC tumors show improved response to immune checkpoint therapy when co-treated with the senolytic drug. These results reveal that the presence of senescent CAFs in PDAC stroma acts to repress cytotoxic T cell activity, and suggest that their targeted elimination through senolytic treatment may enhance immunotherapy.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 8,
+        "published": "2024-06-06",
+        "pubmed_ids": [
+          "39039076"
+        ],
+        "matched_queries": [
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE235233",
+        "title": "Senescent cancer-associated fibroblasts in pancreatic adenocarcinoma suppress CD8+ T cell activation and inhibit response to immune checkpoint therapy [Cultured_Human_Mouse]",
+        "summary": "Senescent cells appear within tumors and their stroma, exerting complex pro- and anti-tumorigenic functions. The effects of senescent tumor stromal cells are mostly unknown, as is the potential for targeting such senescent cells for improved therapy. Here we uncover the presence of a senescent subset of cancer-associated fibroblasts (CAFs) within pancreatic adenocarcinomas and in premalignant pancreatic lesions. Senescent CAFs show reduced proliferation, and are often associated with the inflammatory CAF (iCAF) subtype. We isolated and characterized senescent CAFs from mouse models and directly from human patients, and found that they express elevated levels of immune-regulatory genes. In a panel of mouse PDACs, high levels of senescent CAFs correlated with low T cell infiltration. Removal of senescent CAFs from PDAC stroma, either genetically or through treatment with the senolytic drug ABT-199 (venetoclax), a Bcl2 inhibitor, increased rates of activated cytotoxic CD8+ T cells within tumors. Conversely, activation of CAF senescence within PDACs led to reduced CD8+ T cell numbers. Media from senescent PDAC CAFs inhibited T cell proliferation and activation. We show that implanted PDAC tumors show improved response to immune checkpoint therapy when co-treated with the senolytic drug. These results reveal that the presence of senescent CAFs in PDAC stroma acts to repress cytotoxic T cell activity, and suggest that their targeted elimination through senolytic treatment may enhance immunotherapy.",
+        "taxa": [
+          "Homo sapiens",
+          "Mus musculus"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 16,
+        "published": "2024-06-06",
+        "pubmed_ids": [
+          "39039076"
+        ],
+        "matched_queries": [
+          "PDAC"
+        ],
+        "mixed_organism": true
+      },
+      {
+        "gse": "GSE235333",
+        "title": "Uncovering novel ferroptosis regulators in pancreatic ductal adenocarcinoma (PDAC) using parallel RNA-seq",
+        "summary": "Pancreatic ductal adenocarcinoma (PDAC) is one of the most intractable malignancies and systematic chemotherapies are the most commonly-used standard treatment for PDAC patients diagonosed at advanced stages. However, drug resistance may arise as early as several weeks after chemotherapy initiation, thus limiting the therapeutic efficacy of chemotherapy reagents. Accumulating evidence has demonstrated that acquired tolerance to apoptotic cell death induced by cytotoxic drugs is one of the critical reasons for the failure of chemotherapy. Ferroptosis was originally identified as a unique form of programmed cell death, which is characterized by shrunk mitochondria accompanied with condensed membranes and decreased crista, in drug screens searching for small molecules that can selectively kill RAS-expressing cancer cells. Unlike apoptosis, ferroptosis is driven by iron-catalyzed excessive lipid peroxidation, ultimately leading to the rupture of plasma membrane and cell death. Recent studies indicated that ferroptosis induction can be a promising therapeutic strategy in cancer treatment since it not only can kill tumor cells directly but also can synergize with chemotherapy ,radiotherapy,targeted therapy and immunotherapy. However, transformed malignant cells can acquired resistance to ferroptosis through adaptative changes in their epigenome, genome, transcriptome, translatome or proteome. Multiple mechanisms, such as decreased coenzyme Q10 production mediated by the upregulation of apoptosis-inducing factor mitochondria-associated 2 (AIFM2/FSP1) and elevated expression of cytoprotective genes as a result of the activation of antioxidant transcription factor NFE2L2/NRF2 (nuclear factor erythroid 2-like 2), have been demonstrated to confer ferroptosis resistance. However, transformed malignant cells can acquired resistance to ferroptosis through adaptative changes in their epigenome, genome, transcriptome, translatome or proteome. Multiple mechanisms, such as decreased coenzyme Q10 production mediated by the upregulation of apoptosis-inducing factor mitochondria-associated 2 (AIFM2/FSP1) and elevated expression of cytoprotective genes as a result of the activation of antioxidant transcription factor NFE2L2/NRF2 (nuclear factor erythroid 2-like 2), have been demonstrated to confer ferroptosis resistance. Therefore, unravelling the underlying mechanisms responsible for reduced sensitivity to ferroptosis inducers, such as erastin or RSL3, may pave the way for designing effective therapeutic regimens for PDAC patients.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 10,
+        "published": "2024-05-21",
+        "pubmed_ids": [
+          "38763208"
+        ],
+        "matched_queries": [
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE228801",
+        "title": "Patient-derived organoids of pancreatic ductal adenocarcinoma for subtype determination and clinical outcome prediction",
+        "summary": "Two molecular subtypes of pancreatic ductal adenocarcinoma (PDAC) have been proposed: the “Classical” and “Basal-like” subtypes. However, the “molecular” classification has not been applied in real-world clinical practice. This study aimed to establish patient-derived organoids (PDOs) for PDAC and evaluate their application in subtype classification and clinical outcome prediction. We constructed a PDO library for morphologic and RNA-seq analyses and drug response assays in vitro. PDOs of PDAC were established at a high efficiency (> 70%) with at least 100,000 live cells. Morphologically, PDOs were classified as gland-like structures (GL type) or densely proliferating inside (DP type). RNA-seq analysis revealed that the “morphological” subtype (GL vs. DP) roughly corresponded to the “molecular” subtype (“Classical” vs. “Basal-like”). The proposed “morphological” classification predicted clinical treatment response and prognosis; the median overall survival of patients with GL type were significantly longer than that of those with DP type (P < 0.005). The GL type showed a better response to gemcitabine than the DP type in vitro, whereas the drug response of the DP type was improved by the combination of ERK and autophagy inhibition. PDAC PDOs facilitated subtype determination and clinical outcome prediction, thereby advancing precision medicine for PDAC.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 14,
+        "published": "2024-04-11",
+        "pubmed_ids": [
+          "38684511"
+        ],
+        "matched_queries": [
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE229877",
+        "title": "Identification of spatially-resolved markers of malignant transformation in Intraductal Papillary Mucinous Neoplasms. [Visium]",
+        "summary": "Spatial transcriptomics characterization of IPMN samples by Visium Gene Expression FFPE",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 4,
+        "published": "2024-02-15",
+        "pubmed_ids": [
+          "38553466"
+        ],
+        "matched_queries": [
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE228106",
+        "title": "ABCB1 amplification drives paclitaxel resistance in PDAC cells, which can be targeted by novel drug combination strategies",
+        "summary": "This study investigate PDAC resistance to paclitaxel.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 18,
+        "published": "2024-01-10",
+        "pubmed_ids": [
+          "38163893",
+          "42163409"
+        ],
+        "matched_queries": [
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE194191",
+        "title": "mRNA profiling of monocytes derived macrophages and PDAC cell lines supernants-induced tumor-associated macrophages (TAMs)",
+        "summary": "Tumor associated macrophages have been demonstrated to promote tumor progression, but the mechanism is still unclear. We found the gene expression of monocytes derived macrophages is different from TAMs by comparing mRNA profiling.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 12,
+        "published": "2023-12-20",
+        "pubmed_ids": [],
+        "matched_queries": [
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE249302",
+        "title": "RNA-seq of human PDAC cell lines PANC-1 and BxPC3 treated with Gemcitabine compared to untreated controls",
+        "summary": "Gemcitabine is commonly used for the treatment of PDAC, here we assess the effect of gene expression in human PDAC cell lines.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 16,
+        "published": "2023-12-05",
+        "pubmed_ids": [
+          "39358362"
+        ],
+        "matched_queries": [
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE247513",
+        "title": "TLR2 promotes tumour proliferation in KRAS-dependant PDAC in the absence of ARF6",
+        "summary": "Metastasis is responsible for nearly 90% of all cancer-related deaths. Despite global efforts to prevent aggressive tumours, cancers such as pancreatic ductal adenocarcinoma (PDAC) are poorly diagnosed in the primary stage, resulting in lethal metastatic disease. RAS mutations are known to promote tumour spread, with mutant KRAS present in almost 90% of cases. Until recently, mutant KRAS remained untargeted and, despite the recent development of inhibitors, results show that tumour cells develop resistance. Another strategy for targeting mutant KRAS-dependent PDAC metastasis may come from targeting the downstream effectors of KRAS. One such axis, which controls tumour proliferation, invasiveness and immune evasion, is represented by ARF6-ASAP1. Here we show that targeting ARF6 results in adaptive rewiring that can restore proliferation and invasion potential over time. Using time-series RNA and ATAC sequencing approaches, we identified TLR-dependent NFκB, TNFα and hypoxia signalling as key drivers of adaptation in ARF6-depleted KRAS-dependent PDAC. Using in vitro and in vivo assays, we show that knocking down TLR2 with ARF6 significantly reduces proliferation, migration and invasion. Taken together, our data shed light on a novel co-targeting strategy with the therapeutic potential to counteract PDAC proliferation and metastasis.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing",
+          "Genome binding/occupancy profiling by high throughput sequencing"
+        ],
+        "n_samples": 72,
+        "published": "2023-12-02",
+        "pubmed_ids": [],
+        "matched_queries": [
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE155724",
+        "title": "Spatial coupling of microbes and immune cells in solid malignancies [LCM_cold_hot_tumor_nest]",
+        "summary": "Solid tumors are composed of cancer cells and host immune cells that are distributed in a non-uniform pattern. Although this spatial heterogeneity may reflect mutational variations in cancer cells, mechanisms that direct the recruitment of immune cells to distinct regions within a tumor remain poorly understood. Here, we show that microbial-host interactions define tumor nests enriched in immune cells, and the distribution of microbes within tumors parallels the spatial heterogeneity of intratumoral lymphoid and myeloid cell populations. Analysis of human solid tumors revealed that the spatial distribution of immune cells, particularly CD8+ T cells, is markedly heterogeneous. Compared to T cell-poor (“cold”) tumor nests, T cell-rich (“hot”) tumor nests displayed a significantly higher number of myeloid cells, B cells, and plasma cells. We performed laser capture microdissection (LCM) followed by RNA sequencing to identify unique gene signatures that define tumor epithelium and stroma of cold and hot tumor nests. Cold tumor nests expressed genes that promote tumor proliferation and fibrosis, whereas hot tumor stroma and epithelium showed upregulation of immune-related processes, including responses to bacteria, and receptors that mediate mucosal immune responses to microbes, respectively. Consistent with these findings, we detected elevated levels of microbes within hot tumor nests in human pancreatic and lung cancers. Our data implicate host immune responses to microbes in defining intratumoral immune heterogeneity and highlight a potential role for crosstalks between microbes, cancer cells, and the host immune system in regulating cancer immunogenicity.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 20,
+        "published": "2023-12-01",
+        "pubmed_ids": [
+          "38307029"
+        ],
+        "matched_queries": [
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE155723",
+        "title": "Spatial coupling of microbes and immune cells in solid malignancies [LCM_stroma_epithelium]",
+        "summary": "Solid tumors are composed of cancer cells and host immune cells that are distributed in a non-uniform pattern. Although this spatial heterogeneity may reflect mutational variations in cancer cells, mechanisms that direct the recruitment of immune cells to distinct regions within a tumor remain poorly understood. Here, we show that microbial-host interactions define tumor nests enriched in immune cells, and the distribution of microbes within tumors parallels the spatial heterogeneity of intratumoral lymphoid and myeloid cell populations. Analysis of human solid tumors revealed that the spatial distribution of immune cells, particularly CD8+ T cells, is markedly heterogeneous. Compared to T cell-poor (“cold”) tumor nests, T cell-rich (“hot”) tumor nests displayed a significantly higher number of myeloid cells, B cells, and plasma cells. We performed laser capture microdissection (LCM) followed by RNA sequencing to identify unique gene signatures that define tumor epithelium and stroma of cold and hot tumor nests. Cold tumor nests expressed genes that promote tumor proliferation and fibrosis, whereas hot tumor stroma and epithelium showed upregulation of immune-related processes, including responses to bacteria, and receptors that mediate mucosal immune responses to microbes, respectively. Consistent with these findings, we detected elevated levels of microbes within hot tumor nests in human pancreatic and lung cancers. Our data implicate host immune responses to microbes in defining intratumoral immune heterogeneity and highlight a potential role for crosstalks between microbes, cancer cells, and the host immune system in regulating cancer immunogenicity.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 16,
+        "published": "2023-12-01",
+        "pubmed_ids": [
+          "38307029"
+        ],
+        "matched_queries": [
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE155722",
+        "title": "Spatial coupling of microbes and immune cells in solid malignancies [Whole_slides]",
+        "summary": "Solid tumors are composed of cancer cells and host immune cells that are distributed in a non-uniform pattern. Although this spatial heterogeneity may reflect mutational variations in cancer cells, mechanisms that direct the recruitment of immune cells to distinct regions within a tumor remain poorly understood. Here, we show that microbial-host interactions define tumor nests enriched in immune cells, and the distribution of microbes within tumors parallels the spatial heterogeneity of intratumoral lymphoid and myeloid cell populations. Analysis of human solid tumors revealed that the spatial distribution of immune cells, particularly CD8+ T cells, is markedly heterogeneous. Compared to T cell-poor (“cold”) tumor nests, T cell-rich (“hot”) tumor nests displayed a significantly higher number of myeloid cells, B cells, and plasma cells. We performed laser capture microdissection (LCM) followed by RNA sequencing to identify unique gene signatures that define tumor epithelium and stroma of cold and hot tumor nests. Cold tumor nests expressed genes that promote tumor proliferation and fibrosis, whereas hot tumor stroma and epithelium showed upregulation of immune-related processes, including responses to bacteria, and receptors that mediate mucosal immune responses to microbes, respectively. Consistent with these findings, we detected elevated levels of microbes within hot tumor nests in human pancreatic and lung cancers. Our data implicate host immune responses to microbes in defining intratumoral immune heterogeneity and highlight a potential role for crosstalks between microbes, cancer cells, and the host immune system in regulating cancer immunogenicity.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 9,
+        "published": "2023-12-01",
+        "pubmed_ids": [
+          "38307029"
+        ],
+        "matched_queries": [
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE247389",
+        "title": "Epigenetic priming targets tumor heterogeneity to shift transcriptomic phenotype of pancreatic ductal adenocarcinoma towards a Vitamin D susceptible state",
+        "summary": "As a highly heterogeneous tumor, pancreatic ductal adenocarcinoma (PDAC) exhibits non-uniform responses to therapies across subtypes. Overcoming therapeutic resistance due to tumor heterogeneity in PDAC remains a challenge. Here, we report that Vitamin D-resistant PDAC cells hijacked Vitamin D signaling to promote tumor progression, whereas epigenetic priming with glyceryl triacetate (GTA) and 5-Aza-2′-deoxycytidine (5-Aza) overcame Vitamin D resistance and shifted the transcriptomic phenotype of PDAC toward a Vitamin D-susceptible state. Increasing overall H3K27 acetylation with GTA and reducing overall DNA methylation with 5-Aza not only elevated the Vitamin D receptor (VDR) expression but also reprogrammed the Vitamin D-responsive genes. Consequently, Vitamin D inhibited cell viability and migration in the epigenetically primed PDAC cells by activating genes involved in apoptosis as well as genes involved in negative regulation of cell proliferation and migration, while the opposite effect of Vitamin D was observed in unprimed cells. Studies in genetically engineered mouse PDAC cells further validated the effects of epigenetic priming for enhancing the anti-tumor activity of Vitamin D. Using gain- and loss-of-function experiments, we further demonstrated that VDR was necessary for augmenting original Vitamin D responses, but was insufficient for shifting transcriptomic phenotype of PDAC toward a therapeutic response to Vitamin D, highlighting that both the VDR and Vitamin D-responsive genes were prerequisites for Vitamin D response. These data reveal a previously undefined mechanism in which epigenetic state orchestrates the expression of both VDR and Vitamin D-responsive genes, and determines the response to Vitamin D in PDAC.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 12,
+        "published": "2023-11-13",
+        "pubmed_ids": [
+          "38272889"
+        ],
+        "matched_queries": [
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE243647",
+        "title": "Incorporation of human iPS cell-derived stroma creates a pancreatic cancer organoid with heterogeneous cancer-associated fibroblasts [AmpliSeq]",
+        "summary": "The aggressiveness of pancreatic ductal adenocarcinoma (PDAC) is affected by a tumor microenvironment (TME). In this study, to recapitulate PDAC TME ex vivo, we cocultured patient-derived PDAC cells with mesenchymal and vascular endothelial cells derived from human induced-pluripotent stem cells (hiPSCs) to create a fused pancreatic cancer organoid (FPCO) in air–liquid interface. FPCOs were further induced to resemble two distinct parts of a PDAC tissue. Owing to various types of cancer associated fibroblasts (CAFs) derived from hiPSCs, the TME consisted of abundant extracellular matrix proteins, which likely conferred strong drug resistance to PDAC cells in one type of FPCOs. Because of re-proliferation capacity of PDAC cells after anticancer drug treatment, the other FPCO is the first culture system for investigating PDAC recurrence. Introducing hiPSC technology, we have created, for the first time, the PDAC organoids representing the heterogeneity of PDAC tissue, a potential platform for screening anticancer drugs.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 31,
+        "published": "2023-11-13",
+        "pubmed_ids": [
+          "37955987"
+        ],
+        "matched_queries": [
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE150223",
+        "title": "HOXC6 drives a therapeutically targetable pancreatic cancer growth and metastasis pathway via stimulating MSK1 kinase and suppressing PPP2R2B protein",
+        "summary": "Pancreatic ductal adenocarcinoma (PDAC) is one of the deadliest cancers, which lacks effective therapies. Here, we demonstrate that the transcription factor, HOXC6, is overexpressed in most PDACs, and its inhibition blocks PDAC tumor growth and metastasis. HOXC6 transcriptionally activates tumor-promoting kinase MSK1 and suppresses tumor-inhibitory protein PPP2R2B in PDAC. HOXC6-induced PPP2R2B suppression causes mTOR pathway activation, which facilitates PDAC growth. Also, MSK1 upregulation by HOXC6 is necessary for PDAC growth due to its ability to suppress apoptosis via its substrate DDX17. Combinatorial pharmacological inhibition of MSK1 and mTOR potently suppressed PDAC tumor growth and metastasis in PDAC mouse models. PDAC cells with acquired resistance to MSK1/mTOR-inhibitors displayed activated IGF1R signaling and were successfully eradicated by IGF1R inhibitor. Furthermore, MEK inhibitor trametinib enhanced the efficacy of dual MSK1 and mTOR inhibition. Collectively, these results identify therapeutic vulnerabilities of PDAC and an approach to overcome acquired drug resistance to prolong therapeutic benefit.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 9,
+        "published": "2023-10-30",
+        "pubmed_ids": [
+          "37951219"
+        ],
+        "matched_queries": [
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE150222",
+        "title": "HOXC6 drives a therapeutically targetable pancreatic cancer growth and metastasis pathway via stimulating MSK1 kinase and suppressing PPP2R2B protein",
+        "summary": "Pancreatic ductal adenocarcinoma (PDAC) is one of the deadliest cancers, which lacks effective therapies. Here, we demonstrate that the transcription factor, HOXC6, is overexpressed in most PDACs, and its inhibition blocks PDAC tumor growth and metastasis. HOXC6 transcriptionally activates tumor-promoting kinase MSK1 and suppresses tumor-inhibitory protein PPP2R2B in PDAC. HOXC6-induced PPP2R2B suppression causes mTOR pathway activation, which facilitates PDAC growth. Also, MSK1 upregulation by HOXC6 is necessary for PDAC growth due to its ability to suppress apoptosis via its substrate DDX17. Combinatorial pharmacological inhibition of MSK1 and mTOR potently suppressed PDAC tumor growth and metastasis in PDAC mouse models. PDAC cells with acquired resistance to MSK1/mTOR-inhibitors displayed activated IGF1R signaling and were successfully eradicated by IGF1R inhibitor. Furthermore, MEK inhibitor trametinib enhanced the efficacy of dual MSK1 and mTOR inhibition. Collectively, these results identify therapeutic vulnerabilities of PDAC and an approach to overcome acquired drug resistance to prolong therapeutic benefit.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 9,
+        "published": "2023-10-30",
+        "pubmed_ids": [
+          "37951219"
+        ],
+        "matched_queries": [
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE146944",
+        "title": "HOXC6 drives a therapeutically targetable pancreatic cancer growth and metastasis pathway via stimulating MSK1 kinase and suppressing PPP2R2B protein",
+        "summary": "Pancreatic ductal adenocarcinoma (PDAC) is one of the deadliest cancers, which lacks effective therapies. Here, we demonstrate that the transcription factor, HOXC6, is overexpressed in most PDACs, and its inhibition blocks PDAC tumor growth and metastasis. HOXC6 transcriptionally activates tumor-promoting kinase MSK1 and suppresses tumor-inhibitory protein PPP2R2B in PDAC. HOXC6-induced PPP2R2B suppression causes mTOR pathway activation, which facilitates PDAC growth. Also, MSK1 upregulation by HOXC6 is necessary for PDAC growth due to its ability to suppress apoptosis via its substrate DDX17. Combinatorial pharmacological inhibition of MSK1 and mTOR potently suppressed PDAC tumor growth and metastasis in PDAC mouse models. PDAC cells with acquired resistance to MSK1/mTOR-inhibitors displayed activated IGF1R signaling and were successfully eradicated by IGF1R inhibitor. Furthermore, MEK inhibitor trametinib enhanced the efficacy of dual MSK1 and mTOR inhibition. Collectively, these results identify therapeutic vulnerabilities of PDAC and an approach to overcome acquired drug resistance to prolong therapeutic benefit.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 9,
+        "published": "2023-10-30",
+        "pubmed_ids": [
+          "37951219"
+        ],
+        "matched_queries": [
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE211468",
+        "title": "Inhibition of topoisomerase 1 and BRD4-mediated pause release selectively kills tumours by inducing readthrough transcription [RNA-seq]",
+        "summary": "Transcription inhibition has become an attractive strategy for anticancer therapy because many cancers arise from dysregulated transcription programs. Topoisomerase 1 (TOP1) and bromodomain containing protein 4 (BRD4) coordinate each other to regulate transcriptional elongation. Using a collection of patient-derived xenograft mouse models of pancreatic cancer we show that the combined inhibition of TOP1 and BRD4 is synergistic in arresting tumor growth. We link this effect to the ability of TOP1 and BRD4 to control pause-release, a rate-limiting step in early elongation. By comparing nascent transcripts with the recruitment of elongation and termination factors along genes, we found that combined inhibition of TOP1 and BRD4, while globally impairing RNA production, also disturbs the recruitment of proteins involved in termination. Thus, RNA polymerases stay engaged with the DNA downstream of polyadenylation sites for hundreds of kilobases leading to readthrough-transcription. Because this pervasive transcription occurs also during replication, it perturbs replisome progression leading to increased DNA damage and cell cycle arrest. The synergistic effect of TOP1 and BRD4 inhibition is specific for the tumor cells as negligible transcriptional defects are observed in non-tumor cells. This work provides a mechanistic understanding of the benefit of combining TOP1 and BRD4 inhibitors in the treatment of highly transcription- and replication-driven tumors.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 35,
+        "published": "2023-10-13",
+        "pubmed_ids": [
+          "37831776"
+        ],
+        "matched_queries": [
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE224564",
+        "title": "SERPINB3 induces the aggressive basal-like/squamous subtype and promotes invasion and metastasis in pancreatic cancer III",
+        "summary": "Pancreatic cancer is a heterogenous disease and consists of distinct subtypes. Here, we searched for candidate driver genes of the basal-like/squamous subtype, a more aggressive molecular subtype of pancreatic ductal adenocarcinoma (PDAC). Through an integrated transcriptome analysis, we identified the serine/cysteine protease inhibitor, SERPINB3 (squamous cell carcinoma antigen 1, SCCA1), as being upregulated in the basal-like/squamous PDAC using a discovery and validation approach. SERPINB3 upregulation associated with decreased patient survival and a transcriptome profile indicative of the basal-like/squamous subtype. The goal of this study was aimed to identify SERPINB3 induced molecular signatures in PDAC.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 175,
+        "published": "2023-10-12",
+        "pubmed_ids": [
+          "37980563"
+        ],
+        "matched_queries": [
+          "PDAC"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE223908",
+        "title": "SERPINB3 induces the aggressive basal-like/squamous subtype and promotes invasion and metastasis in pancreatic cancer II",
+        "summary": "Pancreatic cancer is a heterogenous disease and consists of distinct subtypes. Here, we searched for candidate driver genes of the basal-like/squamous subtype, a more aggressive molecular subtype of pancreatic ductal adenocarcinoma (PDAC). Through an integrated transcriptome analysis, we identified the serine/cysteine protease inhibitor, SERPINB3 (squamous cell carcinoma antigen 1, SCCA1), as being upregulated in the basal-like/squamous PDAC using a discovery and validation approach. SERPINB3 upregulation associated with decreased patient survival and a transcriptome profile indicative of the basal-like/squamous subtype. The goal of this study was aimed to identify SERPINB3 induced molecular signatures in PDAC.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 44,
+        "published": "2023-10-12",
+        "pubmed_ids": [
+          "37980563"
+        ],
+        "matched_queries": [
+          "PDAC"
+        ],
+        "mixed_organism": false
+      }
+    ]
+  }
+}

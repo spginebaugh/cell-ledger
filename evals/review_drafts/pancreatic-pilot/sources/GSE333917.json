@@ -1,0 +1,547 @@
+{
+  "gse": "GSE333917",
+  "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE333917&targ=all&view=full&form=text",
+  "retrieved_at": "2026-11-07T04:27:02.736172+00:00",
+  "fields": {
+    "title": [
+      "CD44 exerts context-dependent control of subtype plasticity in pancreatic ductal adenocarcinoma"
+    ],
+    "summary": [
+      "Pancreatic ductal adenocarcinoma (PDAC) exhibits substantial molecular heterogeneity and phenotypic plasticity, primarily represented by the Classical-like and Basal-like subtypes. CD44 has been implicated in tumor progression and metastasis, but its context-dependent functions across PDAC subtypes remain poorly understood. In this study, CD44 was deleted using CRISPR/Cas9 in the Basal-like PDAC cell line MIA-PACA2 and the Classical-like PDAC cell line CFPAC1. RNA sequencing was performed to characterize the transcriptional consequences of CD44 loss in each subtype. This dataset provides a comprehensive resource for investigating the subtype-specific functions of CD44 and the molecular mechanisms underlying PDAC subtype plasticity.",
+      ""
+    ],
+    "overall_design": [
+      "RNA-seq profiling of wildtype Mia-Paca2 and CFPAC1 cells and their CD44 knockout derivative"
+    ],
+    "sample_id": [
+      "GSM9777376",
+      "GSM9777377",
+      "GSM9777378",
+      "GSM9777379",
+      "GSM9777380",
+      "GSM9777381",
+      "GSM9777382",
+      "GSM9777383",
+      "GSM9777384",
+      "GSM9777385",
+      "GSM9777386",
+      "GSM9777387"
+    ],
+    "supplementary_file": [
+      "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE333nnn/GSE333917/suppl/GSE333917_processed-cf.xlsx",
+      "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE333nnn/GSE333917/suppl/GSE333917_processed-m.xlsx"
+    ],
+    "sample_organism": [
+      "Homo sapiens"
+    ],
+    "relation": [
+      "BioProject: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1473215"
+    ]
+  },
+  "samples": {
+    "GSM9777376": {
+      "title": [
+        "MIA-CTR1"
+      ],
+      "source_name_ch1": [
+        "Tumor"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: Tumor",
+        "cell line: Mia-Paca2",
+        "cell type: pancreatic cancer cell",
+        "genotype: WT"
+      ],
+      "molecule_ch1": [
+        "total RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Retinas were removed, flash frozen on dry ice, and RNA was harvested using Trizol reagent. Illumina TruSeq RNA Sample Prep Kit (Cat#FC-122-1001) was used with 1 ug of total RNA for the construction of sequencing libraries.",
+        "RNA libraries were prepared for sequencing using standard Illumina protocols"
+      ],
+      "description": [
+        "Library name: SAMPLE1",
+        "CTR_1"
+      ],
+      "data_processing": [
+        "Illumina Casava1.7 software used for basecalling.",
+        "Sequenced reads were trimmed for adaptor sequence, and masked for low-complexity or low-quality sequence, then mapped to mm8 whole genome using bowtie v0.12.2 with parameters -q -p 4 -e 100 -y -a -m 10 --best --strata",
+        "Reads Per Kilobase of exon per Megabase of library size (RPKM) were calculated using a protocol from Chepelev et al., Nucleic Acids Research, 2009. In short, exons from all isoforms of a gene were merged to create one meta-transcript. The number of reads falling in the exons of this meta-transcript were counted and normalized by the size of the meta-transcript and by the size of the library.",
+        "Assembly: mm9",
+        "Supplementary files format and content: Matrix table with raw gene counts for every gene and every sample"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN60548421",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX33694640"
+      ]
+    },
+    "GSM9777377": {
+      "title": [
+        "MIA-CTR2"
+      ],
+      "source_name_ch1": [
+        "Tumor"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: Tumor",
+        "cell line: Mia-Paca2",
+        "cell type: pancreatic cancer cell",
+        "genotype: WT"
+      ],
+      "molecule_ch1": [
+        "total RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Retinas were removed, flash frozen on dry ice, and RNA was harvested using Trizol reagent. Illumina TruSeq RNA Sample Prep Kit (Cat#FC-122-1001) was used with 1 ug of total RNA for the construction of sequencing libraries.",
+        "RNA libraries were prepared for sequencing using standard Illumina protocols"
+      ],
+      "description": [
+        "Library name: SAMPLE2",
+        "CTR_2"
+      ],
+      "data_processing": [
+        "Illumina Casava1.7 software used for basecalling.",
+        "Sequenced reads were trimmed for adaptor sequence, and masked for low-complexity or low-quality sequence, then mapped to mm8 whole genome using bowtie v0.12.2 with parameters -q -p 4 -e 100 -y -a -m 10 --best --strata",
+        "Reads Per Kilobase of exon per Megabase of library size (RPKM) were calculated using a protocol from Chepelev et al., Nucleic Acids Research, 2009. In short, exons from all isoforms of a gene were merged to create one meta-transcript. The number of reads falling in the exons of this meta-transcript were counted and normalized by the size of the meta-transcript and by the size of the library.",
+        "Assembly: mm9",
+        "Supplementary files format and content: Matrix table with raw gene counts for every gene and every sample"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN60548420",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX33694641"
+      ]
+    },
+    "GSM9777378": {
+      "title": [
+        "MIA-CTR3"
+      ],
+      "source_name_ch1": [
+        "Tumor"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: Tumor",
+        "cell line: Mia-Paca2",
+        "cell type: pancreatic cancer cell",
+        "genotype: WT"
+      ],
+      "molecule_ch1": [
+        "total RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Retinas were removed, flash frozen on dry ice, and RNA was harvested using Trizol reagent. Illumina TruSeq RNA Sample Prep Kit (Cat#FC-122-1001) was used with 1 ug of total RNA for the construction of sequencing libraries.",
+        "RNA libraries were prepared for sequencing using standard Illumina protocols"
+      ],
+      "description": [
+        "Library name: SAMPLE3",
+        "CTR_3"
+      ],
+      "data_processing": [
+        "Illumina Casava1.7 software used for basecalling.",
+        "Sequenced reads were trimmed for adaptor sequence, and masked for low-complexity or low-quality sequence, then mapped to mm8 whole genome using bowtie v0.12.2 with parameters -q -p 4 -e 100 -y -a -m 10 --best --strata",
+        "Reads Per Kilobase of exon per Megabase of library size (RPKM) were calculated using a protocol from Chepelev et al., Nucleic Acids Research, 2009. In short, exons from all isoforms of a gene were merged to create one meta-transcript. The number of reads falling in the exons of this meta-transcript were counted and normalized by the size of the meta-transcript and by the size of the library.",
+        "Assembly: mm9",
+        "Supplementary files format and content: Matrix table with raw gene counts for every gene and every sample"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN60548419",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX33694642"
+      ]
+    },
+    "GSM9777379": {
+      "title": [
+        "MIA-CD44-KO1"
+      ],
+      "source_name_ch1": [
+        "Tumor"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: Tumor",
+        "cell line: Mia-Paca2",
+        "cell type: pancreatic cancer cell",
+        "genotype: CD44 knockout"
+      ],
+      "molecule_ch1": [
+        "total RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Retinas were removed, flash frozen on dry ice, and RNA was harvested using Trizol reagent. Illumina TruSeq RNA Sample Prep Kit (Cat#FC-122-1001) was used with 1 ug of total RNA for the construction of sequencing libraries.",
+        "RNA libraries were prepared for sequencing using standard Illumina protocols"
+      ],
+      "description": [
+        "Library name: SAMPLE4",
+        "CD44_KO_1"
+      ],
+      "data_processing": [
+        "Illumina Casava1.7 software used for basecalling.",
+        "Sequenced reads were trimmed for adaptor sequence, and masked for low-complexity or low-quality sequence, then mapped to mm8 whole genome using bowtie v0.12.2 with parameters -q -p 4 -e 100 -y -a -m 10 --best --strata",
+        "Reads Per Kilobase of exon per Megabase of library size (RPKM) were calculated using a protocol from Chepelev et al., Nucleic Acids Research, 2009. In short, exons from all isoforms of a gene were merged to create one meta-transcript. The number of reads falling in the exons of this meta-transcript were counted and normalized by the size of the meta-transcript and by the size of the library.",
+        "Assembly: mm9",
+        "Supplementary files format and content: Matrix table with raw gene counts for every gene and every sample"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN60548418",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX33694643"
+      ]
+    },
+    "GSM9777380": {
+      "title": [
+        "MIA-CD44-KO2"
+      ],
+      "source_name_ch1": [
+        "Tumor"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: Tumor",
+        "cell line: Mia-Paca2",
+        "cell type: pancreatic cancer cell",
+        "genotype: CD44 knockout"
+      ],
+      "molecule_ch1": [
+        "total RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Retinas were removed, flash frozen on dry ice, and RNA was harvested using Trizol reagent. Illumina TruSeq RNA Sample Prep Kit (Cat#FC-122-1001) was used with 1 ug of total RNA for the construction of sequencing libraries.",
+        "RNA libraries were prepared for sequencing using standard Illumina protocols"
+      ],
+      "description": [
+        "Library name: SAMPLE5",
+        "CD44_KO_2"
+      ],
+      "data_processing": [
+        "Illumina Casava1.7 software used for basecalling.",
+        "Sequenced reads were trimmed for adaptor sequence, and masked for low-complexity or low-quality sequence, then mapped to mm8 whole genome using bowtie v0.12.2 with parameters -q -p 4 -e 100 -y -a -m 10 --best --strata",
+        "Reads Per Kilobase of exon per Megabase of library size (RPKM) were calculated using a protocol from Chepelev et al., Nucleic Acids Research, 2009. In short, exons from all isoforms of a gene were merged to create one meta-transcript. The number of reads falling in the exons of this meta-transcript were counted and normalized by the size of the meta-transcript and by the size of the library.",
+        "Assembly: mm9",
+        "Supplementary files format and content: Matrix table with raw gene counts for every gene and every sample"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN60548417",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX33694644"
+      ]
+    },
+    "GSM9777381": {
+      "title": [
+        "MIA-CD44-KO3"
+      ],
+      "source_name_ch1": [
+        "Tumor"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: Tumor",
+        "cell line: Mia-Paca2",
+        "cell type: pancreatic cancer cell",
+        "genotype: CD44 knockout"
+      ],
+      "molecule_ch1": [
+        "total RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Retinas were removed, flash frozen on dry ice, and RNA was harvested using Trizol reagent. Illumina TruSeq RNA Sample Prep Kit (Cat#FC-122-1001) was used with 1 ug of total RNA for the construction of sequencing libraries.",
+        "RNA libraries were prepared for sequencing using standard Illumina protocols"
+      ],
+      "description": [
+        "Library name: SAMPLE6",
+        "CD44_KO_3"
+      ],
+      "data_processing": [
+        "Illumina Casava1.7 software used for basecalling.",
+        "Sequenced reads were trimmed for adaptor sequence, and masked for low-complexity or low-quality sequence, then mapped to mm8 whole genome using bowtie v0.12.2 with parameters -q -p 4 -e 100 -y -a -m 10 --best --strata",
+        "Reads Per Kilobase of exon per Megabase of library size (RPKM) were calculated using a protocol from Chepelev et al., Nucleic Acids Research, 2009. In short, exons from all isoforms of a gene were merged to create one meta-transcript. The number of reads falling in the exons of this meta-transcript were counted and normalized by the size of the meta-transcript and by the size of the library.",
+        "Assembly: mm9",
+        "Supplementary files format and content: Matrix table with raw gene counts for every gene and every sample"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN60548416",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX33694645"
+      ]
+    },
+    "GSM9777382": {
+      "title": [
+        "CFPAC1-CTR1"
+      ],
+      "source_name_ch1": [
+        "Tumor"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: Tumor",
+        "cell line: CFPAC1",
+        "cell type: pancreatic cancer cell",
+        "genotype: WT"
+      ],
+      "molecule_ch1": [
+        "total RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Retinas were removed, flash frozen on dry ice, and RNA was harvested using Trizol reagent. Illumina TruSeq RNA Sample Prep Kit (Cat#FC-122-1001) was used with 1 ug of total RNA for the construction of sequencing libraries.",
+        "RNA libraries were prepared for sequencing using standard Illumina protocols"
+      ],
+      "description": [
+        "Library name: SAMPLE7",
+        "CF_CTR_1"
+      ],
+      "data_processing": [
+        "Illumina Casava1.7 software used for basecalling.",
+        "Sequenced reads were trimmed for adaptor sequence, and masked for low-complexity or low-quality sequence, then mapped to mm8 whole genome using bowtie v0.12.2 with parameters -q -p 4 -e 100 -y -a -m 10 --best --strata",
+        "Reads Per Kilobase of exon per Megabase of library size (RPKM) were calculated using a protocol from Chepelev et al., Nucleic Acids Research, 2009. In short, exons from all isoforms of a gene were merged to create one meta-transcript. The number of reads falling in the exons of this meta-transcript were counted and normalized by the size of the meta-transcript and by the size of the library.",
+        "Assembly: mm9",
+        "Supplementary files format and content: Matrix table with raw gene counts for every gene and every sample"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN60548415",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX33694646"
+      ]
+    },
+    "GSM9777383": {
+      "title": [
+        "CFPAC1-CTR2"
+      ],
+      "source_name_ch1": [
+        "Tumor"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: Tumor",
+        "cell line: CFPAC1",
+        "cell type: pancreatic cancer cell",
+        "genotype: WT"
+      ],
+      "molecule_ch1": [
+        "total RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Retinas were removed, flash frozen on dry ice, and RNA was harvested using Trizol reagent. Illumina TruSeq RNA Sample Prep Kit (Cat#FC-122-1001) was used with 1 ug of total RNA for the construction of sequencing libraries.",
+        "RNA libraries were prepared for sequencing using standard Illumina protocols"
+      ],
+      "description": [
+        "Library name: SAMPLE8",
+        "CF_CTR_2"
+      ],
+      "data_processing": [
+        "Illumina Casava1.7 software used for basecalling.",
+        "Sequenced reads were trimmed for adaptor sequence, and masked for low-complexity or low-quality sequence, then mapped to mm8 whole genome using bowtie v0.12.2 with parameters -q -p 4 -e 100 -y -a -m 10 --best --strata",
+        "Reads Per Kilobase of exon per Megabase of library size (RPKM) were calculated using a protocol from Chepelev et al., Nucleic Acids Research, 2009. In short, exons from all isoforms of a gene were merged to create one meta-transcript. The number of reads falling in the exons of this meta-transcript were counted and normalized by the size of the meta-transcript and by the size of the library.",
+        "Assembly: mm9",
+        "Supplementary files format and content: Matrix table with raw gene counts for every gene and every sample"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN60548414",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX33694647"
+      ]
+    },
+    "GSM9777384": {
+      "title": [
+        "CFPAC1-CTR3"
+      ],
+      "source_name_ch1": [
+        "Tumor"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: Tumor",
+        "cell line: CFPAC1",
+        "cell type: pancreatic cancer cell",
+        "genotype: WT"
+      ],
+      "molecule_ch1": [
+        "total RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Retinas were removed, flash frozen on dry ice, and RNA was harvested using Trizol reagent. Illumina TruSeq RNA Sample Prep Kit (Cat#FC-122-1001) was used with 1 ug of total RNA for the construction of sequencing libraries.",
+        "RNA libraries were prepared for sequencing using standard Illumina protocols"
+      ],
+      "description": [
+        "Library name: SAMPLE9",
+        "CF_CTR_3"
+      ],
+      "data_processing": [
+        "Illumina Casava1.7 software used for basecalling.",
+        "Sequenced reads were trimmed for adaptor sequence, and masked for low-complexity or low-quality sequence, then mapped to mm8 whole genome using bowtie v0.12.2 with parameters -q -p 4 -e 100 -y -a -m 10 --best --strata",
+        "Reads Per Kilobase of exon per Megabase of library size (RPKM) were calculated using a protocol from Chepelev et al., Nucleic Acids Research, 2009. In short, exons from all isoforms of a gene were merged to create one meta-transcript. The number of reads falling in the exons of this meta-transcript were counted and normalized by the size of the meta-transcript and by the size of the library.",
+        "Assembly: mm9",
+        "Supplementary files format and content: Matrix table with raw gene counts for every gene and every sample"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN60548413",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX33694648"
+      ]
+    },
+    "GSM9777385": {
+      "title": [
+        "CFPAC1-CD44-KO1"
+      ],
+      "source_name_ch1": [
+        "Tumor"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: Tumor",
+        "cell line: CFPAC1",
+        "cell type: pancreatic cancer cell",
+        "genotype: CD44 knockout"
+      ],
+      "molecule_ch1": [
+        "total RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Retinas were removed, flash frozen on dry ice, and RNA was harvested using Trizol reagent. Illumina TruSeq RNA Sample Prep Kit (Cat#FC-122-1001) was used with 1 ug of total RNA for the construction of sequencing libraries.",
+        "RNA libraries were prepared for sequencing using standard Illumina protocols"
+      ],
+      "description": [
+        "Library name: SAMPLE10",
+        "CF_CD44_KO_1"
+      ],
+      "data_processing": [
+        "Illumina Casava1.7 software used for basecalling.",
+        "Sequenced reads were trimmed for adaptor sequence, and masked for low-complexity or low-quality sequence, then mapped to mm8 whole genome using bowtie v0.12.2 with parameters -q -p 4 -e 100 -y -a -m 10 --best --strata",
+        "Reads Per Kilobase of exon per Megabase of library size (RPKM) were calculated using a protocol from Chepelev et al., Nucleic Acids Research, 2009. In short, exons from all isoforms of a gene were merged to create one meta-transcript. The number of reads falling in the exons of this meta-transcript were counted and normalized by the size of the meta-transcript and by the size of the library.",
+        "Assembly: mm9",
+        "Supplementary files format and content: Matrix table with raw gene counts for every gene and every sample"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN60548412",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX33694649"
+      ]
+    },
+    "GSM9777386": {
+      "title": [
+        "CFPAC1-CD44-KO2"
+      ],
+      "source_name_ch1": [
+        "Tumor"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: Tumor",
+        "cell line: CFPAC1",
+        "cell type: pancreatic cancer cell",
+        "genotype: CD44 knockout"
+      ],
+      "molecule_ch1": [
+        "total RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Retinas were removed, flash frozen on dry ice, and RNA was harvested using Trizol reagent. Illumina TruSeq RNA Sample Prep Kit (Cat#FC-122-1001) was used with 1 ug of total RNA for the construction of sequencing libraries.",
+        "RNA libraries were prepared for sequencing using standard Illumina protocols"
+      ],
+      "description": [
+        "Library name: SAMPLE11",
+        "CF_CD44_KO_2"
+      ],
+      "data_processing": [
+        "Illumina Casava1.7 software used for basecalling.",
+        "Sequenced reads were trimmed for adaptor sequence, and masked for low-complexity or low-quality sequence, then mapped to mm8 whole genome using bowtie v0.12.2 with parameters -q -p 4 -e 100 -y -a -m 10 --best --strata",
+        "Reads Per Kilobase of exon per Megabase of library size (RPKM) were calculated using a protocol from Chepelev et al., Nucleic Acids Research, 2009. In short, exons from all isoforms of a gene were merged to create one meta-transcript. The number of reads falling in the exons of this meta-transcript were counted and normalized by the size of the meta-transcript and by the size of the library.",
+        "Assembly: mm9",
+        "Supplementary files format and content: Matrix table with raw gene counts for every gene and every sample"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN60548411",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX33694650"
+      ]
+    },
+    "GSM9777387": {
+      "title": [
+        "CFPAC1-CD44-KO3"
+      ],
+      "source_name_ch1": [
+        "Tumor"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: Tumor",
+        "cell line: CFPAC1",
+        "cell type: pancreatic cancer cell",
+        "genotype: CD44 knockout"
+      ],
+      "molecule_ch1": [
+        "total RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Retinas were removed, flash frozen on dry ice, and RNA was harvested using Trizol reagent. Illumina TruSeq RNA Sample Prep Kit (Cat#FC-122-1001) was used with 1 ug of total RNA for the construction of sequencing libraries.",
+        "RNA libraries were prepared for sequencing using standard Illumina protocols"
+      ],
+      "description": [
+        "Library name: SAMPLE12",
+        "CF_CD44_KO_3"
+      ],
+      "data_processing": [
+        "Illumina Casava1.7 software used for basecalling.",
+        "Sequenced reads were trimmed for adaptor sequence, and masked for low-complexity or low-quality sequence, then mapped to mm8 whole genome using bowtie v0.12.2 with parameters -q -p 4 -e 100 -y -a -m 10 --best --strata",
+        "Reads Per Kilobase of exon per Megabase of library size (RPKM) were calculated using a protocol from Chepelev et al., Nucleic Acids Research, 2009. In short, exons from all isoforms of a gene were merged to create one meta-transcript. The number of reads falling in the exons of this meta-transcript were counted and normalized by the size of the meta-transcript and by the size of the library.",
+        "Assembly: mm9",
+        "Supplementary files format and content: Matrix table with raw gene counts for every gene and every sample"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN60548410",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX33694651"
+      ]
+    }
+  }
+}

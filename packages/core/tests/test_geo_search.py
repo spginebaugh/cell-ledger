@@ -87,3 +87,31 @@ async def test_retries_rate_limit_response() -> None:
 async def test_rejects_empty_queries() -> None:
     with pytest.raises(ValueError):
         await _search([], " ", "")
+
+
+async def test_verify_series_checks_all_accessions_in_one_search() -> None:
+    calls: list[httpx.Request] = []
+
+    def handle(request: httpx.Request) -> httpx.Response:
+        calls.append(request)
+        if request.url.path.endswith("esearch.fcgi"):
+            return httpx.Response(
+                200, json={"esearchresult": {"count": "1", "idlist": ["200164073"]}}
+            )
+        return httpx.Response(200, json=ESUMMARY)
+
+    async with httpx.AsyncClient(transport=httpx.MockTransport(handle)) as http:
+        result = await GeoClient(http).verify_series(["GSE164073", "gse250219", "GSE1"])
+
+    assert [h.gse for h in result.hits] == ["GSE164073"]
+    assert result.ineligible == ["GSE250219", "GSE1"]
+    term = parse_qs(calls[0].content.decode())["term"][0]
+    assert term.startswith("(GSE164073[ACCN] OR GSE250219[ACCN] OR GSE1[ACCN]) AND ")
+    assert term.endswith(ELIGIBILITY)
+    assert len(calls) == 2  # one search, one summary
+
+
+async def test_verify_series_rejects_non_series_accessions() -> None:
+    async with httpx.AsyncClient(transport=httpx.MockTransport(lambda r: httpx.Response(500))) as h:
+        with pytest.raises(ValueError, match="GSM1"):
+            await GeoClient(h).verify_series(["GSE1", "GSM1"])
