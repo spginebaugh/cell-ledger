@@ -23,7 +23,8 @@ import httpx
 from pydantic import AliasChoices, Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-from cell_ledger_api.agent import Agent, sdk_turn_runner
+from cell_ledger_api.agent.discover import Discoverer
+from cell_ledger_api.agent.llm import sdk_turn_runner
 from evals.baseline import baseline_fingerprint, run_baseline
 from evals.cases import CASES_DIR, Case, Suite, load_suite
 from evals.geo_cache import CachedExa, CachedGeoClient
@@ -109,7 +110,12 @@ async def run_suite(args: argparse.Namespace) -> Path:
         geo = CachedGeoClient(http, cache_dir, api_key=key)
         cached_exa = CachedExa(exa, cache_dir) if exa is not None else None
         fingerprints = {
-            "specialist": Agent(geo, exa=cached_exa, model=model, effort=effort).fingerprint(),  # type: ignore[arg-type]
+            "specialist": Discoverer(
+                geo,
+                exa=cached_exa,  # type: ignore[arg-type]
+                model=model,
+                effort=effort,
+            ).fingerprint(),
             "baseline": baseline_fingerprint(model, effort, web_search),
         }
         write_json(

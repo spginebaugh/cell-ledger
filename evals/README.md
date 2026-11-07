@@ -88,7 +88,7 @@ is an example of the evidence a verdict should rest on.
 
 ## Changing the agent
 
-`Agent.fingerprint()` hashes the discover prompt, the tool definitions, the model and the
+`Discoverer.fingerprint()` (`cell_ledger_api/agent/discover.py`) hashes the discover prompt, the tool definitions, the model and the
 effort; every record carries it, so two runs with different fingerprints are a prompt or
 tool change and two with the same fingerprint are noise. Run the suite with `--repeats 3`
 before and after a change, on the same `--geo-cache`, and compare `results.md`.

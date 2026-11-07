@@ -12,7 +12,6 @@ from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Any
 
-import anndata as ad
 import numpy as np
 import pandas as pd
 
@@ -297,12 +296,7 @@ def read_analysis(folder: str | Path, *, source_counts: str | Path | None = None
         if "samples" in paths
         else None
     )
-    dataset = (
-        _check(result, "anndata", lambda: ad.read_h5ad(paths["anndata"]))
-        if "anndata" in paths
-        else None
-    )
-    for role in ("counts", "samples", "anndata"):
+    for role in ("counts", "samples"):
         if role not in paths:
             result.unavailable.append(f"{role} unavailable; reported status/error preserved")
     if counts is not None and samples is not None:
@@ -331,52 +325,6 @@ def read_analysis(folder: str | Path, *, source_counts: str | Path | None = None
             )
 
         _check(result, "selection", selection)
-    if counts is not None and dataset is not None:
-
-        def matrix():
-            genes, gsms = list(dataset.var_names), list(dataset.obs_names)
-            _require(
-                len(set(genes)) == len(genes) and len(set(gsms)) == len(gsms),
-                "Duplicate AnnData identities",
-            )
-            _require(
-                set(genes) <= set(counts.index) and set(gsms) <= set(counts.columns),
-                "AnnData has unknown identities",
-            )
-            dropped = (
-                doc.get("de", {}).get("summary", {}).get("dropped_unpaired", [])
-                if doc.get("de")
-                else []
-            )
-            _require(
-                gsms == [g for g in counts.columns if g not in dropped],
-                "Unaccounted sample removal/order change",
-            )
-            filtering = doc.get("filtering")
-            _require(
-                len(genes) == (filtering["n_genes_after"] if filtering else len(counts)),
-                "Unaccounted gene removal",
-            )
-            layer = dataset.layers["counts"]
-            toarray = getattr(layer, "toarray", None)
-            array = np.asarray(toarray() if callable(toarray) else layer)
-            _require(
-                np.array_equal(array, counts.loc[genes, gsms].T.to_numpy()),
-                "AnnData raw counts differ from exported subset",
-            )
-            _require(str(dataset.uns["gse"]) == doc["gse"], "AnnData accession differs")
-            _require(
-                json.loads(str(dataset.uns["contrast"])) == doc["contrast"],
-                "AnnData contrast differs",
-            )
-            if samples is not None:
-                for col in ("group", "arm"):
-                    _require(
-                        dataset.obs[col].astype(str).tolist() == samples.loc[gsms, col].tolist(),
-                        f"AnnData {col} differs",
-                    )
-
-        _check(result, "anndata_subset", matrix)
     if counts is not None:
 
         def dropped_samples():
@@ -411,111 +359,12 @@ def read_analysis(folder: str | Path, *, source_counts: str | Path | None = None
             )
 
         _check(result, "source_counts", original)
-    if dataset is not None and "de_results" in paths:
-
-        def de_results():
-            table = _table(paths["de_results"])
-            _require(
-                set(table.index) == set(dataset.var_names),
-                "DE result gene identities differ",
-            )
-
-        _check(result, "de_result_ids", de_results)
     summary = doc.get("de", {}).get("summary", {}) if doc.get("de") else {}
-    collapsed = summary.get("collapsed", {})
-    units: dict[str, list[str]] | None = None
-    if collapsed and dataset is not None and samples is not None:
-
-        def combined_observations():
-            _require(isinstance(collapsed, dict), "Invalid combined-observation mapping")
-            fitted = list(dataset.obs_names)
-            _require(summary["gsms_fitted"] == fitted, "Fitted sample identities/order differ")
-            _require(
-                json.loads(str(dataset.uns["collapsed"])) == collapsed,
-                "Report and AnnData combined-observation mappings differ",
-            )
-            seen: set[str] = set()
-            blocking = summary["blocking"]
-            _require(isinstance(blocking, str) and blocking in samples, "Missing blocking labels")
-            for unit, members in collapsed.items():
-                _require(
-                    isinstance(unit, str) and bool(unit) and unit not in fitted,
-                    "Combined observation collides with sample identity",
-                )
-                _require(
-                    isinstance(members, list)
-                    and len(members) >= 2
-                    and all(isinstance(g, str) for g in members),
-                    "Invalid combined members",
-                )
-                _require(
-                    len(set(members)) == len(members) and not (seen & set(members)),
-                    "Duplicate sample membership in combined observations",
-                )
-                _require(set(members) <= set(fitted), "Unknown or dropped combined sample")
-                rows = samples.loc[members]
-                _require(len(set(rows["arm"])) == 1, "Combined observation mixes arms")
-                blocks = set(rows[blocking])
-                _require(
-                    len(blocks) == 1 and bool(next(iter(blocks))),
-                    "Combined observation mixes or lacks blocking labels",
-                )
-                seen.update(members)
-            _require(
-                summary["n_samples_collapsed"] == len(seen),
-                "Reported combined-sample count differs",
-            )
-            mapping = {g: [g] for g in fitted if g not in seen}
-            mapping.update(collapsed)
-            arms = [samples.loc[members[0], "arm"] for members in mapping.values()]
-            _require(
-                arms.count("case") == summary["n_case_used"]
-                and arms.count("control") == summary["n_control_used"],
-                "Reported fitted-observation arm counts differ",
-            )
-            return mapping
-
-        units = _check(result, "combined_observations", combined_observations)
-    elif collapsed:
+    if summary.get("collapsed"):
         result.unavailable.append(
-            "Combined membership cannot be checked without AnnData and samples"
+            "Combined-observation membership and normalized values are unchecked: the "
+            "pipeline writes no fitted matrix (AnnData) to check them against"
         )
-    if collapsed:
-        result.unavailable.append(
-            "Combined normalized values and pre-fit sums have no independent fitted matrix "
-            "in these artifacts; membership and value validity do not verify "
-            "normalization or fitting"
-        )
-    if dataset is not None and "normalized_counts" in paths:
-
-        def normalized():
-            table = _table(paths["normalized_counts"]).astype(float)
-            values = table.to_numpy()
-            _require(
-                bool(np.isfinite(values).all() and (values >= 0).all()),
-                "Normalized counts contain non-finite or negative values",
-            )
-            _require(
-                list(table.index) == list(dataset.var_names),
-                "Normalized gene identities/order differ",
-            )
-            if collapsed:
-                _require(units is not None, "Combined observation membership not verified")
-                _require(
-                    set(table.columns) == set(units or {}),
-                    "Normalized combined-observation identities differ",
-                )
-                return
-            _require(
-                list(table.columns) == list(dataset.obs_names), "Normalized table identities differ"
-            )
-            layer = np.asarray(dataset.layers["normed_counts"])
-            _require(
-                np.allclose(table.T.to_numpy(), layer, rtol=0, atol=0.0005001),
-                "Normalized counts differ beyond export rounding",
-            )
-
-        _check(result, "normalized_counts", normalized)
     if doc.get("de"):
         for role in ("de_results", "normalized_counts"):
             if role not in paths:

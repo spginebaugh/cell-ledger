@@ -8,11 +8,20 @@ from pathlib import Path
 from typing import Any
 
 import httpx
+import pytest
 from anthropic.types.beta import BetaMessage
 from fastapi.testclient import TestClient
 
 from cell_ledger.geo import DatasetRecord, GeoClient
-from cell_ledger_api.agent import Agent, DesignOutput, DiscoveryOutput, discovery_prompt
+from cell_ledger_api.agent.design import (
+    Designer,
+    DesignOutput,
+    DesignRequest,
+    compile_design,
+    record_text,
+)
+from cell_ledger_api.agent.discover import Discoverer, DiscoveryOutput, discovery_prompt
+from cell_ledger_api.agent.llm import AgentUnavailable, quiet
 
 from .conftest import ApiFactory
 
@@ -221,8 +230,7 @@ async def test_discover_trace_records_queries_answers_and_scope() -> None:
         pass
 
     async with httpx.AsyncClient(transport=_geo_two_series()) as http:
-        agent = Agent(GeoClient(http), turn=turns)
-        result = await agent.discover(
+        result = await Discoverer(GeoClient(http), turn=turns).discover(
             "Is KRT19 up in PDAC?", emit, answers=["tumor vs adjacent normal", ""]
         )
 
@@ -299,7 +307,7 @@ def labels(evidence_for: dict[str, list[str]]) -> DesignOutput:
 
 
 def test_compile_enforces_verbatim_evidence() -> None:
-    proposal, errors = Agent.compile(RECORD, labels({}), ["IL17A"])
+    proposal, errors = compile_design(RECORD, labels({}), ["IL17A"])
     assert proposal is not None and errors == []
     d = proposal.design
     assert d.samplesheet.gse == "GSE100001" and len(d.samplesheet.samples) == 6
@@ -309,8 +317,197 @@ def test_compile_enforces_verbatim_evidence() -> None:
     assert proposal.problems == [] and proposal.decisions[0].startswith("pooled all patients")
     assert d.genes == ["IL17A"]
 
-    bad, errors = Agent.compile(RECORD, labels({"GSM1": ["tissue: lesion skin"]}), [])
+    bad, errors = compile_design(RECORD, labels({"GSM1": ["tissue: lesion skin"]}), [])
     # GSM1 is dropped for fabricated evidence; the contrast then names a GSM not in the sheet,
     # which is a problem, which makes the pipeline skip the dataset.
     assert any("GSM1" in e and "evidence" in e for e in errors)
     assert bad is not None and "GSM1" in str(bad.problems)
+
+
+def _tool_use(id_: str, name: str, input_: dict[str, Any]) -> dict[str, Any]:
+    return {"type": "tool_use", "id": id_, "name": name, "input": input_}
+
+
+async def test_failing_tools_become_tool_errors_not_a_dead_agent() -> None:
+    """Bad input, an unknown tool and a GEO outage each come back to Claude as an error
+    result, land in the trace, and the run still finishes."""
+
+    def down(request: httpx.Request) -> httpx.Response:
+        raise httpx.ConnectError("GEO is down", request=request)
+
+    final = DiscoveryOutput(interpretation="x vs y")
+    turns = ScriptedTurns(
+        message(
+            [
+                _tool_use("tu_1", "search_geo", {"queries": [" "], "since": None}),
+                _tool_use("tu_2", "verify_geo_series", {"gses": ["not-an-accession"]}),
+                _tool_use("tu_3", "drop_tables", {}),
+                _tool_use("tu_4", "search_geo", {"queries": ["psoriasis"], "since": None}),
+            ],
+            stop="tool_use",
+        ),
+        message([{"type": "text", "text": final.model_dump_json()}]),
+    )
+    emitted: list[dict[str, Any]] = []
+
+    async def emit(event: dict[str, Any]) -> None:
+        emitted.append(event)
+
+    async with httpx.AsyncClient(transport=httpx.MockTransport(down)) as http:
+        result = await Discoverer(GeoClient(http), turn=turns).discover("x vs y?", emit)
+
+    sent = turns.requests[1]["messages"][-1]["content"]
+    assert [r["is_error"] for r in sent] == [True, True, True, True]
+    assert sent[0]["content"] == "error: no queries given"
+    assert sent[1]["content"].startswith("error: not GEO series accessions")
+    assert sent[2]["content"] == "error: unknown tool drop_tables"
+    assert sent[3]["content"].startswith("error: ConnectError: GEO is down")
+    assert [e["summary"] for e in emitted if e["type"] == "tool"] == [
+        "search_geo: no queries",
+        "verify: invalid accession",
+        "unknown tool drop_tables",
+        "search_geo failed",
+    ]
+    calls = result.trace.calls
+    assert [c.tool for c in calls] == [
+        "search_geo",
+        "verify_geo_series",
+        "drop_tables",
+        "search_geo",
+    ]
+    assert all(c.error and not c.confirmed for c in calls)
+    assert calls[3].error == "ConnectError: GEO is down"
+
+
+def test_fingerprint_covers_tools_model_and_effort() -> None:
+    geo = GeoClient(httpx.AsyncClient())
+    base = Discoverer(geo)
+    assert base.fingerprint() == Discoverer(geo, turn=ScriptedTurns()).fingerprint()
+    assert [t["name"] for t in base.tool_definitions()] == ["search_geo", "verify_geo_series"]
+    with_web = Discoverer(geo, exa=object())  # type: ignore[arg-type]
+    assert [t["name"] for t in with_web.tool_definitions()][-1] == "find_geo_series_on_web"
+    assert all(t["strict"] for t in with_web.tool_definitions())
+    others = {
+        with_web.fingerprint(),
+        Discoverer(geo, model="claude-sonnet-5-5").fingerprint(),
+        Discoverer(geo, effort="high").fingerprint(),
+    }
+    assert base.fingerprint() not in others and len(others) == 3
+
+
+async def test_design_retries_once_with_the_validator_errors() -> None:
+    turns = ScriptedTurns(
+        message([{"type": "text", "text": labels({"GSM1": ["not in record"]}).model_dump_json()}]),
+        message([{"type": "text", "text": labels({}).model_dump_json()}]),
+    )
+    emitted: list[dict[str, Any]] = []
+
+    async def emit(event: dict[str, Any]) -> None:
+        emitted.append(event)
+
+    req = DesignRequest(question="Is IL17A up in psoriasis?", genes=["IL17A"])
+    proposal = await Designer(turn=turns).design(RECORD, req, emit)
+
+    assert proposal.attempts == 2 and proposal.validation_errors == []
+    assert proposal.problems == [] and proposal.design.genes == ["IL17A"]
+    validate = next(e for e in emitted if e["type"] == "tool")
+    assert validate["name"] == "validate" and "rejected" in validate["summary"]
+    retry = turns.requests[1]["messages"]
+    assert [m["role"] for m in retry] == ["user", "assistant", "user"]
+    assert retry[2]["content"].startswith("The validator rejected these labels")
+    assert "GSM1" in retry[2]["content"]
+    assert turns.requests[0]["output_config"]["format"]["type"] == "json_schema"
+    assert "tools" not in turns.requests[0]
+
+
+async def test_design_gives_up_on_unreadable_output_and_refusals() -> None:
+    req = DesignRequest(question="Is IL17A up in psoriasis?")
+    garbled = ScriptedTurns(message([{"type": "text", "text": "{not json"}]))
+    with pytest.raises(AgentUnavailable, match="could not build a valid design: unreadable"):
+        await Designer(turn=garbled).design(RECORD, req, quiet)
+    refused = ScriptedTurns(message([], stop="refusal"))
+    with pytest.raises(AgentUnavailable, match="declined"):
+        await Designer(turn=refused).design(RECORD, req, quiet)
+    with pytest.raises(AgentUnavailable, match="not configured"):
+        await Designer().design(RECORD, req, quiet)
+
+
+def _excluding(**reasons: list[str]) -> DatasetRecord:
+    """RECORD with the named samples excluded (``GSM6=["not_in_counts"]`` etc.)."""
+    record = RECORD.model_copy(deep=True)
+    for s in record.samples:
+        if s.gsm in reasons:
+            s.exclusions = reasons[s.gsm]  # type: ignore[assignment]
+            s.in_counts = "not_in_counts" not in reasons[s.gsm]
+    return record
+
+
+def test_compile_rejects_samples_claude_was_never_shown() -> None:
+    record = _excluding(GSM3=["not_human"], GSM6=["not_in_counts"])
+    # The prompt and the validator agree on which samples exist.
+    shown = {s["gsm"] for s in json.loads(record_text(record))["samples"]}
+    assert shown == {"GSM1", "GSM2", "GSM4", "GSM5"}
+
+    proposal, errors = compile_design(record, labels({}), [])
+    assert errors == [
+        "GSM3: excluded from analysis (not_human)",
+        "GSM6: excluded from analysis (not_in_counts)",
+    ]
+    assert proposal is not None
+    assert {s.gsm for s in proposal.design.samplesheet.samples} == shown
+    # The contrast still names them, so it must not run.
+    assert any("GSM3" in p and "GSM6" in p for p in proposal.problems)
+
+
+async def test_design_retry_tells_claude_which_samples_are_excluded() -> None:
+    record = _excluding(GSM3=["not_human"])
+    fixed = labels({}).model_copy(deep=True)
+    fixed.samples = [s for s in fixed.samples if s.gsm != "GSM3"]
+    fixed.contrast.case_gsms = ["GSM1", "GSM2"]
+    turns = ScriptedTurns(
+        message([{"type": "text", "text": labels({}).model_dump_json()}]),
+        message([{"type": "text", "text": fixed.model_dump_json()}]),
+    )
+    proposal = await Designer(turn=turns).design(record, DesignRequest(question="q??"), quiet)
+    retry = turns.requests[1]["messages"][2]["content"]
+    assert "GSM3: excluded from analysis (not_human)" in retry
+    assert "leave out any sample it says is excluded" in retry
+    assert proposal.attempts == 2 and proposal.validation_errors == []
+    assert any("fewer than 3" in p for p in proposal.problems)
+
+
+def _with_unknown_sample() -> DesignOutput:
+    """A design whose one rejected label is not in any arm: it compiles with no problems."""
+    out = labels({}).model_copy(deep=True)
+    out.samples.append(out.samples[0].model_copy(update={"gsm": "GSM99"}))
+    return out
+
+
+async def test_unreadable_correction_keeps_the_first_design_and_says_so() -> None:
+    turns = ScriptedTurns(
+        message([{"type": "text", "text": _with_unknown_sample().model_dump_json()}]),
+        message([{"type": "text", "text": "{not json"}]),
+    )
+    proposal = await Designer(turn=turns).design(RECORD, DesignRequest(question="q??"), quiet)
+    assert proposal.attempts == 2 and len(turns.requests) == 2
+    assert proposal.validation_errors == ["GSM99: not a sample of GSE100001"]
+    (note,) = proposal.qualifications
+    assert "attempt 2) was not used because it was unreadable" in note
+    assert "attempt 1's design, with 1 label(s) rejected" in note
+    assert proposal.problems == []  # it runs, as any design with only these errors would
+
+
+async def test_uncompilable_correction_keeps_the_first_design_and_says_so() -> None:
+    nothing = labels({}).model_copy(deep=True)
+    for i, s in enumerate(nothing.samples):
+        s.gsm = f"GSM9{i}"
+    turns = ScriptedTurns(
+        message([{"type": "text", "text": _with_unknown_sample().model_dump_json()}]),
+        message([{"type": "text", "text": nothing.model_dump_json()}]),
+    )
+    proposal = await Designer(turn=turns).design(RECORD, DesignRequest(question="q??"), quiet)
+    assert proposal.attempts == 2
+    assert proposal.validation_errors == ["GSM99: not a sample of GSE100001"]
+    (note,) = proposal.qualifications
+    assert "was not used because it did not compile: GSM90: not a sample" in note
+    assert "attempt 1's design" in note

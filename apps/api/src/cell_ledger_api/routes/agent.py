@@ -1,25 +1,29 @@
-"""The streaming discover endpoint (see ``cell_ledger_api.agent``). The design step has no
-endpoint: the pipeline runs it when a dataset is ready (``cell_ledger_api.pipeline``)."""
+"""The streaming discover endpoint (see ``cell_ledger_api.agent.discover``). The design step has
+no endpoint: the pipeline runs it when a dataset is ready (``cell_ledger_api.pipeline``).
+
+Events are JSON objects, one per Server-Sent Event ``data:`` line::
+
+    {"type": "thinking", "delta": "..."}   readable summary of the model's reasoning
+    {"type": "tool", "name": "...", "input": {...}, "summary": "..."}
+    {"type": "result", "data": {...}}      a DiscoveryResult
+    {"type": "error", "message": "..."}
+    {"type": "done"}
+"""
 
 from __future__ import annotations
 
 import asyncio
+import json
 import logging
-from collections.abc import AsyncIterator
+from collections.abc import AsyncIterator, Awaitable, Callable
 from typing import Any, Literal
 
 from fastapi import APIRouter, HTTPException, Request
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
 
-from cell_ledger_api.agent import (
-    Agent,
-    AgentUnavailable,
-    DatasetNotReady,
-    DiscoverRequest,
-    DiscoveryResult,
-    sse,
-)
+from cell_ledger_api.agent.discover import Discoverer, DiscoverRequest, DiscoveryResult
+from cell_ledger_api.agent.llm import NOT_CONFIGURED, AgentUnavailable, Emit, Event
 from cell_ledger_api.routes.sessions import SessionId
 from cell_ledger_api.sessions import SessionService
 
@@ -52,36 +56,38 @@ class AgentTypes(BaseModel):
 @types_router.get("/types", operation_id="getAgentTypes")
 async def get_agent_types(request: Request) -> AgentTypes:
     """Whether Claude is configured, plus the schemas of the streamed payloads."""
-    a: Agent = request.app.state.agent
-    return AgentTypes(event=AgentEvent(type="done"), available=a.available)
+    d: Discoverer = request.app.state.discoverer
+    return AgentTypes(event=AgentEvent(type="done"), available=d.available)
 
 
 SSE_HEADERS = {"Cache-Control": "no-cache", "X-Accel-Buffering": "no"}
 
 
-def agent(request: Request) -> Agent:
-    a: Agent = request.app.state.agent
-    if not a.available:
-        raise HTTPException(503, "Claude is not configured (CELL_LEDGER_ANTHROPIC_API_KEY)")
-    return a
+def discoverer(request: Request) -> Discoverer:
+    d: Discoverer = request.app.state.discoverer
+    if not d.available:
+        raise HTTPException(503, NOT_CONFIGURED)
+    return d
 
 
 def sessions(request: Request) -> SessionService:
     return request.app.state.sessions
 
 
-async def _stream(work) -> AsyncIterator[dict[str, Any]]:  # type: ignore[no-untyped-def]
-    """Run ``work(emit)`` while yielding the events it emits, then its result."""
-    queue: asyncio.Queue[dict[str, Any] | None] = asyncio.Queue()
+async def sse(gen: AsyncIterator[Event]) -> AsyncIterator[bytes]:
+    async for event in gen:
+        yield f"data: {json.dumps(event, default=str)}\n\n".encode()
 
-    async def emit(event: dict[str, Any]) -> None:
-        await queue.put(event)
+
+async def _stream(work: Callable[[Emit], Awaitable[BaseModel]]) -> AsyncIterator[Event]:
+    """Run ``work(emit)`` while yielding the events it emits, then its result."""
+    queue: asyncio.Queue[Event | None] = asyncio.Queue()
 
     async def runner() -> None:
         try:
-            result = await work(emit)
+            result = await work(queue.put)
             await queue.put({"type": "result", "data": result.model_dump(mode="json")})
-        except (AgentUnavailable, DatasetNotReady) as e:
+        except AgentUnavailable as e:
             await queue.put({"type": "error", "message": str(e)})
         except Exception as e:  # anthropic errors, network: tell the browser, log the rest
             log.exception("agent step failed")
@@ -113,12 +119,12 @@ async def discover(
     session. To answer the clarifying questions a result asked, post the same question again
     with the answers in ``answers``.
     """
-    a = agent(request)
+    d = discoverer(request)
     svc = sessions(request)
     await svc.update(session_id, question=body.question, state=None)
 
-    async def work(emit):  # type: ignore[no-untyped-def]
-        return await a.discover(body.question, emit, answers=body.answers)
+    async def work(emit: Emit) -> DiscoveryResult:
+        return await d.discover(body.question, emit, answers=body.answers)
 
     return StreamingResponse(
         sse(_stream(work)), media_type="text/event-stream", headers=SSE_HEADERS

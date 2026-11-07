@@ -28,7 +28,7 @@ class Conditions(BaseModel):
     model: str
     effort: str
     fingerprint: str = Field(
-        description="hash of the system's prompt and tools; see Agent.fingerprint"
+        description="hash of the system's prompt and tools; see Discoverer.fingerprint"
     )
     web_search: bool = Field(description="specialist: Exa configured; baseline: web search tool on")
     code_revision: str

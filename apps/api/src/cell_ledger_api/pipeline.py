@@ -1,7 +1,7 @@
 """The pipeline drives itself once datasets are chosen: ready -> designed -> run -> compared.
 
 Three hooks, no scheduler. When a download ends ready, the dataset is designed (Claude labels
-the samples and picks the one contrast, see ``agent.py``) and its run starts. When a design
+the samples and picks the one contrast, see ``agent/design.py``) and its run starts. When a design
 or a run ends, the session is checked: once nothing is pending or running, two or more
 complete runs are pooled into one comparison. Every hook is safe to call twice; a restart
 re-runs the design of any ready dataset that has none (:meth:`Pipeline.recover`).
@@ -23,7 +23,8 @@ from typing import Any
 
 from cell_ledger.compare import QuerySetMember
 from cell_ledger.geo import DatasetRecord
-from cell_ledger_api.agent import Agent, AgentUnavailable, DatasetNotReady, DesignRequest
+from cell_ledger_api.agent.design import DatasetNotReady, Designer, DesignRequest
+from cell_ledger_api.agent.llm import AgentUnavailable, quiet
 from cell_ledger_api.compare import (
     CompareRequest,
     CompareService,
@@ -35,10 +36,6 @@ from cell_ledger_api.runs import CountsMissing, RunConflict, RunService
 from cell_ledger_api.sessions import SessionService
 
 log = logging.getLogger(__name__)
-
-
-async def _quiet(event: dict[str, Any]) -> None:
-    """The design step streams thinking to a browser when one is attached; here none is."""
 
 
 def design_request(question: str | None, state: dict[str, Any] | None) -> DesignRequest:
@@ -79,14 +76,14 @@ class Pipeline:
         sessions: SessionService,
         runs: RunService,
         comparisons: CompareService,
-        agent: Agent,
+        designer: Designer,
         *,
         max_concurrent_designs: int = 2,
     ) -> None:
         self._sessions = sessions
         self._runs = runs
         self._comparisons = comparisons
-        self._agent = agent
+        self._designer = designer
         self._db = sessions.db
         self._sem = asyncio.Semaphore(max_concurrent_designs)
         sessions.on_dataset_finished = self.on_dataset_finished
@@ -142,7 +139,7 @@ class Pipeline:
         req = design_request(session["question"], session["state"])
         try:
             async with self._sem:
-                proposal = await self._agent.design(record, req, _quiet)
+                proposal = await self._designer.design(record, req, quiet)
         except (AgentUnavailable, DatasetNotReady) as e:
             await self._db.finish_design(
                 session_id, gse, status="failed", proposal=None, error=str(e)

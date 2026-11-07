@@ -1,26 +1,22 @@
 """Run the specialist's discover step on a case, exactly as the API would, and record it.
 
-The ``Agent`` is built directly (no FastAPI, no database). A first turn asks the question; if
+The ``Discoverer`` is built directly (no FastAPI, no database). A first turn asks the question; if
 the agent asks clarifying questions and the case scripts answers, a second turn sends them
 the same way the UI does. Every accession GEO returned, per query, lands in the record from
-the agent's trace, so scoring can separate a search miss from a judgment miss.
+the discover step's trace, so scoring can separate a search miss from a judgment miss.
 """
 
 from __future__ import annotations
 
 import time
 from collections.abc import Sequence
-from typing import Any
 
 from cell_ledger.geo import GeoClient
-from cell_ledger_api.agent import Agent, AgentUnavailable, DiscoveryResult, TurnRunner
+from cell_ledger_api.agent.discover import Discoverer, DiscoveryResult
+from cell_ledger_api.agent.llm import AgentUnavailable, TurnRunner, quiet
 from cell_ledger_api.discovery import ExaSearcher
 from evals.cases import Case
 from evals.records import Conditions, RunRecord, Turn, Verification, derive_action
-
-
-async def _quiet(_: dict[str, Any]) -> None:
-    pass
 
 
 async def verify_candidates(geo: GeoClient, gses: Sequence[str]) -> Verification:
@@ -64,7 +60,9 @@ async def run_specialist(
     conditions: Conditions,
     repeat: int = 1,
 ) -> RunRecord:
-    agent = Agent(geo, turn=turn, exa=exa, model=conditions.model, effort=conditions.effort)
+    discoverer = Discoverer(
+        geo, turn=turn, exa=exa, model=conditions.model, effort=conditions.effort
+    )
     turns: list[Turn] = []
     results: list[DiscoveryResult] = []
     started = time.monotonic()
@@ -72,7 +70,7 @@ async def run_specialist(
     async def one(answers: list[str]) -> DiscoveryResult | None:
         t0 = time.monotonic()
         try:
-            result = await agent.discover(case.prompt, _quiet, answers=answers)
+            result = await discoverer.discover(case.prompt, quiet, answers=answers)
         except AgentUnavailable as e:
             turns.append(_turn(None, answers, time.monotonic() - t0, str(e)))
             return None

@@ -16,7 +16,8 @@ package.json         bun workspace root + Biome
 apps/api/            FastAPI service and agent runtime        (cell_ledger_api)
   sessions.py        sessions and GEO collection; runs.py pipeline subprocesses with live progress
   compare.py         cross-dataset comparisons over a session's runs
-  agent.py           Claude: discover datasets for a question, design a contrast (SSE streams)
+  agent/             Claude: discover datasets for a question (tools.py: its GEO tools),
+                     design a contrast (design.py); llm.py holds what both share
 apps/web/            React + Vite + TanStack Router/Query + Tailwind, d3 charts, vitest, Playwright
 packages/core/       pure-Python pipeline library, no web deps (cell_ledger)
   geo/               GEO search and metadata retrieval

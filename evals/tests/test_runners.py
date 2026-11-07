@@ -8,7 +8,7 @@ import httpx
 import pytest
 
 from cell_ledger.geo import GeoClient
-from cell_ledger_api.agent import DiscoveryOutput
+from cell_ledger_api.agent.discover import DiscoveryOutput
 from evals.baseline import BASELINE_SYSTEM, WEB_SEARCH_TOOL, run_baseline
 from evals.records import RunRecord
 from evals.specialist import run_specialist, verify_candidates

@@ -1,16 +1,16 @@
-"""Read unchanged current-main producer outputs; these are synthetic integrity checks."""
+"""Read comparison outputs from a real producer run; these are synthetic integrity checks.
+
+The producer is this checkout unless ``CELL_LEDGER_SHARED_CHECKOUT`` names another one
+(see ``readers/producer.py``)."""
 
 import json
-import os
 import shutil
-import subprocess
-import sys
-from pathlib import Path
 
 import pandas as pd
 import pytest
 
 from packages.core.tests.readers import read_comparison
+from packages.core.tests.readers.producer import run_producer
 
 PRODUCE = """
 import json, runpy, sys
@@ -59,25 +59,8 @@ for mode, members in modes:
 
 @pytest.fixture(scope="module")
 def comparison_outputs(tmp_path_factory):
-    configured = os.environ.get("CELL_LEDGER_SHARED_CHECKOUT")
-    if not configured:
-        pytest.skip("Set CELL_LEDGER_SHARED_CHECKOUT to test unchanged shared producer")
-    checkout = Path(configured).resolve()
     out = tmp_path_factory.mktemp("comparison-reader-producer")
-    proc = subprocess.run(
-        [sys.executable, "-c", PRODUCE, str(checkout), str(out)],
-        cwd=checkout,
-        env={
-            **os.environ,
-            "PYTHONPATH": str(checkout / "packages/core/src"),
-            "PYTHONDONTWRITEBYTECODE": "1",
-            "MPLCONFIGDIR": str(out / "mpl"),
-        },
-        capture_output=True,
-        text=True,
-        timeout=120,
-    )
-    assert proc.returncode == 0, proc.stdout + proc.stderr
+    run_producer(PRODUCE, out, timeout=120)
     return out, json.loads((out / "source-map.json").read_text())
 
 

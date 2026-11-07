@@ -18,16 +18,11 @@ from anthropic.types.beta import BetaMessageParam
 from pydantic import ValidationError
 
 from cell_ledger.geo import GeoClient
-from cell_ledger_api.agent import (
-    MAX_TOKENS,
-    MAX_TURNS,
-    DiscoveryOutput,
-    TurnRunner,
-    discovery_prompt,
-)
+from cell_ledger_api.agent.discover import DiscoveryOutput, discovery_prompt
+from cell_ledger_api.agent.llm import MAX_TOKENS, MAX_TURNS, TurnRunner, final_text, quiet
 from evals.cases import Case
 from evals.records import Conditions, RunRecord, Turn, derive_action
-from evals.specialist import _quiet, verify_candidates
+from evals.specialist import verify_candidates
 
 BASELINE_SYSTEM = """\
 A biologist is looking for public datasets in NCBI GEO to answer a question with a two-group
@@ -78,7 +73,7 @@ async def baseline_turn(
     messages: list[BetaMessageParam] = [{"role": "user", "content": prompt}]
     usage = {"input_tokens": 0, "output_tokens": 0, "web_search_requests": 0}
     for _ in range(MAX_TURNS):
-        message = await turn({**params, "messages": messages}, _quiet)
+        message = await turn({**params, "messages": messages}, quiet)
         u = message.usage
         usage["input_tokens"] += (
             u.input_tokens + (u.cache_read_input_tokens or 0) + (u.cache_creation_input_tokens or 0)
@@ -94,9 +89,8 @@ async def baseline_turn(
         break
     else:
         raise RuntimeError(f"gave up after {MAX_TURNS} paused turns")
-    text = "".join(b.text for b in message.content if b.type == "text")
     try:
-        return DiscoveryOutput.model_validate_json(text), usage
+        return DiscoveryOutput.model_validate_json(final_text(message)), usage
     except ValidationError as e:
         raise RuntimeError(f"unreadable result: {e}") from e
 
