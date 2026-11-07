@@ -32,7 +32,14 @@ from pydantic import BaseModel, Field
 from cell_ledger.analysis.annotation import load_annotation
 from cell_ledger.analysis.bundle import build_anndata, load_counts, obs_frame, var_frame
 from cell_ledger.analysis.de import DeParams, run_de
-from cell_ledger.analysis.enrichment import HALLMARK, EnrichmentParams, run_prerank
+from cell_ledger.analysis.enrichment import (
+    HALLMARK,
+    EnrichmentParams,
+    rank_by_stat,
+    resolve_gene_sets,
+    run_prerank,
+    write_gsea,
+)
 from cell_ledger.analysis.filtering import filter_genes
 from cell_ledger.analysis.genes import log2_normalized, lookup_genes, score_markers
 from cell_ledger.analysis.qc import run_qc
@@ -505,6 +512,16 @@ def _run(
                     report.enrichment = enr_summary
                 enr_df.to_csv(out / "enrichment.tsv", sep="\t", index=False)
                 report.files["enrichment"] = "enrichment.tsv"
+                if (
+                    write_gsea(
+                        rank_by_stat(results),
+                        resolve_gene_sets(enr.gene_sets),
+                        [t.term for t in enr_summary.top],
+                        out / "gsea.json.gz",
+                    )
+                    > 0
+                ):
+                    report.files["gsea"] = "gsea.json.gz"
             except Exception as exc:
                 report.warnings.append(f"enrichment skipped: {type(exc).__name__}: {exc}")
 

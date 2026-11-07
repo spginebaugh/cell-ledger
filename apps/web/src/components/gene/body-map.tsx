@@ -49,9 +49,12 @@ export function BodyMap({ tissues, themeKey }: { tissues: GtexTissue[]; themeKey
   // biome-ignore lint/correctness/useExhaustiveDependencies: themeKey re-reads the CSS variables
   const color = useMemo(
     () =>
+      // four stops from a pale tint to deep navy (bright in dark mode), so a tissue at a tenth
+      // of the top value is unmistakably lighter than the top one
       scaleLinear<string>()
-        .domain([0, 1])
-        .range([cssVar("--case-soft"), cssVar("--case")]),
+        .domain([0, 1 / 3, 2 / 3, 1])
+        .range([cssVar("--expr-0"), cssVar("--expr-1"), cssVar("--expr-2"), cssVar("--expr-3")])
+        .clamp(true),
     [themeKey],
   );
   const css = useMemo(() => rulesFor(scope, values, color, max), [scope, values, color, max]);
@@ -174,7 +177,7 @@ export function BodyMap({ tissues, themeKey }: { tissues: GtexTissue[]; themeKey
 }
 
 function Ramp({ color, max }: { color: (v: number) => string; max: number }) {
-  const stops = [0, 0.25, 0.5, 0.75, 1].map((v) => color(v)).join(", ");
+  const stops = Array.from({ length: 9 }, (_, i) => color(i / 8)).join(", ");
   return (
     <div className="mt-2">
       <div

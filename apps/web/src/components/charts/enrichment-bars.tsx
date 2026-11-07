@@ -22,7 +22,7 @@ export function EnrichmentBars({
 }) {
   const shown = terms.slice(0, n);
   return (
-    <div className="num grid grid-cols-[minmax(0,1fr)_80px_44px_52px] gap-x-3 text-[13px]">
+    <div className="num grid grid-cols-[minmax(0,1fr)_minmax(80px,0.8fr)_44px_52px] gap-x-3 text-[13px]">
       <div className="pb-2 text-[12px] text-ink-3">Set</div>
       <div className="flex justify-between pb-2 text-[12px] text-ink-3">
         <span>−4</span>

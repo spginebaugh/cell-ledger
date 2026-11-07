@@ -6,10 +6,13 @@ can be passed instead.
 
 from __future__ import annotations
 
+import gzip
+import json
 from importlib.resources import files
 from pathlib import Path
 from typing import Any, cast
 
+import numpy as np
 import pandas as pd
 from pydantic import BaseModel, Field
 
@@ -105,3 +108,64 @@ def run_prerank(
         params={**params.model_dump(), "gene_sets_md5": gmt_md5(gmt)},
     )
     return df, summary
+
+
+def read_gmt(path: Path) -> dict[str, list[str]]:
+    """Term -> member symbols (upper-cased), as gseapy reads a GMT: name, description, genes."""
+    sets: dict[str, list[str]] = {}
+    for line in path.read_text().splitlines():
+        parts = line.rstrip("\n").split("\t")
+        if len(parts) < 3 or not parts[0]:
+            continue
+        sets[parts[0]] = [g.upper() for g in parts[2:] if g]
+    return sets
+
+
+def running_enrichment(metric: np.ndarray, hits: np.ndarray) -> np.ndarray:
+    """GSEA running score (weight p = 1) over a descending ranked metric. Steps up by
+    |metric| / sum |metric over hits| at a hit and down by 1 / (N - hits) elsewhere; the
+    enrichment score is the extreme of this curve. Matches gseapy's ``RES``."""
+    n = len(metric)
+    mask = np.zeros(n, dtype=bool)
+    mask[hits] = True
+    w = np.abs(metric) * mask
+    nr = w.sum()
+    if nr == 0 or len(hits) >= n:
+        return np.zeros(n)
+    step = np.where(mask, w / nr, -1.0 / (n - len(hits)))
+    return np.cumsum(step)
+
+
+def write_gsea(ranked: pd.Series, gmt: Path, terms: list[str], path: Path) -> int:
+    """The ranked list and each reported set's hit positions, gzipped JSON, so the browser can
+    draw the classic enrichment plot (running score, hit barcode, ranked metric) for any set
+    without re-running GSEA. Returns the number of sets written."""
+    sets = read_gmt(gmt)
+    symbols = [str(s) for s in ranked.index]
+    pos = {s: i for i, s in enumerate(symbols)}
+    metric = ranked.to_numpy(dtype=float)
+    out: dict[str, Any] = {}
+    for t in terms:
+        members = sets.get(t)
+        if not members:
+            continue
+        hits = np.array(sorted(pos[g] for g in members if g in pos), dtype=int)
+        if len(hits) == 0:
+            continue
+        res = running_enrichment(metric, hits)
+        peak = int(np.argmax(np.abs(res)))
+        out[t] = {
+            "hits": hits.tolist(),
+            "es": round(float(res[peak]), 5),
+            "peak": peak,
+        }
+    doc = {
+        "n": len(symbols),
+        "ranked": symbols,
+        "metric": [round(float(v), 3) for v in metric],
+        "terms": out,
+    }
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with gzip.open(path, "wt", encoding="utf-8", compresslevel=6) as f:
+        json.dump(doc, f, separators=(",", ":"), allow_nan=False)
+    return len(out)

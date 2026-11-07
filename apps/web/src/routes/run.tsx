@@ -3,17 +3,19 @@ import { ChevronLeft, MousePointerClick } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import type { EnrichmentTerm } from "@/api/generated/types.gen";
 import { EnrichmentBars } from "@/components/charts/enrichment-bars";
+import { EnrichmentDots } from "@/components/charts/enrichment-dots";
 import { PathwayNetwork } from "@/components/charts/pathway-network";
 import { GenePanel, type SelectedGene } from "@/components/gene/gene-panel";
 import { Footer, Page, TopBar } from "@/components/layout/top-bar";
 import { AnswerPanel, StatusBanner } from "@/components/run/answer-panel";
 import { ComparisonPanel } from "@/components/run/design-panel";
 import { Downloads, MarkdownFile } from "@/components/run/downloads";
+import { PathwayPanel } from "@/components/run/pathway-panel";
 import { SamplesPanel } from "@/components/run/samples-panel";
 import { LiveStepper } from "@/components/run/steps";
 import { useVolcanoTable, VolcanoPanel } from "@/components/run/volcano-panel";
 import { StatusChip } from "@/components/ui/badge";
-import { ColHead, ErrorBox, Panel, Pill, Section, Skeleton } from "@/components/ui/card";
+import { ColHead, Details, ErrorBox, Panel, Pill, Section, Skeleton } from "@/components/ui/card";
 import { errorMessage } from "@/lib/api";
 import { fmtInt } from "@/lib/format";
 import { useDatasets, useRun, useSession } from "@/lib/queries";
@@ -109,6 +111,21 @@ export function RunPage() {
         canPick={canPick}
         themeKey={resolved}
       />
+      {report?.enrichment && (
+        <PathwayPanel
+          term={term}
+          // a gene opened from the pathway panel takes the drawer; the set comes back on close
+          open={selected === null}
+          onClose={() => setTerm(null)}
+          gseaUrl={urls["gsea.json.gz"]}
+          library={report.enrichment.library}
+          fdrThreshold={report.enrichment.fdr_threshold}
+          caseLabel={report.contrast.case_label}
+          controlLabel={report.contrast.control_label}
+          onPick={pick}
+          canPick={canPick}
+        />
+      )}
       <Page>
         <div className="flex items-center justify-between gap-2 text-[13px]">
           <Link
@@ -220,7 +237,7 @@ export function RunPage() {
                     {report.de && (
                       <Section title="Differential Expression" info={deLede}>
                         <Panel>
-                          <div className="grid gap-6 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:gap-x-8">
+                          <div className="min-w-0">
                             <div id="volcano" className="min-w-0">
                               <div className="-mb-2">
                                 <ColHead label="Volcano" />
@@ -245,20 +262,31 @@ export function RunPage() {
                               />
                             </div>
                             {report.enrichment && (
-                              <div className="min-w-0 border-t border-line pt-4 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
+                              <div className="mt-6 min-w-0 border-t border-line pt-5">
                                 <ColHead
                                   label="Pathways"
                                   detail={`${report.enrichment.n_sig_fdr} of ${report.enrichment.n_terms} sets at FDR < ${report.enrichment.fdr_threshold}`}
                                 />
-                                <EnrichmentBars
+                                <EnrichmentDots
                                   terms={report.enrichment.top}
                                   selected={term?.term ?? null}
                                   onSelect={setTerm}
+                                  caseLabel={report.contrast.case_label}
+                                  controlLabel={report.contrast.control_label}
                                 />
                                 <p className="mt-3 text-[12px] text-ink-3">
-                                  Select a set to mark its leading genes on the volcano. A positive
-                                  score means the set is enriched in {report.contrast.case_label}.
+                                  Each circle is a gene set. Further from the centre line is a
+                                  stronger shift, a bigger circle is a bigger set, and a darker
+                                  circle is a surer result. Click one to open its enrichment plot
+                                  and mark its leading genes on the volcano.
                                 </p>
+                                <Details summary="As a table" className="mt-3">
+                                  <EnrichmentBars
+                                    terms={report.enrichment.top}
+                                    selected={term?.term ?? null}
+                                    onSelect={setTerm}
+                                  />
+                                </Details>
                               </div>
                             )}
                           </div>

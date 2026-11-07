@@ -162,6 +162,26 @@ def test_prerank_with_custom_gmt(synthetic, synthetic_files, tmp_path):
     assert by["PLANTED_UP"].fdr < 0.05 and by["PLANTED_DOWN"].fdr < 0.05
     assert summary.n_terms == 3 and len(df) == 3
 
+    # The browser's enrichment plot: ranked list plus hit positions, and the running score
+    # recomputed from them lands on gseapy's own enrichment score.
+    import gzip
+    import json
+
+    from cell_ledger.analysis.enrichment import rank_by_stat, write_gsea
+
+    ranked = rank_by_stat(results)
+    n_written = write_gsea(ranked, gmt, [t.term for t in summary.top], tmp_path / "gsea.json.gz")
+    assert n_written == 3
+    with gzip.open(tmp_path / "gsea.json.gz", "rt") as f:
+        doc = json.load(f)
+    assert doc["n"] == len(doc["ranked"]) == len(doc["metric"]) == len(ranked)
+    assert doc["metric"] == sorted(doc["metric"], reverse=True)
+    up = doc["terms"]["PLANTED_UP"]
+    assert len(up["hits"]) == len(synthetic.up)
+    assert abs(up["es"] - df.set_index("Term").loc["PLANTED_UP", "ES"]) < 1e-4
+    assert up["es"] > 0 and doc["terms"]["PLANTED_DOWN"]["es"] < 0
+    assert all(0 <= h < doc["n"] for h in up["hits"]) and up["hits"] == sorted(up["hits"])
+
 
 def test_load_design_reads_fixture():
     from pathlib import Path
