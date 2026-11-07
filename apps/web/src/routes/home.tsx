@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { updateSession } from "@/api/generated/sdk.gen";
 import type { DiscoveryResult } from "@/api/generated/types.gen";
 import { DiscoveryView } from "@/components/home/discovery";
+import { HelixBackdrop } from "@/components/home/helix-backdrop";
 import { Footer, Page, TopBar } from "@/components/layout/top-bar";
 import { Button } from "@/components/ui/button";
 import { ErrorBox, Panel } from "@/components/ui/card";
@@ -103,19 +104,20 @@ export function HomePage() {
 
   return (
     <>
-      <TopBar sessionId={sessionId ?? undefined} />
+      <HelixBackdrop />
+      <TopBar sessionId={sessionId ?? undefined} glass />
       <Page>
         <div className="pt-4">
           <p className="text-[13px] text-ink-2">A specialist for public RNA-seq data</p>
           <h1 className="mt-2 max-w-[26ch]">Ask a question a dataset can answer.</h1>
           <p className="mt-4 max-w-[64ch] text-ink-2">
-            cell ledger finds bulk RNA-seq series in NCBI GEO, checks which ones are actually
-            usable, labels their samples from the record with the evidence attached, and runs one
-            reproducible two-group analysis. Every number it shows can be traced back to a file.
+            cell ledger searches NCBI GEO for bulk RNA-seq studies that can bear the question,
+            labels each sample from the published record with its evidence in hand, and runs a
+            single reproducible comparison. Every figure it reports leads back to a file.
           </p>
         </div>
 
-        <Panel className="mt-8 p-5">
+        <Panel className="glass glass-clear mt-8 p-5">
           <Label htmlFor="question">Your question</Label>
           <Textarea
             id="question"

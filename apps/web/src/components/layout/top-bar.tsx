@@ -42,7 +42,7 @@ export function CellMark({ className }: { className?: string }) {
 export function Wordmark({ className, size = 28 }: { className?: string; size?: number }) {
   return (
     <span
-      className={cn("font-display leading-none tracking-[-0.012em]", className)}
+      className={cn("wordmark font-display leading-none tracking-[-0.012em]", className)}
       style={{ fontSize: size, fontVariationSettings: '"opsz" 36' }}
     >
       <span className="font-bold text-ink-2">cell</span>{" "}
@@ -51,7 +51,7 @@ export function Wordmark({ className, size = 28 }: { className?: string; size?: 
   );
 }
 
-export function TopBar({ sessionId }: { sessionId?: string }) {
+export function TopBar({ sessionId, glass = false }: { sessionId?: string; glass?: boolean }) {
   const { resolved, toggle } = useTheme();
   const [copied, setCopied] = useState(false);
   const copy = async () => {
@@ -65,7 +65,9 @@ export function TopBar({ sessionId }: { sessionId?: string }) {
     }
   };
   return (
-    <header className="sticky top-0 z-10 border-b border-line bg-surface">
+    <header
+      className={cn("sticky top-0 z-10 border-b border-line", glass ? "glass" : "bg-surface")}
+    >
       <div className="flex h-16 w-full items-center justify-between gap-4 px-[var(--gutter)]">
         <Link to="/" className="inline-flex items-center gap-3 no-underline">
           <CellMark className="h-10 w-10 shrink-0" />
