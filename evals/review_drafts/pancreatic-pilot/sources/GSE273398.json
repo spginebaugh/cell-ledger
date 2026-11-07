@@ -1,0 +1,311 @@
+{
+  "gse": "GSE273398",
+  "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE273398",
+  "fields": {
+    "title": [
+      "A CLIC1 network coordinates matrix stiffness and the Warburg effect to promote tumor growth in pancreatic cancer. Zheng et al."
+    ],
+    "summary": [
+      "Pancreatic ductal adenocarcinoma (PDAC) features substantial matrix stiffening and reprogrammed glucose metabolism, particularly the Warburg effect. However, the complex interplay between these traits and their impact on tumor advancement remains inadequately explored. Here, we integrated clinical, cellular, and bioinformatics approaches to explore the connection between matrix stiffness and the Warburg effect in PDAC, identifying CLIC1 as a key mediator. Elevated CLIC1 expression, induced by matrix stiffness through Wnt/β-catenin/TCF4 signaling, signifies poorer prognostic outcomes in PDAC. Functionally, CLIC1 serves as a catalyst for glycolytic metabolism, propelling tumor proliferation. Mechanistically, CLIC1 fortifies HIF1α stability by curbing hydroxylation via ROS. Collectively, PDAC cells elevate CLIC1 levels in a matrix stiffness-responsive manner, bolstering the Warburg effect to drive tumor growth via ROS/HIF1α signaling. Our insights highlight opportunities for targeted therapies that concurrently address matrix properties and metabolic rewiring, with CLIC1 emerging as a promising intervention point."
+    ],
+    "overall_design": [
+      "Comparative gene expression profiling analysis via RNA-seq in CLIC1-knockdown vs. control PATU8988 cells (n = 3 each)."
+    ],
+    "sample_id": [
+      "GSM8427623",
+      "GSM8427624",
+      "GSM8427625",
+      "GSM8427626",
+      "GSM8427627",
+      "GSM8427628"
+    ],
+    "supplementary_file": [
+      "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE273nnn/GSE273398/suppl/GSE273398_gene.tpm.matrix.annot.xls.gz"
+    ],
+    "sample_organism": [
+      "Homo sapiens"
+    ],
+    "relation": [
+      "BioProject: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1141549"
+    ]
+  },
+  "samples": {
+    "GSM8427623": {
+      "title": [
+        "shNC rep1"
+      ],
+      "source_name_ch1": [
+        "pancreatic cancer"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: pancreatic cancer",
+        "cell line: PATU8988",
+        "cell type: Human pancreatic cancer cell",
+        "treatment: control"
+      ],
+      "treatment_protocol_ch1": [
+        "The lentiviral vector hU6-MCS-Ubiquitin-EGFP-IRES-puromycin was used for CLIC1 knockdown assays. For lentiviral transfection, cells were plated 24 h in advance and a lentiviral suspension was added to the medium in the presence of 25× HitransG P (GeneChem, Shanghai, China). After 48 h of transfection, 5 μg/mL puromycin was added to the medium to screen for stable cell lines for 2 weeks."
+      ],
+      "growth_protocol_ch1": [
+        "All cells were cultured in the recommended medium according to American Type Culture Collection protocols supplemented with 10% fetal bovine serum (FBS) and 1% streptomycin/penicillin (P/S) in a humidified incubator under 5% CO2 at 37 °C."
+      ],
+      "molecule_ch1": [
+        "total RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Total RNA was extracted using RNAiso Plus reagent (Takara Bio, #9109) following the manufacturer’s protocol. Then, RNA quality was determined by a 5300 Bioanalyzer (Agilent) and quantified using an ND-2000 (NanoDrop Technologies). Only high-quality RNA samples (OD260/280=1.8~2.2, OD260/230≥2.0, RIN≥6.5, 28S:18S≥1.0, >1 μg) were used to construct the sequencing library.",
+        "RNA libraries were prepared for sequencing using standard Illumina protocols"
+      ],
+      "data_processing": [
+        "Illumina Casava1.8 software used for basecalling.",
+        "The raw paired end reads were trimmed and quality controlled by Fastp (https://github.com/OpenGene/fastp ).",
+        "Then clean reads were separately aligned to reference genome with orientation mode using hisat software.",
+        "The expression level of each transcript was calculated according to the fragments per Transcripts Per Million reads (TPM) method. RSEM (http://deweylab.biostat.wisc.edu/rsem/) was used to quantify gene abundances.",
+        "R statistical package software EdgeR (Empirical analysis of Digital Gene Expression in R, http://www.bioconductor.org/packages/2.12/bioc/html/edgeR.html) was utilized for differential expression analysis.",
+        "Assembly: GRCh38",
+        "Supplementary files format and content: Tab-delimited text files include TPM values for each sample."
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN42898158",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX25506161"
+      ]
+    },
+    "GSM8427624": {
+      "title": [
+        "shNC rep2"
+      ],
+      "source_name_ch1": [
+        "pancreatic cancer"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: pancreatic cancer",
+        "cell line: PATU8988",
+        "cell type: Human pancreatic cancer cell",
+        "treatment: control"
+      ],
+      "treatment_protocol_ch1": [
+        "The lentiviral vector hU6-MCS-Ubiquitin-EGFP-IRES-puromycin was used for CLIC1 knockdown assays. For lentiviral transfection, cells were plated 24 h in advance and a lentiviral suspension was added to the medium in the presence of 25× HitransG P (GeneChem, Shanghai, China). After 48 h of transfection, 5 μg/mL puromycin was added to the medium to screen for stable cell lines for 2 weeks."
+      ],
+      "growth_protocol_ch1": [
+        "All cells were cultured in the recommended medium according to American Type Culture Collection protocols supplemented with 10% fetal bovine serum (FBS) and 1% streptomycin/penicillin (P/S) in a humidified incubator under 5% CO2 at 37 °C."
+      ],
+      "molecule_ch1": [
+        "total RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Total RNA was extracted using RNAiso Plus reagent (Takara Bio, #9109) following the manufacturer’s protocol. Then, RNA quality was determined by a 5300 Bioanalyzer (Agilent) and quantified using an ND-2000 (NanoDrop Technologies). Only high-quality RNA samples (OD260/280=1.8~2.2, OD260/230≥2.0, RIN≥6.5, 28S:18S≥1.0, >1 μg) were used to construct the sequencing library.",
+        "RNA libraries were prepared for sequencing using standard Illumina protocols"
+      ],
+      "data_processing": [
+        "Illumina Casava1.8 software used for basecalling.",
+        "The raw paired end reads were trimmed and quality controlled by Fastp (https://github.com/OpenGene/fastp ).",
+        "Then clean reads were separately aligned to reference genome with orientation mode using hisat software.",
+        "The expression level of each transcript was calculated according to the fragments per Transcripts Per Million reads (TPM) method. RSEM (http://deweylab.biostat.wisc.edu/rsem/) was used to quantify gene abundances.",
+        "R statistical package software EdgeR (Empirical analysis of Digital Gene Expression in R, http://www.bioconductor.org/packages/2.12/bioc/html/edgeR.html) was utilized for differential expression analysis.",
+        "Assembly: GRCh38",
+        "Supplementary files format and content: Tab-delimited text files include TPM values for each sample."
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN42898157",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX25506162"
+      ]
+    },
+    "GSM8427625": {
+      "title": [
+        "shNC rep3"
+      ],
+      "source_name_ch1": [
+        "pancreatic cancer"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: pancreatic cancer",
+        "cell line: PATU8988",
+        "cell type: Human pancreatic cancer cell",
+        "treatment: control"
+      ],
+      "treatment_protocol_ch1": [
+        "The lentiviral vector hU6-MCS-Ubiquitin-EGFP-IRES-puromycin was used for CLIC1 knockdown assays. For lentiviral transfection, cells were plated 24 h in advance and a lentiviral suspension was added to the medium in the presence of 25× HitransG P (GeneChem, Shanghai, China). After 48 h of transfection, 5 μg/mL puromycin was added to the medium to screen for stable cell lines for 2 weeks."
+      ],
+      "growth_protocol_ch1": [
+        "All cells were cultured in the recommended medium according to American Type Culture Collection protocols supplemented with 10% fetal bovine serum (FBS) and 1% streptomycin/penicillin (P/S) in a humidified incubator under 5% CO2 at 37 °C."
+      ],
+      "molecule_ch1": [
+        "total RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Total RNA was extracted using RNAiso Plus reagent (Takara Bio, #9109) following the manufacturer’s protocol. Then, RNA quality was determined by a 5300 Bioanalyzer (Agilent) and quantified using an ND-2000 (NanoDrop Technologies). Only high-quality RNA samples (OD260/280=1.8~2.2, OD260/230≥2.0, RIN≥6.5, 28S:18S≥1.0, >1 μg) were used to construct the sequencing library.",
+        "RNA libraries were prepared for sequencing using standard Illumina protocols"
+      ],
+      "data_processing": [
+        "Illumina Casava1.8 software used for basecalling.",
+        "The raw paired end reads were trimmed and quality controlled by Fastp (https://github.com/OpenGene/fastp ).",
+        "Then clean reads were separately aligned to reference genome with orientation mode using hisat software.",
+        "The expression level of each transcript was calculated according to the fragments per Transcripts Per Million reads (TPM) method. RSEM (http://deweylab.biostat.wisc.edu/rsem/) was used to quantify gene abundances.",
+        "R statistical package software EdgeR (Empirical analysis of Digital Gene Expression in R, http://www.bioconductor.org/packages/2.12/bioc/html/edgeR.html) was utilized for differential expression analysis.",
+        "Assembly: GRCh38",
+        "Supplementary files format and content: Tab-delimited text files include TPM values for each sample."
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN42898156",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX25506163"
+      ]
+    },
+    "GSM8427626": {
+      "title": [
+        "shCLIC1 rep1"
+      ],
+      "source_name_ch1": [
+        "pancreatic cancer"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: pancreatic cancer",
+        "cell line: PATU8988",
+        "cell type: Human pancreatic cancer cell",
+        "treatment: CLIC1-knockdown"
+      ],
+      "treatment_protocol_ch1": [
+        "The lentiviral vector hU6-MCS-Ubiquitin-EGFP-IRES-puromycin was used for CLIC1 knockdown assays. For lentiviral transfection, cells were plated 24 h in advance and a lentiviral suspension was added to the medium in the presence of 25× HitransG P (GeneChem, Shanghai, China). After 48 h of transfection, 5 μg/mL puromycin was added to the medium to screen for stable cell lines for 2 weeks."
+      ],
+      "growth_protocol_ch1": [
+        "All cells were cultured in the recommended medium according to American Type Culture Collection protocols supplemented with 10% fetal bovine serum (FBS) and 1% streptomycin/penicillin (P/S) in a humidified incubator under 5% CO2 at 37 °C."
+      ],
+      "molecule_ch1": [
+        "total RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Total RNA was extracted using RNAiso Plus reagent (Takara Bio, #9109) following the manufacturer’s protocol. Then, RNA quality was determined by a 5300 Bioanalyzer (Agilent) and quantified using an ND-2000 (NanoDrop Technologies). Only high-quality RNA samples (OD260/280=1.8~2.2, OD260/230≥2.0, RIN≥6.5, 28S:18S≥1.0, >1 μg) were used to construct the sequencing library.",
+        "RNA libraries were prepared for sequencing using standard Illumina protocols"
+      ],
+      "data_processing": [
+        "Illumina Casava1.8 software used for basecalling.",
+        "The raw paired end reads were trimmed and quality controlled by Fastp (https://github.com/OpenGene/fastp ).",
+        "Then clean reads were separately aligned to reference genome with orientation mode using hisat software.",
+        "The expression level of each transcript was calculated according to the fragments per Transcripts Per Million reads (TPM) method. RSEM (http://deweylab.biostat.wisc.edu/rsem/) was used to quantify gene abundances.",
+        "R statistical package software EdgeR (Empirical analysis of Digital Gene Expression in R, http://www.bioconductor.org/packages/2.12/bioc/html/edgeR.html) was utilized for differential expression analysis.",
+        "Assembly: GRCh38",
+        "Supplementary files format and content: Tab-delimited text files include TPM values for each sample."
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN42898155",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX25506164"
+      ]
+    },
+    "GSM8427627": {
+      "title": [
+        "shCLIC1 rep2"
+      ],
+      "source_name_ch1": [
+        "pancreatic cancer"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: pancreatic cancer",
+        "cell line: PATU8988",
+        "cell type: Human pancreatic cancer cell",
+        "treatment: CLIC1-knockdown"
+      ],
+      "treatment_protocol_ch1": [
+        "The lentiviral vector hU6-MCS-Ubiquitin-EGFP-IRES-puromycin was used for CLIC1 knockdown assays. For lentiviral transfection, cells were plated 24 h in advance and a lentiviral suspension was added to the medium in the presence of 25× HitransG P (GeneChem, Shanghai, China). After 48 h of transfection, 5 μg/mL puromycin was added to the medium to screen for stable cell lines for 2 weeks."
+      ],
+      "growth_protocol_ch1": [
+        "All cells were cultured in the recommended medium according to American Type Culture Collection protocols supplemented with 10% fetal bovine serum (FBS) and 1% streptomycin/penicillin (P/S) in a humidified incubator under 5% CO2 at 37 °C."
+      ],
+      "molecule_ch1": [
+        "total RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Total RNA was extracted using RNAiso Plus reagent (Takara Bio, #9109) following the manufacturer’s protocol. Then, RNA quality was determined by a 5300 Bioanalyzer (Agilent) and quantified using an ND-2000 (NanoDrop Technologies). Only high-quality RNA samples (OD260/280=1.8~2.2, OD260/230≥2.0, RIN≥6.5, 28S:18S≥1.0, >1 μg) were used to construct the sequencing library.",
+        "RNA libraries were prepared for sequencing using standard Illumina protocols"
+      ],
+      "data_processing": [
+        "Illumina Casava1.8 software used for basecalling.",
+        "The raw paired end reads were trimmed and quality controlled by Fastp (https://github.com/OpenGene/fastp ).",
+        "Then clean reads were separately aligned to reference genome with orientation mode using hisat software.",
+        "The expression level of each transcript was calculated according to the fragments per Transcripts Per Million reads (TPM) method. RSEM (http://deweylab.biostat.wisc.edu/rsem/) was used to quantify gene abundances.",
+        "R statistical package software EdgeR (Empirical analysis of Digital Gene Expression in R, http://www.bioconductor.org/packages/2.12/bioc/html/edgeR.html) was utilized for differential expression analysis.",
+        "Assembly: GRCh38",
+        "Supplementary files format and content: Tab-delimited text files include TPM values for each sample."
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN42898154",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX25506165"
+      ]
+    },
+    "GSM8427628": {
+      "title": [
+        "shCLIC1 rep3"
+      ],
+      "source_name_ch1": [
+        "pancreatic cancer"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: pancreatic cancer",
+        "cell line: PATU8988",
+        "cell type: Human pancreatic cancer cell",
+        "treatment: CLIC1-knockdown"
+      ],
+      "treatment_protocol_ch1": [
+        "The lentiviral vector hU6-MCS-Ubiquitin-EGFP-IRES-puromycin was used for CLIC1 knockdown assays. For lentiviral transfection, cells were plated 24 h in advance and a lentiviral suspension was added to the medium in the presence of 25× HitransG P (GeneChem, Shanghai, China). After 48 h of transfection, 5 μg/mL puromycin was added to the medium to screen for stable cell lines for 2 weeks."
+      ],
+      "growth_protocol_ch1": [
+        "All cells were cultured in the recommended medium according to American Type Culture Collection protocols supplemented with 10% fetal bovine serum (FBS) and 1% streptomycin/penicillin (P/S) in a humidified incubator under 5% CO2 at 37 °C."
+      ],
+      "molecule_ch1": [
+        "total RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Total RNA was extracted using RNAiso Plus reagent (Takara Bio, #9109) following the manufacturer’s protocol. Then, RNA quality was determined by a 5300 Bioanalyzer (Agilent) and quantified using an ND-2000 (NanoDrop Technologies). Only high-quality RNA samples (OD260/280=1.8~2.2, OD260/230≥2.0, RIN≥6.5, 28S:18S≥1.0, >1 μg) were used to construct the sequencing library.",
+        "RNA libraries were prepared for sequencing using standard Illumina protocols"
+      ],
+      "data_processing": [
+        "Illumina Casava1.8 software used for basecalling.",
+        "The raw paired end reads were trimmed and quality controlled by Fastp (https://github.com/OpenGene/fastp ).",
+        "Then clean reads were separately aligned to reference genome with orientation mode using hisat software.",
+        "The expression level of each transcript was calculated according to the fragments per Transcripts Per Million reads (TPM) method. RSEM (http://deweylab.biostat.wisc.edu/rsem/) was used to quantify gene abundances.",
+        "R statistical package software EdgeR (Empirical analysis of Digital Gene Expression in R, http://www.bioconductor.org/packages/2.12/bioc/html/edgeR.html) was utilized for differential expression analysis.",
+        "Assembly: GRCh38",
+        "Supplementary files format and content: Tab-delimited text files include TPM values for each sample."
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN42898153",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX25506166"
+      ]
+    }
+  },
+  "note": "Extracted from saved source responses; full originals remain in ignored data/evals. Original retrieval metadata preserved in supporting evidence where available."
+}

@@ -1,0 +1,488 @@
+{
+  "gse": "GSE348821",
+  "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE348821&targ=all&view=full&form=text",
+  "retrieved_at": "2026-11-07T04:27:10.778570+00:00",
+  "fields": {
+    "title": [
+      "Transcriptional response of primary human pancreatic cancer-associated fibroblasts to IFN-γ and lipopolysaccharide stimulation"
+    ],
+    "summary": [
+      "Single-cell analysis of a pan-cancer tumor microenvironment atlas identified transcriptionally distinct inflammatory cancer-associated fibroblast (iCAF) subpopulations, including an ISG15+ iCAF population predicted to arise downstream of interferon-γ signaling from CD8+/GZMB+ T cells, and a CXCL8+ iCAF population. To test these predictions experimentally, primary cancer-associated fibroblasts (CAFs) were isolated from a fresh human pancreatic ductal adenocarcinoma (PDAC) surgical specimen, expanded in culture, and treated for 24 hours with control media, recombinant human interferon-γ, or lipopolysaccharide (LPS). Bulk RNA-sequencing of the resulting nine libraries was used to compare the induced transcriptional programs against gene signatures derived from the ISG15+ iCAF and CXCL8+ iCAF subpopulations of the atlas. Results are reported in the associated publication."
+    ],
+    "overall_design": [
+      "Bulk RNA-seq of primary human PDAC cancer-associated fibroblasts treated for 24 hours with control media, recombinant human IFN-γ (20 ng/ml), or LPS (100 ng/ml). Three independent replicate cultures per condition (nine libraries in total), all derived from a single patient primary CAF isolate at passage 4. Each library was sequenced in a dedicated lane across three Singular Genomics G4 runs performed on the same day; no index reads were performed and no index-based demultiplexing was applied."
+    ],
+    "sample_id": [
+      "GSM10081099",
+      "GSM10081100",
+      "GSM10081101",
+      "GSM10081102",
+      "GSM10081103",
+      "GSM10081104",
+      "GSM10081105",
+      "GSM10081106",
+      "GSM10081107"
+    ],
+    "supplementary_file": [
+      "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE348nnn/GSE348821/suppl/GSE348821_CAF_activation_raw_counts.txt.gz"
+    ],
+    "sample_organism": [
+      "Homo sapiens"
+    ],
+    "relation": [
+      "BioProject: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1536442"
+    ]
+  },
+  "samples": {
+    "GSM10081099": {
+      "title": [
+        "Primary human PDAC cancer-associated fibroblasts, untreated control, replicate 1"
+      ],
+      "source_name_ch1": [
+        "pancreas (pancreatic ductal adenocarcinoma)"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: pancreas (pancreatic ductal adenocarcinoma)",
+        "cell type: cancer-associated fibroblast (CAF)",
+        "treatment: none (control media), 24 h",
+        "batch: G4 run 1 (240227_GAR-0044_0012_1_3A0336D), lane 4"
+      ],
+      "treatment_protocol_ch1": [
+        "Passage 4 cells (1 x 10^5 cells per replicate; n = 3 independent replicate cultures per condition) were allowed to adhere for 12 hours, after which cells were treated for 24 hours with control media, recombinant human IFN-γ (20 ng/ml; R&D #285-IF), or lipopolysaccharide (100 ng/ml; InvivoGen #tlrl-eblps)."
+      ],
+      "growth_protocol_ch1": [
+        "Primary cancer-associated fibroblasts (CAFs) were isolated using the Miltenyi Biotec Tumor Dissociation Kit (#130-095-929) from one fresh pancreatic ductal adenocarcinoma surgical specimen, obtained under an institutional review board approved protocol with informed consent obtained preoperatively (Stanford IRB-65893). Isolated CAFs were cultured for 4 passages in DMEM/F-12 with GlutaMAX (Gibco #10565018), 10% FBS (Gibco #16000044), 1% Antibiotic-Antimycotic (R&D #B22110) and 0.2% Primocin (InvivoGen #ant-pm-05)."
+      ],
+      "molecule_ch1": [
+        "total RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Total RNA was extracted using TRIzol (Invitrogen #15596026).",
+        "RNA-seq libraries were prepared using the NEBNext Ultra II Directional RNA Library Prep Kit for Illumina (NEB #E7760) following the manufacturer’s protocol for the NEBNext rRNA Depletion Kit v2 (Human/Mouse/Rat) (NEB #E7400L), with 50 ng RNA input per library. During the adaptor ligation step, the Singular Genomics Universal Library Prep Adapter (#700110) was used to adapt libraries for sequencing on the Singular Genomics G4. PCR enrichment of adaptor-ligated DNA was performed for 12 cycles. No index reads were performed, as each library was sequenced in a dedicated lane."
+      ],
+      "description": [
+        "Library name: control_rep1",
+        "Column name in CAF_activation_raw_counts.txt: C1"
+      ],
+      "data_processing": [
+        "Basecalling and per-lane FASTQ generation were performed on the Singular Genomics G4 (paired-end, 75 bp per read; no index cycles). One library was sequenced per lane, so no index-based demultiplexing was performed.",
+        "Reads were aligned to the human GRCh37/hg19 reference genome using TopHat (v2.0.13).",
+        "Gene-level read counts were generated for each sample, yielding nine counts matrices, which were merged into a single counts matrix in R (v4.2.2).",
+        "CPM normalization was performed using the cpm function. Genes were retained if at least 2 samples had at least 0.5 CPM, leaving 26,363 genes for downstream analysis.",
+        "Differential expression between conditions was assessed using DESeq2 (v1.38.4) with a two-sided Wald test and Benjamini-Hochberg adjustment for multiple comparisons; log2 fold changes were shrunk using lfcShrink.",
+        "Assembly: hg19 (GRCh37)",
+        "Supplementary files format and content: Tab-delimited text file containing raw gene-level read counts for all nine samples. Rows are genes; columns are the nine samples (C1-C3, untreated control; F1-F3, IFN-γ treated; L1-L3, LPS treated)."
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63635772",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35436695"
+      ]
+    },
+    "GSM10081100": {
+      "title": [
+        "Primary human PDAC cancer-associated fibroblasts, untreated control, replicate 2"
+      ],
+      "source_name_ch1": [
+        "pancreas (pancreatic ductal adenocarcinoma)"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: pancreas (pancreatic ductal adenocarcinoma)",
+        "cell type: cancer-associated fibroblast (CAF)",
+        "treatment: none (control media), 24 h",
+        "batch: G4 run 2 (240227_GAR-0044_0012_2_3A0345D), lane 1"
+      ],
+      "treatment_protocol_ch1": [
+        "Passage 4 cells (1 x 10^5 cells per replicate; n = 3 independent replicate cultures per condition) were allowed to adhere for 12 hours, after which cells were treated for 24 hours with control media, recombinant human IFN-γ (20 ng/ml; R&D #285-IF), or lipopolysaccharide (100 ng/ml; InvivoGen #tlrl-eblps)."
+      ],
+      "growth_protocol_ch1": [
+        "Primary cancer-associated fibroblasts (CAFs) were isolated using the Miltenyi Biotec Tumor Dissociation Kit (#130-095-929) from one fresh pancreatic ductal adenocarcinoma surgical specimen, obtained under an institutional review board approved protocol with informed consent obtained preoperatively (Stanford IRB-65893). Isolated CAFs were cultured for 4 passages in DMEM/F-12 with GlutaMAX (Gibco #10565018), 10% FBS (Gibco #16000044), 1% Antibiotic-Antimycotic (R&D #B22110) and 0.2% Primocin (InvivoGen #ant-pm-05)."
+      ],
+      "molecule_ch1": [
+        "total RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Total RNA was extracted using TRIzol (Invitrogen #15596026).",
+        "RNA-seq libraries were prepared using the NEBNext Ultra II Directional RNA Library Prep Kit for Illumina (NEB #E7760) following the manufacturer’s protocol for the NEBNext rRNA Depletion Kit v2 (Human/Mouse/Rat) (NEB #E7400L), with 50 ng RNA input per library. During the adaptor ligation step, the Singular Genomics Universal Library Prep Adapter (#700110) was used to adapt libraries for sequencing on the Singular Genomics G4. PCR enrichment of adaptor-ligated DNA was performed for 12 cycles. No index reads were performed, as each library was sequenced in a dedicated lane."
+      ],
+      "description": [
+        "Library name: control_rep2",
+        "Column name in CAF_activation_raw_counts.txt: C2"
+      ],
+      "data_processing": [
+        "Basecalling and per-lane FASTQ generation were performed on the Singular Genomics G4 (paired-end, 75 bp per read; no index cycles). One library was sequenced per lane, so no index-based demultiplexing was performed.",
+        "Reads were aligned to the human GRCh37/hg19 reference genome using TopHat (v2.0.13).",
+        "Gene-level read counts were generated for each sample, yielding nine counts matrices, which were merged into a single counts matrix in R (v4.2.2).",
+        "CPM normalization was performed using the cpm function. Genes were retained if at least 2 samples had at least 0.5 CPM, leaving 26,363 genes for downstream analysis.",
+        "Differential expression between conditions was assessed using DESeq2 (v1.38.4) with a two-sided Wald test and Benjamini-Hochberg adjustment for multiple comparisons; log2 fold changes were shrunk using lfcShrink.",
+        "Assembly: hg19 (GRCh37)",
+        "Supplementary files format and content: Tab-delimited text file containing raw gene-level read counts for all nine samples. Rows are genes; columns are the nine samples (C1-C3, untreated control; F1-F3, IFN-γ treated; L1-L3, LPS treated)."
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63635771",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35436696"
+      ]
+    },
+    "GSM10081101": {
+      "title": [
+        "Primary human PDAC cancer-associated fibroblasts, untreated control, replicate 3"
+      ],
+      "source_name_ch1": [
+        "pancreas (pancreatic ductal adenocarcinoma)"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: pancreas (pancreatic ductal adenocarcinoma)",
+        "cell type: cancer-associated fibroblast (CAF)",
+        "treatment: none (control media), 24 h",
+        "batch: G4 run 2 (240227_GAR-0044_0012_2_3A0345D), lane 2"
+      ],
+      "treatment_protocol_ch1": [
+        "Passage 4 cells (1 x 10^5 cells per replicate; n = 3 independent replicate cultures per condition) were allowed to adhere for 12 hours, after which cells were treated for 24 hours with control media, recombinant human IFN-γ (20 ng/ml; R&D #285-IF), or lipopolysaccharide (100 ng/ml; InvivoGen #tlrl-eblps)."
+      ],
+      "growth_protocol_ch1": [
+        "Primary cancer-associated fibroblasts (CAFs) were isolated using the Miltenyi Biotec Tumor Dissociation Kit (#130-095-929) from one fresh pancreatic ductal adenocarcinoma surgical specimen, obtained under an institutional review board approved protocol with informed consent obtained preoperatively (Stanford IRB-65893). Isolated CAFs were cultured for 4 passages in DMEM/F-12 with GlutaMAX (Gibco #10565018), 10% FBS (Gibco #16000044), 1% Antibiotic-Antimycotic (R&D #B22110) and 0.2% Primocin (InvivoGen #ant-pm-05)."
+      ],
+      "molecule_ch1": [
+        "total RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Total RNA was extracted using TRIzol (Invitrogen #15596026).",
+        "RNA-seq libraries were prepared using the NEBNext Ultra II Directional RNA Library Prep Kit for Illumina (NEB #E7760) following the manufacturer’s protocol for the NEBNext rRNA Depletion Kit v2 (Human/Mouse/Rat) (NEB #E7400L), with 50 ng RNA input per library. During the adaptor ligation step, the Singular Genomics Universal Library Prep Adapter (#700110) was used to adapt libraries for sequencing on the Singular Genomics G4. PCR enrichment of adaptor-ligated DNA was performed for 12 cycles. No index reads were performed, as each library was sequenced in a dedicated lane."
+      ],
+      "description": [
+        "Library name: control_rep3",
+        "Column name in CAF_activation_raw_counts.txt: C3"
+      ],
+      "data_processing": [
+        "Basecalling and per-lane FASTQ generation were performed on the Singular Genomics G4 (paired-end, 75 bp per read; no index cycles). One library was sequenced per lane, so no index-based demultiplexing was performed.",
+        "Reads were aligned to the human GRCh37/hg19 reference genome using TopHat (v2.0.13).",
+        "Gene-level read counts were generated for each sample, yielding nine counts matrices, which were merged into a single counts matrix in R (v4.2.2).",
+        "CPM normalization was performed using the cpm function. Genes were retained if at least 2 samples had at least 0.5 CPM, leaving 26,363 genes for downstream analysis.",
+        "Differential expression between conditions was assessed using DESeq2 (v1.38.4) with a two-sided Wald test and Benjamini-Hochberg adjustment for multiple comparisons; log2 fold changes were shrunk using lfcShrink.",
+        "Assembly: hg19 (GRCh37)",
+        "Supplementary files format and content: Tab-delimited text file containing raw gene-level read counts for all nine samples. Rows are genes; columns are the nine samples (C1-C3, untreated control; F1-F3, IFN-γ treated; L1-L3, LPS treated)."
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63635770",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35436697"
+      ]
+    },
+    "GSM10081102": {
+      "title": [
+        "Primary human PDAC cancer-associated fibroblasts, IFN-γ treated, replicate 1"
+      ],
+      "source_name_ch1": [
+        "pancreas (pancreatic ductal adenocarcinoma)"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: pancreas (pancreatic ductal adenocarcinoma)",
+        "cell type: cancer-associated fibroblast (CAF)",
+        "treatment: recombinant human IFN-γ, 20 ng/ml, 24 h",
+        "batch: G4 run 2 (240227_GAR-0044_0012_2_3A0345D), lane 3"
+      ],
+      "treatment_protocol_ch1": [
+        "Passage 4 cells (1 x 10^5 cells per replicate; n = 3 independent replicate cultures per condition) were allowed to adhere for 12 hours, after which cells were treated for 24 hours with control media, recombinant human IFN-γ (20 ng/ml; R&D #285-IF), or lipopolysaccharide (100 ng/ml; InvivoGen #tlrl-eblps)."
+      ],
+      "growth_protocol_ch1": [
+        "Primary cancer-associated fibroblasts (CAFs) were isolated using the Miltenyi Biotec Tumor Dissociation Kit (#130-095-929) from one fresh pancreatic ductal adenocarcinoma surgical specimen, obtained under an institutional review board approved protocol with informed consent obtained preoperatively (Stanford IRB-65893). Isolated CAFs were cultured for 4 passages in DMEM/F-12 with GlutaMAX (Gibco #10565018), 10% FBS (Gibco #16000044), 1% Antibiotic-Antimycotic (R&D #B22110) and 0.2% Primocin (InvivoGen #ant-pm-05)."
+      ],
+      "molecule_ch1": [
+        "total RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Total RNA was extracted using TRIzol (Invitrogen #15596026).",
+        "RNA-seq libraries were prepared using the NEBNext Ultra II Directional RNA Library Prep Kit for Illumina (NEB #E7760) following the manufacturer’s protocol for the NEBNext rRNA Depletion Kit v2 (Human/Mouse/Rat) (NEB #E7400L), with 50 ng RNA input per library. During the adaptor ligation step, the Singular Genomics Universal Library Prep Adapter (#700110) was used to adapt libraries for sequencing on the Singular Genomics G4. PCR enrichment of adaptor-ligated DNA was performed for 12 cycles. No index reads were performed, as each library was sequenced in a dedicated lane."
+      ],
+      "description": [
+        "Library name: IFNg_rep1",
+        "Column name in CAF_activation_raw_counts.txt: F1"
+      ],
+      "data_processing": [
+        "Basecalling and per-lane FASTQ generation were performed on the Singular Genomics G4 (paired-end, 75 bp per read; no index cycles). One library was sequenced per lane, so no index-based demultiplexing was performed.",
+        "Reads were aligned to the human GRCh37/hg19 reference genome using TopHat (v2.0.13).",
+        "Gene-level read counts were generated for each sample, yielding nine counts matrices, which were merged into a single counts matrix in R (v4.2.2).",
+        "CPM normalization was performed using the cpm function. Genes were retained if at least 2 samples had at least 0.5 CPM, leaving 26,363 genes for downstream analysis.",
+        "Differential expression between conditions was assessed using DESeq2 (v1.38.4) with a two-sided Wald test and Benjamini-Hochberg adjustment for multiple comparisons; log2 fold changes were shrunk using lfcShrink.",
+        "Assembly: hg19 (GRCh37)",
+        "Supplementary files format and content: Tab-delimited text file containing raw gene-level read counts for all nine samples. Rows are genes; columns are the nine samples (C1-C3, untreated control; F1-F3, IFN-γ treated; L1-L3, LPS treated)."
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63635769",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35436698"
+      ]
+    },
+    "GSM10081103": {
+      "title": [
+        "Primary human PDAC cancer-associated fibroblasts, IFN-γ treated, replicate 2"
+      ],
+      "source_name_ch1": [
+        "pancreas (pancreatic ductal adenocarcinoma)"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: pancreas (pancreatic ductal adenocarcinoma)",
+        "cell type: cancer-associated fibroblast (CAF)",
+        "treatment: recombinant human IFN-γ, 20 ng/ml, 24 h",
+        "batch: G4 run 2 (240227_GAR-0044_0012_2_3A0345D), lane 4"
+      ],
+      "treatment_protocol_ch1": [
+        "Passage 4 cells (1 x 10^5 cells per replicate; n = 3 independent replicate cultures per condition) were allowed to adhere for 12 hours, after which cells were treated for 24 hours with control media, recombinant human IFN-γ (20 ng/ml; R&D #285-IF), or lipopolysaccharide (100 ng/ml; InvivoGen #tlrl-eblps)."
+      ],
+      "growth_protocol_ch1": [
+        "Primary cancer-associated fibroblasts (CAFs) were isolated using the Miltenyi Biotec Tumor Dissociation Kit (#130-095-929) from one fresh pancreatic ductal adenocarcinoma surgical specimen, obtained under an institutional review board approved protocol with informed consent obtained preoperatively (Stanford IRB-65893). Isolated CAFs were cultured for 4 passages in DMEM/F-12 with GlutaMAX (Gibco #10565018), 10% FBS (Gibco #16000044), 1% Antibiotic-Antimycotic (R&D #B22110) and 0.2% Primocin (InvivoGen #ant-pm-05)."
+      ],
+      "molecule_ch1": [
+        "total RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Total RNA was extracted using TRIzol (Invitrogen #15596026).",
+        "RNA-seq libraries were prepared using the NEBNext Ultra II Directional RNA Library Prep Kit for Illumina (NEB #E7760) following the manufacturer’s protocol for the NEBNext rRNA Depletion Kit v2 (Human/Mouse/Rat) (NEB #E7400L), with 50 ng RNA input per library. During the adaptor ligation step, the Singular Genomics Universal Library Prep Adapter (#700110) was used to adapt libraries for sequencing on the Singular Genomics G4. PCR enrichment of adaptor-ligated DNA was performed for 12 cycles. No index reads were performed, as each library was sequenced in a dedicated lane."
+      ],
+      "description": [
+        "Library name: IFNg_rep2",
+        "Column name in CAF_activation_raw_counts.txt: F2"
+      ],
+      "data_processing": [
+        "Basecalling and per-lane FASTQ generation were performed on the Singular Genomics G4 (paired-end, 75 bp per read; no index cycles). One library was sequenced per lane, so no index-based demultiplexing was performed.",
+        "Reads were aligned to the human GRCh37/hg19 reference genome using TopHat (v2.0.13).",
+        "Gene-level read counts were generated for each sample, yielding nine counts matrices, which were merged into a single counts matrix in R (v4.2.2).",
+        "CPM normalization was performed using the cpm function. Genes were retained if at least 2 samples had at least 0.5 CPM, leaving 26,363 genes for downstream analysis.",
+        "Differential expression between conditions was assessed using DESeq2 (v1.38.4) with a two-sided Wald test and Benjamini-Hochberg adjustment for multiple comparisons; log2 fold changes were shrunk using lfcShrink.",
+        "Assembly: hg19 (GRCh37)",
+        "Supplementary files format and content: Tab-delimited text file containing raw gene-level read counts for all nine samples. Rows are genes; columns are the nine samples (C1-C3, untreated control; F1-F3, IFN-γ treated; L1-L3, LPS treated)."
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63635768",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35436699"
+      ]
+    },
+    "GSM10081104": {
+      "title": [
+        "Primary human PDAC cancer-associated fibroblasts, IFN-γ treated, replicate 3"
+      ],
+      "source_name_ch1": [
+        "pancreas (pancreatic ductal adenocarcinoma)"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: pancreas (pancreatic ductal adenocarcinoma)",
+        "cell type: cancer-associated fibroblast (CAF)",
+        "treatment: recombinant human IFN-γ, 20 ng/ml, 24 h",
+        "batch: G4 run 3 (240227_GAR-0044_0012_3_3A0304D), lane 1"
+      ],
+      "treatment_protocol_ch1": [
+        "Passage 4 cells (1 x 10^5 cells per replicate; n = 3 independent replicate cultures per condition) were allowed to adhere for 12 hours, after which cells were treated for 24 hours with control media, recombinant human IFN-γ (20 ng/ml; R&D #285-IF), or lipopolysaccharide (100 ng/ml; InvivoGen #tlrl-eblps)."
+      ],
+      "growth_protocol_ch1": [
+        "Primary cancer-associated fibroblasts (CAFs) were isolated using the Miltenyi Biotec Tumor Dissociation Kit (#130-095-929) from one fresh pancreatic ductal adenocarcinoma surgical specimen, obtained under an institutional review board approved protocol with informed consent obtained preoperatively (Stanford IRB-65893). Isolated CAFs were cultured for 4 passages in DMEM/F-12 with GlutaMAX (Gibco #10565018), 10% FBS (Gibco #16000044), 1% Antibiotic-Antimycotic (R&D #B22110) and 0.2% Primocin (InvivoGen #ant-pm-05)."
+      ],
+      "molecule_ch1": [
+        "total RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Total RNA was extracted using TRIzol (Invitrogen #15596026).",
+        "RNA-seq libraries were prepared using the NEBNext Ultra II Directional RNA Library Prep Kit for Illumina (NEB #E7760) following the manufacturer’s protocol for the NEBNext rRNA Depletion Kit v2 (Human/Mouse/Rat) (NEB #E7400L), with 50 ng RNA input per library. During the adaptor ligation step, the Singular Genomics Universal Library Prep Adapter (#700110) was used to adapt libraries for sequencing on the Singular Genomics G4. PCR enrichment of adaptor-ligated DNA was performed for 12 cycles. No index reads were performed, as each library was sequenced in a dedicated lane."
+      ],
+      "description": [
+        "Library name: IFNg_rep3",
+        "Column name in CAF_activation_raw_counts.txt: F3"
+      ],
+      "data_processing": [
+        "Basecalling and per-lane FASTQ generation were performed on the Singular Genomics G4 (paired-end, 75 bp per read; no index cycles). One library was sequenced per lane, so no index-based demultiplexing was performed.",
+        "Reads were aligned to the human GRCh37/hg19 reference genome using TopHat (v2.0.13).",
+        "Gene-level read counts were generated for each sample, yielding nine counts matrices, which were merged into a single counts matrix in R (v4.2.2).",
+        "CPM normalization was performed using the cpm function. Genes were retained if at least 2 samples had at least 0.5 CPM, leaving 26,363 genes for downstream analysis.",
+        "Differential expression between conditions was assessed using DESeq2 (v1.38.4) with a two-sided Wald test and Benjamini-Hochberg adjustment for multiple comparisons; log2 fold changes were shrunk using lfcShrink.",
+        "Assembly: hg19 (GRCh37)",
+        "Supplementary files format and content: Tab-delimited text file containing raw gene-level read counts for all nine samples. Rows are genes; columns are the nine samples (C1-C3, untreated control; F1-F3, IFN-γ treated; L1-L3, LPS treated)."
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63635767",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35436700"
+      ]
+    },
+    "GSM10081105": {
+      "title": [
+        "Primary human PDAC cancer-associated fibroblasts, LPS treated, replicate 1"
+      ],
+      "source_name_ch1": [
+        "pancreas (pancreatic ductal adenocarcinoma)"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: pancreas (pancreatic ductal adenocarcinoma)",
+        "cell type: cancer-associated fibroblast (CAF)",
+        "treatment: lipopolysaccharide (LPS), 100 ng/ml, 24 h",
+        "batch: G4 run 3 (240227_GAR-0044_0012_3_3A0304D), lane 2"
+      ],
+      "treatment_protocol_ch1": [
+        "Passage 4 cells (1 x 10^5 cells per replicate; n = 3 independent replicate cultures per condition) were allowed to adhere for 12 hours, after which cells were treated for 24 hours with control media, recombinant human IFN-γ (20 ng/ml; R&D #285-IF), or lipopolysaccharide (100 ng/ml; InvivoGen #tlrl-eblps)."
+      ],
+      "growth_protocol_ch1": [
+        "Primary cancer-associated fibroblasts (CAFs) were isolated using the Miltenyi Biotec Tumor Dissociation Kit (#130-095-929) from one fresh pancreatic ductal adenocarcinoma surgical specimen, obtained under an institutional review board approved protocol with informed consent obtained preoperatively (Stanford IRB-65893). Isolated CAFs were cultured for 4 passages in DMEM/F-12 with GlutaMAX (Gibco #10565018), 10% FBS (Gibco #16000044), 1% Antibiotic-Antimycotic (R&D #B22110) and 0.2% Primocin (InvivoGen #ant-pm-05)."
+      ],
+      "molecule_ch1": [
+        "total RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Total RNA was extracted using TRIzol (Invitrogen #15596026).",
+        "RNA-seq libraries were prepared using the NEBNext Ultra II Directional RNA Library Prep Kit for Illumina (NEB #E7760) following the manufacturer’s protocol for the NEBNext rRNA Depletion Kit v2 (Human/Mouse/Rat) (NEB #E7400L), with 50 ng RNA input per library. During the adaptor ligation step, the Singular Genomics Universal Library Prep Adapter (#700110) was used to adapt libraries for sequencing on the Singular Genomics G4. PCR enrichment of adaptor-ligated DNA was performed for 12 cycles. No index reads were performed, as each library was sequenced in a dedicated lane."
+      ],
+      "description": [
+        "Library name: LPS_rep1",
+        "Column name in CAF_activation_raw_counts.txt: L1"
+      ],
+      "data_processing": [
+        "Basecalling and per-lane FASTQ generation were performed on the Singular Genomics G4 (paired-end, 75 bp per read; no index cycles). One library was sequenced per lane, so no index-based demultiplexing was performed.",
+        "Reads were aligned to the human GRCh37/hg19 reference genome using TopHat (v2.0.13).",
+        "Gene-level read counts were generated for each sample, yielding nine counts matrices, which were merged into a single counts matrix in R (v4.2.2).",
+        "CPM normalization was performed using the cpm function. Genes were retained if at least 2 samples had at least 0.5 CPM, leaving 26,363 genes for downstream analysis.",
+        "Differential expression between conditions was assessed using DESeq2 (v1.38.4) with a two-sided Wald test and Benjamini-Hochberg adjustment for multiple comparisons; log2 fold changes were shrunk using lfcShrink.",
+        "Assembly: hg19 (GRCh37)",
+        "Supplementary files format and content: Tab-delimited text file containing raw gene-level read counts for all nine samples. Rows are genes; columns are the nine samples (C1-C3, untreated control; F1-F3, IFN-γ treated; L1-L3, LPS treated)."
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63635766",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35436701"
+      ]
+    },
+    "GSM10081106": {
+      "title": [
+        "Primary human PDAC cancer-associated fibroblasts, LPS treated, replicate 2"
+      ],
+      "source_name_ch1": [
+        "pancreas (pancreatic ductal adenocarcinoma)"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: pancreas (pancreatic ductal adenocarcinoma)",
+        "cell type: cancer-associated fibroblast (CAF)",
+        "treatment: lipopolysaccharide (LPS), 100 ng/ml, 24 h",
+        "batch: G4 run 3 (240227_GAR-0044_0012_3_3A0304D), lane 3"
+      ],
+      "treatment_protocol_ch1": [
+        "Passage 4 cells (1 x 10^5 cells per replicate; n = 3 independent replicate cultures per condition) were allowed to adhere for 12 hours, after which cells were treated for 24 hours with control media, recombinant human IFN-γ (20 ng/ml; R&D #285-IF), or lipopolysaccharide (100 ng/ml; InvivoGen #tlrl-eblps)."
+      ],
+      "growth_protocol_ch1": [
+        "Primary cancer-associated fibroblasts (CAFs) were isolated using the Miltenyi Biotec Tumor Dissociation Kit (#130-095-929) from one fresh pancreatic ductal adenocarcinoma surgical specimen, obtained under an institutional review board approved protocol with informed consent obtained preoperatively (Stanford IRB-65893). Isolated CAFs were cultured for 4 passages in DMEM/F-12 with GlutaMAX (Gibco #10565018), 10% FBS (Gibco #16000044), 1% Antibiotic-Antimycotic (R&D #B22110) and 0.2% Primocin (InvivoGen #ant-pm-05)."
+      ],
+      "molecule_ch1": [
+        "total RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Total RNA was extracted using TRIzol (Invitrogen #15596026).",
+        "RNA-seq libraries were prepared using the NEBNext Ultra II Directional RNA Library Prep Kit for Illumina (NEB #E7760) following the manufacturer’s protocol for the NEBNext rRNA Depletion Kit v2 (Human/Mouse/Rat) (NEB #E7400L), with 50 ng RNA input per library. During the adaptor ligation step, the Singular Genomics Universal Library Prep Adapter (#700110) was used to adapt libraries for sequencing on the Singular Genomics G4. PCR enrichment of adaptor-ligated DNA was performed for 12 cycles. No index reads were performed, as each library was sequenced in a dedicated lane."
+      ],
+      "description": [
+        "Library name: LPS_rep2",
+        "Column name in CAF_activation_raw_counts.txt: L2"
+      ],
+      "data_processing": [
+        "Basecalling and per-lane FASTQ generation were performed on the Singular Genomics G4 (paired-end, 75 bp per read; no index cycles). One library was sequenced per lane, so no index-based demultiplexing was performed.",
+        "Reads were aligned to the human GRCh37/hg19 reference genome using TopHat (v2.0.13).",
+        "Gene-level read counts were generated for each sample, yielding nine counts matrices, which were merged into a single counts matrix in R (v4.2.2).",
+        "CPM normalization was performed using the cpm function. Genes were retained if at least 2 samples had at least 0.5 CPM, leaving 26,363 genes for downstream analysis.",
+        "Differential expression between conditions was assessed using DESeq2 (v1.38.4) with a two-sided Wald test and Benjamini-Hochberg adjustment for multiple comparisons; log2 fold changes were shrunk using lfcShrink.",
+        "Assembly: hg19 (GRCh37)",
+        "Supplementary files format and content: Tab-delimited text file containing raw gene-level read counts for all nine samples. Rows are genes; columns are the nine samples (C1-C3, untreated control; F1-F3, IFN-γ treated; L1-L3, LPS treated)."
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63635765",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35436702"
+      ]
+    },
+    "GSM10081107": {
+      "title": [
+        "Primary human PDAC cancer-associated fibroblasts, LPS treated, replicate 3"
+      ],
+      "source_name_ch1": [
+        "pancreas (pancreatic ductal adenocarcinoma)"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: pancreas (pancreatic ductal adenocarcinoma)",
+        "cell type: cancer-associated fibroblast (CAF)",
+        "treatment: lipopolysaccharide (LPS), 100 ng/ml, 24 h",
+        "batch: G4 run 3 (240227_GAR-0044_0012_3_3A0304D), lane 4"
+      ],
+      "treatment_protocol_ch1": [
+        "Passage 4 cells (1 x 10^5 cells per replicate; n = 3 independent replicate cultures per condition) were allowed to adhere for 12 hours, after which cells were treated for 24 hours with control media, recombinant human IFN-γ (20 ng/ml; R&D #285-IF), or lipopolysaccharide (100 ng/ml; InvivoGen #tlrl-eblps)."
+      ],
+      "growth_protocol_ch1": [
+        "Primary cancer-associated fibroblasts (CAFs) were isolated using the Miltenyi Biotec Tumor Dissociation Kit (#130-095-929) from one fresh pancreatic ductal adenocarcinoma surgical specimen, obtained under an institutional review board approved protocol with informed consent obtained preoperatively (Stanford IRB-65893). Isolated CAFs were cultured for 4 passages in DMEM/F-12 with GlutaMAX (Gibco #10565018), 10% FBS (Gibco #16000044), 1% Antibiotic-Antimycotic (R&D #B22110) and 0.2% Primocin (InvivoGen #ant-pm-05)."
+      ],
+      "molecule_ch1": [
+        "total RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Total RNA was extracted using TRIzol (Invitrogen #15596026).",
+        "RNA-seq libraries were prepared using the NEBNext Ultra II Directional RNA Library Prep Kit for Illumina (NEB #E7760) following the manufacturer’s protocol for the NEBNext rRNA Depletion Kit v2 (Human/Mouse/Rat) (NEB #E7400L), with 50 ng RNA input per library. During the adaptor ligation step, the Singular Genomics Universal Library Prep Adapter (#700110) was used to adapt libraries for sequencing on the Singular Genomics G4. PCR enrichment of adaptor-ligated DNA was performed for 12 cycles. No index reads were performed, as each library was sequenced in a dedicated lane."
+      ],
+      "description": [
+        "Library name: LPS_rep3",
+        "Column name in CAF_activation_raw_counts.txt: L3"
+      ],
+      "data_processing": [
+        "Basecalling and per-lane FASTQ generation were performed on the Singular Genomics G4 (paired-end, 75 bp per read; no index cycles). One library was sequenced per lane, so no index-based demultiplexing was performed.",
+        "Reads were aligned to the human GRCh37/hg19 reference genome using TopHat (v2.0.13).",
+        "Gene-level read counts were generated for each sample, yielding nine counts matrices, which were merged into a single counts matrix in R (v4.2.2).",
+        "CPM normalization was performed using the cpm function. Genes were retained if at least 2 samples had at least 0.5 CPM, leaving 26,363 genes for downstream analysis.",
+        "Differential expression between conditions was assessed using DESeq2 (v1.38.4) with a two-sided Wald test and Benjamini-Hochberg adjustment for multiple comparisons; log2 fold changes were shrunk using lfcShrink.",
+        "Assembly: hg19 (GRCh37)",
+        "Supplementary files format and content: Tab-delimited text file containing raw gene-level read counts for all nine samples. Rows are genes; columns are the nine samples (C1-C3, untreated control; F1-F3, IFN-γ treated; L1-L3, LPS treated)."
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN63635764",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX35436703"
+      ]
+    }
+  }
+}

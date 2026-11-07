@@ -1,0 +1,822 @@
+{
+  "gse": "GSE327169",
+  "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE327169&targ=all&view=full&form=text",
+  "retrieved_at": "2026-11-07T04:27:21.755658+00:00",
+  "fields": {
+    "title": [
+      "AP-1 Family Member Transcription Factors Play a Critical Role in Human Beta Cell Replication and Differentiation"
+    ],
+    "summary": [
+      "This SuperSeries is composed of the SubSeries listed below."
+    ],
+    "overall_design": [
+      "Refer to individual Series"
+    ],
+    "sample_id": [
+      "GSM9631688",
+      "GSM9631690",
+      "GSM9631691",
+      "GSM9631692",
+      "GSM9631694",
+      "GSM9631695",
+      "GSM9631697",
+      "GSM9631700",
+      "GSM9631701",
+      "GSM9631702",
+      "GSM9631703",
+      "GSM9631704",
+      "GSM9631705",
+      "GSM9631706",
+      "GSM9631932",
+      "GSM9631933",
+      "GSM9632025",
+      "GSM9632026",
+      "GSM9632148",
+      "GSM9632149",
+      "GSM9632150"
+    ],
+    "supplementary_file": [
+      "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE327nnn/GSE327169/suppl/GSE327169_RAW.tar"
+    ],
+    "sample_organism": [
+      "Homo sapiens"
+    ],
+    "relation": [
+      "SuperSeries of: GSE326447",
+      "SuperSeries of: GSE326450",
+      "SuperSeries of: GSE326458",
+      "SuperSeries of: GSE326466",
+      "SuperSeries of: GSE326455",
+      "BioProject: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1449564"
+    ]
+  },
+  "samples": {
+    "GSM9631688": {
+      "title": [
+        "Pancreatic beta cells rep1"
+      ],
+      "source_name_ch1": [
+        "Pancreatic beta cells"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "cell type: Pancreatic beta cells"
+      ],
+      "molecule_ch1": [
+        "genomic DNA"
+      ],
+      "extract_protocol_ch1": [
+        "Nuclei were isolated from FACS-sorted beta cells and Tn5 transposition was performed following a published protocol (Buenrostro et al., 2016).  50,000 nuclei were used from each FACS-sorted beta cell sample. Nuclei were also isolated from flash frozen insulinomas and Tn5 transposition was performed according to the OMNI-ATAC protocol (Corces et al., 2017).  20-30mg flash-frozen tissue was used from each insulinoma.",
+        "ATAC-seq libraries were prepared using Nextera Library Prep kit from Illumina (FC-121-1030)."
+      ],
+      "description": [
+        "Library name: Beta_1"
+      ],
+      "data_processing": [
+        "Read quality was assessed using FastQC (v0.11.8) (1). Adapter sequences were trimmed using Trim Galore! (v0.6.6) (2), and reads were aligned to the GRCh37.p13 assembly of the human genome using Bowtie2 (v2.2.8) (3). Reads aligned to mitochondrial DNA and those with mapping quality Q < 20 were removed. Picard (v2.2.4) was used to remove duplicate reads (4). Post-filtering BAM files were merged using SAMtools (v1.11) merge (5), followed by peak calling using MACS2 (v2.1.0) with parameters ‘--nomodel --nolambda --keepdup all --slocal 10000’ (6, 7). Peaks overlapping ENCODE hg19 blacklist regions were removed. Quantification of reads in peaks was performed using BEDTools multicov (v2.29.2) (8). Peaks with fewer than 200 total reads across all samples were filtered as inactive peaks. Differential peak analysis was performed using DESeq2 (v1.30.1); peaks with adjusted P-value < 0.01 and absolute log2 fold change ≥ 2 were considered differentially accessible (9). Coverage in BAM files was normalized by the median-of-ratios scaling factor calculated from reads aligned to called peaks in DESeq2 and converted to bigWig files using deepTools (v3.2.1) bamCoverage (10).",
+        "Assembly: hg19",
+        "Supplementary files format and content: bigwig file for each sample"
+      ],
+      "library_strategy": [
+        "ATAC-seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56786092",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32719249"
+      ]
+    },
+    "GSM9631690": {
+      "title": [
+        "Pancreatic beta cells rep2"
+      ],
+      "source_name_ch1": [
+        "Pancreatic beta cells"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "cell type: Pancreatic beta cells"
+      ],
+      "molecule_ch1": [
+        "genomic DNA"
+      ],
+      "extract_protocol_ch1": [
+        "Nuclei were isolated from FACS-sorted beta cells and Tn5 transposition was performed following a published protocol (Buenrostro et al., 2016).  50,000 nuclei were used from each FACS-sorted beta cell sample. Nuclei were also isolated from flash frozen insulinomas and Tn5 transposition was performed according to the OMNI-ATAC protocol (Corces et al., 2017).  20-30mg flash-frozen tissue was used from each insulinoma.",
+        "ATAC-seq libraries were prepared using Nextera Library Prep kit from Illumina (FC-121-1030)."
+      ],
+      "description": [
+        "Library name: Beta_2"
+      ],
+      "data_processing": [
+        "Read quality was assessed using FastQC (v0.11.8) (1). Adapter sequences were trimmed using Trim Galore! (v0.6.6) (2), and reads were aligned to the GRCh37.p13 assembly of the human genome using Bowtie2 (v2.2.8) (3). Reads aligned to mitochondrial DNA and those with mapping quality Q < 20 were removed. Picard (v2.2.4) was used to remove duplicate reads (4). Post-filtering BAM files were merged using SAMtools (v1.11) merge (5), followed by peak calling using MACS2 (v2.1.0) with parameters ‘--nomodel --nolambda --keepdup all --slocal 10000’ (6, 7). Peaks overlapping ENCODE hg19 blacklist regions were removed. Quantification of reads in peaks was performed using BEDTools multicov (v2.29.2) (8). Peaks with fewer than 200 total reads across all samples were filtered as inactive peaks. Differential peak analysis was performed using DESeq2 (v1.30.1); peaks with adjusted P-value < 0.01 and absolute log2 fold change ≥ 2 were considered differentially accessible (9). Coverage in BAM files was normalized by the median-of-ratios scaling factor calculated from reads aligned to called peaks in DESeq2 and converted to bigWig files using deepTools (v3.2.1) bamCoverage (10).",
+        "Assembly: hg19",
+        "Supplementary files format and content: bigwig file for each sample"
+      ],
+      "library_strategy": [
+        "ATAC-seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56786091",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32719250"
+      ]
+    },
+    "GSM9631691": {
+      "title": [
+        "Pancreatic beta cells rep3"
+      ],
+      "source_name_ch1": [
+        "Pancreatic beta cells"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "cell type: Pancreatic beta cells"
+      ],
+      "molecule_ch1": [
+        "genomic DNA"
+      ],
+      "extract_protocol_ch1": [
+        "Nuclei were isolated from FACS-sorted beta cells and Tn5 transposition was performed following a published protocol (Buenrostro et al., 2016).  50,000 nuclei were used from each FACS-sorted beta cell sample. Nuclei were also isolated from flash frozen insulinomas and Tn5 transposition was performed according to the OMNI-ATAC protocol (Corces et al., 2017).  20-30mg flash-frozen tissue was used from each insulinoma.",
+        "ATAC-seq libraries were prepared using Nextera Library Prep kit from Illumina (FC-121-1030)."
+      ],
+      "description": [
+        "Library name: Beta_3"
+      ],
+      "data_processing": [
+        "Read quality was assessed using FastQC (v0.11.8) (1). Adapter sequences were trimmed using Trim Galore! (v0.6.6) (2), and reads were aligned to the GRCh37.p13 assembly of the human genome using Bowtie2 (v2.2.8) (3). Reads aligned to mitochondrial DNA and those with mapping quality Q < 20 were removed. Picard (v2.2.4) was used to remove duplicate reads (4). Post-filtering BAM files were merged using SAMtools (v1.11) merge (5), followed by peak calling using MACS2 (v2.1.0) with parameters ‘--nomodel --nolambda --keepdup all --slocal 10000’ (6, 7). Peaks overlapping ENCODE hg19 blacklist regions were removed. Quantification of reads in peaks was performed using BEDTools multicov (v2.29.2) (8). Peaks with fewer than 200 total reads across all samples were filtered as inactive peaks. Differential peak analysis was performed using DESeq2 (v1.30.1); peaks with adjusted P-value < 0.01 and absolute log2 fold change ≥ 2 were considered differentially accessible (9). Coverage in BAM files was normalized by the median-of-ratios scaling factor calculated from reads aligned to called peaks in DESeq2 and converted to bigWig files using deepTools (v3.2.1) bamCoverage (10).",
+        "Assembly: hg19",
+        "Supplementary files format and content: bigwig file for each sample"
+      ],
+      "library_strategy": [
+        "ATAC-seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56786090",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32719251"
+      ]
+    },
+    "GSM9631692": {
+      "title": [
+        "Insulinoma rep1"
+      ],
+      "source_name_ch1": [
+        "Insulinoma"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: Insulinoma"
+      ],
+      "molecule_ch1": [
+        "genomic DNA"
+      ],
+      "extract_protocol_ch1": [
+        "Nuclei were isolated from FACS-sorted beta cells and Tn5 transposition was performed following a published protocol (Buenrostro et al., 2016).  50,000 nuclei were used from each FACS-sorted beta cell sample. Nuclei were also isolated from flash frozen insulinomas and Tn5 transposition was performed according to the OMNI-ATAC protocol (Corces et al., 2017).  20-30mg flash-frozen tissue was used from each insulinoma.",
+        "ATAC-seq libraries were prepared using Nextera Library Prep kit from Illumina (FC-121-1030)."
+      ],
+      "description": [
+        "Library name: Ins_1"
+      ],
+      "data_processing": [
+        "Read quality was assessed using FastQC (v0.11.8) (1). Adapter sequences were trimmed using Trim Galore! (v0.6.6) (2), and reads were aligned to the GRCh37.p13 assembly of the human genome using Bowtie2 (v2.2.8) (3). Reads aligned to mitochondrial DNA and those with mapping quality Q < 20 were removed. Picard (v2.2.4) was used to remove duplicate reads (4). Post-filtering BAM files were merged using SAMtools (v1.11) merge (5), followed by peak calling using MACS2 (v2.1.0) with parameters ‘--nomodel --nolambda --keepdup all --slocal 10000’ (6, 7). Peaks overlapping ENCODE hg19 blacklist regions were removed. Quantification of reads in peaks was performed using BEDTools multicov (v2.29.2) (8). Peaks with fewer than 200 total reads across all samples were filtered as inactive peaks. Differential peak analysis was performed using DESeq2 (v1.30.1); peaks with adjusted P-value < 0.01 and absolute log2 fold change ≥ 2 were considered differentially accessible (9). Coverage in BAM files was normalized by the median-of-ratios scaling factor calculated from reads aligned to called peaks in DESeq2 and converted to bigWig files using deepTools (v3.2.1) bamCoverage (10).",
+        "Assembly: hg19",
+        "Supplementary files format and content: bigwig file for each sample"
+      ],
+      "library_strategy": [
+        "ATAC-seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56786089",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32719252"
+      ]
+    },
+    "GSM9631694": {
+      "title": [
+        "Insulinoma rep2"
+      ],
+      "source_name_ch1": [
+        "Insulinoma"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: Insulinoma"
+      ],
+      "molecule_ch1": [
+        "genomic DNA"
+      ],
+      "extract_protocol_ch1": [
+        "Nuclei were isolated from FACS-sorted beta cells and Tn5 transposition was performed following a published protocol (Buenrostro et al., 2016).  50,000 nuclei were used from each FACS-sorted beta cell sample. Nuclei were also isolated from flash frozen insulinomas and Tn5 transposition was performed according to the OMNI-ATAC protocol (Corces et al., 2017).  20-30mg flash-frozen tissue was used from each insulinoma.",
+        "ATAC-seq libraries were prepared using Nextera Library Prep kit from Illumina (FC-121-1030)."
+      ],
+      "description": [
+        "Library name: Ins_2"
+      ],
+      "data_processing": [
+        "Read quality was assessed using FastQC (v0.11.8) (1). Adapter sequences were trimmed using Trim Galore! (v0.6.6) (2), and reads were aligned to the GRCh37.p13 assembly of the human genome using Bowtie2 (v2.2.8) (3). Reads aligned to mitochondrial DNA and those with mapping quality Q < 20 were removed. Picard (v2.2.4) was used to remove duplicate reads (4). Post-filtering BAM files were merged using SAMtools (v1.11) merge (5), followed by peak calling using MACS2 (v2.1.0) with parameters ‘--nomodel --nolambda --keepdup all --slocal 10000’ (6, 7). Peaks overlapping ENCODE hg19 blacklist regions were removed. Quantification of reads in peaks was performed using BEDTools multicov (v2.29.2) (8). Peaks with fewer than 200 total reads across all samples were filtered as inactive peaks. Differential peak analysis was performed using DESeq2 (v1.30.1); peaks with adjusted P-value < 0.01 and absolute log2 fold change ≥ 2 were considered differentially accessible (9). Coverage in BAM files was normalized by the median-of-ratios scaling factor calculated from reads aligned to called peaks in DESeq2 and converted to bigWig files using deepTools (v3.2.1) bamCoverage (10).",
+        "Assembly: hg19",
+        "Supplementary files format and content: bigwig file for each sample"
+      ],
+      "library_strategy": [
+        "ATAC-seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56786088",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32719253"
+      ]
+    },
+    "GSM9631695": {
+      "title": [
+        "Insulinoma rep3"
+      ],
+      "source_name_ch1": [
+        "Insulinoma"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: Insulinoma"
+      ],
+      "molecule_ch1": [
+        "genomic DNA"
+      ],
+      "extract_protocol_ch1": [
+        "Nuclei were isolated from FACS-sorted beta cells and Tn5 transposition was performed following a published protocol (Buenrostro et al., 2016).  50,000 nuclei were used from each FACS-sorted beta cell sample. Nuclei were also isolated from flash frozen insulinomas and Tn5 transposition was performed according to the OMNI-ATAC protocol (Corces et al., 2017).  20-30mg flash-frozen tissue was used from each insulinoma.",
+        "ATAC-seq libraries were prepared using Nextera Library Prep kit from Illumina (FC-121-1030)."
+      ],
+      "description": [
+        "Library name: Ins_3"
+      ],
+      "data_processing": [
+        "Read quality was assessed using FastQC (v0.11.8) (1). Adapter sequences were trimmed using Trim Galore! (v0.6.6) (2), and reads were aligned to the GRCh37.p13 assembly of the human genome using Bowtie2 (v2.2.8) (3). Reads aligned to mitochondrial DNA and those with mapping quality Q < 20 were removed. Picard (v2.2.4) was used to remove duplicate reads (4). Post-filtering BAM files were merged using SAMtools (v1.11) merge (5), followed by peak calling using MACS2 (v2.1.0) with parameters ‘--nomodel --nolambda --keepdup all --slocal 10000’ (6, 7). Peaks overlapping ENCODE hg19 blacklist regions were removed. Quantification of reads in peaks was performed using BEDTools multicov (v2.29.2) (8). Peaks with fewer than 200 total reads across all samples were filtered as inactive peaks. Differential peak analysis was performed using DESeq2 (v1.30.1); peaks with adjusted P-value < 0.01 and absolute log2 fold change ≥ 2 were considered differentially accessible (9). Coverage in BAM files was normalized by the median-of-ratios scaling factor calculated from reads aligned to called peaks in DESeq2 and converted to bigWig files using deepTools (v3.2.1) bamCoverage (10).",
+        "Assembly: hg19",
+        "Supplementary files format and content: bigwig file for each sample"
+      ],
+      "library_strategy": [
+        "ATAC-seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56786087",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32719254"
+      ]
+    },
+    "GSM9631697": {
+      "title": [
+        "Insulinoma rep4"
+      ],
+      "source_name_ch1": [
+        "Insulinoma"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: Insulinoma"
+      ],
+      "molecule_ch1": [
+        "genomic DNA"
+      ],
+      "extract_protocol_ch1": [
+        "Nuclei were isolated from FACS-sorted beta cells and Tn5 transposition was performed following a published protocol (Buenrostro et al., 2016).  50,000 nuclei were used from each FACS-sorted beta cell sample. Nuclei were also isolated from flash frozen insulinomas and Tn5 transposition was performed according to the OMNI-ATAC protocol (Corces et al., 2017).  20-30mg flash-frozen tissue was used from each insulinoma.",
+        "ATAC-seq libraries were prepared using Nextera Library Prep kit from Illumina (FC-121-1030)."
+      ],
+      "description": [
+        "Library name: Ins_4"
+      ],
+      "data_processing": [
+        "Read quality was assessed using FastQC (v0.11.8) (1). Adapter sequences were trimmed using Trim Galore! (v0.6.6) (2), and reads were aligned to the GRCh37.p13 assembly of the human genome using Bowtie2 (v2.2.8) (3). Reads aligned to mitochondrial DNA and those with mapping quality Q < 20 were removed. Picard (v2.2.4) was used to remove duplicate reads (4). Post-filtering BAM files were merged using SAMtools (v1.11) merge (5), followed by peak calling using MACS2 (v2.1.0) with parameters ‘--nomodel --nolambda --keepdup all --slocal 10000’ (6, 7). Peaks overlapping ENCODE hg19 blacklist regions were removed. Quantification of reads in peaks was performed using BEDTools multicov (v2.29.2) (8). Peaks with fewer than 200 total reads across all samples were filtered as inactive peaks. Differential peak analysis was performed using DESeq2 (v1.30.1); peaks with adjusted P-value < 0.01 and absolute log2 fold change ≥ 2 were considered differentially accessible (9). Coverage in BAM files was normalized by the median-of-ratios scaling factor calculated from reads aligned to called peaks in DESeq2 and converted to bigWig files using deepTools (v3.2.1) bamCoverage (10).",
+        "Assembly: hg19",
+        "Supplementary files format and content: bigwig file for each sample"
+      ],
+      "library_strategy": [
+        "ATAC-seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56786086",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32719255"
+      ]
+    },
+    "GSM9631700": {
+      "title": [
+        "Pancreatic beta cells rep1 ChIP"
+      ],
+      "source_name_ch1": [
+        "Pancreatic beta cells"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "cell type: Pancreatic beta cells",
+        "batch: batch1"
+      ],
+      "molecule_ch1": [
+        "genomic DNA"
+      ],
+      "extract_protocol_ch1": [
+        "Chromatin was prepared and the ChIP was performed on FACS sorted beta cells and insulinomas following ChIPmentation protocol (Schmidl et al., 2015) which is a fast and robust method for low input ChIP-seq.",
+        "ChIP-seq libraries were prepared using Nextera Library Prep kit and Nextera adapters from Illumina (#15032354)."
+      ],
+      "description": [
+        "Library name: Beta_1"
+      ],
+      "data_processing": [
+        "Read quality was assessed using FastQC. Adapter sequences were trimmed using Trim Galore!, and reads were aligned to the GRCh37.p13 assembly of the human genome using Bowtie (v1.3.0) with parameters -k 1 -m 1 --best -n 2 -l 70 --chunkmbs 50 (16). SAMtools (v1.11) was used to generate BAM files and filter out low-quality (Q < 20) and mitochondrial reads. Picard (v2.2.4) was used to remove duplicate reads. Coverage tracks (bigWig files) were generated from filtered BAM files using deepTools (v3.5.1) bamCoverage with parameters ’--normalizeUsing RPKM --binsize 10 --extendReads 200’. BAM files from sample H218-Zsplus-Dia-K27Ac_S9 (Beta_2) and sample 12728-K27Ac_S15 (INS_1) were merged using SAMtools merge, and significant binding peaks of the merged datasets were determined using MACS2 (v2.1.0) with the input file as control and -q 0.1. Peaks located in ENCODE hg19 blacklisted regions were excluded. Nearby peaks (<12.5 kb apart) in the filtered peak set were stitched together, and peaks overlapping promoters (± 2kb from TSS) were excluded using ROSE (v1.0) (17, 18).",
+        "Assembly: hg19",
+        "Supplementary files format and content: bigwig file for each sample"
+      ],
+      "library_strategy": [
+        "ChIP-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56786099",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32719282"
+      ]
+    },
+    "GSM9631701": {
+      "title": [
+        "Pancreatic beta cells rep2 ChIP"
+      ],
+      "source_name_ch1": [
+        "Pancreatic beta cells"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "cell type: Pancreatic beta cells",
+        "batch: batch1"
+      ],
+      "molecule_ch1": [
+        "genomic DNA"
+      ],
+      "extract_protocol_ch1": [
+        "Chromatin was prepared and the ChIP was performed on FACS sorted beta cells and insulinomas following ChIPmentation protocol (Schmidl et al., 2015) which is a fast and robust method for low input ChIP-seq.",
+        "ChIP-seq libraries were prepared using Nextera Library Prep kit and Nextera adapters from Illumina (#15032354)."
+      ],
+      "description": [
+        "Library name: Beta_2"
+      ],
+      "data_processing": [
+        "Read quality was assessed using FastQC. Adapter sequences were trimmed using Trim Galore!, and reads were aligned to the GRCh37.p13 assembly of the human genome using Bowtie (v1.3.0) with parameters -k 1 -m 1 --best -n 2 -l 70 --chunkmbs 50 (16). SAMtools (v1.11) was used to generate BAM files and filter out low-quality (Q < 20) and mitochondrial reads. Picard (v2.2.4) was used to remove duplicate reads. Coverage tracks (bigWig files) were generated from filtered BAM files using deepTools (v3.5.1) bamCoverage with parameters ’--normalizeUsing RPKM --binsize 10 --extendReads 200’. BAM files from sample H218-Zsplus-Dia-K27Ac_S9 (Beta_2) and sample 12728-K27Ac_S15 (INS_1) were merged using SAMtools merge, and significant binding peaks of the merged datasets were determined using MACS2 (v2.1.0) with the input file as control and -q 0.1. Peaks located in ENCODE hg19 blacklisted regions were excluded. Nearby peaks (<12.5 kb apart) in the filtered peak set were stitched together, and peaks overlapping promoters (± 2kb from TSS) were excluded using ROSE (v1.0) (17, 18).",
+        "Assembly: hg19",
+        "Supplementary files format and content: bigwig file for each sample"
+      ],
+      "library_strategy": [
+        "ChIP-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56786098",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32719283"
+      ]
+    },
+    "GSM9631702": {
+      "title": [
+        "Pancreatic beta cells rep3 ChIP"
+      ],
+      "source_name_ch1": [
+        "Pancreatic beta cells"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "cell type: Pancreatic beta cells",
+        "batch: batch2"
+      ],
+      "molecule_ch1": [
+        "genomic DNA"
+      ],
+      "extract_protocol_ch1": [
+        "Chromatin was prepared and the ChIP was performed on FACS sorted beta cells and insulinomas following ChIPmentation protocol (Schmidl et al., 2015) which is a fast and robust method for low input ChIP-seq.",
+        "ChIP-seq libraries were prepared using Nextera Library Prep kit and Nextera adapters from Illumina (#15032354)."
+      ],
+      "description": [
+        "Library name: Beta_3"
+      ],
+      "data_processing": [
+        "Read quality was assessed using FastQC. Adapter sequences were trimmed using Trim Galore!, and reads were aligned to the GRCh37.p13 assembly of the human genome using Bowtie (v1.3.0) with parameters -k 1 -m 1 --best -n 2 -l 70 --chunkmbs 50 (16). SAMtools (v1.11) was used to generate BAM files and filter out low-quality (Q < 20) and mitochondrial reads. Picard (v2.2.4) was used to remove duplicate reads. Coverage tracks (bigWig files) were generated from filtered BAM files using deepTools (v3.5.1) bamCoverage with parameters ’--normalizeUsing RPKM --binsize 10 --extendReads 200’. BAM files from sample H218-Zsplus-Dia-K27Ac_S9 (Beta_2) and sample 12728-K27Ac_S15 (INS_1) were merged using SAMtools merge, and significant binding peaks of the merged datasets were determined using MACS2 (v2.1.0) with the input file as control and -q 0.1. Peaks located in ENCODE hg19 blacklisted regions were excluded. Nearby peaks (<12.5 kb apart) in the filtered peak set were stitched together, and peaks overlapping promoters (± 2kb from TSS) were excluded using ROSE (v1.0) (17, 18).",
+        "Assembly: hg19",
+        "Supplementary files format and content: bigwig file for each sample"
+      ],
+      "library_strategy": [
+        "ChIP-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56786097",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32719284"
+      ]
+    },
+    "GSM9631703": {
+      "title": [
+        "Insulinoma rep1 ChIP"
+      ],
+      "source_name_ch1": [
+        "Insulinoma"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: Insulinoma",
+        "batch: batch1"
+      ],
+      "molecule_ch1": [
+        "genomic DNA"
+      ],
+      "extract_protocol_ch1": [
+        "Chromatin was prepared and the ChIP was performed on FACS sorted beta cells and insulinomas following ChIPmentation protocol (Schmidl et al., 2015) which is a fast and robust method for low input ChIP-seq.",
+        "ChIP-seq libraries were prepared using Nextera Library Prep kit and Nextera adapters from Illumina (#15032354)."
+      ],
+      "description": [
+        "Library name: Ins_1"
+      ],
+      "data_processing": [
+        "Read quality was assessed using FastQC. Adapter sequences were trimmed using Trim Galore!, and reads were aligned to the GRCh37.p13 assembly of the human genome using Bowtie (v1.3.0) with parameters -k 1 -m 1 --best -n 2 -l 70 --chunkmbs 50 (16). SAMtools (v1.11) was used to generate BAM files and filter out low-quality (Q < 20) and mitochondrial reads. Picard (v2.2.4) was used to remove duplicate reads. Coverage tracks (bigWig files) were generated from filtered BAM files using deepTools (v3.5.1) bamCoverage with parameters ’--normalizeUsing RPKM --binsize 10 --extendReads 200’. BAM files from sample H218-Zsplus-Dia-K27Ac_S9 (Beta_2) and sample 12728-K27Ac_S15 (INS_1) were merged using SAMtools merge, and significant binding peaks of the merged datasets were determined using MACS2 (v2.1.0) with the input file as control and -q 0.1. Peaks located in ENCODE hg19 blacklisted regions were excluded. Nearby peaks (<12.5 kb apart) in the filtered peak set were stitched together, and peaks overlapping promoters (± 2kb from TSS) were excluded using ROSE (v1.0) (17, 18).",
+        "Assembly: hg19",
+        "Supplementary files format and content: bigwig file for each sample"
+      ],
+      "library_strategy": [
+        "ChIP-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56786096",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32719285"
+      ]
+    },
+    "GSM9631704": {
+      "title": [
+        "Insulinoma rep2 ChIP"
+      ],
+      "source_name_ch1": [
+        "Insulinoma"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: Insulinoma",
+        "batch: batch1"
+      ],
+      "molecule_ch1": [
+        "genomic DNA"
+      ],
+      "extract_protocol_ch1": [
+        "Chromatin was prepared and the ChIP was performed on FACS sorted beta cells and insulinomas following ChIPmentation protocol (Schmidl et al., 2015) which is a fast and robust method for low input ChIP-seq.",
+        "ChIP-seq libraries were prepared using Nextera Library Prep kit and Nextera adapters from Illumina (#15032354)."
+      ],
+      "description": [
+        "Library name: Ins_2"
+      ],
+      "data_processing": [
+        "Read quality was assessed using FastQC. Adapter sequences were trimmed using Trim Galore!, and reads were aligned to the GRCh37.p13 assembly of the human genome using Bowtie (v1.3.0) with parameters -k 1 -m 1 --best -n 2 -l 70 --chunkmbs 50 (16). SAMtools (v1.11) was used to generate BAM files and filter out low-quality (Q < 20) and mitochondrial reads. Picard (v2.2.4) was used to remove duplicate reads. Coverage tracks (bigWig files) were generated from filtered BAM files using deepTools (v3.5.1) bamCoverage with parameters ’--normalizeUsing RPKM --binsize 10 --extendReads 200’. BAM files from sample H218-Zsplus-Dia-K27Ac_S9 (Beta_2) and sample 12728-K27Ac_S15 (INS_1) were merged using SAMtools merge, and significant binding peaks of the merged datasets were determined using MACS2 (v2.1.0) with the input file as control and -q 0.1. Peaks located in ENCODE hg19 blacklisted regions were excluded. Nearby peaks (<12.5 kb apart) in the filtered peak set were stitched together, and peaks overlapping promoters (± 2kb from TSS) were excluded using ROSE (v1.0) (17, 18).",
+        "Assembly: hg19",
+        "Supplementary files format and content: bigwig file for each sample"
+      ],
+      "library_strategy": [
+        "ChIP-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56786095",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32719286"
+      ]
+    },
+    "GSM9631705": {
+      "title": [
+        "Insulinoma rep3 ChIP"
+      ],
+      "source_name_ch1": [
+        "Insulinoma"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: Insulinoma",
+        "batch: batch2"
+      ],
+      "molecule_ch1": [
+        "genomic DNA"
+      ],
+      "extract_protocol_ch1": [
+        "Chromatin was prepared and the ChIP was performed on FACS sorted beta cells and insulinomas following ChIPmentation protocol (Schmidl et al., 2015) which is a fast and robust method for low input ChIP-seq.",
+        "ChIP-seq libraries were prepared using Nextera Library Prep kit and Nextera adapters from Illumina (#15032354)."
+      ],
+      "description": [
+        "Library name: Ins_3"
+      ],
+      "data_processing": [
+        "Read quality was assessed using FastQC. Adapter sequences were trimmed using Trim Galore!, and reads were aligned to the GRCh37.p13 assembly of the human genome using Bowtie (v1.3.0) with parameters -k 1 -m 1 --best -n 2 -l 70 --chunkmbs 50 (16). SAMtools (v1.11) was used to generate BAM files and filter out low-quality (Q < 20) and mitochondrial reads. Picard (v2.2.4) was used to remove duplicate reads. Coverage tracks (bigWig files) were generated from filtered BAM files using deepTools (v3.5.1) bamCoverage with parameters ’--normalizeUsing RPKM --binsize 10 --extendReads 200’. BAM files from sample H218-Zsplus-Dia-K27Ac_S9 (Beta_2) and sample 12728-K27Ac_S15 (INS_1) were merged using SAMtools merge, and significant binding peaks of the merged datasets were determined using MACS2 (v2.1.0) with the input file as control and -q 0.1. Peaks located in ENCODE hg19 blacklisted regions were excluded. Nearby peaks (<12.5 kb apart) in the filtered peak set were stitched together, and peaks overlapping promoters (± 2kb from TSS) were excluded using ROSE (v1.0) (17, 18).",
+        "Assembly: hg19",
+        "Supplementary files format and content: bigwig file for each sample"
+      ],
+      "library_strategy": [
+        "ChIP-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56786094",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32719287"
+      ]
+    },
+    "GSM9631706": {
+      "title": [
+        "Insulinoma rep4 ChIP"
+      ],
+      "source_name_ch1": [
+        "Insulinoma"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: Insulinoma",
+        "batch: batch1"
+      ],
+      "molecule_ch1": [
+        "genomic DNA"
+      ],
+      "extract_protocol_ch1": [
+        "Chromatin was prepared and the ChIP was performed on FACS sorted beta cells and insulinomas following ChIPmentation protocol (Schmidl et al., 2015) which is a fast and robust method for low input ChIP-seq.",
+        "ChIP-seq libraries were prepared using Nextera Library Prep kit and Nextera adapters from Illumina (#15032354)."
+      ],
+      "description": [
+        "Library name: Ins_4"
+      ],
+      "data_processing": [
+        "Read quality was assessed using FastQC. Adapter sequences were trimmed using Trim Galore!, and reads were aligned to the GRCh37.p13 assembly of the human genome using Bowtie (v1.3.0) with parameters -k 1 -m 1 --best -n 2 -l 70 --chunkmbs 50 (16). SAMtools (v1.11) was used to generate BAM files and filter out low-quality (Q < 20) and mitochondrial reads. Picard (v2.2.4) was used to remove duplicate reads. Coverage tracks (bigWig files) were generated from filtered BAM files using deepTools (v3.5.1) bamCoverage with parameters ’--normalizeUsing RPKM --binsize 10 --extendReads 200’. BAM files from sample H218-Zsplus-Dia-K27Ac_S9 (Beta_2) and sample 12728-K27Ac_S15 (INS_1) were merged using SAMtools merge, and significant binding peaks of the merged datasets were determined using MACS2 (v2.1.0) with the input file as control and -q 0.1. Peaks located in ENCODE hg19 blacklisted regions were excluded. Nearby peaks (<12.5 kb apart) in the filtered peak set were stitched together, and peaks overlapping promoters (± 2kb from TSS) were excluded using ROSE (v1.0) (17, 18).",
+        "Assembly: hg19",
+        "Supplementary files format and content: bigwig file for each sample"
+      ],
+      "library_strategy": [
+        "ChIP-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56786093",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32719288"
+      ]
+    },
+    "GSM9631932": {
+      "title": [
+        "insulinoma_13239"
+      ],
+      "source_name_ch1": [
+        "insulinoma tissue"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: insulinoma tissue"
+      ],
+      "molecule_ch1": [
+        "nuclear RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Single nuclei were isolated from OCT-embedded insulinoma samples using Singulator 100 protocol from S2 Genomics, according to manufacturer's instructions. Isolated nuclei were encapsulated in Gel-Beads in Emulsion (GEMs) using the 10X Genomics Chromium NextGEM technology, following manufacturer's instructions.",
+        "Libraries were generated using the 10x Genomics, Chromium Next GEM Single Cell 3’ GEM, Library & Gel Bead Kit v3.1 (10x Genomics, 1000121), Chromium Next GEM Chip G Single Cell Kit (10x Genomics, 1000120) and indexes (Single Index Kit T Set A, 10x Genomics, 1000213 or Dual Index Kit TT Set A, 10x Genomics, 1000215) according to the manufacturer specifications"
+      ],
+      "description": [
+        "Library name: sample_1"
+      ],
+      "data_processing": [
+        "FASTQ files were aligned to the GRCh38 human genome reference (GRCh38-2020-A-2.0.0), filtered, barcoded, and UMI-counted using Cell Ranger (v7.2.0, 10x Genomics) (23). Empty droplets and ambient RNA were removed from count matrices using the remove-background function from CellBender (v0.2.2) (24). Each dataset was then filtered to retain cells with ≥1,000 UMIs, ≥400 expressed genes, and <10% of reads aligned to the mitochondrial genome. UMI counts were normalized so that each cell had a total of 10,000 UMIs across all genes and then log-transformed with a pseudocount of 1 using the LogNormalize function in the Seurat package (v4.0.3) (25). The top 2,000 most highly variable genes were identified using the vst selection method of FindVariableFeatures, and counts were scaled using ScaleData. Principal component analysis (PCA) was performed using the top 2,000 highly variable features (RunPCA), and the top 30 principal components were used in downstream analysis.",
+        "Assembly: Homo Sapiens hg38",
+        "Supplementary files format and content: cell ranger filtered tab-separated values files and matrix files"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56785165",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32719154"
+      ]
+    },
+    "GSM9631933": {
+      "title": [
+        "insulinoma_48190"
+      ],
+      "source_name_ch1": [
+        "insulinoma tissue"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: insulinoma tissue"
+      ],
+      "molecule_ch1": [
+        "nuclear RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Single nuclei were isolated from OCT-embedded insulinoma samples using Singulator 100 protocol from S2 Genomics, according to manufacturer's instructions. Isolated nuclei were encapsulated in Gel-Beads in Emulsion (GEMs) using the 10X Genomics Chromium NextGEM technology, following manufacturer's instructions.",
+        "Libraries were generated using the 10x Genomics, Chromium Next GEM Single Cell 3’ GEM, Library & Gel Bead Kit v3.1 (10x Genomics, 1000121), Chromium Next GEM Chip G Single Cell Kit (10x Genomics, 1000120) and indexes (Single Index Kit T Set A, 10x Genomics, 1000213 or Dual Index Kit TT Set A, 10x Genomics, 1000215) according to the manufacturer specifications"
+      ],
+      "description": [
+        "Library name: sample_2"
+      ],
+      "data_processing": [
+        "FASTQ files were aligned to the GRCh38 human genome reference (GRCh38-2020-A-2.0.0), filtered, barcoded, and UMI-counted using Cell Ranger (v7.2.0, 10x Genomics) (23). Empty droplets and ambient RNA were removed from count matrices using the remove-background function from CellBender (v0.2.2) (24). Each dataset was then filtered to retain cells with ≥1,000 UMIs, ≥400 expressed genes, and <10% of reads aligned to the mitochondrial genome. UMI counts were normalized so that each cell had a total of 10,000 UMIs across all genes and then log-transformed with a pseudocount of 1 using the LogNormalize function in the Seurat package (v4.0.3) (25). The top 2,000 most highly variable genes were identified using the vst selection method of FindVariableFeatures, and counts were scaled using ScaleData. Principal component analysis (PCA) was performed using the top 2,000 highly variable features (RunPCA), and the top 30 principal components were used in downstream analysis.",
+        "Assembly: Homo Sapiens hg38",
+        "Supplementary files format and content: cell ranger filtered tab-separated values files and matrix files"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56785164",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32719155"
+      ]
+    },
+    "GSM9632025": {
+      "title": [
+        "NYU45_RNA"
+      ],
+      "source_name_ch1": [
+        "Insulinoma tissue"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: Insulinoma tissue"
+      ],
+      "molecule_ch1": [
+        "nuclear RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Single nuclei isolated from insulinomas were encapsulated in Gel-Beads in Emulsion (GEMs) using the 10X Genomics Chromium Next GEM Single Cell Multiome ATAC + Gene Expression Reagent Bundle, following manufacturer's instructions.",
+        "After lysis of nuclei inside each GEM, barcodes were added to both ATAC fragments and cDNA (generated from mRNA) and the ATAC and GEX components were amplified and processed into final sequencing-ready libraries according to manufacturer's instructions."
+      ],
+      "description": [
+        "Library name: Sample_1_RNA",
+        "10x Genomics Multiome ATAC + Gene"
+      ],
+      "data_processing": [
+        "Sequenced FASTQ files from one insulinoma single-nucleus multiome sample were aligned, filtered, barcoded, and UMI-counted using Cell Ranger ARC (v2.0.0, 10x Genomics) with the GRCh38 reference genome (GRCh38-2020-A-2.0.0). Sequenced FASTQ files from the published normal islet dataset (GSE200044) (27) were retrieved from GEO and processed using Cell Ranger ARC (v2.0.2) with the same reference genome.",
+        "Assembly: homo sapiens hg38",
+        "Supplementary files format and content: cellRanger output files filtered matrix files: barcodes.tsv.gz, features.tsv.gz,matrix.mtx.gz",
+        "Supplementary files format and content: cellRanger output: atac fragment file"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56786204",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32719302"
+      ]
+    },
+    "GSM9632026": {
+      "title": [
+        "NYU45_ATAC"
+      ],
+      "source_name_ch1": [
+        "Insulinoma tissue"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: Insulinoma tissue"
+      ],
+      "molecule_ch1": [
+        "genomic DNA"
+      ],
+      "extract_protocol_ch1": [
+        "Single nuclei isolated from insulinomas were encapsulated in Gel-Beads in Emulsion (GEMs) using the 10X Genomics Chromium Next GEM Single Cell Multiome ATAC + Gene Expression Reagent Bundle, following manufacturer's instructions.",
+        "After lysis of nuclei inside each GEM, barcodes were added to both ATAC fragments and cDNA (generated from mRNA) and the ATAC and GEX components were amplified and processed into final sequencing-ready libraries according to manufacturer's instructions."
+      ],
+      "description": [
+        "Library name: Sample_1_ATAC",
+        "10x Genomics Multiome ATAC + Gene"
+      ],
+      "data_processing": [
+        "Sequenced FASTQ files from one insulinoma single-nucleus multiome sample were aligned, filtered, barcoded, and UMI-counted using Cell Ranger ARC (v2.0.0, 10x Genomics) with the GRCh38 reference genome (GRCh38-2020-A-2.0.0). Sequenced FASTQ files from the published normal islet dataset (GSE200044) (27) were retrieved from GEO and processed using Cell Ranger ARC (v2.0.2) with the same reference genome.",
+        "Assembly: homo sapiens hg38",
+        "Supplementary files format and content: cellRanger output files filtered matrix files: barcodes.tsv.gz, features.tsv.gz,matrix.mtx.gz",
+        "Supplementary files format and content: cellRanger output: atac fragment file"
+      ],
+      "library_strategy": [
+        "ATAC-seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56786203",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32719303"
+      ]
+    },
+    "GSM9632148": {
+      "title": [
+        "Insulinoma_13239"
+      ],
+      "source_name_ch1": [
+        "Insulinoma"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: Insulinoma"
+      ],
+      "molecule_ch1": [
+        "genomic DNA"
+      ],
+      "extract_protocol_ch1": [
+        "Single nuclei were isolated from OCT-embedded insulinoma samples using Singulator 100 protocol from S2 Genomics, according to manufacturer's instructions. Isolated nuclei were encapsulated in Gel-Beads in Emulsion (GEMs) using the 10X Genomics Chromium NextGEM technology for 3' sequencing, following manufacturer's instructions.",
+        "snATAC-seq libraries were generated using the Chromium Single Cell ATAC Library & Gel Bead Kit v1.1 (10x Genomics, 1000175), Chromium Chip H Single Cell ATAC Kit (10x Genomics, 1000161) and indexes (Single Index Kit N Set A, 1000212) following manufacturer instructions."
+      ],
+      "description": [
+        "Library name: Sample_1"
+      ],
+      "data_processing": [
+        "FASTQ files from three insulinoma samples were processed using Cell Ranger ATAC (v2.1.0, 10x Genomics) with the GRCh38 reference genome (GRCh38-2020-A-2.0.0). Peaks were called using the CallPeaks (MACS2) function in Signac (v1.3.0) (26). Cells were filtered based on the following criteria: fragments in peaks >3,000 and <30,000, >20% reads in peaks, blacklist ratio <0.05, nucleosome signal <4, and TSS enrichment score >3. The blacklist ratio is defined as the fraction of reads aligned to blacklisted regions relative to total reads. Nucleosome signal was calculated using NucleosomeSignal in Signac, and TSS enrichment score was calculated using TSSEnrichment. Latent semantic indexing (LSI) was applied to the top 95% most variable peaks, combining term frequency–inverse document frequency (TF-IDF) normalization with singular value decomposition (SVD) for dimensionality reduction. The first LSI component was excluded because of its correlation with sequencing depth. De novo clustering (resolution 0.2) was performed with FindNeighbors and FindClusters in Signac.",
+        "Assembly: hg38",
+        "Supplementary files format and content: cell ranger filtered tab-separated values files and matrix files"
+      ],
+      "library_strategy": [
+        "ATAC-seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56786075",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32719304"
+      ]
+    },
+    "GSM9632149": {
+      "title": [
+        "Insulinoma_18817"
+      ],
+      "source_name_ch1": [
+        "Insulinoma"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: Insulinoma"
+      ],
+      "molecule_ch1": [
+        "genomic DNA"
+      ],
+      "extract_protocol_ch1": [
+        "Single nuclei were isolated from OCT-embedded insulinoma samples using Singulator 100 protocol from S2 Genomics, according to manufacturer's instructions. Isolated nuclei were encapsulated in Gel-Beads in Emulsion (GEMs) using the 10X Genomics Chromium NextGEM technology for 3' sequencing, following manufacturer's instructions.",
+        "snATAC-seq libraries were generated using the Chromium Single Cell ATAC Library & Gel Bead Kit v1.1 (10x Genomics, 1000175), Chromium Chip H Single Cell ATAC Kit (10x Genomics, 1000161) and indexes (Single Index Kit N Set A, 1000212) following manufacturer instructions."
+      ],
+      "description": [
+        "Library name: Sample_2"
+      ],
+      "data_processing": [
+        "FASTQ files from three insulinoma samples were processed using Cell Ranger ATAC (v2.1.0, 10x Genomics) with the GRCh38 reference genome (GRCh38-2020-A-2.0.0). Peaks were called using the CallPeaks (MACS2) function in Signac (v1.3.0) (26). Cells were filtered based on the following criteria: fragments in peaks >3,000 and <30,000, >20% reads in peaks, blacklist ratio <0.05, nucleosome signal <4, and TSS enrichment score >3. The blacklist ratio is defined as the fraction of reads aligned to blacklisted regions relative to total reads. Nucleosome signal was calculated using NucleosomeSignal in Signac, and TSS enrichment score was calculated using TSSEnrichment. Latent semantic indexing (LSI) was applied to the top 95% most variable peaks, combining term frequency–inverse document frequency (TF-IDF) normalization with singular value decomposition (SVD) for dimensionality reduction. The first LSI component was excluded because of its correlation with sequencing depth. De novo clustering (resolution 0.2) was performed with FindNeighbors and FindClusters in Signac.",
+        "Assembly: hg38",
+        "Supplementary files format and content: cell ranger filtered tab-separated values files and matrix files"
+      ],
+      "library_strategy": [
+        "ATAC-seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56786074",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32719305"
+      ]
+    },
+    "GSM9632150": {
+      "title": [
+        "Insulinoma_48190"
+      ],
+      "source_name_ch1": [
+        "Insulinoma"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: Insulinoma"
+      ],
+      "molecule_ch1": [
+        "genomic DNA"
+      ],
+      "extract_protocol_ch1": [
+        "Single nuclei were isolated from OCT-embedded insulinoma samples using Singulator 100 protocol from S2 Genomics, according to manufacturer's instructions. Isolated nuclei were encapsulated in Gel-Beads in Emulsion (GEMs) using the 10X Genomics Chromium NextGEM technology for 3' sequencing, following manufacturer's instructions.",
+        "snATAC-seq libraries were generated using the Chromium Single Cell ATAC Library & Gel Bead Kit v1.1 (10x Genomics, 1000175), Chromium Chip H Single Cell ATAC Kit (10x Genomics, 1000161) and indexes (Single Index Kit N Set A, 1000212) following manufacturer instructions."
+      ],
+      "description": [
+        "Library name: Sample_3"
+      ],
+      "data_processing": [
+        "FASTQ files from three insulinoma samples were processed using Cell Ranger ATAC (v2.1.0, 10x Genomics) with the GRCh38 reference genome (GRCh38-2020-A-2.0.0). Peaks were called using the CallPeaks (MACS2) function in Signac (v1.3.0) (26). Cells were filtered based on the following criteria: fragments in peaks >3,000 and <30,000, >20% reads in peaks, blacklist ratio <0.05, nucleosome signal <4, and TSS enrichment score >3. The blacklist ratio is defined as the fraction of reads aligned to blacklisted regions relative to total reads. Nucleosome signal was calculated using NucleosomeSignal in Signac, and TSS enrichment score was calculated using TSSEnrichment. Latent semantic indexing (LSI) was applied to the top 95% most variable peaks, combining term frequency–inverse document frequency (TF-IDF) normalization with singular value decomposition (SVD) for dimensionality reduction. The first LSI component was excluded because of its correlation with sequencing depth. De novo clustering (resolution 0.2) was performed with FindNeighbors and FindClusters in Signac.",
+        "Assembly: hg38",
+        "Supplementary files format and content: cell ranger filtered tab-separated values files and matrix files"
+      ],
+      "library_strategy": [
+        "ATAC-seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56786073",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32719306"
+      ]
+    }
+  }
+}

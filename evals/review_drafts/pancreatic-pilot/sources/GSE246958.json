@@ -1,0 +1,491 @@
+{
+  "gse": "GSE246958",
+  "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE246958&targ=all&view=full&form=text",
+  "retrieved_at": "2026-11-07T04:27:10.200170+00:00",
+  "fields": {
+    "title": [
+      "Effect of redox mutant C65A on gene expression of pancreatic cancer cells"
+    ],
+    "summary": [
+      "Ref-1/APE1 (Redox Effector/Apurinic Endonuclease 1) is a multifunctional enzyme that serves as a redox factor for several transcription factors (TFs), e.g., NF-kB, HIF-1a, which in an oxidized state fail to bind DNA. Reduction of these TFs serves to regulate various biological responses such as cell growth and inflammation. The redox activity involves a thiol exchange reaction for which Cys65 (C65) serves as the nucleophile. Using CRISPR editing in human pancreatic ductal adenocarcinoma (PDAC) cells, we changed C65 to Ala (C65A) in Ref-1 to evaluate alteration of Ref-1 redox dynamics as well as chronic loss of Ref-1 redox activity on cell signaling pathways, specifically those regulated by NF-kB and HIF-1α. Accordingly, activation of NF-kB and HIF-1α in Ref-1C65A lines was significantly lower compared to Ref-1WT lines. The bioinformatic data revealed significant downregulation of metabolic pathways including oxphos in Ref-1C65A expressing clones compared to Ref-1WT line. Ref-1C65A also demonstrated reduced cell proliferation and use of tricarboxylic acid (TCA) substrates compared to Ref-1WT lines."
+    ],
+    "overall_design": [
+      "We used CRISPR editing to knockin alanine at the cysteine position 65 to evaluate the effects on cell growth in vitro and in vivo and on gene expression."
+    ],
+    "sample_id": [
+      "GSM7881438",
+      "GSM7881439",
+      "GSM7881440",
+      "GSM7881441",
+      "GSM7881442",
+      "GSM7881443",
+      "GSM7881444",
+      "GSM7881445",
+      "GSM7881446",
+      "GSM7881447",
+      "GSM7881448"
+    ],
+    "supplementary_file": [
+      "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE246nnn/GSE246958/suppl/GSE246958_raw_counts_C65A_WT.tsv.gz"
+    ],
+    "sample_organism": [
+      "Homo sapiens"
+    ],
+    "relation": [
+      "BioProject: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1035412"
+    ]
+  },
+  "samples": {
+    "GSM7881438": {
+      "title": [
+        "parent, replicate 1"
+      ],
+      "source_name_ch1": [
+        "Pa03C"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "cell line: Pa03C",
+        "cell type: cell line established from liver metastasis from pancreatic ductal adenocarcinoma",
+        "genotype: Ref-1 wild type"
+      ],
+      "growth_protocol_ch1": [
+        "Media DMEM+10% FBS and split 1:10 twice a week"
+      ],
+      "molecule_ch1": [
+        "polyA RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Log phase cells were collected for RNA and sequencing. Outsourcing through Synthego, we established 2 C65A clone lines and used the parent and Cas9 control for bulk RNA seq."
+      ],
+      "description": [
+        "WT_1"
+      ],
+      "data_processing": [
+        "Base calling and quality scoreing were performed by Real-Time Analysis (RTA) v2 in Illumina NovaSeq 6000",
+        "The bcl2fastq2 Conversion software were used to convert base call (bcl) files to FASTQ files, and trim adapter sequence at the same time.",
+        "Reads mapped to human genome using STAR, Uniquely mapped sequencing reads were assigned human genes and subject to differential analysis",
+        "Supplementary files format and content: raw counts"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN38086761",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX22363081"
+      ]
+    },
+    "GSM7881439": {
+      "title": [
+        "parent, replicate 2"
+      ],
+      "source_name_ch1": [
+        "Pa03C"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "cell line: Pa03C",
+        "cell type: cell line established from liver metastasis from pancreatic ductal adenocarcinoma",
+        "genotype: Ref-1 wild type"
+      ],
+      "growth_protocol_ch1": [
+        "Media DMEM+10% FBS and split 1:10 twice a week"
+      ],
+      "molecule_ch1": [
+        "polyA RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Log phase cells were collected for RNA and sequencing. Outsourcing through Synthego, we established 2 C65A clone lines and used the parent and Cas9 control for bulk RNA seq."
+      ],
+      "description": [
+        "WT_2"
+      ],
+      "data_processing": [
+        "Base calling and quality scoreing were performed by Real-Time Analysis (RTA) v2 in Illumina NovaSeq 6000",
+        "The bcl2fastq2 Conversion software were used to convert base call (bcl) files to FASTQ files, and trim adapter sequence at the same time.",
+        "Reads mapped to human genome using STAR, Uniquely mapped sequencing reads were assigned human genes and subject to differential analysis",
+        "Supplementary files format and content: raw counts"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN38086760",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX22363082"
+      ]
+    },
+    "GSM7881440": {
+      "title": [
+        "Cas9 control, replicate 1"
+      ],
+      "source_name_ch1": [
+        "Pa03C"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "cell line: Pa03C",
+        "cell type: cell line established from liver metastasis from pancreatic ductal adenocarcinoma",
+        "genotype: Ref-1 wild type"
+      ],
+      "growth_protocol_ch1": [
+        "Media DMEM+10% FBS and split 1:10 twice a week"
+      ],
+      "molecule_ch1": [
+        "polyA RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Log phase cells were collected for RNA and sequencing. Outsourcing through Synthego, we established 2 C65A clone lines and used the parent and Cas9 control for bulk RNA seq."
+      ],
+      "description": [
+        "Cas9_0"
+      ],
+      "data_processing": [
+        "Base calling and quality scoreing were performed by Real-Time Analysis (RTA) v2 in Illumina NovaSeq 6000",
+        "The bcl2fastq2 Conversion software were used to convert base call (bcl) files to FASTQ files, and trim adapter sequence at the same time.",
+        "Reads mapped to human genome using STAR, Uniquely mapped sequencing reads were assigned human genes and subject to differential analysis",
+        "Supplementary files format and content: raw counts"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN38086759",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX22363083"
+      ]
+    },
+    "GSM7881441": {
+      "title": [
+        "Cas9 control, replicate 2"
+      ],
+      "source_name_ch1": [
+        "Pa03C"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "cell line: Pa03C",
+        "cell type: cell line established from liver metastasis from pancreatic ductal adenocarcinoma",
+        "genotype: Ref-1 wild type"
+      ],
+      "growth_protocol_ch1": [
+        "Media DMEM+10% FBS and split 1:10 twice a week"
+      ],
+      "molecule_ch1": [
+        "polyA RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Log phase cells were collected for RNA and sequencing. Outsourcing through Synthego, we established 2 C65A clone lines and used the parent and Cas9 control for bulk RNA seq."
+      ],
+      "description": [
+        "Cas9_1"
+      ],
+      "data_processing": [
+        "Base calling and quality scoreing were performed by Real-Time Analysis (RTA) v2 in Illumina NovaSeq 6000",
+        "The bcl2fastq2 Conversion software were used to convert base call (bcl) files to FASTQ files, and trim adapter sequence at the same time.",
+        "Reads mapped to human genome using STAR, Uniquely mapped sequencing reads were assigned human genes and subject to differential analysis",
+        "Supplementary files format and content: raw counts"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN38086758",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX22363084"
+      ]
+    },
+    "GSM7881442": {
+      "title": [
+        "Cas9 control, replicate 3"
+      ],
+      "source_name_ch1": [
+        "Pa03C"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "cell line: Pa03C",
+        "cell type: cell line established from liver metastasis from pancreatic ductal adenocarcinoma",
+        "genotype: Ref-1 wild type"
+      ],
+      "growth_protocol_ch1": [
+        "Media DMEM+10% FBS and split 1:10 twice a week"
+      ],
+      "molecule_ch1": [
+        "polyA RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Log phase cells were collected for RNA and sequencing. Outsourcing through Synthego, we established 2 C65A clone lines and used the parent and Cas9 control for bulk RNA seq."
+      ],
+      "description": [
+        "Cas9_2"
+      ],
+      "data_processing": [
+        "Base calling and quality scoreing were performed by Real-Time Analysis (RTA) v2 in Illumina NovaSeq 6000",
+        "The bcl2fastq2 Conversion software were used to convert base call (bcl) files to FASTQ files, and trim adapter sequence at the same time.",
+        "Reads mapped to human genome using STAR, Uniquely mapped sequencing reads were assigned human genes and subject to differential analysis",
+        "Supplementary files format and content: raw counts"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN38086757",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX22363085"
+      ]
+    },
+    "GSM7881443": {
+      "title": [
+        "C65A-E19, replicate 1"
+      ],
+      "source_name_ch1": [
+        "Pa03C"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "cell line: Pa03C",
+        "cell type: cell line established from liver metastasis from pancreatic ductal adenocarcinoma",
+        "genotype: Ref-1 C65A"
+      ],
+      "growth_protocol_ch1": [
+        "Media DMEM+10% FBS and split 1:10 twice a week"
+      ],
+      "molecule_ch1": [
+        "polyA RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Log phase cells were collected for RNA and sequencing. Outsourcing through Synthego, we established 2 C65A clone lines and used the parent and Cas9 control for bulk RNA seq."
+      ],
+      "description": [
+        "E19_0"
+      ],
+      "data_processing": [
+        "Base calling and quality scoreing were performed by Real-Time Analysis (RTA) v2 in Illumina NovaSeq 6000",
+        "The bcl2fastq2 Conversion software were used to convert base call (bcl) files to FASTQ files, and trim adapter sequence at the same time.",
+        "Reads mapped to human genome using STAR, Uniquely mapped sequencing reads were assigned human genes and subject to differential analysis",
+        "Supplementary files format and content: raw counts"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN38086756",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX22363086"
+      ]
+    },
+    "GSM7881444": {
+      "title": [
+        "C65A-E19, replicate 2"
+      ],
+      "source_name_ch1": [
+        "Pa03C"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "cell line: Pa03C",
+        "cell type: cell line established from liver metastasis from pancreatic ductal adenocarcinoma",
+        "genotype: Ref-1 C65A"
+      ],
+      "growth_protocol_ch1": [
+        "Media DMEM+10% FBS and split 1:10 twice a week"
+      ],
+      "molecule_ch1": [
+        "polyA RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Log phase cells were collected for RNA and sequencing. Outsourcing through Synthego, we established 2 C65A clone lines and used the parent and Cas9 control for bulk RNA seq."
+      ],
+      "description": [
+        "E19_1"
+      ],
+      "data_processing": [
+        "Base calling and quality scoreing were performed by Real-Time Analysis (RTA) v2 in Illumina NovaSeq 6000",
+        "The bcl2fastq2 Conversion software were used to convert base call (bcl) files to FASTQ files, and trim adapter sequence at the same time.",
+        "Reads mapped to human genome using STAR, Uniquely mapped sequencing reads were assigned human genes and subject to differential analysis",
+        "Supplementary files format and content: raw counts"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN38086755",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX22363087"
+      ]
+    },
+    "GSM7881445": {
+      "title": [
+        "C65A-E19, replicate 3"
+      ],
+      "source_name_ch1": [
+        "Pa03C"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "cell line: Pa03C",
+        "cell type: cell line established from liver metastasis from pancreatic ductal adenocarcinoma",
+        "genotype: Ref-1 C65A"
+      ],
+      "growth_protocol_ch1": [
+        "Media DMEM+10% FBS and split 1:10 twice a week"
+      ],
+      "molecule_ch1": [
+        "polyA RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Log phase cells were collected for RNA and sequencing. Outsourcing through Synthego, we established 2 C65A clone lines and used the parent and Cas9 control for bulk RNA seq."
+      ],
+      "description": [
+        "E19_2"
+      ],
+      "data_processing": [
+        "Base calling and quality scoreing were performed by Real-Time Analysis (RTA) v2 in Illumina NovaSeq 6000",
+        "The bcl2fastq2 Conversion software were used to convert base call (bcl) files to FASTQ files, and trim adapter sequence at the same time.",
+        "Reads mapped to human genome using STAR, Uniquely mapped sequencing reads were assigned human genes and subject to differential analysis",
+        "Supplementary files format and content: raw counts"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN38086754",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX22363088"
+      ]
+    },
+    "GSM7881446": {
+      "title": [
+        "C65A-H7, replicate 1"
+      ],
+      "source_name_ch1": [
+        "Pa03C"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "cell line: Pa03C",
+        "cell type: cell line established from liver metastasis from pancreatic ductal adenocarcinoma",
+        "genotype: Ref-1 C65A"
+      ],
+      "growth_protocol_ch1": [
+        "Media DMEM+10% FBS and split 1:10 twice a week"
+      ],
+      "molecule_ch1": [
+        "polyA RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Log phase cells were collected for RNA and sequencing. Outsourcing through Synthego, we established 2 C65A clone lines and used the parent and Cas9 control for bulk RNA seq."
+      ],
+      "description": [
+        "H7_0"
+      ],
+      "data_processing": [
+        "Base calling and quality scoreing were performed by Real-Time Analysis (RTA) v2 in Illumina NovaSeq 6000",
+        "The bcl2fastq2 Conversion software were used to convert base call (bcl) files to FASTQ files, and trim adapter sequence at the same time.",
+        "Reads mapped to human genome using STAR, Uniquely mapped sequencing reads were assigned human genes and subject to differential analysis",
+        "Supplementary files format and content: raw counts"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN38086753",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX22363089"
+      ]
+    },
+    "GSM7881447": {
+      "title": [
+        "C65A-H7, replicate 2"
+      ],
+      "source_name_ch1": [
+        "Pa03C"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "cell line: Pa03C",
+        "cell type: cell line established from liver metastasis from pancreatic ductal adenocarcinoma",
+        "genotype: Ref-1 C65A"
+      ],
+      "growth_protocol_ch1": [
+        "Media DMEM+10% FBS and split 1:10 twice a week"
+      ],
+      "molecule_ch1": [
+        "polyA RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Log phase cells were collected for RNA and sequencing. Outsourcing through Synthego, we established 2 C65A clone lines and used the parent and Cas9 control for bulk RNA seq."
+      ],
+      "description": [
+        "H7_1"
+      ],
+      "data_processing": [
+        "Base calling and quality scoreing were performed by Real-Time Analysis (RTA) v2 in Illumina NovaSeq 6000",
+        "The bcl2fastq2 Conversion software were used to convert base call (bcl) files to FASTQ files, and trim adapter sequence at the same time.",
+        "Reads mapped to human genome using STAR, Uniquely mapped sequencing reads were assigned human genes and subject to differential analysis",
+        "Supplementary files format and content: raw counts"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN38086752",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX22363090"
+      ]
+    },
+    "GSM7881448": {
+      "title": [
+        "C65A-H7, replicate 3"
+      ],
+      "source_name_ch1": [
+        "Pa03C"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "cell line: Pa03C",
+        "cell type: cell line established from liver metastasis from pancreatic ductal adenocarcinoma",
+        "genotype: Ref-1 C65A"
+      ],
+      "growth_protocol_ch1": [
+        "Media DMEM+10% FBS and split 1:10 twice a week"
+      ],
+      "molecule_ch1": [
+        "polyA RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Log phase cells were collected for RNA and sequencing. Outsourcing through Synthego, we established 2 C65A clone lines and used the parent and Cas9 control for bulk RNA seq."
+      ],
+      "description": [
+        "H7_2"
+      ],
+      "data_processing": [
+        "Base calling and quality scoreing were performed by Real-Time Analysis (RTA) v2 in Illumina NovaSeq 6000",
+        "The bcl2fastq2 Conversion software were used to convert base call (bcl) files to FASTQ files, and trim adapter sequence at the same time.",
+        "Reads mapped to human genome using STAR, Uniquely mapped sequencing reads were assigned human genes and subject to differential analysis",
+        "Supplementary files format and content: raw counts"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN38086751",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX22363091"
+      ]
+    }
+  }
+}

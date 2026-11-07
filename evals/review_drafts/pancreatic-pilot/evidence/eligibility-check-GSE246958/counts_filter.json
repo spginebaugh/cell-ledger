@@ -1,0 +1,41 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=gds&term=GSE246958%5BACCN%5D+AND+GSE%5BETYP%5D+AND+%22rnaseq+counts%22%5BFilter%5D&retmode=json",
+  "checked_at": "2026-11-07T05:38:14.655700+00:00",
+  "status": 200,
+  "response": {
+    "header": {
+      "type": "esearch",
+      "version": "0.3"
+    },
+    "esearchresult": {
+      "count": "0",
+      "retmax": "0",
+      "retstart": "0",
+      "idlist": [],
+      "translationset": [],
+      "translationstack": [
+        {
+          "term": "GSE246958[ACCN]",
+          "field": "ACCN",
+          "count": "13",
+          "explode": "N"
+        },
+        {
+          "term": "GSE[ETYP]",
+          "field": "ETYP",
+          "count": "300305",
+          "explode": "N"
+        },
+        "AND",
+        {
+          "term": "\"rnaseq counts\"[Filter]",
+          "field": "Filter",
+          "count": "27714",
+          "explode": "N"
+        },
+        "AND"
+      ],
+      "querytranslation": "GSE246958[ACCN] AND GSE[ETYP] AND \"rnaseq counts\"[Filter]"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "gse": "GSE246958",
+  "eligible": false,
+  "reason": "Excluded under the confirmed NCBI-generated-counts requirement: no NCBI count-filter match or corresponding download link at the saved check. Evidence: data/evals/eligibility-check-GSE246958/. Researcher-supplied count table does not satisfy this requirement; no judgment of scientific validity.",
+  "review_status": "Eligibility exclusion explicitly approved by user; other judgments remain pending.",
+  "evidence_files": [
+    "counts_filter.json",
+    "count_listing.json"
+  ]
+}

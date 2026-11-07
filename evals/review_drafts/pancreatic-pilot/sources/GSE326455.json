@@ -1,0 +1,104 @@
+{
+  "gse": "GSE326455",
+  "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE326455&targ=all&view=full&form=text",
+  "retrieved_at": "2026-11-07T04:27:29.658927+00:00",
+  "fields": {
+    "title": [
+      "AP-1 Family Member Transcription Factors Play a Critical Role in Human Beta Cell Replication and Differentiation [snRNA-seq]"
+    ],
+    "summary": [
+      "Insulinomas are a rare and benign type of pancreatic neuroendocrine tumor. They consist of pancreatic beta cells that are able to replicate as opposed to their human islet counterparts. They are also able to secrete insulin. Although we know epigenetics is a critical factor, it is unclear which exact pathways play a role in the control of replication and differentiation in insulinomas. Here we performed snRNAseq to gain further insight into the transcriptomic profiles of various insulinoma cell types."
+    ],
+    "overall_design": [
+      "Single nuclei were isolated from x12 slices of 20 micron thick OCT-embedded tissue scrolls. snRNA-seq libraries were prepared using 10X Genomics platform."
+    ],
+    "sample_id": [
+      "GSM9631932",
+      "GSM9631933"
+    ],
+    "supplementary_file": [
+      "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE326nnn/GSE326455/suppl/GSE326455_RAW.tar"
+    ],
+    "sample_organism": [
+      "Homo sapiens"
+    ],
+    "relation": [
+      "SubSeries of: GSE327169",
+      "BioProject: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1445305"
+    ]
+  },
+  "samples": {
+    "GSM9631932": {
+      "title": [
+        "insulinoma_13239"
+      ],
+      "source_name_ch1": [
+        "insulinoma tissue"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: insulinoma tissue"
+      ],
+      "molecule_ch1": [
+        "nuclear RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Single nuclei were isolated from OCT-embedded insulinoma samples using Singulator 100 protocol from S2 Genomics, according to manufacturer's instructions. Isolated nuclei were encapsulated in Gel-Beads in Emulsion (GEMs) using the 10X Genomics Chromium NextGEM technology, following manufacturer's instructions.",
+        "Libraries were generated using the 10x Genomics, Chromium Next GEM Single Cell 3’ GEM, Library & Gel Bead Kit v3.1 (10x Genomics, 1000121), Chromium Next GEM Chip G Single Cell Kit (10x Genomics, 1000120) and indexes (Single Index Kit T Set A, 10x Genomics, 1000213 or Dual Index Kit TT Set A, 10x Genomics, 1000215) according to the manufacturer specifications"
+      ],
+      "description": [
+        "Library name: sample_1"
+      ],
+      "data_processing": [
+        "FASTQ files were aligned to the GRCh38 human genome reference (GRCh38-2020-A-2.0.0), filtered, barcoded, and UMI-counted using Cell Ranger (v7.2.0, 10x Genomics) (23). Empty droplets and ambient RNA were removed from count matrices using the remove-background function from CellBender (v0.2.2) (24). Each dataset was then filtered to retain cells with ≥1,000 UMIs, ≥400 expressed genes, and <10% of reads aligned to the mitochondrial genome. UMI counts were normalized so that each cell had a total of 10,000 UMIs across all genes and then log-transformed with a pseudocount of 1 using the LogNormalize function in the Seurat package (v4.0.3) (25). The top 2,000 most highly variable genes were identified using the vst selection method of FindVariableFeatures, and counts were scaled using ScaleData. Principal component analysis (PCA) was performed using the top 2,000 highly variable features (RunPCA), and the top 30 principal components were used in downstream analysis.",
+        "Assembly: Homo Sapiens hg38",
+        "Supplementary files format and content: cell ranger filtered tab-separated values files and matrix files"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56785165",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32719154"
+      ]
+    },
+    "GSM9631933": {
+      "title": [
+        "insulinoma_48190"
+      ],
+      "source_name_ch1": [
+        "insulinoma tissue"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: insulinoma tissue"
+      ],
+      "molecule_ch1": [
+        "nuclear RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Single nuclei were isolated from OCT-embedded insulinoma samples using Singulator 100 protocol from S2 Genomics, according to manufacturer's instructions. Isolated nuclei were encapsulated in Gel-Beads in Emulsion (GEMs) using the 10X Genomics Chromium NextGEM technology, following manufacturer's instructions.",
+        "Libraries were generated using the 10x Genomics, Chromium Next GEM Single Cell 3’ GEM, Library & Gel Bead Kit v3.1 (10x Genomics, 1000121), Chromium Next GEM Chip G Single Cell Kit (10x Genomics, 1000120) and indexes (Single Index Kit T Set A, 10x Genomics, 1000213 or Dual Index Kit TT Set A, 10x Genomics, 1000215) according to the manufacturer specifications"
+      ],
+      "description": [
+        "Library name: sample_2"
+      ],
+      "data_processing": [
+        "FASTQ files were aligned to the GRCh38 human genome reference (GRCh38-2020-A-2.0.0), filtered, barcoded, and UMI-counted using Cell Ranger (v7.2.0, 10x Genomics) (23). Empty droplets and ambient RNA were removed from count matrices using the remove-background function from CellBender (v0.2.2) (24). Each dataset was then filtered to retain cells with ≥1,000 UMIs, ≥400 expressed genes, and <10% of reads aligned to the mitochondrial genome. UMI counts were normalized so that each cell had a total of 10,000 UMIs across all genes and then log-transformed with a pseudocount of 1 using the LogNormalize function in the Seurat package (v4.0.3) (25). The top 2,000 most highly variable genes were identified using the vst selection method of FindVariableFeatures, and counts were scaled using ScaleData. Principal component analysis (PCA) was performed using the top 2,000 highly variable features (RunPCA), and the top 30 principal components were used in downstream analysis.",
+        "Assembly: Homo Sapiens hg38",
+        "Supplementary files format and content: cell ranger filtered tab-separated values files and matrix files"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56785164",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32719155"
+      ]
+    }
+  }
+}

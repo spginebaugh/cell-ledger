@@ -1,0 +1,48 @@
+{
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=gds&term=GSE333917%5BACCN%5D+AND+%22Homo+sapiens%22%5BOrganism%5D+AND+%22expression+profiling+by+high+throughput+sequencing%22%5BDataSet+Type%5D+AND+%22rnaseq+counts%22%5BFilter%5D&retmode=json",
+  "checked_at": "2026-11-07T05:15:56.762911+00:00",
+  "status": 200,
+  "response": {
+    "header": {
+      "type": "esearch",
+      "version": "0.3"
+    },
+    "esearchresult": {
+      "count": "0",
+      "retmax": "0",
+      "retstart": "0",
+      "idlist": [],
+      "translationset": [],
+      "translationstack": [
+        {
+          "term": "GSE333917[ACCN]",
+          "field": "ACCN",
+          "count": "14",
+          "explode": "N"
+        },
+        {
+          "term": "\"Homo sapiens\"[Organism]",
+          "field": "Organism",
+          "count": "4778283",
+          "explode": "Y"
+        },
+        "AND",
+        {
+          "term": "\"expression profiling by high throughput sequencing\"[DataSet Type]",
+          "field": "DataSet Type",
+          "count": "148301",
+          "explode": "N"
+        },
+        "AND",
+        {
+          "term": "\"rnaseq counts\"[Filter]",
+          "field": "Filter",
+          "count": "27714",
+          "explode": "N"
+        },
+        "AND"
+      ],
+      "querytranslation": "GSE333917[ACCN] AND \"Homo sapiens\"[Organism] AND \"expression profiling by high throughput sequencing\"[DataSet Type] AND \"rnaseq counts\"[Filter]"
+    }
+  }
+}

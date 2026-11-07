@@ -1,0 +1,624 @@
+[
+  {
+    "decision": "Study contains both cell-line and patient-derived organoid experiments; individual sample assignments pending.",
+    "authority": "User explicitly approved recording this study-level finding.",
+    "recorded_at": "2026-11-07T06:20:14.799801+00:00",
+    "evidence_file": "record.response.txt",
+    "evidence_quote": "!Series_overall_design = To investigate the circadian transcriptome of 4 pancreatic cancer cell lines and 6 patient derived pancreatic cancer organoids. Temporal RNA-Seq was carried out at 7 time points (0h, 4h, 8h, 12h, 16h, 20h, 24h) and daily changes in gene expression were quanitifed at the transcriptome-wide level."
+  },
+  {
+    "decision": "Needs review; preserve reported cell-line label, final model assignment pending.",
+    "authority": "User explicitly approved this status and requested adding to Scott review list.",
+    "recorded_at": "2026-11-07T06:22:33.990559+00:00",
+    "evidence_file": "samples/GSM8172683.txt",
+    "evidence_quotes": [
+      "!Sample_title = ASPC1_0h",
+      "!Sample_source_name_ch1 = Pancreatic cancer cell line",
+      "!Sample_characteristics_ch1 = cell line: ASPC1",
+      "!Sample_growth_protocol_ch1 = Pancreas cancer tissue was collected from untreated patients undergoing tissue biopsy at Rush University Medical Center. Immediately following the tissue acquisition, the samples were processed as previously described. Briefly, after digestion with collagenase-II, dispase-II, and DNase-I, biopsy tissues were washed several times and then plated in 50 µL Matrigel domes on a 24-welled plate supplemented with 500 µL organoid medium."
+    ]
+  },
+  {
+    "decision": "Needs review; preserve reported ASPC1 cell-line label and 4-hour time point. Final model assignment pending.",
+    "authority": "User explicitly approved recording this status and adding to Scott review list.",
+    "recorded_at": "2026-11-07T06:23:27.085247+00:00",
+    "evidence_file": "samples/GSM8172684.txt",
+    "evidence_quotes": [
+      "!Sample_title = ASPC1_4h",
+      "!Sample_source_name_ch1 = Pancreatic cancer cell line",
+      "!Sample_characteristics_ch1 = tissue: Pancreatic cancer cell line",
+      "!Sample_characteristics_ch1 = cell line: ASPC1",
+      "!Sample_characteristics_ch1 = cell type: Pancreatic cancer cell line",
+      "!Sample_characteristics_ch1 = treatment: Dexamethasone treatment",
+      "!Sample_characteristics_ch1 = time: 4h",
+      "!Sample_growth_protocol_ch1 = Pancreas cancer tissue was collected from untreated patients undergoing tissue biopsy at Rush University Medical Center. Immediately following the tissue acquisition, the samples were processed as previously described. Briefly, after digestion with collagenase-II, dispase-II, and DNase-I, biopsy tissues were washed several times and then plated in 50 µL Matrigel domes on a 24-welled plate supplemented with 500 µL organoid medium."
+    ]
+  },
+  {
+    "decision": "Needs review; preserve reported ASPC1 cell-line label and 8-hour time point; final model pending.",
+    "authority": "User explicitly approved recording this finding and adding to Scott review list.",
+    "recorded_at": "2026-11-07T06:31:37.878536+00:00",
+    "evidence_file": "samples/GSM8172685.txt",
+    "evidence_quotes": [
+      "!Sample_title = ASPC1_8h",
+      "!Sample_characteristics_ch1 = tissue: Pancreatic cancer cell line",
+      "!Sample_characteristics_ch1 = cell line: ASPC1",
+      "!Sample_characteristics_ch1 = cell type: Pancreatic cancer cell line",
+      "!Sample_characteristics_ch1 = treatment: Dexamethasone treatment",
+      "!Sample_characteristics_ch1 = time: 8h",
+      "!Sample_growth_protocol_ch1 = Pancreas cancer tissue was collected from untreated patients undergoing tissue biopsy at Rush University Medical Center. Immediately following the tissue acquisition, the samples were processed as previously described. Briefly, after digestion with collagenase-II, dispase-II, and DNase-I, biopsy tissues were washed several times and then plated in 50 µL Matrigel domes on a 24-welled plate supplemented with 500 µL organoid medium."
+    ]
+  },
+  {
+    "recorded_at": "2026-11-07T06:37:19.271043+00:00",
+    "decision": "Applied authorized same-conflict rule after inspecting all 68 sample records.",
+    "affected_samples": [
+      {
+        "sample": "GSM8172683",
+        "label": "ASPC1",
+        "time": "0h"
+      },
+      {
+        "sample": "GSM8172684",
+        "label": "ASPC1",
+        "time": "4h"
+      },
+      {
+        "sample": "GSM8172685",
+        "label": "ASPC1",
+        "time": "8h"
+      },
+      {
+        "sample": "GSM8172686",
+        "label": "ASPC1",
+        "time": "12h"
+      },
+      {
+        "sample": "GSM8172687",
+        "label": "ASPC1",
+        "time": "16h"
+      },
+      {
+        "sample": "GSM8172688",
+        "label": "ASPC1",
+        "time": "20h"
+      },
+      {
+        "sample": "GSM8172689",
+        "label": "ASPC1",
+        "time": "24h"
+      },
+      {
+        "sample": "GSM8172690",
+        "label": "CAPAN1",
+        "time": "0h"
+      },
+      {
+        "sample": "GSM8172691",
+        "label": "CAPAN1",
+        "time": "4h"
+      },
+      {
+        "sample": "GSM8172692",
+        "label": "CAPAN1",
+        "time": "8h"
+      },
+      {
+        "sample": "GSM8172693",
+        "label": "CAPAN1",
+        "time": "12h"
+      },
+      {
+        "sample": "GSM8172694",
+        "label": "CAPAN1",
+        "time": "16h"
+      },
+      {
+        "sample": "GSM8172695",
+        "label": "CAPAN1",
+        "time": "20h"
+      },
+      {
+        "sample": "GSM8172696",
+        "label": "CAPAN1",
+        "time": "24h"
+      },
+      {
+        "sample": "GSM8172697",
+        "label": "PANC1",
+        "time": "0h"
+      },
+      {
+        "sample": "GSM8172698",
+        "label": "PANC1",
+        "time": "4h"
+      },
+      {
+        "sample": "GSM8172699",
+        "label": "PANC1",
+        "time": "8h"
+      },
+      {
+        "sample": "GSM8172700",
+        "label": "PANC1",
+        "time": "12h"
+      },
+      {
+        "sample": "GSM8172701",
+        "label": "PANC1",
+        "time": "16h"
+      },
+      {
+        "sample": "GSM8172702",
+        "label": "PANC1",
+        "time": "20h"
+      },
+      {
+        "sample": "GSM8172703",
+        "label": "PANC1",
+        "time": "24h"
+      },
+      {
+        "sample": "GSM8172704",
+        "label": "MIAPACA2",
+        "time": "0h"
+      },
+      {
+        "sample": "GSM8172705",
+        "label": "MIAPACA2",
+        "time": "4h"
+      },
+      {
+        "sample": "GSM8172706",
+        "label": "MIAPACA2",
+        "time": "8h"
+      },
+      {
+        "sample": "GSM8172707",
+        "label": "MIAPACA2",
+        "time": "12h"
+      },
+      {
+        "sample": "GSM8172708",
+        "label": "MIAPACA2",
+        "time": "16h"
+      },
+      {
+        "sample": "GSM8172709",
+        "label": "MIAPACA2",
+        "time": "20h"
+      },
+      {
+        "sample": "GSM8172710",
+        "label": "MIAPACA2",
+        "time": "24h"
+      }
+    ],
+    "other_samples_not_assigned": [
+      "GSM8172711",
+      "GSM8172712",
+      "GSM8172713",
+      "GSM8172714",
+      "GSM8172715",
+      "GSM8172716",
+      "GSM8172717",
+      "GSM8172718",
+      "GSM8172719",
+      "GSM8172720",
+      "GSM8172721",
+      "GSM8172722",
+      "GSM8172723",
+      "GSM8172724",
+      "GSM8172725",
+      "GSM8172726",
+      "GSM8172727",
+      "GSM8172728",
+      "GSM8172729",
+      "GSM8172730",
+      "GSM8172731",
+      "GSM8172732",
+      "GSM8172733",
+      "GSM8172734",
+      "GSM8172735",
+      "GSM8172736",
+      "GSM8172737",
+      "GSM8172738",
+      "GSM8172739",
+      "GSM8172740",
+      "GSM8172741",
+      "GSM8172742",
+      "GSM8172743",
+      "GSM8172744",
+      "GSM8172745",
+      "GSM8172746",
+      "GSM8172747",
+      "GSM8172748",
+      "GSM8172749",
+      "GSM8172750"
+    ]
+  },
+  {
+    "decision": "Classify sample as patient-derived organoid; preserve PDO6 and ZT0 literally.",
+    "authority": "User explicitly approved this sample classification.",
+    "recorded_at": "2026-11-07T06:38:54.666309+00:00",
+    "evidence_file": "samples/GSM8172711.txt",
+    "evidence_quotes": [
+      "!Sample_characteristics_ch1 = tissue: Patient derived organoids of pancreatic cancer",
+      "!Sample_characteristics_ch1 = cell line: PDO6",
+      "!Sample_characteristics_ch1 = cell type: Patient derived organoids of pancreatic cancer",
+      "!Sample_characteristics_ch1 = treatment: Dexamethasone treatment",
+      "!Sample_characteristics_ch1 = time: ZT0",
+      "!Sample_growth_protocol_ch1 = Pancreas cancer tissue was collected from untreated patients undergoing tissue biopsy at Rush University Medical Center. Immediately following the tissue acquisition, the samples were processed as previously described. Briefly, after digestion with collagenase-II, dispase-II, and DNase-I, biopsy tissues were washed several times and then plated in 50 µL Matrigel domes on a 24-welled plate supplemented with 500 µL organoid medium."
+    ],
+    "limits": "No equivalence of ZT0 with cell-line 0h assumed. No downstream analysis approval."
+  },
+  {
+    "decision": "Classify as patient-derived organoid; preserve PDO6 and ZT4 exactly.",
+    "authority": "User explicitly approved this sample classification.",
+    "recorded_at": "2026-11-07T06:39:31.952378+00:00",
+    "evidence_file": "samples/GSM8172712.txt",
+    "evidence_quotes": [
+      "!Sample_characteristics_ch1 = tissue: Patient derived organoids of pancreatic cancer",
+      "!Sample_characteristics_ch1 = cell line: PDO6",
+      "!Sample_characteristics_ch1 = cell type: Patient derived organoids of pancreatic cancer",
+      "!Sample_characteristics_ch1 = treatment: Dexamethasone treatment",
+      "!Sample_characteristics_ch1 = time: ZT4",
+      "!Sample_growth_protocol_ch1 = Pancreas cancer tissue was collected from untreated patients undergoing tissue biopsy at Rush University Medical Center. Immediately following the tissue acquisition, the samples were processed as previously described. Briefly, after digestion with collagenase-II, dispase-II, and DNase-I, biopsy tissues were washed several times and then plated in 50 µL Matrigel domes on a 24-welled plate supplemented with 500 µL organoid medium."
+    ],
+    "limits": "No equivalence between ZT4 and cell-line 4h assumed; no downstream analysis approval."
+  },
+  {
+    "recorded_at": "2026-11-07T06:40:28.632575+00:00",
+    "decision": "Applied authorized organoid rule to 38 additional samples.",
+    "affected_samples": [
+      "GSM8172713",
+      "GSM8172714",
+      "GSM8172715",
+      "GSM8172716",
+      "GSM8172717",
+      "GSM8172718",
+      "GSM8172719",
+      "GSM8172720",
+      "GSM8172721",
+      "GSM8172722",
+      "GSM8172723",
+      "GSM8172724",
+      "GSM8172725",
+      "GSM8172726",
+      "GSM8172727",
+      "GSM8172728",
+      "GSM8172729",
+      "GSM8172730",
+      "GSM8172731",
+      "GSM8172732",
+      "GSM8172733",
+      "GSM8172734",
+      "GSM8172735",
+      "GSM8172736",
+      "GSM8172737",
+      "GSM8172738",
+      "GSM8172739",
+      "GSM8172740",
+      "GSM8172741",
+      "GSM8172742",
+      "GSM8172743",
+      "GSM8172744",
+      "GSM8172745",
+      "GSM8172746",
+      "GSM8172747",
+      "GSM8172748",
+      "GSM8172749",
+      "GSM8172750"
+    ],
+    "source_time_labels_by_model": {
+      "PDO6": [
+        "ZT0",
+        "ZT4",
+        "ZT8",
+        "ZT12",
+        "ZT16",
+        "ZT20"
+      ],
+      "PDO10": [
+        "ZT0",
+        "ZT4",
+        "ZT8",
+        "ZT12",
+        "ZT16",
+        "ZT20",
+        "ZT24"
+      ],
+      "PDO15": [
+        "ZT4",
+        "ZT8",
+        "ZT12",
+        "ZT16",
+        "ZT20",
+        "ZT24"
+      ],
+      "PDO26": [
+        "ZT0",
+        "ZT4",
+        "ZT8",
+        "ZT12",
+        "ZT16",
+        "ZT20",
+        "ZT24"
+      ],
+      "PDO32": [
+        "ZT0",
+        "ZT4",
+        "ZT8",
+        "ZT12",
+        "ZT16",
+        "ZT20",
+        "ZT24"
+      ],
+      "PDO37": [
+        "ZT0",
+        "ZT4",
+        "ZT8",
+        "ZT12",
+        "ZT16",
+        "ZT20",
+        "ZT24"
+      ]
+    }
+  },
+  {
+    "decision": "Record PDO6/ZT24 and PDO15/ZT0 as absent from the saved series sample records; do not fill or invent measurements.",
+    "authority": "User explicitly approved recording these absences.",
+    "recorded_at": "2026-11-07T06:41:31.791395+00:00",
+    "evidence_file": "organoid_time_inventory.json",
+    "limits": "Absence from these saved records only; cause and availability elsewhere unknown. No downstream handling decision."
+  },
+  {
+    "decision": "All 40 approved organoid samples meet the human requirement.",
+    "authority": "User explicitly approved recording this finding.",
+    "recorded_at": "2026-11-07T06:42:23.500195+00:00",
+    "sample_ids": [
+      "GSM8172711",
+      "GSM8172712",
+      "GSM8172713",
+      "GSM8172714",
+      "GSM8172715",
+      "GSM8172716",
+      "GSM8172717",
+      "GSM8172718",
+      "GSM8172719",
+      "GSM8172720",
+      "GSM8172721",
+      "GSM8172722",
+      "GSM8172723",
+      "GSM8172724",
+      "GSM8172725",
+      "GSM8172726",
+      "GSM8172727",
+      "GSM8172728",
+      "GSM8172729",
+      "GSM8172730",
+      "GSM8172731",
+      "GSM8172732",
+      "GSM8172733",
+      "GSM8172734",
+      "GSM8172735",
+      "GSM8172736",
+      "GSM8172737",
+      "GSM8172738",
+      "GSM8172739",
+      "GSM8172740",
+      "GSM8172741",
+      "GSM8172742",
+      "GSM8172743",
+      "GSM8172744",
+      "GSM8172745",
+      "GSM8172746",
+      "GSM8172747",
+      "GSM8172748",
+      "GSM8172749",
+      "GSM8172750"
+    ],
+    "evidence_file": "organoid_human_check.json",
+    "scope": "Organoid subset only; remaining eligibility requirements pending."
+  },
+  {
+    "decision": "All 40 organoid samples meet the bulk RNA-seq requirement.",
+    "authority": "User explicitly approved this classification.",
+    "recorded_at": "2026-11-07T06:43:16.861399+00:00",
+    "sample_ids": [
+      "GSM8172711",
+      "GSM8172712",
+      "GSM8172713",
+      "GSM8172714",
+      "GSM8172715",
+      "GSM8172716",
+      "GSM8172717",
+      "GSM8172718",
+      "GSM8172719",
+      "GSM8172720",
+      "GSM8172721",
+      "GSM8172722",
+      "GSM8172723",
+      "GSM8172724",
+      "GSM8172725",
+      "GSM8172726",
+      "GSM8172727",
+      "GSM8172728",
+      "GSM8172729",
+      "GSM8172730",
+      "GSM8172731",
+      "GSM8172732",
+      "GSM8172733",
+      "GSM8172734",
+      "GSM8172735",
+      "GSM8172736",
+      "GSM8172737",
+      "GSM8172738",
+      "GSM8172739",
+      "GSM8172740",
+      "GSM8172741",
+      "GSM8172742",
+      "GSM8172743",
+      "GSM8172744",
+      "GSM8172745",
+      "GSM8172746",
+      "GSM8172747",
+      "GSM8172748",
+      "GSM8172749",
+      "GSM8172750"
+    ],
+    "evidence_file": "organoid_bulk_check.json",
+    "limits": "Method classification only; processing and timing questions for Scott remain unresolved."
+  },
+  {
+    "decision": "NCBI raw-count table header covers 35 of 40 approved organoid samples; preserve five uncovered sample records and labels.",
+    "authority": "User explicitly approved partial coverage finding.",
+    "recorded_at": "2026-11-07T06:49:23.589009+00:00",
+    "evidence_file": "organoid_count_coverage.json",
+    "limits": "Header coverage only; no validation of count values, analysis suitability, or cause of omissions."
+  },
+  {
+    "decision": "The 35 NCBI count-covered organoid samples are relevant to the broad pancreatic cancer question.",
+    "authority": "User explicitly approved recording this relevance judgment.",
+    "recorded_at": "2026-11-07T06:51:01.646841+00:00",
+    "question": "pancreatic cancer",
+    "sample_ids": [
+      "GSM8172711",
+      "GSM8172712",
+      "GSM8172713",
+      "GSM8172714",
+      "GSM8172715",
+      "GSM8172716",
+      "GSM8172717",
+      "GSM8172718",
+      "GSM8172720",
+      "GSM8172721",
+      "GSM8172722",
+      "GSM8172726",
+      "GSM8172727",
+      "GSM8172729",
+      "GSM8172730",
+      "GSM8172731",
+      "GSM8172732",
+      "GSM8172733",
+      "GSM8172734",
+      "GSM8172735",
+      "GSM8172736",
+      "GSM8172737",
+      "GSM8172738",
+      "GSM8172739",
+      "GSM8172740",
+      "GSM8172741",
+      "GSM8172742",
+      "GSM8172743",
+      "GSM8172744",
+      "GSM8172745",
+      "GSM8172746",
+      "GSM8172747",
+      "GSM8172748",
+      "GSM8172749",
+      "GSM8172750"
+    ],
+    "evidence_file": "record.response.txt",
+    "evidence_quotes": [
+      "!Series_title = Circadian transcriptome of pancreatic adenocarcinoma unravels chronotherapeutic targets.",
+      "!Series_overall_design = To investigate the circadian transcriptome of 4 pancreatic cancer cell lines and 6 patient derived pancreatic cancer organoids. Temporal RNA-Seq was carried out at 7 time points (0h, 4h, 8h, 12h, 16h, 20h, 24h) and daily changes in gene expression were quanitifed at the transcriptome-wide level."
+    ],
+    "limits": "Subset relevance only; no whole-study model label, subset acceptance, or downstream suitability approval. No new relevance judgment for uncovered samples."
+  },
+  {
+    "decision": "Approve distinct search and after-data-inspection expectations for GSE262627.",
+    "authority": "User explicitly approved separate expectations.",
+    "recorded_at": "2026-11-07T06:54:40.513430+00:00",
+    "expectations": {
+      "search": {
+        "acceptable_candidate": true,
+        "question": "pancreatic cancer",
+        "expected_behavior": "May return GSE262627 as a relevant candidate. Search response alone is not required to explain sample-level coverage or resolve model conflicts.",
+        "limits": "Not mandatory in every bounded search; no claim that every sample qualifies."
+      },
+      "after_data_inspection": {
+        "expected_behavior": "Identify the 35 count-covered organoid samples, disclose the five organoid samples without columns in this NCBI table, and keep the 28 unresolved cell-line model classifications separate and explicitly uncertain. Preserve original identifiers and time labels; do not invent missing measurements.",
+        "supported_organoid_sample_ids": [
+          "GSM8172711",
+          "GSM8172712",
+          "GSM8172713",
+          "GSM8172714",
+          "GSM8172715",
+          "GSM8172716",
+          "GSM8172717",
+          "GSM8172718",
+          "GSM8172720",
+          "GSM8172721",
+          "GSM8172722",
+          "GSM8172726",
+          "GSM8172727",
+          "GSM8172729",
+          "GSM8172730",
+          "GSM8172731",
+          "GSM8172732",
+          "GSM8172733",
+          "GSM8172734",
+          "GSM8172735",
+          "GSM8172736",
+          "GSM8172737",
+          "GSM8172738",
+          "GSM8172739",
+          "GSM8172740",
+          "GSM8172741",
+          "GSM8172742",
+          "GSM8172743",
+          "GSM8172744",
+          "GSM8172745",
+          "GSM8172746",
+          "GSM8172747",
+          "GSM8172748",
+          "GSM8172749",
+          "GSM8172750"
+        ],
+        "uncovered_organoid_samples": [
+          {
+            "sample_id": "GSM8172719",
+            "model_identifier": "PDO10",
+            "time_label": "ZT8"
+          },
+          {
+            "sample_id": "GSM8172723",
+            "model_identifier": "PDO10",
+            "time_label": "ZT24"
+          },
+          {
+            "sample_id": "GSM8172724",
+            "model_identifier": "PDO15",
+            "time_label": "ZT4"
+          },
+          {
+            "sample_id": "GSM8172725",
+            "model_identifier": "PDO15",
+            "time_label": "ZT8"
+          },
+          {
+            "sample_id": "GSM8172728",
+            "model_identifier": "PDO15",
+            "time_label": "ZT20"
+          }
+        ],
+        "limits": "No downstream analysis approval. Judge these expectations at the inspection/organization stage, not against the study-level search response."
+      }
+    }
+  },
+  {
+    "decision": "Approve GSE262627 for an organoid-only request using exactly its 35 count-covered approved organoid samples.",
+    "authority": "User explicitly approved this prompt-specific selection.",
+    "recorded_at": "2026-11-07T06:58:59.114831+00:00",
+    "scope": "Final selection after inspection; disclose five uncovered organoids, keep unresolved cell-line records outside selection, preserve identifiers and times. No downstream analysis approval."
+  },
+  {
+    "decision": "Treat PDO and patient-derived organoid as equivalent when the source explicitly defines the abbreviation; preserve model identifiers.",
+    "authority": "User explicitly approved this conditional terminology rule.",
+    "recorded_at": "2026-11-07T06:59:44.087972+00:00",
+    "evidence_file": "record.response.txt",
+    "evidence_quote": "patient-derived organoids (PDOs)",
+    "limits": "Context-dependent equivalence, not a global acronym substitution. PDO6 and PDO10 remain distinct identifiers; no sample grouping or time-label conversion implied."
+  }
+]

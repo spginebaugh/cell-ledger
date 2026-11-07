@@ -1,0 +1,83 @@
+{
+  "checked_at": "2026-11-07T06:02:16.793662+00:00",
+  "source_commit": "4a7d8ae5128bff85fffd11101796c25dc438da31",
+  "request": {
+    "queries": [
+      "GSE333917[ACCN]",
+      "GSE246958[ACCN]",
+      "GSE348821[ACCN]",
+      "GSE327169[ACCN]",
+      "GSE326458[ACCN]",
+      "GSE326455[ACCN]",
+      "GSE273398[ACCN]"
+    ],
+    "limit_per_query": 50,
+    "since": null
+  },
+  "response": {
+    "queries": [
+      {
+        "query": "GSE333917[ACCN]",
+        "term": "(GSE333917[ACCN]) AND \"Homo sapiens\"[Organism] AND \"expression profiling by high throughput sequencing\"[DataSet Type] AND gse[ETYP] AND \"rnaseq counts\"[Filter]",
+        "total": 0,
+        "returned": 0
+      },
+      {
+        "query": "GSE246958[ACCN]",
+        "term": "(GSE246958[ACCN]) AND \"Homo sapiens\"[Organism] AND \"expression profiling by high throughput sequencing\"[DataSet Type] AND gse[ETYP] AND \"rnaseq counts\"[Filter]",
+        "total": 0,
+        "returned": 0
+      },
+      {
+        "query": "GSE348821[ACCN]",
+        "term": "(GSE348821[ACCN]) AND \"Homo sapiens\"[Organism] AND \"expression profiling by high throughput sequencing\"[DataSet Type] AND gse[ETYP] AND \"rnaseq counts\"[Filter]",
+        "total": 0,
+        "returned": 0
+      },
+      {
+        "query": "GSE327169[ACCN]",
+        "term": "(GSE327169[ACCN]) AND \"Homo sapiens\"[Organism] AND \"expression profiling by high throughput sequencing\"[DataSet Type] AND gse[ETYP] AND \"rnaseq counts\"[Filter]",
+        "total": 0,
+        "returned": 0
+      },
+      {
+        "query": "GSE326458[ACCN]",
+        "term": "(GSE326458[ACCN]) AND \"Homo sapiens\"[Organism] AND \"expression profiling by high throughput sequencing\"[DataSet Type] AND gse[ETYP] AND \"rnaseq counts\"[Filter]",
+        "total": 0,
+        "returned": 0
+      },
+      {
+        "query": "GSE326455[ACCN]",
+        "term": "(GSE326455[ACCN]) AND \"Homo sapiens\"[Organism] AND \"expression profiling by high throughput sequencing\"[DataSet Type] AND gse[ETYP] AND \"rnaseq counts\"[Filter]",
+        "total": 0,
+        "returned": 0
+      },
+      {
+        "query": "GSE273398[ACCN]",
+        "term": "(GSE273398[ACCN]) AND \"Homo sapiens\"[Organism] AND \"expression profiling by high throughput sequencing\"[DataSet Type] AND gse[ETYP] AND \"rnaseq counts\"[Filter]",
+        "total": 1,
+        "returned": 1
+      }
+    ],
+    "hits": [
+      {
+        "gse": "GSE273398",
+        "title": "A CLIC1 network coordinates matrix stiffness and the Warburg effect to promote tumor growth in pancreatic cancer. Zheng et al.",
+        "summary": "Pancreatic ductal adenocarcinoma (PDAC) features substantial matrix stiffening and reprogrammed glucose metabolism, particularly the Warburg effect. However, the complex interplay between these traits and their impact on tumor advancement remains inadequately explored. Here, we integrated clinical, cellular, and bioinformatics approaches to explore the connection between matrix stiffness and the Warburg effect in PDAC, identifying CLIC1 as a key mediator. Elevated CLIC1 expression, induced by matrix stiffness through Wnt/β-catenin/TCF4 signaling, signifies poorer prognostic outcomes in PDAC. Functionally, CLIC1 serves as a catalyst for glycolytic metabolism, propelling tumor proliferation. Mechanistically, CLIC1 fortifies HIF1α stability by curbing hydroxylation via ROS. Collectively, PDAC cells elevate CLIC1 levels in a matrix stiffness-responsive manner, bolstering the Warburg effect to drive tumor growth via ROS/HIF1α signaling. Our insights highlight opportunities for targeted therapies that concurrently address matrix properties and metabolic rewiring, with CLIC1 emerging as a promising intervention point.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 6,
+        "published": "2024-08-01",
+        "pubmed_ids": [],
+        "matched_queries": [
+          "GSE273398[ACCN]"
+        ],
+        "mixed_organism": false
+      }
+    ]
+  }
+}

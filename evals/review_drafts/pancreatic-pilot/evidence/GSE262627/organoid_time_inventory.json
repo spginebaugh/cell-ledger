@@ -1,0 +1,76 @@
+{
+  "scope": "Observed labels in saved GEO sample records; absence does not establish why a measurement is missing or whether it exists elsewhere.",
+  "observed_labels_by_model": {
+    "PDO6": [
+      "ZT0",
+      "ZT4",
+      "ZT8",
+      "ZT12",
+      "ZT16",
+      "ZT20"
+    ],
+    "PDO10": [
+      "ZT0",
+      "ZT4",
+      "ZT8",
+      "ZT12",
+      "ZT16",
+      "ZT20",
+      "ZT24"
+    ],
+    "PDO15": [
+      "ZT4",
+      "ZT8",
+      "ZT12",
+      "ZT16",
+      "ZT20",
+      "ZT24"
+    ],
+    "PDO26": [
+      "ZT0",
+      "ZT4",
+      "ZT8",
+      "ZT12",
+      "ZT16",
+      "ZT20",
+      "ZT24"
+    ],
+    "PDO32": [
+      "ZT0",
+      "ZT4",
+      "ZT8",
+      "ZT12",
+      "ZT16",
+      "ZT20",
+      "ZT24"
+    ],
+    "PDO37": [
+      "ZT0",
+      "ZT4",
+      "ZT8",
+      "ZT12",
+      "ZT16",
+      "ZT20",
+      "ZT24"
+    ]
+  },
+  "approved_absence_flags": [
+    {
+      "model_identifier": "PDO6",
+      "time_label": "ZT24",
+      "status": "absent_from_saved_sample_records"
+    },
+    {
+      "model_identifier": "PDO15",
+      "time_label": "ZT0",
+      "status": "absent_from_saved_sample_records"
+    }
+  ],
+  "review": {
+    "decision": "Record PDO6/ZT24 and PDO15/ZT0 as absent from the saved series sample records; do not fill or invent measurements.",
+    "authority": "User explicitly approved recording these absences.",
+    "recorded_at": "2026-11-07T06:41:31.791395+00:00",
+    "evidence_file": "organoid_time_inventory.json",
+    "limits": "Absence from these saved records only; cause and availability elsewhere unknown. No downstream handling decision."
+  }
+}

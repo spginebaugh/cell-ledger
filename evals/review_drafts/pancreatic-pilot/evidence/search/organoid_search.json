@@ -1,0 +1,512 @@
+{
+  "source_commit": "4a7d8ae5128bff85fffd11101796c25dc438da31",
+  "checked_at": "2026-11-07T06:18:55.817540+00:00",
+  "request": {
+    "queries": [
+      "pancreatic cancer organoid",
+      "PDAC organoid"
+    ],
+    "limit_per_query": 50,
+    "since": null
+  },
+  "response": {
+    "queries": [
+      {
+        "query": "pancreatic cancer organoid",
+        "term": "(pancreatic cancer organoid) AND \"Homo sapiens\"[Organism] AND \"expression profiling by high throughput sequencing\"[DataSet Type] AND gse[ETYP] AND \"rnaseq counts\"[Filter]",
+        "total": 19,
+        "returned": 19
+      },
+      {
+        "query": "PDAC organoid",
+        "term": "(PDAC organoid) AND \"Homo sapiens\"[Organism] AND \"expression profiling by high throughput sequencing\"[DataSet Type] AND gse[ETYP] AND \"rnaseq counts\"[Filter]",
+        "total": 13,
+        "returned": 13
+      }
+    ],
+    "hits": [
+      {
+        "gse": "GSE273116",
+        "title": "A pan-KRAS inhibitor and its derived degrader elicit multifaceted anti-tumor efficacy in KRAS-driven cancers [bulk RNA-seq]",
+        "summary": "KRAS is the most frequently mutated oncogene in human cancers, but to date, only KRASG12C inhibitors have been FDA-approved. Small-molecule inhibitors that target other more prevalent KRAS mutations are in urgent clinical need. Here, we report a highly potent pan-KRAS inhibitor, MCB-294, that selectively targets KRAS, but not HRAS or NRAS. Molecular profiling studies show that MCB-294 binds to and inhibits several KRAS mutants, including G12D, G12C, G12V, thereby disabling KRAS oncogenic signaling. MCB-294 is well tolerated in mice and exhibits remarkable therapeutic efficacy against the growth of a comprehensive range of KRAS-driven cancer cell lines, patient-derived organoids, and tumor xenografts and prolongs mouse survival. By employing an MCB-294 derivative as the KRAS binder, we further identify a VHL-based pan-KRAS degrader, MCB-36, that efficiently degrades KRAS in vitro and in vivo through the ubiquitin-proteasome system. Importantly, MCB-294 and MCB-36 not only effectively kill KRASG12C inhibitor-resistant cells, but also reshape the tumor microenvironment by boosting T cell-mediated anti-tumor immunity. Taken together, our findings demonstrate a successful and feasible strategy for targeting pan-KRAS to impair multifaceted features of KRAS-driven cancers.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 12,
+        "published": "2024-07-30",
+        "pubmed_ids": [],
+        "matched_queries": [
+          "pancreatic cancer organoid"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE269985",
+        "title": "Mechanisms of resistance to oncogenic KRAS inhibition in pancreatic cancer [dataset 2]",
+        "summary": "KRAS inhibitors demonstrate clinical efficacy in pancreatic ductal adenocarcinoma (PDAC); however, resistance is common. Among patients with KRASG12C-mutant PDAC treated with adagrasib or sotorasib, mutations in PIK3CA and KRAS, and amplifications of KRASG12C, MYC, MET, EGFR, and CDK6 emerged at acquired resistance. In PDAC cell lines and organoid models treated with the KRASG12D inhibitor MRTX1133, epithelial-to-mesenchymal transition and PI3K-AKT-mTOR signaling associate with resistance to therapy. MRTX1133 treatment of the KrasLSL-G12D/+;Trp53LSL-R172H/+;p48-Cre (KPC) mouse model yielded deep tumor regressions, but drug resistance ultimately emerged, accompanied by amplifications of Kras, Yap1, Myc, and Cdk6/Abcb1a/b, and co-evolution of drug-resistant transcriptional programs. Moreover, in KPC and PDX models, mesenchymal and basal-like cell states displayed increased response to KRAS inhibition compared to the classical state. Combination treatment with KRASG12D inhibition and chemotherapy significantly improved tumor control in PDAC mouse models. Collectively, these data elucidate co-evolving resistance mechanisms to KRAS inhibition and support multiple combination therapy strategies.",
+        "taxa": [
+          "Homo sapiens",
+          "Mus musculus"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 30,
+        "published": "2024-06-17",
+        "pubmed_ids": [
+          "38975874"
+        ],
+        "matched_queries": [
+          "pancreatic cancer organoid",
+          "PDAC organoid"
+        ],
+        "mixed_organism": true
+      },
+      {
+        "gse": "GSE262627",
+        "title": "Circadian transcriptome of pancreatic adenocarcinoma unravels chronotherapeutic targets.",
+        "summary": "Pancreatic ductal adenocarcinoma (PDA) is a lethal cancer characterized by a poor outcome and an increasing incidence. A significant majority (>80%) of newly diagnosed cases are deemed unresectable, leaving chemotherapy as the sole viable option, though with only moderate success. This necessitates the identification of improved therapeutic options for PDA. We hypothesized that there are temporal variations in cancer-relevant processes within PDA tumors, offering insights into the optimal timing of drug administration—a concept termed chronotherapy. In this study, we explored the presence of the circadian transcriptome in PDA using patient-derived organoids (PDOs) and validated these findings by comparing PDA data from TCGA with non-cancerous healthy pancreas data from GTeX. Several PDA-associated pathways (cell cycle, stress response, Rho GTPase signaling) and cancer driver hub genes (EGFR, JUN) exhibited a cancer-specific rhythmic pattern intricately linked to the circadian clock. Through the integration of multiple functional measurements for rhythmic cancer driver genes, we identified top chronotherapy targets and validated key findings in molecularly divergent pancreatic cancer cell lines. Testing the chemotherapeutic efficacy of clinically relevant drugs further revealed temporal variations that correlated with drug-target cycling. Collectively, our study unravels the PDA circadian transcriptome and highlights a potential approach for optimizing chrono-chemotherapeutic efficacy.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 68,
+        "published": "2024-03-27",
+        "pubmed_ids": [],
+        "matched_queries": [
+          "pancreatic cancer organoid"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE240597",
+        "title": "Connectivity Mapping-based Identification and Pre-clinical Evaluation of ISOX: A Novel Therapeutic for Pancreatic Cancer",
+        "summary": "Pancreatic Cancer (PC) remains highly lethal due to limited therapeutic options. Here we utilize a genomic-data-driven Connectivity Mapping (CMAP) to identify a drug closer to real-world PC targeting. ISOX emerged as a top potential drug from the CMAP pipeline across human PC tissues, cell lines, tumoroids, and patient-derived xenografts datasets. Here, we use PC cells, human and mouse tumoroids, and in vivo mouse models to test the ability of ISOX alone and in combination with 5FU to inhibit tumor growth. Transcriptomic and pathway analysis of the ISOX-LINCS signature identified the various pathways as targets for ISOX, suggesting a multiple-target action. Specifically, we discovered that genetic and pharmacological targeting of HDAC6 affected non-histone protein cMYC acetylation leading to cMYC instability, thereby disrupting PC stem cells. Finally, KrasG12D harboring organoids and mice responded effectively against ISOX and 5FU treatment by enhancing survival and controlling metastasis incidence. Overall, our data validate ISOX as a novel drug to treat advanced PC patients without toxicity to normal cells",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 24,
+        "published": "2024-03-13",
+        "pubmed_ids": [
+          "38454151"
+        ],
+        "matched_queries": [
+          "pancreatic cancer organoid"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE228804",
+        "title": "Engrailed-1 Promotes Pancreatic Cancer Metastasis [RNA-Seq]",
+        "summary": "Engrailed-1 (EN1) is a critical homeodomain transcription factor (TF) required for neuronal survival, and EN1 expression has been shown to promote aggressive forms of triple negative breast cancer. Here, we report that EN1 is aberrantly expressed in a subset of pancreatic ductal adenocarcinoma (PDA) patients with poor outcomes. EN1 predominantly repressed its target genes through direct binding to gene enhancers and promoters, implicating a role in the cellular response to the stimulation of mesenchymal cell properties. Gain- and loss-of-function experiments demonstrated that EN1 promoted PDA transformation and metastasis in vitro and in vivo. Our findings nominate the targeting of EN1 and downstream pathways in aggressive PDA.",
+        "taxa": [
+          "Homo sapiens",
+          "Mus musculus"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 14,
+        "published": "2023-12-19",
+        "pubmed_ids": [
+          "38110836"
+        ],
+        "matched_queries": [
+          "pancreatic cancer organoid"
+        ],
+        "mixed_organism": true
+      },
+      {
+        "gse": "GSE249726",
+        "title": "Pien Tze Huang Targets Cancer Proliferation and Inhibits Growth of Patient-derived Organoid and Xenograft Tumors in Pancreatic Cancer",
+        "summary": "We used RNA-sequencing (RNA-Seq) to analyze gene expression in PC cells treated with PZH. Next, we confirmed these findings on the protein level using Western blot and immunofluorescence. Finally, we analyzed the proliferative impact of PC cells treated with PZH using MTT and flow cytometric assays and verified it with PC patient-derived organoids (PDOs) and xenograft mice models.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 6,
+        "published": "2023-12-12",
+        "pubmed_ids": [],
+        "matched_queries": [
+          "pancreatic cancer organoid"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE225011",
+        "title": "Triptolide analogs induced apoptosis on pancreatic cancer patient-derived organoids",
+        "summary": "Investigate the MOA of triptolide analog-CK21 in pancreatic cancer. Time course transcriptomic profiling of tumor organoids treated with CK21 in vitro revealed <10 differentially expressed genes (DEGs) at 3 h and ~8,000 DEGs at 12 h. Overall inhibition of general RNA transcription was observed, and Ingenuity pathway analysis together with functional cellular assays confirmed inhibition of the NF-κB pathway, increased oxidative phosphorylation and mitochondrial dysfunction, leading ultimately to increased reactive oxygen species (ROS) production, reduced B-cell-lymphoma protein 2 (BCL2) expression, and mitochondrial-mediated tumor cell apoptosis.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 32,
+        "published": "2023-11-24",
+        "pubmed_ids": [
+          "37877568"
+        ],
+        "matched_queries": [
+          "pancreatic cancer organoid"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE243647",
+        "title": "Incorporation of human iPS cell-derived stroma creates a pancreatic cancer organoid with heterogeneous cancer-associated fibroblasts [AmpliSeq]",
+        "summary": "The aggressiveness of pancreatic ductal adenocarcinoma (PDAC) is affected by a tumor microenvironment (TME). In this study, to recapitulate PDAC TME ex vivo, we cocultured patient-derived PDAC cells with mesenchymal and vascular endothelial cells derived from human induced-pluripotent stem cells (hiPSCs) to create a fused pancreatic cancer organoid (FPCO) in air–liquid interface. FPCOs were further induced to resemble two distinct parts of a PDAC tissue. Owing to various types of cancer associated fibroblasts (CAFs) derived from hiPSCs, the TME consisted of abundant extracellular matrix proteins, which likely conferred strong drug resistance to PDAC cells in one type of FPCOs. Because of re-proliferation capacity of PDAC cells after anticancer drug treatment, the other FPCO is the first culture system for investigating PDAC recurrence. Introducing hiPSC technology, we have created, for the first time, the PDAC organoids representing the heterogeneity of PDAC tissue, a potential platform for screening anticancer drugs.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 31,
+        "published": "2023-11-13",
+        "pubmed_ids": [
+          "37955987"
+        ],
+        "matched_queries": [
+          "pancreatic cancer organoid",
+          "PDAC organoid"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE185335",
+        "title": "DOCK8 is a Novel Regulator of Lysosome-Mediated Pancreatic Cancer Invasion",
+        "summary": "We found that oncogenic KRAS significantly enriches levels of the guanine nucleotide exchange factor (GEF) DOCK8 on lysosomes. DOCK8 is aberrantly expressed in a subset of Pancreatic Ductal Adenocarcinoma where it promotes cell invasion in vitro and in vivo.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 15,
+        "published": "2023-08-03",
+        "pubmed_ids": [
+          "37651233"
+        ],
+        "matched_queries": [
+          "pancreatic cancer organoid"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE229091",
+        "title": "Huaier Enhances the Antitumor Activities of Black Phosphorus and Alleviates Nephrotoxicity by Regulating Mitophagy and Autophagy",
+        "summary": "Black phosphorus (BP) has shown promise as a nanomaterial for cancer therapy, but its nephrotoxicity limits its use. To improve BP anti-tumor effects and reduced toxic side effects, this study presents a novel approach to cancer therapy by combining BP with the traditional Chinese medicine Trametes robiniophila Murr (Huaier) to improve the treatment outcome for pancreatic cancer, a highly fatal malignancy. In 2D/3D cell lines, patient-derived organoids (PDOs) and mouse model, Huaier extraction is demonstrated to the antitumor effects of BP and mitigates BP-induced nephrotoxicity. RNA-sequencing analysis revealed that the combination of BP and Huaier enriched the mitophagy and ferroptosis pathways. While BP activates the mitophagy pathway to recycle damaged mitochondria, Huaier accelerates BP-induced mitochondrial dysfunction, leading to a mitochondrial burst and ultimately activating ferroptosis in PAAD cells. Furthermore, Huaier mitigates BP-induced nephrotoxicity and recovers cell viability by modulating the level of autophagy in proximal tubule epithelial cells. By synergizing BP with Huaier, we have achieved more potent antitumor activities with lower nephrotoxicity. These findings provide a promising strategy for treating PAAD in in vitro and in vivo models.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 6,
+        "published": "2023-08-01",
+        "pubmed_ids": [],
+        "matched_queries": [
+          "pancreatic cancer organoid"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE235548",
+        "title": "Uncovering the hidden threat: single-organoid analysis reveals clinically relevant treatment-resistant and invasive subclones in pancreatic cancer",
+        "summary": "Pancreatic ductal adenocarcinoma (PDAC) is one of the most lethal diseases, characterized by a treatment-resistant and invasive nature. In line with these inherent aggressive characteristics, only a subset of patients shows a clinical response to the standard of care therapies, thereby highlighting the need for a more personalized treatment approach. In this study, we comprehensively unraveled the intra-patient response heterogeneity and intrinsic aggressive nature of PDAC on bulk and single-organoid resolution. We leveraged a fully characterized PDAC organoid panel (N=8) and matched our artificial intelligence-driven, live-cell organoid image analysis with retrospective clinical patient response. In line with the clinical outcomes, we identified patient-specific sensitivities to the standard of care therapies (gemcitabine-paclitaxel and FOLFIRINOX) using a growth rate-based and normalized drug response metric. Moreover, the single-organoid analysis was able to detect resistant as well as invasive PDAC organoid clones, which was orchestrates on a patient, therapy, drug, concentration and time-specific level. Furthermore, our in vitro organoid analysis indicated a strong correlation with the matched patient progression-free survival (PFS) compared to the current, conventional drug response readouts. This work not only provides valuable insights on the response complexity in PDAC, but it also highlights the potential applications (extendable to other tumor types) and clinical translatability of our approach in drug discovery and the emerging era of personalized medicine.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 30,
+        "published": "2023-07-31",
+        "pubmed_ids": [
+          "38066116"
+        ],
+        "matched_queries": [
+          "pancreatic cancer organoid",
+          "PDAC organoid"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE234449",
+        "title": "Dual inhibition of KRASG12D and pan-ERBB is synergistic in pancreatic ductal adenocarcinoma",
+        "summary": "Pancreatic ductal adenocarcinoma (PDAC) is a lethal cancer with a low survival rate. Recently, new drugs that target KRASG12D, a common mutation in PDAC, have been developed. We studied one of these compounds, MRTX1133, and found it was specific and effective at low nanomolar concentrations in patient-derived organoid models and cell lines harboring KRASG12D mutations. Treatment with MRTX1133 upregulated the expression and phosphorylation of EGFR and HER2, indicating that inhibition of ERBB signaling may potentiate MRTX1133 anti-tumor activity. Indeed, the irreversible pan-ERBB inhibitor, afatinib, potently synergized with MRTX1133 in vitro, and cancer cells with acquired resistance to MRTX1133 in vitro remained sensitive to this combination therapy. Finally, the combination of MRTX1133 and afatinib led to tumor regression and longer survival in orthotopic PDAC mouse models. These results suggest that dual inhibition of ERBB and KRAS signaling may be synergistic and circumvent the rapid development of acquired resistance in patients with KRAS mutant pancreatic cancer.",
+        "taxa": [
+          "Homo sapiens",
+          "Mus musculus"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 11,
+        "published": "2023-06-09",
+        "pubmed_ids": [],
+        "matched_queries": [
+          "pancreatic cancer organoid",
+          "PDAC organoid"
+        ],
+        "mixed_organism": true
+      },
+      {
+        "gse": "GSE232170",
+        "title": "The impact of extracellular matrix on the precision medicine utility of pancreatic cancer patient-derived organoids",
+        "summary": "Organoids are cultivated in extracellular matrix from different basement membrane extracts (BMEs) that are most commonly acquired commercially. However, the impact of different sources and lots of BMEs on organoid drug response is unknown. Here, we tested the impact of BME source and lot on proliferation, chemotherapy and targeted therapy drug response, and global gene expression in mouse and human pancreatic ductal adenocarcinoma organoids. Both mouse and human organoids displayed increased proliferation in Matrigel (Corning) compared to Cultrex (RnD) and UltiMatrix (RnD). However, we observed no substantial impact on drug response when organoids were cultured in Matrigel, Cultrex, or UltiMatrix. We also did not observe major shifts in gene expression across the different BME sources.",
+        "taxa": [
+          "Mus musculus",
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 90,
+        "published": "2023-05-10",
+        "pubmed_ids": [
+          "38051586"
+        ],
+        "matched_queries": [
+          "pancreatic cancer organoid"
+        ],
+        "mixed_organism": true
+      },
+      {
+        "gse": "GSE187619",
+        "title": "Organoid sensitivity correlates with therapeutic resonsein patients with pancreatic cancer",
+        "summary": "We report a high degree of correlation between PDAC patient derived orgnanoid (PDO) drug sensitivity and clinical responses. This finding supports the utility of PDOs to tailor therapy for individual patients to improve clinical outcomes.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 9,
+        "published": "2021-11-10",
+        "pubmed_ids": [
+          "34789479"
+        ],
+        "matched_queries": [
+          "pancreatic cancer organoid",
+          "PDAC organoid"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE184125",
+        "title": "9-ING-41, a small molecule inhibitor of GSK-3β, potentiates the effects of chemotherapy in KRAS mutated colorectal cancer",
+        "summary": "Despite the prevalence of KRAS mutations in colorectal cancer, there is no K-Ras targeted therapies for these tumors and available treatment options are limited for metastatic disease. GSK-3β has been demonstrated to be a critically important kinase for survival and proliferation of K-Ras-depended pancreatic cancer cells. In this study we tested 9-ING-41, a small molecule inhibitor of GSK-3β, in patient-derived tumor organoid models of colorectal cancer. We demonstrated that addition of 9-ING-41 to the standard of care drugs 5-FU and oxaliplatin could significantly enhance inhibition of the growth of colorectal cancer cells harboring KRAS mutations. The results of the transcriptomic analysis support our findings of cell cycle arrest and DNA repair deficiency in 9-ING-41-treated colorectal cancer cells. Moreover, we found substantial similarity in the changes of transcriptomic profile after inhibition of GSK-3β and suppression of STK33, another critically important kinase for K-Ras-dependent cells. Overall, the results of this study provide a rationale for the inclusion of patients with mutant KRAS colorectal cancer in clinical studies of 9-ING-41 and other GSK-3 inhibitors.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 6,
+        "published": "2021-10-31",
+        "pubmed_ids": [
+          "34955846"
+        ],
+        "matched_queries": [
+          "pancreatic cancer organoid"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE139184",
+        "title": "Transcriptomic analysis of patient-derived ex vivo models of pancreatic cancer",
+        "summary": "The aim of this study is to compare the transcriptomic profiles of various ex vivo models of pancreatic cancer. First, primary tumours and their corresponding xenografts in nude mice were analysed by RNA-seq. Monocultures of pancreatic cancer cells derived from the xenografts were then prepared as 2D monolayers, Matrigel-embedded organoids, spheres in suspension and 3D cultures in self-assembling peptide amphiphile (PA) hydrogels. Seven-day cultures were then analysed by RNA-seq. The results suggest that all ex vivo monocultures retain patient-specific transcriptional profiles, especially cancer stem cell signatures, while being deficient in the expression of stromal components such as the core matrisome. Correlations with the primary tumours were generally higher in PA hydrogels than organoids. Biased gene expression signatures were identified in certain models. This is the first study to explore the transcriptomic signatures of four different ex vivo models matched to their primary tumours of origin.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 29,
+        "published": "2021-07-03",
+        "pubmed_ids": [
+          "34561461"
+        ],
+        "matched_queries": [
+          "pancreatic cancer organoid",
+          "PDAC organoid"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE146722",
+        "title": "Detection of Chemotherapy-Resistant Pancreatic Cancer Using a Glycan Biomarker",
+        "summary": "A subset of pancreatic ductal adenocarcinomas (PDACs) is highly resistant to systemic chemotherapy, but no markers are available in clinical settings to identify this subset. We found that chemotherapy-resistant PDACs, but not chemotherapy-sensitive PDACs, express a glycan biomarker called sTRA. We confirmed the use of this marker to identify treatment-resistant PDAC in multiple systems: sets of 24 cell lines, 27 organoids, and isogenic cell lines; gene-expression signatures in primary tumors; tissue microarrays containing primary tumors; and blood plasma from cohorts of human subjects. These findings establish the use of tissue or plasma assays to identify the PDACs that are resistant to chemotherapy, which could improve the precision of systemic treatments and facilitate biomarker-guided trials targeting resistant PDAC.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 27,
+        "published": "2021-04-13",
+        "pubmed_ids": [
+          "33093149"
+        ],
+        "matched_queries": [
+          "pancreatic cancer organoid",
+          "PDAC organoid"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE114502",
+        "title": "Altered mRNA splicing by mutant p53 activates oncogenic RAS in pancreatic cancer",
+        "summary": "Integrating transcriptomic analyses of both clinical PDAC and PDAC models, we identified that the most common neomorphic TP53 mutation (p53R175H) rewires RNA splicing promoting transcriptome-wide retention of cassette exons bearing cytosine(C)-rich sequences.",
+        "taxa": [
+          "Mus musculus",
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 36,
+        "published": "2020-03-12",
+        "pubmed_ids": [],
+        "matched_queries": [
+          "pancreatic cancer organoid",
+          "PDAC organoid"
+        ],
+        "mixed_organism": true
+      },
+      {
+        "gse": "GSE99310",
+        "title": "Enhancer reprogramming promotes pancreatic cancer progression and metastasis [RNA-seq]",
+        "summary": "Pancreatic ductal adenocarcinoma (PDA) is one of the most lethal human malignancies, owing in part to its propensity for metastasis. Here, we used an organoid culture system to investigate how transcription and the enhancer landscape become altered during each stage of PDA progression. This approach revealed that the metastatic transition is accompanied by massive, and recurrent alterations in enhancer activity. We implicate the transcription factors FOXA1 and GATA5 as drivers of enhancer activation in this system, a mechanism that we show renders PDA cells more invasive and less anchorage-dependent for growth in vitro, as well as more metastatic in vivo. FOXA1 and GATA5 were found to activate a foregut endoderm transcriptional program in PDA cells, without altering genes associated with the epithelial-to- mesenchymal transition. Collectively, our study implicates FOXA1/GATA5 upregulation, enhancer reprogramming, and a novel retrograde developmental transition in PDA progression and metastasis.",
+        "taxa": [
+          "Homo sapiens",
+          "Mus musculus"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 36,
+        "published": "2017-07-31",
+        "pubmed_ids": [
+          "28757253"
+        ],
+        "matched_queries": [
+          "pancreatic cancer organoid"
+        ],
+        "mixed_organism": true
+      },
+      {
+        "gse": "GSE228801",
+        "title": "Patient-derived organoids of pancreatic ductal adenocarcinoma for subtype determination and clinical outcome prediction",
+        "summary": "Two molecular subtypes of pancreatic ductal adenocarcinoma (PDAC) have been proposed: the “Classical” and “Basal-like” subtypes. However, the “molecular” classification has not been applied in real-world clinical practice. This study aimed to establish patient-derived organoids (PDOs) for PDAC and evaluate their application in subtype classification and clinical outcome prediction. We constructed a PDO library for morphologic and RNA-seq analyses and drug response assays in vitro. PDOs of PDAC were established at a high efficiency (> 70%) with at least 100,000 live cells. Morphologically, PDOs were classified as gland-like structures (GL type) or densely proliferating inside (DP type). RNA-seq analysis revealed that the “morphological” subtype (GL vs. DP) roughly corresponded to the “molecular” subtype (“Classical” vs. “Basal-like”). The proposed “morphological” classification predicted clinical treatment response and prognosis; the median overall survival of patients with GL type were significantly longer than that of those with DP type (P < 0.005). The GL type showed a better response to gemcitabine than the DP type in vitro, whereas the drug response of the DP type was improved by the combination of ERK and autophagy inhibition. PDAC PDOs facilitated subtype determination and clinical outcome prediction, thereby advancing precision medicine for PDAC.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 14,
+        "published": "2024-04-11",
+        "pubmed_ids": [
+          "38684511"
+        ],
+        "matched_queries": [
+          "PDAC organoid"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE212014",
+        "title": "Culture media composition influences patient-derived organoids ability to predict therapeutic response in gastrointestinal cancers ",
+        "summary": "In this study, we have generated patient-derived organoids (PDOs) from primary and metastatic lesions of gastrointestinal cancers, including pancreatic ductal adenocarcinoma, colorectal adenocarcinoma, and cholangiocarcinoma and evaluated their ability to predict donor tumor drug response. Specifically, we examined individual PDO responses to therapeutic agents with the observed clinical responses of donor patients to the same treatments and demonstrated an approximately 80% concordance rate. Importantly, we found a profound influence of culture media in PDOs phenotypes, we observed a significant difference in response to common PDAC chemotherapies, distinct morphologies, and transcriptomes between media in the same PDOs. These studies demonstrate the important role of culture media when using PDOs to inform patient care and predict response across a spectrum of GI cancers. We compared transcriptome data from pancreatic ductal adenocarcinoma patient-derived organoids in two media (WNT and PaTOM).",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 31,
+        "published": "2022-10-12",
+        "pubmed_ids": [
+          "36256477"
+        ],
+        "matched_queries": [
+          "PDAC organoid"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE201427",
+        "title": "SF3B1 promotes glycolysis and tumor malignancy through splicing-independent activation of HIF1α [RNA-Seq]",
+        "summary": "Splicing factor 3b subunit 1 (SF3B1) is one of the most frequently mutated spliceosomal components in cancer. Recent studies additionally imply an involvement of the wildtype protein in tumor progression, but the underlaying mechanism remains elusive.  Here we report that SF3B1 acts as a coactivator for hypoxia-inducible factor (HIF) 1α. SF3B1 directly interacts with HIF1a, augments HIF1a-HIF1b heterodimer binding to hypoxia response elements in vivo and enhances transactivation of HIF target genes. In human patients, primary patient cells and in a mouse model of pancreatic ductal adenocarcinoma (PDAC), efficient HIF1a-signalling relies on SF3B1. Monoallelic deletion of Sf3b1 in this mouse tumor model severely delays tumor initiation and development and diminishes HIF target gene transcription, glucose uptake and proliferation in corresponding tumor organoids in hypoxia, while splicing remains functional. Here, we define a subset of aggressive chromophobe renal cell carcinomas (chRCCs) able to transcriptionally compensate monoallelic SF3B1 loss, a feature that correlates with poor prognosis and lymph node spread and we show that the oncogenic hotspot mutation SF3B1K700E has reduced co-activation efficiency. Also, we report increased sensitivity of cells with low levels of SF3B1 to the HIF-inhibitor PX-478. These findings reveal a splicing-independent, tumor promoting function of SF3B1, important in the pathogenesis of PDAC and other cancers.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 8,
+        "published": "2022-06-22",
+        "pubmed_ids": [
+          "36001976"
+        ],
+        "matched_queries": [
+          "PDAC organoid"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE169321",
+        "title": "Patient-derived organoids after neoadjuvant FOLFIRINOX predict therapy resistance in pancreatic ductal adenocarcinoma",
+        "summary": "Pancreatic ductal adenocarcinoma is an extreme lethal cancer with a poor treatment response to all the current chemotherapies. We generated a library of PDAC organoid lines from resected tumors, five from treatment-naive patients and five from patients who received neoadjuvant FOLFIRINOX (eight cycles). We assessed weather residual cancer cells in the tumor lesions of the patients treated with neoadjuvant FOLFIRINOX developed resistance to the treatment. Further we perfromed transcriptome analysis to investigate: 1- weather organoids recapitualting their corresponding tumor tissue 2- To investigate any modifications in the expression of the genes inflicted by FOLFIRINOX treatment.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 20,
+        "published": "2021-03-23",
+        "pubmed_ids": [
+          "34580113"
+        ],
+        "matched_queries": [
+          "PDAC organoid"
+        ],
+        "mixed_organism": false
+      },
+      {
+        "gse": "GSE140490",
+        "title": "Discovery of a selective inhibitor of Doublecortin Like Kinase 1",
+        "summary": "Doublecortin like kinase 1 (DCLK1) is an understudied kinase that is upregulated in a wide range of cancers, including pancreatic ductal adenocarcinoma (PDAC). However, little is known about its potential as a therapeutic target. We leveraged chemoproteomic profiling and structure-based design to develop the first selective, in vivo-compatible chemical probe of the DCLK1 kinase domain, DCLK1-IN-1. We demonstrate activity of DCLK1-IN-1 against clinically relevant patient-derived PDAC organoid models and use a combination of RNA sequencing, proteomics and phosphoproteomics analysis to reveal that DCLK1 inhibition modulates proteins and pathways associated with cell motility in this context. DCLK1-IN-1 will serve as a versatile tool to investigate DCLK1 biology and establish its role in cancer.",
+        "taxa": [
+          "Homo sapiens"
+        ],
+        "series_types": [
+          "Expression profiling by high throughput sequencing"
+        ],
+        "n_samples": 18,
+        "published": "2020-04-06",
+        "pubmed_ids": [
+          "32251410"
+        ],
+        "matched_queries": [
+          "PDAC organoid"
+        ],
+        "mixed_organism": false
+      }
+    ]
+  }
+}

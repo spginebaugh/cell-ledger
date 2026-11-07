@@ -1,0 +1,227 @@
+{
+  "gse": "GSE273398",
+  "ncbi_generated_raw_counts_available": true,
+  "counts_availability_review": {
+    "decision": "NCBI-generated raw counts available",
+    "authority": "User explicitly approved recording this finding.",
+    "recorded_at": "2026-11-07T05:50:56.166999+00:00",
+    "evidence_checked_at": "2026-11-07T05:50:09.785474+00:00",
+    "evidence_file": "count_listing.json",
+    "download_link": "/geo/download/?type=rnaseq_counts&amp;acc=GSE273398&amp;format=file&amp;file=GSE273398_raw_counts_GRCh38.p13_NCBI.tsv.gz"
+  },
+  "review_status": "Accepted pancreatic-cancer search result; cell-line model and all six control/CLIC1-knockdown sample-group labels approved. Downstream suitability not approved.",
+  "human_requirement_met": true,
+  "human_requirement_review": {
+    "decision": "Human requirement met",
+    "authority": "User explicitly approved recording this finding.",
+    "recorded_at": "2026-11-07T05:51:35.217969+00:00",
+    "evidence_file": "record.response.txt",
+    "evidence_quote": "!Series_sample_organism = Homo sapiens"
+  },
+  "bulk_rnaseq_requirement_met": true,
+  "bulk_rnaseq_requirement_review": {
+    "decision": "Bulk RNA-seq requirement met",
+    "authority": "User explicitly approved the classification based on study design and six sample preparation descriptions.",
+    "recorded_at": "2026-11-07T05:53:25.134545+00:00",
+    "evidence": [
+      {
+        "file": "data/evals/qualifying-candidates/GSE273398/samples/GSM8427623.txt",
+        "quotes": [
+          "!Sample_extract_protocol_ch1 = Total RNA was extracted using RNAiso Plus reagent (Takara Bio, #9109) following the manufacturer’s protocol. Then, RNA quality was determined by a 5300 Bioanalyzer (Agilent) and quantified using an ND-2000 (NanoDrop Technologies). Only high-quality RNA samples (OD260/280=1.8~2.2, OD260/230≥2.0, RIN≥6.5, 28S:18S≥1.0, >1 μg) were used to construct the sequencing library.",
+          "!Sample_extract_protocol_ch1 = RNA libraries were prepared for sequencing using standard Illumina protocols"
+        ]
+      },
+      {
+        "file": "data/evals/qualifying-candidates/GSE273398/samples/GSM8427624.txt",
+        "quotes": [
+          "!Sample_extract_protocol_ch1 = Total RNA was extracted using RNAiso Plus reagent (Takara Bio, #9109) following the manufacturer’s protocol. Then, RNA quality was determined by a 5300 Bioanalyzer (Agilent) and quantified using an ND-2000 (NanoDrop Technologies). Only high-quality RNA samples (OD260/280=1.8~2.2, OD260/230≥2.0, RIN≥6.5, 28S:18S≥1.0, >1 μg) were used to construct the sequencing library.",
+          "!Sample_extract_protocol_ch1 = RNA libraries were prepared for sequencing using standard Illumina protocols"
+        ]
+      },
+      {
+        "file": "data/evals/qualifying-candidates/GSE273398/samples/GSM8427625.txt",
+        "quotes": [
+          "!Sample_extract_protocol_ch1 = Total RNA was extracted using RNAiso Plus reagent (Takara Bio, #9109) following the manufacturer’s protocol. Then, RNA quality was determined by a 5300 Bioanalyzer (Agilent) and quantified using an ND-2000 (NanoDrop Technologies). Only high-quality RNA samples (OD260/280=1.8~2.2, OD260/230≥2.0, RIN≥6.5, 28S:18S≥1.0, >1 μg) were used to construct the sequencing library.",
+          "!Sample_extract_protocol_ch1 = RNA libraries were prepared for sequencing using standard Illumina protocols"
+        ]
+      },
+      {
+        "file": "data/evals/qualifying-candidates/GSE273398/samples/GSM8427626.txt",
+        "quotes": [
+          "!Sample_extract_protocol_ch1 = Total RNA was extracted using RNAiso Plus reagent (Takara Bio, #9109) following the manufacturer’s protocol. Then, RNA quality was determined by a 5300 Bioanalyzer (Agilent) and quantified using an ND-2000 (NanoDrop Technologies). Only high-quality RNA samples (OD260/280=1.8~2.2, OD260/230≥2.0, RIN≥6.5, 28S:18S≥1.0, >1 μg) were used to construct the sequencing library.",
+          "!Sample_extract_protocol_ch1 = RNA libraries were prepared for sequencing using standard Illumina protocols"
+        ]
+      },
+      {
+        "file": "data/evals/qualifying-candidates/GSE273398/samples/GSM8427627.txt",
+        "quotes": [
+          "!Sample_extract_protocol_ch1 = Total RNA was extracted using RNAiso Plus reagent (Takara Bio, #9109) following the manufacturer’s protocol. Then, RNA quality was determined by a 5300 Bioanalyzer (Agilent) and quantified using an ND-2000 (NanoDrop Technologies). Only high-quality RNA samples (OD260/280=1.8~2.2, OD260/230≥2.0, RIN≥6.5, 28S:18S≥1.0, >1 μg) were used to construct the sequencing library.",
+          "!Sample_extract_protocol_ch1 = RNA libraries were prepared for sequencing using standard Illumina protocols"
+        ]
+      },
+      {
+        "file": "data/evals/qualifying-candidates/GSE273398/samples/GSM8427628.txt",
+        "quotes": [
+          "!Sample_extract_protocol_ch1 = Total RNA was extracted using RNAiso Plus reagent (Takara Bio, #9109) following the manufacturer’s protocol. Then, RNA quality was determined by a 5300 Bioanalyzer (Agilent) and quantified using an ND-2000 (NanoDrop Technologies). Only high-quality RNA samples (OD260/280=1.8~2.2, OD260/230≥2.0, RIN≥6.5, 28S:18S≥1.0, >1 μg) were used to construct the sequencing library.",
+          "!Sample_extract_protocol_ch1 = RNA libraries were prepared for sequencing using standard Illumina protocols"
+        ]
+      }
+    ],
+    "interpretation": "Bulk RNA-seq classification supported by total RNA extraction and standard library preparation across six cell-culture samples, together with the comparative study design."
+  },
+  "relevant": true,
+  "relevance_review": {
+    "decision": "Relevant to the current pancreatic cancer question",
+    "authority": "User explicitly approved recording this relevance judgment.",
+    "recorded_at": "2026-11-07T05:54:31.983190+00:00",
+    "question": "pancreatic cancer",
+    "evidence_file": "record.response.txt",
+    "evidence_quotes": [
+      "!Series_title = A CLIC1 network coordinates matrix stiffness and the Warburg effect to promote tumor growth in pancreatic cancer. Zheng et al.",
+      "!Series_overall_design = Comparative gene expression profiling analysis via RNA-seq in CLIC1-knockdown vs. control PATU8988 cells (n = 3 each)."
+    ],
+    "scope": "Broad discovery question includes pancreatic cancer cell-culture experiments; downstream suitability is not established."
+  },
+  "eligible": true,
+  "acceptable_search_result": true,
+  "acceptance_review": {
+    "decision": "Acceptable search result for the pancreatic cancer question",
+    "authority": "User explicitly approved recording acceptance.",
+    "recorded_at": "2026-11-07T06:10:44.205935+00:00",
+    "scope": "Suitable discovery result, not mandatory in every bounded search and not approval for downstream analysis.",
+    "evidence": [
+      "assessment.json approved requirement and relevance findings",
+      "../../mandee-recheck/accession_checks.json",
+      "../../mandee-recheck/pancreatic_search.json"
+    ]
+  },
+  "sample_groups": {
+    "control": {
+      "sample_ids": [
+        "GSM8427623",
+        "GSM8427624",
+        "GSM8427625"
+      ],
+      "review": {
+        "decision": "Assign GSM8427623, GSM8427624, GSM8427625 to the control group",
+        "authority": "User explicitly approved recording these control-group labels.",
+        "recorded_at": "2026-11-07T06:12:03.280925+00:00",
+        "evidence": [
+          {
+            "sample": "GSM8427623",
+            "file": "samples/GSM8427623.txt",
+            "quote": "!Sample_characteristics_ch1 = treatment: control"
+          },
+          {
+            "sample": "GSM8427624",
+            "file": "samples/GSM8427624.txt",
+            "quote": "!Sample_characteristics_ch1 = treatment: control"
+          },
+          {
+            "sample": "GSM8427625",
+            "file": "samples/GSM8427625.txt",
+            "quote": "!Sample_characteristics_ch1 = treatment: control"
+          }
+        ],
+        "scope": "Sample labels only; these are pancreatic cancer cell controls, not healthy tissue. No downstream analysis approval."
+      }
+    },
+    "CLIC1-knockdown": {
+      "sample_ids": [
+        "GSM8427626",
+        "GSM8427627",
+        "GSM8427628"
+      ],
+      "review": {
+        "decision": "Assign GSM8427626, GSM8427627, GSM8427628 to the CLIC1-knockdown group.",
+        "authority": "User explicitly approved these treatment-group labels.",
+        "recorded_at": "2026-11-07T06:56:22.298239+00:00",
+        "evidence": [
+          {
+            "sample": "GSM8427626",
+            "file": "samples/GSM8427626.txt",
+            "quote": "!Sample_characteristics_ch1 = treatment: CLIC1-knockdown"
+          },
+          {
+            "sample": "GSM8427627",
+            "file": "samples/GSM8427627.txt",
+            "quote": "!Sample_characteristics_ch1 = treatment: CLIC1-knockdown"
+          },
+          {
+            "sample": "GSM8427628",
+            "file": "samples/GSM8427628.txt",
+            "quote": "!Sample_characteristics_ch1 = treatment: CLIC1-knockdown"
+          }
+        ],
+        "scope": "Recorded treatment identities only; no downstream contrast or analysis-readiness approval."
+      }
+    }
+  },
+  "experimental_model": "cell_line",
+  "experimental_model_review": {
+    "decision": "Classify study samples as cell line (PATU8988)",
+    "authority": "User explicitly approved cell-line classification.",
+    "recorded_at": "2026-11-07T06:18:42.576706+00:00",
+    "evidence": [
+      {
+        "sample": "GSM8427623",
+        "file": "samples/GSM8427623.txt",
+        "quote": "!Sample_characteristics_ch1 = cell line: PATU8988"
+      },
+      {
+        "sample": "GSM8427624",
+        "file": "samples/GSM8427624.txt",
+        "quote": "!Sample_characteristics_ch1 = cell line: PATU8988"
+      },
+      {
+        "sample": "GSM8427625",
+        "file": "samples/GSM8427625.txt",
+        "quote": "!Sample_characteristics_ch1 = cell line: PATU8988"
+      },
+      {
+        "sample": "GSM8427626",
+        "file": "samples/GSM8427626.txt",
+        "quote": "!Sample_characteristics_ch1 = cell line: PATU8988"
+      },
+      {
+        "sample": "GSM8427627",
+        "file": "samples/GSM8427627.txt",
+        "quote": "!Sample_characteristics_ch1 = cell line: PATU8988"
+      },
+      {
+        "sample": "GSM8427628",
+        "file": "samples/GSM8427628.txt",
+        "quote": "!Sample_characteristics_ch1 = cell line: PATU8988"
+      }
+    ]
+  },
+  "prompt_specific_expectations": {
+    "organoid_only": {
+      "prompt": "Find human pancreatic cancer organoid studies with NCBI-generated raw counts.",
+      "matches": false,
+      "stage": "final_selection",
+      "reason": "Reviewed samples are cell-line experiments, not organoids.",
+      "review": {
+        "decision": "Does not match an organoid-only request; remains accepted for the broad pancreatic cancer question.",
+        "authority": "User explicitly approved this prompt-specific distinction.",
+        "recorded_at": "2026-11-07T06:58:00.672969+00:00",
+        "evidence": "Approved experimental_model=cell_line, backed by all six sample records.",
+        "scope": "App final selection, not a requirement that the initial candidate API never return this study."
+      }
+    }
+  },
+  "terminology_expectations": {
+    "knockdown_vs_knockout": {
+      "equivalent": false,
+      "preserve_source_labels": true,
+      "flag_ambiguous_wording": true,
+      "review": {
+        "decision": "Keep knockdown and knockout distinct; preserve source treatment labels and flag ambiguous wording.",
+        "authority": "User explicitly approved final terminology rule.",
+        "recorded_at": "2026-11-07T07:01:39.127199+00:00",
+        "scope": "Treatment-label equivalence, not verification of biological effectiveness.",
+        "evidence": "GSE273398 samples GSM8427626–GSM8427628 explicitly state CLIC1-knockdown."
+      }
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "gse": "GSE326458",
+  "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE326458&targ=all&view=full&form=text",
+  "retrieved_at": "2026-11-07T04:27:22.774793+00:00",
+  "fields": {
+    "title": [
+      "AP-1 Family Member Transcription Factors Play a Critical Role in Human Beta Cell Replication and Differentiation [Multiome]"
+    ],
+    "summary": [
+      "Insulinomas are a rare and benign type of pancreatic neuroendocrine tumor. They consist of pancreatic beta cells that are able to replicate as opposed to their human islet counterparts. They are also able to secrete insulin. Although we know epigenetics is a critical factor, it is unclear which exact pathways play a role in the control of replication and differentiation. Here we performed multiome assay to delineate open accessible chromatin regions and single cell transcriptomic profiles in various insulinoma cell types."
+    ],
+    "overall_design": [
+      "Single nuclei were isolated from 35mg of flash frozen insulinoma tissue. Joint snATAC and snRNA libraries were prepared using 10X Genomics platform."
+    ],
+    "sample_id": [
+      "GSM9632025",
+      "GSM9632026"
+    ],
+    "supplementary_file": [
+      "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE326nnn/GSE326458/suppl/GSE326458_RAW.tar"
+    ],
+    "sample_organism": [
+      "Homo sapiens"
+    ],
+    "relation": [
+      "SubSeries of: GSE327169",
+      "BioProject: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1445307"
+    ]
+  },
+  "samples": {
+    "GSM9632025": {
+      "title": [
+        "NYU45_RNA"
+      ],
+      "source_name_ch1": [
+        "Insulinoma tissue"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: Insulinoma tissue"
+      ],
+      "molecule_ch1": [
+        "nuclear RNA"
+      ],
+      "extract_protocol_ch1": [
+        "Single nuclei isolated from insulinomas were encapsulated in Gel-Beads in Emulsion (GEMs) using the 10X Genomics Chromium Next GEM Single Cell Multiome ATAC + Gene Expression Reagent Bundle, following manufacturer's instructions.",
+        "After lysis of nuclei inside each GEM, barcodes were added to both ATAC fragments and cDNA (generated from mRNA) and the ATAC and GEX components were amplified and processed into final sequencing-ready libraries according to manufacturer's instructions."
+      ],
+      "description": [
+        "Library name: Sample_1_RNA",
+        "10x Genomics Multiome ATAC + Gene"
+      ],
+      "data_processing": [
+        "Sequenced FASTQ files from one insulinoma single-nucleus multiome sample were aligned, filtered, barcoded, and UMI-counted using Cell Ranger ARC (v2.0.0, 10x Genomics) with the GRCh38 reference genome (GRCh38-2020-A-2.0.0). Sequenced FASTQ files from the published normal islet dataset (GSE200044) (27) were retrieved from GEO and processed using Cell Ranger ARC (v2.0.2) with the same reference genome.",
+        "Assembly: homo sapiens hg38",
+        "Supplementary files format and content: cellRanger output files filtered matrix files: barcodes.tsv.gz, features.tsv.gz,matrix.mtx.gz",
+        "Supplementary files format and content: cellRanger output: atac fragment file"
+      ],
+      "library_strategy": [
+        "RNA-Seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56786204",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32719302"
+      ]
+    },
+    "GSM9632026": {
+      "title": [
+        "NYU45_ATAC"
+      ],
+      "source_name_ch1": [
+        "Insulinoma tissue"
+      ],
+      "organism_ch1": [
+        "Homo sapiens"
+      ],
+      "characteristics_ch1": [
+        "tissue: Insulinoma tissue"
+      ],
+      "molecule_ch1": [
+        "genomic DNA"
+      ],
+      "extract_protocol_ch1": [
+        "Single nuclei isolated from insulinomas were encapsulated in Gel-Beads in Emulsion (GEMs) using the 10X Genomics Chromium Next GEM Single Cell Multiome ATAC + Gene Expression Reagent Bundle, following manufacturer's instructions.",
+        "After lysis of nuclei inside each GEM, barcodes were added to both ATAC fragments and cDNA (generated from mRNA) and the ATAC and GEX components were amplified and processed into final sequencing-ready libraries according to manufacturer's instructions."
+      ],
+      "description": [
+        "Library name: Sample_1_ATAC",
+        "10x Genomics Multiome ATAC + Gene"
+      ],
+      "data_processing": [
+        "Sequenced FASTQ files from one insulinoma single-nucleus multiome sample were aligned, filtered, barcoded, and UMI-counted using Cell Ranger ARC (v2.0.0, 10x Genomics) with the GRCh38 reference genome (GRCh38-2020-A-2.0.0). Sequenced FASTQ files from the published normal islet dataset (GSE200044) (27) were retrieved from GEO and processed using Cell Ranger ARC (v2.0.2) with the same reference genome.",
+        "Assembly: homo sapiens hg38",
+        "Supplementary files format and content: cellRanger output files filtered matrix files: barcodes.tsv.gz, features.tsv.gz,matrix.mtx.gz",
+        "Supplementary files format and content: cellRanger output: atac fragment file"
+      ],
+      "library_strategy": [
+        "ATAC-seq"
+      ],
+      "relation": [
+        "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN56786203",
+        "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX32719303"
+      ]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "status": "development review draft; not frozen/scorable Benchmark schema",
+  "source_api_revision": "4a7d8ae5128bff85fffd11101796c25dc438da31",
+  "review_authority": "User approvals in this conversation, recorded in audit files",
+  "content": "6 exclusions, 2 positive study reviews, 74 sample records across the positive studies, stage-specific expectations and conditional terminology rules",
+  "pending": [
+    "28 cell-line model conflicts in GSE262627",
+    "Reference-genome wording and time alignment for Scott",
+    "Downstream suitability and count-value validation",
+    "Integration into runnable benchmark/scoring, held-out cases and matched model runs",
+    "Separate cell-line-only prompt case remains undefined"
+  ],
+  "gold_handling": "Development answer-key material; do not supply annotations or audit files to evaluated systems. Repository location is not an access-control boundary.",
+  "provenance": "Original data/evals paths in audit/annotations are historical working locations. Portable sources/<GSE>.json and evidence/ contain the relevant excerpts and saved checks; no credentials or count matrices included."
+}
