@@ -1,17 +1,15 @@
-import { useQuery } from "@tanstack/react-query";
-import { Link, useNavigate } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { getHealth, updateSession } from "@/api/generated/sdk.gen";
+import { updateSession } from "@/api/generated/sdk.gen";
 import type { DiscoveryResult } from "@/api/generated/types.gen";
 import { DiscoveryView } from "@/components/home/discovery";
 import { Footer, Page, TopBar } from "@/components/layout/top-bar";
 import { Button } from "@/components/ui/button";
-import { ColHead, ErrorBox, Panel } from "@/components/ui/card";
-import { Input, Label, Textarea } from "@/components/ui/input";
+import { ErrorBox, Panel } from "@/components/ui/card";
+import { Label, Textarea } from "@/components/ui/input";
 import { errorMessage, unwrap } from "@/lib/api";
-import { useAgentAvailable, useCollect, useCreateSession, useSession } from "@/lib/queries";
-import { lastSession, rememberSession } from "@/lib/storage";
+import { useAgentAvailable, useCollect, useCreateSession } from "@/lib/queries";
+import { rememberSession } from "@/lib/storage";
 import { guessGenes } from "@/lib/ui-state";
 import { useSse } from "@/lib/useSse";
 
@@ -24,21 +22,13 @@ const EXAMPLES = [
 export function HomePage() {
   const navigate = useNavigate();
   const agent = useAgentAvailable();
-  const health = useQuery({
-    queryKey: ["health"],
-    queryFn: async () => unwrap(await getHealth()),
-    retry: 1,
-  });
   const [question, setQuestion] = useState("");
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [genes, setGenes] = useState<string[]>([]);
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [answers, setAnswers] = useState<string[]>([]);
-  const [openId, setOpenId] = useState("");
   const [phase, setPhase] = useState<"ask" | "work">("ask");
   const create = useCreateSession();
-  const resumeId = lastSession();
-  const resume = useSession(resumeId ?? "", Boolean(resumeId));
   const sse = useSse<DiscoveryResult>();
   const collect = useCollect(sessionId ?? "");
 
@@ -110,7 +100,6 @@ export function HomePage() {
   };
 
   const busy = create.isPending || sse.status === "streaming";
-  const validId = /^[0-9a-f]{32}$/.test(openId.trim());
 
   return (
     <>
@@ -214,54 +203,6 @@ export function HomePage() {
           </div>
         )}
 
-        <div className="mt-10 grid gap-4 md:grid-cols-2">
-          {resumeId && resume.data && (
-            <Panel>
-              <ColHead label="Pick up where you left off" />
-              <p className="line-clamp-2 text-[14px]">
-                {resume.data.question ?? "An untitled session"}
-              </p>
-              <Link
-                to="/s/$sessionId"
-                params={{ sessionId: resumeId }}
-                className="mt-3 inline-flex items-center gap-1 text-[13px] font-semibold text-accent-ink no-underline hover:underline"
-              >
-                Open session <span className="accession text-ink-3">{resumeId.slice(0, 8)}</span>
-                <ArrowRight size={14} />
-              </Link>
-            </Panel>
-          )}
-          <Panel>
-            <ColHead label="Open a session by id" />
-            <form
-              className="flex gap-2"
-              onSubmit={(e) => {
-                e.preventDefault();
-                if (validId)
-                  void navigate({ to: "/s/$sessionId", params: { sessionId: openId.trim() } });
-              }}
-            >
-              <Input
-                id="open-id"
-                aria-label="Session id"
-                value={openId}
-                onChange={(e) => setOpenId(e.target.value)}
-                placeholder="32 hex characters"
-                className="font-mono"
-              />
-              <Button type="submit" disabled={!validId}>
-                Open
-              </Button>
-            </form>
-          </Panel>
-        </div>
-
-        <p className="mt-8 text-[12px] text-ink-3" data-testid="api-status">
-          {health.isPending && "Checking the API…"}
-          {health.isError && `API unreachable: ${errorMessage(health.error)}`}
-          {health.data &&
-            `API ${health.data.status} · api ${health.data.api_version} · core ${health.data.core_version}`}
-        </p>
         <Footer />
       </Page>
     </>

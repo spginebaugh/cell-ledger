@@ -33,6 +33,7 @@
   --grid: #e3e9e7;
   --shadow: 0 1px 0 rgba(18, 28, 29, 0.04);
   --gutter: clamp(16px, 3vw, 48px);
+  --gutter-page: clamp(64px, 12vw, 192px);
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {

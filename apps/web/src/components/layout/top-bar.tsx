@@ -116,7 +116,7 @@ export function Page({
     <main
       className={cn(
         "w-full pb-20 pt-6",
-        width === "wide" ? "px-[var(--gutter)]" : "mx-auto max-w-[760px] px-4 pt-10",
+        width === "wide" ? "px-[var(--gutter-page)]" : "mx-auto max-w-[760px] px-4 pt-10",
       )}
     >
       {children}
