@@ -1,4 +1,32 @@
-from cell_ledger.geo.client import GeoSeriesHit, search_series
+"""GEO search, download and metadata parsing (NCBI E-utilities + GEO FTP)."""
+
+from cell_ledger.geo.client import ELIGIBILITY, GeoClient, GeoSeriesHit, QueryStats, SearchResult
+from cell_ledger.geo.fetch import (
+    DatasetExclusion,
+    DatasetRecord,
+    FileRecord,
+    SampleExclusion,
+    SampleRecord,
+    ensure_annotation,
+    fetch_series,
+)
 from cell_ledger.geo.soft import GeoSample, GeoSeries, parse_soft, read_soft
 
-__all__ = ["GeoSample", "GeoSeries", "GeoSeriesHit", "parse_soft", "read_soft", "search_series"]
+__all__ = [
+    "ELIGIBILITY",
+    "DatasetExclusion",
+    "DatasetRecord",
+    "FileRecord",
+    "GeoClient",
+    "GeoSample",
+    "GeoSeries",
+    "GeoSeriesHit",
+    "QueryStats",
+    "SampleExclusion",
+    "SampleRecord",
+    "SearchResult",
+    "ensure_annotation",
+    "fetch_series",
+    "parse_soft",
+    "read_soft",
+]

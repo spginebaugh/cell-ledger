@@ -1,0 +1,95 @@
+{
+  "header": {
+    "type": "esummary",
+    "version": "0.3"
+  },
+  "result": {
+    "uids": ["200164073", "200250219"],
+    "200164073": {
+      "uid": "200164073",
+      "accession": "GSE164073",
+      "gds": "",
+      "title": "Response to SARS-CoV-2 infection in cornea, limbus and sclera from human donors",
+      "summary": "Here we report the transcriptional response to SARS-CoV-2 in cornea, limbus and sclera from human cadaver donor tissue. All three tissues are characterized by an NFkB-mediated chemokine response to viral infection as well as type-I interferon stimulated genes.",
+      "gpl": "18573",
+      "gse": "164073",
+      "taxon": "Homo sapiens",
+      "entrytype": "GSE",
+      "gdstype": "Expression profiling by high throughput sequencing",
+      "ptechtype": "",
+      "valtype": "",
+      "ssinfo": "",
+      "subsetinfo": "",
+      "pdat": "2020/12/31",
+      "suppfile": "CSV",
+      "samples": [
+        {
+          "accession": "GSM4996090",
+          "title": "Limbus_mock_1"
+        },
+        {
+          "accession": "GSM4996087",
+          "title": "Cornea_CoV2_1"
+        }
+      ],
+      "relations": [],
+      "extrelations": [
+        {
+          "relationtype": "SRA",
+          "targetobject": "SRP299835",
+          "targetftplink": "ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByStudy/sra/SRP/SRP299/SRP299835/"
+        }
+      ],
+      "n_samples": 18,
+      "seriestitle": "",
+      "platformtitle": "",
+      "platformtaxa": "",
+      "samplestaxa": "",
+      "pubmedids": ["34022129"],
+      "projects": [],
+      "ftplink": "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE164nnn/GSE164073/",
+      "geo2r": "yes",
+      "bioproject": "PRJNA688734"
+    },
+    "200250219": {
+      "uid": "200250219",
+      "accession": "GSE250219",
+      "gds": "",
+      "title": "Direct mapping of G-quadruplex anchored 3D chromatin structure via ViCAR",
+      "summary": "We developed ViCAR (viewpoint HiCAR), a technique that uses antibody-based capture of genome features and their interacting chromatin domains. ViCAR uncovers numerous cell-type-specific G4-dependent enhancer-promoter interactions and is easily extended to other features such as histone marks. ViCAR represents a practical and powerful tool to explore the relationship between epigenetic marks and 3D genome interactomes.",
+      "gpl": "18573;30173;30172",
+      "gse": "250219",
+      "taxon": "Mus musculus; Homo sapiens",
+      "entrytype": "GSE",
+      "gdstype": "Other",
+      "ptechtype": "",
+      "valtype": "",
+      "ssinfo": "",
+      "subsetinfo": "",
+      "pdat": "2024/08/12",
+      "suppfile": "BED, BW, TBI, XLSX",
+      "samples": [
+        {
+          "accession": "GSM8339352",
+          "title": "K562_G4_mutant_clone2_HiCAR_4"
+        },
+        {
+          "accession": "GSM7975812",
+          "title": "K562_RNAseq_WT_rep3"
+        }
+      ],
+      "relations": [],
+      "extrelations": [],
+      "n_samples": 79,
+      "seriestitle": "",
+      "platformtitle": "",
+      "platformtaxa": "",
+      "samplestaxa": "",
+      "pubmedids": ["39227991"],
+      "projects": [],
+      "ftplink": "ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE250nnn/GSE250219/",
+      "geo2r": "no",
+      "bioproject": "PRJNA1052689"
+    }
+  }
+}

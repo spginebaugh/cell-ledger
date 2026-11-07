@@ -2,7 +2,7 @@
 
 import type { Client, ClientMeta, Options as Options2, RequestResult, TDataShape } from './client';
 import { client } from './client.gen';
-import type { GetHealthData, GetHealthResponses } from './types.gen';
+import type { CollectDatasetsData, CollectDatasetsErrors, CollectDatasetsResponses, CreateSessionData, CreateSessionResponses, DeleteSessionData, DeleteSessionErrors, DeleteSessionResponses, GetDatasetFileUrlData, GetDatasetFileUrlErrors, GetDatasetFileUrlResponses, GetHealthData, GetHealthResponses, ListDatasetsData, ListDatasetsErrors, ListDatasetsResponses, SearchGeoData, SearchGeoErrors, SearchGeoResponses } from './types.gen';
 
 export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends boolean = boolean, TResponse = unknown> = Options2<TData, ThrowOnError, TResponse> & {
     /**
@@ -22,3 +22,53 @@ export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends 
  * Get Health
  */
 export const getHealth = <ThrowOnError extends boolean = false>(options?: Options<GetHealthData, ThrowOnError>): RequestResult<GetHealthResponses, unknown, ThrowOnError> => (options?.client ?? client).get<GetHealthResponses, unknown, ThrowOnError>({ url: '/api/health', ...options });
+
+/**
+ * Search Geo
+ *
+ * Search GEO for human bulk RNA-seq series that have NCBI raw counts.
+ */
+export const searchGeo = <ThrowOnError extends boolean = false>(options: Options<SearchGeoData, ThrowOnError>): RequestResult<SearchGeoResponses, SearchGeoErrors, ThrowOnError> => (options.client ?? client).post<SearchGeoResponses, SearchGeoErrors, ThrowOnError>({
+    url: '/api/geo/search',
+    ...options,
+    headers: {
+        'Content-Type': 'application/json',
+        ...options.headers
+    }
+});
+
+/**
+ * Create Session
+ */
+export const createSession = <ThrowOnError extends boolean = false>(options?: Options<CreateSessionData, ThrowOnError>): RequestResult<CreateSessionResponses, unknown, ThrowOnError> => (options?.client ?? client).post<CreateSessionResponses, unknown, ThrowOnError>({ url: '/api/sessions', ...options });
+
+/**
+ * List Datasets
+ */
+export const listDatasets = <ThrowOnError extends boolean = false>(options: Options<ListDatasetsData, ThrowOnError>): RequestResult<ListDatasetsResponses, ListDatasetsErrors, ThrowOnError> => (options.client ?? client).get<ListDatasetsResponses, ListDatasetsErrors, ThrowOnError>({ url: '/api/sessions/{session_id}/datasets', ...options });
+
+/**
+ * Collect Datasets
+ *
+ * Download the given series into the session; each comes back ready or excluded.
+ */
+export const collectDatasets = <ThrowOnError extends boolean = false>(options: Options<CollectDatasetsData, ThrowOnError>): RequestResult<CollectDatasetsResponses, CollectDatasetsErrors, ThrowOnError> => (options.client ?? client).post<CollectDatasetsResponses, CollectDatasetsErrors, ThrowOnError>({
+    url: '/api/sessions/{session_id}/datasets',
+    ...options,
+    headers: {
+        'Content-Type': 'application/json',
+        ...options.headers
+    }
+});
+
+/**
+ * Get File Url
+ *
+ * Short-lived download link for one stored file.
+ */
+export const getDatasetFileUrl = <ThrowOnError extends boolean = false>(options: Options<GetDatasetFileUrlData, ThrowOnError>): RequestResult<GetDatasetFileUrlResponses, GetDatasetFileUrlErrors, ThrowOnError> => (options.client ?? client).get<GetDatasetFileUrlResponses, GetDatasetFileUrlErrors, ThrowOnError>({ url: '/api/sessions/{session_id}/datasets/{gse}/files/{name}', ...options });
+
+/**
+ * Delete Session
+ */
+export const deleteSession = <ThrowOnError extends boolean = false>(options: Options<DeleteSessionData, ThrowOnError>): RequestResult<DeleteSessionResponses, DeleteSessionErrors, ThrowOnError> => (options.client ?? client).delete<DeleteSessionResponses, DeleteSessionErrors, ThrowOnError>({ url: '/api/sessions/{session_id}', ...options });

@@ -5,6 +5,225 @@ export type ClientOptions = {
 };
 
 /**
+ * CollectRequest
+ */
+export type CollectRequest = {
+    /**
+     * Gses
+     */
+    gses: Array<string>;
+};
+
+/**
+ * CollectResponse
+ */
+export type CollectResponse = {
+    /**
+     * Datasets
+     */
+    datasets: Array<CollectedDataset>;
+};
+
+/**
+ * CollectedDataset
+ */
+export type CollectedDataset = {
+    record: DatasetRecord;
+    /**
+     * Local Dir
+     */
+    local_dir: string;
+    /**
+     * Uploaded
+     */
+    uploaded: boolean;
+    /**
+     * Upload Error
+     */
+    upload_error?: string | null;
+};
+
+/**
+ * CountsCheck
+ */
+export type CountsCheck = {
+    /**
+     * N Genes
+     */
+    n_genes: number;
+    /**
+     * N Columns
+     */
+    n_columns: number;
+    /**
+     * All Nonneg Integers
+     */
+    all_nonneg_integers: boolean;
+    /**
+     * Columns Not In Soft
+     */
+    columns_not_in_soft: Array<string>;
+};
+
+/**
+ * DatasetExclusion
+ */
+export type DatasetExclusion = 'no_ncbi_counts' | 'counts_not_integer' | 'no_eligible_samples';
+
+/**
+ * DatasetRecord
+ */
+export type DatasetRecord = {
+    /**
+     * Gse
+     */
+    gse: string;
+    /**
+     * Status
+     *
+     * 'ready' or 'excluded'
+     */
+    status: string;
+    /**
+     * Exclusions
+     */
+    exclusions?: Array<DatasetExclusion>;
+    /**
+     * Title
+     */
+    title?: string;
+    /**
+     * Summary
+     */
+    summary?: string;
+    /**
+     * Overall Design
+     */
+    overall_design?: string;
+    /**
+     * Pubmed Ids
+     */
+    pubmed_ids?: Array<string>;
+    /**
+     * Files
+     *
+     * 'counts', 'soft'
+     */
+    files?: {
+        [key: string]: FileRecord;
+    };
+    counts_check?: CountsCheck | null;
+    /**
+     * Samples
+     */
+    samples?: Array<SampleRecord>;
+    /**
+     * N Eligible
+     */
+    n_eligible?: number;
+};
+
+/**
+ * FileRecord
+ */
+export type FileRecord = {
+    /**
+     * Name
+     */
+    name: string;
+    /**
+     * Url
+     */
+    url: string;
+    /**
+     * Md5
+     */
+    md5: string;
+    /**
+     * Bytes
+     */
+    bytes: number;
+    /**
+     * Downloaded At
+     */
+    downloaded_at: string;
+};
+
+/**
+ * FileUrl
+ */
+export type FileUrl = {
+    /**
+     * Url
+     */
+    url: string;
+    /**
+     * Expires In
+     */
+    expires_in: number;
+};
+
+/**
+ * GeoSeriesHit
+ */
+export type GeoSeriesHit = {
+    /**
+     * Gse
+     */
+    gse: string;
+    /**
+     * Title
+     */
+    title: string;
+    /**
+     * Summary
+     */
+    summary: string;
+    /**
+     * Taxa
+     */
+    taxa: Array<string>;
+    /**
+     * Series Types
+     */
+    series_types: Array<string>;
+    /**
+     * N Samples
+     */
+    n_samples: number;
+    /**
+     * Published
+     */
+    published: string | null;
+    /**
+     * Pubmed Ids
+     */
+    pubmed_ids: Array<string>;
+    /**
+     * Matched Queries
+     *
+     * Which submitted queries found this series
+     */
+    matched_queries: Array<string>;
+    /**
+     * Mixed Organism
+     *
+     * True when the series also has non-human samples; they are excluded at fetch time.
+     */
+    readonly mixed_organism: boolean;
+};
+
+/**
+ * HTTPValidationError
+ */
+export type HttpValidationError = {
+    /**
+     * Detail
+     */
+    detail?: Array<ValidationError>;
+};
+
+/**
  * Health
  */
 export type Health = {
@@ -22,6 +241,211 @@ export type Health = {
     core_version: string;
 };
 
+/**
+ * QueryStats
+ */
+export type QueryStats = {
+    /**
+     * Query
+     */
+    query: string;
+    /**
+     * Term
+     *
+     * Exact term sent to esearch, for provenance
+     */
+    term: string;
+    /**
+     * Total
+     *
+     * Series in GEO matching the term
+     */
+    total: number;
+    /**
+     * Returned
+     */
+    returned: number;
+};
+
+/**
+ * SampleExclusion
+ */
+export type SampleExclusion = 'not_human' | 'not_rna_seq' | 'not_in_counts';
+
+/**
+ * SampleRecord
+ *
+ * One GSM as GEO describes it. Values are verbatim from the SOFT file.
+ */
+export type SampleRecord = {
+    /**
+     * Gsm
+     */
+    gsm: string;
+    /**
+     * Title
+     */
+    title: string;
+    /**
+     * Source Name
+     */
+    source_name: string;
+    /**
+     * Organism
+     */
+    organism: string;
+    /**
+     * Library Strategy
+     */
+    library_strategy: string;
+    /**
+     * Characteristics
+     */
+    characteristics: Array<string>;
+    /**
+     * In Counts
+     */
+    in_counts: boolean;
+    /**
+     * Exclusions
+     */
+    exclusions?: Array<SampleExclusion>;
+};
+
+/**
+ * SearchRequest
+ */
+export type SearchRequest = {
+    /**
+     * Queries
+     */
+    queries: Array<string>;
+    /**
+     * Limit Per Query
+     */
+    limit_per_query?: number;
+    /**
+     * Since
+     *
+     * Published in or after
+     */
+    since?: number | null;
+};
+
+/**
+ * SearchResult
+ */
+export type SearchResult = {
+    /**
+     * Queries
+     */
+    queries: Array<QueryStats>;
+    /**
+     * Hits
+     */
+    hits: Array<GeoSeriesHit>;
+};
+
+/**
+ * SessionInfo
+ */
+export type SessionInfo = {
+    /**
+     * Id
+     */
+    id: string;
+    /**
+     * Created At
+     */
+    created_at: string;
+};
+
+/**
+ * ValidationError
+ */
+export type ValidationError = {
+    /**
+     * Location
+     */
+    loc: Array<string | number>;
+    /**
+     * Message
+     */
+    msg: string;
+    /**
+     * Error Type
+     */
+    type: string;
+    /**
+     * Input
+     */
+    input?: unknown;
+    /**
+     * Context
+     */
+    ctx?: {
+        [key: string]: unknown;
+    };
+};
+
+/**
+ * GeoSeriesHit
+ */
+export type GeoSeriesHitWritable = {
+    /**
+     * Gse
+     */
+    gse: string;
+    /**
+     * Title
+     */
+    title: string;
+    /**
+     * Summary
+     */
+    summary: string;
+    /**
+     * Taxa
+     */
+    taxa: Array<string>;
+    /**
+     * Series Types
+     */
+    series_types: Array<string>;
+    /**
+     * N Samples
+     */
+    n_samples: number;
+    /**
+     * Published
+     */
+    published: string | null;
+    /**
+     * Pubmed Ids
+     */
+    pubmed_ids: Array<string>;
+    /**
+     * Matched Queries
+     *
+     * Which submitted queries found this series
+     */
+    matched_queries: Array<string>;
+};
+
+/**
+ * SearchResult
+ */
+export type SearchResultWritable = {
+    /**
+     * Queries
+     */
+    queries: Array<QueryStats>;
+    /**
+     * Hits
+     */
+    hits: Array<GeoSeriesHitWritable>;
+};
+
 export type GetHealthData = {
     body?: never;
     path?: never;
@@ -37,3 +461,174 @@ export type GetHealthResponses = {
 };
 
 export type GetHealthResponse = GetHealthResponses[keyof GetHealthResponses];
+
+export type SearchGeoData = {
+    body: SearchRequest;
+    path?: never;
+    query?: never;
+    url: '/api/geo/search';
+};
+
+export type SearchGeoErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+};
+
+export type SearchGeoError = SearchGeoErrors[keyof SearchGeoErrors];
+
+export type SearchGeoResponses = {
+    /**
+     * Successful Response
+     */
+    200: SearchResult;
+};
+
+export type SearchGeoResponse = SearchGeoResponses[keyof SearchGeoResponses];
+
+export type CreateSessionData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/api/sessions';
+};
+
+export type CreateSessionResponses = {
+    /**
+     * Successful Response
+     */
+    201: SessionInfo;
+};
+
+export type CreateSessionResponse = CreateSessionResponses[keyof CreateSessionResponses];
+
+export type ListDatasetsData = {
+    body?: never;
+    path: {
+        /**
+         * Session Id
+         */
+        session_id: string;
+    };
+    query?: never;
+    url: '/api/sessions/{session_id}/datasets';
+};
+
+export type ListDatasetsErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+};
+
+export type ListDatasetsError = ListDatasetsErrors[keyof ListDatasetsErrors];
+
+export type ListDatasetsResponses = {
+    /**
+     * Response Listdatasets
+     *
+     * Successful Response
+     */
+    200: Array<DatasetRecord>;
+};
+
+export type ListDatasetsResponse = ListDatasetsResponses[keyof ListDatasetsResponses];
+
+export type CollectDatasetsData = {
+    body: CollectRequest;
+    path: {
+        /**
+         * Session Id
+         */
+        session_id: string;
+    };
+    query?: never;
+    url: '/api/sessions/{session_id}/datasets';
+};
+
+export type CollectDatasetsErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+};
+
+export type CollectDatasetsError = CollectDatasetsErrors[keyof CollectDatasetsErrors];
+
+export type CollectDatasetsResponses = {
+    /**
+     * Successful Response
+     */
+    200: CollectResponse;
+};
+
+export type CollectDatasetsResponse = CollectDatasetsResponses[keyof CollectDatasetsResponses];
+
+export type GetDatasetFileUrlData = {
+    body?: never;
+    path: {
+        /**
+         * Session Id
+         */
+        session_id: string;
+        /**
+         * Gse
+         */
+        gse: string;
+        /**
+         * Name
+         */
+        name: string;
+    };
+    query?: never;
+    url: '/api/sessions/{session_id}/datasets/{gse}/files/{name}';
+};
+
+export type GetDatasetFileUrlErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+};
+
+export type GetDatasetFileUrlError = GetDatasetFileUrlErrors[keyof GetDatasetFileUrlErrors];
+
+export type GetDatasetFileUrlResponses = {
+    /**
+     * Successful Response
+     */
+    200: FileUrl;
+};
+
+export type GetDatasetFileUrlResponse = GetDatasetFileUrlResponses[keyof GetDatasetFileUrlResponses];
+
+export type DeleteSessionData = {
+    body?: never;
+    path: {
+        /**
+         * Session Id
+         */
+        session_id: string;
+    };
+    query?: never;
+    url: '/api/sessions/{session_id}';
+};
+
+export type DeleteSessionErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+};
+
+export type DeleteSessionError = DeleteSessionErrors[keyof DeleteSessionErrors];
+
+export type DeleteSessionResponses = {
+    /**
+     * Successful Response
+     */
+    204: void;
+};
+
+export type DeleteSessionResponse = DeleteSessionResponses[keyof DeleteSessionResponses];
