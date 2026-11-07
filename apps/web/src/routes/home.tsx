@@ -105,20 +105,32 @@ export function HomePage() {
   return (
     <>
       <HelixBackdrop />
-      <TopBar sessionId={sessionId ?? undefined} glass />
+      <TopBar
+        sessionId={sessionId ?? undefined}
+        glass
+        tagline="A specialist for public RNA-seq data"
+      />
       <Page>
         <div className="pt-4">
-          <p className="text-[13px] text-ink-2">A specialist for public RNA-seq data</p>
-          <h1 className="mt-2 max-w-[26ch]">Ask a question a dataset can answer.</h1>
-          <p className="mt-4 max-w-[64ch] text-ink-2">
-            cell ledger searches NCBI GEO for bulk RNA-seq studies that can bear the question,
-            labels each sample from the published record with its evidence in hand, and runs a
-            single reproducible comparison. Every figure it reports leads back to a file.
+          <h1 className="mx-auto mt-2 max-w-[26ch] text-center">
+            Ask a question a dataset can answer.
+          </h1>
+          <p className="mt-5 text-center text-[12px] font-bold uppercase leading-relaxed tracking-[0.1em] text-ink-2">
+            Ask about a gene.
+            <br />
+            We find real public RNA-seq studies, check that they fit, and run one clean comparison.
+            <br />
+            Every number comes from a file you can open.
           </p>
         </div>
 
         <Panel className="glass glass-clear mt-8 p-5">
-          <Label htmlFor="question">Your question</Label>
+          <Label
+            htmlFor="question"
+            className="text-[13px] font-bold uppercase leading-tight tracking-[0.1em]"
+          >
+            Your question
+          </Label>
           <Textarea
             id="question"
             rows={3}
@@ -128,7 +140,7 @@ export function HomePage() {
               if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) void submit();
             }}
             placeholder="Is gene X higher in cell type Y in disease Z?"
-            className="mt-1.5 text-[16px]"
+            className="mt-2 text-[16px]"
             disabled={phase === "work" && busy}
           />
           <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
