@@ -1,0 +1,682 @@
+{
+ "samplesheet": {
+  "gse": "GSE52778",
+  "assay": "bulk",
+  "title": "Human Airway Smooth Muscle Transcriptome Changes in Response to Asthma Medications",
+  "samples": [
+   {
+    "gsm": "GSM1275862",
+    "title": "N61311_untreated",
+    "source_name": "airway smooth muscle cells",
+    "group": "control",
+    "condition": "Untreated",
+    "treatment": "Untreated",
+    "dose": null,
+    "time_point": null,
+    "tissue": "human airway smooth muscle cells",
+    "cell_type": "airway smooth muscle cells",
+    "cell_line": "N61311",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "N61311",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "treatment: Untreated"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "treatment": "Untreated",
+     "tissue": "human airway smooth muscle cells",
+     "ercc_mix": "-",
+     "cell line": "N61311",
+     "cell type": "airway smooth muscle cells"
+    },
+    "raw_lines": [
+     "treatment: Untreated",
+     "tissue: human airway smooth muscle cells",
+     "ercc_mix: -",
+     "cell line: N61311",
+     "cell type: airway smooth muscle cells"
+    ]
+   },
+   {
+    "gsm": "GSM1275863",
+    "title": "N61311_Dex",
+    "source_name": "airway smooth muscle cells",
+    "group": "case",
+    "condition": "Dexamethasone",
+    "treatment": "Dexamethasone",
+    "dose": null,
+    "time_point": null,
+    "tissue": "human airway smooth muscle cells",
+    "cell_type": "airway smooth muscle cells",
+    "cell_line": "N61311",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "N61311",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "treatment: Dexamethasone"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "treatment": "Dexamethasone",
+     "tissue": "human airway smooth muscle cells",
+     "ercc_mix": "-",
+     "cell line": "N61311",
+     "cell type": "airway smooth muscle cells"
+    },
+    "raw_lines": [
+     "treatment: Dexamethasone",
+     "tissue: human airway smooth muscle cells",
+     "ercc_mix: -",
+     "cell line: N61311",
+     "cell type: airway smooth muscle cells"
+    ]
+   },
+   {
+    "gsm": "GSM1275864",
+    "title": "N61311_Alb",
+    "source_name": "airway smooth muscle cells",
+    "group": "other",
+    "condition": "Albuterol",
+    "treatment": "Albuterol",
+    "dose": null,
+    "time_point": null,
+    "tissue": "human airway smooth muscle cells",
+    "cell_type": "airway smooth muscle cells",
+    "cell_line": "N61311",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "N61311",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "treatment: Albuterol"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "treatment": "Albuterol",
+     "tissue": "human airway smooth muscle cells",
+     "ercc_mix": "-",
+     "cell line": "N61311",
+     "cell type": "airway smooth muscle cells"
+    },
+    "raw_lines": [
+     "treatment: Albuterol",
+     "tissue: human airway smooth muscle cells",
+     "ercc_mix: -",
+     "cell line: N61311",
+     "cell type: airway smooth muscle cells"
+    ]
+   },
+   {
+    "gsm": "GSM1275865",
+    "title": "N61311_Alb_Dex",
+    "source_name": "airway smooth muscle cells",
+    "group": "other",
+    "condition": "Albuterol_Dexamethasone",
+    "treatment": "Albuterol_Dexamethasone",
+    "dose": null,
+    "time_point": null,
+    "tissue": "human airway smooth muscle cells",
+    "cell_type": "airway smooth muscle cells",
+    "cell_line": "N61311",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "N61311",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "treatment: Albuterol_Dexamethasone"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "treatment": "Albuterol_Dexamethasone",
+     "tissue": "human airway smooth muscle cells",
+     "ercc_mix": "-",
+     "cell line": "N61311",
+     "cell type": "airway smooth muscle cells"
+    },
+    "raw_lines": [
+     "treatment: Albuterol_Dexamethasone",
+     "tissue: human airway smooth muscle cells",
+     "ercc_mix: -",
+     "cell line: N61311",
+     "cell type: airway smooth muscle cells"
+    ]
+   },
+   {
+    "gsm": "GSM1275866",
+    "title": "N052611_untreated",
+    "source_name": "airway smooth muscle cells",
+    "group": "control",
+    "condition": "Untreated",
+    "treatment": "Untreated",
+    "dose": null,
+    "time_point": null,
+    "tissue": "human airway smooth muscle cells",
+    "cell_type": "airway smooth muscle cells",
+    "cell_line": "N052611",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "N052611",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "treatment: Untreated"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "treatment": "Untreated",
+     "tissue": "human airway smooth muscle cells",
+     "ercc_mix": "-",
+     "cell line": "N052611",
+     "cell type": "airway smooth muscle cells"
+    },
+    "raw_lines": [
+     "treatment: Untreated",
+     "tissue: human airway smooth muscle cells",
+     "ercc_mix: -",
+     "cell line: N052611",
+     "cell type: airway smooth muscle cells"
+    ]
+   },
+   {
+    "gsm": "GSM1275867",
+    "title": "N052611_Dex",
+    "source_name": "airway smooth muscle cells",
+    "group": "case",
+    "condition": "Dexamethasone",
+    "treatment": "Dexamethasone",
+    "dose": null,
+    "time_point": null,
+    "tissue": "human airway smooth muscle cells",
+    "cell_type": "airway smooth muscle cells",
+    "cell_line": "N052611",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "N052611",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "treatment: Dexamethasone"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "treatment": "Dexamethasone",
+     "tissue": "human airway smooth muscle cells",
+     "ercc_mix": "1",
+     "cell line": "N052611",
+     "cell type": "airway smooth muscle cells"
+    },
+    "raw_lines": [
+     "treatment: Dexamethasone",
+     "tissue: human airway smooth muscle cells",
+     "ercc_mix: 1",
+     "cell line: N052611",
+     "cell type: airway smooth muscle cells"
+    ]
+   },
+   {
+    "gsm": "GSM1275868",
+    "title": "N052611_Alb",
+    "source_name": "airway smooth muscle cells",
+    "group": "other",
+    "condition": "Albuterol",
+    "treatment": "Albuterol",
+    "dose": null,
+    "time_point": null,
+    "tissue": "human airway smooth muscle cells",
+    "cell_type": "airway smooth muscle cells",
+    "cell_line": "N052611",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "N052611",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "treatment: Albuterol"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "treatment": "Albuterol",
+     "tissue": "human airway smooth muscle cells",
+     "ercc_mix": "1",
+     "cell line": "N052611",
+     "cell type": "airway smooth muscle cells"
+    },
+    "raw_lines": [
+     "treatment: Albuterol",
+     "tissue: human airway smooth muscle cells",
+     "ercc_mix: 1",
+     "cell line: N052611",
+     "cell type: airway smooth muscle cells"
+    ]
+   },
+   {
+    "gsm": "GSM1275869",
+    "title": "N052611_Alb_Dex",
+    "source_name": "airway smooth muscle cells",
+    "group": "other",
+    "condition": "Albuterol_Dexamethasone",
+    "treatment": "Albuterol_Dexamethasone",
+    "dose": null,
+    "time_point": null,
+    "tissue": "human airway smooth muscle cells",
+    "cell_type": "airway smooth muscle cells",
+    "cell_line": "N052611",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "N052611",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "treatment: Albuterol_Dexamethasone"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "treatment": "Albuterol_Dexamethasone",
+     "tissue": "human airway smooth muscle cells",
+     "ercc_mix": "1",
+     "cell line": "N052611",
+     "cell type": "airway smooth muscle cells"
+    },
+    "raw_lines": [
+     "treatment: Albuterol_Dexamethasone",
+     "tissue: human airway smooth muscle cells",
+     "ercc_mix: 1",
+     "cell line: N052611",
+     "cell type: airway smooth muscle cells"
+    ]
+   },
+   {
+    "gsm": "GSM1275870",
+    "title": "N080611_untreated",
+    "source_name": "airway smooth muscle cells",
+    "group": "control",
+    "condition": "Untreated",
+    "treatment": "Untreated",
+    "dose": null,
+    "time_point": null,
+    "tissue": "human airway smooth muscle cells",
+    "cell_type": "airway smooth muscle cells",
+    "cell_line": "N080611",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "N080611",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "treatment: Untreated"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "treatment": "Untreated",
+     "tissue": "human airway smooth muscle cells",
+     "ercc_mix": "-",
+     "cell line": "N080611",
+     "cell type": "airway smooth muscle cells"
+    },
+    "raw_lines": [
+     "treatment: Untreated",
+     "tissue: human airway smooth muscle cells",
+     "ercc_mix: -",
+     "cell line: N080611",
+     "cell type: airway smooth muscle cells"
+    ]
+   },
+   {
+    "gsm": "GSM1275871",
+    "title": "N080611_Dex",
+    "source_name": "airway smooth muscle cells",
+    "group": "case",
+    "condition": "Dexamethasone",
+    "treatment": "Dexamethasone",
+    "dose": null,
+    "time_point": null,
+    "tissue": "human airway smooth muscle cells",
+    "cell_type": "airway smooth muscle cells",
+    "cell_line": "N080611",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "N080611",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "treatment: Dexamethasone"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "treatment": "Dexamethasone",
+     "tissue": "human airway smooth muscle cells",
+     "ercc_mix": "-",
+     "cell line": "N080611",
+     "cell type": "airway smooth muscle cells"
+    },
+    "raw_lines": [
+     "treatment: Dexamethasone",
+     "tissue: human airway smooth muscle cells",
+     "ercc_mix: -",
+     "cell line: N080611",
+     "cell type: airway smooth muscle cells"
+    ]
+   },
+   {
+    "gsm": "GSM1275872",
+    "title": "N080611_Alb",
+    "source_name": "airway smooth muscle cells",
+    "group": "other",
+    "condition": "Albuterol",
+    "treatment": "Albuterol",
+    "dose": null,
+    "time_point": null,
+    "tissue": "human airway smooth muscle cells",
+    "cell_type": "airway smooth muscle cells",
+    "cell_line": "N080611",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "N080611",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "treatment: Albuterol"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "treatment": "Albuterol",
+     "tissue": "human airway smooth muscle cells",
+     "ercc_mix": "-",
+     "cell line": "N080611",
+     "cell type": "airway smooth muscle cells"
+    },
+    "raw_lines": [
+     "treatment: Albuterol",
+     "tissue: human airway smooth muscle cells",
+     "ercc_mix: -",
+     "cell line: N080611",
+     "cell type: airway smooth muscle cells"
+    ]
+   },
+   {
+    "gsm": "GSM1275873",
+    "title": "N080611_Alb_Dex",
+    "source_name": "airway smooth muscle cells",
+    "group": "other",
+    "condition": "Albuterol_Dexamethasone",
+    "treatment": "Albuterol_Dexamethasone",
+    "dose": null,
+    "time_point": null,
+    "tissue": "human airway smooth muscle cells",
+    "cell_type": "airway smooth muscle cells",
+    "cell_line": "N080611",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "N080611",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "treatment: Albuterol_Dexamethasone"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "treatment": "Albuterol_Dexamethasone",
+     "tissue": "human airway smooth muscle cells",
+     "ercc_mix": "-",
+     "cell line": "N080611",
+     "cell type": "airway smooth muscle cells"
+    },
+    "raw_lines": [
+     "treatment: Albuterol_Dexamethasone",
+     "tissue: human airway smooth muscle cells",
+     "ercc_mix: -",
+     "cell line: N080611",
+     "cell type: airway smooth muscle cells"
+    ]
+   },
+   {
+    "gsm": "GSM1275874",
+    "title": "N061011_untreated",
+    "source_name": "airway smooth muscle cells",
+    "group": "control",
+    "condition": "Untreated",
+    "treatment": "Untreated",
+    "dose": null,
+    "time_point": null,
+    "tissue": "human airway smooth muscle cells",
+    "cell_type": "airway smooth muscle cells",
+    "cell_line": "N061011",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "N061011",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "treatment: Untreated"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "treatment": "Untreated",
+     "tissue": "human airway smooth muscle cells",
+     "ercc_mix": "1",
+     "cell line": "N061011",
+     "cell type": "airway smooth muscle cells"
+    },
+    "raw_lines": [
+     "treatment: Untreated",
+     "tissue: human airway smooth muscle cells",
+     "ercc_mix: 1",
+     "cell line: N061011",
+     "cell type: airway smooth muscle cells"
+    ]
+   },
+   {
+    "gsm": "GSM1275875",
+    "title": "N061011_Dex",
+    "source_name": "airway smooth muscle cells",
+    "group": "case",
+    "condition": "Dexamethasone",
+    "treatment": "Dexamethasone",
+    "dose": null,
+    "time_point": null,
+    "tissue": "human airway smooth muscle cells",
+    "cell_type": "airway smooth muscle cells",
+    "cell_line": "N061011",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "N061011",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "treatment: Dexamethasone"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "treatment": "Dexamethasone",
+     "tissue": "human airway smooth muscle cells",
+     "ercc_mix": "1",
+     "cell line": "N061011",
+     "cell type": "airway smooth muscle cells"
+    },
+    "raw_lines": [
+     "treatment: Dexamethasone",
+     "tissue: human airway smooth muscle cells",
+     "ercc_mix: 1",
+     "cell line: N061011",
+     "cell type: airway smooth muscle cells"
+    ]
+   },
+   {
+    "gsm": "GSM1275876",
+    "title": "N061011_Alb",
+    "source_name": "airway smooth muscle cells",
+    "group": "other",
+    "condition": "Albuterol",
+    "treatment": "Albuterol",
+    "dose": null,
+    "time_point": null,
+    "tissue": "human airway smooth muscle cells",
+    "cell_type": "airway smooth muscle cells",
+    "cell_line": "N061011",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "N061011",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "treatment: Albuterol"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "treatment": "Albuterol",
+     "tissue": "human airway smooth muscle cells",
+     "ercc_mix": "1",
+     "cell line": "N061011",
+     "cell type": "airway smooth muscle cells"
+    },
+    "raw_lines": [
+     "treatment: Albuterol",
+     "tissue: human airway smooth muscle cells",
+     "ercc_mix: 1",
+     "cell line: N061011",
+     "cell type: airway smooth muscle cells"
+    ]
+   },
+   {
+    "gsm": "GSM1275877",
+    "title": "N061011_Alb_Dex",
+    "source_name": "airway smooth muscle cells",
+    "group": "other",
+    "condition": "Albuterol_Dexamethasone",
+    "treatment": "Albuterol_Dexamethasone",
+    "dose": null,
+    "time_point": null,
+    "tissue": "human airway smooth muscle cells",
+    "cell_type": "airway smooth muscle cells",
+    "cell_line": "N061011",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "N061011",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "treatment: Albuterol_Dexamethasone"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "treatment": "Albuterol_Dexamethasone",
+     "tissue": "human airway smooth muscle cells",
+     "ercc_mix": "1",
+     "cell line": "N061011",
+     "cell type": "airway smooth muscle cells"
+    },
+    "raw_lines": [
+     "treatment: Albuterol_Dexamethasone",
+     "tissue: human airway smooth muscle cells",
+     "ercc_mix: 1",
+     "cell line: N061011",
+     "cell type: airway smooth muscle cells"
+    ]
+   }
+  ]
+ },
+ "contrasts": [
+  {
+   "gse": "GSE52778",
+   "name": "dex_vs_untreated",
+   "case_label": "dexamethasone 1 uM 18 h",
+   "control_label": "untreated",
+   "case_gsms": [
+    "GSM1275863",
+    "GSM1275867",
+    "GSM1275871",
+    "GSM1275875"
+   ],
+   "control_gsms": [
+    "GSM1275862",
+    "GSM1275866",
+    "GSM1275870",
+    "GSM1275874"
+   ],
+   "blocking": "donor",
+   "restricted_to": {},
+   "confidence": 1.0,
+   "status": "confirmed",
+   "rationale": "Himes 2014 (PMID 24926665); paired by donor cell line."
+  },
+  {
+   "gse": "GSE52778",
+   "name": "dex_vs_untreated_unpaired",
+   "case_label": "dexamethasone 1 uM 18 h",
+   "control_label": "untreated",
+   "case_gsms": [
+    "GSM1275863",
+    "GSM1275867",
+    "GSM1275871",
+    "GSM1275875"
+   ],
+   "control_gsms": [
+    "GSM1275862",
+    "GSM1275866",
+    "GSM1275870",
+    "GSM1275874"
+   ],
+   "blocking": null,
+   "restricted_to": {},
+   "confidence": 1.0,
+   "status": "confirmed",
+   "rationale": "Same samples fitted ~arm only, like the pooled Cuffdiff run on GEO."
+  }
+ ],
+ "markers": []
+}

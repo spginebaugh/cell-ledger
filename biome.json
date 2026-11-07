@@ -21,6 +21,7 @@
       "!.claude",
       "!data",
       "!packages/core/tests/fixtures",
+      "!scripts/validation/designs",
       "!evals",
       "!**/*.md"
     ]
@@ -62,6 +63,16 @@
             "noStaticElementInteractions": "off",
             "noInteractiveElementToNoninteractiveRole": "off",
             "useSemanticElements": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["apps/web/src/lib/validation-results.ts"],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noApproximativeNumericConstant": "off"
           }
         }
       }

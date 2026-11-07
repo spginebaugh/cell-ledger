@@ -1,0 +1,2994 @@
+{
+ "samplesheet": {
+  "gse": "GSE147507",
+  "assay": "bulk",
+  "title": "Transcriptional response to SARS-CoV-2 infection",
+  "samples": [
+   {
+    "gsm": "GSM4432378",
+    "title": "Series1_NHBE_Mock_1",
+    "source_name": "Mock treated NHBE cells",
+    "group": "control",
+    "condition": "Mock",
+    "treatment": "Mock treatment",
+    "dose": null,
+    "time_point": "24hrs after treatment",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "NHBE",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series1_NHBE",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series1_NHBE_Mock_1"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "NHBE",
+     "cell type": "primary human bronchial epithelial cells",
+     "treatment": "Mock treatment",
+     "time point": "24hrs after treatment"
+    },
+    "raw_lines": [
+     "cell line: NHBE",
+     "cell type: primary human bronchial epithelial cells",
+     "treatment: Mock treatment",
+     "time point: 24hrs after treatment"
+    ]
+   },
+   {
+    "gsm": "GSM4432379",
+    "title": "Series1_NHBE_Mock_2",
+    "source_name": "Mock treated NHBE cells",
+    "group": "control",
+    "condition": "Mock",
+    "treatment": "Mock treatment",
+    "dose": null,
+    "time_point": "24hrs after treatment",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "NHBE",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series1_NHBE",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series1_NHBE_Mock_2"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "NHBE",
+     "cell type": "primary human bronchial epithelial cells",
+     "treatment": "Mock treatment",
+     "time point": "24hrs after treatment"
+    },
+    "raw_lines": [
+     "cell line: NHBE",
+     "cell type: primary human bronchial epithelial cells",
+     "treatment: Mock treatment",
+     "time point: 24hrs after treatment"
+    ]
+   },
+   {
+    "gsm": "GSM4432380",
+    "title": "Series1_NHBE_Mock_3",
+    "source_name": "Mock treated NHBE cells",
+    "group": "control",
+    "condition": "Mock",
+    "treatment": "Mock treatment",
+    "dose": null,
+    "time_point": "24hrs after treatment",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "NHBE",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series1_NHBE",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series1_NHBE_Mock_3"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "NHBE",
+     "cell type": "primary human bronchial epithelial cells",
+     "treatment": "Mock treatment",
+     "time point": "24hrs after treatment"
+    },
+    "raw_lines": [
+     "cell line: NHBE",
+     "cell type: primary human bronchial epithelial cells",
+     "treatment: Mock treatment",
+     "time point: 24hrs after treatment"
+    ]
+   },
+   {
+    "gsm": "GSM4432381",
+    "title": "Series1_NHBE_SARS-CoV-2_1",
+    "source_name": "SARS-CoV-2 infected NHBE cells",
+    "group": "case",
+    "condition": "SARS-CoV-2",
+    "treatment": "SARS-CoV-2 infected (MOI 2)",
+    "dose": null,
+    "time_point": "24hrs after treatment",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "NHBE",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series1_NHBE",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series1_NHBE_SARS-CoV-2_1"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "NHBE",
+     "cell type": "primary human bronchial epithelial cells",
+     "treatment": "SARS-CoV-2 infected (MOI 2)",
+     "strain": "USA-WA1/2020",
+     "time point": "24hrs after treatment"
+    },
+    "raw_lines": [
+     "cell line: NHBE",
+     "cell type: primary human bronchial epithelial cells",
+     "treatment: SARS-CoV-2 infected (MOI 2)",
+     "strain: USA-WA1/2020",
+     "time point: 24hrs after treatment"
+    ]
+   },
+   {
+    "gsm": "GSM4432382",
+    "title": "Series1_NHBE_SARS-CoV-2_2",
+    "source_name": "SARS-CoV-2 infected NHBE cells",
+    "group": "case",
+    "condition": "SARS-CoV-2",
+    "treatment": "SARS-CoV-2 infected (MOI 2)",
+    "dose": null,
+    "time_point": "24hrs after treatment",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "NHBE",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series1_NHBE",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series1_NHBE_SARS-CoV-2_2"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "NHBE",
+     "cell type": "primary human bronchial epithelial cells",
+     "treatment": "SARS-CoV-2 infected (MOI 2)",
+     "strain": "USA-WA1/2020",
+     "time point": "24hrs after treatment"
+    },
+    "raw_lines": [
+     "cell line: NHBE",
+     "cell type: primary human bronchial epithelial cells",
+     "treatment: SARS-CoV-2 infected (MOI 2)",
+     "strain: USA-WA1/2020",
+     "time point: 24hrs after treatment"
+    ]
+   },
+   {
+    "gsm": "GSM4432383",
+    "title": "Series1_NHBE_SARS-CoV-2_3",
+    "source_name": "SARS-CoV-2 infected NHBE cells",
+    "group": "case",
+    "condition": "SARS-CoV-2",
+    "treatment": "SARS-CoV-2 infected (MOI 2)",
+    "dose": null,
+    "time_point": "24hrs after treatment",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "NHBE",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series1_NHBE",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series1_NHBE_SARS-CoV-2_3"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "NHBE",
+     "cell type": "primary human bronchial epithelial cells",
+     "treatment": "SARS-CoV-2 infected (MOI 2)",
+     "strain": "USA-WA1/2020",
+     "time point": "24hrs after treatment"
+    },
+    "raw_lines": [
+     "cell line: NHBE",
+     "cell type: primary human bronchial epithelial cells",
+     "treatment: SARS-CoV-2 infected (MOI 2)",
+     "strain: USA-WA1/2020",
+     "time point: 24hrs after treatment"
+    ]
+   },
+   {
+    "gsm": "GSM4432384",
+    "title": "Series2_A549_Mock_1",
+    "source_name": "Mock treated A549 cells",
+    "group": "control",
+    "condition": "Mock",
+    "treatment": "Mock treatment",
+    "dose": null,
+    "time_point": "24hrs after treatment",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series2_A549",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series2_A549_Mock_1"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "cell type": "Lung adenocarcinoma",
+     "treatment": "Mock treatment",
+     "time point": "24hrs after treatment"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "cell type: Lung adenocarcinoma",
+     "treatment: Mock treatment",
+     "time point: 24hrs after treatment"
+    ]
+   },
+   {
+    "gsm": "GSM4432385",
+    "title": "Series2_A549_Mock_2",
+    "source_name": "Mock treated A549 cells",
+    "group": "control",
+    "condition": "Mock",
+    "treatment": "Mock treatment",
+    "dose": null,
+    "time_point": "24hrs after treatment",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series2_A549",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series2_A549_Mock_2"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "cell type": "Lung adenocarcinoma",
+     "treatment": "Mock treatment",
+     "time point": "24hrs after treatment"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "cell type: Lung adenocarcinoma",
+     "treatment: Mock treatment",
+     "time point: 24hrs after treatment"
+    ]
+   },
+   {
+    "gsm": "GSM4432386",
+    "title": "Series2_A549_Mock_3",
+    "source_name": "Mock treated A549 cells",
+    "group": "control",
+    "condition": "Mock",
+    "treatment": "Mock treatment",
+    "dose": null,
+    "time_point": "24hrs after treatment",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series2_A549",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series2_A549_Mock_3"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "cell type": "Lung adenocarcinoma",
+     "treatment": "Mock treatment",
+     "time point": "24hrs after treatment"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "cell type: Lung adenocarcinoma",
+     "treatment: Mock treatment",
+     "time point: 24hrs after treatment"
+    ]
+   },
+   {
+    "gsm": "GSM4432387",
+    "title": "Series2_A549_SARS-CoV-2_1",
+    "source_name": "SARS-CoV-2 infected A549 cells",
+    "group": "case",
+    "condition": "SARS-CoV-2",
+    "treatment": "SARS-CoV-2 infected (MOI 0.2)",
+    "dose": null,
+    "time_point": "24hrs after treatment",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series2_A549",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series2_A549_SARS-CoV-2_1"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "cell type": "Lung adenocarcinoma",
+     "treatment": "SARS-CoV-2 infected (MOI 0.2)",
+     "strain": "USA-WA1/2020",
+     "time point": "24hrs after treatment"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "cell type: Lung adenocarcinoma",
+     "treatment: SARS-CoV-2 infected (MOI 0.2)",
+     "strain: USA-WA1/2020",
+     "time point: 24hrs after treatment"
+    ]
+   },
+   {
+    "gsm": "GSM4432388",
+    "title": "Series2_A549_SARS-CoV-2_2",
+    "source_name": "SARS-CoV-2 infected A549 cells",
+    "group": "case",
+    "condition": "SARS-CoV-2",
+    "treatment": "SARS-CoV-2 infected (MOI 0.2)",
+    "dose": null,
+    "time_point": "24hrs after treatment",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series2_A549",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series2_A549_SARS-CoV-2_2"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "cell type": "Lung adenocarcinoma",
+     "treatment": "SARS-CoV-2 infected (MOI 0.2)",
+     "strain": "USA-WA1/2020",
+     "time point": "24hrs after treatment"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "cell type: Lung adenocarcinoma",
+     "treatment: SARS-CoV-2 infected (MOI 0.2)",
+     "strain: USA-WA1/2020",
+     "time point: 24hrs after treatment"
+    ]
+   },
+   {
+    "gsm": "GSM4432389",
+    "title": "Series2_A549_SARS-CoV-2_3",
+    "source_name": "SARS-CoV-2 infected A549 cells",
+    "group": "case",
+    "condition": "SARS-CoV-2",
+    "treatment": "SARS-CoV-2 infected (MOI 0.2)",
+    "dose": null,
+    "time_point": "24hrs after treatment",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series2_A549",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series2_A549_SARS-CoV-2_3"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "cell type": "Lung adenocarcinoma",
+     "treatment": "SARS-CoV-2 infected (MOI 0.2)",
+     "strain": "USA-WA1/2020",
+     "time point": "24hrs after treatment"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "cell type: Lung adenocarcinoma",
+     "treatment: SARS-CoV-2 infected (MOI 0.2)",
+     "strain: USA-WA1/2020",
+     "time point: 24hrs after treatment"
+    ]
+   },
+   {
+    "gsm": "GSM4432390",
+    "title": "Series3_A549_Mock_1",
+    "source_name": "Mock treated A549 cells",
+    "group": "control",
+    "condition": "Mock",
+    "treatment": "Mock treatment",
+    "dose": null,
+    "time_point": "24hrs after treatment",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series3_A549",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series3_A549_Mock_1"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "cell type": "Lung adenocarcinoma",
+     "treatment": "Mock treatment",
+     "time point": "24hrs after treatment"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "cell type: Lung adenocarcinoma",
+     "treatment: Mock treatment",
+     "time point: 24hrs after treatment"
+    ]
+   },
+   {
+    "gsm": "GSM4432391",
+    "title": "Series3_A549_Mock_2",
+    "source_name": "Mock treated A549 cells",
+    "group": "control",
+    "condition": "Mock",
+    "treatment": "Mock treatment",
+    "dose": null,
+    "time_point": "24hrs after treatment",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series3_A549",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series3_A549_Mock_2"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "cell type": "Lung adenocarcinoma",
+     "treatment": "Mock treatment",
+     "time point": "24hrs after treatment"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "cell type: Lung adenocarcinoma",
+     "treatment: Mock treatment",
+     "time point: 24hrs after treatment"
+    ]
+   },
+   {
+    "gsm": "GSM4432392",
+    "title": "Series3_A549_RSV_1",
+    "source_name": "RSV infected A549 cells",
+    "group": "other",
+    "condition": "RSV",
+    "treatment": "RSV infected (MOI 15)",
+    "dose": null,
+    "time_point": "24hrs after treatment",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series3_A549",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series3_A549_RSV_1"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "cell type": "Lung adenocarcinoma",
+     "treatment": "RSV infected (MOI 15)",
+     "strain": "A2",
+     "time point": "24hrs after treatment"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "cell type: Lung adenocarcinoma",
+     "treatment: RSV infected (MOI 15)",
+     "strain: A2",
+     "time point: 24hrs after treatment"
+    ]
+   },
+   {
+    "gsm": "GSM4432393",
+    "title": "Series3_A549_RSV_2",
+    "source_name": "RSV infected A549 cells",
+    "group": "other",
+    "condition": "RSV",
+    "treatment": "RSV infected (MOI 15)",
+    "dose": null,
+    "time_point": "24hrs after treatment",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series3_A549",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series3_A549_RSV_2"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "cell type": "Lung adenocarcinoma",
+     "treatment": "RSV infected (MOI 15)",
+     "strain": "A2",
+     "time point": "24hrs after treatment"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "cell type: Lung adenocarcinoma",
+     "treatment: RSV infected (MOI 15)",
+     "strain: A2",
+     "time point: 24hrs after treatment"
+    ]
+   },
+   {
+    "gsm": "GSM4432394",
+    "title": "Series4_A549_Mock_1",
+    "source_name": "Mock treated A549 cells",
+    "group": "control",
+    "condition": "Mock",
+    "treatment": "Mock treatment",
+    "dose": null,
+    "time_point": "9hrs after treatment",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series4_A549",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series4_A549_Mock_1"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "cell type": "Lung adenocarcinoma",
+     "treatment": "Mock treatment",
+     "time point": "9hrs after treatment"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "cell type: Lung adenocarcinoma",
+     "treatment: Mock treatment",
+     "time point: 9hrs after treatment"
+    ]
+   },
+   {
+    "gsm": "GSM4432395",
+    "title": "Series4_A549_Mock_2",
+    "source_name": "Mock treated A549 cells",
+    "group": "control",
+    "condition": "Mock",
+    "treatment": "Mock treatment",
+    "dose": null,
+    "time_point": "9hrs after treatment",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series4_A549",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series4_A549_Mock_2"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "cell type": "Lung adenocarcinoma",
+     "treatment": "Mock treatment",
+     "time point": "9hrs after treatment"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "cell type: Lung adenocarcinoma",
+     "treatment: Mock treatment",
+     "time point: 9hrs after treatment"
+    ]
+   },
+   {
+    "gsm": "GSM4432396",
+    "title": "Series4_A549_IAV_1",
+    "source_name": "IAV infected A549 cells",
+    "group": "other",
+    "condition": "IAV",
+    "treatment": "IAV infected (MOI 5)",
+    "dose": null,
+    "time_point": "9hrs after treatment",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series4_A549",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series4_A549_IAV_1"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "cell type": "Lung adenocarcinoma",
+     "treatment": "IAV infected (MOI 5)",
+     "strain": "A/Puerto Rico/8/1934 (H1N1)",
+     "time point": "9hrs after treatment"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "cell type: Lung adenocarcinoma",
+     "treatment: IAV infected (MOI 5)",
+     "strain: A/Puerto Rico/8/1934 (H1N1)",
+     "time point: 9hrs after treatment"
+    ]
+   },
+   {
+    "gsm": "GSM4432397",
+    "title": "Series4_A549_IAV_2",
+    "source_name": "IAV infected A549 cells",
+    "group": "other",
+    "condition": "IAV",
+    "treatment": "IAV infected (MOI 5)",
+    "dose": null,
+    "time_point": "9hrs after treatment",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series4_A549",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series4_A549_IAV_2"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "cell type": "Lung adenocarcinoma",
+     "treatment": "IAV infected (MOI 5)",
+     "strain": "A/Puerto Rico/8/1934 (H1N1)",
+     "time point": "9hrs after treatment"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "cell type: Lung adenocarcinoma",
+     "treatment: IAV infected (MOI 5)",
+     "strain: A/Puerto Rico/8/1934 (H1N1)",
+     "time point: 9hrs after treatment"
+    ]
+   },
+   {
+    "gsm": "GSM4462336",
+    "title": "Series5_A549_Mock_1",
+    "source_name": "Mock treated A549 cells",
+    "group": "control",
+    "condition": "Mock",
+    "treatment": "Mock treatment",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series5_A549",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series5_A549_Mock_1"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "tissue/cell type": "Lung adenocarcinoma",
+     "treatment": "Mock treatment",
+     "strain": "NA",
+     "time after treatment": "24 hours"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "tissue/cell type: Lung adenocarcinoma",
+     "treatment: Mock treatment",
+     "strain: NA",
+     "time after treatment: 24 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462337",
+    "title": "Series5_A549_Mock_2",
+    "source_name": "Mock treated A549 cells",
+    "group": "control",
+    "condition": "Mock",
+    "treatment": "Mock treatment",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series5_A549",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series5_A549_Mock_2"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "tissue/cell type": "Lung adenocarcinoma",
+     "treatment": "Mock treatment",
+     "strain": "NA",
+     "time after treatment": "24 hours"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "tissue/cell type: Lung adenocarcinoma",
+     "treatment: Mock treatment",
+     "strain: NA",
+     "time after treatment: 24 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462338",
+    "title": "Series5_A549_Mock_3",
+    "source_name": "Mock treated A549 cells",
+    "group": "control",
+    "condition": "Mock",
+    "treatment": "Mock treatment",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series5_A549",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series5_A549_Mock_3"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "tissue/cell type": "Lung adenocarcinoma",
+     "treatment": "Mock treatment",
+     "strain": "NA",
+     "time after treatment": "24 hours"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "tissue/cell type: Lung adenocarcinoma",
+     "treatment: Mock treatment",
+     "strain: NA",
+     "time after treatment: 24 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462339",
+    "title": "Series5_A549_SARS-CoV-2_1",
+    "source_name": "SARS-CoV-2 infected A549 cells",
+    "group": "case",
+    "condition": "SARS-CoV-2",
+    "treatment": "SARS-CoV-2 infected (MOI 2)",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series5_A549",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series5_A549_SARS-CoV-2_1"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "tissue/cell type": "Lung adenocarcinoma",
+     "treatment": "SARS-CoV-2 infected (MOI 2)",
+     "strain": "USA-WA1/2020",
+     "time after treatment": "24 hours"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "tissue/cell type: Lung adenocarcinoma",
+     "treatment: SARS-CoV-2 infected (MOI 2)",
+     "strain: USA-WA1/2020",
+     "time after treatment: 24 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462340",
+    "title": "Series5_A549_SARS-CoV-2_2",
+    "source_name": "SARS-CoV-2 infected A549 cells",
+    "group": "case",
+    "condition": "SARS-CoV-2",
+    "treatment": "SARS-CoV-2 infected (MOI 2)",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series5_A549",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series5_A549_SARS-CoV-2_2"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "tissue/cell type": "Lung adenocarcinoma",
+     "treatment": "SARS-CoV-2 infected (MOI 2)",
+     "strain": "USA-WA1/2020",
+     "time after treatment": "24 hours"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "tissue/cell type: Lung adenocarcinoma",
+     "treatment: SARS-CoV-2 infected (MOI 2)",
+     "strain: USA-WA1/2020",
+     "time after treatment: 24 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462341",
+    "title": "Series5_A549_SARS-CoV-2_3",
+    "source_name": "SARS-CoV-2 infected A549 cells",
+    "group": "case",
+    "condition": "SARS-CoV-2",
+    "treatment": "SARS-CoV-2 infected (MOI 2)",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series5_A549",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series5_A549_SARS-CoV-2_3"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "tissue/cell type": "Lung adenocarcinoma",
+     "treatment": "SARS-CoV-2 infected (MOI 2)",
+     "strain": "USA-WA1/2020",
+     "time after treatment": "24 hours"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "tissue/cell type: Lung adenocarcinoma",
+     "treatment: SARS-CoV-2 infected (MOI 2)",
+     "strain: USA-WA1/2020",
+     "time after treatment: 24 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462342",
+    "title": "Series6_A549-ACE2_Mock_1",
+    "source_name": "Mock treated A549 cells trasnduced with a vector expressing human ACE2",
+    "group": "control",
+    "condition": "Mock",
+    "treatment": "Mock treatment",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series6_A549-ACE2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series6_A549-ACE2_Mock_1"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "tissue/cell type": "Lung adenocarcinoma",
+     "treatment": "Mock treatment",
+     "strain": "NA",
+     "time after treatment": "24 hours"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "tissue/cell type: Lung adenocarcinoma",
+     "treatment: Mock treatment",
+     "strain: NA",
+     "time after treatment: 24 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462343",
+    "title": "Series6_A549-ACE2_Mock_2",
+    "source_name": "Mock treated A549 cells trasnduced with a vector expressing human ACE2",
+    "group": "control",
+    "condition": "Mock",
+    "treatment": "Mock treatment",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series6_A549-ACE2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series6_A549-ACE2_Mock_2"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "tissue/cell type": "Lung adenocarcinoma",
+     "treatment": "Mock treatment",
+     "strain": "NA",
+     "time after treatment": "24 hours"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "tissue/cell type: Lung adenocarcinoma",
+     "treatment: Mock treatment",
+     "strain: NA",
+     "time after treatment: 24 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462344",
+    "title": "Series6_A549-ACE2_Mock_3",
+    "source_name": "Mock treated A549 cells trasnduced with a vector expressing human ACE2",
+    "group": "control",
+    "condition": "Mock",
+    "treatment": "Mock treatment",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series6_A549-ACE2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series6_A549-ACE2_Mock_3"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "tissue/cell type": "Lung adenocarcinoma",
+     "treatment": "Mock treatment",
+     "strain": "NA",
+     "time after treatment": "24 hours"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "tissue/cell type: Lung adenocarcinoma",
+     "treatment: Mock treatment",
+     "strain: NA",
+     "time after treatment: 24 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462345",
+    "title": "Series6_A549-ACE2_SARS-CoV-2_1",
+    "source_name": "SARS-CoV-2 infected A549 cells trasnduced with a vector expressing human ACE2",
+    "group": "other",
+    "condition": "SARS-CoV-2",
+    "treatment": "SARS-CoV-2 infected (MOI 0.2)",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series6_A549-ACE2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series6_A549-ACE2_SARS-CoV-2_1"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "tissue/cell type": "Lung adenocarcinoma",
+     "treatment": "SARS-CoV-2 infected (MOI 0.2)",
+     "strain": "USA-WA1/2020",
+     "time after treatment": "24 hours"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "tissue/cell type: Lung adenocarcinoma",
+     "treatment: SARS-CoV-2 infected (MOI 0.2)",
+     "strain: USA-WA1/2020",
+     "time after treatment: 24 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462346",
+    "title": "Series6_A549-ACE2_SARS-CoV-2_2",
+    "source_name": "SARS-CoV-2 infected A549 cells trasnduced with a vector expressing human ACE2",
+    "group": "other",
+    "condition": "SARS-CoV-2",
+    "treatment": "SARS-CoV-2 infected (MOI 0.2)",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series6_A549-ACE2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series6_A549-ACE2_SARS-CoV-2_2"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "tissue/cell type": "Lung adenocarcinoma",
+     "treatment": "SARS-CoV-2 infected (MOI 0.2)",
+     "strain": "USA-WA1/2020",
+     "time after treatment": "24 hours"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "tissue/cell type: Lung adenocarcinoma",
+     "treatment: SARS-CoV-2 infected (MOI 0.2)",
+     "strain: USA-WA1/2020",
+     "time after treatment: 24 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462347",
+    "title": "Series6_A549-ACE2_SARS-CoV-2_3",
+    "source_name": "SARS-CoV-2 infected A549 cells trasnduced with a vector expressing human ACE2",
+    "group": "other",
+    "condition": "SARS-CoV-2",
+    "treatment": "SARS-CoV-2 infected (MOI 0.2)",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series6_A549-ACE2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series6_A549-ACE2_SARS-CoV-2_3"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "tissue/cell type": "Lung adenocarcinoma",
+     "treatment": "SARS-CoV-2 infected (MOI 0.2)",
+     "strain": "USA-WA1/2020",
+     "time after treatment": "24 hours"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "tissue/cell type: Lung adenocarcinoma",
+     "treatment: SARS-CoV-2 infected (MOI 0.2)",
+     "strain: USA-WA1/2020",
+     "time after treatment: 24 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462348",
+    "title": "Series7_Calu3_Mock_1",
+    "source_name": "Mock treated Calu-3 cells",
+    "group": "control",
+    "condition": "Mock",
+    "treatment": "Mock treatment",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "Calu-3",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series7_Calu3",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series7_Calu3_Mock_1"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "Calu-3",
+     "tissue/cell type": "Lung adenocarcinoma",
+     "treatment": "Mock treatment",
+     "strain": "NA",
+     "time after treatment": "24 hours"
+    },
+    "raw_lines": [
+     "cell line: Calu-3",
+     "tissue/cell type: Lung adenocarcinoma",
+     "treatment: Mock treatment",
+     "strain: NA",
+     "time after treatment: 24 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462349",
+    "title": "Series7_Calu3_Mock_2",
+    "source_name": "Mock treated Calu-3 cells",
+    "group": "control",
+    "condition": "Mock",
+    "treatment": "Mock treatment",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "Calu-3",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series7_Calu3",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series7_Calu3_Mock_2"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "Calu-3",
+     "tissue/cell type": "Lung adenocarcinoma",
+     "treatment": "Mock treatment",
+     "strain": "NA",
+     "time after treatment": "24 hours"
+    },
+    "raw_lines": [
+     "cell line: Calu-3",
+     "tissue/cell type: Lung adenocarcinoma",
+     "treatment: Mock treatment",
+     "strain: NA",
+     "time after treatment: 24 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462350",
+    "title": "Series7_Calu3_Mock_3",
+    "source_name": "Mock treated Calu-3 cells",
+    "group": "control",
+    "condition": "Mock",
+    "treatment": "Mock treatment",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "Calu-3",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series7_Calu3",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series7_Calu3_Mock_3"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "Calu-3",
+     "tissue/cell type": "Lung adenocarcinoma",
+     "treatment": "Mock treatment",
+     "strain": "NA",
+     "time after treatment": "24 hours"
+    },
+    "raw_lines": [
+     "cell line: Calu-3",
+     "tissue/cell type: Lung adenocarcinoma",
+     "treatment: Mock treatment",
+     "strain: NA",
+     "time after treatment: 24 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462351",
+    "title": "Series7_Calu3_SARS-CoV-2_1",
+    "source_name": "SARS-CoV-2 infected Calu-3 cells",
+    "group": "case",
+    "condition": "SARS-CoV-2",
+    "treatment": "SARS-CoV-2 infected (MOI 2)",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "Calu-3",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series7_Calu3",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series7_Calu3_SARS-CoV-2_1"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "Calu-3",
+     "tissue/cell type": "Lung adenocarcinoma",
+     "treatment": "SARS-CoV-2 infected (MOI 2)",
+     "strain": "USA-WA1/2020",
+     "time after treatment": "24 hours"
+    },
+    "raw_lines": [
+     "cell line: Calu-3",
+     "tissue/cell type: Lung adenocarcinoma",
+     "treatment: SARS-CoV-2 infected (MOI 2)",
+     "strain: USA-WA1/2020",
+     "time after treatment: 24 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462352",
+    "title": "Series7_Calu3_SARS-CoV-2_2",
+    "source_name": "SARS-CoV-2 infected Calu-3 cells",
+    "group": "case",
+    "condition": "SARS-CoV-2",
+    "treatment": "SARS-CoV-2 infected (MOI 2)",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "Calu-3",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series7_Calu3",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series7_Calu3_SARS-CoV-2_2"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "Calu-3",
+     "tissue/cell type": "Lung adenocarcinoma",
+     "treatment": "SARS-CoV-2 infected (MOI 2)",
+     "strain": "USA-WA1/2020",
+     "time after treatment": "24 hours"
+    },
+    "raw_lines": [
+     "cell line: Calu-3",
+     "tissue/cell type: Lung adenocarcinoma",
+     "treatment: SARS-CoV-2 infected (MOI 2)",
+     "strain: USA-WA1/2020",
+     "time after treatment: 24 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462353",
+    "title": "Series7_Calu3_SARS-CoV-2_3",
+    "source_name": "SARS-CoV-2 infected Calu-3 cells",
+    "group": "case",
+    "condition": "SARS-CoV-2",
+    "treatment": "SARS-CoV-2 infected (MOI 2)",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "Calu-3",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series7_Calu3",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series7_Calu3_SARS-CoV-2_3"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "Calu-3",
+     "tissue/cell type": "Lung adenocarcinoma",
+     "treatment": "SARS-CoV-2 infected (MOI 2)",
+     "strain": "USA-WA1/2020",
+     "time after treatment": "24 hours"
+    },
+    "raw_lines": [
+     "cell line: Calu-3",
+     "tissue/cell type: Lung adenocarcinoma",
+     "treatment: SARS-CoV-2 infected (MOI 2)",
+     "strain: USA-WA1/2020",
+     "time after treatment: 24 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462354",
+    "title": "Series8_A549_Mock_1",
+    "source_name": "Mock treated A549 cells",
+    "group": "control",
+    "condition": "Mock",
+    "treatment": "Mock treatment",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series8_A549",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series8_A549_Mock_1"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "tissue/cell type": "Lung adenocarcinoma",
+     "treatment": "Mock treatment",
+     "strain": "NA",
+     "time after treatment": "24 hours"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "tissue/cell type: Lung adenocarcinoma",
+     "treatment: Mock treatment",
+     "strain: NA",
+     "time after treatment: 24 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462355",
+    "title": "Series8_A549_Mock_2",
+    "source_name": "Mock treated A549 cells",
+    "group": "control",
+    "condition": "Mock",
+    "treatment": "Mock treatment",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series8_A549",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series8_A549_Mock_2"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "tissue/cell type": "Lung adenocarcinoma",
+     "treatment": "Mock treatment",
+     "strain": "NA",
+     "time after treatment": "24 hours"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "tissue/cell type: Lung adenocarcinoma",
+     "treatment: Mock treatment",
+     "strain: NA",
+     "time after treatment: 24 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462356",
+    "title": "Series8_A549_Mock_3",
+    "source_name": "Mock treated A549 cells",
+    "group": "control",
+    "condition": "Mock",
+    "treatment": "Mock treatment",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series8_A549",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series8_A549_Mock_3"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "tissue/cell type": "Lung adenocarcinoma",
+     "treatment": "Mock treatment",
+     "strain": "NA",
+     "time after treatment": "24 hours"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "tissue/cell type: Lung adenocarcinoma",
+     "treatment: Mock treatment",
+     "strain: NA",
+     "time after treatment: 24 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462357",
+    "title": "Series8_A549_RSV_1",
+    "source_name": "RSV infected A549 cells",
+    "group": "case",
+    "condition": "RSV",
+    "treatment": "RSV infected (MOI 2)",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series8_A549",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series8_A549_RSV_1"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "tissue/cell type": "Lung adenocarcinoma",
+     "treatment": "RSV infected (MOI 2)",
+     "strain": "A2",
+     "time after treatment": "24 hours"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "tissue/cell type: Lung adenocarcinoma",
+     "treatment: RSV infected (MOI 2)",
+     "strain: A2",
+     "time after treatment: 24 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462358",
+    "title": "Series8_A549_RSV_2",
+    "source_name": "RSV infected A549 cells",
+    "group": "case",
+    "condition": "RSV",
+    "treatment": "RSV infected (MOI 2)",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series8_A549",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series8_A549_RSV_2"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "tissue/cell type": "Lung adenocarcinoma",
+     "treatment": "RSV infected (MOI 2)",
+     "strain": "A2",
+     "time after treatment": "24 hours"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "tissue/cell type: Lung adenocarcinoma",
+     "treatment: RSV infected (MOI 2)",
+     "strain: A2",
+     "time after treatment: 24 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462359",
+    "title": "Series8_A549_RSV_3",
+    "source_name": "RSV infected A549 cells",
+    "group": "case",
+    "condition": "RSV",
+    "treatment": "RSV infected (MOI 2)",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series8_A549",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series8_A549_RSV_3"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "tissue/cell type": "Lung adenocarcinoma",
+     "treatment": "RSV infected (MOI 2)",
+     "strain": "A2",
+     "time after treatment": "24 hours"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "tissue/cell type: Lung adenocarcinoma",
+     "treatment: RSV infected (MOI 2)",
+     "strain: A2",
+     "time after treatment: 24 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462360",
+    "title": "Series8_A549_HPIV3_1",
+    "source_name": "HPIV3 infected A549 cells",
+    "group": "case",
+    "condition": "HPIV3",
+    "treatment": "HPIV3 infected (MOI 3)",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series8_A549",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series8_A549_HPIV3_1"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "tissue/cell type": "Lung adenocarcinoma",
+     "treatment": "HPIV3 infected (MOI 3)",
+     "strain": "JS",
+     "time after treatment": "24 hours"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "tissue/cell type: Lung adenocarcinoma",
+     "treatment: HPIV3 infected (MOI 3)",
+     "strain: JS",
+     "time after treatment: 24 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462361",
+    "title": "Series8_A549_HPIV3_2",
+    "source_name": "HPIV3 infected A549 cells",
+    "group": "case",
+    "condition": "HPIV3",
+    "treatment": "HPIV3 infected (MOI 3)",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series8_A549",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series8_A549_HPIV3_2"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "tissue/cell type": "Lung adenocarcinoma",
+     "treatment": "HPIV3 infected (MOI 3)",
+     "strain": "JS",
+     "time after treatment": "24 hours"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "tissue/cell type: Lung adenocarcinoma",
+     "treatment: HPIV3 infected (MOI 3)",
+     "strain: JS",
+     "time after treatment: 24 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462362",
+    "title": "Series8_A549_HPIV3_3",
+    "source_name": "HPIV3 infected A549 cells",
+    "group": "case",
+    "condition": "HPIV3",
+    "treatment": "HPIV3 infected (MOI 3)",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series8_A549",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series8_A549_HPIV3_3"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell line": "A549",
+     "tissue/cell type": "Lung adenocarcinoma",
+     "treatment": "HPIV3 infected (MOI 3)",
+     "strain": "JS",
+     "time after treatment": "24 hours"
+    },
+    "raw_lines": [
+     "cell line: A549",
+     "tissue/cell type: Lung adenocarcinoma",
+     "treatment: HPIV3 infected (MOI 3)",
+     "strain: JS",
+     "time after treatment: 24 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462363",
+    "title": "Series9_NHBE_Mock_1",
+    "source_name": "Mock treated NHBE cells",
+    "group": "control",
+    "condition": "Mock",
+    "treatment": "Mock treatment",
+    "dose": null,
+    "time_point": "12 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "NHBE",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series9_NHBE",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series9_NHBE_Mock_1"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue/cell type": "primary human bronchial epithelial cells",
+     "treatment": "Mock treatment",
+     "strain": "NA",
+     "time after treatment": "12 hours"
+    },
+    "raw_lines": [
+     "tissue/cell type: primary human bronchial epithelial cells",
+     "treatment: Mock treatment",
+     "strain: NA",
+     "time after treatment: 12 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462364",
+    "title": "Series9_NHBE_Mock_2",
+    "source_name": "Mock treated NHBE cells",
+    "group": "control",
+    "condition": "Mock",
+    "treatment": "Mock treatment",
+    "dose": null,
+    "time_point": "12 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "NHBE",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series9_NHBE",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series9_NHBE_Mock_2"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue/cell type": "primary human bronchial epithelial cells",
+     "treatment": "Mock treatment",
+     "strain": "NA",
+     "time after treatment": "12 hours"
+    },
+    "raw_lines": [
+     "tissue/cell type: primary human bronchial epithelial cells",
+     "treatment: Mock treatment",
+     "strain: NA",
+     "time after treatment: 12 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462365",
+    "title": "Series9_NHBE_Mock_3",
+    "source_name": "Mock treated NHBE cells",
+    "group": "control",
+    "condition": "Mock",
+    "treatment": "Mock treatment",
+    "dose": null,
+    "time_point": "12 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "NHBE",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series9_NHBE",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series9_NHBE_Mock_3"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue/cell type": "primary human bronchial epithelial cells",
+     "treatment": "Mock treatment",
+     "strain": "NA",
+     "time after treatment": "12 hours"
+    },
+    "raw_lines": [
+     "tissue/cell type: primary human bronchial epithelial cells",
+     "treatment: Mock treatment",
+     "strain: NA",
+     "time after treatment: 12 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462366",
+    "title": "Series9_NHBE_Mock_4",
+    "source_name": "Mock treated NHBE cells",
+    "group": "control",
+    "condition": "Mock",
+    "treatment": "Mock treatment",
+    "dose": null,
+    "time_point": "12 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "NHBE",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series9_NHBE",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series9_NHBE_Mock_4"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue/cell type": "primary human bronchial epithelial cells",
+     "treatment": "Mock treatment",
+     "strain": "NA",
+     "time after treatment": "12 hours"
+    },
+    "raw_lines": [
+     "tissue/cell type: primary human bronchial epithelial cells",
+     "treatment: Mock treatment",
+     "strain: NA",
+     "time after treatment: 12 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462367",
+    "title": "Series9_NHBE_IAV_1",
+    "source_name": "IAV infected NHBE cells",
+    "group": "case",
+    "condition": "IAV",
+    "treatment": "IAV infected (MOI 3)",
+    "dose": null,
+    "time_point": "12 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "NHBE",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series9_NHBE",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series9_NHBE_IAV_1"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue/cell type": "primary human bronchial epithelial cells",
+     "treatment": "IAV infected (MOI 3)",
+     "strain": "A/Puerto Rico/8/1934 (H1N1)",
+     "time after treatment": "12 hours"
+    },
+    "raw_lines": [
+     "tissue/cell type: primary human bronchial epithelial cells",
+     "treatment: IAV infected (MOI 3)",
+     "strain: A/Puerto Rico/8/1934 (H1N1)",
+     "time after treatment: 12 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462368",
+    "title": "Series9_NHBE_IAV_2",
+    "source_name": "IAV infected NHBE cells",
+    "group": "case",
+    "condition": "IAV",
+    "treatment": "IAV infected (MOI 3)",
+    "dose": null,
+    "time_point": "12 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "NHBE",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series9_NHBE",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series9_NHBE_IAV_2"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue/cell type": "primary human bronchial epithelial cells",
+     "treatment": "IAV infected (MOI 3)",
+     "strain": "A/Puerto Rico/8/1934 (H1N1)",
+     "time after treatment": "12 hours"
+    },
+    "raw_lines": [
+     "tissue/cell type: primary human bronchial epithelial cells",
+     "treatment: IAV infected (MOI 3)",
+     "strain: A/Puerto Rico/8/1934 (H1N1)",
+     "time after treatment: 12 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462369",
+    "title": "Series9_NHBE_IAV_3",
+    "source_name": "IAV infected NHBE cells",
+    "group": "case",
+    "condition": "IAV",
+    "treatment": "IAV infected (MOI 3)",
+    "dose": null,
+    "time_point": "12 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "NHBE",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series9_NHBE",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series9_NHBE_IAV_3"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue/cell type": "primary human bronchial epithelial cells",
+     "treatment": "IAV infected (MOI 3)",
+     "strain": "A/Puerto Rico/8/1934 (H1N1)",
+     "time after treatment": "12 hours"
+    },
+    "raw_lines": [
+     "tissue/cell type: primary human bronchial epithelial cells",
+     "treatment: IAV infected (MOI 3)",
+     "strain: A/Puerto Rico/8/1934 (H1N1)",
+     "time after treatment: 12 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462370",
+    "title": "Series9_NHBE_IAV_4",
+    "source_name": "IAV infected NHBE cells",
+    "group": "case",
+    "condition": "IAV",
+    "treatment": "IAV infected (MOI 3)",
+    "dose": null,
+    "time_point": "12 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "NHBE",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series9_NHBE",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series9_NHBE_IAV_4"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue/cell type": "primary human bronchial epithelial cells",
+     "treatment": "IAV infected (MOI 3)",
+     "strain": "A/Puerto Rico/8/1934 (H1N1)",
+     "time after treatment": "12 hours"
+    },
+    "raw_lines": [
+     "tissue/cell type: primary human bronchial epithelial cells",
+     "treatment: IAV infected (MOI 3)",
+     "strain: A/Puerto Rico/8/1934 (H1N1)",
+     "time after treatment: 12 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462371",
+    "title": "Series9_NHBE_IAVdNS1_1",
+    "source_name": "IAVdNS1 infected NHBE cells",
+    "group": "case",
+    "condition": "IAVdNS1",
+    "treatment": "IAVdNS1 infected (MOI 3)",
+    "dose": null,
+    "time_point": "12 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "NHBE",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series9_NHBE",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series9_NHBE_IAVdNS1_1"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue/cell type": "primary human bronchial epithelial cells",
+     "treatment": "IAVdNS1 infected (MOI 3)",
+     "strain": "A/Puerto Rico/8/1934 (H1N1) (dNS1)",
+     "time after treatment": "12 hours"
+    },
+    "raw_lines": [
+     "tissue/cell type: primary human bronchial epithelial cells",
+     "treatment: IAVdNS1 infected (MOI 3)",
+     "strain: A/Puerto Rico/8/1934 (H1N1) (dNS1)",
+     "time after treatment: 12 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462372",
+    "title": "Series9_NHBE_IAVdNS1_2",
+    "source_name": "IAVdNS1 infected NHBE cells",
+    "group": "case",
+    "condition": "IAVdNS1",
+    "treatment": "IAVdNS1 infected (MOI 3)",
+    "dose": null,
+    "time_point": "12 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "NHBE",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series9_NHBE",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series9_NHBE_IAVdNS1_2"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue/cell type": "primary human bronchial epithelial cells",
+     "treatment": "IAVdNS1 infected (MOI 3)",
+     "strain": "A/Puerto Rico/8/1934 (H1N1) (dNS1)",
+     "time after treatment": "12 hours"
+    },
+    "raw_lines": [
+     "tissue/cell type: primary human bronchial epithelial cells",
+     "treatment: IAVdNS1 infected (MOI 3)",
+     "strain: A/Puerto Rico/8/1934 (H1N1) (dNS1)",
+     "time after treatment: 12 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462373",
+    "title": "Series9_NHBE_IAVdNS1_3",
+    "source_name": "IAVdNS1 infected NHBE cells",
+    "group": "case",
+    "condition": "IAVdNS1",
+    "treatment": "IAVdNS1 infected (MOI 3)",
+    "dose": null,
+    "time_point": "12 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "NHBE",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series9_NHBE",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series9_NHBE_IAVdNS1_3"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue/cell type": "primary human bronchial epithelial cells",
+     "treatment": "IAVdNS1 infected (MOI 3)",
+     "strain": "A/Puerto Rico/8/1934 (H1N1) (dNS1)",
+     "time after treatment": "12 hours"
+    },
+    "raw_lines": [
+     "tissue/cell type: primary human bronchial epithelial cells",
+     "treatment: IAVdNS1 infected (MOI 3)",
+     "strain: A/Puerto Rico/8/1934 (H1N1) (dNS1)",
+     "time after treatment: 12 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462374",
+    "title": "Series9_NHBE_IAVdNS1_4",
+    "source_name": "IAVdNS1 infected NHBE cells",
+    "group": "case",
+    "condition": "IAVdNS1",
+    "treatment": "IAVdNS1 infected (MOI 3)",
+    "dose": null,
+    "time_point": "12 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "NHBE",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series9_NHBE",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series9_NHBE_IAVdNS1_4"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue/cell type": "primary human bronchial epithelial cells",
+     "treatment": "IAVdNS1 infected (MOI 3)",
+     "strain": "A/Puerto Rico/8/1934 (H1N1) (dNS1)",
+     "time after treatment": "12 hours"
+    },
+    "raw_lines": [
+     "tissue/cell type: primary human bronchial epithelial cells",
+     "treatment: IAVdNS1 infected (MOI 3)",
+     "strain: A/Puerto Rico/8/1934 (H1N1) (dNS1)",
+     "time after treatment: 12 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462375",
+    "title": "Series9_NHBE_IFNB_4h_1",
+    "source_name": "human IFNB treated NHBE cells",
+    "group": "other",
+    "condition": "IFNB_4h",
+    "treatment": "human IFNB treatment (100U/ml)",
+    "dose": null,
+    "time_point": "4 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "NHBE",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series9_NHBE",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series9_NHBE_IFNB_4h_1"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue/cell type": "primary human bronchial epithelial cells",
+     "treatment": "human IFNB treatment (100U/ml)",
+     "strain": "NA",
+     "time after treatment": "4 hours"
+    },
+    "raw_lines": [
+     "tissue/cell type: primary human bronchial epithelial cells",
+     "treatment: human IFNB treatment (100U/ml)",
+     "strain: NA",
+     "time after treatment: 4 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462376",
+    "title": "Series9_NHBE_IFNB_4h_2",
+    "source_name": "human IFNB treated NHBE cells",
+    "group": "other",
+    "condition": "IFNB_4h",
+    "treatment": "human IFNB treatment (100U/ml)",
+    "dose": null,
+    "time_point": "4 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "NHBE",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series9_NHBE",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series9_NHBE_IFNB_4h_2"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue/cell type": "primary human bronchial epithelial cells",
+     "treatment": "human IFNB treatment (100U/ml)",
+     "strain": "NA",
+     "time after treatment": "4 hours"
+    },
+    "raw_lines": [
+     "tissue/cell type: primary human bronchial epithelial cells",
+     "treatment: human IFNB treatment (100U/ml)",
+     "strain: NA",
+     "time after treatment: 4 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462377",
+    "title": "Series9_NHBE_IFNB_6h_1",
+    "source_name": "human IFNB treated NHBE cells",
+    "group": "other",
+    "condition": "IFNB_6h",
+    "treatment": "human IFNB treatment (100U/ml)",
+    "dose": null,
+    "time_point": "6 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "NHBE",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series9_NHBE",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series9_NHBE_IFNB_6h_1"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue/cell type": "primary human bronchial epithelial cells",
+     "treatment": "human IFNB treatment (100U/ml)",
+     "strain": "NA",
+     "time after treatment": "6 hours"
+    },
+    "raw_lines": [
+     "tissue/cell type: primary human bronchial epithelial cells",
+     "treatment: human IFNB treatment (100U/ml)",
+     "strain: NA",
+     "time after treatment: 6 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462378",
+    "title": "Series9_NHBE_IFNB_6h_2",
+    "source_name": "human IFNB treated NHBE cells",
+    "group": "other",
+    "condition": "IFNB_6h",
+    "treatment": "human IFNB treatment (100U/ml)",
+    "dose": null,
+    "time_point": "6 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "NHBE",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series9_NHBE",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series9_NHBE_IFNB_6h_2"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue/cell type": "primary human bronchial epithelial cells",
+     "treatment": "human IFNB treatment (100U/ml)",
+     "strain": "NA",
+     "time after treatment": "6 hours"
+    },
+    "raw_lines": [
+     "tissue/cell type: primary human bronchial epithelial cells",
+     "treatment: human IFNB treatment (100U/ml)",
+     "strain: NA",
+     "time after treatment: 6 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462379",
+    "title": "Series9_NHBE_IFNB_12h_1",
+    "source_name": "human IFNB treated NHBE cells",
+    "group": "other",
+    "condition": "IFNB_12h",
+    "treatment": "human IFNB treatment (100U/ml)",
+    "dose": null,
+    "time_point": "12 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "NHBE",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series9_NHBE",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series9_NHBE_IFNB_12h_1"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue/cell type": "primary human bronchial epithelial cells",
+     "treatment": "human IFNB treatment (100U/ml)",
+     "strain": "NA",
+     "time after treatment": "12 hours"
+    },
+    "raw_lines": [
+     "tissue/cell type: primary human bronchial epithelial cells",
+     "treatment: human IFNB treatment (100U/ml)",
+     "strain: NA",
+     "time after treatment: 12 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4462380",
+    "title": "Series9_NHBE_IFNB_12h_2",
+    "source_name": "human IFNB treated NHBE cells",
+    "group": "other",
+    "condition": "IFNB_12h",
+    "treatment": "human IFNB treatment (100U/ml)",
+    "dose": null,
+    "time_point": "12 hours",
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "NHBE",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series9_NHBE",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series9_NHBE_IFNB_12h_2"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue/cell type": "primary human bronchial epithelial cells",
+     "treatment": "human IFNB treatment (100U/ml)",
+     "strain": "NA",
+     "time after treatment": "12 hours"
+    },
+    "raw_lines": [
+     "tissue/cell type: primary human bronchial epithelial cells",
+     "treatment: human IFNB treatment (100U/ml)",
+     "strain: NA",
+     "time after treatment: 12 hours"
+    ]
+   },
+   {
+    "gsm": "GSM4486157",
+    "title": "Series16_A549-ACE2_Mock_1",
+    "source_name": "Mock treated A549 cells trasnduced with a vector expressing human ACE2",
+    "group": "control",
+    "condition": "Mock",
+    "treatment": "Mock treatment",
+    "dose": null,
+    "time_point": null,
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549-ACE2",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series16_A549-ACE2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series16_A549-ACE2_Mock_1"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "Lung adenocarcinoma",
+     "treatment": "Mock treatment",
+     "strain": "NA"
+    },
+    "raw_lines": [
+     "tissue: Lung adenocarcinoma",
+     "treatment: Mock treatment",
+     "strain: NA"
+    ]
+   },
+   {
+    "gsm": "GSM4486158",
+    "title": "Series16_A549-ACE2_Mock_2",
+    "source_name": "Mock treated A549 cells trasnduced with a vector expressing human ACE2",
+    "group": "control",
+    "condition": "Mock",
+    "treatment": "Mock treatment",
+    "dose": null,
+    "time_point": null,
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549-ACE2",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series16_A549-ACE2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series16_A549-ACE2_Mock_2"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "Lung adenocarcinoma",
+     "treatment": "Mock treatment",
+     "strain": "NA"
+    },
+    "raw_lines": [
+     "tissue: Lung adenocarcinoma",
+     "treatment: Mock treatment",
+     "strain: NA"
+    ]
+   },
+   {
+    "gsm": "GSM4486159",
+    "title": "Series16_A549-ACE2_Mock_3",
+    "source_name": "Mock treated A549 cells trasnduced with a vector expressing human ACE2",
+    "group": "control",
+    "condition": "Mock",
+    "treatment": "Mock treatment",
+    "dose": null,
+    "time_point": null,
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549-ACE2",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series16_A549-ACE2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series16_A549-ACE2_Mock_3"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "Lung adenocarcinoma",
+     "treatment": "Mock treatment",
+     "strain": "NA"
+    },
+    "raw_lines": [
+     "tissue: Lung adenocarcinoma",
+     "treatment: Mock treatment",
+     "strain: NA"
+    ]
+   },
+   {
+    "gsm": "GSM4486160",
+    "title": "Series16_A549-ACE2_SARS-CoV-2_1",
+    "source_name": "SARS-CoV-2 infected A549 cells trasnduced with a vector expressing human ACE2",
+    "group": "other",
+    "condition": "SARS-CoV-2",
+    "treatment": "SARS-CoV-2 infected (MOI 2)",
+    "dose": null,
+    "time_point": null,
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549-ACE2",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series16_A549-ACE2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series16_A549-ACE2_SARS-CoV-2_1"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "Lung adenocarcinoma",
+     "treatment": "SARS-CoV-2 infected (MOI 2)",
+     "strain": "USA-WA1/2020"
+    },
+    "raw_lines": [
+     "tissue: Lung adenocarcinoma",
+     "treatment: SARS-CoV-2 infected (MOI 2)",
+     "strain: USA-WA1/2020"
+    ]
+   },
+   {
+    "gsm": "GSM4486161",
+    "title": "Series16_A549-ACE2_SARS-CoV-2_2",
+    "source_name": "SARS-CoV-2 infected A549 cells trasnduced with a vector expressing human ACE2",
+    "group": "other",
+    "condition": "SARS-CoV-2",
+    "treatment": "SARS-CoV-2 infected (MOI 2)",
+    "dose": null,
+    "time_point": null,
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549-ACE2",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series16_A549-ACE2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series16_A549-ACE2_SARS-CoV-2_2"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "Lung adenocarcinoma",
+     "treatment": "SARS-CoV-2 infected (MOI 2)",
+     "strain": "USA-WA1/2020"
+    },
+    "raw_lines": [
+     "tissue: Lung adenocarcinoma",
+     "treatment: SARS-CoV-2 infected (MOI 2)",
+     "strain: USA-WA1/2020"
+    ]
+   },
+   {
+    "gsm": "GSM4486162",
+    "title": "Series16_A549-ACE2_SARS-CoV-2_3",
+    "source_name": "SARS-CoV-2 infected A549 cells trasnduced with a vector expressing human ACE2",
+    "group": "other",
+    "condition": "SARS-CoV-2",
+    "treatment": "SARS-CoV-2 infected (MOI 2)",
+    "dose": null,
+    "time_point": null,
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549-ACE2",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series16_A549-ACE2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series16_A549-ACE2_SARS-CoV-2_3"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "Lung adenocarcinoma",
+     "treatment": "SARS-CoV-2 infected (MOI 2)",
+     "strain": "USA-WA1/2020"
+    },
+    "raw_lines": [
+     "tissue: Lung adenocarcinoma",
+     "treatment: SARS-CoV-2 infected (MOI 2)",
+     "strain: USA-WA1/2020"
+    ]
+   },
+   {
+    "gsm": "GSM4486163",
+    "title": "Series16_A549-ACE2_SARS-CoV-2_Rux_1",
+    "source_name": "SARS-CoV-2 infected A549 cells trasnduced with a vector expressing human ACE2 (1hr after Ruxolitinib pre-treatment)",
+    "group": "other",
+    "condition": "SARS-CoV-2_Rux",
+    "treatment": "SARS-CoV-2 infected (MOI 2)",
+    "dose": null,
+    "time_point": null,
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549-ACE2",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series16_A549-ACE2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series16_A549-ACE2_SARS-CoV-2_Rux_1"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "Lung adenocarcinoma",
+     "treatment": "SARS-CoV-2 infected (MOI 2)",
+     "strain": "USA-WA1/2020"
+    },
+    "raw_lines": [
+     "tissue: Lung adenocarcinoma",
+     "treatment: SARS-CoV-2 infected (MOI 2)",
+     "strain: USA-WA1/2020"
+    ]
+   },
+   {
+    "gsm": "GSM4486164",
+    "title": "Series16_A549-ACE2_SARS-CoV-2_Rux_2",
+    "source_name": "SARS-CoV-2 infected A549 cells trasnduced with a vector expressing human ACE2 (1hr after Ruxolitinib pre-treatment)",
+    "group": "other",
+    "condition": "SARS-CoV-2_Rux",
+    "treatment": "SARS-CoV-2 infected (MOI 2)",
+    "dose": null,
+    "time_point": null,
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549-ACE2",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series16_A549-ACE2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series16_A549-ACE2_SARS-CoV-2_Rux_2"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "Lung adenocarcinoma",
+     "treatment": "SARS-CoV-2 infected (MOI 2)",
+     "strain": "USA-WA1/2020"
+    },
+    "raw_lines": [
+     "tissue: Lung adenocarcinoma",
+     "treatment: SARS-CoV-2 infected (MOI 2)",
+     "strain: USA-WA1/2020"
+    ]
+   },
+   {
+    "gsm": "GSM4486165",
+    "title": "Series16_A549-ACE2_SARS-CoV-2_Rux_3",
+    "source_name": "SARS-CoV-2 infected A549 cells trasnduced with a vector expressing human ACE2 (1hr after Ruxolitinib pre-treatment)",
+    "group": "other",
+    "condition": "SARS-CoV-2_Rux",
+    "treatment": "SARS-CoV-2 infected (MOI 2)",
+    "dose": null,
+    "time_point": null,
+    "tissue": null,
+    "cell_type": null,
+    "cell_line": "A549-ACE2",
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": "Series16_A549-ACE2",
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "Series16_A549-ACE2_SARS-CoV-2_Rux_3"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "Lung adenocarcinoma",
+     "treatment": "SARS-CoV-2 infected (MOI 2)",
+     "strain": "USA-WA1/2020"
+    },
+    "raw_lines": [
+     "tissue: Lung adenocarcinoma",
+     "treatment: SARS-CoV-2 infected (MOI 2)",
+     "strain: USA-WA1/2020"
+    ]
+   }
+  ]
+ },
+ "contrasts": [
+  {
+   "gse": "GSE147507",
+   "name": "nhbe_sarscov2_vs_mock",
+   "case_label": "NHBE SARS-CoV-2 MOI 2, 24 h",
+   "control_label": "NHBE mock",
+   "case_gsms": [
+    "GSM4432381",
+    "GSM4432382",
+    "GSM4432383"
+   ],
+   "control_gsms": [
+    "GSM4432378",
+    "GSM4432379",
+    "GSM4432380"
+   ],
+   "blocking": null,
+   "restricted_to": {
+    "batch": "Series1_NHBE"
+   },
+   "confidence": 1.0,
+   "status": "confirmed",
+   "rationale": "Blanco-Melo 2020 (PMID 32416070), Series1_NHBE: infected vs mock within one series; DESeq2 in the paper."
+  },
+  {
+   "gse": "GSE147507",
+   "name": "a549_sarscov2_moi02_vs_mock",
+   "case_label": "A549 SARS-CoV-2 MOI 0.2, 24 h",
+   "control_label": "A549 mock",
+   "case_gsms": [
+    "GSM4432387",
+    "GSM4432388",
+    "GSM4432389"
+   ],
+   "control_gsms": [
+    "GSM4432384",
+    "GSM4432385",
+    "GSM4432386"
+   ],
+   "blocking": null,
+   "restricted_to": {
+    "batch": "Series2_A549"
+   },
+   "confidence": 1.0,
+   "status": "confirmed",
+   "rationale": "Blanco-Melo 2020 (PMID 32416070), Series2_A549: infected vs mock within one series; DESeq2 in the paper."
+  },
+  {
+   "gse": "GSE147507",
+   "name": "a549_sarscov2_moi2_vs_mock",
+   "case_label": "A549 SARS-CoV-2 MOI 2, 24 h",
+   "control_label": "A549 mock",
+   "case_gsms": [
+    "GSM4462339",
+    "GSM4462340",
+    "GSM4462341"
+   ],
+   "control_gsms": [
+    "GSM4462336",
+    "GSM4462337",
+    "GSM4462338"
+   ],
+   "blocking": null,
+   "restricted_to": {
+    "batch": "Series5_A549"
+   },
+   "confidence": 1.0,
+   "status": "confirmed",
+   "rationale": "Blanco-Melo 2020 (PMID 32416070), Series5_A549: infected vs mock within one series; DESeq2 in the paper."
+  },
+  {
+   "gse": "GSE147507",
+   "name": "calu3_sarscov2_vs_mock",
+   "case_label": "Calu-3 SARS-CoV-2 MOI 2, 24 h",
+   "control_label": "Calu-3 mock",
+   "case_gsms": [
+    "GSM4462351",
+    "GSM4462352",
+    "GSM4462353"
+   ],
+   "control_gsms": [
+    "GSM4462348",
+    "GSM4462349",
+    "GSM4462350"
+   ],
+   "blocking": null,
+   "restricted_to": {
+    "batch": "Series7_Calu3"
+   },
+   "confidence": 1.0,
+   "status": "confirmed",
+   "rationale": "Blanco-Melo 2020 (PMID 32416070), Series7_Calu3: infected vs mock within one series; DESeq2 in the paper."
+  },
+  {
+   "gse": "GSE147507",
+   "name": "a549_rsv_vs_mock",
+   "case_label": "A549 RSV MOI 2, 24 h",
+   "control_label": "A549 mock",
+   "case_gsms": [
+    "GSM4462357",
+    "GSM4462358",
+    "GSM4462359"
+   ],
+   "control_gsms": [
+    "GSM4462354",
+    "GSM4462355",
+    "GSM4462356"
+   ],
+   "blocking": null,
+   "restricted_to": {
+    "batch": "Series8_A549"
+   },
+   "confidence": 1.0,
+   "status": "confirmed",
+   "rationale": "Blanco-Melo 2020 (PMID 32416070), Series8_A549: infected vs mock within one series; DESeq2 in the paper."
+  },
+  {
+   "gse": "GSE147507",
+   "name": "a549_hpiv3_vs_mock",
+   "case_label": "A549 HPIV3 MOI 3, 24 h",
+   "control_label": "A549 mock",
+   "case_gsms": [
+    "GSM4462360",
+    "GSM4462361",
+    "GSM4462362"
+   ],
+   "control_gsms": [
+    "GSM4462354",
+    "GSM4462355",
+    "GSM4462356"
+   ],
+   "blocking": null,
+   "restricted_to": {
+    "batch": "Series8_A549"
+   },
+   "confidence": 1.0,
+   "status": "confirmed",
+   "rationale": "Blanco-Melo 2020 (PMID 32416070), Series8_A549: infected vs mock within one series; DESeq2 in the paper."
+  },
+  {
+   "gse": "GSE147507",
+   "name": "nhbe_iav_vs_mock",
+   "case_label": "NHBE IAV MOI 3, 12 h",
+   "control_label": "NHBE mock",
+   "case_gsms": [
+    "GSM4462367",
+    "GSM4462368",
+    "GSM4462369",
+    "GSM4462370"
+   ],
+   "control_gsms": [
+    "GSM4462363",
+    "GSM4462364",
+    "GSM4462365",
+    "GSM4462366"
+   ],
+   "blocking": null,
+   "restricted_to": {
+    "batch": "Series9_NHBE"
+   },
+   "confidence": 1.0,
+   "status": "confirmed",
+   "rationale": "Blanco-Melo 2020 (PMID 32416070), Series9_NHBE: infected vs mock within one series; DESeq2 in the paper."
+  },
+  {
+   "gse": "GSE147507",
+   "name": "nhbe_iavdns1_vs_mock",
+   "case_label": "NHBE IAVdNS1 MOI 3, 12 h",
+   "control_label": "NHBE mock",
+   "case_gsms": [
+    "GSM4462371",
+    "GSM4462372",
+    "GSM4462373",
+    "GSM4462374"
+   ],
+   "control_gsms": [
+    "GSM4462363",
+    "GSM4462364",
+    "GSM4462365",
+    "GSM4462366"
+   ],
+   "blocking": null,
+   "restricted_to": {
+    "batch": "Series9_NHBE"
+   },
+   "confidence": 1.0,
+   "status": "confirmed",
+   "rationale": "Blanco-Melo 2020 (PMID 32416070), Series9_NHBE: infected vs mock within one series; DESeq2 in the paper."
+  }
+ ],
+ "markers": []
+}

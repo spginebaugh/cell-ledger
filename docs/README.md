@@ -29,6 +29,7 @@ identify historical audits, not the current branch head.
 - [Your plain-language guide](agents/README.md): the reusable agent and standing explanation preference for your Codex projects.
 - [Your evaluation workplan](EVALUATION_WORKPLAN.md): transcript/spec reconciliation, personal tasks, ownership, starter worksheets and acceptance checks.
 - [Alternative spec](cell-ledger%20--%20alternative%20spec.md): newest written refinement of validation and evaluation.
+- [Published-DE validation](validation/README.md): the pipeline rerun on three GEO series whose authors published differential expression tables, with per-gene agreement, figures and the scripts to reproduce it.
 - [Hackathon Spec](Cell-Ledger%20%E2%80%94%20Hackathon%20Spec.md): earlier bulk RNA-seq plan and the implemented output contract.
 - [Hackathon brief](hackathon-brief.md): judging criteria.
 - [Implementation status](IMPLEMENTATION.md): completed work, checks, and remaining acceptance gates.
