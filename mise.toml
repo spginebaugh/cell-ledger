@@ -138,6 +138,19 @@ if [ "$1" = "--all" ]; then shift; uv run cell-ledger run-all "$@"; else uv run 
 description = "Run a query set end to end: mise run compare -- hcc_tumor_vs_adjacent [--skip-existing]"
 run = "uv run cell-ledger run-set \"$@\""
 
+[tasks."validate:published"]
+description = "Rerun the published-DE validation (docs/validation): fetch, build designs, run, compare, export"
+run = """
+uv run python scripts/validation/fetch_published.py
+uv run python scripts/validation/build_designs.py
+for gse in GSE52778 GSE147507 GSE144269; do
+  uv run cell-ledger run "$gse" --design "scripts/validation/designs/$gse.json" --no-enrichment "$@"
+done
+uv run python scripts/validation/compare_published.py
+uv run python scripts/validation/export_web_data.py
+bun run biome check --write apps/web/src/lib/validation-results.ts
+"""
+
 # ---------------------------------------------------------- production
 # Everything below runs the app the way Fly runs it: one uvicorn worker serving /api and the
 # built UI from one origin, settings from CELL_LEDGER_* only. Use these before every deploy.

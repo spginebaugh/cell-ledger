@@ -1,5 +1,6 @@
 import { Check, X } from "lucide-react";
 import type { ReactNode } from "react";
+import { PipelineValidation } from "@/components/evals/pipeline-validation";
 import { Footer, Page, TopBar } from "@/components/layout/top-bar";
 import { Badge } from "@/components/ui/badge";
 import { Details, Panel, Section } from "@/components/ui/card";
@@ -189,6 +190,8 @@ export function EvalsPage() {
             </p>
           </div>
         </Section>
+
+        <PipelineValidation />
         <Footer />
       </Page>
     </>
