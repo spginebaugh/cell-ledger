@@ -21,7 +21,7 @@ import asyncio
 import logging
 import shutil
 import uuid
-from collections.abc import Sequence
+from collections.abc import Awaitable, Callable, Sequence
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Any, Literal
@@ -33,6 +33,7 @@ from pydantic import BaseModel, Field
 from cell_ledger.geo import DatasetRecord, ensure_annotation, fetch_series
 from cell_ledger.geo.fetch import ANNOTATION_NAME
 from cell_ledger_api.db import Database
+from cell_ledger_api.designs import DesignProposal
 from cell_ledger_api.storage import SupabaseStore
 
 log = logging.getLogger(__name__)
@@ -72,6 +73,7 @@ def session_info(row: asyncpg.Record) -> SessionInfo:
 
 
 DatasetState = Literal["pending", "ready", "excluded", "failed"]
+DesignState = Literal["pending", "designing", "designed", "skipped", "failed"]
 
 
 class DatasetStatus(BaseModel):
@@ -81,6 +83,17 @@ class DatasetStatus(BaseModel):
         default=None, description="GEO metadata and checks; None while pending or when failed"
     )
     error: str | None = None
+    design_status: DesignState = Field(
+        default="pending",
+        description="pending, then designing while Claude works; designed means its run was "
+        "started, skipped means the contrast was not runnable, failed means no design",
+    )
+    proposal: DesignProposal | None = Field(
+        default=None, description="the contrast Claude chose, once the design step ran"
+    )
+    design_error: str | None = Field(
+        default=None, description="why the design was skipped or failed"
+    )
     uploaded: bool = False
     upload_error: str | None = None
     files: list[str] = Field(default_factory=list, description="names available for signed URLs")
@@ -98,6 +111,9 @@ def dataset_status(row: asyncpg.Record) -> DatasetStatus:
         status=row["status"],
         record=DatasetRecord.model_validate(row["record"]) if row["record"] else None,
         error=row["error"],
+        design_status=row["design_status"],
+        proposal=DesignProposal.model_validate(row["proposal"]) if row["proposal"] else None,
+        design_error=row["design_error"],
         uploaded=row["uploaded"],
         upload_error=row["upload_error"],
         files=list(row["files"]),
@@ -135,6 +151,8 @@ class SessionService:
         self._sem = asyncio.Semaphore(max_concurrent)
         self._annotation_lock = asyncio.Lock()
         self._tasks: set[asyncio.Task[None]] = set()
+        # Set by the pipeline: called with (session id, gse, status) when a download ends.
+        self.on_dataset_finished: Callable[[str, str, str], Awaitable[None]] | None = None
 
     # ------------------------------------------------------------- paths
 
@@ -214,16 +232,22 @@ class SessionService:
                 uploaded = True
             except httpx.HTTPError as e:
                 upload_error = f"{type(e).__name__}: {e}"
+        status = record.status if record else "failed"
         await self.db.finish_dataset(
             session_id,
             gse,
-            status=record.status if record else "failed",  # type: ignore[arg-type]
+            status=status,
             record=record.model_dump(mode="json") if record else None,
             error=error,
             uploaded=uploaded,
             upload_error=upload_error,
             files=files,
         )
+        if self.on_dataset_finished is not None:
+            try:
+                await self.on_dataset_finished(session_id, gse, status)
+            except Exception:  # the hook must never undo a finished download
+                log.exception("dataset-finished hook failed for %s/%s", session_id, gse)
 
     async def datasets(self, session_id: str) -> list[DatasetStatus]:
         await self.get(session_id)

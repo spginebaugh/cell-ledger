@@ -7,7 +7,7 @@ export type ClientOptions = {
 /**
  * AgentEvent
  *
- * One Server-Sent Event from ``discoverDatasets`` or ``designContrast``.
+ * One Server-Sent Event from ``discoverDatasets``.
  */
 export type AgentEvent = {
     /**
@@ -65,7 +65,6 @@ export type AgentEvent = {
 export type AgentTypes = {
     event: AgentEvent;
     discovery?: DiscoveryResult | null;
-    design?: DesignProposal | null;
     /**
      * Available
      */
@@ -688,6 +687,22 @@ export type DatasetStatus = {
      */
     error?: string | null;
     /**
+     * Design Status
+     *
+     * pending, then designing while Claude works; designed means its run was started, skipped means the contrast was not runnable, failed means no design
+     */
+    design_status?: 'pending' | 'designing' | 'designed' | 'skipped' | 'failed';
+    /**
+     * the contrast Claude chose, once the design step ran
+     */
+    proposal?: DesignProposal | null;
+    /**
+     * Design Error
+     *
+     * why the design was skipped or failed
+     */
+    design_error?: string | null;
+    /**
      * Uploaded
      */
     uploaded?: boolean;
@@ -819,30 +834,29 @@ export type DeSummary = {
 /**
  * DesignProposal
  *
- * A run request the user has yet to confirm, with every reason to hesitate attached.
+ * The one contrast the agent chose for a dataset, with every reason to hesitate attached.
+ * Nobody confirms it: ``problems`` empty means it runs, otherwise the dataset is skipped.
  */
 export type DesignProposal = {
     design: RunRequest;
     /**
      * Problems
      *
-     * contrast name -> why it must not run as proposed
+     * why the contrast must not run; empty when runnable
      */
-    problems?: {
-        [key: string]: Array<string>;
-    };
+    problems?: Array<string>;
     /**
      * Qualifications
      *
-     * contrast name -> caveats that travel with a result
+     * caveats that travel with the result
      */
-    qualifications?: {
-        [key: string]: Array<string>;
-    };
+    qualifications?: Array<string>;
     /**
-     * Questions
+     * Decisions
+     *
+     * choices the record left open and how they were made
      */
-    questions?: Array<string>;
+    decisions?: Array<string>;
     /**
      * Notes
      */
@@ -857,26 +871,6 @@ export type DesignProposal = {
      * Attempts
      */
     attempts?: number;
-};
-
-/**
- * DesignRequest
- */
-export type DesignRequest = {
-    /**
-     * Question
-     */
-    question: string;
-    /**
-     * Answers
-     *
-     * the user's answers to earlier clarifying questions
-     */
-    answers?: string | null;
-    /**
-     * Genes
-     */
-    genes?: Array<string>;
 };
 
 /**
@@ -3517,38 +3511,6 @@ export type DiscoverDatasetsErrors = {
 export type DiscoverDatasetsError = DiscoverDatasetsErrors[keyof DiscoverDatasetsErrors];
 
 export type DiscoverDatasetsResponses = {
-    /**
-     * Successful Response
-     */
-    200: unknown;
-};
-
-export type DesignContrastData = {
-    body: DesignRequest;
-    path: {
-        /**
-         * Session Id
-         */
-        session_id: string;
-        /**
-         * Gse
-         */
-        gse: string;
-    };
-    query?: never;
-    url: '/api/sessions/{session_id}/datasets/{gse}/design';
-};
-
-export type DesignContrastErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-};
-
-export type DesignContrastError = DesignContrastErrors[keyof DesignContrastErrors];
-
-export type DesignContrastResponses = {
     /**
      * Successful Response
      */

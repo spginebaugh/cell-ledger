@@ -12,11 +12,12 @@ import { Downloads, MarkdownFile } from "@/components/run/downloads";
 import { buildRows, SamplesTable } from "@/components/run/samples-table";
 import { LiveStepper, StepTimeline } from "@/components/run/steps";
 import { VolcanoPanel } from "@/components/run/volcano-panel";
+import { Decisions } from "@/components/session/pipeline-view";
 import { Badge } from "@/components/ui/badge";
 import { Card, Details, ErrorBox, Section, Skeleton } from "@/components/ui/card";
 import { errorMessage } from "@/lib/api";
 import { fmtInt, statusLabel, statusTone, verdictLabel, verdictTone } from "@/lib/format";
-import { useRun, useSession } from "@/lib/queries";
+import { useDatasets, useRun, useSession } from "@/lib/queries";
 import { useTheme } from "@/lib/theme";
 import { runRoute } from "@/router";
 
@@ -35,6 +36,8 @@ export function RunPage() {
   const view = run.data;
   const report = view?.report ?? null;
   const design = view?.design ?? null;
+  const datasets = useDatasets(sessionId, session.isSuccess);
+  const proposal = datasets.data?.find((d) => d.gse === gse)?.proposal ?? null;
   const urls = view?.urls ?? {};
 
   const sampleRows = useMemo(() => {
@@ -156,6 +159,11 @@ export function RunPage() {
                       description="What was compared with what, and how the model was set up."
                     >
                       <DesignPanel report={report} design={design} />
+                      {proposal && (
+                        <div className="mt-4">
+                          <Decisions proposal={proposal} defaultOpen />
+                        </div>
+                      )}
                     </Section>
 
                     {sampleRows.length > 0 && (

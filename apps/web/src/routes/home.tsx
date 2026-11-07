@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { getHealth, updateSession } from "@/api/generated/sdk.gen";
 import type { DiscoveryResult } from "@/api/generated/types.gen";
 import { DiscoveryView } from "@/components/home/discovery";
-import { ManualAccessions } from "@/components/home/manual";
 import { Page, TopBar } from "@/components/layout/top-bar";
 import { Button } from "@/components/ui/button";
 import { Card, ErrorBox } from "@/components/ui/card";
@@ -68,13 +67,7 @@ export function HomePage() {
     const id = await ensureSession();
     setPhase("work");
     setGenes(guessGenes(q));
-    if (agent.data) {
-      void sse.start(`/api/sessions/${id}/discover`, { question: q });
-    } else {
-      // Called with the id just created: a hook bound to `sessionId` still sees the previous
-      // render's value here (empty on the first submit).
-      await unwrap(await updateSession({ path: { session_id: id }, body: { question: q } }));
-    }
+    void sse.start(`/api/sessions/${id}/discover`, { question: q });
   };
 
   const answer = async (reply: string) => {
@@ -85,17 +78,19 @@ export function HomePage() {
     void sse.start(`/api/sessions/${sessionId}/discover`, { question: q });
   };
 
+  const [saveError, setSaveError] = useState<string | null>(null);
   const startCollect = async (gses: string[]) => {
     const id = await ensureSession();
-    await collect.mutateAsync(gses);
-    // The question stays as typed; clarifications ride along in state so the design step
-    // gets them without the heading turning into a transcript.
+    // The design step reads this state (the interpretation, the clarifications, the genes), so
+    // it must be on the session before a download can finish and trigger a design. The
+    // question stays as typed; clarifications ride along in state.
     const state = {
       discovery: sse.result ?? null,
       genes,
       selected: gses,
       answers: answers.join("\n") || undefined,
     };
+    setSaveError(null);
     try {
       unwrap(
         await updateSession({
@@ -103,9 +98,11 @@ export function HomePage() {
           body: { question: question.trim() || null, state },
         }),
       );
-    } catch {
-      // the session still works without the parked state
+    } catch (e) {
+      setSaveError(errorMessage(e));
+      return;
     }
+    await collect.mutateAsync(gses);
     void navigate({ to: "/s/$sessionId", params: { sessionId: id } });
   };
 
@@ -158,15 +155,15 @@ export function HomePage() {
               variant="primary"
               size="lg"
               onClick={() => void submit()}
-              disabled={!question.trim() || busy}
+              disabled={!question.trim() || busy || !agent.data}
             >
-              {agent.data ? "Find datasets" : "Start"}
+              Find datasets
             </Button>
           </div>
           {agent.isSuccess && !agent.data && (
             <p className="mt-3 text-[13px] text-amber">
-              The search assistant is not configured on this server, so you will pick accessions
-              yourself.
+              This server has no Claude key configured, so it cannot search for datasets or design
+              the analysis. Set CELL_LEDGER_ANTHROPIC_API_KEY and restart the API.
             </p>
           )}
           {create.isError && (
@@ -178,37 +175,31 @@ export function HomePage() {
 
         {phase === "work" && sessionId && (
           <div className="mt-6">
-            {agent.data ? (
-              <DiscoveryView
-                result={sse.result}
-                feed={sse.feed}
-                streaming={sse.status === "streaming"}
-                error={sse.error}
-                genes={genes}
-                onGenesChange={setGenes}
-                selected={selected}
-                onToggle={(gse) =>
-                  setSelected((s) => {
-                    const n = new Set(s);
-                    if (n.has(gse)) n.delete(gse);
-                    else n.add(gse);
-                    return n;
-                  })
-                }
-                onAnswer={(a) => void answer(a)}
-                onCollect={() => void startCollect([...selected])}
-                collecting={collect.isPending}
-              />
-            ) : null}
-            {(sse.status === "done" || sse.status === "error" || !agent.data) && (
-              <div className="mt-5">
-                <ManualAccessions
-                  genes={genes}
-                  onGenesChange={setGenes}
-                  onCollect={(g) => void startCollect(g)}
-                  collecting={collect.isPending}
-                  intro={agent.data ? "Know a series the search missed? Add it here." : undefined}
-                />
+            <DiscoveryView
+              result={sse.result}
+              feed={sse.feed}
+              streaming={sse.status === "streaming"}
+              error={sse.error}
+              genes={genes}
+              onGenesChange={setGenes}
+              selected={selected}
+              onToggle={(gse) =>
+                setSelected((s) => {
+                  const n = new Set(s);
+                  if (n.has(gse)) n.delete(gse);
+                  else n.add(gse);
+                  return n;
+                })
+              }
+              onAnswer={(a) => void answer(a)}
+              onCollect={() => void startCollect([...selected])}
+              collecting={collect.isPending}
+            />
+            {saveError && (
+              <div className="mt-3">
+                <ErrorBox title="Could not save what the search settled">
+                  {saveError}. Nothing was downloaded; try again.
+                </ErrorBox>
               </div>
             )}
             {collect.isError && (

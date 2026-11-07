@@ -1,12 +1,13 @@
-import type { DesignProposal, DiscoveryResult } from "@/api/generated/types.gen";
+import type { DiscoveryResult } from "@/api/generated/types.gen";
 
-/** What the UI parks on the session row (PATCH /sessions/{id} state) so a reload restores it. */
+/** What the UI parks on the session row (PATCH /sessions/{id} state) when the datasets are
+ * chosen. The pipeline reads it too: the design step gets the interpretation, the user's
+ * clarifications and the genes from here. */
 export type UiState = {
   discovery?: DiscoveryResult | null;
   genes?: string[];
   selected?: string[];
   answers?: string;
-  proposals?: Record<string, DesignProposal>;
 };
 
 export function readState(state: unknown): UiState {

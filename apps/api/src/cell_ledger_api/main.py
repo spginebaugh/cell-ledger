@@ -15,6 +15,7 @@ from cell_ledger_api.agent import Agent, TurnRunner, sdk_turn_runner
 from cell_ledger_api.compare import CompareService
 from cell_ledger_api.db import Database
 from cell_ledger_api.discovery import ExaSearcher
+from cell_ledger_api.pipeline import Pipeline
 from cell_ledger_api.routes import agent, comparisons, geo, health, runs, sessions
 from cell_ledger_api.runs import DEFAULT_COMMAND, RunService
 from cell_ledger_api.sessions import SessionNotFound, SessionService
@@ -87,10 +88,6 @@ def create_app(
             removed = await app.state.sessions.sweep(ttl)
             if removed:
                 log.info("swept %d expired sessions", len(removed))
-            resumed = await app.state.sessions.recover() + await app.state.runs.recover()
-            await app.state.comparisons.recover()
-            if resumed:
-                log.warning("re-dispatched %d collect/run jobs interrupted by the restart", resumed)
 
             async def sweep_forever() -> None:
                 while True:
@@ -127,6 +124,17 @@ def create_app(
                 model=settings.anthropic_model,
                 effort=settings.anthropic_effort,
             )
+            app.state.pipeline = Pipeline(
+                app.state.sessions, app.state.runs, app.state.comparisons, app.state.agent
+            )
+            # Recovery after the hooks are wired, so a re-dispatched download or run flows on.
+            # Comparisons first: that step fails whatever is 'running', which at boot can only
+            # be stale, and must not catch a comparison the run recovery's hook starts.
+            await app.state.comparisons.recover()
+            resumed = await app.state.sessions.recover() + await app.state.runs.recover()
+            resumed += await app.state.pipeline.recover()
+            if resumed:
+                log.warning("re-dispatched %d jobs interrupted by the restart", resumed)
             try:
                 yield
             finally:

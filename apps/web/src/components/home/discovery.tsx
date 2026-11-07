@@ -120,8 +120,7 @@ export function DiscoveryView({
           {(result.candidates ?? []).length === 0 ? (
             <Notice tone="amber" title="No usable dataset came back from GEO">
               The search tried {(result.queries_tried ?? []).length} wordings. Broaden the question
-              (organism, synonyms, drop a control requirement) or paste accessions you already know
-              below.
+              (organism, synonyms, drop a control requirement) and search again.
             </Notice>
           ) : (
             <div>

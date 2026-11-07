@@ -101,7 +101,8 @@ class Database:
             on conflict (session_id, gse) do update
               set status = 'pending', attempts = 0, error = null, record = null,
                   uploaded = false, upload_error = null, files = '{}',
-                  requested_at = now(), finished_at = null
+                  requested_at = now(), finished_at = null,
+                  design_status = 'pending', proposal = null, design_error = null
               where datasets.status = 'failed'
             returning gse
             """,
@@ -148,6 +149,65 @@ class Database:
         return await self._pool.fetchrow(
             "select * from datasets where session_id = $1 and gse = $2", session_id, gse
         )
+
+    async def finish_design(
+        self,
+        session_id: str,
+        gse: str,
+        *,
+        status: str,
+        proposal: dict[str, Any] | None,
+        error: str | None,
+    ) -> None:
+        await self._pool.execute(
+            """
+            update datasets set design_status = $3, proposal = $4, design_error = $5
+             where session_id = $1 and gse = $2
+            """,
+            session_id,
+            gse,
+            status,
+            proposal,
+            error,
+        )
+
+    async def claim_design(self, session_id: str, gse: str) -> bool:
+        """Take ownership of a ready dataset's design step. False when it is not ready or
+        another job already has it, so two hooks for one dataset design it once."""
+        row = await self._pool.fetchrow(
+            """
+            update datasets set design_status = 'designing'
+             where session_id = $1 and gse = $2 and status = 'ready'
+               and design_status = 'pending'
+            returning gse
+            """,
+            session_id,
+            gse,
+        )
+        return row is not None
+
+    async def undesigned_datasets(self) -> list[asyncpg.Record]:
+        """Ready datasets whose design step has not concluded: boot-time, when no job can be
+        in flight, so a 'designing' claim left by a dead process is released here."""
+        return await self._pool.fetch(
+            """
+            update datasets set design_status = 'pending'
+             where status = 'ready' and design_status in ('pending', 'designing')
+            returning session_id, gse
+            """
+        )
+
+    async def sessions_awaiting_comparison(self) -> list[str]:
+        """Sessions with complete runs and no comparison yet: boot-time, so a restart between
+        the last run and its hook does not leave the session short of its comparison."""
+        rows = await self._pool.fetch(
+            """
+            select distinct c.session_id from run_contrasts c
+             where c.status = 'complete'
+               and not exists (select 1 from comparisons m where m.session_id = c.session_id)
+            """
+        )
+        return [r["session_id"] for r in rows]
 
     async def claim_pending_datasets(self) -> list[asyncpg.Record]:
         """Every pending row, with ``attempts`` bumped: called once at boot, when no

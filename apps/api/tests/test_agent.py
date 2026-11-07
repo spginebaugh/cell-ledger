@@ -166,19 +166,17 @@ def labels(evidence_for: dict[str, list[str]]) -> DesignOutput:
                 }
                 for s in RECORD.samples
             ],
-            "contrasts": [
-                {
-                    "name": "Lesional vs Healthy",
-                    "case_label": "psoriasis lesional skin",
-                    "control_label": "healthy skin",
-                    "case_gsms": ["GSM1", "GSM2", "GSM3"],
-                    "control_gsms": ["GSM4", "GSM5", "GSM6"],
-                    "blocking": None,
-                    "rationale": "tissue field says it",
-                    "confidence": 0.9,
-                }
-            ],
-            "questions": ["pool all patients?"],
+            "contrast": {
+                "name": "Lesional vs Healthy",
+                "case_label": "psoriasis lesional skin",
+                "control_label": "healthy skin",
+                "case_gsms": ["GSM1", "GSM2", "GSM3"],
+                "control_gsms": ["GSM4", "GSM5", "GSM6"],
+                "blocking": None,
+                "rationale": "tissue field says it",
+                "confidence": 0.9,
+            },
+            "decisions": ["pooled all patients: the record gives no reason to separate them"],
             "notes": "clean",
         }
     )
@@ -190,43 +188,13 @@ def test_compile_enforces_verbatim_evidence() -> None:
     d = proposal.design
     assert d.samplesheet.gse == "GSE100001" and len(d.samplesheet.samples) == 6
     (c,) = d.contrasts
-    assert c.name == "lesional_vs_healthy" and c.status == "proposed"
-    assert proposal.problems == {} and proposal.questions == ["pool all patients?"]
+    # Confirmed, not proposed: nobody reviews it before the pipeline runs it.
+    assert c.name == "lesional_vs_healthy" and c.status == "confirmed"
+    assert proposal.problems == [] and proposal.decisions[0].startswith("pooled all patients")
     assert d.genes == ["IL17A"]
 
     bad, errors = Agent.compile(RECORD, labels({"GSM1": ["tissue: lesion skin"]}), [])
-    # GSM1 is dropped for fabricated evidence; the contrast then names a GSM not in the sheet
+    # GSM1 is dropped for fabricated evidence; the contrast then names a GSM not in the sheet,
+    # which is a problem, which makes the pipeline skip the dataset.
     assert any("GSM1" in e and "evidence" in e for e in errors)
-    assert bad is not None and "GSM1" in str(bad.problems["lesional_vs_healthy"])
-
-
-def test_design_retries_once_on_validation_errors(api: ApiFactory, pg: Any) -> None:
-    turns = ScriptedTurns(
-        message([{"type": "text", "text": labels({"GSM1": ["not in record"]}).model_dump_json()}]),
-        message([{"type": "text", "text": labels({}).model_dump_json()}]),
-    )
-    with api(turn=turns) as c:
-        sid = c.post("/api/sessions").json()["id"]
-        # Plant a ready dataset row directly (the fake GEO host only has a 2-sample series).
-        pg(
-            "insert into datasets (session_id, gse, status, record, finished_at) "
-            "values ($1, 'GSE100001', 'ready', $2::jsonb, now())",
-            sid,
-            RECORD.model_dump_json(),
-        )
-        body = {"question": "lesional vs healthy", "genes": ["IL17A"]}
-        with c.stream("POST", f"/api/sessions/{sid}/datasets/GSE100001/design", json=body) as r:
-            r.read()
-            evs = events(r)
-        fix = next(e for e in evs if e["type"] == "tool")
-        assert fix["name"] == "validate" and "rejected" in fix["summary"]
-        result = next(e for e in evs if e["type"] == "result")["data"]
-        assert result["attempts"] == 2 and result["validation_errors"] == []
-        assert result["design"]["contrasts"][0]["status"] == "proposed"
-        assert len(turns.requests[1]["messages"]) == 3  # original, Claude's try, our correction
-        # The proposal, once confirmed, is a valid run request.
-        design = result["design"]
-        design["contrasts"][0]["status"] = "confirmed"
-        assert c.get(f"/api/sessions/{sid}/datasets/nope/design").status_code in (404, 405, 422)
-        r = c.post(f"/api/sessions/{sid}/datasets/GSE100002/design", json=body)
-        assert r.status_code == 404
+    assert bad is not None and "GSM1" in str(bad.problems)

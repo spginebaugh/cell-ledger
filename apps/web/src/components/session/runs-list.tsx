@@ -11,7 +11,7 @@ export function RunsList({ sessionId, runs }: { sessionId: string; runs: RunStat
   if (runs.length === 0) {
     return (
       <Empty title="No runs yet">
-        Design a contrast for a ready dataset above, or upload a design, to start the pipeline.
+        A run starts on its own as soon as a dataset above has its contrast.
       </Empty>
     );
   }

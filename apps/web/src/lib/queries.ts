@@ -9,19 +9,12 @@ import {
   listComparisons,
   listDatasets,
   listRuns,
-  startComparison,
-  startRun,
-  updateSession,
-  verifyGeoSeries,
 } from "@/api/generated/sdk.gen";
 import type {
-  CompareRequest,
   ComparisonStatus,
   DatasetStatus,
-  RunRequest,
   RunStatus,
   RunView,
-  SessionInfo,
 } from "@/api/generated/types.gen";
 import { unwrap } from "./api";
 
@@ -58,49 +51,26 @@ export function useSession(id: string, enabled = true) {
   });
 }
 
-type SessionPatch = { question?: string | null; state?: Record<string, unknown> | null };
-
-/** PATCH the session. The cache takes the patch at once so a second save computed from it sees
- * the first; only the last in-flight response is written back, so an earlier reply cannot undo
- * a later patch. */
-export function useUpdateSession(id: string) {
-  const qc = useQueryClient();
-  const key = keys.session(id);
-  const mutationKey = [...key, "update"];
-  return useMutation({
-    mutationKey,
-    mutationFn: async (body: SessionPatch) =>
-      unwrap(await updateSession({ path: { session_id: id }, body })),
-    onMutate: (body) => {
-      qc.setQueryData<SessionInfo>(key, (old) =>
-        old
-          ? {
-              ...old,
-              ...(body.question !== undefined ? { question: body.question } : {}),
-              ...(body.state !== undefined ? { state: body.state ?? undefined } : {}),
-            }
-          : old,
-      );
-    },
-    onSuccess: (info: SessionInfo) => {
-      if (qc.isMutating({ mutationKey }) <= 1) qc.setQueryData(key, info);
-    },
-    onError: () => qc.invalidateQueries({ queryKey: key }),
-  });
-}
-
 export function useCreateSession() {
   return useMutation({ mutationFn: async () => unwrap(await createSession()) });
 }
 
-export function useDatasets(id: string, enabled = true) {
+/** ``poll`` keeps refetching while the page says so (the session view drives the whole
+ * pipeline off these lists); otherwise a list polls only while one of its rows is in flight. */
+export function useDatasets(id: string, enabled = true, poll = false) {
   return useQuery({
     queryKey: keys.datasets(id),
     queryFn: async () => unwrap(await listDatasets({ path: { session_id: id } })),
     enabled,
     refetchInterval: (q) => {
       const data = q.state.data as DatasetStatus[] | undefined;
-      return data?.some((d) => d.status === "pending") ? POLL_MS : false;
+      const busy = data?.some(
+        (d) =>
+          d.status === "pending" ||
+          (d.status === "ready" &&
+            (d.design_status === "pending" || d.design_status === "designing")),
+      );
+      return poll || busy ? POLL_MS : false;
     },
   });
 }
@@ -114,30 +84,15 @@ export function useCollect(id: string) {
   });
 }
 
-export function useRuns(id: string, enabled = true) {
+export function useRuns(id: string, enabled = true, poll = false) {
   return useQuery({
     queryKey: keys.runs(id),
     queryFn: async () => unwrap(await listRuns({ path: { session_id: id } })),
     enabled,
     refetchInterval: (q) => {
       const data = q.state.data as RunStatus[] | undefined;
-      return data?.some((r) => r.status === "running") ? POLL_MS : false;
+      return poll || data?.some((r) => r.status === "running") ? POLL_MS : false;
     },
-  });
-}
-
-export function useStartRun(id: string) {
-  const qc = useQueryClient();
-  return useMutation({
-    mutationFn: async (body: RunRequest) =>
-      unwrap(await startRun({ path: { session_id: id }, body })),
-    // A rerun reuses its contrast names, so the finished detail views (cached forever) must be
-    // marked stale too; the list key is a sibling of theirs, not a parent.
-    onSuccess: () =>
-      Promise.all([
-        qc.invalidateQueries({ queryKey: keys.runs(id) }),
-        qc.invalidateQueries({ queryKey: keys.runDetails(id) }),
-      ]),
   });
 }
 
@@ -152,28 +107,15 @@ export function useRun(id: string, gse: string, contrast: string) {
   });
 }
 
-export function useComparisons(id: string, enabled = true) {
+export function useComparisons(id: string, enabled = true, poll = false) {
   return useQuery({
     queryKey: keys.comparisons(id),
     queryFn: async () => unwrap(await listComparisons({ path: { session_id: id } })),
     enabled,
     refetchInterval: (q) => {
       const data = q.state.data as ComparisonStatus[] | undefined;
-      return data?.some((c) => c.status === "running") ? POLL_MS : false;
+      return poll || data?.some((c) => c.status === "running") ? POLL_MS : false;
     },
-  });
-}
-
-export function useStartComparison(id: string) {
-  const qc = useQueryClient();
-  return useMutation({
-    mutationFn: async (body: CompareRequest) =>
-      unwrap(await startComparison({ path: { session_id: id }, body })),
-    onSuccess: () =>
-      Promise.all([
-        qc.invalidateQueries({ queryKey: keys.comparisons(id) }),
-        qc.invalidateQueries({ queryKey: keys.comparisonDetails(id) }),
-      ]),
   });
 }
 
@@ -183,12 +125,6 @@ export function useComparison(id: string, name: string) {
     queryFn: async () => unwrap(await getComparison({ path: { session_id: id, name } })),
     refetchInterval: (q) => (q.state.data?.status === "running" ? POLL_MS : false),
     staleTime: (q) => (q.state.data?.status === "running" ? 0 : Number.POSITIVE_INFINITY),
-  });
-}
-
-export function useVerifyGeo() {
-  return useMutation({
-    mutationFn: async (gses: string[]) => unwrap(await verifyGeoSeries({ body: { gses } })),
   });
 }
 

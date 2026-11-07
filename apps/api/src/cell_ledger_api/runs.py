@@ -21,7 +21,7 @@ import asyncio
 import logging
 import shutil
 import sys
-from collections.abc import Sequence
+from collections.abc import Awaitable, Callable, Sequence
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import IO, Any, Literal
@@ -31,24 +31,13 @@ import httpx
 from pydantic import BaseModel, Field
 
 from cell_ledger.progress import parse_progress_line
-from cell_ledger.report.models import AnalysisReport, MarkerExpectation
-from cell_ledger.samplesheet import Contrast, SampleSheet
+from cell_ledger.report.models import AnalysisReport
+from cell_ledger_api.designs import RunRequest as RunRequest
 from cell_ledger_api.sessions import SessionService, upload_dir
 
 log = logging.getLogger(__name__)
 
 DEFAULT_COMMAND: tuple[str, ...] = (sys.executable, "-m", "cell_ledger.cli")
-
-
-class RunRequest(BaseModel):
-    """One design file, as ``cell-ledger run --design`` reads it, plus a few run options."""
-
-    samplesheet: SampleSheet
-    contrasts: list[Contrast] = Field(min_length=1)
-    markers: list[MarkerExpectation] = Field(default_factory=list)
-    genes: list[str] = Field(default_factory=list, description="symbols or GeneIDs to look up")
-    enrichment: bool = True
-    figures: bool = True
 
 
 RunState = Literal["running", "complete", "qc_only", "blocked", "failed"]
@@ -186,6 +175,16 @@ class RunService:
         self._timeout = timeout_minutes * 60
         self._command = tuple(command)
         self._max_attempts = max_attempts
+        # Set by the pipeline: called with the session id when a run (all its contrasts) ends.
+        self.on_run_finished: Callable[[str], Awaitable[None]] | None = None
+
+    async def _finished(self, session_id: str) -> None:
+        if self.on_run_finished is None:
+            return
+        try:
+            await self.on_run_finished(session_id)
+        except Exception:  # the hook must never take the run down with it
+            log.exception("run-finished hook failed for %s", session_id)
 
     def runs_dir(self, session_id: str) -> Path:
         return self._sessions.local(session_id) / "runs"
@@ -263,6 +262,7 @@ class RunService:
         for contrast in req.contrasts:
             await self._finish_contrast(session_id, gse, out / contrast.name, error)
         await self._db.finish_run(session_id, gse, error)
+        await self._finished(session_id)
 
     async def _tail(
         self,
@@ -395,3 +395,4 @@ class RunService:
                 files=[],
             )
         await self._db.finish_run(session_id, gse, why)
+        await self._finished(session_id)

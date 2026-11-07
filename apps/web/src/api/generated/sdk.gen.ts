@@ -2,7 +2,7 @@
 
 import type { Client, ClientMeta, Options as Options2, RequestResult, TDataShape } from './client';
 import { client } from './client.gen';
-import type { CollectDatasetsData, CollectDatasetsErrors, CollectDatasetsResponses, CreateSessionData, CreateSessionResponses, DeleteSessionData, DeleteSessionErrors, DeleteSessionResponses, DesignContrastData, DesignContrastErrors, DesignContrastResponses, DiscoverDatasetsData, DiscoverDatasetsErrors, DiscoverDatasetsResponses, GetAgentTypesData, GetAgentTypesResponses, GetComparisonData, GetComparisonErrors, GetComparisonFileUrlData, GetComparisonFileUrlErrors, GetComparisonFileUrlResponses, GetComparisonResponses, GetDatasetFileUrlData, GetDatasetFileUrlErrors, GetDatasetFileUrlResponses, GetHealthData, GetHealthResponses, GetRunData, GetRunErrors, GetRunFileUrlData, GetRunFileUrlErrors, GetRunFileUrlResponses, GetRunResponses, GetSessionData, GetSessionErrors, GetSessionResponses, ListComparisonsData, ListComparisonsErrors, ListComparisonsResponses, ListDatasetsData, ListDatasetsErrors, ListDatasetsResponses, ListRunsData, ListRunsErrors, ListRunsResponses, SearchGeoData, SearchGeoErrors, SearchGeoOnWebData, SearchGeoOnWebErrors, SearchGeoOnWebResponses, SearchGeoResponses, StartComparisonData, StartComparisonErrors, StartComparisonResponses, StartRunData, StartRunErrors, StartRunResponses, UpdateSessionData, UpdateSessionErrors, UpdateSessionResponses, VerifyGeoSeriesData, VerifyGeoSeriesErrors, VerifyGeoSeriesResponses } from './types.gen';
+import type { CollectDatasetsData, CollectDatasetsErrors, CollectDatasetsResponses, CreateSessionData, CreateSessionResponses, DeleteSessionData, DeleteSessionErrors, DeleteSessionResponses, DiscoverDatasetsData, DiscoverDatasetsErrors, DiscoverDatasetsResponses, GetAgentTypesData, GetAgentTypesResponses, GetComparisonData, GetComparisonErrors, GetComparisonFileUrlData, GetComparisonFileUrlErrors, GetComparisonFileUrlResponses, GetComparisonResponses, GetDatasetFileUrlData, GetDatasetFileUrlErrors, GetDatasetFileUrlResponses, GetHealthData, GetHealthResponses, GetRunData, GetRunErrors, GetRunFileUrlData, GetRunFileUrlErrors, GetRunFileUrlResponses, GetRunResponses, GetSessionData, GetSessionErrors, GetSessionResponses, ListComparisonsData, ListComparisonsErrors, ListComparisonsResponses, ListDatasetsData, ListDatasetsErrors, ListDatasetsResponses, ListRunsData, ListRunsErrors, ListRunsResponses, SearchGeoData, SearchGeoErrors, SearchGeoOnWebData, SearchGeoOnWebErrors, SearchGeoOnWebResponses, SearchGeoResponses, StartComparisonData, StartComparisonErrors, StartComparisonResponses, StartRunData, StartRunErrors, StartRunResponses, UpdateSessionData, UpdateSessionErrors, UpdateSessionResponses, VerifyGeoSeriesData, VerifyGeoSeriesErrors, VerifyGeoSeriesResponses } from './types.gen';
 
 export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends boolean = boolean, TResponse = unknown> = Options2<TData, ThrowOnError, TResponse> & {
     /**
@@ -210,24 +210,6 @@ export const getComparisonFileUrl = <ThrowOnError extends boolean = false>(optio
  */
 export const discoverDatasets = <ThrowOnError extends boolean = false>(options: Options<DiscoverDatasetsData, ThrowOnError>): RequestResult<DiscoverDatasetsResponses, DiscoverDatasetsErrors, ThrowOnError> => (options.client ?? client).post<DiscoverDatasetsResponses, DiscoverDatasetsErrors, ThrowOnError>({
     url: '/api/sessions/{session_id}/discover',
-    ...options,
-    headers: {
-        'Content-Type': 'application/json',
-        ...options.headers
-    }
-});
-
-/**
- * Design
- *
- * Stream Claude's sample labelling and contrast proposal for one collected dataset.
- *
- * Events as for ``discoverDatasets``; the ``result`` is a ``DesignProposal`` whose design
- * carries ``status: proposed`` contrasts. Confirm them (set ``status: confirmed``) and
- * submit the design to ``startRun``.
- */
-export const designContrast = <ThrowOnError extends boolean = false>(options: Options<DesignContrastData, ThrowOnError>): RequestResult<DesignContrastResponses, DesignContrastErrors, ThrowOnError> => (options.client ?? client).post<DesignContrastResponses, DesignContrastErrors, ThrowOnError>({
-    url: '/api/sessions/{session_id}/datasets/{gse}/design',
     ...options,
     headers: {
         'Content-Type': 'application/json',

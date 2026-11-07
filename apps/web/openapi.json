@@ -980,68 +980,6 @@
         }
       }
     },
-    "/api/sessions/{session_id}/datasets/{gse}/design": {
-      "post": {
-        "tags": [
-          "agent"
-        ],
-        "summary": "Design",
-        "description": "Stream Claude's sample labelling and contrast proposal for one collected dataset.\n\nEvents as for ``discoverDatasets``; the ``result`` is a ``DesignProposal`` whose design\ncarries ``status: proposed`` contrasts. Confirm them (set ``status: confirmed``) and\nsubmit the design to ``startRun``.",
-        "operationId": "designContrast",
-        "parameters": [
-          {
-            "name": "session_id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "pattern": "^[0-9a-f]{32}$",
-              "title": "Session Id"
-            }
-          },
-          {
-            "name": "gse",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "pattern": "^GSE\\d+$",
-              "title": "Gse"
-            }
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/DesignRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {}
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/agent/types": {
       "get": {
         "tags": [
@@ -1160,7 +1098,7 @@
           "type"
         ],
         "title": "AgentEvent",
-        "description": "One Server-Sent Event from ``discoverDatasets`` or ``designContrast``."
+        "description": "One Server-Sent Event from ``discoverDatasets``."
       },
       "AgentTypes": {
         "properties": {
@@ -1171,16 +1109,6 @@
             "anyOf": [
               {
                 "$ref": "#/components/schemas/DiscoveryResult"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "design": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/DesignProposal"
               },
               {
                 "type": "null"
@@ -2287,6 +2215,42 @@
             ],
             "title": "Error"
           },
+          "design_status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "designing",
+              "designed",
+              "skipped",
+              "failed"
+            ],
+            "title": "Design Status",
+            "description": "pending, then designing while Claude works; designed means its run was started, skipped means the contrast was not runnable, failed means no design",
+            "default": "pending"
+          },
+          "proposal": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DesignProposal"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "the contrast Claude chose, once the design step ran"
+          },
+          "design_error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Design Error",
+            "description": "why the design was skipped or failed"
+          },
           "uploaded": {
             "type": "boolean",
             "title": "Uploaded",
@@ -2498,33 +2462,28 @@
             "$ref": "#/components/schemas/RunRequest"
           },
           "problems": {
-            "additionalProperties": {
-              "items": {
-                "type": "string"
-              },
-              "type": "array"
-            },
-            "type": "object",
-            "title": "Problems",
-            "description": "contrast name -> why it must not run as proposed"
-          },
-          "qualifications": {
-            "additionalProperties": {
-              "items": {
-                "type": "string"
-              },
-              "type": "array"
-            },
-            "type": "object",
-            "title": "Qualifications",
-            "description": "contrast name -> caveats that travel with a result"
-          },
-          "questions": {
             "items": {
               "type": "string"
             },
             "type": "array",
-            "title": "Questions"
+            "title": "Problems",
+            "description": "why the contrast must not run; empty when runnable"
+          },
+          "qualifications": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Qualifications",
+            "description": "caveats that travel with the result"
+          },
+          "decisions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Decisions",
+            "description": "choices the record left open and how they were made"
           },
           "notes": {
             "type": "string",
@@ -2550,41 +2509,7 @@
           "design"
         ],
         "title": "DesignProposal",
-        "description": "A run request the user has yet to confirm, with every reason to hesitate attached."
-      },
-      "DesignRequest": {
-        "properties": {
-          "question": {
-            "type": "string",
-            "maxLength": 2000,
-            "minLength": 3,
-            "title": "Question"
-          },
-          "answers": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Answers",
-            "description": "the user's answers to earlier clarifying questions"
-          },
-          "genes": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "title": "Genes"
-          }
-        },
-        "type": "object",
-        "required": [
-          "question"
-        ],
-        "title": "DesignRequest"
+        "description": "The one contrast the agent chose for a dataset, with every reason to hesitate attached.\nNobody confirms it: ``problems`` empty means it runs, otherwise the dataset is skipped."
       },
       "DiscoverRequest": {
         "properties": {

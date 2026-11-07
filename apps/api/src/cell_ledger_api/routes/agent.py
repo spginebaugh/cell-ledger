@@ -1,4 +1,5 @@
-"""Streaming endpoints for the discover and design steps (see ``cell_ledger_api.agent``)."""
+"""The streaming discover endpoint (see ``cell_ledger_api.agent``). The design step has no
+endpoint: the pipeline runs it when a dataset is ready (``cell_ledger_api.pipeline``)."""
 
 from __future__ import annotations
 
@@ -11,18 +12,15 @@ from fastapi import APIRouter, HTTPException, Request
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
 
-from cell_ledger.geo import DatasetRecord
 from cell_ledger_api.agent import (
     Agent,
     AgentUnavailable,
     DatasetNotReady,
-    DesignProposal,
-    DesignRequest,
     DiscoverRequest,
     DiscoveryResult,
     sse,
 )
-from cell_ledger_api.routes.sessions import Gse, SessionId
+from cell_ledger_api.routes.sessions import SessionId
 from cell_ledger_api.sessions import SessionService
 
 log = logging.getLogger(__name__)
@@ -31,7 +29,7 @@ types_router = APIRouter(prefix="/agent", tags=["agent"])
 
 
 class AgentEvent(BaseModel):
-    """One Server-Sent Event from ``discoverDatasets`` or ``designContrast``."""
+    """One Server-Sent Event from ``discoverDatasets``."""
 
     type: Literal["thinking", "tool", "result", "error", "done"]
     delta: str | None = Field(default=None, description="thinking: text to append")
@@ -48,7 +46,6 @@ class AgentTypes(BaseModel):
 
     event: AgentEvent
     discovery: DiscoveryResult | None = None
-    design: DesignProposal | None = None
     available: bool
 
 
@@ -121,34 +118,6 @@ async def discover(
 
     async def work(emit):  # type: ignore[no-untyped-def]
         return await a.discover(body.question, emit)
-
-    return StreamingResponse(
-        sse(_stream(work)), media_type="text/event-stream", headers=SSE_HEADERS
-    )
-
-
-@router.post("/datasets/{gse}/design", operation_id="designContrast")
-async def design(
-    session_id: SessionId, gse: Gse, body: DesignRequest, request: Request
-) -> StreamingResponse:
-    """Stream Claude's sample labelling and contrast proposal for one collected dataset.
-
-    Events as for ``discoverDatasets``; the ``result`` is a ``DesignProposal`` whose design
-    carries ``status: proposed`` contrasts. Confirm them (set ``status: confirmed``) and
-    submit the design to ``startRun``.
-    """
-    a = agent(request)
-    svc = sessions(request)
-    row = await svc.db.get_dataset(session_id, gse)
-    if row is None:
-        await svc.get(session_id)
-        raise HTTPException(404, f"{gse} is not in this session")
-    if row["status"] != "ready" or not row["record"]:
-        raise HTTPException(409, f"{gse} is {row['status']}; collect it first")
-    record = DatasetRecord.model_validate(row["record"])
-
-    async def work(emit):  # type: ignore[no-untyped-def]
-        return await a.design(record, body, emit)
 
     return StreamingResponse(
         sse(_stream(work)), media_type="text/event-stream", headers=SSE_HEADERS

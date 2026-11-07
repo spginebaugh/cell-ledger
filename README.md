@@ -70,21 +70,28 @@ frontend types stay in sync. The generated client is committed.
 
 ## How a question becomes a result
 
-1. **Discover** (`POST /api/sessions/{id}/discover`, SSE): Claude searches GEO (and the web via
-   Exa when configured) and returns candidate series with reasons, or clarifying questions.
-   Only accessions GEO confirmed in that run can be reported.
-2. **Collect** (`POST .../datasets`): counts and metadata are downloaded, checked and mirrored
-   to Storage.
-3. **Design** (`POST .../datasets/{gse}/design`, SSE): Claude labels every sample from its GEO
-   record; the `SampleSheet` validator rejects any label without a verbatim quote. The result
-   is a *proposed* contrast the user confirms.
-4. **Run** (`POST .../runs`): the pipeline runs as a subprocess; `listRuns` shows step-by-step
-   progress; `GET .../runs/{gse}/{contrast}` returns the report, the design and signed URLs
-   for every file (including `volcano.json.gz`, the browser-side DE table).
-5. **Compare** (`POST .../comparisons`): pooled effects across the session's runs.
+The user does two things: ask, then tick the datasets to download. Everything after that
+runs on its own (`apps/api/src/cell_ledger_api/pipeline.py`).
 
-Without `CELL_LEDGER_ANTHROPIC_API_KEY` steps 1 and 3 answer 503 and the UI offers the
-manual path: paste accessions, upload a design file.
+1. **Discover** (`POST /api/sessions/{id}/discover`, SSE): Claude searches GEO (and the web via
+   Exa when configured) and returns candidate series with reasons, or clarifying questions the
+   user answers before choosing. Only accessions GEO confirmed in that run can be reported.
+2. **Collect** (`POST .../datasets`): counts and metadata are downloaded, checked and mirrored
+   to Storage. This is the last click.
+3. **Design** (automatic, per ready dataset): Claude labels every sample from its GEO record
+   and chooses the one contrast that answers the question as discovery restated it; the
+   `SampleSheet` validator rejects any label without a verbatim quote. A contrast with
+   problems (too few samples per arm, labels contradicting the arms) sets the dataset aside
+   with the reason; every choice Claude made is recorded on the dataset row (`proposal`).
+4. **Run** (automatic, when a design passes): the pipeline runs as a subprocess; `listRuns`
+   shows step-by-step progress; `GET .../runs/{gse}/{contrast}` returns the report, the design
+   and signed URLs for every file (including `volcano.json.gz`, the browser-side DE table).
+5. **Compare** (automatic, once every run is done and two or more completed): pooled effects
+   across the session's runs, one comparison per session.
+
+The API still accepts `POST .../runs` and `POST .../comparisons` directly (the tests use
+them), but the UI has no manual path: without `CELL_LEDGER_ANTHROPIC_API_KEY` discovery
+answers 503, designs fail with that reason, and the home page says so.
 
 ## Conventions
 

@@ -6,12 +6,14 @@
    question is ambiguous. Claude never invents an accession: every GSE it reports came back
    from a GEO search or a GEO verification in this very run.
 
-2. **Design** (``POST /sessions/{id}/datasets/{gse}/design``): for one collected series,
-   Claude labels each sample from its GEO record and proposes a two-group contrast. The
-   labels are compiled into a :class:`SampleSheet`, whose validator refuses any label that
-   is not backed by a verbatim quote from the GEO record, and the contrast is checked with
-   ``Contrast.problems``. Validation errors go back to Claude once; what survives is
-   returned as a *proposed* design the user must confirm before a run starts.
+2. **Design** (run by ``cell_ledger_api.pipeline`` as soon as a dataset is ready): for one
+   collected series, Claude labels each sample from its GEO record and chooses the one
+   two-group contrast that answers the question. The labels are compiled into a
+   :class:`SampleSheet`, whose validator refuses any label that is not backed by a verbatim
+   quote from the GEO record, and the contrast is checked with ``Contrast.problems``.
+   Validation errors go back to Claude once. Nobody confirms the result: a contrast without
+   problems runs, one with problems sets the dataset aside, and every choice Claude made is
+   recorded in ``decisions`` for the result page.
 
 Events are JSON objects, one per SSE ``data:`` line::
 
@@ -38,12 +40,12 @@ from pydantic import BaseModel, Field, ValidationError
 
 from cell_ledger.geo import DatasetRecord, GeoClient
 from cell_ledger.samplesheet import Assay, Contrast, ContrastStatus, Group, Sample, SampleSheet
+from cell_ledger_api.designs import DesignProposal, RunRequest
 from cell_ledger_api.discovery import (
     FIND_SERIES_TOOL,
     ExaSearcher,
     find_series_on_web,
 )
-from cell_ledger_api.runs import RunRequest
 
 log = logging.getLogger(__name__)
 
@@ -90,8 +92,10 @@ class DiscoveryResult(BaseModel):
 
 class DesignRequest(BaseModel):
     question: str = Field(min_length=3, max_length=2000)
-    answers: str | None = Field(
-        default=None, description="the user's answers to earlier clarifying questions"
+    context: str | None = Field(
+        default=None,
+        description="what discovery settled: the question as a two-group comparison and the "
+        "user's answers to clarifying questions",
     )
     genes: list[str] = Field(default_factory=list)
 
@@ -132,32 +136,15 @@ class ContrastProposal(BaseModel):
 
 
 class DesignOutput(BaseModel):
-    """What Claude returns; compiled into a SampleSheet and Contrasts by code."""
+    """What Claude returns; compiled into a SampleSheet and one Contrast by code."""
 
     samples: list[SampleLabel]
-    contrasts: list[ContrastProposal]
-    questions: list[str] = Field(
-        default_factory=list, description="what the user must decide before this can run"
+    contrast: ContrastProposal = Field(description="the one comparison that answers the question")
+    decisions: list[str] = Field(
+        default_factory=list,
+        description="each choice the record left open, how it was made and what was rejected",
     )
     notes: str = ""
-
-
-class DesignProposal(BaseModel):
-    """A run request the user has yet to confirm, with every reason to hesitate attached."""
-
-    design: RunRequest
-    problems: dict[str, list[str]] = Field(
-        default_factory=dict, description="contrast name -> why it must not run as proposed"
-    )
-    qualifications: dict[str, list[str]] = Field(
-        default_factory=dict, description="contrast name -> caveats that travel with a result"
-    )
-    questions: list[str] = Field(default_factory=list)
-    notes: str = ""
-    validation_errors: list[str] = Field(
-        default_factory=list, description="labels Claude could not back with evidence"
-    )
-    attempts: int = 1
 
 
 class AgentUnavailable(RuntimeError):
@@ -218,10 +205,12 @@ Prefer fewer, better candidates (at most eight). Keep prose short.
 
 SYSTEM_DESIGN = """\
 You are cell-ledger, a specialist that harmonizes GEO sample metadata into a typed sample
-sheet and proposes a two-group contrast for differential expression. Every label you assign
-must be backed by evidence copied verbatim from that sample's own GEO record (its title,
-source name, or one of its characteristics lines). Labels without a verbatim quote are
-rejected by the validator, so quote exactly, including case and punctuation.
+sheet and chooses the one two-group contrast that answers a biologist's question. Nobody
+reviews your output before it runs, so decide, and write down what you decided.
+
+Every label you assign must be backed by evidence copied verbatim from that sample's own GEO
+record (its title, source name, or one of its characteristics lines). Labels without a
+verbatim quote are rejected by the validator, so quote exactly, including case and punctuation.
 
 For each sample in the record:
 - group: case if it belongs to the case arm of the question, control for the control arm,
@@ -233,16 +222,18 @@ For each sample in the record:
 - evidence: one or more verbatim substrings supporting the group label.
 - confidence: how sure you are of the group label (1.0 only when the record is explicit).
 
-Then propose one contrast (or several when the series supports clearly different
-comparisons, e.g. lesional vs healthy and lesional vs non-lesional): a slug name, human
-labels for both arms, the GSMs in each arm (only samples you labelled case or control and
-that are in the counts matrix), a blocking field when case and control come from the same
-donors, a short rationale, and a confidence. At least three samples per arm; if that is not
-possible, say so in questions and still return the best contrast.
+Then choose exactly one contrast: the comparison that answers the question as asked, and as
+restated in the context when one is given. Return a slug name, human labels for both arms,
+the GSMs in each arm (only samples you labelled case or control and that are in the counts
+matrix), a blocking field when case and control come from the same donors, a short rationale,
+and a confidence. Prefer the cleanest reading: the untreated or healthy control over other
+arms, one time point over pooled ones when pooling would mix effects, and the largest arms
+that stay homogeneous. Each arm needs at least three samples; if the series cannot give
+that, still return the best contrast and say so in decisions (it will be set aside).
 
-Ask questions when the record leaves a real choice (which control to use, whether to pool
-time points, whether treated samples count). Do not pad; return an empty list when there is
-nothing to ask.
+Do not ask questions; there is no one to answer them. Where the record leaves a real choice
+(which control to use, whether to pool time points, whether treated samples count), make it
+and record it as one line in decisions, naming the alternative you rejected.
 """
 
 
@@ -543,47 +534,34 @@ class Agent:
         except ValidationError as e:
             errors.extend(err["msg"] for err in e.errors())
             return None, errors
-        contrasts: list[Contrast] = []
-        for c in out.contrasts:
-            try:
-                contrasts.append(
-                    Contrast(
-                        gse=record.gse,
-                        name=_slug(c.name),
-                        case_label=c.case_label,
-                        control_label=c.control_label,
-                        case_gsms=c.case_gsms,
-                        control_gsms=c.control_gsms,
-                        blocking=c.blocking,
-                        confidence=c.confidence,
-                        status=ContrastStatus.PROPOSED,
-                        rationale=c.rationale,
-                    )
-                )
-            except ValidationError as e:
-                errors.extend(f"contrast {c.name}: {err['msg']}" for err in e.errors())
-        if not contrasts:
-            errors.append("no valid contrast proposed")
+        c = out.contrast
+        try:
+            # Confirmed, not proposed: the pipeline runs what passes ``problems`` with no one
+            # in between, and the result page shows the decisions instead of a confirm button.
+            contrast = Contrast(
+                gse=record.gse,
+                name=_slug(c.name),
+                case_label=c.case_label,
+                control_label=c.control_label,
+                case_gsms=c.case_gsms,
+                control_gsms=c.control_gsms,
+                blocking=c.blocking,
+                confidence=c.confidence,
+                status=ContrastStatus.CONFIRMED,
+                rationale=c.rationale,
+            )
+        except ValidationError as e:
+            errors.extend(f"contrast {c.name}: {err['msg']}" for err in e.errors())
             return None, errors
-        problems = {}
-        qualifications = {}
-        for c in contrasts:
-            # Status 'proposed' is a problem by design (the user confirms); report the rest.
-            probs = [p for p in c.problems(sheet) if not p.startswith("contrast is only proposed")]
-            if probs:
-                problems[c.name] = probs
-            quals = c.qualifications(sheet)
-            if quals:
-                qualifications[c.name] = quals
         design = RunRequest(
-            samplesheet=sheet, contrasts=contrasts, genes=list(dict.fromkeys(genes))
+            samplesheet=sheet, contrasts=[contrast], genes=list(dict.fromkeys(genes))
         )
         return (
             DesignProposal(
                 design=design,
-                problems=problems,
-                qualifications=qualifications,
-                questions=out.questions,
+                problems=contrast.problems(sheet),
+                qualifications=contrast.qualifications(sheet),
+                decisions=out.decisions,
                 notes=out.notes,
             ),
             errors,
@@ -595,8 +573,8 @@ class Agent:
         if record.status != "ready":
             raise DatasetNotReady(f"{record.gse} is {record.status}")
         prompt = f"Question: {req.question}\n"
-        if req.answers:
-            prompt += f"The user adds: {req.answers}\n"
+        if req.context:
+            prompt += f"Context from the dataset search:\n{req.context}\n"
         if req.genes:
             prompt += f"Genes of interest: {', '.join(req.genes)}\n"
         prompt += "\nGEO record (only samples that have counts):\n" + self._record_text(record)
