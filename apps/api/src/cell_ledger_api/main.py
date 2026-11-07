@@ -10,6 +10,7 @@ from fastapi.responses import JSONResponse
 
 from cell_ledger.geo import GeoClient
 from cell_ledger_api import __version__
+from cell_ledger_api.discovery import ExaSearcher
 from cell_ledger_api.routes import geo, health, sessions
 from cell_ledger_api.sessions import SessionNotFound, SessionService
 from cell_ledger_api.settings import Settings, settings
@@ -32,8 +33,9 @@ def create_app(
     *,
     transport: httpx.AsyncBaseTransport | None = None,
     store: ObjectStore | None = None,
+    exa: ExaSearcher | None = None,
 ) -> FastAPI:
-    """``transport`` and ``store`` let tests swap out GEO and Supabase."""
+    """``transport``, ``store`` and ``exa`` let tests swap out GEO, Supabase and Exa."""
 
     @asynccontextmanager
     async def lifespan(app: FastAPI) -> AsyncIterator[None]:
@@ -55,7 +57,17 @@ def create_app(
             removed = await app.state.sessions.sweep(timedelta(hours=cfg.session_ttl_hours))
             if removed:
                 log.info("swept %d expired sessions", len(removed))
-            yield
+            own_exa = None
+            if exa is None and cfg.exa_api_key:
+                from exa_py import AsyncExa
+
+                own_exa = AsyncExa(api_key=cfg.exa_api_key.get_secret_value())
+            app.state.exa = exa if exa is not None else own_exa
+            try:
+                yield
+            finally:
+                if own_exa is not None:
+                    await own_exa.aclose()
 
     app = FastAPI(title="cell-ledger", version=__version__, lifespan=lifespan)
     app.add_middleware(

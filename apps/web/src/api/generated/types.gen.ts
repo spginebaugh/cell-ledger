@@ -389,6 +389,95 @@ export type ValidationError = {
 };
 
 /**
+ * VerifyRequest
+ */
+export type VerifyRequest = {
+    /**
+     * Gses
+     */
+    gses: Array<string>;
+};
+
+/**
+ * VerifyResult
+ */
+export type VerifyResult = {
+    /**
+     * Hits
+     *
+     * Accessions that exist and pass the filter
+     */
+    hits: Array<GeoSeriesHit>;
+    /**
+     * Ineligible
+     *
+     * Accessions that do not exist or fail the filter
+     */
+    ineligible: Array<string>;
+};
+
+/**
+ * WebSearchRequest
+ */
+export type WebSearchRequest = {
+    /**
+     * Query
+     */
+    query: string;
+    /**
+     * Objective
+     */
+    objective: string;
+};
+
+/**
+ * WebSearchResult
+ */
+export type WebSearchResult = {
+    /**
+     * Query
+     */
+    query: string;
+    /**
+     * Objective
+     */
+    objective: string;
+    /**
+     * Nominated
+     *
+     * Accessions Exa returned, before GEO checks
+     */
+    nominated: Array<string>;
+    /**
+     * Verified
+     */
+    verified: Array<WebSeriesHit>;
+    /**
+     * Rejected
+     *
+     * Nominated but missing from GEO or ineligible
+     */
+    rejected: Array<string>;
+    /**
+     * Exa Cost Dollars
+     */
+    exa_cost_dollars?: number | null;
+};
+
+/**
+ * WebSeriesHit
+ */
+export type WebSeriesHit = {
+    hit: GeoSeriesHit;
+    /**
+     * Found At
+     *
+     * Pages where Exa found the accession
+     */
+    found_at: Array<string>;
+};
+
+/**
  * GeoSeriesHit
  */
 export type GeoSeriesHitWritable = {
@@ -446,6 +535,71 @@ export type SearchResultWritable = {
     hits: Array<GeoSeriesHitWritable>;
 };
 
+/**
+ * VerifyResult
+ */
+export type VerifyResultWritable = {
+    /**
+     * Hits
+     *
+     * Accessions that exist and pass the filter
+     */
+    hits: Array<GeoSeriesHitWritable>;
+    /**
+     * Ineligible
+     *
+     * Accessions that do not exist or fail the filter
+     */
+    ineligible: Array<string>;
+};
+
+/**
+ * WebSearchResult
+ */
+export type WebSearchResultWritable = {
+    /**
+     * Query
+     */
+    query: string;
+    /**
+     * Objective
+     */
+    objective: string;
+    /**
+     * Nominated
+     *
+     * Accessions Exa returned, before GEO checks
+     */
+    nominated: Array<string>;
+    /**
+     * Verified
+     */
+    verified: Array<WebSeriesHitWritable>;
+    /**
+     * Rejected
+     *
+     * Nominated but missing from GEO or ineligible
+     */
+    rejected: Array<string>;
+    /**
+     * Exa Cost Dollars
+     */
+    exa_cost_dollars?: number | null;
+};
+
+/**
+ * WebSeriesHit
+ */
+export type WebSeriesHitWritable = {
+    hit: GeoSeriesHitWritable;
+    /**
+     * Found At
+     *
+     * Pages where Exa found the accession
+     */
+    found_at: Array<string>;
+};
+
 export type GetHealthData = {
     body?: never;
     path?: never;
@@ -461,6 +615,56 @@ export type GetHealthResponses = {
 };
 
 export type GetHealthResponse = GetHealthResponses[keyof GetHealthResponses];
+
+export type SearchGeoOnWebData = {
+    body: WebSearchRequest;
+    path?: never;
+    query?: never;
+    url: '/api/geo/web-search';
+};
+
+export type SearchGeoOnWebErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+};
+
+export type SearchGeoOnWebError = SearchGeoOnWebErrors[keyof SearchGeoOnWebErrors];
+
+export type SearchGeoOnWebResponses = {
+    /**
+     * Successful Response
+     */
+    200: WebSearchResult;
+};
+
+export type SearchGeoOnWebResponse = SearchGeoOnWebResponses[keyof SearchGeoOnWebResponses];
+
+export type VerifyGeoSeriesData = {
+    body: VerifyRequest;
+    path?: never;
+    query?: never;
+    url: '/api/geo/verify';
+};
+
+export type VerifyGeoSeriesErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+};
+
+export type VerifyGeoSeriesError = VerifyGeoSeriesErrors[keyof VerifyGeoSeriesErrors];
+
+export type VerifyGeoSeriesResponses = {
+    /**
+     * Successful Response
+     */
+    200: VerifyResult;
+};
+
+export type VerifyGeoSeriesResponse = VerifyGeoSeriesResponses[keyof VerifyGeoSeriesResponses];
 
 export type SearchGeoData = {
     body: SearchRequest;
