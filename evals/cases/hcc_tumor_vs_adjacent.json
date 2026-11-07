@@ -1,10 +1,28 @@
 {
   "id": "hcc_tumor_vs_adjacent",
   "prompt": "Which genes differ between HCC tumor and adjacent non-tumor liver?",
-  "expected_action": "proceed",
-  "clarification_targets": [],
+  "expected_action": "ask",
+  "clarification_targets": [
+    [
+      "HBV",
+      "hepatitis",
+      "etiolog",
+      "aetiolog",
+      "viral",
+      "alcohol",
+      "NAFLD",
+      "MASLD",
+      "NASH",
+      "MASH",
+      "cirrho",
+      "stage",
+      "grade",
+      "paired"
+    ]
+  ],
   "answers": [],
   "expected_action_after_answers": null,
+  "also_acceptable": [],
   "pool": {
     "GSE135631": {
       "relevant": true,
@@ -12,7 +30,11 @@
       "rationale": "Member of the hcc_tumor_vs_adjacent query set: a curated two-group design (tumor_vs_adjacent_normal) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
       "evidence": "packages/core/tests/fixtures/geo_examples/GSE135631.json",
       "reviewed_by": "",
-      "source": "query_set"
+      "source": "query_set",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
     },
     "GSE77314": {
       "relevant": true,
@@ -20,7 +42,11 @@
       "rationale": "Member of the hcc_tumor_vs_adjacent query set: a curated two-group design (tumor_vs_adjacent_normal) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
       "evidence": "packages/core/tests/fixtures/geo_examples/GSE77314.json",
       "reviewed_by": "",
-      "source": "query_set"
+      "source": "query_set",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
     },
     "GSE124535": {
       "relevant": true,
@@ -28,7 +54,11 @@
       "rationale": "Member of the hcc_tumor_vs_adjacent query set: a curated two-group design (tumor_vs_adjacent_normal) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
       "evidence": "packages/core/tests/fixtures/geo_examples/GSE124535.json",
       "reviewed_by": "",
-      "source": "query_set"
+      "source": "query_set",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
     },
     "GSE144269": {
       "relevant": true,
@@ -36,7 +66,11 @@
       "rationale": "Member of the hcc_tumor_vs_adjacent query set: a curated two-group design (tumor_vs_adjacent_normal) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
       "evidence": "packages/core/tests/fixtures/geo_examples/GSE144269.json",
       "reviewed_by": "",
-      "source": "query_set"
+      "source": "query_set",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
     },
     "GSE202069": {
       "relevant": true,
@@ -44,7 +78,11 @@
       "rationale": "Member of the hcc_tumor_vs_adjacent query set: a curated two-group design (tumor_vs_adjacent_normal) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
       "evidence": "packages/core/tests/fixtures/geo_examples/GSE202069.json",
       "reviewed_by": "",
-      "source": "query_set"
+      "source": "query_set",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
     },
     "GSE169289": {
       "relevant": true,
@@ -52,7 +90,11 @@
       "rationale": "Member of the hcc_tumor_vs_adjacent query set: a curated two-group design (tumor_vs_adjacent_normal) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
       "evidence": "packages/core/tests/fixtures/geo_examples/GSE169289.json",
       "reviewed_by": "",
-      "source": "query_set"
+      "source": "query_set",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
     },
     "GSE104310": {
       "relevant": true,
@@ -60,7 +102,11 @@
       "rationale": "Member of the hcc_tumor_vs_adjacent query set: a curated two-group design (tumor_vs_adjacent_normal) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
       "evidence": "packages/core/tests/fixtures/geo_examples/GSE104310.json",
       "reviewed_by": "",
-      "source": "query_set"
+      "source": "query_set",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
     },
     "GSE202853": {
       "relevant": true,
@@ -68,7 +114,11 @@
       "rationale": "Member of the hcc_tumor_vs_adjacent query set: a curated two-group design (tumor_vs_adjacent_normal) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
       "evidence": "packages/core/tests/fixtures/geo_examples/GSE202853.json",
       "reviewed_by": "",
-      "source": "query_set"
+      "source": "query_set",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
     },
     "GSE81550": {
       "relevant": true,
@@ -76,7 +126,11 @@
       "rationale": "Member of the hcc_tumor_vs_adjacent query set: a curated two-group design (tumor_vs_adjacent_normal) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
       "evidence": "packages/core/tests/fixtures/geo_examples/GSE81550.json",
       "reviewed_by": "",
-      "source": "query_set"
+      "source": "query_set",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
     },
     "GSE216613": {
       "relevant": true,
@@ -84,7 +138,11 @@
       "rationale": "Member of the hcc_tumor_vs_adjacent query set: a curated two-group design (tumor_vs_adjacent_normal) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
       "evidence": "packages/core/tests/fixtures/geo_examples/GSE216613.json",
       "reviewed_by": "",
-      "source": "query_set"
+      "source": "query_set",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
     },
     "GSE154211": {
       "relevant": true,
@@ -92,7 +150,11 @@
       "rationale": "Member of the hcc_tumor_vs_adjacent query set: a curated two-group design (tumor_vs_adjacent_normal) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
       "evidence": "packages/core/tests/fixtures/geo_examples/GSE154211.json",
       "reviewed_by": "",
-      "source": "query_set"
+      "source": "query_set",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
     },
     "GSE77509": {
       "relevant": true,
@@ -100,7 +162,11 @@
       "rationale": "Member of the hcc_tumor_vs_adjacent query set: a curated two-group design (tumor_vs_adjacent_normal) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
       "evidence": "packages/core/tests/fixtures/geo_examples/GSE77509.json",
       "reviewed_by": "",
-      "source": "query_set"
+      "source": "query_set",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
     },
     "GSE105130": {
       "relevant": true,
@@ -108,7 +174,11 @@
       "rationale": "Member of the hcc_tumor_vs_adjacent query set: a curated two-group design (tumor_vs_adjacent_normal) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
       "evidence": "packages/core/tests/fixtures/geo_examples/GSE105130.json",
       "reviewed_by": "",
-      "source": "query_set"
+      "source": "query_set",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
     },
     "GSE214846": {
       "relevant": true,
@@ -116,7 +186,11 @@
       "rationale": "Member of the hcc_tumor_vs_adjacent query set: a curated two-group design (tumor_vs_adjacent_normal) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
       "evidence": "packages/core/tests/fixtures/geo_examples/GSE214846.json",
       "reviewed_by": "",
-      "source": "query_set"
+      "source": "query_set",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
     },
     "GSE138485": {
       "relevant": true,
@@ -124,7 +198,11 @@
       "rationale": "Member of the hcc_tumor_vs_adjacent query set: a curated two-group design (tumor_vs_adjacent_normal) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
       "evidence": "packages/core/tests/fixtures/geo_examples/GSE138485.json",
       "reviewed_by": "",
-      "source": "query_set"
+      "source": "query_set",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
     },
     "GSE146719": {
       "relevant": true,
@@ -132,7 +210,11 @@
       "rationale": "Member of the hcc_tumor_vs_adjacent query set: a curated two-group design (tumor_vs_adjacent_normal) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
       "evidence": "packages/core/tests/fixtures/geo_examples/GSE146719.json",
       "reviewed_by": "",
-      "source": "query_set"
+      "source": "query_set",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
     },
     "GSE87410": {
       "relevant": true,
@@ -140,12 +222,16 @@
       "rationale": "Member of the hcc_tumor_vs_adjacent query set: a curated two-group design (tumor_vs_adjacent_normal) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
       "evidence": "packages/core/tests/fixtures/geo_examples/GSE87410.json",
       "reviewed_by": "",
-      "source": "query_set"
+      "source": "query_set",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
     }
   },
   "status": "draft",
   "reviewed_by": "",
-  "notes": "DRAFT seeded from the query set of the same name. The members are known positives; the pool has no negatives yet and recall is against these members only. Decide whether the prompt should be an ask case (the control wording 'adjacent non-tumor liver' is open).",
+  "notes": "More than ten series qualify (17 known from the query set), and the analysis takes at most ten, so the agent should ask how to narrow (etiology, cirrhosis, stage, paired samples...). The pool is the query set's 17 positives.",
   "tags": [
     "cancer",
     "liver"

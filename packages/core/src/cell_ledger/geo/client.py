@@ -9,14 +9,19 @@ hit records which queries matched it.
 from __future__ import annotations
 
 import asyncio
+import gzip
 import re
 import time
+import zlib
 from collections.abc import Sequence
 from datetime import date, datetime
 from typing import Any
 
 import httpx
 from pydantic import BaseModel, Field, computed_field
+
+from cell_ledger.geo.fetch import FTP, counts_name, counts_url, series_stem, soft_url
+from cell_ledger.geo.soft import GeoSeries, parse_soft
 
 EUTILS = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 
@@ -28,6 +33,10 @@ ELIGIBILITY = (
 )
 
 SUMMARY_BATCH = 200
+FILE_CONCURRENCY = 8
+"""Downloads from NCBI's file server at once, across all callers of one client."""
+HEADER_LIMIT = 2_000_000
+"""Decompressed bytes read from a count table before giving up on finding its header line."""
 VERIFY_BATCH = 100
 _GSE = re.compile(r"GSE\d+")
 MAX_ATTEMPTS = 3
@@ -104,6 +113,7 @@ class GeoClient:
         self._tool = tool
         self._retry_delay = retry_delay
         self._limiter = RateLimiter(10 if api_key else 3)
+        self._files = asyncio.Semaphore(FILE_CONCURRENCY)
 
     async def _call(self, endpoint: str, params: dict[str, str], *, post: bool = False) -> Any:
         params = {**params, "retmode": "json", "tool": self._tool}
@@ -205,6 +215,47 @@ class GeoClient:
                 matched[uid] = []
         found = {h.gse for h in await self._summaries(matched)}
         return [g for g in wanted if g in found]
+
+    async def series_record(self, gse: str) -> GeoSeries:
+        """A series' family SOFT file, parsed: series text and every sample's fields, as GEO
+        has them. One small download (a few KB compressed) from NCBI's file server."""
+        if not _GSE.fullmatch(gse):
+            raise ValueError(f"not a GEO series accession: {gse!r}")
+        async with self._files:
+            r = await self._http.get(soft_url(gse))
+        r.raise_for_status()
+        return parse_soft(gzip.decompress(r.content).decode("utf-8", errors="replace"))
+
+    async def count_columns(self, gse: str) -> list[str] | None:
+        """The GSM columns of the series' NCBI raw-count table, read from its header line
+        only: the stream is closed as soon as that line is decompressed. None when NCBI has
+        no count table for the series."""
+        if not _GSE.fullmatch(gse):
+            raise ValueError(f"not a GEO series accession: {gse!r}")
+        async with self._files:
+            name = counts_name(gse)
+            header = await self._header(counts_url(gse, name))
+            if header is None:  # the reference build in the file name may have changed
+                listing = await self._http.get(f"{FTP}/rnaseq_counts/{series_stem(gse)}/")
+                found = re.findall(rf'href="({gse}_raw_counts_[^"/]+\.tsv\.gz)"', listing.text)
+                if listing.status_code == 200 and found and found[0] != name:
+                    header = await self._header(counts_url(gse, found[0]))
+        if header is None:
+            return None
+        return [c for c in header.split("\t")[1:] if c]
+
+    async def _header(self, url: str) -> str | None:
+        async with self._http.stream("GET", url) as r:
+            if r.status_code == 404:
+                return None
+            r.raise_for_status()
+            inflate = zlib.decompressobj(16 + zlib.MAX_WBITS)
+            buf = b""
+            async for chunk in r.aiter_bytes():
+                buf += inflate.decompress(chunk)
+                if b"\n" in buf or len(buf) > HEADER_LIMIT:
+                    break
+        return buf.split(b"\n", 1)[0].decode("utf-8", errors="replace").rstrip("\r")
 
     async def _summaries(self, matched: dict[str, list[str]]) -> list[GeoSeriesHit]:
         """esummary for gds uids, batched; keeps the order of ``matched``."""

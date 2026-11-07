@@ -159,15 +159,14 @@ def test_suite_score_pairing_queue_and_report(tmp_path) -> None:
     result = score(suite, records)
     spec, base = result["summaries"]["specialist"], result["summaries"]["baseline"]
     assert spec["runs"] == 3 and spec["cases"] == 2 and base["runs"] == 1
-    # Macro recall averages the two repeats of the proceed case (1.0 and 0.5), then over cases
-    assert spec["recall_macro"]["mean"] == pytest.approx((0.75 + 0.0) / 2)
-    assert spec["recall_pooled"] == {"n": 3, "d": 5, "value": 0.6}
+    # Macro recall averages the two repeats of the proceed case (1.0 and 0.5); the ask case has
+    # no scripted answers, so it ends at the question and its recall is not scored.
+    assert spec["recall_macro"]["mean"] == pytest.approx(0.75)
+    assert spec["recall_pooled"] == {"n": 3, "d": 4, "value": 0.75}
     assert spec["should_ask"] == {"n": 1, "d": 1, "value": 1.0}
     assert spec["false_ask"] == {"n": 0, "d": 2, "value": 0.0}
     assert spec["unjudged_total"] == 1 and base["fabricated_total"] == 1
-    assert spec["misses"] == {"ignored": 1, "never_returned": 1} and base["misses"] == {
-        "not_named": 1
-    }
+    assert spec["misses"] == {"ignored": 1} and base["misses"] == {"not_named": 1}
     assert spec["input_tokens_per_run"]["mean"] == 100
     assert result["pairing_problems"] == ["ask_case: run by one system only"]
     assert result["draft_cases"] == ["ask_case"] and result["comparison_ready"] is False
@@ -205,3 +204,91 @@ def test_reviewed_only_drops_draft_cases() -> None:
     suite = Suite(cases=[draft, reviewed])
     rows = score(suite, [record(draft), record(reviewed)], reviewed_only=True)["rows"]
     assert [r["case_id"] for r in rows] == [reviewed.id]
+
+
+def test_sample_level_metrics_on_reviewed_arms() -> None:
+    pool = {
+        "GSE1": {**POOL["GSE1"], "case_gsms": ["GSM1", "GSM2", "GSM3"],
+                 "control_gsms": ["GSM4", "GSM5", "GSM6"]},
+        "GSE2": {**POOL["GSE2"], "case_gsms": ["GSM7"], "control_gsms": ["GSM8"]},
+    }  # fmt: skip
+    case = make_case(pool=pool)
+    rec = record(
+        case,
+        candidates=["GSE1", "GSE2"],
+        verification=Verification(eligible=["GSE1", "GSE2"]),
+        selections={
+            # one organoid too many in the case arm, one control missed
+            "GSE1": {"case": ["GSM1", "GSM2", "GSM3", "GSM9"], "control": ["GSM4", "GSM5"]},
+            "GSE2": {"case": ["GSM7"], "control": ["GSM8"], "unclear": ["GSM10"]},
+        },
+    )
+    row = score_record(case, rec)
+    assert row["sample_precision"] == {"n": 7, "d": 8, "value": 7 / 8}
+    assert row["sample_recall"] == {"n": 7, "d": 8, "value": 7 / 8}
+    assert row["subsets_exact"] == {"n": 1, "d": 2, "value": 0.5}
+    # swapped arms are wrong in both
+    swapped = record(
+        case,
+        candidates=["GSE2"],
+        verification=Verification(eligible=["GSE2"]),
+        selections={"GSE2": {"case": ["GSM8"], "control": ["GSM7"]}},
+    )
+    assert score_record(case, swapped)["sample_recall"]["value"] == 0.0
+    # positives without reviewed arms do not count either way
+    plain = make_case(pool=POOL)
+    assert score_record(plain, rec)["subsets_exact"] == {"n": 0, "d": 0, "value": None}
+
+
+def test_also_acceptable_first_action_counts_as_correct() -> None:
+    case = make_case(expected_action="no_results", pool={}, also_acceptable=["ask"])
+    row = score_record(case, record(case, turns=[Turn(action="ask")], final_action="ask"))
+    assert row["action_correct"] is True
+
+
+def test_ask_only_cases_do_not_score_recall_or_misses() -> None:
+    case = make_case(pool=POOL, expected_action="ask", clarification_targets=[["control"]])
+    turn = Turn(action="ask")
+    rec = record(
+        case,
+        turns=[turn],
+        candidates=["GSE1"],
+        verification=Verification(eligible=["GSE1"]),
+        questions=[{"question": "Which control?", "options": [], "why": ""}],
+    )
+    row = score_record(case, rec)
+    assert row["recall"] == {"n": 0, "d": 0, "value": None} and row["misses"] == {}
+    assert row["precision"] == {"n": 1, "d": 1, "value": 1.0}
+    assert row["questions"] == ["Which control?"] and row["passed"] is True
+
+
+def test_optional_samples_are_not_scored_either_way() -> None:
+    arms = {
+        "case_gsms": ["GSM1", "GSM2", "GSM3"],
+        "control_gsms": ["GSM4", "GSM5", "GSM6"],
+        "optional_gsms": ["GSM9"],
+    }
+    pool = {"GSE1": {**POOL["GSE1"], **arms}}
+    case = make_case(pool=pool)
+    for chosen in (["GSM1", "GSM2", "GSM3"], ["GSM1", "GSM2", "GSM3", "GSM9"]):
+        rec = record(
+            case,
+            candidates=["GSE1"],
+            verification=Verification(eligible=["GSE1"]),
+            selections={"GSE1": {"case": chosen, "control": ["GSM4", "GSM5", "GSM6"]}},
+        )
+        row = score_record(case, rec)
+        assert row["subsets_exact"]["value"] == 1.0 and row["sample_precision"]["value"] == 1.0
+
+
+def test_report_lists_questions_verbatim() -> None:
+    case = make_case(answers=["restated"])
+    rec = record(
+        case,
+        turns=[Turn(action="ask"), Turn(action="proceed")],
+        questions=[{"question": "Which inhibitor class?", "options": [], "why": ""}],
+    )
+    text = render(score(Suite(cases=[case]), [rec]))
+    assert "## Questions asked" in text
+    assert f"**{case.id}** · specialist r1 (expected proceed)" in text
+    assert "  - Which inhibitor class?" in text

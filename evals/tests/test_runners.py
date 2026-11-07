@@ -9,7 +9,7 @@ import pytest
 
 from cell_ledger.geo import GeoClient
 from cell_ledger_api.agent.discover import DiscoveryOutput
-from evals.baseline import BASELINE_SYSTEM, WEB_SEARCH_TOOL, run_baseline
+from evals.baseline import BASELINE_SYSTEM, WEB_TOOLS, BaselineOutput, run_baseline
 from evals.records import RunRecord
 from evals.specialist import run_specialist, verify_candidates
 
@@ -144,11 +144,11 @@ async def test_baseline_verifies_every_named_accession() -> None:
     from .conftest import geo_transport
 
     case = make_case()
-    final = DiscoveryOutput.model_validate(
+    final = BaselineOutput.model_validate(
         {
             "interpretation": "PDAC tumor vs normal",
             "candidates": [
-                candidate("GSE164073"),
+                {**candidate("GSE164073"), "case_gsms": ["gsm1", "GSM2"], "control_gsms": ["GSM3"]},
                 candidate("GSE250219"),  # exists, but not eligible
                 candidate("GSE999999"),  # does not exist
             ],
@@ -159,7 +159,7 @@ async def test_baseline_verifies_every_named_accession() -> None:
         message([{"type": "text", "text": "searching..."}], stop="pause_turn"),
         text_message(
             final.model_dump_json(),
-            usage={"server_tool_use": {"web_search_requests": 3, "web_fetch_requests": 0}},
+            usage={"server_tool_use": {"web_search_requests": 3, "web_fetch_requests": 2}},
         ),
     )
     transport = geo_transport(eligible=["GSE164073"], existing=["GSE164073", "GSE250219"])
@@ -172,7 +172,9 @@ async def test_baseline_verifies_every_named_accession() -> None:
         )
 
     first = turns.requests[0]
-    assert first["system"] == BASELINE_SYSTEM and first["tools"] == [WEB_SEARCH_TOOL]
+    assert first["system"] == BASELINE_SYSTEM and first["tools"] == WEB_TOOLS
+    assert "case_gsms" in str(first["output_config"]["format"]["schema"])
+    assert first["cache_control"] == {"type": "ephemeral"}
     assert first["messages"][0]["content"] == case.prompt
     assert first["output_config"]["format"]["type"] == "json_schema"
     # pause_turn re-sent the conversation with the assistant content appended
@@ -182,7 +184,9 @@ async def test_baseline_verifies_every_named_accession() -> None:
     assert rec.verification.eligible == ["GSE164073"]
     assert rec.verification.exists_only == ["GSE250219"]
     assert rec.verification.missing == ["GSE999999"]
-    assert rec.web_search_requests == 3
+    assert rec.web_search_requests == 3 and rec.web_fetch_requests == 2
+    assert rec.selections["GSE164073"] == {"case": ["GSM1", "GSM2"], "control": ["GSM3"]}
+    assert rec.selections["GSE250219"] == {"case": [], "control": []}
     assert rec.seen == [] and rec.per_query == {}
 
 

@@ -52,6 +52,7 @@ class Turn(BaseModel):
     input_tokens: int = 0
     output_tokens: int = 0
     web_search_requests: int = 0
+    web_fetch_requests: int = 0
     error: str | None = None
 
 
@@ -95,11 +96,17 @@ class RunRecord(BaseModel):
     invented: list[str] = Field(
         default_factory=list, description="specialist: accessions named but never confirmed"
     )
+    selections: dict[str, dict[str, list[str]]] = Field(
+        default_factory=dict,
+        description="gse -> the samples the system put in each arm: case, control, and for the "
+        "specialist unclear and no_counts (computed by code from its rules)",
+    )
     verification: Verification = Field(default_factory=Verification)
     elapsed_seconds: float = 0.0
     input_tokens: int = 0
     output_tokens: int = 0
     web_search_requests: int = 0
+    web_fetch_requests: int = 0
     error: str | None = None
 
     def save(self, root: Path) -> Path:

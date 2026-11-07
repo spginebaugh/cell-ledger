@@ -39,7 +39,9 @@ class PoolEntry(Strict):
     )
     eligible: bool | None = Field(
         default=None,
-        description="human bulk RNA-seq with NCBI raw counts (checkable with the GEO client)",
+        description="human bulk RNA-seq with NCBI raw counts, and at least three samples with "
+        "counts in each arm of this case's comparison (false, with the reason, when the series "
+        "fits the question but cannot support the analysis)",
     )
     rationale: str = ""
     evidence: str = Field(default="", description="a quote or file that backs the verdict")
@@ -47,6 +49,42 @@ class PoolEntry(Strict):
     source: str = Field(
         default="", description="where the entry came from: query_set, pilot, review_queue, a PMID"
     )
+    case_gsms: list[str] | None = Field(
+        default=None,
+        description="positives only: every sample that belongs in the case arm for this case's "
+        "question (with or without counts); None when the samples have not been reviewed",
+    )
+    control_gsms: list[str] | None = Field(
+        default=None, description="positives only: every sample that belongs in the control arm"
+    )
+    optional_gsms: list[str] = Field(
+        default_factory=list,
+        description="samples whose inclusion in either arm, or exclusion, is defensible and "
+        "not scored either way (e.g. recurrences when the question says tumors)",
+    )
+    samples_note: str = Field(default="", description="why those samples and not the others")
+
+    @model_validator(mode="after")
+    def arms(self) -> PoolEntry:
+        if (self.case_gsms is None) != (self.control_gsms is None):
+            raise ValueError("give both case_gsms and control_gsms, or neither")
+        if self.case_gsms is None or self.control_gsms is None:
+            return self
+        if not self.positive:
+            raise ValueError("sample arms only belong on a relevant and eligible entry")
+        gsms = [*self.case_gsms, *self.control_gsms]
+        bad = [g for g in gsms if not g.startswith("GSM") or not g[3:].isdigit()]
+        if bad:
+            raise ValueError(f"not GSM accessions: {bad}")
+        if len(set(gsms)) != len(gsms):
+            raise ValueError("a sample is listed twice or in both arms")
+        if set(self.optional_gsms) & set(gsms):
+            raise ValueError("an optional sample cannot also be in an arm")
+        return self
+
+    @property
+    def has_arms(self) -> bool:
+        return self.case_gsms is not None and self.control_gsms is not None
 
     @property
     def judged(self) -> bool:
@@ -68,10 +106,17 @@ class Case(Strict):
     )
     answers: list[str] = Field(
         default_factory=list,
-        description="scripted answers for the second turn when the system asks",
+        description="scripted reply, sent as a second turn whenever the system asks: for ask "
+        "cases the user's choice; for other cases a restatement of what the prompt already "
+        "settles, so a system that asks needlessly is marked for asking but still gets to answer",
     )
     expected_action_after_answers: Action | None = Field(
         default=None, description="what the second turn should do; proceed when unset"
+    )
+    also_acceptable: list[Action] = Field(
+        default_factory=list,
+        description="other first-turn actions that are also right (e.g. asking whether cell "
+        "lines would do when no organoid series exists)",
     )
     pool: dict[str, PoolEntry] = Field(default_factory=dict)
     status: Literal["draft", "reviewed"] = "draft"
@@ -90,8 +135,6 @@ class Case(Strict):
             not words or any(not w.strip() for w in words) for words in self.clarification_targets
         ):
             raise ValueError(f"{self.id}: every clarification target needs non-empty words")
-        if self.expected_action != "ask" and self.answers:
-            raise ValueError(f"{self.id}: answers only apply to ask cases")
         if self.expected_action in {"decline", "no_results"} and self.positives():
             raise ValueError(f"{self.id}: a {self.expected_action} case cannot have positives")
         if self.status == "reviewed":
@@ -109,6 +152,15 @@ class Case(Strict):
 
     def judged(self) -> dict[str, PoolEntry]:
         return {g: e for g, e in self.pool.items() if e.judged}
+
+    def action_ok(self, action: str) -> bool:
+        return action == self.expected_action or action in self.also_acceptable
+
+    @property
+    def scores_recall(self) -> bool:
+        """An ask case without scripted answers ends at the question: listing series while
+        asking is optional there, so missing some is not a miss."""
+        return not (self.expected_action == "ask" and not self.answers)
 
     @property
     def second_turn_action(self) -> Action:

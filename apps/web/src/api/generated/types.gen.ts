@@ -175,6 +175,8 @@ export type Assay = 'bulk' | 'single_cell';
 
 /**
  * Candidate
+ *
+ * A recommended series and the rules that choose its samples (see :mod:`.samples`).
  */
 export type Candidate = {
     /**
@@ -211,6 +213,24 @@ export type Candidate = {
      * Concerns
      */
     concerns?: Array<string>;
+    /**
+     * Case
+     *
+     * rules selecting the case arm; a sample matching any
+     */
+    case?: Array<Rule>;
+    /**
+     * Control
+     *
+     * rules selecting the control arm
+     */
+    control?: Array<Rule>;
+    /**
+     * Unclear
+     *
+     * rules for samples that might belong to an arm but whose records do not settle it
+     */
+    unclear?: Array<Rule>;
 };
 
 /**
@@ -546,6 +566,42 @@ export type Concordance = {
     groups?: {
         [key: string]: string;
     };
+};
+
+/**
+ * Condition
+ */
+export type Condition = {
+    /**
+     * Field
+     *
+     * a sample field exactly as listed (e.g. "cell type", "title", "source_name"), or "series" for a fact the summary or design states about every sample
+     */
+    field: string;
+    /**
+     * Equals
+     *
+     * holds when the value is exactly one of these; copy values verbatim
+     */
+    equals?: Array<string>;
+    /**
+     * Contains
+     *
+     * holds when the value contains one of these, ignoring case (for titles, long values shown cut with "…", or "series" quotes)
+     */
+    contains?: Array<string>;
+    /**
+     * Min
+     *
+     * holds when the value's first number is at least this
+     */
+    min?: number | null;
+    /**
+     * Max
+     *
+     * holds when the value's first number is at most this
+     */
+    max?: number | null;
 };
 
 /**
@@ -916,7 +972,9 @@ export type DiscoverRequest = {
 /**
  * DiscoveryResult
  *
- * Claude's output plus the trace the code recorded around it.
+ * Claude's output plus what the code made of it: the trace, and each candidate's
+ * samples (``selections``, same order as ``candidates``, then any candidate code set
+ * aside for too few samples per arm).
  */
 export type DiscoveryResult = {
     /**
@@ -944,10 +1002,6 @@ export type DiscoveryResult = {
      */
     clarifying_questions?: Array<ClarifyingQuestion>;
     /**
-     * Candidates
-     */
-    candidates?: Array<Candidate>;
-    /**
      * Rejected
      */
     rejected?: Array<Rejected>;
@@ -955,7 +1009,15 @@ export type DiscoveryResult = {
      * Queries Tried
      */
     queries_tried?: Array<string>;
+    /**
+     * Candidates
+     */
+    candidates?: Array<Candidate>;
     trace?: DiscoveryTrace;
+    /**
+     * Selections
+     */
+    selections?: Array<SampleSelection>;
 };
 
 /**
@@ -2205,6 +2267,18 @@ export type Rejected = {
 };
 
 /**
+ * Rule
+ */
+export type Rule = {
+    /**
+     * All Of
+     *
+     * the sample must meet every condition
+     */
+    all_of: Array<Condition>;
+};
+
+/**
  * RunProgress
  *
  * Live view of a running contrast, rebuilt from the pipeline's progress lines.
@@ -2586,6 +2660,60 @@ export type SampleRecord = {
 };
 
 /**
+ * SampleSelection
+ *
+ * What code made of the agent's rules for one series. ``case_gsms`` and
+ * ``control_gsms`` hold every sample the rules put in each arm; ``no_counts_gsms`` are
+ * the selected samples the NCBI count table lacks (they cannot be analysed).
+ */
+export type SampleSelection = {
+    /**
+     * Gse
+     */
+    gse: string;
+    /**
+     * Case Gsms
+     */
+    case_gsms?: Array<string>;
+    /**
+     * Control Gsms
+     */
+    control_gsms?: Array<string>;
+    /**
+     * Unclear Gsms
+     *
+     * samples that may belong but the record does not settle it, plus any the rules put in both arms
+     */
+    unclear_gsms?: Array<string>;
+    /**
+     * Excluded Gsms
+     *
+     * every other sample
+     */
+    excluded_gsms?: Array<string>;
+    /**
+     * No Counts Gsms
+     */
+    no_counts_gsms?: Array<string>;
+    /**
+     * Counts Checked
+     */
+    counts_checked?: boolean;
+    /**
+     * Case Rule
+     */
+    case_rule?: string;
+    /**
+     * Control Rule
+     */
+    control_rule?: string;
+    /**
+     * Problems
+     */
+    problems?: Array<string>;
+};
+
+/**
  * SampleSheet
  */
 export type SampleSheet = {
@@ -2812,6 +2940,12 @@ export type ToolCall = {
      * nominated accessions GEO did not confirm
      */
     ineligible?: Array<string>;
+    /**
+     * Inspected
+     *
+     * inspect_series only: series whose samples Claude read
+     */
+    inspected?: Array<string>;
     /**
      * Error
      */

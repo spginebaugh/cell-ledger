@@ -4,6 +4,7 @@
     python -m evals.run run --system both [--case ID ...] [--repeats 3] [--reviewed-only]
     python -m evals.run score data/evals/runs/<run_id> [...more run dirs]
     python -m evals.run queue
+    python -m evals.run show GSE262627 [...more]   # what the agent sees, plus every GSM
 
 Credentials come from ``.env`` / the environment: CELL_LEDGER_ANTHROPIC_API_KEY (required to
 run), CELL_LEDGER_NCBI_API_KEY and CELL_LEDGER_EXA_API_KEY (optional). ``validate``, ``score``
@@ -206,6 +207,36 @@ def write_results(
     return result
 
 
+async def show_series(gses: list[str]) -> None:
+    """For reviewers writing sample arms: the agent's view of each series, then one line per
+    sample with its GSM, whether the NCBI count table has it, and its fields."""
+    from cell_ledger.geo import GeoClient
+    from cell_ledger_api.agent.samples import sample_fields, series_digest
+
+    cfg = EvalSettings()
+    async with httpx.AsyncClient(
+        timeout=httpx.Timeout(30, read=120),
+        follow_redirects=True,
+        headers={"User-Agent": "cell-ledger-evals"},
+    ) as http:
+        key = cfg.ncbi_api_key.get_secret_value() if cfg.ncbi_api_key else None
+        geo = GeoClient(http, api_key=key)
+        for gse in gses:
+            gse = gse.strip().upper()
+            record, columns = await asyncio.gather(geo.series_record(gse), geo.count_columns(gse))
+            print(series_digest(record, columns))
+            covered = set(columns or [])
+            print(f"\nSamples ({'no NCBI count table' if columns is None else 'counts: yes/no'}):")
+            for x in record.samples:
+                fields = sample_fields(x)
+                shown = "; ".join(
+                    f"{k}: {v[:60]}" for k, v in fields.items() if not k.endswith("protocol")
+                )
+                flag = "-" if columns is None else ("yes" if x.gsm in covered else "NO ")
+                print(f"  {x.gsm:12} {flag:4} {shown}")
+            print()
+
+
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(
         prog="python -m evals.run",
@@ -244,14 +275,18 @@ def main(argv: list[str] | None = None) -> int:
 
     sub.add_parser("queue", help="list candidates waiting for a human verdict")
 
+    sh = sub.add_parser("show", help="a series as the agent reads it, then every sample's GSM")
+    sh.add_argument("gses", nargs="+")
+
     args = p.parse_args(argv)
     if args.cmd == "validate":
         suite = load_suite(args.cases)
         reviewed = sum(c.status == "reviewed" for c in suite.cases)
         for c in suite.cases:
+            arms = sum(e.has_arms for e in c.pool.values())
             print(
-                f"{c.id:40} {c.expected_action:10} {c.status:9} "
-                f"pool={len(c.pool)} positives={len(c.positives())}"
+                f"{c.id:42} {c.expected_action:10} {c.status:9} "
+                f"pool={len(c.pool)} positives={len(c.positives())} with_arms={arms}"
             )
         print(f"{len(suite.cases)} cases valid, {reviewed} reviewed; suite {suite.digest()[:12]}")
         return 0
@@ -266,6 +301,9 @@ def main(argv: list[str] | None = None) -> int:
         write_results(
             suite, records, args.out or args.run_dirs[0], update_review_queue=not args.no_queue
         )
+        return 0
+    if args.cmd == "show":
+        asyncio.run(show_series(args.gses))
         return 0
     if args.cmd == "queue":
         queue = json.loads(QUEUE_PATH.read_text()) if QUEUE_PATH.exists() else []

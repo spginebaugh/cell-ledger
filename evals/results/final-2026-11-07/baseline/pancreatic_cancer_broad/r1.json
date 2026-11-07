@@ -1,0 +1,348 @@
+{
+  "case_id": "pancreatic_cancer_broad",
+  "system": "baseline",
+  "repeat": 1,
+  "conditions": {
+    "system": "baseline",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "fingerprint": "4525537637e3a1e40449a050cb82f18b6802378efbf1170b5ac09c2e199b166c",
+    "web_search": true,
+    "code_revision": "4032f8cb3e85576661f421ff7f4f75aa87401b25",
+    "dirty": true,
+    "geo_cache": "/Users/scott/Documents/code/gauntlet-hackathon/cell-ledger/data/evals/geo-cache/all12-r2",
+    "case_sha256": "efc3fa2598f98d58164e237a45e4385e6aa7d415486dfb21a7cdd0ab9a3b610f",
+    "suite_sha256": "5c2b23011a22776e3ea3fab6976ae88635f0f4a277dbf5db35d8fa2bb07d1859",
+    "run_id": "all12-r2",
+    "started_at": "2026-11-07T15:04:10+00:00"
+  },
+  "turns": [
+    {
+      "answers": [],
+      "action": "ask",
+      "output": {
+        "interpretation": "The request names only a disease (\"pancreatic cancer\") and gives no comparison, so it can't yet be framed as a two-group test. The most likely default is pancreatic cancer (PDAC) tumor tissue (case) vs. non-tumor pancreas tissue (control). However, many other comparisons are just as plausible, such as subtype vs. subtype, drug-treated vs. untreated, or gene knockdown vs. control in PDAC lines. Each of these leads to a different set of GEO series and samples.",
+        "genes": [],
+        "out_of_scope": null,
+        "clarifying_questions": [
+          {
+            "question": "Which two groups do you want to compare?",
+            "options": [
+              "PDAC tumor vs. adjacent or normal pancreas tissue",
+              "Classical vs. basal-like PDAC subtype",
+              "Drug-treated vs. vehicle (e.g., gemcitabine, FOLFIRINOX, KRAS inhibitor)",
+              "Genetic perturbation (knockdown/knockout/overexpression) vs. control",
+              "Drug-resistant vs. parental cells",
+              "Precursor lesions (PanIN/IPMN) vs. normal or PDAC",
+              "Primary tumor vs. metastasis",
+              "Responders vs. non-responders / long vs. short survival"
+            ],
+            "why": "Each comparison is answered by a different set of GEO series, so no candidates can be chosen until this is fixed."
+          },
+          {
+            "question": "Which type of sample should both arms be?",
+            "options": [
+              "Primary patient tissue (surgical resection/biopsy)",
+              "Established PDAC cell lines",
+              "Patient-derived organoids",
+              "Patient-derived xenografts",
+              "Cancer-associated fibroblasts / stellate cells",
+              "Blood / plasma / extracellular vesicles"
+            ],
+            "why": "Cell lines, organoids, xenografts and primary tissue can't be swapped for each other. Choosing one decides which series and which samples within a series qualify."
+          },
+          {
+            "question": "Should this be limited to pancreatic ductal adenocarcinoma, or include other pancreatic tumors?",
+            "options": [
+              "PDAC only",
+              "Pancreatic neuroendocrine tumors",
+              "IPMN / cystic neoplasms",
+              "Any pancreatic cancer"
+            ],
+            "why": "Neuroendocrine tumors and cystic lesions are covered by separate datasets and would change the candidate list."
+          },
+          {
+            "question": "If the controls are 'normal' tissue, which kind?",
+            "options": [
+              "Tumor-adjacent pancreas from the same patients (paired)",
+              "Pancreas from healthy donors",
+              "Chronic pancreatitis tissue"
+            ],
+            "why": "Paired adjacent tissue, healthy donor pancreas and pancreatitis are different controls and appear in different series."
+          },
+          {
+            "question": "Do you have specific genes or pathways of interest?",
+            "options": [],
+            "why": "Naming genes would narrow the search to perturbation studies or to series where those genes are relevant."
+          }
+        ],
+        "rejected": [
+          {
+            "gse": "GSE15471",
+            "why": "Microarray (whole-tissue PDAC vs. normal), not RNA-seq with NCBI raw counts."
+          },
+          {
+            "gse": "GSE28735",
+            "why": "Microarray PDAC tumor vs. adjacent tissue, not RNA-seq."
+          },
+          {
+            "gse": "GSE291124",
+            "why": "Single-nucleus RNA-seq, not bulk RNA-seq."
+          }
+        ],
+        "queries_tried": [
+          "GEO RNA-seq pancreatic ductal adenocarcinoma tumor vs adjacent normal GSE",
+          "GSE PDAC RNA-seq human tumor normal pancreas series"
+        ],
+        "candidates": []
+      },
+      "elapsed_seconds": 21.77748629101552,
+      "input_tokens": 25830,
+      "output_tokens": 1569,
+      "web_search_requests": 2,
+      "web_fetch_requests": 0,
+      "error": null
+    },
+    {
+      "answers": [
+        "Patient-derived organoids treated with a drug in culture, compared with the same organoids left untreated."
+      ],
+      "action": "proceed",
+      "output": {
+        "interpretation": "Patient-derived pancreatic cancer organoids (mostly PDAC) treated with a drug in culture (case) compared with the same organoid lines left untreated or given vehicle such as DMSO (control). Both arms must come from the same human bulk RNA-seq GEO series with NCBI raw counts and at least 3 samples per arm. Cell lines, xenografts, primary tumours and engineered or stem-cell-derived organoids are excluded.",
+        "genes": [],
+        "out_of_scope": null,
+        "clarifying_questions": [],
+        "rejected": [
+          {
+            "gse": "GSE207352",
+            "why": "These organoids were engineered (wild-type, KC, KPC, KSC and KPSC mutant lines) for a drug screen, not derived from patients. The expression data are single-cell RNA-seq, not bulk."
+          },
+          {
+            "gse": "GSE202051",
+            "why": "Single-nucleus RNA-seq of primary PDAC tumours with and without neoadjuvant therapy. These are patient tumours treated in the body, not organoids treated in culture, and the data are not bulk."
+          },
+          {
+            "gse": "GSE199102",
+            "why": "NanoString GeoMx spatial profiling of PDAC tumour tissue. It is not bulk RNA-seq of organoids treated in culture."
+          },
+          {
+            "gse": "GSE194249",
+            "why": "Bulk RNA-seq of PDAC patient-derived organoids and normal pancreatic organoids, used to profile them at baseline. The sample record found (GSM5831676) lists no drug-treatment arm. The record also says raw data are not provided."
+          },
+          {
+            "gse": "GSE195623",
+            "why": "ATAC-seq data from the same organoid study as GSE194249. This is chromatin accessibility, not gene expression."
+          },
+          {
+            "gse": "GSE244142",
+            "why": "Mouse (Mus musculus) single-nucleus RNA-seq of orthotopic KPC organoid tumours treated with neratinib in vivo."
+          },
+          {
+            "gse": "GSE212966",
+            "why": "Single-cell RNA-seq of primary PDAC and adjacent normal tissue. It has no organoids and no drug treatment."
+          },
+          {
+            "gse": "GSE241226",
+            "why": "Bulk RNA-seq of primary human ASCP and ACC pancreatic tumours. It has no organoids and no drug treatment."
+          },
+          {
+            "gse": "GSE205013",
+            "why": "Single-cell RNA-seq of primary PDAC tumours from patients treated with chemotherapy. These are tumours, not organoids treated in culture, and the data are not bulk."
+          },
+          {
+            "gse": "GSE249673",
+            "why": "A study of pancreatic cancer organoids co-cultured with macrophages. Its design (co-culture rather than a drug-versus-untreated comparison) could not be confirmed as fitting the question."
+          },
+          {
+            "gse": "GSE169321",
+            "why": "From a study of organoids derived from patients who had neoadjuvant FOLFIRINOX. It mainly compares treated and untreated patients rather than drug versus untreated in culture. The sample design could not be confirmed."
+          },
+          {
+            "gse": "GSE318496",
+            "why": "A Fra-2 / MRTX1133 study (PNAS). Its model system is probably cell lines or mouse models, and patient-derived organoids treated with and without the drug could not be confirmed."
+          },
+          {
+            "gse": "GSE235315",
+            "why": "Integrative single-cell analysis of human pancreatic cancer. It is single-cell, not bulk organoid drug treatment."
+          },
+          {
+            "gse": "GSE5527880",
+            "why": "Not a series. It came from sample GSM5527880, which is a human colorectal cancer organoid treated with vitamin A, so it is the wrong cancer type."
+          }
+        ],
+        "queries_tried": [
+          "GEO pancreatic cancer patient-derived organoids treated RNA-seq GSE",
+          "GSE pancreatic ductal adenocarcinoma organoids drug treatment RNA-seq untreated",
+          "PDAC organoids gemcitabine RNA-seq GEO GSE",
+          "pancreatic cancer organoids KRAS inhibitor RNA-seq GSE",
+          "PDAC patient-derived organoids treated DMSO RNA-seq GEO accession",
+          "ncbi geo pancreatic cancer organoids treated vehicle RNA-seq Homo sapiens",
+          "geo acc.cgi PDAC organoids treatment RNA-seq",
+          "patient-derived pancreatic cancer organoids RNA-seq treated trametinib GEO",
+          "PDAC organoids MRTX1133 RNA-seq patient-derived GEO",
+          "pancreatic cancer organoids FOLFIRINOX treatment RNA-seq GSE",
+          "patient-derived PDAC organoids bulk RNA-seq treatment versus DMSO GSE",
+          "pancreatic tumor organoids paclitaxel RNA-seq GEO",
+          "PDAC organoid 5-FU oxaliplatin RNA-seq GSE organoids treated",
+          "pancreatic cancer organoids HDAC inhibitor RNA-seq GSE",
+          "pancreatic cancer organoid RMC-6236 daraxonrasib RNA-seq organoids GSE"
+        ],
+        "candidates": [
+          {
+            "gse": "GSE235548",
+            "title": "Single-organoid analysis reveals clinically relevant treatment-resistant and invasive subclones in pancreatic cancer (Le Compte et al., npj Precision Oncology 2023), associated GEO data",
+            "n_samples": 0,
+            "why": "This study profiled PDAC patient-derived organoids with RNA-seq after chemotherapy treatment in culture (e.g. gemcitabine/paclitaxel or FOLFIRINOX components) and compared them with untreated organoids. It is the closest match found so far to the drug-versus-untreated comparison.",
+            "case_hint": "Patient-derived PDAC organoids treated in culture with chemotherapy",
+            "control_hint": "The same patient-derived organoid lines left untreated or given vehicle",
+            "concerns": [
+              "Sample count and GSM accessions are unverified: the GEO record could not be opened (NCBI returned a browser check and the search budget ran out), so case_gsms and control_gsms are empty and n_samples is 0 as a placeholder.",
+              "The paper cites both GSE235548 and GSE325548, so the accession needs checking.",
+              "The RNA-seq may be single-organoid or low-input rather than standard bulk, and it is unconfirmed whether NCBI raw counts exist and whether each arm has at least 3 samples."
+            ],
+            "case_gsms": [],
+            "control_gsms": []
+          },
+          {
+            "gse": "GSE232170",
+            "title": "The effect of extracellular matrix on the precision medicine utility of pancreatic cancer patient-derived organoids (JCI Insight), associated GEO data",
+            "n_samples": 0,
+            "why": "This study uses PDAC patient-derived organoids grown in different extracellular matrices, together with drug-response testing. If its RNA-seq includes drug-treated and untreated organoids from the same lines, a subset could answer the question.",
+            "case_hint": "Patient-derived PDAC organoids treated with a drug in culture (if such samples exist)",
+            "control_hint": "The same organoid lines without drug or with vehicle, grown in the same matrix",
+            "concerns": [
+              "The sample design is unverified: the GEO record could not be opened, so case_gsms and control_gsms are empty and n_samples is 0 as a placeholder.",
+              "The main comparison may be matrix type (e.g. Matrigel versus a synthetic matrix) rather than drug versus untreated; if so, this series does not qualify.",
+              "It is unconfirmed whether NCBI raw counts exist and whether each arm has at least 3 samples."
+            ],
+            "case_gsms": [],
+            "control_gsms": []
+          }
+        ]
+      },
+      "elapsed_seconds": 104.84603762498591,
+      "input_tokens": 300003,
+      "output_tokens": 6465,
+      "web_search_requests": 15,
+      "web_fetch_requests": 11,
+      "error": null
+    }
+  ],
+  "final_action": "proceed",
+  "candidates": [
+    "GSE235548",
+    "GSE232170"
+  ],
+  "candidate_details": {
+    "GSE235548": {
+      "title": "Single-organoid analysis reveals clinically relevant treatment-resistant and invasive subclones in pancreatic cancer (Le Compte et al., npj Precision Oncology 2023), associated GEO data",
+      "why": "This study profiled PDAC patient-derived organoids with RNA-seq after chemotherapy treatment in culture (e.g. gemcitabine/paclitaxel or FOLFIRINOX components) and compared them with untreated organoids. It is the closest match found so far to the drug-versus-untreated comparison.",
+      "case_hint": "Patient-derived PDAC organoids treated in culture with chemotherapy",
+      "control_hint": "The same patient-derived organoid lines left untreated or given vehicle"
+    },
+    "GSE232170": {
+      "title": "The effect of extracellular matrix on the precision medicine utility of pancreatic cancer patient-derived organoids (JCI Insight), associated GEO data",
+      "why": "This study uses PDAC patient-derived organoids grown in different extracellular matrices, together with drug-response testing. If its RNA-seq includes drug-treated and untreated organoids from the same lines, a subset could answer the question.",
+      "case_hint": "Patient-derived PDAC organoids treated with a drug in culture (if such samples exist)",
+      "control_hint": "The same organoid lines without drug or with vehicle, grown in the same matrix"
+    }
+  },
+  "rejected": [
+    "GSE207352",
+    "GSE202051",
+    "GSE199102",
+    "GSE194249",
+    "GSE195623",
+    "GSE244142",
+    "GSE212966",
+    "GSE241226",
+    "GSE205013",
+    "GSE249673",
+    "GSE169321",
+    "GSE318496",
+    "GSE235315",
+    "GSE5527880"
+  ],
+  "questions": [
+    {
+      "question": "Which two groups do you want to compare?",
+      "options": [
+        "PDAC tumor vs. adjacent or normal pancreas tissue",
+        "Classical vs. basal-like PDAC subtype",
+        "Drug-treated vs. vehicle (e.g., gemcitabine, FOLFIRINOX, KRAS inhibitor)",
+        "Genetic perturbation (knockdown/knockout/overexpression) vs. control",
+        "Drug-resistant vs. parental cells",
+        "Precursor lesions (PanIN/IPMN) vs. normal or PDAC",
+        "Primary tumor vs. metastasis",
+        "Responders vs. non-responders / long vs. short survival"
+      ],
+      "why": "Each comparison is answered by a different set of GEO series, so no candidates can be chosen until this is fixed."
+    },
+    {
+      "question": "Which type of sample should both arms be?",
+      "options": [
+        "Primary patient tissue (surgical resection/biopsy)",
+        "Established PDAC cell lines",
+        "Patient-derived organoids",
+        "Patient-derived xenografts",
+        "Cancer-associated fibroblasts / stellate cells",
+        "Blood / plasma / extracellular vesicles"
+      ],
+      "why": "Cell lines, organoids, xenografts and primary tissue can't be swapped for each other. Choosing one decides which series and which samples within a series qualify."
+    },
+    {
+      "question": "Should this be limited to pancreatic ductal adenocarcinoma, or include other pancreatic tumors?",
+      "options": [
+        "PDAC only",
+        "Pancreatic neuroendocrine tumors",
+        "IPMN / cystic neoplasms",
+        "Any pancreatic cancer"
+      ],
+      "why": "Neuroendocrine tumors and cystic lesions are covered by separate datasets and would change the candidate list."
+    },
+    {
+      "question": "If the controls are 'normal' tissue, which kind?",
+      "options": [
+        "Tumor-adjacent pancreas from the same patients (paired)",
+        "Pancreas from healthy donors",
+        "Chronic pancreatitis tissue"
+      ],
+      "why": "Paired adjacent tissue, healthy donor pancreas and pancreatitis are different controls and appear in different series."
+    },
+    {
+      "question": "Do you have specific genes or pathways of interest?",
+      "options": [],
+      "why": "Naming genes would narrow the search to perturbation studies or to series where those genes are relevant."
+    }
+  ],
+  "out_of_scope": null,
+  "seen": [],
+  "per_query": {},
+  "invented": [],
+  "selections": {
+    "GSE235548": {
+      "case": [],
+      "control": []
+    },
+    "GSE232170": {
+      "case": [],
+      "control": []
+    }
+  },
+  "verification": {
+    "eligible": [
+      "GSE235548",
+      "GSE232170"
+    ],
+    "exists_only": [],
+    "missing": [],
+    "invalid": []
+  },
+  "elapsed_seconds": 127.045,
+  "input_tokens": 325833,
+  "output_tokens": 8034,
+  "web_search_requests": 17,
+  "web_fetch_requests": 11,
+  "error": null
+}

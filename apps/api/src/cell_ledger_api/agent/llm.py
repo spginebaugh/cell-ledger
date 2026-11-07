@@ -71,6 +71,9 @@ def request_params(
         # Anthropic's recommended substitute instead of failing the user.
         "betas": ["server-side-fallback-2026-07-01"],
         "fallbacks": "default",
+        # Each tool turn re-sends the conversation so far; caching it makes those re-reads
+        # cheap instead of paying full price for every earlier search and record again.
+        "cache_control": {"type": "ephemeral"},
         "system": system,
     }
     if tools:

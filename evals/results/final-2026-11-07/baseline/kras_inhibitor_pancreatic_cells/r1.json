@@ -1,0 +1,365 @@
+{
+  "case_id": "kras_inhibitor_pancreatic_cells",
+  "system": "baseline",
+  "repeat": 1,
+  "conditions": {
+    "system": "baseline",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "fingerprint": "4525537637e3a1e40449a050cb82f18b6802378efbf1170b5ac09c2e199b166c",
+    "web_search": true,
+    "code_revision": "4032f8cb3e85576661f421ff7f4f75aa87401b25",
+    "dirty": true,
+    "geo_cache": "/Users/scott/Documents/code/gauntlet-hackathon/cell-ledger/data/evals/geo-cache/all12-r2",
+    "case_sha256": "717de0119ef7d3c2ec20fb63abee9a57b2c3867e2060388f71f9e0027a7ac232",
+    "suite_sha256": "5c2b23011a22776e3ea3fab6976ae88635f0f4a277dbf5db35d8fa2bb07d1859",
+    "run_id": "all12-r2",
+    "started_at": "2026-11-07T15:04:10+00:00"
+  },
+  "turns": [
+    {
+      "answers": [],
+      "action": "ask",
+      "output": {
+        "interpretation": "Two-group comparison: human pancreatic cancer (PDAC) cell lines grown in 2D/3D culture and treated with a direct KRAS inhibitor (case: e.g. MRTX1133 for KRAS G12D, sotorasib/adagrasib for KRAS G12C, or a pan-KRAS inhibitor such as BI-2865) versus the same cell line given vehicle (DMSO) for the same length of time (control). Within each series the comparison should be matched by cell line and time point. Combination-drug arms, drug-resistant derived lines, xenografts, organoids and mouse lines are excluded. I could not open the GEO records (NCBI returned a reCAPTCHA page), so none of the sample lists below have been checked, and GSM accessions are left empty rather than guessed.",
+        "genes": [],
+        "out_of_scope": null,
+        "clarifying_questions": [
+          {
+            "question": "Should RAS(ON) multi-selective tri-complex inhibitors (RMC-6236/daraxonrasib, RMC-7977) count as a 'direct KRAS inhibitor', or only KRAS-selective drugs (MRTX1133, sotorasib, adagrasib, BI-2865-type pan-KRAS)?",
+            "options": [
+              "Only KRAS-selective inhibitors (G12D, G12C, pan-KRAS)",
+              "Also include RAS(ON) multi-selective inhibitors such as RMC-6236"
+            ],
+            "why": "GSE314456 (PSN1 and SW1990 treated with RMC-6236 vs DMSO) qualifies only if pan-RAS(ON) inhibitors are accepted."
+          },
+          {
+            "question": "Should the case arm be limited to one KRAS allele and drug, or pool all direct KRAS inhibitors across cell lines?",
+            "options": [
+              "KRAS G12D only (MRTX1133)",
+              "KRAS G12C only (sotorasib/adagrasib)",
+              "Any direct KRAS inhibitor, with cell line as a covariate"
+            ],
+            "why": "Most available series use MRTX1133 in G12D lines (AsPC-1, PANC-1, SW1990, HPAC). G12C/sotorasib data in MIA PaCa-2 are scarce and mostly compare resistant with parental cells."
+          },
+          {
+            "question": "Which treatment duration should be used when a series has more than one time point?",
+            "options": [
+              "Short (≤24 h, direct KRAS-ERK target genes)",
+              "48–72 h",
+              "Any, matched with vehicle at the same time"
+            ],
+            "why": "Early time points show direct KRAS/ERK targets (DUSP6, SPRY4, ETV4/5, FOSL1, MYC). Later time points add cell-cycle and feedback effects. The answer decides which samples in a multi-time-point series are used."
+          }
+        ],
+        "rejected": [
+          {
+            "gse": "GSE228502",
+            "why": "Single-cell RNA-seq of a mouse KrasG12D PDAC cell line and tumors (Mus musculus), not human bulk RNA-seq."
+          },
+          {
+            "gse": "GSE315131",
+            "why": "Single-cell RNA-seq of the tumor immune microenvironment in mouse models."
+          },
+          {
+            "gse": "GSE315130",
+            "why": "SuperSeries mixing mouse KPC cells, mouse tumors and human lines. Use the human cell-line SubSeries (GSE314456) instead."
+          },
+          {
+            "gse": "GSE309596",
+            "why": "Single-cell RNA-seq from the PARP + KRAS G12D inhibitor study."
+          },
+          {
+            "gse": "GSE311611",
+            "why": "Single-cell RNA-seq from the KRAS + CDK4 study."
+          },
+          {
+            "gse": "GSE271300",
+            "why": "Single-cell RNA-seq of PDX tumors treated with MRTX1133 in vivo, not cell lines in culture."
+          },
+          {
+            "gse": "GSE178479",
+            "why": "Reported as sotorasib-resistant vs untreated MIA PaCa-2, which tests acquired resistance, not acute drug vs vehicle at the same time point. Could only be used if it contains a matched acute treatment arm, which I could not check."
+          },
+          {
+            "gse": "GSE204753",
+            "why": "Lung adenocarcinoma PDX model of AMG510 resistance, not pancreatic cell lines."
+          },
+          {
+            "gse": "GSE300887",
+            "why": "Murine Brca2-mutant pancreatic cancer treated with platinum/PARP inhibitor, not a KRAS inhibitor in human cells."
+          },
+          {
+            "gse": "GSE148200",
+            "why": "Gemcitabine-resistant vs parental MIA PaCa-2, with no KRAS inhibitor."
+          }
+        ],
+        "queries_tried": [
+          "GEO RNA-seq MRTX1133 pancreatic cancer cell lines",
+          "GSE MRTX1133 PDAC RNA-seq DMSO",
+          "GSE sotorasib MIA PaCa-2 RNA-seq",
+          "GSE pan-KRAS inhibitor BI-2865 pancreatic RNA-seq",
+          "GSE RMC-6236 pancreatic cell line RNA-seq",
+          "GSE adagrasib MIA PaCa-2 RNA-seq",
+          "GSE314456 tazemetostat RMC-6236 pancreatic",
+          "GSE314456 GSM PSN1 DMSO RMC-6236",
+          "MRTX1133 RNA-seq pancreatic cancer cell lines GEO GSE human",
+          "Klomp KRAS-dependent transcriptome PDAC RNA-seq GEO accession MRTX1133",
+          "Hallin MRTX1133 Nature Medicine RNA-seq GEO accession",
+          "MRTX1133 resistance PDAC Dilly Cancer Discovery RNA-seq GSE",
+          "Combination of PARP and KRASG12D inhibitors PDAC RNA-seq data availability GEO",
+          "AMG510 sotorasib MIA PaCa-2 RNA-seq DMSO GEO GSE transcriptome"
+        ],
+        "candidates": [
+          {
+            "gse": "GSE279749",
+            "title": "Bulk RNA-seq from 'Combination of PARP and KRASG12D inhibitors enhances therapeutic efficacy by exploiting vulnerabilities in PDAC' (Nat Commun) — exact GEO title not checked",
+            "n_samples": 0,
+            "why": "The paper treated human KRAS G12D PDAC lines (AsPC-1, PANC-1, SW1990) with MRTX1133 (50 nM, 48 h) or left them untreated, and found that homologous-recombination genes go down. Its data statement gives this GSE for the bulk RNA-seq.",
+            "case_hint": "Human PDAC parental lines (AsPC-1/PANC-1/SW1990) given MRTX1133 alone, 48 h",
+            "control_hint": "Same lines given DMSO/vehicle, 48 h",
+            "concerns": [
+              "Sample list, replicate number and NCBI raw-count availability not checked (GEO not reachable)",
+              "May include olaparib or combination arms, MRTX1133-resistant (-R) lines or mouse KPC1199 samples, which must be excluded",
+              "The control may be 'untreated' rather than DMSO"
+            ],
+            "case_gsms": [],
+            "control_gsms": []
+          },
+          {
+            "gse": "GSE201412",
+            "title": "RNA-seq/eccDNA data from Hallin et al. 2022 Nat Med (MRTX1133) — exact GEO title not checked",
+            "n_samples": 0,
+            "why": "The MRTX1133 discovery paper ran RNA-seq on DMSO- vs MRTX1133 (100 nM)-treated cell lines, including the human PDAC line AsPC-1 (KRAS G12D).",
+            "case_hint": "AsPC-1 given MRTX1133",
+            "control_hint": "AsPC-1 given DMSO at the same time point",
+            "concerns": [
+              "The panel also includes non-pancreatic lines (A427 lung, LS180 colorectal, SNU-1033, AGS gastric), which must be excluded",
+              "AsPC-1 may have fewer than 3 replicates per arm",
+              "Series also holds eccDNA sequencing; not checked"
+            ],
+            "case_gsms": [],
+            "control_gsms": []
+          },
+          {
+            "gse": "GSE301146",
+            "title": "mRNA-seq from 'Simultaneous targeting of KRAS and CDK4 synergistically induces durable growth arrest in pancreatic cancer cells' (Cell Death Dis 2025) — exact GEO title not checked",
+            "n_samples": 0,
+            "why": "Bulk transcriptome of pancreatic cancer cells treated with a KRAS inhibitor, alone or with a CDK4/6 inhibitor. The KRAS-inhibitor-alone vs vehicle arms would answer the question.",
+            "case_hint": "Human PDAC cells given the KRAS inhibitor alone",
+            "control_hint": "Same cells given DMSO at the same time",
+            "concerns": [
+              "Which KRAS inhibitor (allele-specific or pan-RAS), organism and cell lines are used is not checked",
+              "Combination and CDK4/6i-only arms must be excluded"
+            ],
+            "case_gsms": [],
+            "control_gsms": []
+          },
+          {
+            "gse": "GSE301148",
+            "title": "Second mRNA-seq series from the KRAS + CDK4 combination study (Cell Death Dis 2025) — exact GEO title not checked",
+            "n_samples": 0,
+            "why": "Companion bulk RNA-seq series from the same study. It may cover other cell lines or time points with a KRAS-inhibitor-alone vs vehicle comparison.",
+            "case_hint": "KRAS inhibitor alone",
+            "control_hint": "Vehicle (DMSO) at the same time",
+            "concerns": [
+              "Contents not checked: it could be mouse cells or a long-term/resistance design",
+              "Combination arms must be excluded"
+            ],
+            "case_gsms": [],
+            "control_gsms": []
+          },
+          {
+            "gse": "GSE314456",
+            "title": "Differential mRNA expression analysis of multiple human and mouse pancreatic cancer cells and tumors after DMSO, tazemetostat, RMC-6236, or the combination treatment.",
+            "n_samples": 0,
+            "why": "Human PSN1 and SW1990 PDAC cells treated with DMSO or RMC-6236 alone (also tazemetostat and the combination). Qualifies only if pan-RAS(ON) inhibitors count as direct KRAS inhibitors.",
+            "case_hint": "PSN1 and SW1990 given RMC-6236 alone",
+            "control_hint": "PSN1 and SW1990 given DMSO",
+            "concerns": [
+              "RMC-6236 is a RAS(ON) multi-selective inhibitor rather than a KRAS-selective one (see clarifying question)",
+              "Whether this SubSeries contains only human samples, and its replicate numbers, not checked; mouse KPC cells and tumors belong to the parent SuperSeries GSE315130",
+              "Tazemetostat and combination arms must be excluded"
+            ],
+            "case_gsms": [],
+            "control_gsms": []
+          },
+          {
+            "gse": "GSE293756",
+            "title": "PANCREATIC DUCTAL ADENOCARCINOMAS RESISTANT TO KRAS INHIBITION ARE DRUGGABLE WITH AN ANTI-MUC1-C ADC",
+            "n_samples": 0,
+            "why": "The study reports that MRTX1133 treatment of PDAC cells induces MUC1-C, so it may include acute MRTX1133 vs vehicle RNA-seq in human KRAS G12D PDAC lines.",
+            "case_hint": "Parental human PDAC cells given MRTX1133",
+            "control_hint": "Same cells given vehicle",
+            "concerns": [
+              "May mainly compare MRTX1133-resistant with parental lines, or MUC1-C knockdown, instead of acute treatment; design not checked",
+              "Replicates and raw-count availability not checked"
+            ],
+            "case_gsms": [],
+            "control_gsms": []
+          },
+          {
+            "gse": "GSE234449",
+            "title": "RNA-seq from 'Dual Inhibition of KRASG12D and Pan-ERBB Is Synergistic in Pancreatic Ductal Adenocarcinoma' (Cancer Res 2023) — exact GEO title not checked",
+            "n_samples": 0,
+            "why": "Possible MRTX1133 vs vehicle RNA-seq in human PDAC models.",
+            "case_hint": "Human PDAC cell lines given MRTX1133 alone",
+            "control_hint": "Same lines given DMSO",
+            "concerns": [
+              "The models may be organoids, PDX or mouse cells rather than human 2D cell lines; not checked",
+              "May include afatinib or combination arms, which must be excluded"
+            ],
+            "case_gsms": [],
+            "control_gsms": []
+          }
+        ]
+      },
+      "elapsed_seconds": 139.137542499986,
+      "input_tokens": 415034,
+      "output_tokens": 8512,
+      "web_search_requests": 14,
+      "web_fetch_requests": 9,
+      "error": null
+    },
+    {
+      "answers": [
+        "Any direct KRAS inhibitor counts (G12C, G12D or pan-KRAS), at any dose or duration. Use parental, drug-sensitive human pancreatic cancer lines treated in culture, compared with vehicle-treated cells of the same line at the same time point."
+      ],
+      "action": "proceed",
+      "output": {
+        "interpretation": "Human pancreatic cancer cell lines in 2D/3D culture that carry a KRAS mutation and are not drug-resistant (parental), treated with a direct KRAS inhibitor (MRTX1133, sotorasib/adagrasib or a pan-KRAS/RAS(ON) inhibitor; any dose or duration) [case], compared with vehicle (DMSO)-treated cells of the same line at the same time point [control]. Each cell line is analysed separately, or blocked by line.",
+        "genes": [],
+        "out_of_scope": null,
+        "clarifying_questions": [],
+        "rejected": [
+          {
+            "gse": "GSE234449",
+            "why": "Parental human SUIT2 cells treated with 60 nM MRTX1133 vs untreated, the right design. But the record lists at most 2 replicates per arm (parental untreated rep 1; MRTX1133 reps 1–2), so it misses the minimum of 3 per arm. The other arms are MRTX1133-resistant SUIT2 cells and mouse FC1242 cells, which do not qualify."
+          },
+          {
+            "gse": "GSE228502",
+            "why": "Single-cell RNA-seq of a mouse KrasG12D PDAC line and mouse tumours treated with MRTX1133/MRTX849. This is neither human nor bulk RNA-seq."
+          },
+          {
+            "gse": "GSE315131",
+            "why": "Single-cell RNA-seq of the tumour immune microenvironment (mouse) after tazemetostat plus RMC-6236. It is not bulk RNA-seq of human cell lines."
+          },
+          {
+            "gse": "GSE300712",
+            "why": "RAS(ON) multi-selective inhibition in NRAS-mutant melanoma models, not pancreatic cancer."
+          }
+        ],
+        "queries_tried": [
+          "GEO RNA-seq MRTX1133 pancreatic cancer cell lines GSE",
+          "GSE MRTX1133 RNA-seq PDAC cell line DMSO",
+          "GSE sotorasib MIA PaCa-2 RNA-seq",
+          "GSE pan-KRAS inhibitor BI-2865 pancreatic RNA-seq",
+          "GSE RMC-6236 pancreatic cancer cell RNA-seq",
+          "GSE MRTX1133 AsPC-1 RNA-seq",
+          "GSE adagrasib MIA PaCa-2 RNA-seq DMSO",
+          "GSE315130 PSN1 RMC-6236 RNA-seq",
+          "MRTX1133 pancreatic cancer cell lines RNA-seq GEO GSE DMSO treated",
+          "sotorasib MIA PaCa-2 RNA-seq GEO GSE",
+          "GEO sample MRTX1133 DMSO pancreatic replicate RNA-seq GSM",
+          "GSM MIA PaCa-2 sotorasib RNA-seq DMSO rep",
+          "GSE234449 SUIT2 MRTX1133 RNAseq",
+          "HDAC5 Deficiency Intrinsic Resistance KRASG12D Inhibition RNA-seq GSE"
+        ],
+        "candidates": [
+          {
+            "gse": "GSE315130",
+            "title": "Differential mRNA expression analysis of multiple human and mouse pancreatic cancer cells and tumors after DMSO, tazemetostat, RMC-6236, or the combination treatment.",
+            "n_samples": 0,
+            "why": "Human PDAC cell lines PSN1 (KRAS G12R) and SW1990 (KRAS G12D) were treated in culture with DMSO or with RMC-6236 (daraxonrasib), a direct RAS(ON) multi-selective inhibitor that covers mutant KRAS. Within each line, the RMC-6236-alone vs DMSO samples give the requested drug-vs-vehicle comparison for parental, drug-sensitive cells.",
+            "case_hint": "PSN1 RMC-6236-alone samples and SW1990 RMC-6236-alone samples, each analysed against its own line's DMSO samples. Exclude the tazemetostat and combination arms, the mouse KPC cells and tumours, and the RMC-6236-resistant in vivo tumours.",
+            "control_hint": "PSN1 DMSO samples and SW1990 DMSO samples from the same experiment and time point.",
+            "concerns": [
+              "I could not open the GEO record (blocked by a CAPTCHA) or reach my search tool again, so the GSM accessions, replicate count per arm, total sample count and NCBI raw-count availability are all unconfirmed. n_samples is set to 0 as a placeholder, not a real count; check the record before use.",
+              "A GEO browser search result showed GSE314456 with the same title. GSE315130 may be a SuperSeries and GSE314456 the bulk RNA-seq SubSeries holding the human cell-line samples; check which one carries the raw counts.",
+              "This is a mixed human/mouse series. Use only the Homo sapiens cell-line samples.",
+              "RMC-6236 inhibits RAS(ON) broadly (KRAS, NRAS and HRAS), not KRAS alone. Under the user's acceptance of pan-KRAS inhibitors it counts, but it is less KRAS-specific than MRTX1133 or sotorasib."
+            ],
+            "case_gsms": [],
+            "control_gsms": []
+          }
+        ]
+      },
+      "elapsed_seconds": 140.3598195000086,
+      "input_tokens": 513212,
+      "output_tokens": 7743,
+      "web_search_requests": 15,
+      "web_fetch_requests": 13,
+      "error": null
+    }
+  ],
+  "final_action": "proceed",
+  "candidates": [
+    "GSE315130"
+  ],
+  "candidate_details": {
+    "GSE315130": {
+      "title": "Differential mRNA expression analysis of multiple human and mouse pancreatic cancer cells and tumors after DMSO, tazemetostat, RMC-6236, or the combination treatment.",
+      "why": "Human PDAC cell lines PSN1 (KRAS G12R) and SW1990 (KRAS G12D) were treated in culture with DMSO or with RMC-6236 (daraxonrasib), a direct RAS(ON) multi-selective inhibitor that covers mutant KRAS. Within each line, the RMC-6236-alone vs DMSO samples give the requested drug-vs-vehicle comparison for parental, drug-sensitive cells.",
+      "case_hint": "PSN1 RMC-6236-alone samples and SW1990 RMC-6236-alone samples, each analysed against its own line's DMSO samples. Exclude the tazemetostat and combination arms, the mouse KPC cells and tumours, and the RMC-6236-resistant in vivo tumours.",
+      "control_hint": "PSN1 DMSO samples and SW1990 DMSO samples from the same experiment and time point."
+    }
+  },
+  "rejected": [
+    "GSE234449",
+    "GSE228502",
+    "GSE315131",
+    "GSE300712"
+  ],
+  "questions": [
+    {
+      "question": "Should RAS(ON) multi-selective tri-complex inhibitors (RMC-6236/daraxonrasib, RMC-7977) count as a 'direct KRAS inhibitor', or only KRAS-selective drugs (MRTX1133, sotorasib, adagrasib, BI-2865-type pan-KRAS)?",
+      "options": [
+        "Only KRAS-selective inhibitors (G12D, G12C, pan-KRAS)",
+        "Also include RAS(ON) multi-selective inhibitors such as RMC-6236"
+      ],
+      "why": "GSE314456 (PSN1 and SW1990 treated with RMC-6236 vs DMSO) qualifies only if pan-RAS(ON) inhibitors are accepted."
+    },
+    {
+      "question": "Should the case arm be limited to one KRAS allele and drug, or pool all direct KRAS inhibitors across cell lines?",
+      "options": [
+        "KRAS G12D only (MRTX1133)",
+        "KRAS G12C only (sotorasib/adagrasib)",
+        "Any direct KRAS inhibitor, with cell line as a covariate"
+      ],
+      "why": "Most available series use MRTX1133 in G12D lines (AsPC-1, PANC-1, SW1990, HPAC). G12C/sotorasib data in MIA PaCa-2 are scarce and mostly compare resistant with parental cells."
+    },
+    {
+      "question": "Which treatment duration should be used when a series has more than one time point?",
+      "options": [
+        "Short (≤24 h, direct KRAS-ERK target genes)",
+        "48–72 h",
+        "Any, matched with vehicle at the same time"
+      ],
+      "why": "Early time points show direct KRAS/ERK targets (DUSP6, SPRY4, ETV4/5, FOSL1, MYC). Later time points add cell-cycle and feedback effects. The answer decides which samples in a multi-time-point series are used."
+    }
+  ],
+  "out_of_scope": null,
+  "seen": [],
+  "per_query": {},
+  "invented": [],
+  "selections": {
+    "GSE315130": {
+      "case": [],
+      "control": []
+    }
+  },
+  "verification": {
+    "eligible": [],
+    "exists_only": [
+      "GSE315130"
+    ],
+    "missing": [],
+    "invalid": []
+  },
+  "elapsed_seconds": 279.873,
+  "input_tokens": 928246,
+  "output_tokens": 16255,
+  "web_search_requests": 29,
+  "web_fetch_requests": 22,
+  "error": null
+}

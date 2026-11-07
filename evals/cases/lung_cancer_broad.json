@@ -1,0 +1,30 @@
+{
+  "id": "lung_cancer_broad",
+  "prompt": "lung cancer",
+  "expected_action": "ask",
+  "clarification_targets": [
+    [
+      "adenocarcinoma",
+      "squamous",
+      "small cell",
+      "small-cell",
+      "LUAD",
+      "LUSC",
+      "SCLC",
+      "NSCLC",
+      "subtype"
+    ]
+  ],
+  "answers": [],
+  "expected_action_after_answers": null,
+  "also_acceptable": [],
+  "pool": {},
+  "status": "draft",
+  "reviewed_by": "",
+  "notes": "Must ask which lung cancer and comparison.",
+  "tags": [
+    "lung",
+    "broad",
+    "ask"
+  ]
+}

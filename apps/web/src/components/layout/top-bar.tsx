@@ -27,6 +27,13 @@ export function TopBar({ sessionId }: { sessionId?: string }) {
           cell-ledger
         </Link>
         <div className="flex items-center gap-2">
+          <Link
+            to="/evals"
+            className="rounded-md px-2 py-1 text-[14px] text-ink-2 no-underline hover:bg-surface-2 hover:text-ink"
+            activeProps={{ className: "text-ink font-medium", "aria-current": "page" }}
+          >
+            evals
+          </Link>
           {sessionId && (
             <button
               type="button"

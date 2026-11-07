@@ -1,0 +1,96 @@
+{
+  "id": "kras_inhibitor_pdac_organoids",
+  "prompt": "Which genes change when patient-derived pancreatic cancer organoids are treated with a KRAS inhibitor versus vehicle?",
+  "expected_action": "no_results",
+  "clarification_targets": [],
+  "answers": [
+    "Patient-derived organoids only; cell lines or xenografts will not do."
+  ],
+  "expected_action_after_answers": "no_results",
+  "also_acceptable": [
+    "ask"
+  ],
+  "pool": {
+    "GSE228010": {
+      "relevant": false,
+      "eligible": true,
+      "rationale": "KRAS inhibitor in PDAC cell lines, not organoids.",
+      "evidence": "GEO record",
+      "reviewed_by": "",
+      "source": "claude-draft 2026-11-07",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
+    },
+    "GSE201412": {
+      "relevant": false,
+      "eligible": true,
+      "rationale": "MRTX1133 in AsPC1 cells and xenografts, not organoids.",
+      "evidence": "GEO record",
+      "reviewed_by": "",
+      "source": "claude-draft 2026-11-07",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
+    },
+    "GSE273116": {
+      "relevant": false,
+      "eligible": true,
+      "rationale": "Pan-KRAS inhibitor in MIA PaCa-2 cell lines, not organoids.",
+      "evidence": "GEO record",
+      "reviewed_by": "",
+      "source": "claude-draft 2026-11-07",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
+    },
+    "GSE234449": {
+      "relevant": false,
+      "eligible": true,
+      "rationale": "MRTX1133 in SUIT2 cells, not organoids.",
+      "evidence": "GEO record",
+      "reviewed_by": "",
+      "source": "claude-draft 2026-11-07",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
+    },
+    "GSE225011": {
+      "relevant": false,
+      "eligible": true,
+      "rationale": "PDAC organoids, but treated with CK21 (a triptolide analog), not a KRAS inhibitor.",
+      "evidence": "GEO record",
+      "reviewed_by": "",
+      "source": "claude-draft 2026-11-07",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
+    },
+    "GSE235548": {
+      "relevant": false,
+      "eligible": true,
+      "rationale": "PDAC organoids, but treated with gemcitabine-paclitaxel, not a KRAS inhibitor.",
+      "evidence": "GEO record",
+      "reviewed_by": "",
+      "source": "claude-draft 2026-11-07",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
+    }
+  },
+  "status": "draft",
+  "reviewed_by": "",
+  "notes": "No eligible series treats PDAC organoids with a KRAS inhibitor (searched MRTX1133, sotorasib, adagrasib, KRAS G12C/G12D/pan-KRAS inhibitor, organoid terms). Right answers: say nothing matches, or ask whether cell lines would do. Returning cell-line series as organoid answers is wrong.",
+  "tags": [
+    "kras",
+    "pancreas",
+    "organoids",
+    "no-data"
+  ]
+}

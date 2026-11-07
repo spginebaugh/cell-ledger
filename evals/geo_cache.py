@@ -18,7 +18,7 @@ from typing import Any
 import httpx
 from pydantic import BaseModel
 
-from cell_ledger.geo import GeoClient, SearchResult, VerifyResult
+from cell_ledger.geo import GeoClient, GeoSeries, SearchResult, VerifyResult
 
 
 def _key(name: str, payload: Any) -> str:
@@ -85,6 +85,16 @@ class CachedGeoClient(GeoClient):
         wanted = sorted({g.strip().upper() for g in gses})
         return await self._cached(
             "exists", wanted, None, lambda: super(CachedGeoClient, self).exists_series(gses)
+        )
+
+    async def series_record(self, gse: str) -> GeoSeries:
+        return await self._cached(
+            "record", gse, GeoSeries, lambda: super(CachedGeoClient, self).series_record(gse)
+        )
+
+    async def count_columns(self, gse: str) -> list[str] | None:
+        return await self._cached(
+            "columns", gse, None, lambda: super(CachedGeoClient, self).count_columns(gse)
         )
 
 

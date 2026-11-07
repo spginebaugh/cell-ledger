@@ -58,3 +58,26 @@ def test_parse_soft_series_and_samples() -> None:
         "disease state": "sepsis",
         "characteristics": "free text without a key",
     }
+
+
+def test_parse_soft_keeps_protocols_description_and_relations() -> None:
+    s = parse_soft(
+        "^SERIES = GSE9\n"
+        "!Series_relation = SubSeries of: GSE8\n"
+        "^SAMPLE = GSM9\n"
+        "!Sample_description = first line\n"
+        "!Sample_description = second line\n"
+        "!Sample_growth_protocol_ch1 = Organoids in Matrigel\n"
+        "!Sample_treatment_protocol_ch1 = shRNA knockdown of CLIC1\n"
+        "!Sample_extract_protocol_ch1 = TRIzol\n"
+        "!Sample_extract_protocol_ch1 = polyA selection\n"
+        "!Sample_molecule_ch1 = total RNA\n"
+        "!Sample_library_source = transcriptomic\n"
+    )
+    assert s.relations == ["SubSeries of: GSE8"]
+    (x,) = s.samples
+    assert x.description == "first line second line"
+    assert x.growth_protocol == "Organoids in Matrigel"
+    assert x.treatment_protocol == "shRNA knockdown of CLIC1"
+    assert x.extract_protocol == "TRIzol polyA selection"
+    assert (x.molecule, x.library_source) == ("total RNA", "transcriptomic")

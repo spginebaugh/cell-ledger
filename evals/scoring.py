@@ -54,7 +54,7 @@ def score_record(case: Case, rec: RunRecord) -> dict[str, Any]:
         else:
             wrong[g] = "ineligible" if judged[g].eligible is False else "irrelevant"
     misses: dict[str, MissKind] = {}
-    for g in sorted(positives - set(candidates)):
+    for g in sorted(positives - set(candidates)) if case.scores_recall else []:
         if rec.system == "baseline":
             misses[g] = "not_named"
         elif g in rec.seen:
@@ -62,9 +62,28 @@ def score_record(case: Case, rec: RunRecord) -> dict[str, Any]:
         else:
             misses[g] = "never_returned"
 
+    # Sample level, on positives the system returned whose arms a reviewer wrote down: every
+    # sample counts once per arm; a swapped arm is wrong in both.
+    sample_tp = sample_fp = sample_fn = exact = with_arms = 0
+    for g in hits:
+        entry = case.pool[g]
+        if not entry.has_arms:
+            continue
+        with_arms += 1
+        chosen = rec.selections.get(g, {})
+        optional = set(entry.optional_gsms)
+        same = True
+        for arm, gold in (("case", entry.case_gsms or []), ("control", entry.control_gsms or [])):
+            got, want = set(chosen.get(arm, [])) - optional, set(gold)
+            sample_tp += len(got & want)
+            sample_fp += len(got - want)
+            sample_fn += len(want - got)
+            same = same and got == want
+        exact += same
+
     first = rec.turns[0].action
     asked = first == "ask"
-    action_correct = first == case.expected_action
+    action_correct = case.action_ok(first)
     targets_hit = None
     if case.expected_action == "ask":
         text = _question_text(rec.questions)
@@ -82,7 +101,7 @@ def score_record(case: Case, rec: RunRecord) -> dict[str, Any]:
         and not ineligible
         and not wrong
         and second_turn_correct is not False
-        and (not positives or bool(hits))
+        and (not positives or not case.scores_recall or bool(hits))
     )
     return {
         "case_id": case.id,
@@ -98,12 +117,16 @@ def score_record(case: Case, rec: RunRecord) -> dict[str, Any]:
         else None,
         "second_turn_correct": second_turn_correct,
         "turns": len(rec.turns),
+        "questions": [str(q.get("question", "")) for q in rec.questions],
         "candidates": candidates,
         "hits": hits,
         "wrong": wrong,
         "unjudged": unjudged,
-        "recall": ratio(len(hits), len(positives)),
+        "recall": ratio(len(hits), len(positives)) if case.scores_recall else ratio(0, 0),
         "precision": ratio(len(hits), len(judged_candidates)),
+        "sample_precision": ratio(sample_tp, sample_tp + sample_fp),
+        "sample_recall": ratio(sample_tp, sample_tp + sample_fn),
+        "subsets_exact": ratio(exact, with_arms),
         "misses": misses,
         "fabricated": fabricated,
         "ineligible_returned": ineligible,
@@ -113,6 +136,7 @@ def score_record(case: Case, rec: RunRecord) -> dict[str, Any]:
         "input_tokens": rec.input_tokens,
         "output_tokens": rec.output_tokens,
         "web_search_requests": rec.web_search_requests,
+        "web_fetch_requests": rec.web_fetch_requests,
         "elapsed_seconds": rec.elapsed_seconds,
         "error": rec.error,
         "passed": passed,
@@ -165,6 +189,9 @@ def summarize_system(rows: list[dict[str, Any]], scheduled: int) -> dict[str, An
         "precision_macro": macro("precision"),
         "recall_pooled": _pooled(rows, "recall"),
         "precision_pooled": _pooled(rows, "precision"),
+        "sample_precision_pooled": _pooled(rows, "sample_precision"),
+        "sample_recall_pooled": _pooled(rows, "sample_recall"),
+        "subsets_exact": _pooled(rows, "subsets_exact"),
         "candidates_total": sum(len(r["candidates"]) for r in rows),
         "unjudged_total": sum(len(r["unjudged"]) for r in rows),
         "wrong_total": sum(len(r["wrong"]) for r in rows),
@@ -176,6 +203,7 @@ def summarize_system(rows: list[dict[str, Any]], scheduled: int) -> dict[str, An
         "input_tokens_per_run": _spread([r["input_tokens"] for r in rows]),
         "output_tokens_per_run": _spread([r["output_tokens"] for r in rows]),
         "web_search_requests_per_run": _spread([r["web_search_requests"] for r in rows]),
+        "web_fetch_requests_per_run": _spread([r["web_fetch_requests"] for r in rows]),
         "elapsed_seconds_per_run": _spread([r["elapsed_seconds"] for r in rows]),
     }
 
@@ -228,8 +256,9 @@ def score(suite: Suite, records: list[RunRecord], *, reviewed_only: bool = False
         "comparison_ready": not pairing and not draft,
         "rows": rows,
         "note": "Recall and precision count only pool entries with a human verdict. Unjudged "
-        "candidates are in the review queue. Draft cases are scored but the comparison is not "
-        "ready until every scored case is reviewed.",
+        "candidates are in the review queue. Sample precision and recall compare each arm's "
+        "samples with the reviewer's, on returned positives whose arms were reviewed. Draft "
+        "cases are scored but the comparison is not ready until every scored case is reviewed.",
     }
 
 

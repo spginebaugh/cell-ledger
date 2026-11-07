@@ -18,7 +18,6 @@ def test_shipped_cases_load_and_match_file_names() -> None:
     [
         ({"expected_action": "ask"}, "clarification_targets"),
         ({"expected_action": "ask", "clarification_targets": [[""]]}, "non-empty"),
-        ({"answers": ["x"]}, "answers only apply"),
         ({"expected_action": "decline"}, "cannot have positives"),
         ({"reviewed_by": ""}, "names its reviewer"),
         ({"pool": {}}, "needs a positive"),
@@ -82,3 +81,44 @@ def test_judged_and_positive_semantics() -> None:
     assert case.positives() == {"GSE1"}
     assert set(case.judged()) == {"GSE1", "GSE2"}
     assert Case.model_validate(case.model_dump()).pool["GSE4"].judged is False
+
+
+@pytest.mark.parametrize(
+    "entry, match",
+    [
+        ({"case_gsms": ["GSM1"]}, "both"),
+        ({"relevant": False, "case_gsms": ["GSM1"], "control_gsms": ["GSM2"]}, "relevant"),
+        ({"case_gsms": ["GSM1"], "control_gsms": ["GSE2"]}, "not GSM"),
+        ({"case_gsms": ["GSM1"], "control_gsms": ["GSM1"]}, "twice"),
+        ({"case_gsms": ["GSM1"], "control_gsms": ["GSM2"], "optional_gsms": ["GSM2"]}, "optional"),
+    ],
+)
+def test_sample_arms_are_validated(entry: dict, match: str) -> None:
+    base = {"relevant": True, "eligible": True, "reviewed_by": "t"}
+    with pytest.raises(ValueError, match=match):
+        make_case(pool={"GSE1": {**base, **entry}})
+    ok = make_case(pool={"GSE1": {**base, "case_gsms": ["GSM1"], "control_gsms": ["GSM2"]}})
+    assert ok.pool["GSE1"].has_arms
+
+
+def test_also_acceptable_actions() -> None:
+    case = make_case(expected_action="no_results", pool={}, also_acceptable=["ask"])
+    assert case.action_ok("no_results") and case.action_ok("ask") and not case.action_ok("proceed")
+
+
+def test_shipped_cases_arms_are_consistent() -> None:
+    suite = load_suite(CASES_DIR)
+    for c in suite.cases:
+        for gse, e in c.pool.items():
+            if e.has_arms:
+                assert e.positive, (c.id, gse)
+                assert len(e.case_gsms or []) >= 3 and len(e.control_gsms or []) >= 3, (c.id, gse)
+
+
+def test_any_case_may_carry_a_fallback_answer_and_ask_only_cases_skip_recall() -> None:
+    proceed = make_case(answers=["restating the prompt"])
+    assert proceed.scores_recall and proceed.second_turn_action == "proceed"
+    ask_only = make_case(expected_action="ask", clarification_targets=[["x"]])
+    assert not ask_only.scores_recall
+    asked = make_case(expected_action="ask", clarification_targets=[["x"]], answers=["y"])
+    assert asked.scores_recall

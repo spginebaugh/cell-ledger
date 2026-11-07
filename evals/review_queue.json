@@ -1,0 +1,213 @@
+[
+  {
+    "case_id": "hcc_tumor_vs_adjacent",
+    "gse": "GSE101432",
+    "title": "Comprehensive transcriptome analysis in human liver",
+    "why": "17 primary HCC tumors and 22 benign adjacent liver samples. Cell lines are excluded.",
+    "case_hint": "17 primary tumors",
+    "control_hint": "22 benign adjacent",
+    "systems": [
+      "specialist"
+    ],
+    "runs": [
+      "all12-r2"
+    ],
+    "first_seen": "2026-11-07",
+    "verdict": {
+      "relevant": null,
+      "eligible": null,
+      "rationale": "",
+      "reviewed_by": ""
+    }
+  },
+  {
+    "case_id": "hcc_tumor_vs_adjacent",
+    "gse": "GSE176271",
+    "title": "Integrative analysis of DNA methylation and microRNA expression reveals mechanisms of disparity in hepatocellular carcinoma [RNA-Seq]",
+    "why": "16 HCC tumors and 16 adjacent normal samples from a US cohort.",
+    "case_hint": "16 HCC",
+    "control_hint": "16 adjacent normal",
+    "systems": [
+      "specialist"
+    ],
+    "runs": [
+      "all12-r2"
+    ],
+    "first_seen": "2026-11-07",
+    "verdict": {
+      "relevant": null,
+      "eligible": null,
+      "rationale": "",
+      "reviewed_by": ""
+    }
+  },
+  {
+    "case_id": "hcc_tumor_vs_adjacent",
+    "gse": "GSE184733",
+    "title": "RNA-seq analysis of hepatocellular carcinoma",
+    "why": "17 paired HCC and non-neoplastic liver samples from Caucasian patients.",
+    "case_hint": "17 carcinomas",
+    "control_hint": "17 non-neoplastic liver samples",
+    "systems": [
+      "specialist"
+    ],
+    "runs": [
+      "all12-r1"
+    ],
+    "first_seen": "2026-11-07",
+    "verdict": {
+      "relevant": null,
+      "eligible": null,
+      "rationale": "",
+      "reviewed_by": ""
+    }
+  },
+  {
+    "case_id": "hcc_tumor_vs_adjacent",
+    "gse": "GSE56545",
+    "title": "mRNA profiling  of Hepatocellular carcinoma (HCC)",
+    "why": "21 HBV-related HCC tumors, each paired with its adjacent normal liver, from transplant patients.",
+    "case_hint": "21 tumors (recurrent and non-recurrent patients)",
+    "control_hint": "21 adjacent normal",
+    "systems": [
+      "specialist"
+    ],
+    "runs": [
+      "all12-r2"
+    ],
+    "first_seen": "2026-11-07",
+    "verdict": {
+      "relevant": null,
+      "eligible": null,
+      "rationale": "",
+      "reviewed_by": ""
+    }
+  },
+  {
+    "case_id": "hcc_tumor_vs_adjacent",
+    "gse": "GSE94660",
+    "title": "RNA-seq of HCC and paired non-neoplastic liver",
+    "why": "21 HCC tumors with paired non-neoplastic liver, with mixed HBV/HCV etiology.",
+    "case_hint": "HCC tumor samples",
+    "control_hint": "Paired non-neoplastic liver samples",
+    "systems": [
+      "specialist",
+      "baseline"
+    ],
+    "runs": [
+      "all12-r1"
+    ],
+    "first_seen": "2026-11-07",
+    "verdict": {
+      "relevant": null,
+      "eligible": null,
+      "rationale": "",
+      "reviewed_by": ""
+    }
+  },
+  {
+    "case_id": "hcc_tumor_vs_adjacent",
+    "gse": "GSE97214",
+    "title": "Transcriptome sequencing identify a recurrent CRYL1-IFT88 chimeric transcript in hepatocellular carcinoma",
+    "why": "9 paired HCC and adjacent non-tumorous liver samples spanning three grades of differentiation.",
+    "case_hint": "9 liver tumors",
+    "control_hint": "9 adjacent non-tumorous liver samples",
+    "systems": [
+      "specialist"
+    ],
+    "runs": [
+      "all12-r1"
+    ],
+    "first_seen": "2026-11-07",
+    "verdict": {
+      "relevant": null,
+      "eligible": null,
+      "rationale": "",
+      "reviewed_by": ""
+    }
+  },
+  {
+    "case_id": "lung_cancer_broad",
+    "gse": "GSE140343",
+    "title": "Gene expression profile of clinical LUAD tumors and their paired non-cancerous adjacent tissues by RNA-seq analysis",
+    "why": "Patient tissue with 51 adenocarcinoma tumours and 49 paired adjacent normal lung samples. It is the largest tumour-vs-normal series found.",
+    "case_hint": "Lung adenocarcinoma tumour tissue (51 samples)",
+    "control_hint": "Paired non-cancerous adjacent lung tissue (49 samples)",
+    "systems": [
+      "specialist"
+    ],
+    "runs": [
+      "all12-r2"
+    ],
+    "first_seen": "2026-11-07",
+    "verdict": {
+      "relevant": null,
+      "eligible": null,
+      "rationale": "",
+      "reviewed_by": ""
+    }
+  },
+  {
+    "case_id": "lung_cancer_broad",
+    "gse": "GSE159857",
+    "title": "Multi-omics Analysis reveals novel therapeutic vulnerabilities in lung cancer",
+    "why": "Paired tumour and adjacent normal tissue for both adenocarcinoma and squamous cell carcinoma. The two subtypes can be pooled or analysed separately.",
+    "case_hint": "Tumour tissue, adenocarcinoma and squamous combined (32 samples)",
+    "control_hint": "Adjacent normal lung tissue (26 samples)",
+    "systems": [
+      "specialist"
+    ],
+    "runs": [
+      "all12-r2"
+    ],
+    "first_seen": "2026-11-07",
+    "verdict": {
+      "relevant": null,
+      "eligible": null,
+      "rationale": "",
+      "reviewed_by": ""
+    }
+  },
+  {
+    "case_id": "lung_cancer_broad",
+    "gse": "GSE268175",
+    "title": "Research on Differences and Immune Infiltration-Related Macrophages Between Non-Small Cell Lung Cancer and Adjacent Tissues",
+    "why": "Early-stage non-small cell lung cancer tumour tissue vs adjacent non-cancerous tissue from the same patients, with none of the samples treated.",
+    "case_hint": "NSCLC tumour tissue (34 samples)",
+    "control_hint": "Adjacent non-cancerous lung tissue (33 samples)",
+    "systems": [
+      "specialist"
+    ],
+    "runs": [
+      "all12-r2"
+    ],
+    "first_seen": "2026-11-07",
+    "verdict": {
+      "relevant": null,
+      "eligible": null,
+      "rationale": "",
+      "reviewed_by": ""
+    }
+  },
+  {
+    "case_id": "lung_cancer_broad",
+    "gse": "GSE81089",
+    "title": "Non-small cell lung cancer tumors and normal lung tissue RNA-seq (Uppsala cohort)",
+    "why": "A large human bulk RNA-seq cohort that includes NSCLC tumors (adenocarcinoma and squamous) and non-malignant lung tissue in the same series. It suits tumor vs. normal or adenocarcinoma vs. squamous comparisons.",
+    "case_hint": "NSCLC tumor samples (or one histology only)",
+    "control_hint": "Non-malignant lung tissue samples (about 19)",
+    "systems": [
+      "baseline"
+    ],
+    "runs": [
+      "all12-r2"
+    ],
+    "first_seen": "2026-11-07",
+    "verdict": {
+      "relevant": null,
+      "eligible": null,
+      "rationale": "",
+      "reviewed_by": ""
+    }
+  }
+]

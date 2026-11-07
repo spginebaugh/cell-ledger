@@ -1,19 +1,23 @@
 """The discover step: from the user's question, Claude searches GEO with the tools in
-:mod:`.tools` and returns candidate series with reasons, or clarifying questions when the
-question is ambiguous.
+:mod:`.tools`, reads the sample records of the series it might recommend, and returns
+candidate series with rules choosing their samples, or clarifying questions when the question
+is too broad or ambiguous.
 
 The code around the model keeps a :class:`DiscoveryTrace` of every query, every accession GEO
-confirmed and what it cost, and drops any candidate GEO never confirmed in this run.
+confirmed and what it cost, drops any candidate GEO never confirmed in this run, and turns
+each candidate's sample rules into exact GSM lists (:mod:`.samples`), checking the final
+shortlist against the NCBI count tables.
 """
 
 from __future__ import annotations
 
+import asyncio
 import hashlib
 import json
 import logging
 import time
 from collections.abc import Sequence
-from typing import Annotated, Any
+from typing import Annotated, Any, Protocol
 
 from anthropic.lib._parse._transform import transform_schema
 from anthropic.types.beta import BetaMessageParam, BetaToolResultBlockParam
@@ -23,7 +27,6 @@ from cell_ledger.geo import GeoClient
 from cell_ledger_api.agent.llm import (
     DEFAULT_EFFORT,
     DEFAULT_MODEL,
-    MAX_TURNS,
     NOT_CONFIGURED,
     AgentUnavailable,
     Emit,
@@ -32,7 +35,8 @@ from cell_ledger_api.agent.llm import (
     reject_refusal,
     request_params,
 )
-from cell_ledger_api.agent.tools import ToolCall, execute, geo_tools
+from cell_ledger_api.agent.samples import MIN_PER_ARM, Rule, SampleSelection, select_samples
+from cell_ledger_api.agent.tools import SeriesRecords, ToolCall, execute, geo_tools
 from cell_ledger_api.discovery import ExaSearcher
 
 log = logging.getLogger(__name__)
@@ -51,7 +55,7 @@ class DiscoverRequest(BaseModel):
     )
 
 
-class Candidate(BaseModel):
+class CandidateBase(BaseModel):
     gse: str = Field(pattern=r"^GSE\d+$")
     title: str
     n_samples: int
@@ -59,6 +63,20 @@ class Candidate(BaseModel):
     case_hint: str = Field(description="which samples would be the case arm")
     control_hint: str = Field(description="which samples would be the control arm")
     concerns: list[str] = Field(default_factory=list)
+
+
+class Candidate(CandidateBase):
+    """A recommended series and the rules that choose its samples (see :mod:`.samples`)."""
+
+    case: list[Rule] = Field(
+        default_factory=list, description="rules selecting the case arm; a sample matching any"
+    )
+    control: list[Rule] = Field(default_factory=list, description="rules selecting the control arm")
+    unclear: list[Rule] = Field(
+        default_factory=list,
+        description="rules for samples that might belong to an arm but whose records do not "
+        "settle it",
+    )
 
 
 class Rejected(BaseModel):
@@ -76,8 +94,8 @@ class ClarifyingQuestion(BaseModel):
     why: str = Field(description="what changes with the answer: which series would qualify")
 
 
-class DiscoveryOutput(BaseModel):
-    """What Claude returns from the discover step (the JSON schema it is held to)."""
+class DiscoveryFields(BaseModel):
+    """What every discovery answer has, the specialist's and the evals' baseline's alike."""
 
     interpretation: str = Field(description="the question restated as a two-group comparison")
     genes: list[str] = Field(default_factory=list, description="gene symbols the question names")
@@ -91,9 +109,14 @@ class DiscoveryOutput(BaseModel):
         default_factory=list,
         description="what must be decided before choosing datasets; empty when clear",
     )
-    candidates: list[Candidate] = Field(default_factory=list)
     rejected: list[Rejected] = Field(default_factory=list)
     queries_tried: list[str] = Field(default_factory=list)
+
+
+class DiscoveryOutput(DiscoveryFields):
+    """What Claude returns from the discover step (the JSON schema it is held to)."""
+
+    candidates: list[Candidate] = Field(default_factory=list)
 
 
 class Usage(BaseModel):
@@ -128,9 +151,25 @@ class DiscoveryTrace(BaseModel):
 
 
 class DiscoveryResult(DiscoveryOutput):
-    """Claude's output plus the trace the code recorded around it."""
+    """Claude's output plus what the code made of it: the trace, and each candidate's
+    samples (``selections``, same order as ``candidates``, then any candidate code set
+    aside for too few samples per arm)."""
 
     trace: DiscoveryTrace = Field(default_factory=DiscoveryTrace)
+    selections: list[SampleSelection] = Field(default_factory=list)
+
+
+class DiscoverStep(Protocol):
+    """What the API and the evals need from a discover implementation."""
+
+    @property
+    def available(self) -> bool: ...
+
+    def fingerprint(self) -> str: ...
+
+    async def discover(
+        self, question: str, emit: Emit, *, answers: Sequence[str] = ()
+    ) -> DiscoveryResult: ...
 
 
 transform_schema(DiscoveryOutput)  # fail at import if the schema cannot be made strict
@@ -141,34 +180,47 @@ transform_schema(DiscoveryOutput)  # fail at import if the schema cannot be made
 
 SYSTEM_DISCOVER = """\
 You are cell-ledger, a specialist that finds public bulk RNA-seq datasets in NCBI GEO for a
-biologist's question and prepares them for a reproducible two-group differential expression
+biologist's question and chooses the exact samples for a two-group differential expression
 analysis. You are careful and literal: you report only what GEO confirmed in this session.
 
 Your job in this step:
 1. Restate the question as a two-group comparison (case vs control) in one sentence.
-2. Search GEO with several differently worded keyword queries (disease synonyms, tissue,
-   cell type, treatment). Use the web search tool too when it is available. Run searches in
-   parallel when they are independent.
-3. Pick the series that can actually answer the question: human bulk RNA-seq with raw counts
-   (the search already filters for this), both arms present in the same series, at least
-   three samples per arm, clear sample labels. Explain each pick in one or two sentences and
-   name which samples would be case and control.
-4. Reject series you looked at but would not use, and say why in a few words.
-5. If the question is ambiguous in a way that changes which datasets qualify (which tissue,
-   which control, treated or untreated, which time point), ask clarifying questions instead
-   of guessing, and still list the candidates that fit every reading. Give each question the
-   options the results actually offer (the tissues, controls or time points you saw) when the
-   choice is enumerable, and say what changes with the answer. When the user has already
-   answered (a "Clarifications from the user" block follows the question), treat those
-   answers as settled and do not ask about them again.
-6. If no human bulk RNA-seq series with raw counts in GEO can answer the question at all
+2. Decide whether the question is specific enough. If it is broad or ambiguous in a way that
+   changes which datasets or samples qualify (a disease with distinct subtypes, which control,
+   which tissue or model system: patient tissue, primary cells, cell lines, organoids or
+   xenografts; pediatric or adult; treated or untreated; which time point), ask clarifying
+   questions instead of guessing. Search first, so each question offers the options the results
+   actually contain and says how many series fit each. Ask too when more than 10 series would
+   qualify: the analysis takes at most 10, so help the user narrow. When you ask, you may still
+   list the candidates that fit every reading. When the user has already answered (a
+   "Clarifications from the user" block follows the question), treat those answers as settled
+   and do not ask about them again.
+3. Search GEO thoroughly with several differently worded queries: synonyms, abbreviations, old
+   and new disease names, British spellings, subtypes, cell types, cell line names, treatments.
+   Use the web search tool too when it is available. Run independent searches in parallel.
+4. Read the sample records of every series you might recommend with inspect_series, and decide
+   from the samples, not the title, which samples fit each arm and which do not. Distinguish
+   cell lines from organoids, primary tissue and xenografts; parental lines from knockdown,
+   knockout, overexpression, engineered or drug-resistant derivatives; pediatric from adult
+   donors; treated from untreated. A series can qualify through a subset of its samples.
+5. For each series you recommend, write rules that select its samples: case and control rules,
+   and unclear rules for samples that might belong but whose records do not settle it. A rule
+   is a list of conditions that must all hold. A condition names a sample field exactly as
+   inspect_series listed it and matches values verbatim (equals), by substring (contains: for
+   titles, and long values shown cut with "…"), or by number (min/max, only when every value of
+   the field has the same unit). Use the field "series" with a quote from the summary or design
+   for a fact stated about every sample. Code applies the rules to every sample; samples that
+   match no rule are left out. Each arm needs at least three samples. Explain each pick in one
+   or two sentences, and describe the two arms in case_hint and control_hint.
+6. Reject series you looked at but would not use, and say why in a few words.
+7. If no human bulk RNA-seq series with raw counts in GEO can answer the question at all
    (another organism, single-cell, microarray, proteomics, not a gene expression question),
    say so in out_of_scope with the reason and return no candidates. A question that is in
    scope but finds nothing is not out of scope: return no candidates and say what you tried.
 
 Never report an accession that did not come back from a search or verification in this
 conversation. Never invent sample counts or titles; copy them from the tool results.
-Prefer fewer, better candidates (at most eight). Keep prose short.
+Return at most 10 candidates. Keep prose short.
 """
 
 
@@ -187,6 +239,10 @@ def discovery_prompt(question: str, answers: Sequence[str] = ()) -> str:
 # ------------------------------------------------------------------------------- step
 
 
+DISCOVER_MAX_TURNS = 12
+"""Searching, inspecting and answering take more turns than one search and an answer."""
+
+
 class Discoverer:
     def __init__(
         self,
@@ -198,7 +254,8 @@ class Discoverer:
         effort: str = DEFAULT_EFFORT,
     ) -> None:
         self._turn = turn
-        self._tools = geo_tools(geo, exa)
+        self._records = SeriesRecords(geo)
+        self._tools = geo_tools(geo, exa, self._records)
         self._model = model
         self._effort = effort
 
@@ -239,7 +296,7 @@ class Discoverer:
             tools=self.tool_definitions(),
         )
         seen: dict[str, None] = {}  # accessions GEO itself returned during this run, in order
-        for _ in range(MAX_TURNS):
+        for _ in range(DISCOVER_MAX_TURNS):
             message = await self._turn({**params, "messages": messages}, emit)
             trace.turns += 1
             trace.usage.add(message.usage)
@@ -270,16 +327,65 @@ class Discoverer:
                 )
             messages.append({"role": "user", "content": results})
         else:
-            raise AgentUnavailable(f"gave up after {MAX_TURNS} tool turns")
+            raise AgentUnavailable(f"gave up after {DISCOVER_MAX_TURNS} tool turns")
         try:
             output = DiscoveryOutput.model_validate_json(final_text(message))
         except ValidationError as e:
             raise AgentUnavailable(f"the model returned an unreadable result: {e}") from e
         invented = _keep_confirmed(output, seen)
+        selections = await self._select(output)
         trace.seen = list(seen)
         trace.invented = invented
         trace.elapsed_seconds = round(time.monotonic() - started, 3)
-        return DiscoveryResult(**output.model_dump(), trace=trace)
+        return DiscoveryResult(**output.model_dump(), trace=trace, selections=selections)
+
+    async def _select(self, output: DiscoveryOutput) -> list[SampleSelection]:
+        """Apply each candidate's rules to its GEO record and count table. A candidate left
+        with fewer than :data:`MIN_PER_ARM` analysable samples in an arm moves to
+        ``rejected``; its selection is kept so the reason can be inspected."""
+
+        async def one(c: Candidate) -> SampleSelection:
+            try:
+                record, columns = await asyncio.gather(
+                    self._records.record(c.gse), self._records.columns(c.gse)
+                )
+            except Exception as e:  # network: keep the candidate, say why it is unchecked
+                log.warning("discover: could not read %s: %s", c.gse, e)
+                return SampleSelection(
+                    gse=c.gse, problems=[f"GEO record could not be read: {type(e).__name__}"]
+                )
+            sel = select_samples(record, c.case, c.control, c.unclear, columns=columns)
+            if not (c.case or c.control):
+                sel.problems.append("no sample rules given")
+            return sel
+
+        selections = list(await asyncio.gather(*(one(c) for c in output.candidates)))
+        kept: list[Candidate] = []
+        for c, sel in zip(output.candidates, selections, strict=True):
+            if sel.problems and not (sel.case_gsms or sel.control_gsms):
+                c.concerns.append("samples not checked: " + "; ".join(sel.problems[:2]))
+                kept.append(c)
+                continue
+            case_n, control_n = len(sel.analysable("case")), len(sel.analysable("control"))
+            if case_n < MIN_PER_ARM or control_n < MIN_PER_ARM:
+                output.rejected.append(
+                    Rejected(
+                        gse=c.gse,
+                        why=f"too few samples with counts per arm (case {case_n}, "
+                        f"control {control_n}; at least {MIN_PER_ARM} each)",
+                    )
+                )
+                continue
+            if sel.no_counts_gsms:
+                c.concerns.append(
+                    f"{len(sel.no_counts_gsms)} selected samples are not in the NCBI count table"
+                )
+            if sel.problems:
+                c.concerns.extend(sel.problems[:3])
+            kept.append(c)
+        output.candidates = kept
+        order = {c.gse: i for i, c in enumerate(kept)}
+        return sorted(selections, key=lambda x: order.get(x.gse, len(order)))
 
 
 def _keep_confirmed(output: DiscoveryOutput, seen: dict[str, None]) -> list[str]:

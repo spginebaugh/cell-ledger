@@ -1,0 +1,1306 @@
+{
+  "case_id": "hepatoblastoma_vs_nontumor_liver",
+  "system": "specialist",
+  "repeat": 1,
+  "conditions": {
+    "system": "specialist",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "fingerprint": "dbb24587bd68bf9c9c274050bb2a4c1cc278c11cb8cbb8c22bb9c16b5f548ad7",
+    "web_search": true,
+    "code_revision": "4032f8cb3e85576661f421ff7f4f75aa87401b25",
+    "dirty": true,
+    "geo_cache": "/Users/scott/Documents/code/gauntlet-hackathon/cell-ledger/data/evals/geo-cache/all12-r2",
+    "case_sha256": "3dfc2e52617446754ed6435bd7aec60ee77128d81b876696210992e1d2003248",
+    "suite_sha256": "5c2b23011a22776e3ea3fab6976ae88635f0f4a277dbf5db35d8fa2bb07d1859",
+    "run_id": "all12-r2",
+    "started_at": "2026-11-07T15:04:10+00:00"
+  },
+  "turns": [
+    {
+      "answers": [],
+      "action": "proceed",
+      "output": {
+        "interpretation": "Case: primary hepatoblastoma tumour tissue from children. Control: non-tumour liver tissue, either adjacent or background liver from the same patients or normal paediatric liver.",
+        "genes": [],
+        "out_of_scope": null,
+        "clarifying_questions": [],
+        "rejected": [
+          {
+            "gse": "GSE201996",
+            "why": "Only the HUH6 cell line with UBE2C siRNA knockdown. No tissue samples."
+          },
+          {
+            "gse": "GSE235202",
+            "why": "Hepatoblastoma cell lines only (EZH2 study). No patient tissue."
+          },
+          {
+            "gse": "GSE223839",
+            "why": "Drug-resistance study. No non-tumour liver controls."
+          },
+          {
+            "gse": "GSE160939",
+            "why": "Engineered cell lines (LHX2). No patient tissue."
+          },
+          {
+            "gse": "GSE209824",
+            "why": "Cell lines treated with mebendazole. No patient tissue."
+          },
+          {
+            "gse": "GSE185937",
+            "why": "HUH6 cells treated with a drug. No patient tissue."
+          },
+          {
+            "gse": "GSE133976",
+            "why": "Mechanistic study (GREB1). Not a tumour vs non-tumour tissue comparison."
+          },
+          {
+            "gse": "GSE101413",
+            "why": "Hepatoblastoma model grown on chick chorioallantoic membrane (CAM). Not patient tumour vs liver."
+          },
+          {
+            "gse": "GSE161858",
+            "why": "HepG2 xenograft study (macroH2A). No patient tissue."
+          },
+          {
+            "gse": "GSE144269",
+            "why": "Adult hepatocellular carcinoma from Mongolia, not hepatoblastoma."
+          }
+        ],
+        "queries_tried": [
+          "hepatoblastoma",
+          "hepatoblastoma tumor and non-tumor liver",
+          "pediatric liver tumor RNA-seq",
+          "hepatoblastoma transcriptome",
+          "web: hepatoblastoma RNA-seq tumor and matched non-tumor liver GEO"
+        ],
+        "candidates": [
+          {
+            "gse": "GSE133039",
+            "title": "Epigenetic footprint of hepatoblastoma defines a novel integrative molecular classification with clinical implications [RNA-seq]",
+            "n_samples": 66,
+            "why": "The largest cohort found: 31 primary hepatoblastoma tumours and 32 non-tumour liver samples, mostly from the same patients.",
+            "case_hint": "Primary tumours (sample type Tumor, n=31)",
+            "control_hint": "Non-tumour liver (sample type Nontumor, n=32)",
+            "concerns": [
+              "The 3 recurrence samples are left out of both arms.",
+              "Ages are not given in the records, but the study describes hepatoblastoma as paediatric.",
+              "Tumour and non-tumour samples are paired by patient, so a paired design can be used."
+            ],
+            "case": [
+              {
+                "all_of": [
+                  {
+                    "field": "sample type",
+                    "equals": [
+                      "Tumor"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "control": [
+              {
+                "all_of": [
+                  {
+                    "field": "sample type",
+                    "equals": [
+                      "Nontumor"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "unclear": []
+          },
+          {
+            "gse": "GSE104766",
+            "title": "New insights into diagnosis and therapeutic options for proliferative hepatoblastoma",
+            "n_samples": 62,
+            "why": "Matched tumour and adjacent normal liver from 25 patients. The 2 cell lines are excluded.",
+            "case_hint": "Hepatoblastoma tissue (cell type tumour, n=30)",
+            "control_hint": "Matched normal liver (cell type normal, n=30)",
+            "concerns": [
+              "Patients P04_c, P23 and P32 have technical replicates. Collapse them to one sample per patient or account for them.",
+              "The HepG2 and HuH6 cell lines are excluded."
+            ],
+            "case": [
+              {
+                "all_of": [
+                  {
+                    "field": "cell type",
+                    "equals": [
+                      "tumour"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "control": [
+              {
+                "all_of": [
+                  {
+                    "field": "cell type",
+                    "equals": [
+                      "normal"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "unclear": []
+          },
+          {
+            "gse": "GSE151347",
+            "title": "SP8 promotes an aggressive phenotype in hepatoblastoma via FGF8 activation",
+            "n_samples": 22,
+            "why": "11 hepatoblastoma tumours, with and without metastasis, each with matched normal liver from the same patient.",
+            "case_hint": "Hepatoblastoma tissue (tissue type Hepatoblastoma, n=11; 4 of them metastatic)",
+            "control_hint": "Normal liver from the same patients (n=11)",
+            "concerns": [
+              "Metastatic and non-metastatic tumours are mixed in the case arm."
+            ],
+            "case": [
+              {
+                "all_of": [
+                  {
+                    "field": "tissue type",
+                    "equals": [
+                      "Hepatoblastoma"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "control": [
+              {
+                "all_of": [
+                  {
+                    "field": "tissue type",
+                    "equals": [
+                      "Normal liver"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "unclear": []
+          },
+          {
+            "gse": "GSE81928",
+            "title": "Hepatic transcriptome of pediatric hepatoblastoma.",
+            "n_samples": 32,
+            "why": "Paediatric cohort (ages under 1 to 14 years): 23 hepatoblastoma samples, 6 background liver samples from hepatoblastoma patients and 3 normal paediatric livers.",
+            "case_hint": "Hepatoblastoma tissue (tissue type Hepatoblastoma, n=23)",
+            "control_hint": "Non-tumour liver: background liver from patients (n=6) plus normal paediatric liver (n=3)",
+            "concerns": [
+              "The control arm is small and mixes background liver from patients with normal liver from children without hepatoblastoma.",
+              "It is not clear whether the tumour and background samples come from the same patients."
+            ],
+            "case": [
+              {
+                "all_of": [
+                  {
+                    "field": "tissue type",
+                    "equals": [
+                      "Hepatoblastoma"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "control": [
+              {
+                "all_of": [
+                  {
+                    "field": "tissue type",
+                    "equals": [
+                      "Background",
+                      "Normal"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "unclear": []
+          },
+          {
+            "gse": "GSE199888",
+            "title": "Transcriptome dysregulation in hepatoblastomas: the pivotal role of noncoding RNAs and detection of altered lipid metabolism",
+            "n_samples": 19,
+            "why": "14 primary hepatoblastomas and 5 matched non-tumour liver samples from Brazilian patients.",
+            "case_hint": "Tumours (tissue type Tumor, n=14)",
+            "control_hint": "Matched non-tumour liver (tissue type Liver tissue, n=5)",
+            "concerns": [
+              "The control arm is small (5 samples).",
+              "1 selected samples are not in the NCBI count table"
+            ],
+            "case": [
+              {
+                "all_of": [
+                  {
+                    "field": "tissue type",
+                    "equals": [
+                      "Tumor"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "control": [
+              {
+                "all_of": [
+                  {
+                    "field": "tissue type",
+                    "equals": [
+                      "Liver tissue"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "unclear": []
+          },
+          {
+            "gse": "GSE89775",
+            "title": "Loss of EGFR-DDEF1 signaling in metastatic and unresectable hepatoblastoma",
+            "n_samples": 13,
+            "why": "10 hepatoblastoma biopsies compared with 3 normal liver samples.",
+            "case_hint": "Hepatoblastoma liver (n=10)",
+            "control_hint": "Normal liver (n=3)",
+            "concerns": [
+              "Only 3 controls. The records do not say whether the normal livers are paediatric or come from the same patients.",
+              "A different library kit (SureSelect) was used, which may differ from the other cohorts."
+            ],
+            "case": [
+              {
+                "all_of": [
+                  {
+                    "field": "tissue",
+                    "equals": [
+                      "Hepatoblastoma liver"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "control": [
+              {
+                "all_of": [
+                  {
+                    "field": "tissue",
+                    "equals": [
+                      "Normal liver"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "unclear": []
+          }
+        ],
+        "trace": {
+          "turns": 3,
+          "calls": [
+            {
+              "tool": "search_geo",
+              "input": {
+                "queries": [
+                  "hepatoblastoma",
+                  "hepatoblastoma tumor and non-tumor liver",
+                  "pediatric liver tumor RNA-seq",
+                  "hepatoblastoma transcriptome"
+                ],
+                "since": null
+              },
+              "queries": [
+                {
+                  "query": "hepatoblastoma",
+                  "total": 28,
+                  "returned": 28,
+                  "gses": [
+                    "GSE232374",
+                    "GSE225537",
+                    "GSE220307",
+                    "GSE245428",
+                    "GSE235202",
+                    "GSE160939",
+                    "GSE201996",
+                    "GSE188533",
+                    "GSE180941",
+                    "GSE223839",
+                    "GSE207912",
+                    "GSE161858",
+                    "GSE161857",
+                    "GSE209824",
+                    "GSE185937",
+                    "GSE199888",
+                    "GSE186335",
+                    "GSE133424",
+                    "GSE164082",
+                    "GSE151347",
+                    "GSE133039",
+                    "GSE133976",
+                    "GSE81928",
+                    "GSE101413",
+                    "GSE104766",
+                    "GSE82110",
+                    "GSE89775",
+                    "GSE80126"
+                  ]
+                },
+                {
+                  "query": "hepatoblastoma tumor and non-tumor liver",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                },
+                {
+                  "query": "pediatric liver tumor RNA-seq",
+                  "total": 1,
+                  "returned": 1,
+                  "gses": [
+                    "GSE133039"
+                  ]
+                },
+                {
+                  "query": "hepatoblastoma transcriptome",
+                  "total": 5,
+                  "returned": 5,
+                  "gses": [
+                    "GSE160939",
+                    "GSE185937",
+                    "GSE199888",
+                    "GSE81928",
+                    "GSE82110"
+                  ]
+                }
+              ],
+              "confirmed": [
+                "GSE232374",
+                "GSE225537",
+                "GSE220307",
+                "GSE245428",
+                "GSE235202",
+                "GSE160939",
+                "GSE201996",
+                "GSE188533",
+                "GSE180941",
+                "GSE223839",
+                "GSE207912",
+                "GSE161858",
+                "GSE161857",
+                "GSE209824",
+                "GSE185937",
+                "GSE199888",
+                "GSE186335",
+                "GSE133424",
+                "GSE164082",
+                "GSE151347",
+                "GSE133039",
+                "GSE133976",
+                "GSE81928",
+                "GSE101413",
+                "GSE104766",
+                "GSE82110",
+                "GSE89775",
+                "GSE80126"
+              ],
+              "shown": [
+                "GSE232374",
+                "GSE225537",
+                "GSE220307",
+                "GSE245428",
+                "GSE235202",
+                "GSE160939",
+                "GSE201996",
+                "GSE188533",
+                "GSE180941",
+                "GSE223839",
+                "GSE207912",
+                "GSE161858",
+                "GSE161857",
+                "GSE209824",
+                "GSE185937",
+                "GSE199888",
+                "GSE186335",
+                "GSE133424",
+                "GSE164082",
+                "GSE151347",
+                "GSE133039",
+                "GSE133976",
+                "GSE81928",
+                "GSE101413",
+                "GSE104766",
+                "GSE82110",
+                "GSE89775",
+                "GSE80126"
+              ],
+              "ineligible": [],
+              "inspected": [],
+              "error": null
+            },
+            {
+              "tool": "find_geo_series_on_web",
+              "input": {
+                "query": "hepatoblastoma RNA-seq tumor and matched non-tumor liver GEO",
+                "objective": "Find GEO series of bulk RNA-seq of pediatric hepatoblastoma tumors with adjacent non-tumor liver."
+              },
+              "queries": [],
+              "confirmed": [
+                "GSE144269",
+                "GSE151347",
+                "GSE133039",
+                "GSE81928",
+                "GSE104766"
+              ],
+              "shown": [
+                "GSE144269",
+                "GSE151347",
+                "GSE133039",
+                "GSE81928",
+                "GSE104766"
+              ],
+              "ineligible": [
+                "GSE180665",
+                "GSE132219",
+                "GSE131329"
+              ],
+              "inspected": [],
+              "error": null
+            },
+            {
+              "tool": "inspect_series",
+              "input": {
+                "gses": [
+                  "GSE81928",
+                  "GSE133039",
+                  "GSE104766",
+                  "GSE199888",
+                  "GSE151347",
+                  "GSE201996",
+                  "GSE89775"
+                ]
+              },
+              "queries": [],
+              "confirmed": [],
+              "shown": [],
+              "ineligible": [],
+              "inspected": [
+                "GSE81928",
+                "GSE133039",
+                "GSE104766",
+                "GSE199888",
+                "GSE151347",
+                "GSE201996",
+                "GSE89775"
+              ],
+              "error": null
+            }
+          ],
+          "seen": [
+            "GSE232374",
+            "GSE225537",
+            "GSE220307",
+            "GSE245428",
+            "GSE235202",
+            "GSE160939",
+            "GSE201996",
+            "GSE188533",
+            "GSE180941",
+            "GSE223839",
+            "GSE207912",
+            "GSE161858",
+            "GSE161857",
+            "GSE209824",
+            "GSE185937",
+            "GSE199888",
+            "GSE186335",
+            "GSE133424",
+            "GSE164082",
+            "GSE151347",
+            "GSE133039",
+            "GSE133976",
+            "GSE81928",
+            "GSE101413",
+            "GSE104766",
+            "GSE82110",
+            "GSE89775",
+            "GSE80126",
+            "GSE144269"
+          ],
+          "invented": [],
+          "usage": {
+            "input_tokens": 8,
+            "output_tokens": 3109,
+            "cache_read_input_tokens": 16891,
+            "cache_creation_input_tokens": 21698
+          },
+          "elapsed_seconds": 32.505
+        },
+        "selections": [
+          {
+            "gse": "GSE133039",
+            "case_gsms": [
+              "GSM3898697",
+              "GSM3898698",
+              "GSM3898699",
+              "GSM3898700",
+              "GSM3898701",
+              "GSM3898702",
+              "GSM3898703",
+              "GSM3898704",
+              "GSM3898705",
+              "GSM3898706",
+              "GSM3898707",
+              "GSM3898708",
+              "GSM3898709",
+              "GSM3898710",
+              "GSM3898711",
+              "GSM3898712",
+              "GSM3898713",
+              "GSM3898714",
+              "GSM3898715",
+              "GSM3898716",
+              "GSM3898717",
+              "GSM3898719",
+              "GSM3898720",
+              "GSM3898721",
+              "GSM3898722",
+              "GSM3898723",
+              "GSM3898724",
+              "GSM3898725",
+              "GSM3898726",
+              "GSM3898727",
+              "GSM3898728"
+            ],
+            "control_gsms": [
+              "GSM3898729",
+              "GSM3898730",
+              "GSM3898731",
+              "GSM3898732",
+              "GSM3898733",
+              "GSM3898734",
+              "GSM3898735",
+              "GSM3898736",
+              "GSM3898737",
+              "GSM3898738",
+              "GSM3898739",
+              "GSM3898740",
+              "GSM3898741",
+              "GSM3898742",
+              "GSM3898743",
+              "GSM3898744",
+              "GSM3898745",
+              "GSM3898746",
+              "GSM3898747",
+              "GSM3898748",
+              "GSM3898749",
+              "GSM3898750",
+              "GSM3898751",
+              "GSM3898752",
+              "GSM3898753",
+              "GSM3898754",
+              "GSM3898755",
+              "GSM3898756",
+              "GSM3898757",
+              "GSM3898758",
+              "GSM3898759",
+              "GSM3898760"
+            ],
+            "unclear_gsms": [],
+            "excluded_gsms": [
+              "GSM3898718",
+              "GSM3898761",
+              "GSM3898762"
+            ],
+            "no_counts_gsms": [],
+            "counts_checked": true,
+            "case_rule": "sample type = \"Tumor\"",
+            "control_rule": "sample type = \"Nontumor\"",
+            "problems": []
+          },
+          {
+            "gse": "GSE104766",
+            "case_gsms": [
+              "GSM2807392",
+              "GSM2807394",
+              "GSM2807398",
+              "GSM2807399",
+              "GSM2807400",
+              "GSM2807402",
+              "GSM2807404",
+              "GSM2807406",
+              "GSM2807408",
+              "GSM2807410",
+              "GSM2807412",
+              "GSM2807414",
+              "GSM2807416",
+              "GSM2807418",
+              "GSM2807420",
+              "GSM2807424",
+              "GSM2807425",
+              "GSM2807426",
+              "GSM2807428",
+              "GSM2807430",
+              "GSM2807432",
+              "GSM2807434",
+              "GSM2807436",
+              "GSM2807439",
+              "GSM2807440",
+              "GSM2807442",
+              "GSM2807444",
+              "GSM2807446",
+              "GSM2807448",
+              "GSM2807450"
+            ],
+            "control_gsms": [
+              "GSM2807391",
+              "GSM2807393",
+              "GSM2807395",
+              "GSM2807396",
+              "GSM2807397",
+              "GSM2807401",
+              "GSM2807403",
+              "GSM2807405",
+              "GSM2807407",
+              "GSM2807409",
+              "GSM2807411",
+              "GSM2807413",
+              "GSM2807415",
+              "GSM2807417",
+              "GSM2807419",
+              "GSM2807421",
+              "GSM2807422",
+              "GSM2807423",
+              "GSM2807427",
+              "GSM2807429",
+              "GSM2807431",
+              "GSM2807433",
+              "GSM2807435",
+              "GSM2807437",
+              "GSM2807438",
+              "GSM2807441",
+              "GSM2807443",
+              "GSM2807445",
+              "GSM2807447",
+              "GSM2807449"
+            ],
+            "unclear_gsms": [],
+            "excluded_gsms": [
+              "GSM2807389",
+              "GSM2807390"
+            ],
+            "no_counts_gsms": [],
+            "counts_checked": true,
+            "case_rule": "cell type = \"tumour\"",
+            "control_rule": "cell type = \"normal\"",
+            "problems": []
+          },
+          {
+            "gse": "GSE151347",
+            "case_gsms": [
+              "GSM4575765",
+              "GSM4575766",
+              "GSM4575767",
+              "GSM4575768",
+              "GSM4575769",
+              "GSM4575770",
+              "GSM4575771",
+              "GSM4575772",
+              "GSM4575773",
+              "GSM4575774",
+              "GSM4575775"
+            ],
+            "control_gsms": [
+              "GSM4575754",
+              "GSM4575755",
+              "GSM4575756",
+              "GSM4575757",
+              "GSM4575758",
+              "GSM4575759",
+              "GSM4575760",
+              "GSM4575761",
+              "GSM4575762",
+              "GSM4575763",
+              "GSM4575764"
+            ],
+            "unclear_gsms": [],
+            "excluded_gsms": [],
+            "no_counts_gsms": [],
+            "counts_checked": true,
+            "case_rule": "tissue type = \"Hepatoblastoma\"",
+            "control_rule": "tissue type = \"Normal liver\"",
+            "problems": []
+          },
+          {
+            "gse": "GSE81928",
+            "case_gsms": [
+              "GSM2177849",
+              "GSM2177850",
+              "GSM2177851",
+              "GSM2177852",
+              "GSM2177853",
+              "GSM2177854",
+              "GSM2177855",
+              "GSM2177856",
+              "GSM2177857",
+              "GSM2177858",
+              "GSM2177859",
+              "GSM2177860",
+              "GSM2177861",
+              "GSM2177862",
+              "GSM2177863",
+              "GSM2177864",
+              "GSM2177865",
+              "GSM2177866",
+              "GSM2177867",
+              "GSM2177868",
+              "GSM2177869",
+              "GSM2177870",
+              "GSM2177871"
+            ],
+            "control_gsms": [
+              "GSM2177840",
+              "GSM2177841",
+              "GSM2177842",
+              "GSM2177843",
+              "GSM2177844",
+              "GSM2177845",
+              "GSM2177846",
+              "GSM2177847",
+              "GSM2177848"
+            ],
+            "unclear_gsms": [],
+            "excluded_gsms": [],
+            "no_counts_gsms": [],
+            "counts_checked": true,
+            "case_rule": "tissue type = \"Hepatoblastoma\"",
+            "control_rule": "tissue type = \"Background\" or \"Normal\"",
+            "problems": []
+          },
+          {
+            "gse": "GSE199888",
+            "case_gsms": [
+              "GSM5990256",
+              "GSM5990257",
+              "GSM5990258",
+              "GSM5990259",
+              "GSM5990260",
+              "GSM5990261",
+              "GSM5990262",
+              "GSM5990263",
+              "GSM5990264",
+              "GSM5990265",
+              "GSM5990266",
+              "GSM5990267",
+              "GSM5990268",
+              "GSM5990269"
+            ],
+            "control_gsms": [
+              "GSM5990270",
+              "GSM5990271",
+              "GSM5990272",
+              "GSM5990273",
+              "GSM5990274"
+            ],
+            "unclear_gsms": [],
+            "excluded_gsms": [],
+            "no_counts_gsms": [
+              "GSM5990264"
+            ],
+            "counts_checked": true,
+            "case_rule": "tissue type = \"Tumor\"",
+            "control_rule": "tissue type = \"Liver tissue\"",
+            "problems": []
+          },
+          {
+            "gse": "GSE89775",
+            "case_gsms": [
+              "GSM2388501",
+              "GSM2388502",
+              "GSM2388503",
+              "GSM2388504",
+              "GSM2388505",
+              "GSM2388506",
+              "GSM2388507",
+              "GSM2388508",
+              "GSM2388509",
+              "GSM2388510"
+            ],
+            "control_gsms": [
+              "GSM2388498",
+              "GSM2388499",
+              "GSM2388500"
+            ],
+            "unclear_gsms": [],
+            "excluded_gsms": [],
+            "no_counts_gsms": [],
+            "counts_checked": true,
+            "case_rule": "tissue = \"Hepatoblastoma liver\"",
+            "control_rule": "tissue = \"Normal liver\"",
+            "problems": []
+          }
+        ]
+      },
+      "elapsed_seconds": 32.504999249998946,
+      "input_tokens": 38597,
+      "output_tokens": 3109,
+      "web_search_requests": 0,
+      "web_fetch_requests": 0,
+      "error": null
+    }
+  ],
+  "final_action": "proceed",
+  "candidates": [
+    "GSE133039",
+    "GSE104766",
+    "GSE151347",
+    "GSE81928",
+    "GSE199888",
+    "GSE89775"
+  ],
+  "candidate_details": {
+    "GSE133039": {
+      "title": "Epigenetic footprint of hepatoblastoma defines a novel integrative molecular classification with clinical implications [RNA-seq]",
+      "why": "The largest cohort found: 31 primary hepatoblastoma tumours and 32 non-tumour liver samples, mostly from the same patients.",
+      "case_hint": "Primary tumours (sample type Tumor, n=31)",
+      "control_hint": "Non-tumour liver (sample type Nontumor, n=32)"
+    },
+    "GSE104766": {
+      "title": "New insights into diagnosis and therapeutic options for proliferative hepatoblastoma",
+      "why": "Matched tumour and adjacent normal liver from 25 patients. The 2 cell lines are excluded.",
+      "case_hint": "Hepatoblastoma tissue (cell type tumour, n=30)",
+      "control_hint": "Matched normal liver (cell type normal, n=30)"
+    },
+    "GSE151347": {
+      "title": "SP8 promotes an aggressive phenotype in hepatoblastoma via FGF8 activation",
+      "why": "11 hepatoblastoma tumours, with and without metastasis, each with matched normal liver from the same patient.",
+      "case_hint": "Hepatoblastoma tissue (tissue type Hepatoblastoma, n=11; 4 of them metastatic)",
+      "control_hint": "Normal liver from the same patients (n=11)"
+    },
+    "GSE81928": {
+      "title": "Hepatic transcriptome of pediatric hepatoblastoma.",
+      "why": "Paediatric cohort (ages under 1 to 14 years): 23 hepatoblastoma samples, 6 background liver samples from hepatoblastoma patients and 3 normal paediatric livers.",
+      "case_hint": "Hepatoblastoma tissue (tissue type Hepatoblastoma, n=23)",
+      "control_hint": "Non-tumour liver: background liver from patients (n=6) plus normal paediatric liver (n=3)"
+    },
+    "GSE199888": {
+      "title": "Transcriptome dysregulation in hepatoblastomas: the pivotal role of noncoding RNAs and detection of altered lipid metabolism",
+      "why": "14 primary hepatoblastomas and 5 matched non-tumour liver samples from Brazilian patients.",
+      "case_hint": "Tumours (tissue type Tumor, n=14)",
+      "control_hint": "Matched non-tumour liver (tissue type Liver tissue, n=5)"
+    },
+    "GSE89775": {
+      "title": "Loss of EGFR-DDEF1 signaling in metastatic and unresectable hepatoblastoma",
+      "why": "10 hepatoblastoma biopsies compared with 3 normal liver samples.",
+      "case_hint": "Hepatoblastoma liver (n=10)",
+      "control_hint": "Normal liver (n=3)"
+    }
+  },
+  "rejected": [
+    "GSE201996",
+    "GSE235202",
+    "GSE223839",
+    "GSE160939",
+    "GSE209824",
+    "GSE185937",
+    "GSE133976",
+    "GSE101413",
+    "GSE161858",
+    "GSE144269"
+  ],
+  "questions": [],
+  "out_of_scope": null,
+  "seen": [
+    "GSE232374",
+    "GSE225537",
+    "GSE220307",
+    "GSE245428",
+    "GSE235202",
+    "GSE160939",
+    "GSE201996",
+    "GSE188533",
+    "GSE180941",
+    "GSE223839",
+    "GSE207912",
+    "GSE161858",
+    "GSE161857",
+    "GSE209824",
+    "GSE185937",
+    "GSE199888",
+    "GSE186335",
+    "GSE133424",
+    "GSE164082",
+    "GSE151347",
+    "GSE133039",
+    "GSE133976",
+    "GSE81928",
+    "GSE101413",
+    "GSE104766",
+    "GSE82110",
+    "GSE89775",
+    "GSE80126",
+    "GSE144269"
+  ],
+  "per_query": {
+    "hepatoblastoma": [
+      "GSE232374",
+      "GSE225537",
+      "GSE220307",
+      "GSE245428",
+      "GSE235202",
+      "GSE160939",
+      "GSE201996",
+      "GSE188533",
+      "GSE180941",
+      "GSE223839",
+      "GSE207912",
+      "GSE161858",
+      "GSE161857",
+      "GSE209824",
+      "GSE185937",
+      "GSE199888",
+      "GSE186335",
+      "GSE133424",
+      "GSE164082",
+      "GSE151347",
+      "GSE133039",
+      "GSE133976",
+      "GSE81928",
+      "GSE101413",
+      "GSE104766",
+      "GSE82110",
+      "GSE89775",
+      "GSE80126"
+    ],
+    "hepatoblastoma tumor and non-tumor liver": [],
+    "pediatric liver tumor RNA-seq": [
+      "GSE133039"
+    ],
+    "hepatoblastoma transcriptome": [
+      "GSE160939",
+      "GSE185937",
+      "GSE199888",
+      "GSE81928",
+      "GSE82110"
+    ]
+  },
+  "invented": [],
+  "selections": {
+    "GSE133039": {
+      "case": [
+        "GSM3898697",
+        "GSM3898698",
+        "GSM3898699",
+        "GSM3898700",
+        "GSM3898701",
+        "GSM3898702",
+        "GSM3898703",
+        "GSM3898704",
+        "GSM3898705",
+        "GSM3898706",
+        "GSM3898707",
+        "GSM3898708",
+        "GSM3898709",
+        "GSM3898710",
+        "GSM3898711",
+        "GSM3898712",
+        "GSM3898713",
+        "GSM3898714",
+        "GSM3898715",
+        "GSM3898716",
+        "GSM3898717",
+        "GSM3898719",
+        "GSM3898720",
+        "GSM3898721",
+        "GSM3898722",
+        "GSM3898723",
+        "GSM3898724",
+        "GSM3898725",
+        "GSM3898726",
+        "GSM3898727",
+        "GSM3898728"
+      ],
+      "control": [
+        "GSM3898729",
+        "GSM3898730",
+        "GSM3898731",
+        "GSM3898732",
+        "GSM3898733",
+        "GSM3898734",
+        "GSM3898735",
+        "GSM3898736",
+        "GSM3898737",
+        "GSM3898738",
+        "GSM3898739",
+        "GSM3898740",
+        "GSM3898741",
+        "GSM3898742",
+        "GSM3898743",
+        "GSM3898744",
+        "GSM3898745",
+        "GSM3898746",
+        "GSM3898747",
+        "GSM3898748",
+        "GSM3898749",
+        "GSM3898750",
+        "GSM3898751",
+        "GSM3898752",
+        "GSM3898753",
+        "GSM3898754",
+        "GSM3898755",
+        "GSM3898756",
+        "GSM3898757",
+        "GSM3898758",
+        "GSM3898759",
+        "GSM3898760"
+      ],
+      "unclear": [],
+      "no_counts": []
+    },
+    "GSE104766": {
+      "case": [
+        "GSM2807392",
+        "GSM2807394",
+        "GSM2807398",
+        "GSM2807399",
+        "GSM2807400",
+        "GSM2807402",
+        "GSM2807404",
+        "GSM2807406",
+        "GSM2807408",
+        "GSM2807410",
+        "GSM2807412",
+        "GSM2807414",
+        "GSM2807416",
+        "GSM2807418",
+        "GSM2807420",
+        "GSM2807424",
+        "GSM2807425",
+        "GSM2807426",
+        "GSM2807428",
+        "GSM2807430",
+        "GSM2807432",
+        "GSM2807434",
+        "GSM2807436",
+        "GSM2807439",
+        "GSM2807440",
+        "GSM2807442",
+        "GSM2807444",
+        "GSM2807446",
+        "GSM2807448",
+        "GSM2807450"
+      ],
+      "control": [
+        "GSM2807391",
+        "GSM2807393",
+        "GSM2807395",
+        "GSM2807396",
+        "GSM2807397",
+        "GSM2807401",
+        "GSM2807403",
+        "GSM2807405",
+        "GSM2807407",
+        "GSM2807409",
+        "GSM2807411",
+        "GSM2807413",
+        "GSM2807415",
+        "GSM2807417",
+        "GSM2807419",
+        "GSM2807421",
+        "GSM2807422",
+        "GSM2807423",
+        "GSM2807427",
+        "GSM2807429",
+        "GSM2807431",
+        "GSM2807433",
+        "GSM2807435",
+        "GSM2807437",
+        "GSM2807438",
+        "GSM2807441",
+        "GSM2807443",
+        "GSM2807445",
+        "GSM2807447",
+        "GSM2807449"
+      ],
+      "unclear": [],
+      "no_counts": []
+    },
+    "GSE151347": {
+      "case": [
+        "GSM4575765",
+        "GSM4575766",
+        "GSM4575767",
+        "GSM4575768",
+        "GSM4575769",
+        "GSM4575770",
+        "GSM4575771",
+        "GSM4575772",
+        "GSM4575773",
+        "GSM4575774",
+        "GSM4575775"
+      ],
+      "control": [
+        "GSM4575754",
+        "GSM4575755",
+        "GSM4575756",
+        "GSM4575757",
+        "GSM4575758",
+        "GSM4575759",
+        "GSM4575760",
+        "GSM4575761",
+        "GSM4575762",
+        "GSM4575763",
+        "GSM4575764"
+      ],
+      "unclear": [],
+      "no_counts": []
+    },
+    "GSE81928": {
+      "case": [
+        "GSM2177849",
+        "GSM2177850",
+        "GSM2177851",
+        "GSM2177852",
+        "GSM2177853",
+        "GSM2177854",
+        "GSM2177855",
+        "GSM2177856",
+        "GSM2177857",
+        "GSM2177858",
+        "GSM2177859",
+        "GSM2177860",
+        "GSM2177861",
+        "GSM2177862",
+        "GSM2177863",
+        "GSM2177864",
+        "GSM2177865",
+        "GSM2177866",
+        "GSM2177867",
+        "GSM2177868",
+        "GSM2177869",
+        "GSM2177870",
+        "GSM2177871"
+      ],
+      "control": [
+        "GSM2177840",
+        "GSM2177841",
+        "GSM2177842",
+        "GSM2177843",
+        "GSM2177844",
+        "GSM2177845",
+        "GSM2177846",
+        "GSM2177847",
+        "GSM2177848"
+      ],
+      "unclear": [],
+      "no_counts": []
+    },
+    "GSE199888": {
+      "case": [
+        "GSM5990256",
+        "GSM5990257",
+        "GSM5990258",
+        "GSM5990259",
+        "GSM5990260",
+        "GSM5990261",
+        "GSM5990262",
+        "GSM5990263",
+        "GSM5990264",
+        "GSM5990265",
+        "GSM5990266",
+        "GSM5990267",
+        "GSM5990268",
+        "GSM5990269"
+      ],
+      "control": [
+        "GSM5990270",
+        "GSM5990271",
+        "GSM5990272",
+        "GSM5990273",
+        "GSM5990274"
+      ],
+      "unclear": [],
+      "no_counts": [
+        "GSM5990264"
+      ]
+    },
+    "GSE89775": {
+      "case": [
+        "GSM2388501",
+        "GSM2388502",
+        "GSM2388503",
+        "GSM2388504",
+        "GSM2388505",
+        "GSM2388506",
+        "GSM2388507",
+        "GSM2388508",
+        "GSM2388509",
+        "GSM2388510"
+      ],
+      "control": [
+        "GSM2388498",
+        "GSM2388499",
+        "GSM2388500"
+      ],
+      "unclear": [],
+      "no_counts": []
+    }
+  },
+  "verification": {
+    "eligible": [
+      "GSE133039",
+      "GSE104766",
+      "GSE151347",
+      "GSE81928",
+      "GSE199888",
+      "GSE89775"
+    ],
+    "exists_only": [],
+    "missing": [],
+    "invalid": []
+  },
+  "elapsed_seconds": 32.909,
+  "input_tokens": 38597,
+  "output_tokens": 3109,
+  "web_search_requests": 0,
+  "web_fetch_requests": 0,
+  "error": null
+}

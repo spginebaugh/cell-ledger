@@ -48,6 +48,9 @@ def render(result: dict[str, Any]) -> str:
         ("Recall (pooled)", lambda s: _pct(s["recall_pooled"])),
         ("Precision (macro, judged)", lambda s: _mean(s["precision_macro"])),
         ("Precision (pooled, judged)", lambda s: _pct(s["precision_pooled"])),
+        ("Sample precision (pooled)", lambda s: _pct(s["sample_precision_pooled"])),
+        ("Sample recall (pooled)", lambda s: _pct(s["sample_recall_pooled"])),
+        ("Sample subsets exactly right", lambda s: _pct(s["subsets_exact"])),
         (
             "Candidates / unjudged / wrong",
             lambda s: f"{s['candidates_total']} / {s['unjudged_total']} / {s['wrong_total']}",
@@ -57,6 +60,7 @@ def render(result: dict[str, Any]) -> str:
         ("Invented but dropped by code", lambda s: str(s["invented_dropped_total"])),
         ("GEO queries / run", lambda s: _mean(s["queries_per_run"], ".1f")),
         ("Web searches / run", lambda s: _mean(s["web_search_requests_per_run"], ".1f")),
+        ("Web fetches / run", lambda s: _mean(s["web_fetch_requests_per_run"], ".1f")),
         ("Input tokens / run", lambda s: _mean(s["input_tokens_per_run"], ".0f")),
         ("Output tokens / run", lambda s: _mean(s["output_tokens_per_run"], ".0f")),
         ("Seconds / run", lambda s: _mean(s["elapsed_seconds_per_run"], ".0f")),
@@ -85,11 +89,29 @@ def render(result: dict[str, Any]) -> str:
         "returned it and the agent set it aside or left it out (a judgment problem). not_named: "
         "the baseline has no search trace; it simply did not name it.",
         "",
+        "## Questions asked",
+        "",
+        "Each system's clarifying questions on its first turn, verbatim. Asking is scored yes or "
+        "no against the expected action; whether a question was worth asking is for the reader.",
+        "",
+    ]
+    asked = sorted(
+        (r for r in result["rows"] if r.get("questions")),
+        key=lambda r: (r["case_id"], r["system"], r["repeat"]),
+    )
+    for r in asked:
+        note = "" if r["expected_action"] == "ask" else f" (expected {r['expected_action']})"
+        lines.append(f"- **{r['case_id']}** · {r['system']} r{r['repeat']}{note}")
+        lines += [f"  - {q}" for q in r["questions"]]
+    if not asked:
+        lines.append("No system asked a question.")
+    lines += [
+        "",
         "## Every run",
         "",
         "| Case | System | Rep | Action (expected → got) | 2nd turn | Recall | Precision | "
-        "Unjudged | Fabricated | Misses | Error |",
-        "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
+        "Samples (P / R / exact) | Unjudged | Fabricated | Misses | Error |",
+        "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
     ]
     for r in sorted(result["rows"], key=lambda r: (r["case_id"], r["system"], r["repeat"])):
         second = (
@@ -102,6 +124,8 @@ def render(result: dict[str, Any]) -> str:
             f"| {r['case_id']} | {r['system']} | {r['repeat']} | "
             f"{r['expected_action']} → {r['first_action']}{'' if r['action_correct'] else ' ✗'} | "
             f"{second} | {_pct(r['recall'])} | {_pct(r['precision'])} | "
+            f"{_pct(r['sample_precision'])} / {_pct(r['sample_recall'])} / "
+            f"{_pct(r['subsets_exact'])} | "
             f"{', '.join(r['unjudged']) or '—'} | {', '.join(r['fabricated']) or '—'} | "
             f"{misses} | {r['error'] or ''} |"
         )

@@ -1,5 +1,6 @@
 import { createRootRoute, createRoute, createRouter, Outlet } from "@tanstack/react-router";
 import { ComparePage } from "./routes/compare";
+import { EvalsPage } from "./routes/evals";
 import { GenePage } from "./routes/gene";
 import { HomePage } from "./routes/home";
 import { NotFound } from "./routes/not-found";
@@ -38,12 +39,19 @@ export const geneRoute = createRoute({
   component: GenePage,
 });
 
+export const evalsRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/evals",
+  component: EvalsPage,
+});
+
 const routeTree = rootRoute.addChildren([
   homeRoute,
   sessionRoute,
   runRoute,
   compareRoute,
   geneRoute,
+  evalsRoute,
 ]);
 
 export const router = createRouter({

@@ -115,6 +115,16 @@ async def run_specialist(
             for c in (final.candidates if final else [])
         },
         rejected=[r.gse for r in final.rejected] if final else [],
+        selections={
+            sel.gse: {
+                "case": sel.case_gsms,
+                "control": sel.control_gsms,
+                "unclear": sel.unclear_gsms,
+                "no_counts": sel.no_counts_gsms,
+            }
+            for sel in (final.selections if final else [])
+            if sel.gse in candidates
+        },
         questions=[q.model_dump() for q in results[0].clarifying_questions] if results else [],
         out_of_scope=final.out_of_scope if final else None,
         seen=list(seen),

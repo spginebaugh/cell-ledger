@@ -1,0 +1,707 @@
+{
+  "case_id": "kras_inhibitor_resistant_pancreatic_cells",
+  "system": "specialist",
+  "repeat": 1,
+  "conditions": {
+    "system": "specialist",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "fingerprint": "dbb24587bd68bf9c9c274050bb2a4c1cc278c11cb8cbb8c22bb9c16b5f548ad7",
+    "web_search": true,
+    "code_revision": "4032f8cb3e85576661f421ff7f4f75aa87401b25",
+    "dirty": true,
+    "geo_cache": "/Users/scott/Documents/code/gauntlet-hackathon/cell-ledger/data/evals/geo-cache/all12-r2",
+    "case_sha256": "518255fff60c54cd8faff61079a1b532803664e7a8caec1fe90a2f9dda9bc2a8",
+    "suite_sha256": "5c2b23011a22776e3ea3fab6976ae88635f0f4a277dbf5db35d8fa2bb07d1859",
+    "run_id": "all12-r2",
+    "started_at": "2026-11-07T15:04:10+00:00"
+  },
+  "turns": [
+    {
+      "answers": [],
+      "action": "proceed",
+      "output": {
+        "interpretation": "I'm treating this as a comparison of human pancreatic cancer cell lines with acquired resistance to a KRAS inhibitor (case) against their drug-naive parental lines (control), both left untreated by any extra drug.",
+        "genes": [],
+        "out_of_scope": null,
+        "clarifying_questions": [],
+        "rejected": [
+          {
+            "gse": "GSE234449",
+            "why": "The human SUIT2 parental line has only one untreated sample, below the three needed per arm. Its other samples are either drug-treated or mouse FC1242."
+          },
+          {
+            "gse": "GSE229070",
+            "why": "These are lung cancer lines (H-23, H-358) resistant to sotorasib, not pancreatic."
+          },
+          {
+            "gse": "GSE225060",
+            "why": "These are colorectal SW837 xenografts that relapsed on adagrasib, not pancreatic cell lines."
+          },
+          {
+            "gse": "GSE255847",
+            "why": "These are lung NCI-H2122 xenografts treated in vivo, not pancreatic, and there is no parental-versus-resistant line comparison."
+          },
+          {
+            "gse": "GSE250032",
+            "why": "This belongs to the same adagrasib study of lung and colorectal xenograft models, and it is not pancreatic. Not inspected."
+          },
+          {
+            "gse": "GSE225059",
+            "why": "This belongs to the same adagrasib study of lung and colorectal xenograft models, and it is not pancreatic. Not inspected."
+          },
+          {
+            "gse": "GSE204753",
+            "why": "This is a sotorasib-resistant lung xenograft, not pancreatic. Not inspected."
+          },
+          {
+            "gse": "GSE164326",
+            "why": "This covers lung adenocarcinoma models, not pancreatic. Not inspected."
+          },
+          {
+            "gse": "GSE113922",
+            "why": "Resistance here is to a CDK4/6 inhibitor, not a KRAS inhibitor."
+          },
+          {
+            "gse": "GSE78519",
+            "why": "This studies CIC loss under the MEK inhibitor trametinib, not acquired resistance to a KRAS inhibitor."
+          },
+          {
+            "gse": "GSE273116",
+            "why": "too few samples with counts per arm (case 2, control 3; at least 3 each)"
+          }
+        ],
+        "queries_tried": [
+          "pancreatic cancer KRAS inhibitor resistance",
+          "PDAC sotorasib resistant",
+          "adagrasib resistant pancreatic",
+          "MRTX1133 resistance pancreatic cancer cell lines",
+          "KRAS G12D inhibitor acquired resistance",
+          "RMC-6236 resistance pancreatic",
+          "KRAS inhibitor resistant pancreatic cell line RNA-seq parental",
+          "MRTX1133 resistant",
+          "Mechanisms of resistance to oncogenic KRAS inhibition in pancreatic cancer",
+          "KRAS G12C inhibitor resistant MIA PaCa-2",
+          "pan-RAS inhibitor resistance PDAC",
+          "sotorasib resistant cell line RNA-seq",
+          "KRAS G12C inhibitor acquired resistance cell lines",
+          "AMG510 resistant",
+          "daraxonrasib resistance",
+          "KRAS inhibitor resistant pancreatic organoid",
+          "web: pancreatic cancer cell lines acquired resistance KRAS inhibitor MRTX1133 RNA-seq GEO parental"
+        ],
+        "candidates": [
+          {
+            "gse": "GSE269985",
+            "title": "Mechanisms of resistance to oncogenic KRAS inhibition in pancreatic cancer [dataset 2]",
+            "n_samples": 30,
+            "why": "Two human pancreatic cancer lines (Panc 02.03 and PANC-1) were made resistant to the KRAS G12D inhibitor MRTX1133 by gradually raising the dose. Each has three parental and three resistant replicates.",
+            "case_hint": "Six resistant samples: Panc 02.03 and PANC-1 resistant to MRTX1133, 3 replicates each.",
+            "control_hint": "Six parental samples: Panc 02.03 and PANC-1 parental, 3 replicates each.",
+            "concerns": [
+              "The 18 mouse samples (6694C2, 6499C4, 6419C5) are left out.",
+              "Resistant lines were kept in 1 µM MRTX1133, so some differences may reflect drug still being present rather than resistance itself.",
+              "The two lines differ from each other, so the analysis should adjust for cell line.",
+              "1 selected samples are not in the NCBI count table"
+            ],
+            "case": [
+              {
+                "all_of": [
+                  {
+                    "field": "cell line",
+                    "equals": [
+                      "Panc 02.03",
+                      "PANC-1"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  },
+                  {
+                    "field": "title",
+                    "equals": [],
+                    "contains": [
+                      "resistant"
+                    ],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "control": [
+              {
+                "all_of": [
+                  {
+                    "field": "cell line",
+                    "equals": [
+                      "Panc 02.03",
+                      "PANC-1"
+                    ],
+                    "contains": [],
+                    "min": null,
+                    "max": null
+                  },
+                  {
+                    "field": "title",
+                    "equals": [],
+                    "contains": [
+                      "parental"
+                    ],
+                    "min": null,
+                    "max": null
+                  }
+                ]
+              }
+            ],
+            "unclear": []
+          }
+        ],
+        "trace": {
+          "turns": 5,
+          "calls": [
+            {
+              "tool": "search_geo",
+              "input": {
+                "queries": [
+                  "pancreatic cancer KRAS inhibitor resistance",
+                  "PDAC sotorasib resistant",
+                  "adagrasib resistant pancreatic",
+                  "MRTX1133 resistance pancreatic cancer cell lines",
+                  "KRAS G12D inhibitor acquired resistance",
+                  "RMC-6236 resistance pancreatic"
+                ],
+                "since": null
+              },
+              "queries": [
+                {
+                  "query": "pancreatic cancer KRAS inhibitor resistance",
+                  "total": 5,
+                  "returned": 5,
+                  "gses": [
+                    "GSE273116",
+                    "GSE269985",
+                    "GSE234449",
+                    "GSE113922",
+                    "GSE78519"
+                  ]
+                },
+                {
+                  "query": "PDAC sotorasib resistant",
+                  "total": 1,
+                  "returned": 1,
+                  "gses": [
+                    "GSE269985"
+                  ]
+                },
+                {
+                  "query": "adagrasib resistant pancreatic",
+                  "total": 1,
+                  "returned": 1,
+                  "gses": [
+                    "GSE269985"
+                  ]
+                },
+                {
+                  "query": "MRTX1133 resistance pancreatic cancer cell lines",
+                  "total": 2,
+                  "returned": 2,
+                  "gses": [
+                    "GSE269985",
+                    "GSE234449"
+                  ]
+                },
+                {
+                  "query": "KRAS G12D inhibitor acquired resistance",
+                  "total": 1,
+                  "returned": 1,
+                  "gses": [
+                    "GSE269985"
+                  ]
+                },
+                {
+                  "query": "RMC-6236 resistance pancreatic",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                }
+              ],
+              "confirmed": [
+                "GSE273116",
+                "GSE269985",
+                "GSE234449",
+                "GSE113922",
+                "GSE78519"
+              ],
+              "shown": [
+                "GSE273116",
+                "GSE269985",
+                "GSE234449",
+                "GSE113922",
+                "GSE78519"
+              ],
+              "ineligible": [],
+              "inspected": [],
+              "error": null
+            },
+            {
+              "tool": "find_geo_series_on_web",
+              "input": {
+                "query": "pancreatic cancer cell lines acquired resistance KRAS inhibitor MRTX1133 RNA-seq GEO parental",
+                "objective": "Find GEO series with RNA-seq of PDAC cell lines with acquired resistance to KRAS inhibitors (MRTX1133, sotorasib, adagrasib, RMC-6236) vs parental."
+              },
+              "queries": [],
+              "confirmed": [
+                "GSE234449"
+              ],
+              "shown": [
+                "GSE234449"
+              ],
+              "ineligible": [
+                "GSE294216",
+                "GSE228502"
+              ],
+              "inspected": [],
+              "error": null
+            },
+            {
+              "tool": "search_geo",
+              "input": {
+                "queries": [
+                  "KRAS inhibitor resistant pancreatic cell line RNA-seq parental",
+                  "MRTX1133 resistant",
+                  "Mechanisms of resistance to oncogenic KRAS inhibition in pancreatic cancer",
+                  "KRAS G12C inhibitor resistant MIA PaCa-2",
+                  "pan-RAS inhibitor resistance PDAC"
+                ],
+                "since": null
+              },
+              "queries": [
+                {
+                  "query": "KRAS inhibitor resistant pancreatic cell line RNA-seq parental",
+                  "total": 1,
+                  "returned": 1,
+                  "gses": [
+                    "GSE269985"
+                  ]
+                },
+                {
+                  "query": "MRTX1133 resistant",
+                  "total": 1,
+                  "returned": 1,
+                  "gses": [
+                    "GSE269985"
+                  ]
+                },
+                {
+                  "query": "Mechanisms of resistance to oncogenic KRAS inhibition in pancreatic cancer",
+                  "total": 1,
+                  "returned": 1,
+                  "gses": [
+                    "GSE269985"
+                  ]
+                },
+                {
+                  "query": "KRAS G12C inhibitor resistant MIA PaCa-2",
+                  "total": 1,
+                  "returned": 1,
+                  "gses": [
+                    "GSE273116"
+                  ]
+                },
+                {
+                  "query": "pan-RAS inhibitor resistance PDAC",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                }
+              ],
+              "confirmed": [
+                "GSE269985",
+                "GSE273116"
+              ],
+              "shown": [
+                "GSE269985",
+                "GSE273116"
+              ],
+              "ineligible": [],
+              "inspected": [],
+              "error": null
+            },
+            {
+              "tool": "inspect_series",
+              "input": {
+                "gses": [
+                  "GSE269985",
+                  "GSE234449",
+                  "GSE273116"
+                ]
+              },
+              "queries": [],
+              "confirmed": [],
+              "shown": [],
+              "ineligible": [],
+              "inspected": [
+                "GSE269985",
+                "GSE234449",
+                "GSE273116"
+              ],
+              "error": null
+            },
+            {
+              "tool": "search_geo",
+              "input": {
+                "queries": [
+                  "sotorasib resistant cell line RNA-seq",
+                  "KRAS G12C inhibitor acquired resistance cell lines",
+                  "AMG510 resistant",
+                  "daraxonrasib resistance",
+                  "KRAS inhibitor resistant pancreatic organoid"
+                ],
+                "since": null
+              },
+              "queries": [
+                {
+                  "query": "sotorasib resistant cell line RNA-seq",
+                  "total": 3,
+                  "returned": 3,
+                  "gses": [
+                    "GSE273116",
+                    "GSE269985",
+                    "GSE229070"
+                  ]
+                },
+                {
+                  "query": "KRAS G12C inhibitor acquired resistance cell lines",
+                  "total": 4,
+                  "returned": 4,
+                  "gses": [
+                    "GSE255847",
+                    "GSE250032",
+                    "GSE225060",
+                    "GSE225059"
+                  ]
+                },
+                {
+                  "query": "AMG510 resistant",
+                  "total": 5,
+                  "returned": 5,
+                  "gses": [
+                    "GSE273116",
+                    "GSE269985",
+                    "GSE229070",
+                    "GSE204753",
+                    "GSE164326"
+                  ]
+                },
+                {
+                  "query": "daraxonrasib resistance",
+                  "total": 0,
+                  "returned": 0,
+                  "gses": []
+                },
+                {
+                  "query": "KRAS inhibitor resistant pancreatic organoid",
+                  "total": 2,
+                  "returned": 2,
+                  "gses": [
+                    "GSE273116",
+                    "GSE269985"
+                  ]
+                }
+              ],
+              "confirmed": [
+                "GSE273116",
+                "GSE269985",
+                "GSE229070",
+                "GSE255847",
+                "GSE250032",
+                "GSE225060",
+                "GSE225059",
+                "GSE204753",
+                "GSE164326"
+              ],
+              "shown": [
+                "GSE273116",
+                "GSE269985",
+                "GSE229070",
+                "GSE255847",
+                "GSE250032",
+                "GSE225060",
+                "GSE225059",
+                "GSE204753",
+                "GSE164326"
+              ],
+              "ineligible": [],
+              "inspected": [],
+              "error": null
+            },
+            {
+              "tool": "inspect_series",
+              "input": {
+                "gses": [
+                  "GSE225060",
+                  "GSE255847"
+                ]
+              },
+              "queries": [],
+              "confirmed": [],
+              "shown": [],
+              "ineligible": [],
+              "inspected": [
+                "GSE225060",
+                "GSE255847"
+              ],
+              "error": null
+            }
+          ],
+          "seen": [
+            "GSE273116",
+            "GSE269985",
+            "GSE234449",
+            "GSE113922",
+            "GSE78519",
+            "GSE229070",
+            "GSE255847",
+            "GSE250032",
+            "GSE225060",
+            "GSE225059",
+            "GSE204753",
+            "GSE164326"
+          ],
+          "invented": [],
+          "usage": {
+            "input_tokens": 12,
+            "output_tokens": 3194,
+            "cache_read_input_tokens": 40259,
+            "cache_creation_input_tokens": 18481
+          },
+          "elapsed_seconds": 35.376
+        },
+        "selections": [
+          {
+            "gse": "GSE269985",
+            "case_gsms": [
+              "GSM8332068",
+              "GSM8332069",
+              "GSM8332070",
+              "GSM8332074",
+              "GSM8332075",
+              "GSM8332076"
+            ],
+            "control_gsms": [
+              "GSM8332065",
+              "GSM8332066",
+              "GSM8332067",
+              "GSM8332071",
+              "GSM8332072",
+              "GSM8332073"
+            ],
+            "unclear_gsms": [],
+            "excluded_gsms": [
+              "GSM8332077",
+              "GSM8332078",
+              "GSM8332079",
+              "GSM8332080",
+              "GSM8332081",
+              "GSM8332082",
+              "GSM8332083",
+              "GSM8332084",
+              "GSM8332085",
+              "GSM8332086",
+              "GSM8332087",
+              "GSM8332088",
+              "GSM8332089",
+              "GSM8332090",
+              "GSM8332091",
+              "GSM8332092",
+              "GSM8332093",
+              "GSM8332094"
+            ],
+            "no_counts_gsms": [
+              "GSM8332068"
+            ],
+            "counts_checked": true,
+            "case_rule": "cell line = \"Panc 02.03\" or \"PANC-1\" and title = contains \"resistant\"",
+            "control_rule": "cell line = \"Panc 02.03\" or \"PANC-1\" and title = contains \"parental\"",
+            "problems": []
+          },
+          {
+            "gse": "GSE273116",
+            "case_gsms": [
+              "GSM8422089",
+              "GSM8422090",
+              "GSM8422091"
+            ],
+            "control_gsms": [
+              "GSM8422086",
+              "GSM8422087",
+              "GSM8422088"
+            ],
+            "unclear_gsms": [],
+            "excluded_gsms": [
+              "GSM8422092",
+              "GSM8422093",
+              "GSM8422094",
+              "GSM8422095",
+              "GSM8422096",
+              "GSM8422097"
+            ],
+            "no_counts_gsms": [
+              "GSM8422090"
+            ],
+            "counts_checked": true,
+            "case_rule": "cell line = \"MIA paca II/SR\" and treatment = \"Vehicle\"",
+            "control_rule": "cell line = \"MIA paca II\" and treatment = \"Vehicle\"",
+            "problems": []
+          }
+        ]
+      },
+      "elapsed_seconds": 35.375978583004326,
+      "input_tokens": 58752,
+      "output_tokens": 3194,
+      "web_search_requests": 0,
+      "web_fetch_requests": 0,
+      "error": null
+    }
+  ],
+  "final_action": "proceed",
+  "candidates": [
+    "GSE269985"
+  ],
+  "candidate_details": {
+    "GSE269985": {
+      "title": "Mechanisms of resistance to oncogenic KRAS inhibition in pancreatic cancer [dataset 2]",
+      "why": "Two human pancreatic cancer lines (Panc 02.03 and PANC-1) were made resistant to the KRAS G12D inhibitor MRTX1133 by gradually raising the dose. Each has three parental and three resistant replicates.",
+      "case_hint": "Six resistant samples: Panc 02.03 and PANC-1 resistant to MRTX1133, 3 replicates each.",
+      "control_hint": "Six parental samples: Panc 02.03 and PANC-1 parental, 3 replicates each."
+    }
+  },
+  "rejected": [
+    "GSE234449",
+    "GSE229070",
+    "GSE225060",
+    "GSE255847",
+    "GSE250032",
+    "GSE225059",
+    "GSE204753",
+    "GSE164326",
+    "GSE113922",
+    "GSE78519",
+    "GSE273116"
+  ],
+  "questions": [],
+  "out_of_scope": null,
+  "seen": [
+    "GSE273116",
+    "GSE269985",
+    "GSE234449",
+    "GSE113922",
+    "GSE78519",
+    "GSE229070",
+    "GSE255847",
+    "GSE250032",
+    "GSE225060",
+    "GSE225059",
+    "GSE204753",
+    "GSE164326"
+  ],
+  "per_query": {
+    "pancreatic cancer KRAS inhibitor resistance": [
+      "GSE273116",
+      "GSE269985",
+      "GSE234449",
+      "GSE113922",
+      "GSE78519"
+    ],
+    "PDAC sotorasib resistant": [
+      "GSE269985"
+    ],
+    "adagrasib resistant pancreatic": [
+      "GSE269985"
+    ],
+    "MRTX1133 resistance pancreatic cancer cell lines": [
+      "GSE269985",
+      "GSE234449"
+    ],
+    "KRAS G12D inhibitor acquired resistance": [
+      "GSE269985"
+    ],
+    "RMC-6236 resistance pancreatic": [],
+    "KRAS inhibitor resistant pancreatic cell line RNA-seq parental": [
+      "GSE269985"
+    ],
+    "MRTX1133 resistant": [
+      "GSE269985"
+    ],
+    "Mechanisms of resistance to oncogenic KRAS inhibition in pancreatic cancer": [
+      "GSE269985"
+    ],
+    "KRAS G12C inhibitor resistant MIA PaCa-2": [
+      "GSE273116"
+    ],
+    "pan-RAS inhibitor resistance PDAC": [],
+    "sotorasib resistant cell line RNA-seq": [
+      "GSE273116",
+      "GSE269985",
+      "GSE229070"
+    ],
+    "KRAS G12C inhibitor acquired resistance cell lines": [
+      "GSE255847",
+      "GSE250032",
+      "GSE225060",
+      "GSE225059"
+    ],
+    "AMG510 resistant": [
+      "GSE273116",
+      "GSE269985",
+      "GSE229070",
+      "GSE204753",
+      "GSE164326"
+    ],
+    "daraxonrasib resistance": [],
+    "KRAS inhibitor resistant pancreatic organoid": [
+      "GSE273116",
+      "GSE269985"
+    ]
+  },
+  "invented": [],
+  "selections": {
+    "GSE269985": {
+      "case": [
+        "GSM8332068",
+        "GSM8332069",
+        "GSM8332070",
+        "GSM8332074",
+        "GSM8332075",
+        "GSM8332076"
+      ],
+      "control": [
+        "GSM8332065",
+        "GSM8332066",
+        "GSM8332067",
+        "GSM8332071",
+        "GSM8332072",
+        "GSM8332073"
+      ],
+      "unclear": [],
+      "no_counts": [
+        "GSM8332068"
+      ]
+    }
+  },
+  "verification": {
+    "eligible": [
+      "GSE269985"
+    ],
+    "exists_only": [],
+    "missing": [],
+    "invalid": []
+  },
+  "elapsed_seconds": 35.778,
+  "input_tokens": 58752,
+  "output_tokens": 3194,
+  "web_search_requests": 0,
+  "web_fetch_requests": 0,
+  "error": null
+}

@@ -9,18 +9,29 @@ because a failed search is a tool error, not a dead agent.
 
 from __future__ import annotations
 
+import asyncio
 import json
 import logging
+import re
+from collections import OrderedDict
 from collections.abc import Awaitable, Callable, Mapping
 from dataclasses import dataclass
 from typing import Any
 
 from pydantic import BaseModel, Field
 
-from cell_ledger.geo import GeoClient, GeoSeriesHit
+from cell_ledger.geo import GeoClient, GeoSeries, GeoSeriesHit
+from cell_ledger_api.agent.samples import series_digest
 from cell_ledger_api.discovery import FIND_SERIES_TOOL, ExaSearcher, find_series_on_web
 
 log = logging.getLogger(__name__)
+
+SEARCH_LIMIT = 100
+"""Series each search query may return; GEO's total for the query is reported either way."""
+SHOWN_HITS = 60
+"""Series per search call whose title and summary Claude reads; the rest are counted."""
+INSPECT_BATCH = 10
+_GSE = re.compile(r"^GSE\d+$")
 
 
 class QueryTrace(BaseModel):
@@ -44,6 +55,9 @@ class ToolCall(BaseModel):
     )
     ineligible: list[str] = Field(
         default_factory=list, description="nominated accessions GEO did not confirm"
+    )
+    inspected: list[str] = Field(
+        default_factory=list, description="inspect_series only: series whose samples Claude read"
     )
     error: str | None = None
 
@@ -83,7 +97,7 @@ def _hit(h: GeoSeriesHit, **extra: Any) -> dict[str, Any]:
         "gse": h.gse,
         "title": h.title,
         "n_samples": h.n_samples,
-        "summary": h.summary[:400],
+        "summary": h.summary[:300],
         **extra,
     }
 
@@ -99,9 +113,11 @@ def search_geo(geo: GeoClient) -> Tool:
             raise ToolError("no queries given", summary="search_geo: no queries")
         since = args.get("since")
         res = await geo.search_series(
-            queries[:10], limit_per_query=25, since=since if isinstance(since, int) else None
+            queries[:10],
+            limit_per_query=SEARCH_LIMIT,
+            since=since if isinstance(since, int) else None,
         )
-        shown = res.hits[:40]
+        shown = res.hits[:SHOWN_HITS]
         call.queries = [
             QueryTrace(
                 query=q.query,
@@ -122,8 +138,14 @@ def search_geo(geo: GeoClient) -> Tool:
             for h in shown
         ]
         stats = [{"query": q.query, "total": q.total, "returned": q.returned} for q in res.queries]
+        payload: dict[str, Any] = {"queries": stats, "hits": hits}
+        if len(res.hits) > len(shown):
+            payload["not_shown"] = (
+                f"{len(res.hits) - len(shown)} more series matched; narrow the queries or the "
+                "question to see them"
+            )
         return ToolResult(
-            _json({"queries": stats, "hits": hits}),
+            _json(payload),
             f"searched GEO: {len(queries)} queries, {len(res.hits)} series",
         )
 
@@ -207,9 +229,87 @@ def find_geo_series_on_web(exa: ExaSearcher, geo: GeoClient) -> Tool:
     return Tool({**FIND_SERIES_TOOL, "strict": True}, run)
 
 
-def geo_tools(geo: GeoClient, exa: ExaSearcher | None) -> dict[str, Tool]:
+class SeriesRecords:
+    """GEO sample records and count-table headers fetched during discovery, kept (most
+    recent ``size`` series) so code can apply the agent's sample rules without fetching
+    again, and so a repeated question does not re-download."""
+
+    def __init__(self, geo: GeoClient, *, size: int = 256) -> None:
+        self._geo = geo
+        self._size = size
+        self._records: OrderedDict[str, GeoSeries] = OrderedDict()
+        self._columns: OrderedDict[str, list[str] | None] = OrderedDict()
+
+    def _keep(self, cache: OrderedDict[str, Any], key: str, value: Any) -> None:
+        cache[key] = value
+        cache.move_to_end(key)
+        while len(cache) > self._size:
+            cache.popitem(last=False)
+
+    async def record(self, gse: str) -> GeoSeries:
+        if gse not in self._records:
+            self._keep(self._records, gse, await self._geo.series_record(gse))
+        self._records.move_to_end(gse)
+        return self._records[gse]
+
+    async def columns(self, gse: str) -> list[str] | None:
+        if gse not in self._columns:
+            self._keep(self._columns, gse, await self._geo.count_columns(gse))
+        return self._columns[gse]
+
+
+def inspect_series(records: SeriesRecords) -> Tool:
+    async def run(args: dict[str, Any], call: ToolCall) -> ToolResult:
+        wanted = [g.strip().upper() for g in args.get("gses", []) if isinstance(g, str)]
+        gses = list(dict.fromkeys(g for g in wanted if _GSE.match(g)))
+        if not gses:
+            raise ToolError("no GSE accessions given", summary="inspect: no accessions")
+        extra = gses[INSPECT_BATCH:]
+        gses = gses[:INSPECT_BATCH]
+        got = await asyncio.gather(*(records.record(g) for g in gses), return_exceptions=True)
+        parts: list[str] = []
+        n_samples = 0
+        for gse, rec in zip(gses, got, strict=True):
+            if isinstance(rec, BaseException):
+                parts.append(f"{gse}: the GEO record could not be read ({type(rec).__name__})")
+                continue
+            call.inspected.append(gse)
+            n_samples += len(rec.samples)
+            parts.append(series_digest(rec))
+        if extra:
+            parts.append(f"Not inspected (at most {INSPECT_BATCH} per call): {', '.join(extra)}")
+        return ToolResult(
+            "\n\n".join(parts),
+            f"inspected {len(call.inspected)} series, {n_samples} samples",
+        )
+
+    return Tool(
+        {
+            "name": "inspect_series",
+            "description": (
+                "Read the sample records of GEO series (up to 10 per call): the series summary "
+                "and design, then every sample field (title, source, characteristics such as "
+                "cell type, cell line, age, genotype, treatment; protocols) with its distinct "
+                "values and how many samples carry each. Inspect every series before you "
+                "recommend it, and write sample rules over these fields and values."
+            ),
+            "strict": True,
+            "input_schema": {
+                "type": "object",
+                "properties": {"gses": {"type": "array", "items": {"type": "string"}}},
+                "required": ["gses"],
+                "additionalProperties": False,
+            },
+        },
+        run,
+    )
+
+
+def geo_tools(
+    geo: GeoClient, exa: ExaSearcher | None, records: SeriesRecords | None = None
+) -> dict[str, Tool]:
     """The tools Claude gets in the discover step, by name, in the order it is shown them."""
-    tools = [search_geo(geo), verify_geo_series(geo)]
+    tools = [search_geo(geo), verify_geo_series(geo), inspect_series(records or SeriesRecords(geo))]
     if exa is not None:
         tools.append(find_geo_series_on_web(exa, geo))
     return {t.name: t for t in tools}

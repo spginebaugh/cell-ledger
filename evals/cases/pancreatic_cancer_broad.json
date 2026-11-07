@@ -9,30 +9,312 @@
       "versus",
       " vs",
       "normal",
-      "treated",
-      "which"
+      "treated"
+    ],
+    [
+      "organoid",
+      "cell line",
+      "tissue",
+      "model"
     ]
   ],
   "answers": [
-    "Any two-group comparison within a pancreatic cancer series is fine: tumor versus normal, treated versus untreated, or knockdown versus control."
+    "Patient-derived organoids treated with a drug in culture, compared with the same organoids left untreated."
   ],
   "expected_action_after_answers": "proceed",
+  "also_acceptable": [],
   "pool": {
-    "GSE273398": {
+    "GSE225011": {
       "relevant": true,
       "eligible": true,
-      "rationale": "Approved pancreatic-cancer search result: PATU8988 cell line, three control and three CLIC1-knockdown samples, NCBI raw counts available.",
-      "evidence": "evals/review_drafts/pancreatic-pilot/annotations/GSE273398.json",
-      "reviewed_by": "kirsten",
-      "source": "pilot"
+      "rationale": "Two PDAC patient-derived organoid lines treated with CK21 or left untreated at 3, 6, 9 and 12 h, two replicates each.",
+      "evidence": "GEO record GSE225011 (sample fields)",
+      "reviewed_by": "",
+      "source": "claude-draft 2026-11-07",
+      "case_gsms": [
+        "GSM7037063",
+        "GSM7037064",
+        "GSM7037067",
+        "GSM7037068",
+        "GSM7037071",
+        "GSM7037072",
+        "GSM7037075",
+        "GSM7037076",
+        "GSM7037079",
+        "GSM7037080",
+        "GSM7037083",
+        "GSM7037084",
+        "GSM7037087",
+        "GSM7037088",
+        "GSM7037091",
+        "GSM7037092"
+      ],
+      "control_gsms": [
+        "GSM7037061",
+        "GSM7037062",
+        "GSM7037065",
+        "GSM7037066",
+        "GSM7037069",
+        "GSM7037070",
+        "GSM7037073",
+        "GSM7037074",
+        "GSM7037077",
+        "GSM7037078",
+        "GSM7037081",
+        "GSM7037082",
+        "GSM7037085",
+        "GSM7037086",
+        "GSM7037089",
+        "GSM7037090"
+      ],
+      "optional_gsms": [],
+      "samples_note": "All time points pooled, treated vs untreated; a time-matched subset is a defensible alternative the reviewer may prefer. case: treatment = \"CK21\"; control: treatment = \"No Rx\""
+    },
+    "GSE235548": {
+      "relevant": true,
+      "eligible": true,
+      "rationale": "PDAC organoids from eight patients at baseline, three of them also treated with gemcitabine-paclitaxel in culture (7 treated samples).",
+      "evidence": "GEO record GSE235548 (sample fields)",
+      "reviewed_by": "",
+      "source": "claude-draft 2026-11-07",
+      "case_gsms": [
+        "GSM7505101",
+        "GSM7505102",
+        "GSM7505103",
+        "GSM7505104",
+        "GSM7505105",
+        "GSM7505106",
+        "GSM7505107"
+      ],
+      "control_gsms": [
+        "GSM7505078",
+        "GSM7505079",
+        "GSM7505080",
+        "GSM7505081",
+        "GSM7505082",
+        "GSM7505083",
+        "GSM7505087",
+        "GSM7505088",
+        "GSM7505089"
+      ],
+      "optional_gsms": [],
+      "samples_note": "The prompt asks for the same organoids untreated, so the control arm is the baselines of the three patients with treated organoids; the other five patients' baselines are out. case: treatment = \"Gem-Pac 400:80 nM\"; control: source_name = \"PDAC002 baseline\" or \"PDAC044 baseline\" or \"PDAC060 baseline\""
+    },
+    "GSE249726": {
+      "relevant": false,
+      "eligible": true,
+      "rationale": "Title mentions patient-derived organoids, but every sample is the AsPC1 cell line (PBS vs Pien Tze Huang).",
+      "evidence": "GEO record",
+      "reviewed_by": "",
+      "source": "claude-draft 2026-11-07",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
+    },
+    "GSE169321": {
+      "relevant": false,
+      "eligible": true,
+      "rationale": "Organoid lines from patients who did or did not receive neoadjuvant FOLFIRINOX (samples titled 'Primary PDAC tissue N'): treated in the patient, not in culture, and no untreated twin of each organoid.",
+      "evidence": "GEO record",
+      "reviewed_by": "",
+      "source": "claude-draft 2026-11-07",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
     },
     "GSE262627": {
-      "relevant": true,
+      "relevant": false,
       "eligible": true,
-      "rationale": "Approved as an acceptable candidate: mixed cell-line and patient-derived organoid study; 35 of 40 organoid samples are in the NCBI count table. Search may return it; sample-level resolution is not required at discovery.",
-      "evidence": "evals/review_drafts/pancreatic-pilot/annotations/GSE262627.json",
-      "reviewed_by": "kirsten",
-      "source": "pilot"
+      "rationale": "Circadian time course; every sample was dexamethasone-synchronized, there is no untreated arm, and 28 samples are cell lines.",
+      "evidence": "GEO record",
+      "reviewed_by": "",
+      "source": "claude-draft 2026-11-07",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
+    },
+    "GSE232170": {
+      "relevant": false,
+      "eligible": true,
+      "rationale": "Organoids grown in five basement-membrane extracts: matrix, not a drug; half the samples are mouse.",
+      "evidence": "GEO record",
+      "reviewed_by": "",
+      "source": "claude-draft 2026-11-07",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
+    },
+    "GSE212014": {
+      "relevant": false,
+      "eligible": true,
+      "rationale": "Organoid culture media compared (PaTOM vs WNT), not a drug.",
+      "evidence": "GEO record",
+      "reviewed_by": "",
+      "source": "claude-draft 2026-11-07",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
+    },
+    "GSE240597": {
+      "relevant": false,
+      "eligible": true,
+      "rationale": "ISOX in CD18/HPAF cell line, not organoids.",
+      "evidence": "GEO record",
+      "reviewed_by": "",
+      "source": "claude-draft 2026-11-07",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
+    },
+    "GSE140490": {
+      "relevant": false,
+      "eligible": true,
+      "rationale": "DCLK1-IN-1 in PDAC cell lines, not organoids.",
+      "evidence": "GEO record",
+      "reviewed_by": "",
+      "source": "claude-draft 2026-11-07",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
+    },
+    "GSE273116": {
+      "relevant": false,
+      "eligible": true,
+      "rationale": "Pan-KRAS inhibitor in MIA PaCa-2 cell lines, not organoids.",
+      "evidence": "GEO record",
+      "reviewed_by": "",
+      "source": "claude-draft 2026-11-07",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
+    },
+    "GSE234449": {
+      "relevant": false,
+      "eligible": true,
+      "rationale": "MRTX1133 in cell lines, not organoids.",
+      "evidence": "GEO record",
+      "reviewed_by": "",
+      "source": "claude-draft 2026-11-07",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
+    },
+    "GSE139184": {
+      "relevant": false,
+      "eligible": true,
+      "rationale": "Compares ex vivo culture formats of the same tumors; no drug.",
+      "evidence": "GEO record",
+      "reviewed_by": "",
+      "source": "claude-draft 2026-11-07",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
+    },
+    "GSE114453": {
+      "relevant": false,
+      "eligible": true,
+      "rationale": "Tumors and their models (PDX, cell lines, organoids); no drug.",
+      "evidence": "GEO record",
+      "reviewed_by": "",
+      "source": "claude-draft 2026-11-07",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
+    },
+    "GSE228801": {
+      "relevant": false,
+      "eligible": true,
+      "rationale": "Untreated organoids for subtyping; no drug.",
+      "evidence": "GEO record",
+      "reviewed_by": "",
+      "source": "claude-draft 2026-11-07",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
+    },
+    "GSE187619": {
+      "relevant": false,
+      "eligible": true,
+      "rationale": "Untreated organoids; no drug arm.",
+      "evidence": "GEO record",
+      "reviewed_by": "",
+      "source": "claude-draft 2026-11-07",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
+    },
+    "GSE185335": {
+      "relevant": false,
+      "eligible": true,
+      "rationale": "Untreated organoids only.",
+      "evidence": "GEO record",
+      "reviewed_by": "",
+      "source": "claude-draft 2026-11-07",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
+    },
+    "GSE243647": {
+      "relevant": false,
+      "eligible": true,
+      "rationale": "Organoids fused with iPSC-derived stroma; no drug.",
+      "evidence": "GEO record",
+      "reviewed_by": "",
+      "source": "claude-draft 2026-11-07",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
+    },
+    "GSE229091": {
+      "relevant": false,
+      "eligible": true,
+      "rationale": "Black phosphorus +/- Huaier in MIA PaCa-2 cells, not organoids.",
+      "evidence": "GEO record",
+      "reviewed_by": "",
+      "source": "claude-draft 2026-11-07",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
+    },
+    "GSE201427": {
+      "relevant": false,
+      "eligible": true,
+      "rationale": "SF3B1 siRNA in PANC-1 cells under hypoxia; not organoids, not a drug.",
+      "evidence": "GEO record",
+      "reviewed_by": "",
+      "source": "claude-draft 2026-11-07",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
+    },
+    "GSE184125": {
+      "relevant": false,
+      "eligible": true,
+      "rationale": "9-ING-41 in colorectal tumor organoids, not pancreatic.",
+      "evidence": "GEO record",
+      "reviewed_by": "",
+      "source": "claude-draft 2026-11-07",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
     },
     "GSE333917": {
       "relevant": null,
@@ -40,7 +322,11 @@
       "rationale": "Excluded from the confirmed NCBI-generated-counts search scope: no count-filter match or NCBI count download link at the saved check.",
       "evidence": "evals/review_drafts/pancreatic-pilot/annotations/exclusions.json",
       "reviewed_by": "kirsten",
-      "source": "pilot"
+      "source": "pilot",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
     },
     "GSE246958": {
       "relevant": null,
@@ -48,7 +334,11 @@
       "rationale": "Excluded under the confirmed NCBI-generated-counts requirement: no NCBI count-filter match or corresponding download link at the saved check.",
       "evidence": "evals/review_drafts/pancreatic-pilot/annotations/exclusions.json",
       "reviewed_by": "kirsten",
-      "source": "pilot"
+      "source": "pilot",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
     },
     "GSE348821": {
       "relevant": null,
@@ -56,7 +346,11 @@
       "rationale": "Excluded under the confirmed NCBI-generated-counts requirement: no NCBI count-filter match or corresponding download link at the saved check.",
       "evidence": "evals/review_drafts/pancreatic-pilot/annotations/exclusions.json",
       "reviewed_by": "kirsten",
-      "source": "pilot"
+      "source": "pilot",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
     },
     "GSE327169": {
       "relevant": null,
@@ -64,7 +358,11 @@
       "rationale": "Excluded under the confirmed NCBI-generated-counts requirement: no NCBI count-filter match or corresponding download link for this SuperSeries at the saved check.",
       "evidence": "evals/review_drafts/pancreatic-pilot/annotations/exclusions.json",
       "reviewed_by": "kirsten",
-      "source": "pilot"
+      "source": "pilot",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
     },
     "GSE326458": {
       "relevant": null,
@@ -72,7 +370,11 @@
       "rationale": "Excluded under the confirmed bulk RNA-seq requirement: the saved study design describes isolated single nuclei and joint snATAC/snRNA libraries using the 10X Genomics platform. This is a single-nucleus multiome experiment, not bulk RNA-seq.",
       "evidence": "evals/review_drafts/pancreatic-pilot/annotations/exclusions.json",
       "reviewed_by": "kirsten",
-      "source": "pilot"
+      "source": "pilot",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
     },
     "GSE326455": {
       "relevant": null,
@@ -80,12 +382,28 @@
       "rationale": "Excluded under the confirmed bulk RNA-seq requirement: the saved study design explicitly describes single-nucleus RNA-seq using the 10X Genomics platform.",
       "evidence": "evals/review_drafts/pancreatic-pilot/annotations/exclusions.json",
       "reviewed_by": "kirsten",
-      "source": "pilot"
+      "source": "pilot",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
+    },
+    "GSE273398": {
+      "relevant": false,
+      "eligible": true,
+      "rationale": "CLIC1 knockdown in PATU8988 cells: a cell line and a knockdown, not organoids treated with a drug. (The pilot accepted it for the broad question before the answer narrowed it.)",
+      "evidence": "GEO record",
+      "reviewed_by": "",
+      "source": "claude-draft 2026-11-07",
+      "case_gsms": null,
+      "control_gsms": null,
+      "optional_gsms": [],
+      "samples_note": ""
     }
   },
   "status": "draft",
   "reviewed_by": "",
-  "notes": "DRAFT from the reviewed pancreatic pilot (evals/review_drafts/pancreatic-pilot). The pilot accepted the two positives as optional candidates in a bounded search, so recall here is lenient. A bare topic is treated as an ask case; confirm or change that.",
+  "notes": "A bare topic must be narrowed. The scripted answer narrows it to the organoid drug case, whose pool it shares; the pilot's exclusions are kept.",
   "tags": [
     "cancer",
     "pancreas",

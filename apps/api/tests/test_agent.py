@@ -158,6 +158,7 @@ def test_discover_streams_tools_and_result(
         # The second request carried the tool result back to Claude.
         assert turns.requests[1]["messages"][-1]["content"][0]["type"] == "tool_result"
         assert turns.requests[0]["output_config"]["format"]["type"] == "json_schema"
+        assert turns.requests[0]["cache_control"] == {"type": "ephemeral"}
         # Claude is held to the output schema; the trace is not part of it.
         schema = turns.requests[0]["output_config"]["format"]["schema"]
         assert "trace" not in schema["properties"] and "out_of_scope" in schema["properties"]
@@ -383,7 +384,11 @@ def test_fingerprint_covers_tools_model_and_effort() -> None:
     geo = GeoClient(httpx.AsyncClient())
     base = Discoverer(geo)
     assert base.fingerprint() == Discoverer(geo, turn=ScriptedTurns()).fingerprint()
-    assert [t["name"] for t in base.tool_definitions()] == ["search_geo", "verify_geo_series"]
+    assert [t["name"] for t in base.tool_definitions()] == [
+        "search_geo",
+        "verify_geo_series",
+        "inspect_series",
+    ]
     with_web = Discoverer(geo, exa=object())  # type: ignore[arg-type]
     assert [t["name"] for t in with_web.tool_definitions()][-1] == "find_geo_series_on_web"
     assert all(t["strict"] for t in with_web.tool_definitions())

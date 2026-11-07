@@ -110,6 +110,10 @@ run = "uv run python -m evals.run validate"
 description = "Re-score saved runs: mise run eval:score -- data/evals/runs/<run_id>"
 run = "uv run python -m evals.run score \"$@\""
 
+[tasks."eval:show"]
+description = "A series as the agent reads it, plus every GSM and its count coverage: mise run eval:show -- GSE262627"
+run = "uv run python -m evals.run show \"$@\""
+
 [tasks."eval:queue"]
 description = "Candidates waiting for a human relevance verdict"
 run = "uv run python -m evals.run queue"

@@ -1,0 +1,17 @@
+{
+  "id": "mouse_nash_liver",
+  "prompt": "Which liver genes change in mice fed a NASH-inducing diet compared with chow-fed mice?",
+  "expected_action": "decline",
+  "clarification_targets": [],
+  "answers": [],
+  "expected_action_after_answers": null,
+  "also_acceptable": [],
+  "pool": {},
+  "status": "draft",
+  "reviewed_by": "",
+  "notes": "Mouse: out of scope.",
+  "tags": [
+    "scope",
+    "organism"
+  ]
+}

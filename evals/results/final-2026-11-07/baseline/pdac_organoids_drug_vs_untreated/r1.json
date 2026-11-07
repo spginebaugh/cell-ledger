@@ -1,0 +1,309 @@
+{
+  "case_id": "pdac_organoids_drug_vs_untreated",
+  "system": "baseline",
+  "repeat": 1,
+  "conditions": {
+    "system": "baseline",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "fingerprint": "4525537637e3a1e40449a050cb82f18b6802378efbf1170b5ac09c2e199b166c",
+    "web_search": true,
+    "code_revision": "4032f8cb3e85576661f421ff7f4f75aa87401b25",
+    "dirty": true,
+    "geo_cache": "/Users/scott/Documents/code/gauntlet-hackathon/cell-ledger/data/evals/geo-cache/all12-r2",
+    "case_sha256": "dba2a4c43add699d6502bf0cb0ce586b80ac871cdb4ec037a440dbb2f7ae5542",
+    "suite_sha256": "5c2b23011a22776e3ea3fab6976ae88635f0f4a277dbf5db35d8fa2bb07d1859",
+    "run_id": "all12-r2",
+    "started_at": "2026-11-07T15:04:10+00:00"
+  },
+  "turns": [
+    {
+      "answers": [],
+      "action": "ask",
+      "output": {
+        "interpretation": "Two-group comparison: patient-derived pancreatic cancer organoids (mostly PDAC PDOs grown in Matrigel/3D culture) treated in vitro with a drug (case) versus the same PDO lines given vehicle (DMSO/medium) or left untreated (control). Doses and time points can be pooled. This should be done within one series, using human bulk RNA-seq with NCBI-generated raw counts and at least 3 samples per arm. Ideally each organoid line should have both a treated and an untreated sample, so the analysis can be paired by line.",
+        "genes": [],
+        "out_of_scope": null,
+        "clarifying_questions": [
+          {
+            "question": "Which drug or drug class do you mean? 'A drug' could match many separate GEO series, each testing a different compound, and pooling them would mix unrelated biology.",
+            "options": [
+              "Gemcitabine and/or nab-paclitaxel",
+              "FOLFIRINOX or its parts (5-FU, irinotecan/SN-38, oxaliplatin)",
+              "KRAS inhibitors (e.g. MRTX1133 for G12D, sotorasib/adagrasib for G12C, pan-RAS such as RMC-6236)",
+              "MAPK-pathway inhibitors (MEK/trametinib, ERK, SHP2)",
+              "PARP inhibitors (olaparib)",
+              "Epigenetic drugs (BET, EZH2, HDAC inhibitors)",
+              "Any drug, analysed one series at a time"
+            ],
+            "why": "This decides which series qualify. Each series usually tests one or a few compounds. Without a drug, more than 10 series could qualify, and they would not answer the same question."
+          },
+          {
+            "question": "What counts as the untreated control?",
+            "options": [
+              "Vehicle (DMSO) control only",
+              "Vehicle or plain medium (untreated) are both fine"
+            ],
+            "why": "Some PDO series use only vehicle controls and others use medium-only controls. This changes which samples go in the control arm."
+          },
+          {
+            "question": "Should the organoids come only from primary PDAC tissue (surgical resection or EUS-FNA biopsy), or are these also acceptable: PDX-derived organoids, organoids from metastases or ascites, organoids grown with fibroblasts or immune cells, and other pancreatic tumour types (e.g. neuroendocrine)?",
+            "options": [
+              "Primary-tumour PDAC PDOs only",
+              "Also PDX-derived organoids",
+              "Also metastasis- or ascites-derived PDOs",
+              "Also co-culture organoid models",
+              "Also pancreatic neuroendocrine tumour organoids"
+            ],
+            "why": "These are not interchangeable models. PDX-derived organoids, co-cultures and neuroendocrine organoids would each be a different sample set. The answer also determines whether mouse KPC organoid series (to be excluded) look relevant."
+          },
+          {
+            "question": "If one series includes several doses or time points, should all treated samples be pooled into one case arm, or should you pick one dose/time (e.g. the longest exposure or the IC50 dose)?",
+            "options": [
+              "Pool all doses and time points",
+              "Use one dose/time point per series"
+            ],
+            "why": "Your question allows any dose or time, but pooling early and late time points weakens or confuses the signal. This changes which GSMs go in the case arm."
+          }
+        ],
+        "rejected": [
+          {
+            "gse": "GSE243888",
+            "why": "Mouse (KPC organoids with PSCs, transplanted into NSG mice). Not human, and not drug-treated in culture."
+          },
+          {
+            "gse": "GSE315131",
+            "why": "Single-cell RNA-seq of tumours treated in vivo with EZH2 + KRAS inhibitors. Not bulk RNA-seq of organoids treated in culture."
+          },
+          {
+            "gse": "GSE228502",
+            "why": "scRNA-seq of murine KPC tumours treated with MRTX1133 in vivo. Mouse, single-cell, not organoids."
+          },
+          {
+            "gse": "GSE212966",
+            "why": "Single-cell immune landscape of PDAC tissue. Not organoids and no in vitro drug treatment."
+          }
+        ],
+        "queries_tried": [
+          "GEO RNA-seq pancreatic cancer patient-derived organoids treated gemcitabine",
+          "GSE pancreatic ductal adenocarcinoma organoids drug treatment RNA-seq",
+          "GEO PDAC organoids treated vehicle DMSO RNA-seq GSE",
+          "pancreatic cancer organoids KRAS inhibitor RNA-seq GSE",
+          "GSE patient-derived pancreatic cancer organoids treated RNA-seq Homo sapiens",
+          "ncbi.nlm.nih.gov geo pancreatic organoids treatment untreated RNA-seq",
+          "GEO human PDAC organoids MRTX1133 RNA-seq",
+          "GEO human pancreatic tumor organoids trametinib RNA-seq",
+          "GEO pancreatic cancer organoids FOLFIRINOX treated RNA-seq",
+          "omicsdi pancreatic cancer patient-derived organoids treated RNA-seq"
+        ],
+        "candidates": []
+      },
+      "elapsed_seconds": 47.18474820803385,
+      "input_tokens": 76155,
+      "output_tokens": 3043,
+      "web_search_requests": 10,
+      "web_fetch_requests": 2,
+      "error": null
+    },
+    {
+      "answers": [
+        "Any drug at any dose or time point. Human patient-derived pancreatic cancer organoids only, not cell lines or mouse organoids, with the drug given in culture; the controls are the same organoid lines left untreated or given vehicle."
+      ],
+      "action": "proceed",
+      "output": {
+        "interpretation": "Comparison: human patient-derived pancreatic cancer organoids (PDAC PDOs) treated with any drug in culture (case), against the same PDO lines left untreated or given vehicle such as DMSO (control). Only bulk RNA-seq with NCBI-generated raw counts counts. Both arms must be in the same series, with at least 3 samples per arm. Cell lines, mouse organoids, PDX tumours and co-cultures are excluded.",
+        "genes": [],
+        "out_of_scope": null,
+        "clarifying_questions": [],
+        "rejected": [
+          {
+            "gse": "GSE228502",
+            "why": "This is single-cell RNA-seq, and the MRTX1133-treated samples are pancreatic cancer cell lines and tumours, not patient-derived organoids."
+          },
+          {
+            "gse": "GSE290526",
+            "why": "This is single-cell RNA-seq of an isogenic PDO model of acquired KRAS G12D inhibitor resistance, not bulk RNA-seq."
+          },
+          {
+            "gse": "GSE144737",
+            "why": "This compares PDX-derived 3D organoids with primary cell-line cultures to characterise the models. There is no drug versus untreated contrast."
+          },
+          {
+            "gse": "GSE63348",
+            "why": "This is the Boj et al. human and mouse pancreatic organoid characterisation series. It has no drug treatment arm, and part of it is mouse."
+          },
+          {
+            "gse": "GSE110580",
+            "why": "This is circular RNA profiling in pancreatic cancer material, which appears to be cell lines rather than PDOs. It does not contrast treated and untreated PDOs."
+          },
+          {
+            "gse": "GSE249673",
+            "why": "This is a pancreatic cancer organoid–macrophage co-culture model. It does not have a drug versus vehicle contrast in PDOs alone."
+          },
+          {
+            "gse": "GSE205013",
+            "why": "This profiles primary pancreatic tumour tissue, not organoids treated in culture."
+          },
+          {
+            "gse": "GSE315131",
+            "why": "This is single-cell RNA-seq of the immune microenvironment after combined EZH2 and KRAS inhibition. It is not bulk RNA-seq of human PDOs."
+          }
+        ],
+        "queries_tried": [
+          "GEO pancreatic cancer organoids treated RNA-seq patient-derived drug GSE",
+          "patient-derived pancreatic ductal adenocarcinoma organoids treatment RNA-seq GSE vehicle DMSO",
+          "PDAC organoids gemcitabine RNA-seq GEO",
+          "pancreatic cancer organoids KRAS inhibitor RNA-seq GEO human",
+          "GSE pancreatic cancer patient-derived organoids treated RNA-seq",
+          "PDAC organoids MRTX1133 RNA-seq GSE",
+          "pancreatic cancer organoids DMSO RNA-seq GEO accession GSE organoid treated",
+          "GSE235548",
+          "GSE293756 organoids",
+          "GSE144737",
+          "patient-derived pancreatic cancer organoids treated RNA-seq omicsdi GSE Homo sapiens organoids treatment",
+          "PDAC organoids treated with inhibitor RNA-seq differentially expressed genes GEO organoid lines vehicle",
+          "pancreatic cancer organoids gemcitabine RNA-seq omicsdi"
+        ],
+        "candidates": [
+          {
+            "gse": "GSE235548",
+            "title": "Uncovering the hidden threat: single-organoid analysis reveals clinically relevant treatment-resistant and invasive subclones in pancreatic cancer",
+            "n_samples": 30,
+            "why": "This human series has about 30 RNA-seq samples from 8 fully characterised patient-derived PDAC organoid lines. The study treated these organoids in culture with standard-of-care chemotherapy (gemcitabine-paclitaxel and FOLFIRINOX) at several concentrations and time points. If the RNA-seq samples include treated organoids alongside untreated or vehicle organoids from the same lines, it answers the question directly.",
+            "case_hint": "Organoid samples treated with gemcitabine-paclitaxel or FOLFIRINOX, if any of the RNA-seq samples are treated.",
+            "control_hint": "The same organoid lines left untreated or given vehicle.",
+            "concerns": [
+              "I could not get sample-level records: GEO pages were blocked by a browser check and other routes were not allowed. I have not listed any GSM accessions because I could not copy them from the record.",
+              "A third-party summary describes the 30 RNA-seq samples as spanning 8 organoid lines. This may be baseline characterisation of untreated lines only, in which case there is no treated arm and the series does not qualify.",
+              "I have not confirmed that NCBI-generated raw counts are available."
+            ],
+            "case_gsms": [],
+            "control_gsms": []
+          },
+          {
+            "gse": "GSE293756",
+            "title": "PANCREATIC DUCTAL ADENOCARCINOMAS RESISTANT TO KRAS INHIBITION ARE DRUGGABLE WITH ... (MUC1-C antibody-drug conjugate)",
+            "n_samples": 0,
+            "why": "This human series (2025) studies how KRAS G12D-mutant PDAC responds and becomes resistant to MRTX1133. It may include PDO samples treated with MRTX1133 and a vehicle arm.",
+            "case_hint": "Patient-derived organoids treated with MRTX1133 (or the MUC1-C antibody-drug conjugate), if present.",
+            "control_hint": "The same organoids treated with vehicle.",
+            "concerns": [
+              "The series summary refers to PDAC KRAS G12D mutant 'cells', so the samples may be cell lines only. Cell lines are excluded.",
+              "I could not see the sample count or sample records (GEO was blocked). The n_samples value of 0 is a placeholder because the count is unknown, and no GSMs are listed.",
+              "I have not confirmed that it is bulk RNA-seq, that raw counts are available, or that each arm has at least 3 samples."
+            ],
+            "case_gsms": [],
+            "control_gsms": []
+          }
+        ]
+      },
+      "elapsed_seconds": 128.5495773750008,
+      "input_tokens": 253518,
+      "output_tokens": 6767,
+      "web_search_requests": 15,
+      "web_fetch_requests": 10,
+      "error": null
+    }
+  ],
+  "final_action": "proceed",
+  "candidates": [
+    "GSE235548",
+    "GSE293756"
+  ],
+  "candidate_details": {
+    "GSE235548": {
+      "title": "Uncovering the hidden threat: single-organoid analysis reveals clinically relevant treatment-resistant and invasive subclones in pancreatic cancer",
+      "why": "This human series has about 30 RNA-seq samples from 8 fully characterised patient-derived PDAC organoid lines. The study treated these organoids in culture with standard-of-care chemotherapy (gemcitabine-paclitaxel and FOLFIRINOX) at several concentrations and time points. If the RNA-seq samples include treated organoids alongside untreated or vehicle organoids from the same lines, it answers the question directly.",
+      "case_hint": "Organoid samples treated with gemcitabine-paclitaxel or FOLFIRINOX, if any of the RNA-seq samples are treated.",
+      "control_hint": "The same organoid lines left untreated or given vehicle."
+    },
+    "GSE293756": {
+      "title": "PANCREATIC DUCTAL ADENOCARCINOMAS RESISTANT TO KRAS INHIBITION ARE DRUGGABLE WITH ... (MUC1-C antibody-drug conjugate)",
+      "why": "This human series (2025) studies how KRAS G12D-mutant PDAC responds and becomes resistant to MRTX1133. It may include PDO samples treated with MRTX1133 and a vehicle arm.",
+      "case_hint": "Patient-derived organoids treated with MRTX1133 (or the MUC1-C antibody-drug conjugate), if present.",
+      "control_hint": "The same organoids treated with vehicle."
+    }
+  },
+  "rejected": [
+    "GSE228502",
+    "GSE290526",
+    "GSE144737",
+    "GSE63348",
+    "GSE110580",
+    "GSE249673",
+    "GSE205013",
+    "GSE315131"
+  ],
+  "questions": [
+    {
+      "question": "Which drug or drug class do you mean? 'A drug' could match many separate GEO series, each testing a different compound, and pooling them would mix unrelated biology.",
+      "options": [
+        "Gemcitabine and/or nab-paclitaxel",
+        "FOLFIRINOX or its parts (5-FU, irinotecan/SN-38, oxaliplatin)",
+        "KRAS inhibitors (e.g. MRTX1133 for G12D, sotorasib/adagrasib for G12C, pan-RAS such as RMC-6236)",
+        "MAPK-pathway inhibitors (MEK/trametinib, ERK, SHP2)",
+        "PARP inhibitors (olaparib)",
+        "Epigenetic drugs (BET, EZH2, HDAC inhibitors)",
+        "Any drug, analysed one series at a time"
+      ],
+      "why": "This decides which series qualify. Each series usually tests one or a few compounds. Without a drug, more than 10 series could qualify, and they would not answer the same question."
+    },
+    {
+      "question": "What counts as the untreated control?",
+      "options": [
+        "Vehicle (DMSO) control only",
+        "Vehicle or plain medium (untreated) are both fine"
+      ],
+      "why": "Some PDO series use only vehicle controls and others use medium-only controls. This changes which samples go in the control arm."
+    },
+    {
+      "question": "Should the organoids come only from primary PDAC tissue (surgical resection or EUS-FNA biopsy), or are these also acceptable: PDX-derived organoids, organoids from metastases or ascites, organoids grown with fibroblasts or immune cells, and other pancreatic tumour types (e.g. neuroendocrine)?",
+      "options": [
+        "Primary-tumour PDAC PDOs only",
+        "Also PDX-derived organoids",
+        "Also metastasis- or ascites-derived PDOs",
+        "Also co-culture organoid models",
+        "Also pancreatic neuroendocrine tumour organoids"
+      ],
+      "why": "These are not interchangeable models. PDX-derived organoids, co-cultures and neuroendocrine organoids would each be a different sample set. The answer also determines whether mouse KPC organoid series (to be excluded) look relevant."
+    },
+    {
+      "question": "If one series includes several doses or time points, should all treated samples be pooled into one case arm, or should you pick one dose/time (e.g. the longest exposure or the IC50 dose)?",
+      "options": [
+        "Pool all doses and time points",
+        "Use one dose/time point per series"
+      ],
+      "why": "Your question allows any dose or time, but pooling early and late time points weakens or confuses the signal. This changes which GSMs go in the case arm."
+    }
+  ],
+  "out_of_scope": null,
+  "seen": [],
+  "per_query": {},
+  "invented": [],
+  "selections": {
+    "GSE235548": {
+      "case": [],
+      "control": []
+    },
+    "GSE293756": {
+      "case": [],
+      "control": []
+    }
+  },
+  "verification": {
+    "eligible": [
+      "GSE235548"
+    ],
+    "exists_only": [
+      "GSE293756"
+    ],
+    "missing": [],
+    "invalid": []
+  },
+  "elapsed_seconds": 176.153,
+  "input_tokens": 329673,
+  "output_tokens": 9810,
+  "web_search_requests": 25,
+  "web_fetch_requests": 12,
+  "error": null
+}
