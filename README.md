@@ -94,6 +94,12 @@ runs on its own (`apps/api/src/cell_ledger_api/pipeline.py`).
 5. **Compare** (automatic, once every run is done and two or more completed): pooled effects
    across the session's runs, one comparison per session.
 
+On a run page, clicking a point on the volcano plot opens a gene panel (`?gene=SYMBOL`, also
+at `/gene/SYMBOL` on its own). It is independent of the dataset: the browser fetches public
+annotation directly from mygene.info, the Human Protein Atlas, UniProt, GTEx, AlphaFold DB and
+STRING, and draws the subcellular location on the HPA cell and tissue expression on the
+Expression Atlas body (both vendored under `apps/web/public/gene/`, CC BY 4.0).
+
 The API still accepts `POST .../runs` and `POST .../comparisons` directly (the tests use
 them), but the UI has no manual path: without `CELL_LEDGER_ANTHROPIC_API_KEY` discovery
 answers 503, designs fail with that reason, and the home page says so.

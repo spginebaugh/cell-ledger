@@ -1,17 +1,18 @@
-import { Link } from "@tanstack/react-router";
-import { useEffect, useMemo, useState } from "react";
+import { Link, useNavigate } from "@tanstack/react-router";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import type { EnrichmentTerm } from "@/api/generated/types.gen";
 import { EnrichmentBars } from "@/components/charts/enrichment-bars";
 import { LibrarySizes } from "@/components/charts/library-sizes";
 import { PcaScatter } from "@/components/charts/pca";
 import { StripPlot } from "@/components/charts/strip-plot";
+import { GenePanel, type SelectedGene } from "@/components/gene/gene-panel";
 import { Page, TopBar } from "@/components/layout/top-bar";
 import { AnswerPanel, StatusBanner } from "@/components/run/answer-panel";
 import { DesignPanel } from "@/components/run/design-panel";
 import { Downloads, MarkdownFile } from "@/components/run/downloads";
 import { buildRows, SamplesTable } from "@/components/run/samples-table";
 import { LiveStepper, StepTimeline } from "@/components/run/steps";
-import { VolcanoPanel } from "@/components/run/volcano-panel";
+import { useVolcanoTable, VolcanoPanel } from "@/components/run/volcano-panel";
 import { Decisions } from "@/components/session/pipeline-view";
 import { Badge } from "@/components/ui/badge";
 import { Card, Details, ErrorBox, Section, Skeleton } from "@/components/ui/card";
@@ -29,6 +30,38 @@ export function RunPage() {
   const [term, setTerm] = useState<EnrichmentTerm | null>(null);
   const [focus, setFocus] = useState<string | null>(null);
 
+  // The open gene panel is addressed by ?gene=SYMBOL so a gene can be linked to. The GeneID
+  // is kept alongside when the selection came from a click; a linked symbol is resolved.
+  const { gene: geneParam } = runRoute.useSearch();
+  const navigate = useNavigate({ from: runRoute.fullPath });
+  const [selectedEntrez, setSelectedEntrez] = useState<{ symbol: string; entrez: string } | null>(
+    null,
+  );
+  const selected: SelectedGene | null = useMemo(
+    () =>
+      geneParam
+        ? {
+            symbol: geneParam,
+            entrez:
+              selectedEntrez?.symbol.toUpperCase() === geneParam.toUpperCase()
+                ? selectedEntrez.entrez
+                : null,
+          }
+        : null,
+    [geneParam, selectedEntrez],
+  );
+  const selectGene = useCallback(
+    (symbol: string | null, entrez?: string) => {
+      setSelectedEntrez(symbol && entrez ? { symbol, entrez } : null);
+      navigate({
+        search: (prev) => ({ ...prev, gene: symbol ?? undefined }),
+        replace: true,
+        resetScroll: false,
+      });
+    },
+    [navigate],
+  );
+
   useEffect(() => {
     document.title = `${gse} ${contrast.replaceAll("_", " ")} · cell-ledger`;
   }, [gse, contrast]);
@@ -39,6 +72,22 @@ export function RunPage() {
   const datasets = useDatasets(sessionId, session.isSuccess);
   const proposal = datasets.data?.find((d) => d.gse === gse)?.proposal ?? null;
   const urls = view?.urls ?? {};
+
+  // Shared with VolcanoPanel through the query cache; used to resolve a partner symbol to
+  // its GeneID when the panel asks to jump to it.
+  const volcano = useVolcanoTable(urls["volcano.json.gz"]);
+  const geneIdBySymbol = useMemo(() => {
+    const m = new Map<string, string>();
+    volcano.data?.symbol.forEach((s, i) => {
+      if (s) m.set(s.toUpperCase(), volcano.data?.geneId[i] ?? "");
+    });
+    return m;
+  }, [volcano.data]);
+  const canPick = useCallback((s: string) => geneIdBySymbol.has(s.toUpperCase()), [geneIdBySymbol]);
+  const pick = useCallback(
+    (s: string) => selectGene(s, geneIdBySymbol.get(s.toUpperCase())),
+    [selectGene, geneIdBySymbol],
+  );
 
   const sampleRows = useMemo(() => {
     if (!report || !design) return [];
@@ -75,6 +124,13 @@ export function RunPage() {
   return (
     <>
       <TopBar sessionId={sessionId} />
+      <GenePanel
+        gene={selected}
+        onClose={() => selectGene(null)}
+        onPick={pick}
+        canPick={canPick}
+        themeKey={resolved}
+      />
       <Page>
         <nav className="text-[13px] text-ink-2">
           <Link to="/s/$sessionId" params={{ sessionId }} className="hover:underline">
@@ -231,7 +287,7 @@ export function RunPage() {
                     {report.de && (
                       <Section
                         title="Differential expression"
-                        description={`${fmtInt(report.de.summary.n_sig)} genes at padj < ${report.de.summary.alpha}: ${fmtInt(report.de.summary.n_up)} higher in case, ${fmtInt(report.de.summary.n_down)} higher in control. Move the thresholds to see how the counts respond.`}
+                        description={`${fmtInt(report.de.summary.n_sig)} genes at padj < ${report.de.summary.alpha}: ${fmtInt(report.de.summary.n_up)} higher in case, ${fmtInt(report.de.summary.n_down)} higher in control. Move the thresholds to see how the counts respond; click a point to open its gene.`}
                       >
                         <div className="grid gap-6 xl:grid-cols-[3fr_2fr]">
                           <Card className="p-4">
@@ -242,6 +298,8 @@ export function RunPage() {
                               term={term}
                               focus={focus}
                               onFocus={focusGene}
+                              selected={selected?.symbol ?? null}
+                              onSelect={(symbol, geneId) => selectGene(symbol, geneId)}
                               themeKey={resolved}
                             />
                           </Card>
