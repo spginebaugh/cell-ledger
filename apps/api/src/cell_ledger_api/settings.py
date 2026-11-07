@@ -41,6 +41,10 @@ class Settings(BaseSettings):
     anthropic_api_key: SecretStr | None = None
     anthropic_model: str = "claude-opus-5-5"
     anthropic_effort: str = "medium"
+    # The design step (label samples, choose the contrast) can run on a faster model than
+    # discovery. Unset -> the same model and effort as discovery.
+    design_model: str | None = None
+    design_effort: str | None = None
 
     # Exa semantic search over GEO pages; every hit is re-verified against GEO.
     exa_api_key: SecretStr | None = Field(
