@@ -1,4 +1,4 @@
-from typing import Annotated
+from typing import Annotated, Any
 
 from fastapi import APIRouter, HTTPException, Path, Request
 from pydantic import BaseModel, Field
@@ -12,6 +12,9 @@ Gse = Annotated[str, Path(pattern=r"^GSE\d+$")]
 # Relative paths inside a dataset or run folder, e.g. "dataset.json" or "figures/pca.png".
 FileName = Annotated[str, Path(pattern=r"^[A-Za-z0-9._-]+(/[A-Za-z0-9._-]+)*$")]
 SIGNED_URL_TTL = 600
+# Links handed out with a run or comparison view live as long as the session's files do, so a
+# page the browser cached never holds a URL that expired before its object was deleted.
+VIEW_URL_TTL = 24 * 3600
 
 
 class CollectRequest(BaseModel):
@@ -21,6 +24,13 @@ class CollectRequest(BaseModel):
 class FileUrl(BaseModel):
     url: str
     expires_in: int
+
+
+class SessionUpdate(BaseModel):
+    question: str | None = Field(default=None, max_length=4000)
+    state: dict[str, Any] | None = Field(
+        default=None, description="replaces the stored UI state wholesale when given"
+    )
 
 
 def service(request: Request) -> SessionService:
@@ -42,6 +52,14 @@ async def create_session(request: Request) -> SessionInfo:
 @router.get("/{session_id}", operation_id="getSession")
 async def get_session(session_id: SessionId, request: Request) -> SessionInfo:
     return await service(request).get(session_id)
+
+
+@router.patch("/{session_id}", operation_id="updateSession")
+async def update_session(
+    session_id: SessionId, body: SessionUpdate, request: Request
+) -> SessionInfo:
+    """Record the user's question and the UI's working state so a reload restores them."""
+    return await service(request).update(session_id, question=body.question, state=body.state)
 
 
 @router.post("/{session_id}/datasets", operation_id="collectDatasets", status_code=202)

@@ -1,6 +1,6 @@
+import gzip
 import json
 
-import anndata as ad
 import pandas as pd
 import pytest
 
@@ -40,7 +40,7 @@ def test_pipeline_end_to_end(synthetic, synthetic_files, tmp_path):
         "de_results.tsv",
         "normalized_counts.tsv",
         "gene_lookup.csv",
-        "dataset.h5ad",
+        "volcano.json.gz",
         "report.json",
         "report.md",
     ):
@@ -49,9 +49,23 @@ def test_pipeline_end_to_end(synthetic, synthetic_files, tmp_path):
         assert (out / report.figures[fig]).exists(), fig
     loaded = AnalysisReport.model_validate_json((out / "report.json").read_text())
     assert loaded.de is not None and loaded.de.summary.n_sig == report.de.summary.n_sig
-    adata = ad.read_h5ad(out / "dataset.h5ad")
-    assert set(adata.layers) >= {"counts", "normed_counts", "log2_normed"}
-    assert json.loads(adata.uns["report"])["gse"] == "GSE1"
+    # The browser-side DE table: column-major, one entry per tested gene, nulls kept.
+    with gzip.open(out / "volcano.json.gz", "rt") as f:
+        volcano = json.load(f)
+    assert volcano["n"] == report.de.summary.n_genes_tested == len(volcano["gene_id"])
+    assert volcano["alpha"] == params.alpha and set(volcano["columns"]) == {
+        "gene_id",
+        "symbol",
+        "base_mean",
+        "log2fc",
+        "padj",
+    }
+    assert "G10" in volcano["symbol"]
+    assert min(p for p in volcano["padj"] if p is not None) > 0  # tiny padj must not round to 0
+    # Per-sample values for the looked-up genes (queries and markers), keyed by GSM.
+    assert {e.symbol for e in report.gene_expression} == {"G10", "G60"}
+    g10 = next(e for e in report.gene_expression if e.symbol == "G10")
+    assert set(g10.values) == set(synthetic.contrast.gsms) - {"GSM42"}
     md = render_markdown(report)
     assert "Differential expression" in md and "G10" in md
     assert {s.name for s in report.steps} >= {
@@ -60,15 +74,12 @@ def test_pipeline_end_to_end(synthetic, synthetic_files, tmp_path):
         "filter_genes",
         "deseq2",
         "gene_lookup",
-        "write_h5ad",
     }
-    # samples.csv and h5ad obs carry the same QC columns
-    obs = adata.obs
-    assert isinstance(obs, pd.DataFrame)
-    assert {"library_size", "qc_flags", "pc1"} <= set(obs.columns)
-    assert "X_pca" in adata.obsm
+    # samples.csv carries the QC columns next to the harmonized labels
     csv = pd.read_csv(out / "samples.csv", index_col=0)
-    assert list(csv["library_size"]) == list(obs["library_size"])
+    assert {"library_size", "qc_flags", "pc1", "evidence"} <= set(csv.columns)
+    assert report.qc is not None
+    assert sorted(csv["library_size"]) == sorted(s.library_size for s in report.qc.samples)
     assert report.de.summary.pairing == "none"  # the synthetic contrast sets no blocking
     assert report.qualifications == []
 

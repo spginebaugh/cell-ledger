@@ -22,14 +22,15 @@ import logging
 import shutil
 import sys
 from collections.abc import Sequence
-from datetime import datetime
+from datetime import UTC, datetime
 from pathlib import Path
-from typing import Any, Literal
+from typing import IO, Any, Literal
 
 import asyncpg
 import httpx
 from pydantic import BaseModel, Field
 
+from cell_ledger.progress import parse_progress_line
 from cell_ledger.report.models import AnalysisReport, MarkerExpectation
 from cell_ledger.samplesheet import Contrast, SampleSheet
 from cell_ledger_api.sessions import SessionService, upload_dir
@@ -51,6 +52,57 @@ class RunRequest(BaseModel):
 
 
 RunState = Literal["running", "complete", "qc_only", "blocked", "failed"]
+StepState = Literal["running", "done"]
+
+
+class StepProgress(BaseModel):
+    name: str
+    status: StepState
+    started_at: datetime
+    seconds: float | None = None
+
+
+class RunProgress(BaseModel):
+    """Live view of a running contrast, rebuilt from the pipeline's progress lines."""
+
+    started_at: datetime
+    updated_at: datetime
+    current: str | None = Field(default=None, description="step in progress, if any")
+    steps: list[StepProgress] = Field(default_factory=list)
+    queued: bool = Field(
+        default=True, description="true until the pipeline has started this contrast"
+    )
+
+    def apply(self, event: dict[str, Any]) -> None:
+        at = _when(event.get("at"))
+        self.updated_at = at
+        kind, status = event.get("event"), event.get("status")
+        if kind == "run" and status == "started":
+            self.queued = False
+        elif kind == "step":
+            name = str(event.get("name", ""))
+            if status == "started":
+                self.queued = False
+                self.current = name
+                self.steps.append(StepProgress(name=name, status="running", started_at=at))
+            elif status == "finished":
+                for st in reversed(self.steps):
+                    if st.name == name and st.status == "running":
+                        st.status, st.seconds = "done", event.get("seconds")
+                        break
+                if self.current == name:
+                    self.current = None
+        elif kind == "run" and status == "finished":
+            self.current = None
+
+
+def _when(value: Any) -> datetime:
+    if isinstance(value, str):
+        try:
+            return datetime.fromisoformat(value)
+        except ValueError:
+            pass
+    return datetime.now(UTC)
 
 
 class RunStatus(BaseModel):
@@ -61,9 +113,26 @@ class RunStatus(BaseModel):
     finished_at: datetime | None = None
     error: str | None = Field(default=None, description="pipeline error or why the run failed")
     report: AnalysisReport | None = None
+    progress: RunProgress | None = Field(
+        default=None, description="step-by-step progress while running; null otherwise"
+    )
     uploaded: bool = False
     upload_error: str | None = None
     files: list[str] = Field(default_factory=list, description="names available for signed URLs")
+
+
+class RunView(RunStatus):
+    """Everything the run page needs in one response."""
+
+    design: RunRequest | None = Field(default=None, description="what was submitted")
+    urls: dict[str, str] = Field(
+        default_factory=dict, description="file name -> signed download URL"
+    )
+    urls_expire_in: int = 0
+
+
+class RunNotFound(LookupError):
+    pass
 
 
 class RunConflict(RuntimeError):
@@ -91,6 +160,11 @@ def run_status(row: asyncpg.Record) -> RunStatus:
             st.report = AnalysisReport.model_validate(row["report"])
         except ValueError as e:
             st.status, st.error = "failed", f"unreadable report: {e}"
+    if row["progress"] and st.status == "running":
+        try:
+            st.progress = RunProgress.model_validate(row["progress"])
+        except ValueError:
+            st.progress = None
     return st
 
 
@@ -153,6 +227,7 @@ class RunService:
             argv.append("--no-figures")
         if self._n_cpus:
             argv += ["--n-cpus", str(self._n_cpus)]
+        argv.append("--progress")
         return argv
 
     async def _run(self, session_id: str, gse: str, counts: Path, req: RunRequest) -> None:
@@ -162,13 +237,19 @@ class RunService:
             shutil.rmtree(out / c.name, ignore_errors=True)
         (out / "design.json").write_text(req.model_dump_json(indent=2))
         error: str | None = None
+        now = datetime.now(UTC)
+        progress = {
+            c.name: RunProgress(started_at=now, updated_at=now, queued=True) for c in req.contrasts
+        }
         async with self._sem:
             with (out / "run.log").open("ab") as logf:
                 proc = await asyncio.create_subprocess_exec(
                     *self._argv(gse, out, counts, req),
-                    stdout=logf,
+                    stdout=asyncio.subprocess.PIPE,
                     stderr=asyncio.subprocess.STDOUT,
                 )
+                assert proc.stdout is not None
+                tail = asyncio.create_task(self._tail(proc.stdout, logf, session_id, gse, progress))
                 try:
                     rc = await asyncio.wait_for(proc.wait(), timeout=self._timeout)
                 except TimeoutError:
@@ -178,9 +259,36 @@ class RunService:
                 else:
                     if rc not in (0, 1):  # 1 = ran but not 'complete'; the report says why
                         error = f"pipeline exited with code {rc}; see run.log"
+                await tail
         for contrast in req.contrasts:
             await self._finish_contrast(session_id, gse, out / contrast.name, error)
         await self._db.finish_run(session_id, gse, error)
+
+    async def _tail(
+        self,
+        stream: asyncio.StreamReader,
+        logf: IO[bytes],
+        session_id: str,
+        gse: str,
+        progress: dict[str, RunProgress],
+    ) -> None:
+        """Copy the subprocess output to run.log and turn progress lines into row updates."""
+        async for raw in stream:
+            logf.write(raw)
+            logf.flush()
+            event = parse_progress_line(raw)
+            if event is None:
+                continue
+            name = event.get("contrast")
+            if name not in progress:
+                continue
+            progress[name].apply(event)
+            try:
+                await self._db.update_progress(
+                    session_id, gse, name, progress[name].model_dump(mode="json")
+                )
+            except Exception:  # progress is advisory; never let it stop the run
+                log.exception("could not store progress for %s/%s/%s", session_id, gse, name)
 
     async def _finish_contrast(
         self, session_id: str, gse: str, cdir: Path, run_error: str | None
@@ -221,6 +329,26 @@ class RunService:
     async def statuses(self, session_id: str) -> list[RunStatus]:
         await self._sessions.get(session_id)
         return [run_status(r) for r in await self._db.list_run_contrasts(session_id)]
+
+    async def view(self, session_id: str, gse: str, contrast: str, *, url_ttl: int) -> RunView:
+        """One contrast with its design and signed URLs for every stored file."""
+        await self._sessions.get(session_id)
+        row = await self._db.get_run_contrast(session_id, gse, contrast)
+        if row is None:
+            raise RunNotFound(f"{gse}/{contrast}")
+        status = run_status(row)
+        urls = await self._sessions.file_urls(
+            session_id, f"runs/{gse}/{contrast}", status.files, url_ttl
+        )
+        design = None
+        if row["design"]:
+            try:
+                design = RunRequest.model_validate(row["design"])
+            except ValueError:
+                design = None
+        return RunView(
+            **status.model_dump(), design=design, urls=urls, urls_expire_in=url_ttl if urls else 0
+        )
 
     # ---------------------------------------------------------- recovery
 

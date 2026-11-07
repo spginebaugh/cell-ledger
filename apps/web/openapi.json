@@ -216,6 +216,58 @@
           }
         }
       },
+      "patch": {
+        "tags": [
+          "sessions"
+        ],
+        "summary": "Update Session",
+        "description": "Record the user's question and the UI's working state so a reload restores them.",
+        "operationId": "updateSession",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{32}$",
+              "title": "Session Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SessionUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionInfo"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
       "delete": {
         "tags": [
           "sessions"
@@ -522,6 +574,70 @@
         }
       }
     },
+    "/api/sessions/{session_id}/runs/{gse}/{contrast}": {
+      "get": {
+        "tags": [
+          "runs"
+        ],
+        "summary": "Get Run",
+        "description": "The run page in one call: status, progress, report, the submitted design and a\nsigned URL for every stored file (valid for the life of the session).",
+        "operationId": "getRun",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{32}$",
+              "title": "Session Id"
+            }
+          },
+          {
+            "name": "gse",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^GSE\\d+$",
+              "title": "Gse"
+            }
+          },
+          {
+            "name": "contrast",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9._-]+$",
+              "title": "Contrast"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RunView"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/sessions/{session_id}/runs/{gse}/{contrast}/files/{name}": {
       "get": {
         "tags": [
@@ -595,10 +711,495 @@
           }
         }
       }
+    },
+    "/api/sessions/{session_id}/comparisons": {
+      "post": {
+        "tags": [
+          "comparisons"
+        ],
+        "summary": "Start Comparison",
+        "description": "Compare finished runs in this session in the background.\n\nEvery member must be a run of this session that is no longer running; the comparison\nitself decides which members it can pool and records the rest as excluded. Poll\n``listComparisons`` or ``getComparison`` until the status leaves ``running``.",
+        "operationId": "startComparison",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{32}$",
+              "title": "Session Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompareRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComparisonStatus"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "comparisons"
+        ],
+        "summary": "List Comparisons",
+        "operationId": "listComparisons",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{32}$",
+              "title": "Session Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ComparisonStatus"
+                  },
+                  "title": "Response Listcomparisons"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/sessions/{session_id}/comparisons/{name}": {
+      "get": {
+        "tags": [
+          "comparisons"
+        ],
+        "summary": "Get Comparison",
+        "description": "The comparison page in one call: status, report and signed URLs for its files.",
+        "operationId": "getComparison",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{32}$",
+              "title": "Session Id"
+            }
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(_[a-z0-9]+)*$",
+              "title": "Name"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComparisonView"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/sessions/{session_id}/comparisons/{name}/files/{file}": {
+      "get": {
+        "tags": [
+          "comparisons"
+        ],
+        "summary": "Get Comparison File Url",
+        "operationId": "getComparisonFileUrl",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{32}$",
+              "title": "Session Id"
+            }
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(_[a-z0-9]+)*$",
+              "title": "Name"
+            }
+          },
+          {
+            "name": "file",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9._-]+(/[A-Za-z0-9._-]+)*$",
+              "title": "File"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileUrl"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/sessions/{session_id}/discover": {
+      "post": {
+        "tags": [
+          "agent"
+        ],
+        "summary": "Discover",
+        "description": "Stream Claude's search for datasets that answer the question (Server-Sent Events).\n\nEvents: ``thinking`` (delta), ``tool`` (name, input, summary), ``result`` (a\n``DiscoveryResult``), ``error`` (message), ``done``. The question is recorded on the\nsession.",
+        "operationId": "discoverDatasets",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{32}$",
+              "title": "Session Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DiscoverRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/sessions/{session_id}/datasets/{gse}/design": {
+      "post": {
+        "tags": [
+          "agent"
+        ],
+        "summary": "Design",
+        "description": "Stream Claude's sample labelling and contrast proposal for one collected dataset.\n\nEvents as for ``discoverDatasets``; the ``result`` is a ``DesignProposal`` whose design\ncarries ``status: proposed`` contrasts. Confirm them (set ``status: confirmed``) and\nsubmit the design to ``startRun``.",
+        "operationId": "designContrast",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{32}$",
+              "title": "Session Id"
+            }
+          },
+          {
+            "name": "gse",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^GSE\\d+$",
+              "title": "Gse"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DesignRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/agent/types": {
+      "get": {
+        "tags": [
+          "agent"
+        ],
+        "summary": "Get Agent Types",
+        "description": "Whether Claude is configured, plus the schemas of the streamed payloads.",
+        "operationId": "getAgentTypes",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentTypes"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "AgentEvent": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "thinking",
+              "tool",
+              "result",
+              "error",
+              "done"
+            ],
+            "title": "Type"
+          },
+          "delta": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Delta",
+            "description": "thinking: text to append"
+          },
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name",
+            "description": "tool: which tool ran"
+          },
+          "input": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Input",
+            "description": "tool: its arguments"
+          },
+          "summary": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Summary",
+            "description": "tool: one line for the UI"
+          },
+          "data": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Data",
+            "description": "result: the payload"
+          },
+          "message": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Message",
+            "description": "error: what went wrong"
+          }
+        },
+        "type": "object",
+        "required": [
+          "type"
+        ],
+        "title": "AgentEvent",
+        "description": "One Server-Sent Event from ``discoverDatasets`` or ``designContrast``."
+      },
+      "AgentTypes": {
+        "properties": {
+          "event": {
+            "$ref": "#/components/schemas/AgentEvent"
+          },
+          "discovery": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DiscoveryResult"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "design": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DesignProposal"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "available": {
+            "type": "boolean",
+            "title": "Available"
+          }
+        },
+        "type": "object",
+        "required": [
+          "event",
+          "available"
+        ],
+        "title": "AgentTypes",
+        "description": "Never returned with content; exists so the streamed payloads appear in the OpenAPI\nschema and the generated client has types for them."
+      },
       "AnalysisReport": {
         "properties": {
           "gse": {
@@ -745,6 +1346,14 @@
             "type": "array",
             "title": "Gene Lookup"
           },
+          "gene_expression": {
+            "items": {
+              "$ref": "#/components/schemas/GeneExpression"
+            },
+            "type": "array",
+            "title": "Gene Expression",
+            "description": "per-sample values for the looked-up genes (only when DE ran)"
+          },
           "markers": {
             "anyOf": [
               {
@@ -796,6 +1405,55 @@
         ],
         "title": "Assay"
       },
+      "Candidate": {
+        "properties": {
+          "gse": {
+            "type": "string",
+            "pattern": "^GSE\\d+$",
+            "title": "Gse"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "n_samples": {
+            "type": "integer",
+            "title": "N Samples"
+          },
+          "why": {
+            "type": "string",
+            "title": "Why",
+            "description": "why this series can answer the question"
+          },
+          "case_hint": {
+            "type": "string",
+            "title": "Case Hint",
+            "description": "which samples would be the case arm"
+          },
+          "control_hint": {
+            "type": "string",
+            "title": "Control Hint",
+            "description": "which samples would be the control arm"
+          },
+          "concerns": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Concerns"
+          }
+        },
+        "type": "object",
+        "required": [
+          "gse",
+          "title",
+          "n_samples",
+          "why",
+          "case_hint",
+          "control_hint"
+        ],
+        "title": "Candidate"
+      },
       "CollectRequest": {
         "properties": {
           "gses": {
@@ -813,6 +1471,563 @@
           "gses"
         ],
         "title": "CollectRequest"
+      },
+      "CompareRequest": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(_[a-z0-9]+)*$",
+            "title": "Name",
+            "description": "slug"
+          },
+          "question": {
+            "type": "string",
+            "maxLength": 1000,
+            "minLength": 1,
+            "title": "Question"
+          },
+          "case_label": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Case Label"
+          },
+          "control_label": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Control Label"
+          },
+          "members": {
+            "items": {
+              "$ref": "#/components/schemas/QuerySetMember"
+            },
+            "type": "array",
+            "minItems": 2,
+            "title": "Members"
+          },
+          "genes_of_interest": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Genes Of Interest"
+          },
+          "markers": {
+            "items": {
+              "$ref": "#/components/schemas/MarkerExpectation"
+            },
+            "type": "array",
+            "title": "Markers"
+          },
+          "alpha": {
+            "type": "number",
+            "exclusiveMaximum": 1.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Alpha",
+            "default": 0.05
+          },
+          "min_studies": {
+            "type": "integer",
+            "minimum": 2.0,
+            "title": "Min Studies",
+            "default": 3
+          },
+          "permutations": {
+            "type": "integer",
+            "maximum": 10000.0,
+            "minimum": 10.0,
+            "title": "Permutations",
+            "default": 1000
+          },
+          "pooled_enrichment": {
+            "type": "boolean",
+            "title": "Pooled Enrichment",
+            "default": true
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "question",
+          "case_label",
+          "control_label",
+          "members"
+        ],
+        "title": "CompareRequest",
+        "description": "A QuerySet over runs in this session, plus the few parameters a user may set."
+      },
+      "ComparisonReport": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "question": {
+            "type": "string",
+            "title": "Question"
+          },
+          "case_label": {
+            "type": "string",
+            "title": "Case Label"
+          },
+          "control_label": {
+            "type": "string",
+            "title": "Control Label"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "complete",
+              "insufficient",
+              "failed"
+            ],
+            "title": "Status"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "versions": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Versions"
+          },
+          "params": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Params"
+          },
+          "effective_min_studies": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Effective Min Studies",
+            "description": "min_studies actually applied (lowered when few datasets)"
+          },
+          "members": {
+            "items": {
+              "$ref": "#/components/schemas/Member"
+            },
+            "type": "array",
+            "title": "Members"
+          },
+          "excluded": {
+            "items": {
+              "$ref": "#/components/schemas/Exclusion"
+            },
+            "type": "array",
+            "title": "Excluded"
+          },
+          "questions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Questions",
+            "description": "what a person must decide before trusting the pool"
+          },
+          "concordance": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Concordance"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "genes": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/GeneSynthesis"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "strata": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/GeneSynthesis"
+            },
+            "type": "object",
+            "title": "Strata"
+          },
+          "gene_lookup": {
+            "items": {
+              "$ref": "#/components/schemas/GeneLookupAcross"
+            },
+            "type": "array",
+            "title": "Gene Lookup"
+          },
+          "markers": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/MarkerAcrossScore"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "pathways": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PathwaySynthesis"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "pooled_enrichment": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/EnrichmentSummary"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "GSEA preranked on the pooled z over genes with a symbol"
+          },
+          "pooled_enrichment_coverage": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Pooled Enrichment Coverage"
+          },
+          "leave_one_out": {
+            "items": {
+              "$ref": "#/components/schemas/LeaveOneOut"
+            },
+            "type": "array",
+            "title": "Leave One Out"
+          },
+          "sensitivity": {
+            "items": {
+              "$ref": "#/components/schemas/Sensitivity"
+            },
+            "type": "array",
+            "title": "Sensitivity"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          },
+          "files": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Files"
+          },
+          "figures": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Figures"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "question",
+          "case_label",
+          "control_label",
+          "status",
+          "created_at",
+          "versions",
+          "params"
+        ],
+        "title": "ComparisonReport"
+      },
+      "ComparisonStatus": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "running",
+              "complete",
+              "insufficient",
+              "failed"
+            ],
+            "title": "Status"
+          },
+          "started_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Started At"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finished At"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          },
+          "request": {
+            "$ref": "#/components/schemas/CompareRequest"
+          },
+          "report": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ComparisonReport"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "uploaded": {
+            "type": "boolean",
+            "title": "Uploaded",
+            "default": false
+          },
+          "upload_error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Upload Error"
+          },
+          "files": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Files",
+            "description": "names available for signed URLs"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "status",
+          "started_at",
+          "request"
+        ],
+        "title": "ComparisonStatus"
+      },
+      "ComparisonView": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "running",
+              "complete",
+              "insufficient",
+              "failed"
+            ],
+            "title": "Status"
+          },
+          "started_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Started At"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finished At"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          },
+          "request": {
+            "$ref": "#/components/schemas/CompareRequest"
+          },
+          "report": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ComparisonReport"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "uploaded": {
+            "type": "boolean",
+            "title": "Uploaded",
+            "default": false
+          },
+          "upload_error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Upload Error"
+          },
+          "files": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Files",
+            "description": "names available for signed URLs"
+          },
+          "urls": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Urls",
+            "description": "file name -> signed URL"
+          },
+          "urls_expire_in": {
+            "type": "integer",
+            "title": "Urls Expire In",
+            "default": 0
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "status",
+          "started_at",
+          "request"
+        ],
+        "title": "ComparisonView"
+      },
+      "Concordance": {
+        "properties": {
+          "members": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Members"
+          },
+          "spearman": {
+            "items": {
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "type": "array"
+            },
+            "type": "array",
+            "title": "Spearman"
+          },
+          "n_shared": {
+            "items": {
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            "type": "array",
+            "title": "N Shared"
+          },
+          "mean_to_others": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": "object",
+            "title": "Mean To Others"
+          },
+          "groups": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Groups",
+            "description": "label -> group"
+          }
+        },
+        "type": "object",
+        "required": [
+          "members",
+          "spearman",
+          "n_shared",
+          "mean_to_others"
+        ],
+        "title": "Concordance",
+        "description": "Pairwise Spearman correlation of Wald statistics over genes tested in both runs.\n\n``mean_to_others`` is each run's mean against the other runs of its concordance\ngroup, leaving out runs flagged ``labels_reversed``."
       },
       "Contrast": {
         "properties": {
@@ -1277,6 +2492,166 @@
         ],
         "title": "DeSummary"
       },
+      "DesignProposal": {
+        "properties": {
+          "design": {
+            "$ref": "#/components/schemas/RunRequest"
+          },
+          "problems": {
+            "additionalProperties": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "type": "object",
+            "title": "Problems",
+            "description": "contrast name -> why it must not run as proposed"
+          },
+          "qualifications": {
+            "additionalProperties": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "type": "object",
+            "title": "Qualifications",
+            "description": "contrast name -> caveats that travel with a result"
+          },
+          "questions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Questions"
+          },
+          "notes": {
+            "type": "string",
+            "title": "Notes",
+            "default": ""
+          },
+          "validation_errors": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Validation Errors",
+            "description": "labels Claude could not back with evidence"
+          },
+          "attempts": {
+            "type": "integer",
+            "title": "Attempts",
+            "default": 1
+          }
+        },
+        "type": "object",
+        "required": [
+          "design"
+        ],
+        "title": "DesignProposal",
+        "description": "A run request the user has yet to confirm, with every reason to hesitate attached."
+      },
+      "DesignRequest": {
+        "properties": {
+          "question": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 3,
+            "title": "Question"
+          },
+          "answers": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Answers",
+            "description": "the user's answers to earlier clarifying questions"
+          },
+          "genes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Genes"
+          }
+        },
+        "type": "object",
+        "required": [
+          "question"
+        ],
+        "title": "DesignRequest"
+      },
+      "DiscoverRequest": {
+        "properties": {
+          "question": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 3,
+            "title": "Question"
+          }
+        },
+        "type": "object",
+        "required": [
+          "question"
+        ],
+        "title": "DiscoverRequest"
+      },
+      "DiscoveryResult": {
+        "properties": {
+          "interpretation": {
+            "type": "string",
+            "title": "Interpretation",
+            "description": "the question restated as a two-group comparison"
+          },
+          "genes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Genes",
+            "description": "gene symbols the question names"
+          },
+          "clarifying_questions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Clarifying Questions",
+            "description": "what must be decided before choosing datasets; empty when clear"
+          },
+          "candidates": {
+            "items": {
+              "$ref": "#/components/schemas/Candidate"
+            },
+            "type": "array",
+            "title": "Candidates"
+          },
+          "rejected": {
+            "items": {
+              "$ref": "#/components/schemas/Rejected"
+            },
+            "type": "array",
+            "title": "Rejected"
+          },
+          "queries_tried": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Queries Tried"
+          }
+        },
+        "type": "object",
+        "required": [
+          "interpretation"
+        ],
+        "title": "DiscoveryResult"
+      },
       "EnrichmentSummary": {
         "properties": {
           "library": {
@@ -1359,6 +2734,64 @@
         ],
         "title": "EnrichmentTerm"
       },
+      "Exclusion": {
+        "properties": {
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "gse": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Gse"
+          },
+          "contrast": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Contrast"
+          },
+          "run_dir": {
+            "type": "string",
+            "title": "Run Dir"
+          },
+          "reason": {
+            "type": "string",
+            "enum": [
+              "missing",
+              "unreadable",
+              "not_complete",
+              "no_de_table",
+              "qualified",
+              "shares_samples"
+            ],
+            "title": "Reason"
+          },
+          "detail": {
+            "type": "string",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "required": [
+          "label",
+          "run_dir",
+          "reason",
+          "detail"
+        ],
+        "title": "Exclusion"
+      },
       "FileRecord": {
         "properties": {
           "name": {
@@ -1438,6 +2871,219 @@
           "min_samples"
         ],
         "title": "FilterSummary"
+      },
+      "GeneExpression": {
+        "properties": {
+          "gene_id": {
+            "type": "string",
+            "title": "Gene Id"
+          },
+          "symbol": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Symbol"
+          },
+          "values": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Values",
+            "description": "GSM -> log2(normalized count + 1)"
+          }
+        },
+        "type": "object",
+        "required": [
+          "gene_id",
+          "symbol",
+          "values"
+        ],
+        "title": "GeneExpression",
+        "description": "Per-sample log2 normalized counts for one queried gene, for the UI's strip plot."
+      },
+      "GeneLeaveOneOut": {
+        "properties": {
+          "member": {
+            "type": "string",
+            "title": "Member"
+          },
+          "pooled_log2fc": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pooled Log2Fc"
+          },
+          "ci_low": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ci Low"
+          },
+          "ci_high": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ci High"
+          },
+          "pvalue": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pvalue"
+          },
+          "verdict": {
+            "type": "string",
+            "enum": [
+              "replicated_up",
+              "replicated_down",
+              "pooled_up",
+              "pooled_down",
+              "inconsistent",
+              "no_evidence",
+              "insufficient",
+              "not_found"
+            ],
+            "title": "Verdict"
+          },
+          "changed": {
+            "type": "boolean",
+            "title": "Changed",
+            "description": "verdict differs from the full-set verdict"
+          }
+        },
+        "type": "object",
+        "required": [
+          "member",
+          "verdict",
+          "changed"
+        ],
+        "title": "GeneLeaveOneOut",
+        "description": "The same gene pooled without one dataset."
+      },
+      "GeneLookupAcross": {
+        "properties": {
+          "query": {
+            "type": "string",
+            "title": "Query"
+          },
+          "gene_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Gene Id"
+          },
+          "symbol": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Symbol"
+          },
+          "verdict": {
+            "type": "string",
+            "enum": [
+              "replicated_up",
+              "replicated_down",
+              "pooled_up",
+              "pooled_down",
+              "inconsistent",
+              "no_evidence",
+              "insufficient",
+              "not_found"
+            ],
+            "title": "Verdict"
+          },
+          "detail": {
+            "type": "string",
+            "title": "Detail"
+          },
+          "meta": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/GeneMeta"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "per_member": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Per Member",
+            "description": "label -> up / down / no_evidence / not_tested"
+          },
+          "effects": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/MemberEffect"
+            },
+            "type": "object",
+            "title": "Effects",
+            "description": "label -> estimate, SE and padj in that dataset"
+          },
+          "leave_one_out": {
+            "items": {
+              "$ref": "#/components/schemas/GeneLeaveOneOut"
+            },
+            "type": "array",
+            "title": "Leave One Out"
+          },
+          "driven_by": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Driven By",
+            "description": "datasets whose removal changes the verdict"
+          }
+        },
+        "type": "object",
+        "required": [
+          "query",
+          "gene_id",
+          "symbol",
+          "verdict",
+          "detail"
+        ],
+        "title": "GeneLookupAcross",
+        "description": "The direct answer to 'is gene X higher in case than control' across datasets."
       },
       "GeneLookupRow": {
         "properties": {
@@ -1569,6 +3215,231 @@
         "title": "GeneLookupRow",
         "description": "The direct answer to 'is gene X higher in case than control' for one dataset."
       },
+      "GeneMeta": {
+        "properties": {
+          "gene_id": {
+            "type": "string",
+            "title": "Gene Id"
+          },
+          "symbol": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Symbol"
+          },
+          "n_tested": {
+            "type": "integer",
+            "title": "N Tested",
+            "description": "datasets with a valid estimate and SE (pooled)"
+          },
+          "n_with_padj": {
+            "type": "integer",
+            "title": "N With Padj",
+            "description": "of those, datasets where DESeq2 reported a padj"
+          },
+          "n_sig": {
+            "type": "integer",
+            "title": "N Sig"
+          },
+          "n_up_sig": {
+            "type": "integer",
+            "title": "N Up Sig"
+          },
+          "n_down_sig": {
+            "type": "integer",
+            "title": "N Down Sig"
+          },
+          "n_pos": {
+            "type": "integer",
+            "title": "N Pos"
+          },
+          "n_neg": {
+            "type": "integer",
+            "title": "N Neg"
+          },
+          "n_agree_pooled": {
+            "type": "integer",
+            "title": "N Agree Pooled",
+            "description": "datasets whose sign matches the pooled direction"
+          },
+          "replication": {
+            "type": "number",
+            "title": "Replication",
+            "description": "datasets significant in the pooled direction / n_tested"
+          },
+          "sign_consistency": {
+            "type": "number",
+            "title": "Sign Consistency",
+            "description": "n_agree_pooled / n_tested"
+          },
+          "majority_disagrees_pooled": {
+            "type": "boolean",
+            "title": "Majority Disagrees Pooled",
+            "description": "most datasets point the other way from the pooled estimate",
+            "default": false
+          },
+          "pooled_log2fc": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pooled Log2Fc"
+          },
+          "pooled_se": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pooled Se",
+            "description": "random-effects SE (normal)"
+          },
+          "se_ci": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Se Ci",
+            "description": "SE behind the interval and p-value"
+          },
+          "df": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Df"
+          },
+          "ci_low": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ci Low"
+          },
+          "ci_high": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ci High"
+          },
+          "z": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Z",
+            "description": "pooled / pooled_se, for ranking"
+          },
+          "pvalue": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pvalue"
+          },
+          "padj": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Padj"
+          },
+          "tau2": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tau2"
+          },
+          "i2": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "I2"
+          },
+          "stouffer_z": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Stouffer Z"
+          },
+          "robust": {
+            "type": "boolean",
+            "title": "Robust",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "gene_id",
+          "n_tested",
+          "n_with_padj",
+          "n_sig",
+          "n_up_sig",
+          "n_down_sig",
+          "n_pos",
+          "n_neg",
+          "n_agree_pooled",
+          "replication",
+          "sign_consistency"
+        ],
+        "title": "GeneMeta"
+      },
       "GeneRow": {
         "properties": {
           "gene_id": {
@@ -1647,6 +3518,113 @@
           "log2fc"
         ],
         "title": "GeneRow"
+      },
+      "GeneSynthesis": {
+        "properties": {
+          "members": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Members"
+          },
+          "min_studies": {
+            "type": "integer",
+            "title": "Min Studies"
+          },
+          "alpha": {
+            "type": "number",
+            "title": "Alpha"
+          },
+          "sign_consistency": {
+            "type": "number",
+            "title": "Sign Consistency"
+          },
+          "min_replication": {
+            "type": "number",
+            "title": "Min Replication"
+          },
+          "interval": {
+            "type": "string",
+            "enum": [
+              "hksj",
+              "normal"
+            ],
+            "title": "Interval"
+          },
+          "n_genes_union": {
+            "type": "integer",
+            "title": "N Genes Union"
+          },
+          "n_genes_pooled": {
+            "type": "integer",
+            "title": "N Genes Pooled"
+          },
+          "n_sig_pooled": {
+            "type": "integer",
+            "title": "N Sig Pooled"
+          },
+          "n_robust": {
+            "type": "integer",
+            "title": "N Robust"
+          },
+          "n_robust_up": {
+            "type": "integer",
+            "title": "N Robust Up"
+          },
+          "n_robust_down": {
+            "type": "integer",
+            "title": "N Robust Down"
+          },
+          "lfc_threshold": {
+            "type": "number",
+            "title": "Lfc Threshold",
+            "description": "top tables list robust genes with |pooled log2FC| >= this",
+            "default": 0.0
+          },
+          "n_robust_up_lfc": {
+            "type": "integer",
+            "title": "N Robust Up Lfc",
+            "default": 0
+          },
+          "n_robust_down_lfc": {
+            "type": "integer",
+            "title": "N Robust Down Lfc",
+            "default": 0
+          },
+          "top_up": {
+            "items": {
+              "$ref": "#/components/schemas/GeneMeta"
+            },
+            "type": "array",
+            "title": "Top Up"
+          },
+          "top_down": {
+            "items": {
+              "$ref": "#/components/schemas/GeneMeta"
+            },
+            "type": "array",
+            "title": "Top Down"
+          }
+        },
+        "type": "object",
+        "required": [
+          "members",
+          "min_studies",
+          "alpha",
+          "sign_consistency",
+          "min_replication",
+          "interval",
+          "n_genes_union",
+          "n_genes_pooled",
+          "n_sig_pooled",
+          "n_robust",
+          "n_robust_up",
+          "n_robust_down",
+          "top_up",
+          "top_down"
+        ],
+        "title": "GeneSynthesis"
       },
       "GeoSeriesHit": {
         "properties": {
@@ -1782,6 +3760,93 @@
         ],
         "title": "Health"
       },
+      "LeaveOneOut": {
+        "properties": {
+          "member": {
+            "type": "string",
+            "title": "Member"
+          },
+          "n_robust_without": {
+            "type": "integer",
+            "title": "N Robust Without"
+          },
+          "robust_retained": {
+            "type": "number",
+            "title": "Robust Retained",
+            "description": "share of robust genes still robust without it"
+          },
+          "spearman_pooled_z": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Spearman Pooled Z"
+          }
+        },
+        "type": "object",
+        "required": [
+          "member",
+          "n_robust_without",
+          "robust_retained"
+        ],
+        "title": "LeaveOneOut"
+      },
+      "MarkerAcross": {
+        "properties": {
+          "expected": {
+            "$ref": "#/components/schemas/MarkerExpectation"
+          },
+          "lookup": {
+            "$ref": "#/components/schemas/GeneLookupAcross"
+          },
+          "recovered": {
+            "type": "boolean",
+            "title": "Recovered"
+          }
+        },
+        "type": "object",
+        "required": [
+          "expected",
+          "lookup",
+          "recovered"
+        ],
+        "title": "MarkerAcross"
+      },
+      "MarkerAcrossScore": {
+        "properties": {
+          "n_expected": {
+            "type": "integer",
+            "title": "N Expected"
+          },
+          "n_recovered": {
+            "type": "integer",
+            "title": "N Recovered"
+          },
+          "fraction_recovered": {
+            "type": "number",
+            "title": "Fraction Recovered"
+          },
+          "results": {
+            "items": {
+              "$ref": "#/components/schemas/MarkerAcross"
+            },
+            "type": "array",
+            "title": "Results"
+          }
+        },
+        "type": "object",
+        "required": [
+          "n_expected",
+          "n_recovered",
+          "fraction_recovered",
+          "results"
+        ],
+        "title": "MarkerAcrossScore"
+      },
       "MarkerExpectation": {
         "properties": {
           "symbol": {
@@ -1876,6 +3941,383 @@
         ],
         "title": "MarkerScore"
       },
+      "Member": {
+        "properties": {
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "gse": {
+            "type": "string",
+            "title": "Gse"
+          },
+          "contrast": {
+            "type": "string",
+            "title": "Contrast"
+          },
+          "run_dir": {
+            "type": "string",
+            "title": "Run Dir"
+          },
+          "stratum": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Stratum"
+          },
+          "concordance_group": {
+            "type": "string",
+            "title": "Concordance Group",
+            "description": "runs are judged against the others in this group",
+            "default": "all"
+          },
+          "tier": {
+            "type": "string",
+            "enum": [
+              "clean",
+              "qualified"
+            ],
+            "title": "Tier"
+          },
+          "pooled": {
+            "type": "boolean",
+            "title": "Pooled",
+            "description": "contributes to the default pooled estimate"
+          },
+          "flags": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "labels_reversed",
+                "low_concordance",
+                "concordance_unassessed"
+              ]
+            },
+            "type": "array",
+            "title": "Flags"
+          },
+          "case_label": {
+            "type": "string",
+            "title": "Case Label"
+          },
+          "control_label": {
+            "type": "string",
+            "title": "Control Label"
+          },
+          "n_case": {
+            "type": "integer",
+            "title": "N Case"
+          },
+          "n_control": {
+            "type": "integer",
+            "title": "N Control"
+          },
+          "n_samples_fitted": {
+            "type": "integer",
+            "title": "N Samples Fitted"
+          },
+          "design": {
+            "type": "string",
+            "title": "Design"
+          },
+          "pairing": {
+            "type": "string",
+            "title": "Pairing"
+          },
+          "collapsed_samples": {
+            "type": "integer",
+            "title": "Collapsed Samples",
+            "default": 0
+          },
+          "median_library_size": {
+            "type": "number",
+            "title": "Median Library Size"
+          },
+          "n_genes_tested": {
+            "type": "integer",
+            "title": "N Genes Tested"
+          },
+          "n_sig": {
+            "type": "integer",
+            "title": "N Sig"
+          },
+          "qc_flags": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Qc Flags"
+          },
+          "qualifications": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Qualifications"
+          },
+          "context": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Context"
+          },
+          "mean_concordance": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mean Concordance"
+          },
+          "weight_share": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Weight Share",
+            "description": "mean random-effects weight share over pooled genes"
+          },
+          "unshrunk_se_source": {
+            "type": "string",
+            "enum": [
+              "stored",
+              "reconstructed"
+            ],
+            "title": "Unshrunk Se Source",
+            "default": "stored"
+          },
+          "fingerprint": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fingerprint"
+          },
+          "created_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Created At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "label",
+          "gse",
+          "contrast",
+          "run_dir",
+          "tier",
+          "pooled",
+          "case_label",
+          "control_label",
+          "n_case",
+          "n_control",
+          "n_samples_fitted",
+          "design",
+          "pairing",
+          "median_library_size",
+          "n_genes_tested",
+          "n_sig"
+        ],
+        "title": "Member",
+        "description": "One run that passed the hard gate, as the ledger shows it."
+      },
+      "MemberEffect": {
+        "properties": {
+          "log2fc": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Log2Fc",
+            "description": "unshrunk log2FC"
+          },
+          "se": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Se"
+          },
+          "padj": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Padj"
+          },
+          "n_samples": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "N Samples"
+          }
+        },
+        "type": "object",
+        "title": "MemberEffect",
+        "description": "One dataset's estimate for one gene, as the forest plot draws it."
+      },
+      "PathwayMeta": {
+        "properties": {
+          "term": {
+            "type": "string",
+            "title": "Term"
+          },
+          "n_members": {
+            "type": "integer",
+            "title": "N Members"
+          },
+          "mean_nes": {
+            "type": "number",
+            "title": "Mean Nes"
+          },
+          "n_pos": {
+            "type": "integer",
+            "title": "N Pos"
+          },
+          "n_neg": {
+            "type": "integer",
+            "title": "N Neg"
+          },
+          "n_sig_fdr": {
+            "type": "integer",
+            "title": "N Sig Fdr"
+          },
+          "consistency": {
+            "type": "number",
+            "title": "Consistency",
+            "description": "max(n_pos, n_neg) / n_members"
+          },
+          "nes": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Nes"
+          },
+          "fdr": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Fdr"
+          }
+        },
+        "type": "object",
+        "required": [
+          "term",
+          "n_members",
+          "mean_nes",
+          "n_pos",
+          "n_neg",
+          "n_sig_fdr",
+          "consistency"
+        ],
+        "title": "PathwayMeta"
+      },
+      "PathwaySynthesis": {
+        "properties": {
+          "library": {
+            "type": "string",
+            "title": "Library"
+          },
+          "gene_sets_md5": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Gene Sets Md5"
+          },
+          "members": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Members"
+          },
+          "left_out": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Left Out",
+            "description": "label -> why its enrichment was not merged"
+          },
+          "fdr_threshold": {
+            "type": "number",
+            "title": "Fdr Threshold"
+          },
+          "n_terms": {
+            "type": "integer",
+            "title": "N Terms"
+          },
+          "n_consistent": {
+            "type": "integer",
+            "title": "N Consistent",
+            "description": "terms with the same sign in every member"
+          },
+          "terms": {
+            "items": {
+              "$ref": "#/components/schemas/PathwayMeta"
+            },
+            "type": "array",
+            "title": "Terms"
+          }
+        },
+        "type": "object",
+        "required": [
+          "library",
+          "fdr_threshold",
+          "n_terms",
+          "n_consistent",
+          "terms"
+        ],
+        "title": "PathwaySynthesis"
+      },
       "PcaSummary": {
         "properties": {
           "n_genes_used": {
@@ -1961,6 +4403,39 @@
           "median_library_size"
         ],
         "title": "QcResult"
+      },
+      "QuerySetMember": {
+        "properties": {
+          "gse": {
+            "type": "string",
+            "pattern": "^GSE\\d+$",
+            "title": "Gse"
+          },
+          "contrast": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(_[a-z0-9]+)*$",
+            "title": "Contrast"
+          },
+          "stratum": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[a-z0-9]+(_[a-z0-9]+)*$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Stratum",
+            "description": "sub-question this run answers (e.g. lesional_vs_healthy); runs are pooled overall and per stratum, and concordance is judged within a stratum"
+          }
+        },
+        "type": "object",
+        "required": [
+          "gse",
+          "contrast"
+        ],
+        "title": "QuerySetMember"
       },
       "QueryStats": {
         "properties": {
@@ -2070,6 +4545,70 @@
         "title": "Reconciliation",
         "description": "How the counts matrix columns lined up with the sample sheet and contrast."
       },
+      "Rejected": {
+        "properties": {
+          "gse": {
+            "type": "string",
+            "title": "Gse"
+          },
+          "why": {
+            "type": "string",
+            "title": "Why"
+          }
+        },
+        "type": "object",
+        "required": [
+          "gse",
+          "why"
+        ],
+        "title": "Rejected"
+      },
+      "RunProgress": {
+        "properties": {
+          "started_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Started At"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Updated At"
+          },
+          "current": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Current",
+            "description": "step in progress, if any"
+          },
+          "steps": {
+            "items": {
+              "$ref": "#/components/schemas/StepProgress"
+            },
+            "type": "array",
+            "title": "Steps"
+          },
+          "queued": {
+            "type": "boolean",
+            "title": "Queued",
+            "description": "true until the pipeline has started this contrast",
+            "default": true
+          }
+        },
+        "type": "object",
+        "required": [
+          "started_at",
+          "updated_at"
+        ],
+        "title": "RunProgress",
+        "description": "Live view of a running contrast, rebuilt from the pipeline's progress lines."
+      },
       "RunRequest": {
         "properties": {
           "samplesheet": {
@@ -2177,6 +4716,17 @@
               }
             ]
           },
+          "progress": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/RunProgress"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "step-by-step progress while running; null otherwise"
+          },
           "uploaded": {
             "type": "boolean",
             "title": "Uploaded",
@@ -2210,6 +4760,136 @@
           "started_at"
         ],
         "title": "RunStatus"
+      },
+      "RunView": {
+        "properties": {
+          "gse": {
+            "type": "string",
+            "title": "Gse"
+          },
+          "contrast": {
+            "type": "string",
+            "title": "Contrast"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "running",
+              "complete",
+              "qc_only",
+              "blocked",
+              "failed"
+            ],
+            "title": "Status"
+          },
+          "started_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Started At"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finished At"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error",
+            "description": "pipeline error or why the run failed"
+          },
+          "report": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AnalysisReport"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "progress": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/RunProgress"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "step-by-step progress while running; null otherwise"
+          },
+          "uploaded": {
+            "type": "boolean",
+            "title": "Uploaded",
+            "default": false
+          },
+          "upload_error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Upload Error"
+          },
+          "files": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Files",
+            "description": "names available for signed URLs"
+          },
+          "design": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/RunRequest"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "what was submitted"
+          },
+          "urls": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Urls",
+            "description": "file name -> signed download URL"
+          },
+          "urls_expire_in": {
+            "type": "integer",
+            "title": "Urls Expire In",
+            "default": 0
+          }
+        },
+        "type": "object",
+        "required": [
+          "gse",
+          "contrast",
+          "status",
+          "started_at"
+        ],
+        "title": "RunView",
+        "description": "Everything the run page needs in one response."
       },
       "Sample": {
         "properties": {
@@ -2692,6 +5372,61 @@
         ],
         "title": "SearchResult"
       },
+      "Sensitivity": {
+        "properties": {
+          "member": {
+            "type": "string",
+            "title": "Member"
+          },
+          "flag": {
+            "type": "string",
+            "enum": [
+              "labels_reversed",
+              "low_concordance",
+              "concordance_unassessed"
+            ],
+            "title": "Flag"
+          },
+          "pooled_by_default": {
+            "type": "boolean",
+            "title": "Pooled By Default"
+          },
+          "n_robust_default": {
+            "type": "integer",
+            "title": "N Robust Default"
+          },
+          "n_robust_alternative": {
+            "type": "integer",
+            "title": "N Robust Alternative"
+          },
+          "robust_jaccard": {
+            "type": "number",
+            "title": "Robust Jaccard"
+          },
+          "spearman_pooled_z": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Spearman Pooled Z"
+          }
+        },
+        "type": "object",
+        "required": [
+          "member",
+          "flag",
+          "pooled_by_default",
+          "n_robust_default",
+          "n_robust_alternative",
+          "robust_jaccard"
+        ],
+        "title": "Sensitivity",
+        "description": "The synthesis with a flagged run's membership reversed."
+      },
       "SessionInfo": {
         "properties": {
           "id": {
@@ -2702,6 +5437,31 @@
             "type": "string",
             "format": "date-time",
             "title": "Created At"
+          },
+          "question": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Question",
+            "description": "what the user asked, if recorded"
+          },
+          "state": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "State",
+            "description": "opaque UI state (discovery results, proposed designs); PATCH to replace"
           }
         },
         "type": "object",
@@ -2710,6 +5470,76 @@
           "created_at"
         ],
         "title": "SessionInfo"
+      },
+      "SessionUpdate": {
+        "properties": {
+          "question": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 4000
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Question"
+          },
+          "state": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "State",
+            "description": "replaces the stored UI state wholesale when given"
+          }
+        },
+        "type": "object",
+        "title": "SessionUpdate"
+      },
+      "StepProgress": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "running",
+              "done"
+            ],
+            "title": "Status"
+          },
+          "started_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Started At"
+          },
+          "seconds": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Seconds"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "status",
+          "started_at"
+        ],
+        "title": "StepProgress"
       },
       "StepRecord": {
         "properties": {

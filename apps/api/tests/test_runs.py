@@ -5,6 +5,7 @@ import json
 import os
 import shutil
 import sys
+import time
 from collections.abc import Callable, Iterator
 from pathlib import Path
 from typing import Any
@@ -64,10 +65,21 @@ def test_run_completes_and_uploads(
     assert done["status"] == "complete" and done["report"]["params"]["genes"] == "CXCL9"
     assert done["uploaded"] and sorted(done["files"]) == ["figures/pca.png", "report.json"]
     assert done["finished_at"] and done["error"] is None
+    assert done["progress"] is None  # progress is only shown while running
 
     link = client.get(f"/api/sessions/{sid}/runs/GSE100001/{CONTRAST}/files/figures/pca.png")
     assert link.status_code == 200
     assert httpx.get(link.json()["url"]).content == b"\x89PNG fake"
+
+    # The run page: one call returns status, report, design and a signed URL per file.
+    view = client.get(f"/api/sessions/{sid}/runs/GSE100001/{CONTRAST}").json()
+    assert view["status"] == "complete" and view["report"]["gse"] == "GSE100001"
+    assert view["design"]["genes"] == ["CXCL9"] and view["design"]["samplesheet"]["gse"]
+    assert sorted(view["urls"]) == ["figures/pca.png", "report.json"]
+    assert view["urls_expire_in"] == 24 * 3600
+    assert httpx.get(view["urls"]["figures/pca.png"]).content == b"\x89PNG fake"
+    assert json.loads(httpx.get(view["urls"]["report.json"]).content)["gse"] == "GSE100001"
+    assert client.get(f"/api/sessions/{sid}/runs/GSE100001/nope").status_code == 404
     log = (tmp_path / "sessions" / sid / "runs" / "GSE100001" / "run.log").read_text()
     assert "fake pipeline GSE100001" in log
 
@@ -75,6 +87,42 @@ def test_run_completes_and_uploads(
     rerun = client.post(f"/api/sessions/{sid}/runs", json=design_for("GSE100001"))
     assert rerun.status_code == 202
     assert wait_runs(client, sid)[0]["status"] == "complete"
+
+
+def test_progress_is_visible_while_running(
+    api: ApiFactory,
+    monkeypatch: pytest.MonkeyPatch,
+    wait_collected: Callable[..., list[dict]],  # type: ignore[type-arg]
+    wait_runs: Callable[..., list[dict]],  # type: ignore[type-arg]
+) -> None:
+    """The API tails the subprocess and stores step progress on the contrast row."""
+    monkeypatch.setitem(os.environ, "FAKE_PIPELINE", "slow")
+    with api(run_command=FAKE, run_timeout_minutes=1) as client:
+        _progress_flow(client, wait_collected, wait_runs)
+
+
+def _progress_flow(
+    client: TestClient,
+    wait_collected: Callable[..., list[dict]],  # type: ignore[type-arg]
+    wait_runs: Callable[..., list[dict]],  # type: ignore[type-arg]
+) -> None:
+    sid = client.post("/api/sessions").json()["id"]
+    client.post(f"/api/sessions/{sid}/datasets", json={"gses": ["GSE100001"]})
+    wait_collected(client, sid)
+    client.post(f"/api/sessions/{sid}/runs", json=design_for("GSE100001"))
+    seen_steps: set[str] = set()
+    deadline = time.monotonic() + 10
+    while time.monotonic() < deadline:
+        (run,) = client.get(f"/api/sessions/{sid}/runs").json()
+        if run["status"] != "running":
+            break
+        if run["progress"]:
+            assert run["progress"]["queued"] is False
+            seen_steps.update(s["name"] for s in run["progress"]["steps"])
+        time.sleep(0.05)
+    assert {"load", "qc"} <= seen_steps, seen_steps
+    (done,) = wait_runs(client, sid)
+    assert done["status"] == "complete" and done["progress"] is None
 
 
 def test_run_refused_without_counts(client: TestClient) -> None:

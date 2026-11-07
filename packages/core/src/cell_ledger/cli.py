@@ -19,6 +19,7 @@ from cell_ledger.analysis.pipeline import (
     run_pipeline,
 )
 from cell_ledger.compare import CompareParams, QuerySet, compare_query_set, run_comparison
+from cell_ledger.progress import PROGRESS_PREFIX, print_progress, set_progress_sink
 from cell_ledger.report.models import MarkerExpectation
 
 DEFAULT_DATA = Path("data/geo")
@@ -86,6 +87,8 @@ def run_one(
                 print(f"{gse} {contrast.name}: cached run matches inputs and parameters, skipped")
                 continue
             print(f"{gse} {contrast.name}: cached run not reused ({reason}); rerunning")
+        if getattr(args, "progress", False):
+            set_progress_sink(print_progress, gse=gse, contrast=contrast.name)
         report = run_pipeline(
             counts_path=counts,
             annotation_path=annotation,
@@ -110,7 +113,8 @@ def run_one(
         if report.blockers:
             line += f" blockers={report.blockers}"
         line += f" -> {out / 'report.md'}"
-        print(line)
+        print(line, flush=True)
+        set_progress_sink(None)
         if report.status != "complete":
             rc = 1
     return rc
@@ -224,6 +228,11 @@ def main(argv: list[str] | None = None) -> int:
         sp.add_argument("--no-enrichment", action="store_true")
         sp.add_argument("--no-shrink", action="store_true", help="report unshrunk log2FC")
         sp.add_argument("--no-figures", action="store_true")
+        sp.add_argument(
+            "--progress",
+            action="store_true",
+            help=f"print one '{PROGRESS_PREFIX.strip()} {{json}}' line per step on stdout",
+        )
 
     one = sub.add_parser("run", help="run one GSE")
     one.add_argument("gse")

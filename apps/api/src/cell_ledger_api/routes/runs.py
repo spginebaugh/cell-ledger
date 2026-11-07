@@ -2,8 +2,23 @@ from typing import Annotated
 
 from fastapi import APIRouter, HTTPException, Path, Request
 
-from cell_ledger_api.routes.sessions import FileName, FileUrl, Gse, SessionId, signed
-from cell_ledger_api.runs import CountsMissing, RunConflict, RunRequest, RunService, RunStatus
+from cell_ledger_api.routes.sessions import (
+    VIEW_URL_TTL,
+    FileName,
+    FileUrl,
+    Gse,
+    SessionId,
+    signed,
+)
+from cell_ledger_api.runs import (
+    CountsMissing,
+    RunConflict,
+    RunNotFound,
+    RunRequest,
+    RunService,
+    RunStatus,
+    RunView,
+)
 
 router = APIRouter(prefix="/sessions/{session_id}/runs", tags=["runs"])
 
@@ -32,6 +47,18 @@ async def start_run(session_id: SessionId, body: RunRequest, request: Request) -
 @router.get("", operation_id="listRuns")
 async def list_runs(session_id: SessionId, request: Request) -> list[RunStatus]:
     return await service(request).statuses(session_id)
+
+
+@router.get("/{gse}/{contrast}", operation_id="getRun")
+async def get_run(
+    session_id: SessionId, gse: Gse, contrast: ContrastName, request: Request
+) -> RunView:
+    """The run page in one call: status, progress, report, the submitted design and a
+    signed URL for every stored file (valid for the life of the session)."""
+    try:
+        return await service(request).view(session_id, gse, contrast, url_ttl=VIEW_URL_TTL)
+    except RunNotFound as e:
+        raise HTTPException(404, f"no run for {e}") from e
 
 
 @router.get("/{gse}/{contrast}/files/{name:path}", operation_id="getRunFileUrl")

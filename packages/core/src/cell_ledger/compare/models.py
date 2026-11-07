@@ -236,6 +236,15 @@ class GeneLeaveOneOut(BaseModel):
     changed: bool = Field(description="verdict differs from the full-set verdict")
 
 
+class MemberEffect(BaseModel):
+    """One dataset's estimate for one gene, as the forest plot draws it."""
+
+    log2fc: float | None = Field(default=None, description="unshrunk log2FC")
+    se: float | None = None
+    padj: float | None = None
+    n_samples: int | None = None
+
+
 class GeneLookupAcross(BaseModel):
     """The direct answer to 'is gene X higher in case than control' across datasets."""
 
@@ -247,6 +256,9 @@ class GeneLookupAcross(BaseModel):
     meta: GeneMeta | None = None
     per_member: dict[str, str] = Field(
         default_factory=dict, description="label -> up / down / no_evidence / not_tested"
+    )
+    effects: dict[str, MemberEffect] = Field(
+        default_factory=dict, description="label -> estimate, SE and padj in that dataset"
     )
     leave_one_out: list[GeneLeaveOneOut] = Field(default_factory=list)
     driven_by: list[str] = Field(

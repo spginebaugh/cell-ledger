@@ -27,9 +27,11 @@ annotation table, and a design file (`samplesheet` + `contrasts` + optional
 | 6 | GSEA | gseapy prerank on the Wald statistic, MSigDB Hallmark (bundled GMT) | skipped with a warning on error |
 | 7 | gene lookup | per-gene verdict: up / down / no_evidence / not_tested / not_found; marker-panel score | |
 | 8 | figures | library sizes, PCA, volcano, genes of interest, enrichment | |
-| 9 | write | `dataset.h5ad`, TSV/CSV tables, `report.json`, `report.md` | |
+| 9 | write | TSV/CSV tables, `volcano.json.gz` for the UI, `report.json`, `report.md` | |
 
-Every step appends a `StepRecord` (parameters, seconds, warnings) to the report.
+Every step appends a `StepRecord` (parameters, seconds, warnings) to the report. With
+`--progress`, the CLI also prints one `CL_PROGRESS {json}` line per step start and finish on
+stdout; the API tails these to show a live stepper.
 
 The run writes into a temporary sibling directory and swaps it into place at the end,
 so an output folder never mixes artifacts from two runs. It refuses to replace a
@@ -70,8 +72,8 @@ de_results.tsv           gene_id, symbol, base_mean, log2fc (shrunk), lfc_se, st
 enrichment.tsv           full gseapy table
 gene_lookup.csv          verdict table for genes of interest + markers; verdicts: up, down, no_evidence,
                          untestable (reason: independent_filtering or outlier_or_all_zero), not_tested, not_found
-dataset.h5ad             AnnData: layers counts / normed_counts / log2_normed, obs = samples + QC columns,
-                         obsm.X_pca, var = annotation, uns.report = report JSON as of the h5ad write
+volcano.json.gz          gene_id / symbol / base_mean / log2fc / padj as gzipped column arrays: what the
+                         web UI draws (the full-precision table is de_results.tsv)
 report.json              AnalysisReport, canonical (the only source the LLM may quote numbers from);
                          carries a fingerprint of inputs, design, parameters and code version
 error.txt                traceback, only when the run stopped on an exception

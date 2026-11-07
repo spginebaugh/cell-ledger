@@ -49,6 +49,7 @@ from cell_ledger.compare.models import (
     MarkerAcross,
     MarkerAcrossScore,
     Member,
+    MemberEffect,
     QuerySet,
     Sensitivity,
 )
@@ -127,6 +128,22 @@ def _resolve(query: str, table: pd.DataFrame) -> str | None:
         return q
     hits = table.index[table["symbol"].str.upper() == q.upper()]
     return str(hits[0]) if len(hits) else None
+
+
+def _effects(gene_id: str, m: EffectMatrices) -> dict[str, MemberEffect]:
+    def opt(v: float) -> float | None:
+        return None if np.isnan(v) else float(v)
+
+    out: dict[str, MemberEffect] = {}
+    for lab in m.labels:
+        n = m.n_samples.get(lab)
+        out[lab] = MemberEffect(
+            log2fc=opt(m.lfc.at[gene_id, lab]),
+            se=opt(m.se.at[gene_id, lab]),
+            padj=opt(m.padj.at[gene_id, lab]),
+            n_samples=None if n is None or np.isnan(n) else int(n),
+        )
+    return out
 
 
 def _per_member(gene_id: str, m: EffectMatrices, alpha: float) -> dict[str, str]:
@@ -240,6 +257,7 @@ def lookup_across(
                 detail=detail,
                 meta=meta,
                 per_member=_per_member(gid, m, params.alpha),
+                effects=_effects(gid, m),
                 leave_one_out=loo,
                 driven_by=[x.member for x in loo if x.changed],
             )

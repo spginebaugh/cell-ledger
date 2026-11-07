@@ -21,9 +21,10 @@ import asyncio
 import logging
 import shutil
 import uuid
+from collections.abc import Sequence
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
-from typing import Literal
+from typing import Any, Literal
 
 import asyncpg
 import httpx
@@ -57,6 +58,17 @@ def content_type(path: Path) -> str:
 class SessionInfo(BaseModel):
     id: str
     created_at: datetime
+    question: str | None = Field(default=None, description="what the user asked, if recorded")
+    state: dict[str, Any] | None = Field(
+        default=None,
+        description="opaque UI state (discovery results, proposed designs); PATCH to replace",
+    )
+
+
+def session_info(row: asyncpg.Record) -> SessionInfo:
+    return SessionInfo(
+        id=row["id"], created_at=row["created_at"], question=row["question"], state=row["state"]
+    )
 
 
 DatasetState = Literal["pending", "ready", "excluded", "failed"]
@@ -158,7 +170,15 @@ class SessionService:
         row = await self.db.get_session(session_id)
         if row is None:
             raise SessionNotFound(session_id)
-        return SessionInfo(id=row["id"], created_at=row["created_at"])
+        return session_info(row)
+
+    async def update(
+        self, session_id: str, *, question: str | None, state: dict[str, Any] | None
+    ) -> SessionInfo:
+        row = await self.db.update_session(session_id, question=question, state=state)
+        if row is None:
+            raise SessionNotFound(session_id)
+        return session_info(row)
 
     def spawn(self, coro) -> None:  # type: ignore[no-untyped-def]
         """Run a coroutine in the background; the task set keeps it alive."""
@@ -232,6 +252,17 @@ class SessionService:
         """Signed URL for ``<session>/<rel>`` in Storage, e.g. ``geo/GSE1/dataset.json``."""
         await self.get(session_id)
         return await self.store.signed_url(f"{session_id}/{rel}", expires_in)
+
+    async def file_urls(
+        self, session_id: str, prefix: str, names: Sequence[str], expires_in: int
+    ) -> dict[str, str]:
+        """Signed URLs for many files under ``<session>/<prefix>/``, keyed by relative name.
+        One Storage request; names missing from Storage are left out."""
+        if not names:
+            return {}
+        full = [f"{session_id}/{prefix}/{n}" for n in names]
+        signed = await self.store.signed_urls(full, expires_in)
+        return {n: signed[f] for n, f in zip(names, full, strict=True) if f in signed}
 
     # --------------------------------------------------------- lifecycle
 

@@ -116,6 +116,28 @@ class SupabaseStore:
             r.raise_for_status()
         return len(paths)
 
+    async def signed_urls(self, paths: list[str], expires_in: int) -> dict[str, str]:
+        """Sign many objects in one request; paths that do not exist are left out."""
+        if not paths:
+            return {}
+        r = await self._http.post(
+            f"/object/sign/{self._bucket}", json={"expiresIn": expires_in, "paths": paths}
+        )
+        if r.status_code == 404:  # a very old Storage without the batch endpoint
+            out = {}
+            for p in paths:
+                url = await self.signed_url(p, expires_in)
+                if url:
+                    out[p] = url
+            return out
+        r.raise_for_status()
+        out: dict[str, str] = {}
+        for entry in r.json():
+            signed = entry.get("signedURL")
+            if signed and not entry.get("error"):
+                out[entry["path"]] = f"{self.base_url}{signed}"
+        return out
+
     async def signed_url(self, path: str, expires_in: int) -> str | None:
         r = await self._http.post(
             f"/object/sign/{self._bucket}/{quote(path)}", json={"expiresIn": expires_in}

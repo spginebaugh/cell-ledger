@@ -1,6 +1,6 @@
 # cell-ledger
 
-An AI specialist that helps biologists find and use public bulk and single-cell
+An AI specialist that helps biologists find and use public human bulk
 RNA-seq data from NIH GEO. Ask a question such as *"is gene X higher in cell
 type Y in disease Z?"* and the agent searches GEO, triages which datasets are
 actually usable (raw counts, readable formats, clear sample labels), harmonizes
@@ -14,7 +14,10 @@ mise.toml            toolchain pins (python 3.13, uv, bun, node) and every task
 pyproject.toml       uv workspace root + shared ruff / pytest / pyright config
 package.json         bun workspace root + Biome
 apps/api/            FastAPI service and agent runtime        (cell_ledger_api)
-apps/web/            React + Vite + TanStack Query, vitest, Playwright
+  sessions.py        sessions and GEO collection; runs.py pipeline subprocesses with live progress
+  compare.py         cross-dataset comparisons over a session's runs
+  agent.py           Claude: discover datasets for a question, design a contrast (SSE streams)
+apps/web/            React + Vite + TanStack Router/Query + Tailwind, d3 charts, vitest, Playwright
 packages/core/       pure-Python pipeline library, no web deps (cell_ledger)
   geo/               GEO search and metadata retrieval
   triage/            usability checks
@@ -64,6 +67,24 @@ settings: there is no files-only or memory-only mode, locally or deployed.
 
 Run `mise run gen:api` after changing any FastAPI route or pydantic model so the
 frontend types stay in sync. The generated client is committed.
+
+## How a question becomes a result
+
+1. **Discover** (`POST /api/sessions/{id}/discover`, SSE): Claude searches GEO (and the web via
+   Exa when configured) and returns candidate series with reasons, or clarifying questions.
+   Only accessions GEO confirmed in that run can be reported.
+2. **Collect** (`POST .../datasets`): counts and metadata are downloaded, checked and mirrored
+   to Storage.
+3. **Design** (`POST .../datasets/{gse}/design`, SSE): Claude labels every sample from its GEO
+   record; the `SampleSheet` validator rejects any label without a verbatim quote. The result
+   is a *proposed* contrast the user confirms.
+4. **Run** (`POST .../runs`): the pipeline runs as a subprocess; `listRuns` shows step-by-step
+   progress; `GET .../runs/{gse}/{contrast}` returns the report, the design and signed URLs
+   for every file (including `volcano.json.gz`, the browser-side DE table).
+5. **Compare** (`POST .../comparisons`): pooled effects across the session's runs.
+
+Without `CELL_LEDGER_ANTHROPIC_API_KEY` steps 1 and 3 answer 503 and the UI offers the
+manual path: paste accessions, upload a design file.
 
 ## Conventions
 

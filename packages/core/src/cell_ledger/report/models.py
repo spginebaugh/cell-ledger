@@ -160,6 +160,14 @@ class GeneLookupRow(BaseModel):
     rank_by_padj: int | None = None
 
 
+class GeneExpression(BaseModel):
+    """Per-sample log2 normalized counts for one queried gene, for the UI's strip plot."""
+
+    gene_id: str
+    symbol: str | None
+    values: dict[str, float] = Field(description="GSM -> log2(normalized count + 1)")
+
+
 class MarkerExpectation(BaseModel):
     symbol: str
     direction: Literal["up", "down"]
@@ -217,6 +225,10 @@ class AnalysisReport(BaseModel):
     de: DeResultSummary | None = None
     enrichment: EnrichmentSummary | None = None
     gene_lookup: list[GeneLookupRow] = Field(default_factory=list)
+    gene_expression: list[GeneExpression] = Field(
+        default_factory=list,
+        description="per-sample values for the looked-up genes (only when DE ran)",
+    )
     markers: MarkerScore | None = None
     warnings: list[str] = Field(default_factory=list)
     files: dict[str, str] = Field(default_factory=dict)

@@ -5,6 +5,74 @@ export type ClientOptions = {
 };
 
 /**
+ * AgentEvent
+ *
+ * One Server-Sent Event from ``discoverDatasets`` or ``designContrast``.
+ */
+export type AgentEvent = {
+    /**
+     * Type
+     */
+    type: 'thinking' | 'tool' | 'result' | 'error' | 'done';
+    /**
+     * Delta
+     *
+     * thinking: text to append
+     */
+    delta?: string | null;
+    /**
+     * Name
+     *
+     * tool: which tool ran
+     */
+    name?: string | null;
+    /**
+     * Input
+     *
+     * tool: its arguments
+     */
+    input?: {
+        [key: string]: unknown;
+    } | null;
+    /**
+     * Summary
+     *
+     * tool: one line for the UI
+     */
+    summary?: string | null;
+    /**
+     * Data
+     *
+     * result: the payload
+     */
+    data?: {
+        [key: string]: unknown;
+    } | null;
+    /**
+     * Message
+     *
+     * error: what went wrong
+     */
+    message?: string | null;
+};
+
+/**
+ * AgentTypes
+ *
+ * Never returned with content; exists so the streamed payloads appear in the OpenAPI
+ * schema and the generated client has types for them.
+ */
+export type AgentTypes = {
+    event: AgentEvent;
+    discovery?: DiscoveryResult | null;
+    design?: DesignProposal | null;
+    /**
+     * Available
+     */
+    available: boolean;
+};
+
+/**
  * AnalysisReport
  */
 export type AnalysisReport = {
@@ -76,6 +144,12 @@ export type AnalysisReport = {
      * Gene Lookup
      */
     gene_lookup?: Array<GeneLookupRow>;
+    /**
+     * Gene Expression
+     *
+     * per-sample values for the looked-up genes (only when DE ran)
+     */
+    gene_expression?: Array<GeneExpression>;
     markers?: MarkerScore | null;
     /**
      * Warnings
@@ -101,6 +175,46 @@ export type AnalysisReport = {
 export type Assay = 'bulk' | 'single_cell';
 
 /**
+ * Candidate
+ */
+export type Candidate = {
+    /**
+     * Gse
+     */
+    gse: string;
+    /**
+     * Title
+     */
+    title: string;
+    /**
+     * N Samples
+     */
+    n_samples: number;
+    /**
+     * Why
+     *
+     * why this series can answer the question
+     */
+    why: string;
+    /**
+     * Case Hint
+     *
+     * which samples would be the case arm
+     */
+    case_hint: string;
+    /**
+     * Control Hint
+     *
+     * which samples would be the control arm
+     */
+    control_hint: string;
+    /**
+     * Concerns
+     */
+    concerns?: Array<string>;
+};
+
+/**
  * CollectRequest
  */
 export type CollectRequest = {
@@ -108,6 +222,307 @@ export type CollectRequest = {
      * Gses
      */
     gses: Array<string>;
+};
+
+/**
+ * CompareRequest
+ *
+ * A QuerySet over runs in this session, plus the few parameters a user may set.
+ */
+export type CompareRequest = {
+    /**
+     * Name
+     *
+     * slug
+     */
+    name: string;
+    /**
+     * Question
+     */
+    question: string;
+    /**
+     * Case Label
+     */
+    case_label: string;
+    /**
+     * Control Label
+     */
+    control_label: string;
+    /**
+     * Members
+     */
+    members: Array<QuerySetMember>;
+    /**
+     * Genes Of Interest
+     */
+    genes_of_interest?: Array<string>;
+    /**
+     * Markers
+     */
+    markers?: Array<MarkerExpectation>;
+    /**
+     * Alpha
+     */
+    alpha?: number;
+    /**
+     * Min Studies
+     */
+    min_studies?: number;
+    /**
+     * Permutations
+     */
+    permutations?: number;
+    /**
+     * Pooled Enrichment
+     */
+    pooled_enrichment?: boolean;
+};
+
+/**
+ * ComparisonReport
+ */
+export type ComparisonReport = {
+    /**
+     * Name
+     */
+    name: string;
+    /**
+     * Question
+     */
+    question: string;
+    /**
+     * Case Label
+     */
+    case_label: string;
+    /**
+     * Control Label
+     */
+    control_label: string;
+    /**
+     * Status
+     */
+    status: 'complete' | 'insufficient' | 'failed';
+    /**
+     * Error
+     */
+    error?: string | null;
+    /**
+     * Created At
+     */
+    created_at: string;
+    /**
+     * Versions
+     */
+    versions: {
+        [key: string]: string;
+    };
+    /**
+     * Params
+     */
+    params: {
+        [key: string]: unknown;
+    };
+    /**
+     * Effective Min Studies
+     *
+     * min_studies actually applied (lowered when few datasets)
+     */
+    effective_min_studies?: number | null;
+    /**
+     * Members
+     */
+    members?: Array<Member>;
+    /**
+     * Excluded
+     */
+    excluded?: Array<Exclusion>;
+    /**
+     * Questions
+     *
+     * what a person must decide before trusting the pool
+     */
+    questions?: Array<string>;
+    concordance?: Concordance | null;
+    genes?: GeneSynthesis | null;
+    /**
+     * Strata
+     */
+    strata?: {
+        [key: string]: GeneSynthesis;
+    };
+    /**
+     * Gene Lookup
+     */
+    gene_lookup?: Array<GeneLookupAcross>;
+    markers?: MarkerAcrossScore | null;
+    pathways?: PathwaySynthesis | null;
+    /**
+     * GSEA preranked on the pooled z over genes with a symbol
+     */
+    pooled_enrichment?: EnrichmentSummary | null;
+    /**
+     * Pooled Enrichment Coverage
+     */
+    pooled_enrichment_coverage?: {
+        [key: string]: number;
+    };
+    /**
+     * Leave One Out
+     */
+    leave_one_out?: Array<LeaveOneOut>;
+    /**
+     * Sensitivity
+     */
+    sensitivity?: Array<Sensitivity>;
+    /**
+     * Warnings
+     */
+    warnings?: Array<string>;
+    /**
+     * Files
+     */
+    files?: {
+        [key: string]: string;
+    };
+    /**
+     * Figures
+     */
+    figures?: {
+        [key: string]: string;
+    };
+};
+
+/**
+ * ComparisonStatus
+ */
+export type ComparisonStatus = {
+    /**
+     * Name
+     */
+    name: string;
+    /**
+     * Status
+     */
+    status: 'running' | 'complete' | 'insufficient' | 'failed';
+    /**
+     * Started At
+     */
+    started_at: string;
+    /**
+     * Finished At
+     */
+    finished_at?: string | null;
+    /**
+     * Error
+     */
+    error?: string | null;
+    request: CompareRequest;
+    report?: ComparisonReport | null;
+    /**
+     * Uploaded
+     */
+    uploaded?: boolean;
+    /**
+     * Upload Error
+     */
+    upload_error?: string | null;
+    /**
+     * Files
+     *
+     * names available for signed URLs
+     */
+    files?: Array<string>;
+};
+
+/**
+ * ComparisonView
+ */
+export type ComparisonView = {
+    /**
+     * Name
+     */
+    name: string;
+    /**
+     * Status
+     */
+    status: 'running' | 'complete' | 'insufficient' | 'failed';
+    /**
+     * Started At
+     */
+    started_at: string;
+    /**
+     * Finished At
+     */
+    finished_at?: string | null;
+    /**
+     * Error
+     */
+    error?: string | null;
+    request: CompareRequest;
+    report?: ComparisonReport | null;
+    /**
+     * Uploaded
+     */
+    uploaded?: boolean;
+    /**
+     * Upload Error
+     */
+    upload_error?: string | null;
+    /**
+     * Files
+     *
+     * names available for signed URLs
+     */
+    files?: Array<string>;
+    /**
+     * Urls
+     *
+     * file name -> signed URL
+     */
+    urls?: {
+        [key: string]: string;
+    };
+    /**
+     * Urls Expire In
+     */
+    urls_expire_in?: number;
+};
+
+/**
+ * Concordance
+ *
+ * Pairwise Spearman correlation of Wald statistics over genes tested in both runs.
+ *
+ * ``mean_to_others`` is each run's mean against the other runs of its concordance
+ * group, leaving out runs flagged ``labels_reversed``.
+ */
+export type Concordance = {
+    /**
+     * Members
+     */
+    members: Array<string>;
+    /**
+     * Spearman
+     */
+    spearman: Array<Array<number | null>>;
+    /**
+     * N Shared
+     */
+    n_shared: Array<Array<number>>;
+    /**
+     * Mean To Others
+     */
+    mean_to_others: {
+        [key: string]: number | null;
+    };
+    /**
+     * Groups
+     *
+     * label -> group
+     */
+    groups?: {
+        [key: string]: string;
+    };
 };
 
 /**
@@ -402,6 +817,115 @@ export type DeSummary = {
 };
 
 /**
+ * DesignProposal
+ *
+ * A run request the user has yet to confirm, with every reason to hesitate attached.
+ */
+export type DesignProposal = {
+    design: RunRequest;
+    /**
+     * Problems
+     *
+     * contrast name -> why it must not run as proposed
+     */
+    problems?: {
+        [key: string]: Array<string>;
+    };
+    /**
+     * Qualifications
+     *
+     * contrast name -> caveats that travel with a result
+     */
+    qualifications?: {
+        [key: string]: Array<string>;
+    };
+    /**
+     * Questions
+     */
+    questions?: Array<string>;
+    /**
+     * Notes
+     */
+    notes?: string;
+    /**
+     * Validation Errors
+     *
+     * labels Claude could not back with evidence
+     */
+    validation_errors?: Array<string>;
+    /**
+     * Attempts
+     */
+    attempts?: number;
+};
+
+/**
+ * DesignRequest
+ */
+export type DesignRequest = {
+    /**
+     * Question
+     */
+    question: string;
+    /**
+     * Answers
+     *
+     * the user's answers to earlier clarifying questions
+     */
+    answers?: string | null;
+    /**
+     * Genes
+     */
+    genes?: Array<string>;
+};
+
+/**
+ * DiscoverRequest
+ */
+export type DiscoverRequest = {
+    /**
+     * Question
+     */
+    question: string;
+};
+
+/**
+ * DiscoveryResult
+ */
+export type DiscoveryResult = {
+    /**
+     * Interpretation
+     *
+     * the question restated as a two-group comparison
+     */
+    interpretation: string;
+    /**
+     * Genes
+     *
+     * gene symbols the question names
+     */
+    genes?: Array<string>;
+    /**
+     * Clarifying Questions
+     *
+     * what must be decided before choosing datasets; empty when clear
+     */
+    clarifying_questions?: Array<string>;
+    /**
+     * Candidates
+     */
+    candidates?: Array<Candidate>;
+    /**
+     * Rejected
+     */
+    rejected?: Array<Rejected>;
+    /**
+     * Queries Tried
+     */
+    queries_tried?: Array<string>;
+};
+
+/**
  * EnrichmentSummary
  */
 export type EnrichmentSummary = {
@@ -461,6 +985,36 @@ export type EnrichmentTerm = {
      * Lead Genes
      */
     lead_genes: Array<string>;
+};
+
+/**
+ * Exclusion
+ */
+export type Exclusion = {
+    /**
+     * Label
+     */
+    label: string;
+    /**
+     * Gse
+     */
+    gse?: string | null;
+    /**
+     * Contrast
+     */
+    contrast?: string | null;
+    /**
+     * Run Dir
+     */
+    run_dir: string;
+    /**
+     * Reason
+     */
+    reason: 'missing' | 'unreadable' | 'not_complete' | 'no_de_table' | 'qualified' | 'shares_samples';
+    /**
+     * Detail
+     */
+    detail: string;
 };
 
 /**
@@ -526,6 +1080,123 @@ export type FilterSummary = {
 };
 
 /**
+ * GeneExpression
+ *
+ * Per-sample log2 normalized counts for one queried gene, for the UI's strip plot.
+ */
+export type GeneExpression = {
+    /**
+     * Gene Id
+     */
+    gene_id: string;
+    /**
+     * Symbol
+     */
+    symbol: string | null;
+    /**
+     * Values
+     *
+     * GSM -> log2(normalized count + 1)
+     */
+    values: {
+        [key: string]: number;
+    };
+};
+
+/**
+ * GeneLeaveOneOut
+ *
+ * The same gene pooled without one dataset.
+ */
+export type GeneLeaveOneOut = {
+    /**
+     * Member
+     */
+    member: string;
+    /**
+     * Pooled Log2Fc
+     */
+    pooled_log2fc?: number | null;
+    /**
+     * Ci Low
+     */
+    ci_low?: number | null;
+    /**
+     * Ci High
+     */
+    ci_high?: number | null;
+    /**
+     * Pvalue
+     */
+    pvalue?: number | null;
+    /**
+     * Verdict
+     */
+    verdict: 'replicated_up' | 'replicated_down' | 'pooled_up' | 'pooled_down' | 'inconsistent' | 'no_evidence' | 'insufficient' | 'not_found';
+    /**
+     * Changed
+     *
+     * verdict differs from the full-set verdict
+     */
+    changed: boolean;
+};
+
+/**
+ * GeneLookupAcross
+ *
+ * The direct answer to 'is gene X higher in case than control' across datasets.
+ */
+export type GeneLookupAcross = {
+    /**
+     * Query
+     */
+    query: string;
+    /**
+     * Gene Id
+     */
+    gene_id: string | null;
+    /**
+     * Symbol
+     */
+    symbol: string | null;
+    /**
+     * Verdict
+     */
+    verdict: 'replicated_up' | 'replicated_down' | 'pooled_up' | 'pooled_down' | 'inconsistent' | 'no_evidence' | 'insufficient' | 'not_found';
+    /**
+     * Detail
+     */
+    detail: string;
+    meta?: GeneMeta | null;
+    /**
+     * Per Member
+     *
+     * label -> up / down / no_evidence / not_tested
+     */
+    per_member?: {
+        [key: string]: string;
+    };
+    /**
+     * Effects
+     *
+     * label -> estimate, SE and padj in that dataset
+     */
+    effects?: {
+        [key: string]: MemberEffect;
+    };
+    /**
+     * Leave One Out
+     */
+    leave_one_out?: Array<GeneLeaveOneOut>;
+    /**
+     * Driven By
+     *
+     * datasets whose removal changes the verdict
+     */
+    driven_by?: Array<string>;
+};
+
+/**
  * GeneLookupRow
  *
  * The direct answer to 'is gene X higher in case than control' for one dataset.
@@ -580,6 +1251,134 @@ export type GeneLookupRow = {
 };
 
 /**
+ * GeneMeta
+ */
+export type GeneMeta = {
+    /**
+     * Gene Id
+     */
+    gene_id: string;
+    /**
+     * Symbol
+     */
+    symbol?: string | null;
+    /**
+     * N Tested
+     *
+     * datasets with a valid estimate and SE (pooled)
+     */
+    n_tested: number;
+    /**
+     * N With Padj
+     *
+     * of those, datasets where DESeq2 reported a padj
+     */
+    n_with_padj: number;
+    /**
+     * N Sig
+     */
+    n_sig: number;
+    /**
+     * N Up Sig
+     */
+    n_up_sig: number;
+    /**
+     * N Down Sig
+     */
+    n_down_sig: number;
+    /**
+     * N Pos
+     */
+    n_pos: number;
+    /**
+     * N Neg
+     */
+    n_neg: number;
+    /**
+     * N Agree Pooled
+     *
+     * datasets whose sign matches the pooled direction
+     */
+    n_agree_pooled: number;
+    /**
+     * Replication
+     *
+     * datasets significant in the pooled direction / n_tested
+     */
+    replication: number;
+    /**
+     * Sign Consistency
+     *
+     * n_agree_pooled / n_tested
+     */
+    sign_consistency: number;
+    /**
+     * Majority Disagrees Pooled
+     *
+     * most datasets point the other way from the pooled estimate
+     */
+    majority_disagrees_pooled?: boolean;
+    /**
+     * Pooled Log2Fc
+     */
+    pooled_log2fc?: number | null;
+    /**
+     * Pooled Se
+     *
+     * random-effects SE (normal)
+     */
+    pooled_se?: number | null;
+    /**
+     * Se Ci
+     *
+     * SE behind the interval and p-value
+     */
+    se_ci?: number | null;
+    /**
+     * Df
+     */
+    df?: number | null;
+    /**
+     * Ci Low
+     */
+    ci_low?: number | null;
+    /**
+     * Ci High
+     */
+    ci_high?: number | null;
+    /**
+     * Z
+     *
+     * pooled / pooled_se, for ranking
+     */
+    z?: number | null;
+    /**
+     * Pvalue
+     */
+    pvalue?: number | null;
+    /**
+     * Padj
+     */
+    padj?: number | null;
+    /**
+     * Tau2
+     */
+    tau2?: number | null;
+    /**
+     * I2
+     */
+    i2?: number | null;
+    /**
+     * Stouffer Z
+     */
+    stouffer_z?: number | null;
+    /**
+     * Robust
+     */
+    robust?: boolean;
+};
+
+/**
  * GeneRow
  */
 export type GeneRow = {
@@ -615,6 +1414,82 @@ export type GeneRow = {
      * Padj
      */
     padj?: number | null;
+};
+
+/**
+ * GeneSynthesis
+ */
+export type GeneSynthesis = {
+    /**
+     * Members
+     */
+    members: Array<string>;
+    /**
+     * Min Studies
+     */
+    min_studies: number;
+    /**
+     * Alpha
+     */
+    alpha: number;
+    /**
+     * Sign Consistency
+     */
+    sign_consistency: number;
+    /**
+     * Min Replication
+     */
+    min_replication: number;
+    /**
+     * Interval
+     */
+    interval: 'hksj' | 'normal';
+    /**
+     * N Genes Union
+     */
+    n_genes_union: number;
+    /**
+     * N Genes Pooled
+     */
+    n_genes_pooled: number;
+    /**
+     * N Sig Pooled
+     */
+    n_sig_pooled: number;
+    /**
+     * N Robust
+     */
+    n_robust: number;
+    /**
+     * N Robust Up
+     */
+    n_robust_up: number;
+    /**
+     * N Robust Down
+     */
+    n_robust_down: number;
+    /**
+     * Lfc Threshold
+     *
+     * top tables list robust genes with |pooled log2FC| >= this
+     */
+    lfc_threshold?: number;
+    /**
+     * N Robust Up Lfc
+     */
+    n_robust_up_lfc?: number;
+    /**
+     * N Robust Down Lfc
+     */
+    n_robust_down_lfc?: number;
+    /**
+     * Top Up
+     */
+    top_up: Array<GeneMeta>;
+    /**
+     * Top Down
+     */
+    top_down: Array<GeneMeta>;
 };
 
 /**
@@ -707,6 +1582,64 @@ export type Health = {
 };
 
 /**
+ * LeaveOneOut
+ */
+export type LeaveOneOut = {
+    /**
+     * Member
+     */
+    member: string;
+    /**
+     * N Robust Without
+     */
+    n_robust_without: number;
+    /**
+     * Robust Retained
+     *
+     * share of robust genes still robust without it
+     */
+    robust_retained: number;
+    /**
+     * Spearman Pooled Z
+     */
+    spearman_pooled_z?: number | null;
+};
+
+/**
+ * MarkerAcross
+ */
+export type MarkerAcross = {
+    expected: MarkerExpectation;
+    lookup: GeneLookupAcross;
+    /**
+     * Recovered
+     */
+    recovered: boolean;
+};
+
+/**
+ * MarkerAcrossScore
+ */
+export type MarkerAcrossScore = {
+    /**
+     * N Expected
+     */
+    n_expected: number;
+    /**
+     * N Recovered
+     */
+    n_recovered: number;
+    /**
+     * Fraction Recovered
+     */
+    fraction_recovered: number;
+    /**
+     * Results
+     */
+    results: Array<MarkerAcross>;
+};
+
+/**
  * MarkerExpectation
  */
 export type MarkerExpectation = {
@@ -771,6 +1704,252 @@ export type MarkerScore = {
 };
 
 /**
+ * Member
+ *
+ * One run that passed the hard gate, as the ledger shows it.
+ */
+export type Member = {
+    /**
+     * Label
+     */
+    label: string;
+    /**
+     * Gse
+     */
+    gse: string;
+    /**
+     * Contrast
+     */
+    contrast: string;
+    /**
+     * Run Dir
+     */
+    run_dir: string;
+    /**
+     * Stratum
+     */
+    stratum?: string | null;
+    /**
+     * Concordance Group
+     *
+     * runs are judged against the others in this group
+     */
+    concordance_group?: string;
+    /**
+     * Tier
+     */
+    tier: 'clean' | 'qualified';
+    /**
+     * Pooled
+     *
+     * contributes to the default pooled estimate
+     */
+    pooled: boolean;
+    /**
+     * Flags
+     */
+    flags?: Array<'labels_reversed' | 'low_concordance' | 'concordance_unassessed'>;
+    /**
+     * Case Label
+     */
+    case_label: string;
+    /**
+     * Control Label
+     */
+    control_label: string;
+    /**
+     * N Case
+     */
+    n_case: number;
+    /**
+     * N Control
+     */
+    n_control: number;
+    /**
+     * N Samples Fitted
+     */
+    n_samples_fitted: number;
+    /**
+     * Design
+     */
+    design: string;
+    /**
+     * Pairing
+     */
+    pairing: string;
+    /**
+     * Collapsed Samples
+     */
+    collapsed_samples?: number;
+    /**
+     * Median Library Size
+     */
+    median_library_size: number;
+    /**
+     * N Genes Tested
+     */
+    n_genes_tested: number;
+    /**
+     * N Sig
+     */
+    n_sig: number;
+    /**
+     * Qc Flags
+     */
+    qc_flags?: Array<string>;
+    /**
+     * Qualifications
+     */
+    qualifications?: Array<string>;
+    /**
+     * Context
+     */
+    context?: {
+        [key: string]: string;
+    };
+    /**
+     * Mean Concordance
+     */
+    mean_concordance?: number | null;
+    /**
+     * Weight Share
+     *
+     * mean random-effects weight share over pooled genes
+     */
+    weight_share?: number | null;
+    /**
+     * Unshrunk Se Source
+     */
+    unshrunk_se_source?: 'stored' | 'reconstructed';
+    /**
+     * Fingerprint
+     */
+    fingerprint?: string | null;
+    /**
+     * Created At
+     */
+    created_at?: string | null;
+};
+
+/**
+ * MemberEffect
+ *
+ * One dataset's estimate for one gene, as the forest plot draws it.
+ */
+export type MemberEffect = {
+    /**
+     * Log2Fc
+     *
+     * unshrunk log2FC
+     */
+    log2fc?: number | null;
+    /**
+     * Se
+     */
+    se?: number | null;
+    /**
+     * Padj
+     */
+    padj?: number | null;
+    /**
+     * N Samples
+     */
+    n_samples?: number | null;
+};
+
+/**
+ * PathwayMeta
+ */
+export type PathwayMeta = {
+    /**
+     * Term
+     */
+    term: string;
+    /**
+     * N Members
+     */
+    n_members: number;
+    /**
+     * Mean Nes
+     */
+    mean_nes: number;
+    /**
+     * N Pos
+     */
+    n_pos: number;
+    /**
+     * N Neg
+     */
+    n_neg: number;
+    /**
+     * N Sig Fdr
+     */
+    n_sig_fdr: number;
+    /**
+     * Consistency
+     *
+     * max(n_pos, n_neg) / n_members
+     */
+    consistency: number;
+    /**
+     * Nes
+     */
+    nes?: {
+        [key: string]: number;
+    };
+    /**
+     * Fdr
+     */
+    fdr?: {
+        [key: string]: number;
+    };
+};
+
+/**
+ * PathwaySynthesis
+ */
+export type PathwaySynthesis = {
+    /**
+     * Library
+     */
+    library: string;
+    /**
+     * Gene Sets Md5
+     */
+    gene_sets_md5?: string | null;
+    /**
+     * Members
+     */
+    members?: Array<string>;
+    /**
+     * Left Out
+     *
+     * label -> why its enrichment was not merged
+     */
+    left_out?: {
+        [key: string]: string;
+    };
+    /**
+     * Fdr Threshold
+     */
+    fdr_threshold: number;
+    /**
+     * N Terms
+     */
+    n_terms: number;
+    /**
+     * N Consistent
+     *
+     * terms with the same sign in every member
+     */
+    n_consistent: number;
+    /**
+     * Terms
+     */
+    terms: Array<PathwayMeta>;
+};
+
+/**
  * PcaSummary
  */
 export type PcaSummary = {
@@ -817,6 +1996,26 @@ export type QcResult = {
     params?: {
         [key: string]: unknown;
     };
+};
+
+/**
+ * QuerySetMember
+ */
+export type QuerySetMember = {
+    /**
+     * Gse
+     */
+    gse: string;
+    /**
+     * Contrast
+     */
+    contrast: string;
+    /**
+     * Stratum
+     *
+     * sub-question this run answers (e.g. lesional_vs_healthy); runs are pooled overall and per stratum, and concordance is judged within a stratum
+     */
+    stratum?: string | null;
 };
 
 /**
@@ -898,6 +2097,52 @@ export type Reconciliation = {
 };
 
 /**
+ * Rejected
+ */
+export type Rejected = {
+    /**
+     * Gse
+     */
+    gse: string;
+    /**
+     * Why
+     */
+    why: string;
+};
+
+/**
+ * RunProgress
+ *
+ * Live view of a running contrast, rebuilt from the pipeline's progress lines.
+ */
+export type RunProgress = {
+    /**
+     * Started At
+     */
+    started_at: string;
+    /**
+     * Updated At
+     */
+    updated_at: string;
+    /**
+     * Current
+     *
+     * step in progress, if any
+     */
+    current?: string | null;
+    /**
+     * Steps
+     */
+    steps?: Array<StepProgress>;
+    /**
+     * Queued
+     *
+     * true until the pipeline has started this contrast
+     */
+    queued?: boolean;
+};
+
+/**
  * RunRequest
  *
  * One design file, as ``cell-ledger run --design`` reads it, plus a few run options.
@@ -960,6 +2205,10 @@ export type RunStatus = {
     error?: string | null;
     report?: AnalysisReport | null;
     /**
+     * step-by-step progress while running; null otherwise
+     */
+    progress?: RunProgress | null;
+    /**
      * Uploaded
      */
     uploaded?: boolean;
@@ -973,6 +2222,75 @@ export type RunStatus = {
      * names available for signed URLs
      */
     files?: Array<string>;
+};
+
+/**
+ * RunView
+ *
+ * Everything the run page needs in one response.
+ */
+export type RunView = {
+    /**
+     * Gse
+     */
+    gse: string;
+    /**
+     * Contrast
+     */
+    contrast: string;
+    /**
+     * Status
+     */
+    status: 'running' | 'complete' | 'qc_only' | 'blocked' | 'failed';
+    /**
+     * Started At
+     */
+    started_at: string;
+    /**
+     * Finished At
+     */
+    finished_at?: string | null;
+    /**
+     * Error
+     *
+     * pipeline error or why the run failed
+     */
+    error?: string | null;
+    report?: AnalysisReport | null;
+    /**
+     * step-by-step progress while running; null otherwise
+     */
+    progress?: RunProgress | null;
+    /**
+     * Uploaded
+     */
+    uploaded?: boolean;
+    /**
+     * Upload Error
+     */
+    upload_error?: string | null;
+    /**
+     * Files
+     *
+     * names available for signed URLs
+     */
+    files?: Array<string>;
+    /**
+     * what was submitted
+     */
+    design?: RunRequest | null;
+    /**
+     * Urls
+     *
+     * file name -> signed download URL
+     */
+    urls?: {
+        [key: string]: string;
+    };
+    /**
+     * Urls Expire In
+     */
+    urls_expire_in?: number;
 };
 
 /**
@@ -1227,6 +2545,42 @@ export type SearchResult = {
 };
 
 /**
+ * Sensitivity
+ *
+ * The synthesis with a flagged run's membership reversed.
+ */
+export type Sensitivity = {
+    /**
+     * Member
+     */
+    member: string;
+    /**
+     * Flag
+     */
+    flag: 'labels_reversed' | 'low_concordance' | 'concordance_unassessed';
+    /**
+     * Pooled By Default
+     */
+    pooled_by_default: boolean;
+    /**
+     * N Robust Default
+     */
+    n_robust_default: number;
+    /**
+     * N Robust Alternative
+     */
+    n_robust_alternative: number;
+    /**
+     * Robust Jaccard
+     */
+    robust_jaccard: number;
+    /**
+     * Spearman Pooled Z
+     */
+    spearman_pooled_z?: number | null;
+};
+
+/**
  * SessionInfo
  */
 export type SessionInfo = {
@@ -1238,6 +2592,60 @@ export type SessionInfo = {
      * Created At
      */
     created_at: string;
+    /**
+     * Question
+     *
+     * what the user asked, if recorded
+     */
+    question?: string | null;
+    /**
+     * State
+     *
+     * opaque UI state (discovery results, proposed designs); PATCH to replace
+     */
+    state?: {
+        [key: string]: unknown;
+    } | null;
+};
+
+/**
+ * SessionUpdate
+ */
+export type SessionUpdate = {
+    /**
+     * Question
+     */
+    question?: string | null;
+    /**
+     * State
+     *
+     * replaces the stored UI state wholesale when given
+     */
+    state?: {
+        [key: string]: unknown;
+    } | null;
+};
+
+/**
+ * StepProgress
+ */
+export type StepProgress = {
+    /**
+     * Name
+     */
+    name: string;
+    /**
+     * Status
+     */
+    status: 'running' | 'done';
+    /**
+     * Started At
+     */
+    started_at: string;
+    /**
+     * Seconds
+     */
+    seconds?: number | null;
 };
 
 /**
@@ -1677,6 +3085,36 @@ export type GetSessionResponses = {
 
 export type GetSessionResponse = GetSessionResponses[keyof GetSessionResponses];
 
+export type UpdateSessionData = {
+    body: SessionUpdate;
+    path: {
+        /**
+         * Session Id
+         */
+        session_id: string;
+    };
+    query?: never;
+    url: '/api/sessions/{session_id}';
+};
+
+export type UpdateSessionErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+};
+
+export type UpdateSessionError = UpdateSessionErrors[keyof UpdateSessionErrors];
+
+export type UpdateSessionResponses = {
+    /**
+     * Successful Response
+     */
+    200: SessionInfo;
+};
+
+export type UpdateSessionResponse = UpdateSessionResponses[keyof UpdateSessionResponses];
+
 export type ListDatasetsData = {
     body?: never;
     path: {
@@ -1843,6 +3281,44 @@ export type StartRunResponses = {
 
 export type StartRunResponse = StartRunResponses[keyof StartRunResponses];
 
+export type GetRunData = {
+    body?: never;
+    path: {
+        /**
+         * Session Id
+         */
+        session_id: string;
+        /**
+         * Gse
+         */
+        gse: string;
+        /**
+         * Contrast
+         */
+        contrast: string;
+    };
+    query?: never;
+    url: '/api/sessions/{session_id}/runs/{gse}/{contrast}';
+};
+
+export type GetRunErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+};
+
+export type GetRunError = GetRunErrors[keyof GetRunErrors];
+
+export type GetRunResponses = {
+    /**
+     * Successful Response
+     */
+    200: RunView;
+};
+
+export type GetRunResponse = GetRunResponses[keyof GetRunResponses];
+
 export type GetRunFileUrlData = {
     body?: never;
     path: {
@@ -1884,3 +3360,213 @@ export type GetRunFileUrlResponses = {
 };
 
 export type GetRunFileUrlResponse = GetRunFileUrlResponses[keyof GetRunFileUrlResponses];
+
+export type ListComparisonsData = {
+    body?: never;
+    path: {
+        /**
+         * Session Id
+         */
+        session_id: string;
+    };
+    query?: never;
+    url: '/api/sessions/{session_id}/comparisons';
+};
+
+export type ListComparisonsErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+};
+
+export type ListComparisonsError = ListComparisonsErrors[keyof ListComparisonsErrors];
+
+export type ListComparisonsResponses = {
+    /**
+     * Response Listcomparisons
+     *
+     * Successful Response
+     */
+    200: Array<ComparisonStatus>;
+};
+
+export type ListComparisonsResponse = ListComparisonsResponses[keyof ListComparisonsResponses];
+
+export type StartComparisonData = {
+    body: CompareRequest;
+    path: {
+        /**
+         * Session Id
+         */
+        session_id: string;
+    };
+    query?: never;
+    url: '/api/sessions/{session_id}/comparisons';
+};
+
+export type StartComparisonErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+};
+
+export type StartComparisonError = StartComparisonErrors[keyof StartComparisonErrors];
+
+export type StartComparisonResponses = {
+    /**
+     * Successful Response
+     */
+    202: ComparisonStatus;
+};
+
+export type StartComparisonResponse = StartComparisonResponses[keyof StartComparisonResponses];
+
+export type GetComparisonData = {
+    body?: never;
+    path: {
+        /**
+         * Session Id
+         */
+        session_id: string;
+        /**
+         * Name
+         */
+        name: string;
+    };
+    query?: never;
+    url: '/api/sessions/{session_id}/comparisons/{name}';
+};
+
+export type GetComparisonErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+};
+
+export type GetComparisonError = GetComparisonErrors[keyof GetComparisonErrors];
+
+export type GetComparisonResponses = {
+    /**
+     * Successful Response
+     */
+    200: ComparisonView;
+};
+
+export type GetComparisonResponse = GetComparisonResponses[keyof GetComparisonResponses];
+
+export type GetComparisonFileUrlData = {
+    body?: never;
+    path: {
+        /**
+         * Session Id
+         */
+        session_id: string;
+        /**
+         * Name
+         */
+        name: string;
+        /**
+         * File
+         */
+        file: string;
+    };
+    query?: never;
+    url: '/api/sessions/{session_id}/comparisons/{name}/files/{file}';
+};
+
+export type GetComparisonFileUrlErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+};
+
+export type GetComparisonFileUrlError = GetComparisonFileUrlErrors[keyof GetComparisonFileUrlErrors];
+
+export type GetComparisonFileUrlResponses = {
+    /**
+     * Successful Response
+     */
+    200: FileUrl;
+};
+
+export type GetComparisonFileUrlResponse = GetComparisonFileUrlResponses[keyof GetComparisonFileUrlResponses];
+
+export type DiscoverDatasetsData = {
+    body: DiscoverRequest;
+    path: {
+        /**
+         * Session Id
+         */
+        session_id: string;
+    };
+    query?: never;
+    url: '/api/sessions/{session_id}/discover';
+};
+
+export type DiscoverDatasetsErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+};
+
+export type DiscoverDatasetsError = DiscoverDatasetsErrors[keyof DiscoverDatasetsErrors];
+
+export type DiscoverDatasetsResponses = {
+    /**
+     * Successful Response
+     */
+    200: unknown;
+};
+
+export type DesignContrastData = {
+    body: DesignRequest;
+    path: {
+        /**
+         * Session Id
+         */
+        session_id: string;
+        /**
+         * Gse
+         */
+        gse: string;
+    };
+    query?: never;
+    url: '/api/sessions/{session_id}/datasets/{gse}/design';
+};
+
+export type DesignContrastErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+};
+
+export type DesignContrastError = DesignContrastErrors[keyof DesignContrastErrors];
+
+export type DesignContrastResponses = {
+    /**
+     * Successful Response
+     */
+    200: unknown;
+};
+
+export type GetAgentTypesData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/api/agent/types';
+};
+
+export type GetAgentTypesResponses = {
+    /**
+     * Successful Response
+     */
+    200: AgentTypes;
+};
+
+export type GetAgentTypesResponse = GetAgentTypesResponses[keyof GetAgentTypesResponses];

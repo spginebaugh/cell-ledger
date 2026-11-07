@@ -1,8 +1,213 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ tokens
+   The pipeline's palette (case blue, control orange, muted grey) is the law here so that
+   the PNGs in report.md and the live charts say the same thing. */
 :root {
-  font-family: system-ui, sans-serif;
-  color-scheme: light dark;
+  --bg: #f4f3ee;
+  --surface: #fcfcfb;
+  --surface-2: #f0efe9;
+  --ink: #141412;
+  --ink-2: #52514e;
+  --ink-3: #8a8983;
+  --line: #e2e1db;
+  --line-2: #cfcec6;
+  --case: #2a78d6;
+  --case-soft: #e3eefb;
+  --control: #eb6834;
+  --control-soft: #fde9df;
+  --muted: #b8b7b2;
+  --danger: #b9382a;
+  --danger-soft: #fbe7e3;
+  --amber: #a46d0b;
+  --amber-soft: #fbefd6;
+  --ok: #2f7d4f;
+  --ok-soft: #e0f1e6;
+  --focus: #2a78d6;
+  --grid: #e8e7e1;
+  --shadow: 0 1px 0 rgba(20, 20, 18, 0.04), 0 1px 2px rgba(20, 20, 18, 0.06);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121311;
+    --surface: #1a1b19;
+    --surface-2: #222320;
+    --ink: #ecebe5;
+    --ink-2: #b4b2aa;
+    --ink-3: #7f7e77;
+    --line: #2b2c28;
+    --line-2: #3a3b36;
+    --case: #5a9ae6;
+    --case-soft: #182a40;
+    --control: #f0875d;
+    --control-soft: #3d241a;
+    --muted: #6f6e68;
+    --danger: #e0695a;
+    --danger-soft: #3b1f1b;
+    --amber: #d7a13b;
+    --amber-soft: #3a2d14;
+    --ok: #6cbf8a;
+    --ok-soft: #1c3326;
+    --focus: #7fb2f0;
+    --grid: #262723;
+    --shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121311;
+  --surface: #1a1b19;
+  --surface-2: #222320;
+  --ink: #ecebe5;
+  --ink-2: #b4b2aa;
+  --ink-3: #7f7e77;
+  --line: #2b2c28;
+  --line-2: #3a3b36;
+  --case: #5a9ae6;
+  --case-soft: #182a40;
+  --control: #f0875d;
+  --control-soft: #3d241a;
+  --muted: #6f6e68;
+  --danger: #e0695a;
+  --danger-soft: #3b1f1b;
+  --amber: #d7a13b;
+  --amber-soft: #3a2d14;
+  --ok: #6cbf8a;
+  --ok-soft: #1c3326;
+  --focus: #7fb2f0;
+  --grid: #262723;
+  --shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-line: var(--line);
+  --color-line-2: var(--line-2);
+  --color-case: var(--case);
+  --color-case-soft: var(--case-soft);
+  --color-control: var(--control);
+  --color-control-soft: var(--control-soft);
+  --color-muted: var(--muted);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-amber: var(--amber);
+  --color-amber-soft: var(--amber-soft);
+  --color-ok: var(--ok);
+  --color-ok-soft: var(--ok-soft);
+  --color-focus: var(--focus);
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+}
+
+/* ------------------------------------------------------------------- base */
+html {
+  background: var(--bg);
 }
 body {
   margin: 0;
-  padding: 2rem;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  margin: 0;
+}
+h1 {
+  font-size: clamp(1.9rem, 2.2vw + 1rem, 2.6rem);
+  line-height: 1.15;
+  font-variation-settings: "opsz" 72;
+}
+h2 {
+  font-size: 1.35rem;
+  line-height: 1.3;
+}
+h3 {
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+a {
+  color: inherit;
+}
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+::selection {
+  background: var(--case-soft);
+}
+.accession {
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+  letter-spacing: 0.01em;
+}
+.num {
+  font-variant-numeric: tabular-nums;
+}
+.prose p {
+  margin: 0 0 0.75em;
+}
+.prose h1,
+.prose h2,
+.prose h3 {
+  margin: 1.2em 0 0.4em;
+}
+.prose table {
+  border-collapse: collapse;
+  font-size: 0.9em;
+}
+.prose td,
+.prose th {
+  border-bottom: 1px solid var(--line);
+  padding: 0.25em 0.6em;
+  text-align: left;
+}
+.prose code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--surface-2);
+  padding: 0 0.25em;
+  border-radius: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    /* biome-ignore lint/complexity/noImportantStyles: the reduced-motion override must beat utility classes */
+    animation-duration: 0.01ms !important;
+    /* biome-ignore lint/complexity/noImportantStyles: same */
+    transition-duration: 0.01ms !important;
+  }
+}
+@keyframes cl-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+.pulse {
+  animation: cl-pulse 1.6s ease-in-out infinite;
 }

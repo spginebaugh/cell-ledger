@@ -11,9 +11,11 @@ from fastapi.responses import JSONResponse
 
 from cell_ledger.geo import GeoClient
 from cell_ledger_api import __version__
+from cell_ledger_api.agent import Agent, TurnRunner, sdk_turn_runner
+from cell_ledger_api.compare import CompareService
 from cell_ledger_api.db import Database
 from cell_ledger_api.discovery import ExaSearcher
-from cell_ledger_api.routes import geo, health, runs, sessions
+from cell_ledger_api.routes import agent, comparisons, geo, health, runs, sessions
 from cell_ledger_api.runs import DEFAULT_COMMAND, RunService
 from cell_ledger_api.sessions import SessionNotFound, SessionService
 from cell_ledger_api.settings import Settings
@@ -28,11 +30,15 @@ def create_app(
     *,
     transport: httpx.AsyncBaseTransport | None = None,
     run_command: Sequence[str] = DEFAULT_COMMAND,
+    compare_command: Sequence[str] = DEFAULT_COMMAND,
     exa: ExaSearcher | None = None,
+    turn: TurnRunner | None = None,
 ) -> FastAPI:
-    """``transport`` swaps out NCBI GEO, ``run_command`` the pipeline subprocess and ``exa``
-    the web search. Postgres and Storage are never faked: tests run against the local
-    Supabase stack, which applies the same migrations and bucket as the cloud project."""
+    """``transport`` swaps out NCBI GEO, ``run_command`` the pipeline subprocess,
+    ``compare_command`` the comparison subprocess, ``exa`` the web search and ``turn`` the
+    calls to Claude. Postgres and
+    Storage are never faked: tests run against the local Supabase stack, which applies the
+    same migrations and bucket as the cloud project."""
     cfg = cfg if cfg is not None else Settings()  # type: ignore[call-arg]
     settings = cfg
 
@@ -71,11 +77,18 @@ def create_app(
                 command=run_command,
                 max_attempts=settings.max_attempts,
             )
+            app.state.comparisons = CompareService(
+                app.state.sessions,
+                app.state.runs,
+                timeout_minutes=settings.compare_timeout_minutes,
+                command=compare_command,
+            )
             ttl = timedelta(hours=settings.session_ttl_hours)
             removed = await app.state.sessions.sweep(ttl)
             if removed:
                 log.info("swept %d expired sessions", len(removed))
             resumed = await app.state.sessions.recover() + await app.state.runs.recover()
+            await app.state.comparisons.recover()
             if resumed:
                 log.warning("re-dispatched %d collect/run jobs interrupted by the restart", resumed)
 
@@ -97,10 +110,29 @@ def create_app(
 
                 own_exa = AsyncExa(api_key=settings.exa_api_key.get_secret_value())
             app.state.exa = exa if exa is not None else own_exa
+
+            own_anthropic = None
+            runner = turn
+            if runner is None and settings.anthropic_api_key:
+                import anthropic
+
+                own_anthropic = anthropic.AsyncAnthropic(
+                    api_key=settings.anthropic_api_key.get_secret_value(), max_retries=2
+                )
+                runner = sdk_turn_runner(own_anthropic)
+            app.state.agent = Agent(
+                app.state.geo,
+                turn=runner,
+                exa=app.state.exa,  # type: ignore[arg-type]
+                model=settings.anthropic_model,
+                effort=settings.anthropic_effort,
+            )
             try:
                 yield
             finally:
                 sweeper.cancel()
+                if own_anthropic is not None:
+                    await own_anthropic.close()
                 if own_exa is not None:
                     await own_exa.aclose()
                 await store.aclose()
@@ -123,7 +155,15 @@ def create_app(
         log.warning("storage request failed: %s", exc)
         return JSONResponse({"detail": f"storage unavailable: {exc}"}, status_code=502)
 
-    for r in (health.router, geo.router, sessions.router, runs.router):
+    for r in (
+        health.router,
+        geo.router,
+        sessions.router,
+        runs.router,
+        comparisons.router,
+        agent.router,
+        agent.types_router,
+    ):
         app.include_router(r, prefix="/api")
 
     if settings.web_dist is not None:

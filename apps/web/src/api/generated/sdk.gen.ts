@@ -2,7 +2,7 @@
 
 import type { Client, ClientMeta, Options as Options2, RequestResult, TDataShape } from './client';
 import { client } from './client.gen';
-import type { CollectDatasetsData, CollectDatasetsErrors, CollectDatasetsResponses, CreateSessionData, CreateSessionResponses, DeleteSessionData, DeleteSessionErrors, DeleteSessionResponses, GetDatasetFileUrlData, GetDatasetFileUrlErrors, GetDatasetFileUrlResponses, GetHealthData, GetHealthResponses, GetRunFileUrlData, GetRunFileUrlErrors, GetRunFileUrlResponses, GetSessionData, GetSessionErrors, GetSessionResponses, ListDatasetsData, ListDatasetsErrors, ListDatasetsResponses, ListRunsData, ListRunsErrors, ListRunsResponses, SearchGeoData, SearchGeoErrors, SearchGeoOnWebData, SearchGeoOnWebErrors, SearchGeoOnWebResponses, SearchGeoResponses, StartRunData, StartRunErrors, StartRunResponses, VerifyGeoSeriesData, VerifyGeoSeriesErrors, VerifyGeoSeriesResponses } from './types.gen';
+import type { CollectDatasetsData, CollectDatasetsErrors, CollectDatasetsResponses, CreateSessionData, CreateSessionResponses, DeleteSessionData, DeleteSessionErrors, DeleteSessionResponses, DesignContrastData, DesignContrastErrors, DesignContrastResponses, DiscoverDatasetsData, DiscoverDatasetsErrors, DiscoverDatasetsResponses, GetAgentTypesData, GetAgentTypesResponses, GetComparisonData, GetComparisonErrors, GetComparisonFileUrlData, GetComparisonFileUrlErrors, GetComparisonFileUrlResponses, GetComparisonResponses, GetDatasetFileUrlData, GetDatasetFileUrlErrors, GetDatasetFileUrlResponses, GetHealthData, GetHealthResponses, GetRunData, GetRunErrors, GetRunFileUrlData, GetRunFileUrlErrors, GetRunFileUrlResponses, GetRunResponses, GetSessionData, GetSessionErrors, GetSessionResponses, ListComparisonsData, ListComparisonsErrors, ListComparisonsResponses, ListDatasetsData, ListDatasetsErrors, ListDatasetsResponses, ListRunsData, ListRunsErrors, ListRunsResponses, SearchGeoData, SearchGeoErrors, SearchGeoOnWebData, SearchGeoOnWebErrors, SearchGeoOnWebResponses, SearchGeoResponses, StartComparisonData, StartComparisonErrors, StartComparisonResponses, StartRunData, StartRunErrors, StartRunResponses, UpdateSessionData, UpdateSessionErrors, UpdateSessionResponses, VerifyGeoSeriesData, VerifyGeoSeriesErrors, VerifyGeoSeriesResponses } from './types.gen';
 
 export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends boolean = boolean, TResponse = unknown> = Options2<TData, ThrowOnError, TResponse> & {
     /**
@@ -83,6 +83,20 @@ export const deleteSession = <ThrowOnError extends boolean = false>(options: Opt
 export const getSession = <ThrowOnError extends boolean = false>(options: Options<GetSessionData, ThrowOnError>): RequestResult<GetSessionResponses, GetSessionErrors, ThrowOnError> => (options.client ?? client).get<GetSessionResponses, GetSessionErrors, ThrowOnError>({ url: '/api/sessions/{session_id}', ...options });
 
 /**
+ * Update Session
+ *
+ * Record the user's question and the UI's working state so a reload restores them.
+ */
+export const updateSession = <ThrowOnError extends boolean = false>(options: Options<UpdateSessionData, ThrowOnError>): RequestResult<UpdateSessionResponses, UpdateSessionErrors, ThrowOnError> => (options.client ?? client).patch<UpdateSessionResponses, UpdateSessionErrors, ThrowOnError>({
+    url: '/api/sessions/{session_id}',
+    ...options,
+    headers: {
+        'Content-Type': 'application/json',
+        ...options.headers
+    }
+});
+
+/**
  * List Datasets
  *
  * Every dataset in the session with its current status.
@@ -136,8 +150,94 @@ export const startRun = <ThrowOnError extends boolean = false>(options: Options<
 });
 
 /**
+ * Get Run
+ *
+ * The run page in one call: status, progress, report, the submitted design and a
+ * signed URL for every stored file (valid for the life of the session).
+ */
+export const getRun = <ThrowOnError extends boolean = false>(options: Options<GetRunData, ThrowOnError>): RequestResult<GetRunResponses, GetRunErrors, ThrowOnError> => (options.client ?? client).get<GetRunResponses, GetRunErrors, ThrowOnError>({ url: '/api/sessions/{session_id}/runs/{gse}/{contrast}', ...options });
+
+/**
  * Get Run File Url
  *
  * Short-lived download link for one run output, e.g. ``report.json`` or ``figures/pca.png``.
  */
 export const getRunFileUrl = <ThrowOnError extends boolean = false>(options: Options<GetRunFileUrlData, ThrowOnError>): RequestResult<GetRunFileUrlResponses, GetRunFileUrlErrors, ThrowOnError> => (options.client ?? client).get<GetRunFileUrlResponses, GetRunFileUrlErrors, ThrowOnError>({ url: '/api/sessions/{session_id}/runs/{gse}/{contrast}/files/{name}', ...options });
+
+/**
+ * List Comparisons
+ */
+export const listComparisons = <ThrowOnError extends boolean = false>(options: Options<ListComparisonsData, ThrowOnError>): RequestResult<ListComparisonsResponses, ListComparisonsErrors, ThrowOnError> => (options.client ?? client).get<ListComparisonsResponses, ListComparisonsErrors, ThrowOnError>({ url: '/api/sessions/{session_id}/comparisons', ...options });
+
+/**
+ * Start Comparison
+ *
+ * Compare finished runs in this session in the background.
+ *
+ * Every member must be a run of this session that is no longer running; the comparison
+ * itself decides which members it can pool and records the rest as excluded. Poll
+ * ``listComparisons`` or ``getComparison`` until the status leaves ``running``.
+ */
+export const startComparison = <ThrowOnError extends boolean = false>(options: Options<StartComparisonData, ThrowOnError>): RequestResult<StartComparisonResponses, StartComparisonErrors, ThrowOnError> => (options.client ?? client).post<StartComparisonResponses, StartComparisonErrors, ThrowOnError>({
+    url: '/api/sessions/{session_id}/comparisons',
+    ...options,
+    headers: {
+        'Content-Type': 'application/json',
+        ...options.headers
+    }
+});
+
+/**
+ * Get Comparison
+ *
+ * The comparison page in one call: status, report and signed URLs for its files.
+ */
+export const getComparison = <ThrowOnError extends boolean = false>(options: Options<GetComparisonData, ThrowOnError>): RequestResult<GetComparisonResponses, GetComparisonErrors, ThrowOnError> => (options.client ?? client).get<GetComparisonResponses, GetComparisonErrors, ThrowOnError>({ url: '/api/sessions/{session_id}/comparisons/{name}', ...options });
+
+/**
+ * Get Comparison File Url
+ */
+export const getComparisonFileUrl = <ThrowOnError extends boolean = false>(options: Options<GetComparisonFileUrlData, ThrowOnError>): RequestResult<GetComparisonFileUrlResponses, GetComparisonFileUrlErrors, ThrowOnError> => (options.client ?? client).get<GetComparisonFileUrlResponses, GetComparisonFileUrlErrors, ThrowOnError>({ url: '/api/sessions/{session_id}/comparisons/{name}/files/{file}', ...options });
+
+/**
+ * Discover
+ *
+ * Stream Claude's search for datasets that answer the question (Server-Sent Events).
+ *
+ * Events: ``thinking`` (delta), ``tool`` (name, input, summary), ``result`` (a
+ * ``DiscoveryResult``), ``error`` (message), ``done``. The question is recorded on the
+ * session.
+ */
+export const discoverDatasets = <ThrowOnError extends boolean = false>(options: Options<DiscoverDatasetsData, ThrowOnError>): RequestResult<DiscoverDatasetsResponses, DiscoverDatasetsErrors, ThrowOnError> => (options.client ?? client).post<DiscoverDatasetsResponses, DiscoverDatasetsErrors, ThrowOnError>({
+    url: '/api/sessions/{session_id}/discover',
+    ...options,
+    headers: {
+        'Content-Type': 'application/json',
+        ...options.headers
+    }
+});
+
+/**
+ * Design
+ *
+ * Stream Claude's sample labelling and contrast proposal for one collected dataset.
+ *
+ * Events as for ``discoverDatasets``; the ``result`` is a ``DesignProposal`` whose design
+ * carries ``status: proposed`` contrasts. Confirm them (set ``status: confirmed``) and
+ * submit the design to ``startRun``.
+ */
+export const designContrast = <ThrowOnError extends boolean = false>(options: Options<DesignContrastData, ThrowOnError>): RequestResult<DesignContrastResponses, DesignContrastErrors, ThrowOnError> => (options.client ?? client).post<DesignContrastResponses, DesignContrastErrors, ThrowOnError>({
+    url: '/api/sessions/{session_id}/datasets/{gse}/design',
+    ...options,
+    headers: {
+        'Content-Type': 'application/json',
+        ...options.headers
+    }
+});
+
+/**
+ * Get Agent Types
+ *
+ * Whether Claude is configured, plus the schemas of the streamed payloads.
+ */
+export const getAgentTypes = <ThrowOnError extends boolean = false>(options?: Options<GetAgentTypesData, ThrowOnError>): RequestResult<GetAgentTypesResponses, unknown, ThrowOnError> => (options?.client ?? client).get<GetAgentTypesResponses, unknown, ThrowOnError>({ url: '/api/agent/types', ...options });

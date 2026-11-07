@@ -24,6 +24,13 @@ def test_collect_list_link_and_delete(
     sid = client.post("/api/sessions").json()["id"]
     assert client.get(f"/api/sessions/{sid}").json()["id"] == sid
 
+    # The UI parks its question and working state on the session.
+    r = client.patch(f"/api/sessions/{sid}", json={"question": "is IL17A up?"})
+    assert r.status_code == 200 and r.json()["question"] == "is IL17A up?"
+    r = client.patch(f"/api/sessions/{sid}", json={"state": {"step": "discover"}})
+    assert r.json() == {**r.json(), "question": "is IL17A up?", "state": {"step": "discover"}}
+    assert client.patch(f"/api/sessions/{'0' * 32}", json={"question": "x"}).status_code == 404
+
     r = client.post(f"/api/sessions/{sid}/datasets", json={"gses": ["GSE100001", "GSE100002"]})
     assert r.status_code == 202
     assert [d["gse"] for d in r.json()] == ["GSE100001", "GSE100002"]

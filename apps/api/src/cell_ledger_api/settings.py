@@ -59,6 +59,8 @@ class Settings(BaseSettings):
     max_concurrent_runs: int = 2
     run_n_cpus: int | None = None
     run_timeout_minutes: float = 30
+    # Comparisons are lighter (no counts, no fit) but pooled GSEA still takes a while.
+    compare_timeout_minutes: float = 15
 
     # Work interrupted by a restart is re-dispatched at boot, this many times at most, so a
     # job that crashes the machine cannot restart it forever.

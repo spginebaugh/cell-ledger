@@ -194,9 +194,15 @@ def api(
     started = asyncio.run(_db_now(settings_for()))
 
     @contextmanager
-    def make(*, run_command: Any = DEFAULT_COMMAND, exa: Any = None, **overrides: Any):  # type: ignore[no-untyped-def]
+    def make(  # type: ignore[no-untyped-def]
+        *, run_command: Any = DEFAULT_COMMAND, exa: Any = None, turn: Any = None, **overrides: Any
+    ):
         app = create_app(
-            settings_for(**overrides), transport=geo_transport, run_command=run_command, exa=exa
+            settings_for(**overrides),
+            transport=geo_transport,
+            run_command=run_command,
+            exa=exa,
+            turn=turn,
         )
         with TestClient(app) as c:
             yield c

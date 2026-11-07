@@ -11,6 +11,7 @@ the report is still written.
 
 from __future__ import annotations
 
+import gzip
 import hashlib
 import json
 import os
@@ -21,6 +22,7 @@ from collections import Counter
 from datetime import UTC, datetime
 from importlib.metadata import version
 from pathlib import Path
+from typing import Any
 
 import anndata as ad
 import numpy as np
@@ -34,9 +36,9 @@ from cell_ledger.analysis.enrichment import HALLMARK, EnrichmentParams, run_prer
 from cell_ledger.analysis.filtering import filter_genes
 from cell_ledger.analysis.genes import log2_normalized, lookup_genes, score_markers
 from cell_ledger.analysis.qc import run_qc
-from cell_ledger.analysis.steps import step
+from cell_ledger.analysis.steps import emit, step
 from cell_ledger.report import figures
-from cell_ledger.report.models import AnalysisReport, MarkerExpectation, QcResult
+from cell_ledger.report.models import AnalysisReport, GeneExpression, MarkerExpectation, QcResult
 from cell_ledger.report.render import render_markdown
 from cell_ledger.samplesheet import Contrast, SampleSheet
 
@@ -81,7 +83,7 @@ def _check_output_dir(final: Path) -> None:
 
 
 def _attach_qc_to_obs(adata: ad.AnnData, qc: QcResult) -> None:
-    """Put per-sample QC into ``obs`` (and PCA into ``obsm``) so h5ad and samples.csv agree."""
+    """Put per-sample QC into ``obs`` (and PCA into ``obsm``) so samples.csv carries them."""
     obs = obs_frame(adata)
     by = {s.gsm: s for s in qc.samples}
     idx = [str(g) for g in adata.obs_names]
@@ -182,6 +184,7 @@ def run_pipeline(
         versions=_versions(),
         params=params.model_dump(),
     )
+    emit("run", status="started", gse=sheet.gse)
     try:
         report.fingerprint = compute_fingerprint(
             counts_path, annotation_path, sheet, contrast, params
@@ -200,7 +203,50 @@ def run_pipeline(
     if final.exists():
         shutil.rmtree(final)
     work.rename(final)
+    emit("run", status="finished", gse=sheet.gse, result=report.status)
     return report
+
+
+VOLCANO_COLUMNS = ("gene_id", "symbol", "base_mean", "log2fc", "padj")
+
+
+def write_volcano(results: pd.DataFrame, path: Path, *, alpha: float, lfc_threshold: float) -> None:
+    """The DE table the browser draws: five columns, column-major, gzipped JSON.
+
+    Column-major keeps the file small and parses straight into typed arrays. Numbers are
+    rounded to what a plot can show; the full-precision table stays in ``de_results.tsv``.
+    """
+    df = results.reset_index()
+    if "gene_id" not in df.columns:
+        df = df.rename(columns={df.columns[0]: "gene_id"})
+
+    def column(name: str, nd: int | None) -> list[Any]:
+        out: list[Any] = []
+        for v in df[name].tolist():
+            if v is None or (isinstance(v, float) and np.isnan(v)):
+                out.append(None)
+            elif nd is None:
+                out.append(str(v))
+            else:
+                out.append(round(float(v), nd))
+        return out
+
+    doc = {
+        "n": len(df),
+        "alpha": alpha,
+        "lfc_threshold": lfc_threshold,
+        "columns": list(VOLCANO_COLUMNS),
+        "gene_id": column("gene_id", None),
+        "symbol": column("symbol", None),
+        "base_mean": column("base_mean", 2),
+        "log2fc": column("log2fc", 4),
+        # padj spans 300 orders of magnitude: 3 significant digits, never rounded to a
+        # fixed number of decimals (that would turn 1e-282 into 0).
+        "padj": [None if v is None else float(f"{v:.3g}") for v in column("padj", 300)],
+    }
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with gzip.open(path, "wt", encoding="utf-8", compresslevel=6) as f:
+        json.dump(doc, f, separators=(",", ":"), allow_nan=False)
 
 
 def _run(
@@ -321,24 +367,20 @@ def _run(
                 f"{fit.summary.summary.n_case_used} case and "
                 f"{fit.summary.summary.n_control_used} control observations"
             )
-        if plan.dropped:
-            filtered = filtered[plan.kept].copy()
         arms = fit.arms
         results.to_csv(out / "de_results.tsv", sep="\t")
         report.files["de_results"] = "de_results.tsv"
+        write_volcano(
+            results,
+            out / "volcano.json.gz",
+            alpha=params.alpha,
+            lfc_threshold=params.lfc_threshold,
+        )
+        report.files["volcano"] = "volcano.json.gz"
         normed_t = normed.T
         normed_t.index.name = "GeneID"
         normed_t.to_csv(out / "normalized_counts.tsv", sep="\t", float_format="%.3f")
         report.files["normalized_counts"] = "normalized_counts.tsv"
-        if not plan.collapsed:
-            filtered.layers["normed_counts"] = normed.loc[
-                filtered.obs_names, filtered.var_names
-            ].to_numpy()
-            filtered.layers["log2_normed"] = (
-                log2_normalized(normed).loc[filtered.obs_names, filtered.var_names].to_numpy()
-            )
-        else:
-            filtered.uns["collapsed"] = json.dumps(plan.collapsed)
 
         if params.run_enrichment:
             enr = EnrichmentParams(
@@ -371,6 +413,25 @@ def _run(
                 report.markers = score_markers(params.markers, lookups, top_n=params.marker_top_n)
         pd.DataFrame([r.model_dump() for r in lookups]).to_csv(out / "gene_lookup.csv", index=False)
         report.files["gene_lookup"] = "gene_lookup.csv"
+        if normed is not None:
+            log2n = log2_normalized(normed)
+            seen: set[str] = set()
+            for r in lookups:
+                gid = r.gene_id
+                if gid is None or gid in seen or gid not in log2n.columns:
+                    continue
+                seen.add(gid)
+                col = log2n[gid].to_numpy(dtype=float)
+                report.gene_expression.append(
+                    GeneExpression(
+                        gene_id=gid,
+                        symbol=r.symbol,
+                        values={
+                            str(g): round(float(v), 4)
+                            for g, v in zip(log2n.index, col, strict=True)
+                        },
+                    )
+                )
 
     # 8. Figures.
     if params.figures:
@@ -406,14 +467,6 @@ def _run(
                 p = figures.enrichment_bars(report.enrichment, fig_dir / "enrichment.png")
                 if p is not None:
                     report.figures["enrichment"] = rel(p)
-
-    # 9. AnnData. report.json is canonical; the embedded copy lacks only this step's timing.
-    with step(steps, "write_h5ad"):
-        report.files["anndata"] = "dataset.h5ad"
-        report.files["report_json"] = REPORT_JSON
-        report.files["report_md"] = "report.md"
-        filtered.uns["report"] = report.model_dump_json()
-        filtered.write_h5ad(out / "dataset.h5ad")
 
 
 def load_design(path: str | Path) -> tuple[SampleSheet, list[Contrast], list[MarkerExpectation]]:
