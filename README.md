@@ -26,6 +26,9 @@ packages/core/       pure-Python pipeline library, no web deps (cell_ledger)
   compare/           cross-dataset comparison over finished runs (gate, meta-analysis, pathways)
   report/            AnalysisReport model, markdown renderer, figures
   cli.py             `cell-ledger run <GSE>` / `run-all` / `run-set <query set>` / `compare`
+  bulk.py, bundle.py  standalone preparation validation and export
+  pipeline.py        standalone topic-to-bundle preparation
+  interpretation.py  structured interpretation with source evidence
 scripts/             dev scripts: fetch example GEO datasets, build gold sample sheets
 docs/                specs and ADRs (adr-001: SampleSheet/Contrast contract), deploy.md
 supabase/            local stack config + SQL migrations: Postgres is the source of truth for
@@ -40,7 +43,7 @@ data/                gitignored local cache: GEO downloads, annotation table, ru
 mise install              # toolchains (plus the Supabase CLI and Docker)
 mise run setup            # uv sync, bun install, Playwright Chromium
 mise run supabase:start   # local Postgres + Storage; applies supabase/migrations, creates the bucket
-cp .env.example .env      # already points at the local stack; add your NCBI key
+test -e .env || cp .env.example .env  # preserve an existing .env; fill required settings
 ```
 
 The API refuses to start without `CELL_LEDGER_DATABASE_URL` and the Supabase Storage
@@ -104,3 +107,67 @@ answers 503, designs fail with that reason, and the home page says so.
   contrasts for ten two-group series plus the members of two multi-dataset query sets
   (`fixtures/query_sets/`); `uv run python scripts/fetch_geo_examples.py` downloads
   their counts into `data/geo/` for local integration tests.
+
+## Local validation history and preserved work
+
+Main was updated from `357998e` to `0341240` on November 7, 2026. The incoming browser
+replaces the earlier preparation-only `/api/runs` and Saved runs interface with the
+automatic session workflow described above. Earlier saved preparation bundles and
+research outputs remain local; this pull did not migrate them or verify that the new
+interface can reopen them. Documentation, roadmap and course edits remain uncommitted.
+
+The original integrity report records **289 passed / 71 skipped** at dirty `7cb4817`;
+the same counts passed on the isolated final staged snapshot. At committed `357998e`,
+configured compatibility checks then passed **30 tests** (all 29 previously skipped
+plus one already-enabled test), and the real-data rerun passed **42 tests**, both with
+zero skips or failures. All **360 unique Python cases** have therefore passed across
+separate runs; there was no single new 360-pass full-suite invocation. Web tests (4),
+earlier browser flows (3), production build, lint, formatting and type checks passed.
+
+Historical reports retain their original revision and scope. Matched benchmarks,
+independent biological/cross-study validation, production deployment and remaining
+recovery edge cases are still pending. The successful GSE82227 marker regression is
+separate from the GSE307006 research analysis. These results belong to 357998e and earlier snapshots, not the newly pulled revision.
+
+The separately authorized GSE307006 paired analysis remains local research with its
+recorded limitations, not automatic app behavior or an independent benchmark. See
+[implementation history](docs/IMPLEMENTATION.md), [evaluation evidence](evals/RESULTS.md)
+and [decision history](docs/decision_log.md). Those local records may still describe
+the earlier revision; this pull does not relabel their evidence as current.
+
+## Standalone preparation CLI
+
+The retained topic-to-bundle CLI is separate from the new automatic browser workflow.
+It prepares per-study bundles and an opt-in script; it does not implicitly execute DE.
+
+```sh
+mise exec -- cell-ledger "IFN-gamma stimulated human macrophages" --out ./data/runs/ifng --ask
+```
+
+Use a new output directory for each standalone CLI run. CLI `--ask` pauses for exact group labels;
+`--auto` records uncertainty and continues. To supply known source labels directly:
+
+```sh
+mise exec -- cell-ledger "your topic" --case "treated" --control "untreated" --out ./data/runs/example
+```
+
+Without a model, searches use the topic verbatim, results retain GEO order, and group
+labels require explicit source values. This mode does not perform semantic relevance
+ranking. Optional model-assisted query expansion, ranking and evidence-backed labeling
+are enabled by `CELL_LEDGER_MODEL` and `CELL_LEDGER_ANTHROPIC_API_KEY` in `.env` or the environment.
+Use an actual model ID available to your account. `CELL_LEDGER_NCBI_API_KEY` is optional.
+The standalone preparation CLI also accepts `ANTHROPIC_API_KEY` and `NCBI_API_KEY`;
+prefixed names take precedence when both are set. The new API requires its documented prefixed settings.
+`--offline` uses cached source and model responses; misses are reported explicitly.
+
+Each output contains `manifest.json`, `shortlist.md`, `questions.md`, `contrasts.json`,
+`run_deseq.py`, and separate `datasets/GSE.../` folders. Gene symbols are annotations;
+original gene IDs remain the matrix keys. Unknown-unit matrices are exploration-only.
+Review the questions before explicitly running `uv run python <output>/run_deseq.py`.
+
+```python
+from cell_ledger.bundle import load_bundle
+
+counts, samples, genes, study = load_bundle("data/runs/example/datasets/<GSE>")
+# counts is samples × genes, aligned exactly to samples and genes.
+```

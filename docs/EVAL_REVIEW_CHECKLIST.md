@@ -1,6 +1,26 @@
 # Kirsten's eval review checkpoint
 
-Updated 2026-11-07. Draft development examples, not a finished benchmark. No commit authorized.
+## Evaluation revision and validation status — November 7, 2026
+
+The evaluation implementation and reruns below refer to commit
+`357998e741e8801990cff0bf0c5530fc1faa60e0`, which includes evaluation tools and
+integrity reports.
+
+The original integrity report records **289 passed / 71 skipped** at dirty `7cb4817`;
+the same counts passed on the isolated final staged snapshot. At committed `357998e`,
+configured compatibility checks then passed **30 tests** (all 29 previously skipped
+plus one already-enabled test), and the real-data rerun passed **42 tests**, both with
+zero skips or failures. All **360 unique Python cases** have therefore passed across
+separate runs; there was no single new 360-pass full-suite invocation. These are
+software and regression checks, not a scientific performance score for this pilot.
+
+Historical reports retain their original revision and scope. Matched benchmarks
+and independent biological/cross-study validation remain pending. The successful
+GSE82227 marker regression and the separate GSE307006 research analysis do not
+validate the pancreatic pilot's scientific conclusions. Earlier revision references
+below identify historical audits, not the revision of the evaluation reruns above.
+
+Updated 2026-11-07. Development review draft, not a finished benchmark. The pilot checkpoint is committed in `5b68ac7` and present on audited main `7cb4817`. The later evaluation implementation converts approved decisions without changing the review evidence or closing scientific questions.
 
 ## Recorded
 
@@ -19,25 +39,29 @@ Updated 2026-11-07. Draft development examples, not a finished benchmark. No com
 - [x] GSE273398: user approved CLIC1-knockdown group GSM8427626, GSM8427627, GSM8427628. Control and knockdown groups now recorded; no downstream analysis approval.
 - [x] Define approved broad pancreatic-cancer and organoid-only expectations, with search and inspection stages separate.
 - [ ] Define a separate cell-line-only prompt case in future work; not needed for this draft checkpoint.
-- [x] Record source-defined PDO equivalence and knockdown/knockout non-equivalence. Runnable scoring and additional ambiguous terminology cases remain future work.
+- [x] Record source-defined PDO equivalence and knockdown/knockout non-equivalence. Runnable scoring now tests these approved cases; additional ambiguous terminology cases remain future work.
 
-## Recommended first commit checkpoint: reviewed pilot draft
+## Completed commit checkpoint: reviewed pilot draft
 
 This can be a draft checkpoint; completing every eval is not necessary.
 
 - [x] Complete the mixed-model study-level decision above; sample-level review remains pending.
-- [x] Prepare versionable review copies at evals/review_drafts/pancreatic-pilot/ with source excerpts, audit history and hashes. Original data/evals working files remain ignored; copies are currently untracked, not committed.
+- [x] Prepare versionable review copies at evals/review_drafts/pancreatic-pilot/ with source excerpts, audit history and hashes. Original data/evals working files remain ignored; copies were committed in `5b68ac7`.
 - [x] Preserve pending scientific judgments and mark the package as a development review draft, not frozen gold.
-- [x] Proposed checkpoint contains only evals/review_drafts/pancreatic-pilot/ and this checklist. Its validator uses the Python standard library; unrelated toolkit/product/dependency changes remain outside this scope.
-- [x] Validate and inspect the proposed added-file scope: standalone draft validation passed; existing evaluator test suite passed. Evidence and annotations are versionable. See evals/review_drafts/pancreatic-pilot/VALIDATION.md. No staging or commit performed.
-- [ ] Commit only after explicit user permission. Nothing is staged or committed by this checklist.
+- [x] The committed checkpoint contained only evals/review_drafts/pancreatic-pilot/ and this checklist. Its validator uses the Python standard library; unrelated toolkit/product/dependency changes remain outside this scope.
+- [x] Validate and inspect the proposed added-file scope: standalone draft validation passed; existing evaluator test suite passed. Evidence and annotations are versionable. See evals/review_drafts/pancreatic-pilot/VALIDATION.md. The draft checkpoint was subsequently committed in `5b68ac7`.
+- [x] Reviewed-draft checkpoint committed in `5b68ac7`; confirmed present on audited main `7cb4817`. This documentation update creates no new commit.
 
-## Later work still outstanding
+## Evaluation implementation and remaining work
 
-- Integrate reviewed annotations into the runnable eval format (candidate assessment.json files are review notes, not by themselves a complete runnable benchmark).
-- Implement and test model-type separation and terminology edge cases in scoring; current evidence does not establish those tests exist.
+- [x] Convert committed annotations into three runnable stage-specific development cases. Candidate assessment.json files remain review notes. See [the pilot guide](../evals/PILOT.md).
+- [x] Test broad versus organoid selection, exact 35-sample selection, five omissions, 28 unresolved records, source-defined PDO, literal identifiers/times and knockdown/knockout separation. Selection does not establish downstream suitability.
+- [x] Release separate public inputs/private answers, fingerprint files, preserve existing releases and require original response evidence for complete paired reporting. Review public execution instructions before the first measured run.
 - Add sufficient qualifying examples and a separate held-out set.
 - Freeze complete questions and answer keys before scoring model outputs.
+- [x] Test combined-observation readers against unchanged current-main producer outputs. Add separate comparison inspection for membership, denominators, insufficient evidence and sensitivity records.
+- Connect the chosen live interface and measured usage to the stage-pilot record format. Independent cross-study reference evaluation, including family/donor independence and scientific interpretation, remains pending; see PRD S6.
+- Keep implementation-derived HCC/psoriasis examples in development; obtain fresh held-out families.
 - Run matched app/baseline evaluation and inspect failures; no scientific performance score established yet.
 - Scott owns downstream scientific confirmation and model credentials/setup. Mandee owns search/API implementation; use versioned response evidence.
 
@@ -94,11 +118,15 @@ Evidence locations: data/evals/pancreatic-pilot/private/, data/evals/qualifying-
 - [ ] Do not equate ZT labels with cell-line hour labels without protocol evidence; ask Scott if such alignment is needed for a comparison. No time conversion approved.
 - [ ] If downstream analysis requires complete time series, ask Scott how to handle the user-approved record absences PDO6/ZT24 and PDO15/ZT0; do not assume interpolation or exclusion. This is conditional on the analysis scope, not a blocker for model labels.
 
-## Queue freshness check
+## Queue freshness checks
+
+November 7 audit refresh: main advanced to `7cb4817`; the review draft is unchanged from committed `5b68ac7`. New analysis, synthesis and hosting code does not resolve the recorded sample-specific scientific questions. No independent Scott response was available in this audit. Keep the 28 model conflicts, genome wording, timing and analysis-suitability questions open.
+
+### Historical check at `4a7d8ae`
 
 Checked 2026-11-07 against current annotations and local docs/core/API code, plus GitHub main revision 4a7d8ae5128bff85fffd11101796c25dc438da31 (unchanged from the search recheck). No sample-specific resolution found in the inspected local code or docs; the unchanged published revision supplies no new resolution. Merged pipeline functionality does not resolve source-metadata conflicts. No independent Scott response was available in this check. Duplicate queue entries removed; all 40 approved organoid samples removed from pending model decisions. The 28 source conflicts remain unchanged after applying the organoid rule. No messages sent and no commit made.
 
-GSE273398 knockdown-group labels and GSE262627 stage-specific candidate/subset expectations are approved. Model-specific prompt cases, scoring edge cases, scientific questions, and commit preparation remain open in the sections above. Refresh this queue whenever new approved annotations or relevant repository evidence arrives; do not close scientific questions based only on implementation status.
+GSE273398 knockdown-group labels and GSE262627 stage-specific candidate/subset expectations are approved and now runnable. A separate cell-line-only prompt, additional coverage, scientific questions and an independent held-out benchmark remain open. Refresh this queue whenever new approved annotations or relevant repository evidence arrives; do not close scientific questions based only on implementation status.
 
 ## Additional source questions for Scott (local; not sent)
 
@@ -124,4 +152,4 @@ Header inspection found five organoid sample IDs absent from the NCBI table. No 
 - [x] User approved conditional terminology equivalence: PDO means patient-derived organoid when explicitly defined by the source. Preserve distinct model identifiers such as PDO6 and PDO10.
 - [x] User approved keeping knockdown and knockout distinct; preserve source labels and flag ambiguity.
 
-All three agreed pilot decisions are complete. The eval-only review draft is prepared; see evals/review_drafts/pancreatic-pilot/README.md. Scott scientific questions and later benchmark tasks remain open. Commit still requires explicit permission.
+All three agreed pilot decisions are complete. The committed eval-only review draft is preserved; see evals/review_drafts/pancreatic-pilot/README.md. Three runnable development cases now use those decisions. Scott scientific questions, actual model runs and the independent benchmark remain open.
