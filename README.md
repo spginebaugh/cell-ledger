@@ -24,7 +24,8 @@ packages/core/       pure-Python pipeline library, no web deps (cell_ledger)
   report/            AnalysisReport model, markdown renderer, figures
   cli.py             `cell-ledger run <GSE>` / `run-all` / `run-set <query set>` / `compare`
 scripts/             dev scripts: fetch example GEO datasets, build gold sample sheets
-docs/                specs and ADRs (adr-001: SampleSheet/Contrast contract)
+docs/                specs and ADRs (adr-001: SampleSheet/Contrast contract), deploy.md
+Dockerfile, fly.toml one container (API + built UI) on one Fly machine with a /data volume
 data/                gitignored GEO cache and run outputs
 ```
 
@@ -48,6 +49,9 @@ mise run setup   # uv sync, bun install, Playwright Chromium
 | `mise run data:fetch`| download every example and query-set GEO dataset into `data/geo` |
 | `mise run analyze -- GSE82227` | run the pipeline on one dataset (see docs/pipeline.md) |
 | `mise run compare -- hcc_tumor_vs_adjacent` | run every member of a query set, then compare them (docs/pipeline.md) |
+| `mise run serve`     | production-shaped server on :8000: API + built UI, one origin, no reload |
+| `mise run docker:run`| run the exact Fly image locally with `.env` and `./data` mounted |
+| `mise run deploy`    | `fly deploy --ha=false`; first-time setup in docs/deploy.md |
 
 Run `mise run gen:api` after changing any FastAPI route or pydantic model so the
 frontend types stay in sync. The generated client is committed.

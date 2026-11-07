@@ -1,0 +1,61 @@
+# Fly.io app: one machine, one persistent volume, same image as `mise run docker:run`.
+# Exactly one machine, always: session state lives on the local volume and the API runs a
+# single worker. Deploy with `--ha=false` (mise run deploy does) so Fly never adds a second.
+# First-time setup is in docs/deploy.md.
+app = "cell-ledger"
+primary_region = "ord"
+kill_signal = "SIGTERM"
+kill_timeout = "60s"   # let an in-flight collect finish before the machine restarts
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  CELL_LEDGER_DATA_DIR = "/data"
+  CELL_LEDGER_WEB_DIST = "/app/web"
+  CELL_LEDGER_SUPABASE_BUCKET = "sessions"
+  CELL_LEDGER_SESSION_TTL_HOURS = "24"
+  CELL_LEDGER_MAX_DATASETS_PER_REQUEST = "10"
+  CELL_LEDGER_MAX_CONCURRENT_DOWNLOADS = "3"
+  # Pipeline runs are subprocesses; each pydeseq2 fit wants a few GB. 2 runs x 2 CPUs fits
+  # the 4-CPU / 8 GB box below. On a 16 GB box use 4 runs (and shared-cpu-8x).
+  CELL_LEDGER_MAX_CONCURRENT_RUNS = "2"
+  CELL_LEDGER_RUN_N_CPUS = "2"
+  CELL_LEDGER_RUN_TIMEOUT_MINUTES = "30"
+  # UI and API share an origin, so nothing else needs CORS.
+  CELL_LEDGER_CORS_ORIGINS = "[]"
+
+# Secrets (never in this file): `fly secrets set CELL_LEDGER_NCBI_API_KEY=... \
+#   CELL_LEDGER_SUPABASE_URL=... CELL_LEDGER_SUPABASE_SECRET_KEY=...`
+
+[[mounts]]
+  source = "cell_ledger_data"
+  destination = "/data"
+  initial_size = "20gb"
+
+[http_service]
+  internal_port = 8000
+  force_https = true
+  # Never scale to zero: pipeline runs outlive the HTTP request that started them,
+  # and the session sweep only runs at boot.
+  auto_stop_machines = "off"
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ["app"]
+
+  [http_service.concurrency]
+    type = "requests"
+    soft_limit = 200
+    hard_limit = 250
+
+  [[http_service.checks]]
+    grace_period = "30s"
+    interval = "15s"
+    method = "GET"
+    timeout = "5s"
+    path = "/api/health"
+
+[[vm]]
+  size = "shared-cpu-4x"
+  memory = "8gb"
+  # Bigger: size = "shared-cpu-8x", memory = "16gb", and raise CELL_LEDGER_MAX_CONCURRENT_RUNS to 4.

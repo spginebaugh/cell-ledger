@@ -87,6 +87,40 @@ if [ "$1" = "--all" ]; then shift; uv run cell-ledger run-all "$@"; else uv run 
 description = "Run a query set end to end: mise run compare -- hcc_tumor_vs_adjacent [--skip-existing]"
 run = "uv run cell-ledger run-set \"$@\""
 
+# ---------------------------------------------------------- production
+# Everything below runs the app the way Fly runs it: one uvicorn worker serving /api and the
+# built UI from one origin, settings from CELL_LEDGER_* only. Use these before every deploy.
+
+[tasks."build:web"]
+description = "Build the frontend into apps/web/dist"
+run = "bun run --cwd apps/web build"
+
+[tasks.serve]
+description = "Production-shaped server on :8000 from the local venv (API + built UI, no reload)"
+depends = ["build:web"]
+env = { CELL_LEDGER_WEB_DIST = "apps/web/dist" }
+run = "uv run uvicorn cell_ledger_api.main:app --host 0.0.0.0 --port 8000 --workers 1"
+
+[tasks."docker:build"]
+description = "Build the exact image Fly deploys (tag cell-ledger:local)"
+run = "docker build -t cell-ledger:local ."
+
+[tasks."docker:run"]
+description = "Run the image on :8000 with .env and ./data mounted at /data, like the Fly volume"
+depends = ["docker:build"]
+run = """
+docker run --rm -it -p 8000:8000 --env-file .env \
+  -e CELL_LEDGER_DATA_DIR=/data -e CELL_LEDGER_WEB_DIST=/app/web -e CELL_LEDGER_CORS_ORIGINS='[]' \
+  -v "$PWD/data:/data" cell-ledger:local
+"""
+
+[tasks.deploy]
+description = "Deploy to Fly (single machine, never HA); see docs/deploy.md for first-time setup"
+run = "fly deploy --ha=false"
+
+[tasks."deploy:logs"]
+run = "fly logs"
+
 # ------------------------------------------------------------ codegen
 
 [tasks."gen:api"]

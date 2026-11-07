@@ -89,14 +89,13 @@
         }
       }
     },
-    "/api/sessions/{session_id}/datasets": {
-      "post": {
+    "/api/sessions/{session_id}": {
+      "get": {
         "tags": [
           "sessions"
         ],
-        "summary": "Collect Datasets",
-        "description": "Download the given series into the session; each comes back ready or excluded.",
-        "operationId": "collectDatasets",
+        "summary": "Get Session",
+        "operationId": "getSession",
         "parameters": [
           {
             "name": "session_id",
@@ -109,23 +108,13 @@
             }
           }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CollectRequest"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "Successful Response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CollectResponse"
+                  "$ref": "#/components/schemas/SessionInfo"
                 }
               }
             }
@@ -142,117 +131,6 @@
           }
         }
       },
-      "get": {
-        "tags": [
-          "sessions"
-        ],
-        "summary": "List Datasets",
-        "operationId": "listDatasets",
-        "parameters": [
-          {
-            "name": "session_id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "pattern": "^[0-9a-f]{32}$",
-              "title": "Session Id"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/DatasetRecord"
-                  },
-                  "title": "Response Listdatasets"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/sessions/{session_id}/datasets/{gse}/files/{name}": {
-      "get": {
-        "tags": [
-          "sessions"
-        ],
-        "summary": "Get File Url",
-        "description": "Short-lived download link for one stored file.",
-        "operationId": "getDatasetFileUrl",
-        "parameters": [
-          {
-            "name": "session_id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "pattern": "^[0-9a-f]{32}$",
-              "title": "Session Id"
-            }
-          },
-          {
-            "name": "gse",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "pattern": "^GSE\\d+$",
-              "title": "Gse"
-            }
-          },
-          {
-            "name": "name",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "pattern": "^[A-Za-z0-9._-]+$",
-              "title": "Name"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FileUrl"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/sessions/{session_id}": {
       "delete": {
         "tags": [
           "sessions"
@@ -287,10 +165,544 @@
           }
         }
       }
+    },
+    "/api/sessions/{session_id}/datasets": {
+      "post": {
+        "tags": [
+          "sessions"
+        ],
+        "summary": "Collect Datasets",
+        "description": "Start downloading the given series in the background.\n\nReturns at once with the session's ``pending`` list; poll ``listDatasets`` until the\naccessions you asked for have left it. Each arrives ready, excluded or failed.",
+        "operationId": "collectDatasets",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{32}$",
+              "title": "Session Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CollectRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionInfo"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "sessions"
+        ],
+        "summary": "List Datasets",
+        "description": "Everything collected so far plus what is still pending.",
+        "operationId": "listDatasets",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{32}$",
+              "title": "Session Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionDatasets"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/sessions/{session_id}/datasets/{gse}/files/{name}": {
+      "get": {
+        "tags": [
+          "sessions"
+        ],
+        "summary": "Get Dataset File Url",
+        "description": "Short-lived download link for one stored file.",
+        "operationId": "getDatasetFileUrl",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{32}$",
+              "title": "Session Id"
+            }
+          },
+          {
+            "name": "gse",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^GSE\\d+$",
+              "title": "Gse"
+            }
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9._-]+(/[A-Za-z0-9._-]+)*$",
+              "title": "Name"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileUrl"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/sessions/{session_id}/runs": {
+      "post": {
+        "tags": [
+          "runs"
+        ],
+        "summary": "Start Run",
+        "description": "Run the pipeline on a collected dataset in the background, one entry per contrast.\n\nPoll ``listRuns`` until the status leaves ``running``. The counts must already be in\nthe session (``collectDatasets``) and the dataset must be ``ready``.",
+        "operationId": "startRun",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{32}$",
+              "title": "Session Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RunRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RunStatus"
+                  },
+                  "title": "Response Startrun"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "runs"
+        ],
+        "summary": "List Runs",
+        "operationId": "listRuns",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{32}$",
+              "title": "Session Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RunStatus"
+                  },
+                  "title": "Response Listruns"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/sessions/{session_id}/runs/{gse}/{contrast}/files/{name}": {
+      "get": {
+        "tags": [
+          "runs"
+        ],
+        "summary": "Get Run File Url",
+        "description": "Short-lived download link for one run output, e.g. ``report.json`` or ``figures/pca.png``.",
+        "operationId": "getRunFileUrl",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{32}$",
+              "title": "Session Id"
+            }
+          },
+          {
+            "name": "gse",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^GSE\\d+$",
+              "title": "Gse"
+            }
+          },
+          {
+            "name": "contrast",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9._-]+$",
+              "title": "Contrast"
+            }
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9._-]+(/[A-Za-z0-9._-]+)*$",
+              "title": "Name"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileUrl"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "AnalysisReport": {
+        "properties": {
+          "gse": {
+            "type": "string",
+            "title": "Gse"
+          },
+          "contrast": {
+            "$ref": "#/components/schemas/Contrast"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "complete",
+              "qc_only",
+              "blocked"
+            ],
+            "title": "Status"
+          },
+          "blockers": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Blockers"
+          },
+          "qualifications": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Qualifications",
+            "description": "result stands but must be read with these caveats (uncertain labels etc.)"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error",
+            "description": "set when the pipeline stopped on an exception"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "versions": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Versions"
+          },
+          "params": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Params"
+          },
+          "steps": {
+            "items": {
+              "$ref": "#/components/schemas/StepRecord"
+            },
+            "type": "array",
+            "title": "Steps"
+          },
+          "reconciliation": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Reconciliation"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "fingerprint": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fingerprint",
+            "description": "sha256 over the counts file, annotation file, design and parameters; a cached run is only reused when it matches"
+          },
+          "context": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Context",
+            "description": "modal harmonized field values (tissue, cell_type, ...) over the samples used, for grouping runs that answer the same question"
+          },
+          "qc": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/QcResult"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "filtering": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/FilterSummary"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "de": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DeResultSummary"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "enrichment": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/EnrichmentSummary"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "gene_lookup": {
+            "items": {
+              "$ref": "#/components/schemas/GeneLookupRow"
+            },
+            "type": "array",
+            "title": "Gene Lookup"
+          },
+          "markers": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/MarkerScore"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          },
+          "files": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Files"
+          },
+          "figures": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Figures"
+          }
+        },
+        "type": "object",
+        "required": [
+          "gse",
+          "contrast",
+          "status",
+          "created_at",
+          "versions",
+          "params"
+        ],
+        "title": "AnalysisReport"
+      },
+      "Assay": {
+        "type": "string",
+        "enum": [
+          "bulk",
+          "single_cell"
+        ],
+        "title": "Assay"
+      },
       "CollectRequest": {
         "properties": {
           "gses": {
@@ -309,34 +721,38 @@
         ],
         "title": "CollectRequest"
       },
-      "CollectResponse": {
-        "properties": {
-          "datasets": {
-            "items": {
-              "$ref": "#/components/schemas/CollectedDataset"
-            },
-            "type": "array",
-            "title": "Datasets"
-          }
-        },
-        "type": "object",
-        "required": [
-          "datasets"
-        ],
-        "title": "CollectResponse"
-      },
       "CollectedDataset": {
         "properties": {
-          "record": {
-            "$ref": "#/components/schemas/DatasetRecord"
-          },
-          "local_dir": {
+          "gse": {
             "type": "string",
-            "title": "Local Dir"
+            "title": "Gse"
+          },
+          "record": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DatasetRecord"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "None when the download itself failed; see error"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
           },
           "uploaded": {
             "type": "boolean",
-            "title": "Uploaded"
+            "title": "Uploaded",
+            "default": false
           },
           "upload_error": {
             "anyOf": [
@@ -348,15 +764,122 @@
               }
             ],
             "title": "Upload Error"
+          },
+          "files": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Files",
+            "description": "names available for signed URLs"
           }
         },
         "type": "object",
         "required": [
-          "record",
-          "local_dir",
-          "uploaded"
+          "gse"
         ],
         "title": "CollectedDataset"
+      },
+      "Contrast": {
+        "properties": {
+          "gse": {
+            "type": "string",
+            "pattern": "^GSE\\d+$",
+            "title": "Gse"
+          },
+          "name": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(_[a-z0-9]+)*$",
+            "title": "Name",
+            "description": "slug, e.g. ipf_vs_control"
+          },
+          "case_label": {
+            "type": "string",
+            "title": "Case Label"
+          },
+          "control_label": {
+            "type": "string",
+            "title": "Control Label"
+          },
+          "case_gsms": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Case Gsms"
+          },
+          "control_gsms": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Control Gsms"
+          },
+          "blocking": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Blocking",
+            "description": "Sample field pairing case and control (e.g. 'donor'); recorded, not modelled"
+          },
+          "restricted_to": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Restricted To",
+            "description": "Sample field -> value the contrast is limited to, e.g. {'time_point': '24 h'}"
+          },
+          "confidence": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 1.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Confidence"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ContrastStatus",
+            "default": "proposed"
+          },
+          "rationale": {
+            "type": "string",
+            "title": "Rationale",
+            "default": ""
+          }
+        },
+        "type": "object",
+        "required": [
+          "gse",
+          "name",
+          "case_label",
+          "control_label",
+          "case_gsms",
+          "control_gsms"
+        ],
+        "title": "Contrast"
+      },
+      "ContrastStatus": {
+        "type": "string",
+        "enum": [
+          "proposed",
+          "confirmed",
+          "uncertain",
+          "blocked"
+        ],
+        "title": "ContrastStatus"
       },
       "CountsCheck": {
         "properties": {
@@ -476,6 +999,243 @@
         ],
         "title": "DatasetRecord"
       },
+      "DeResultSummary": {
+        "properties": {
+          "summary": {
+            "$ref": "#/components/schemas/DeSummary"
+          },
+          "top_up": {
+            "items": {
+              "$ref": "#/components/schemas/GeneRow"
+            },
+            "type": "array",
+            "title": "Top Up"
+          },
+          "top_down": {
+            "items": {
+              "$ref": "#/components/schemas/GeneRow"
+            },
+            "type": "array",
+            "title": "Top Down"
+          }
+        },
+        "type": "object",
+        "required": [
+          "summary",
+          "top_up",
+          "top_down"
+        ],
+        "title": "DeResultSummary"
+      },
+      "DeSummary": {
+        "properties": {
+          "design": {
+            "type": "string",
+            "title": "Design"
+          },
+          "coefficient": {
+            "type": "string",
+            "title": "Coefficient"
+          },
+          "blocking": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Blocking"
+          },
+          "pairing": {
+            "type": "string",
+            "enum": [
+              "none",
+              "modelled",
+              "incomplete_dropped",
+              "ignored"
+            ],
+            "title": "Pairing",
+            "default": "none"
+          },
+          "n_case_used": {
+            "type": "integer",
+            "title": "N Case Used",
+            "description": "observations fitted in the case arm (after collapsing)"
+          },
+          "n_control_used": {
+            "type": "integer",
+            "title": "N Control Used"
+          },
+          "dropped_unpaired": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Dropped Unpaired"
+          },
+          "gsms_fitted": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Gsms Fitted",
+            "description": "every GSM that contributed to the fit"
+          },
+          "collapsed": {
+            "additionalProperties": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "type": "object",
+            "title": "Collapsed",
+            "description": "fitted observation -> GSMs summed into it (repeated samples per block/arm)"
+          },
+          "n_samples_collapsed": {
+            "type": "integer",
+            "title": "N Samples Collapsed",
+            "default": 0
+          },
+          "lfc_shrunk": {
+            "type": "boolean",
+            "title": "Lfc Shrunk"
+          },
+          "alpha": {
+            "type": "number",
+            "title": "Alpha"
+          },
+          "lfc_threshold": {
+            "type": "number",
+            "title": "Lfc Threshold"
+          },
+          "n_genes_tested": {
+            "type": "integer",
+            "title": "N Genes Tested"
+          },
+          "n_sig": {
+            "type": "integer",
+            "title": "N Sig"
+          },
+          "n_up": {
+            "type": "integer",
+            "title": "N Up"
+          },
+          "n_down": {
+            "type": "integer",
+            "title": "N Down"
+          },
+          "n_up_lfc": {
+            "type": "integer",
+            "title": "N Up Lfc"
+          },
+          "n_down_lfc": {
+            "type": "integer",
+            "title": "N Down Lfc"
+          }
+        },
+        "type": "object",
+        "required": [
+          "design",
+          "coefficient",
+          "n_case_used",
+          "n_control_used",
+          "lfc_shrunk",
+          "alpha",
+          "lfc_threshold",
+          "n_genes_tested",
+          "n_sig",
+          "n_up",
+          "n_down",
+          "n_up_lfc",
+          "n_down_lfc"
+        ],
+        "title": "DeSummary"
+      },
+      "EnrichmentSummary": {
+        "properties": {
+          "library": {
+            "type": "string",
+            "title": "Library"
+          },
+          "n_terms": {
+            "type": "integer",
+            "title": "N Terms"
+          },
+          "n_sig_fdr": {
+            "type": "integer",
+            "title": "N Sig Fdr"
+          },
+          "fdr_threshold": {
+            "type": "number",
+            "title": "Fdr Threshold"
+          },
+          "top": {
+            "items": {
+              "$ref": "#/components/schemas/EnrichmentTerm"
+            },
+            "type": "array",
+            "title": "Top"
+          },
+          "params": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Params"
+          }
+        },
+        "type": "object",
+        "required": [
+          "library",
+          "n_terms",
+          "n_sig_fdr",
+          "fdr_threshold",
+          "top"
+        ],
+        "title": "EnrichmentSummary"
+      },
+      "EnrichmentTerm": {
+        "properties": {
+          "term": {
+            "type": "string",
+            "title": "Term"
+          },
+          "nes": {
+            "type": "number",
+            "title": "Nes"
+          },
+          "pvalue": {
+            "type": "number",
+            "title": "Pvalue"
+          },
+          "fdr": {
+            "type": "number",
+            "title": "Fdr"
+          },
+          "size": {
+            "type": "integer",
+            "title": "Size"
+          },
+          "lead_genes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Lead Genes"
+          }
+        },
+        "type": "object",
+        "required": [
+          "term",
+          "nes",
+          "pvalue",
+          "fdr",
+          "size",
+          "lead_genes"
+        ],
+        "title": "EnrichmentTerm"
+      },
       "FileRecord": {
         "properties": {
           "name": {
@@ -527,6 +1287,243 @@
           "expires_in"
         ],
         "title": "FileUrl"
+      },
+      "FilterSummary": {
+        "properties": {
+          "n_genes_before": {
+            "type": "integer",
+            "title": "N Genes Before"
+          },
+          "n_genes_after": {
+            "type": "integer",
+            "title": "N Genes After"
+          },
+          "min_count": {
+            "type": "integer",
+            "title": "Min Count"
+          },
+          "min_samples": {
+            "type": "integer",
+            "title": "Min Samples"
+          }
+        },
+        "type": "object",
+        "required": [
+          "n_genes_before",
+          "n_genes_after",
+          "min_count",
+          "min_samples"
+        ],
+        "title": "FilterSummary"
+      },
+      "GeneLookupRow": {
+        "properties": {
+          "query": {
+            "type": "string",
+            "title": "Query"
+          },
+          "gene_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Gene Id"
+          },
+          "symbol": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Symbol"
+          },
+          "verdict": {
+            "type": "string",
+            "enum": [
+              "up",
+              "down",
+              "no_evidence",
+              "untestable",
+              "not_tested",
+              "not_found",
+              "not_run"
+            ],
+            "title": "Verdict"
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason",
+            "description": "why no verdict: 'independent_filtering' (padj NA), 'outlier_or_all_zero' (pvalue NA), 'filtered_before_testing', 'symbol_not_in_annotation', 'de_not_run'"
+          },
+          "log2fc": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Log2Fc"
+          },
+          "padj": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Padj"
+          },
+          "base_mean": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Base Mean"
+          },
+          "mean_norm_case": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mean Norm Case"
+          },
+          "mean_norm_control": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mean Norm Control"
+          },
+          "rank_by_padj": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rank By Padj"
+          }
+        },
+        "type": "object",
+        "required": [
+          "query",
+          "gene_id",
+          "symbol",
+          "verdict"
+        ],
+        "title": "GeneLookupRow",
+        "description": "The direct answer to 'is gene X higher in case than control' for one dataset."
+      },
+      "GeneRow": {
+        "properties": {
+          "gene_id": {
+            "type": "string",
+            "title": "Gene Id"
+          },
+          "symbol": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Symbol"
+          },
+          "base_mean": {
+            "type": "number",
+            "title": "Base Mean"
+          },
+          "log2fc": {
+            "type": "number",
+            "title": "Log2Fc"
+          },
+          "lfc_se": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Lfc Se"
+          },
+          "stat": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Stat"
+          },
+          "pvalue": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pvalue"
+          },
+          "padj": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Padj"
+          }
+        },
+        "type": "object",
+        "required": [
+          "gene_id",
+          "symbol",
+          "base_mean",
+          "log2fc"
+        ],
+        "title": "GeneRow"
       },
       "GeoSeriesHit": {
         "properties": {
@@ -610,6 +1607,17 @@
         ],
         "title": "GeoSeriesHit"
       },
+      "Group": {
+        "type": "string",
+        "enum": [
+          "case",
+          "control",
+          "other",
+          "unknown"
+        ],
+        "title": "Group",
+        "description": "Role of a sample relative to the research question."
+      },
       "HTTPValidationError": {
         "properties": {
           "detail": {
@@ -646,6 +1654,186 @@
         ],
         "title": "Health"
       },
+      "MarkerExpectation": {
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "title": "Symbol"
+          },
+          "direction": {
+            "type": "string",
+            "enum": [
+              "up",
+              "down"
+            ],
+            "title": "Direction"
+          }
+        },
+        "type": "object",
+        "required": [
+          "symbol",
+          "direction"
+        ],
+        "title": "MarkerExpectation"
+      },
+      "MarkerResult": {
+        "properties": {
+          "expected": {
+            "$ref": "#/components/schemas/MarkerExpectation"
+          },
+          "lookup": {
+            "$ref": "#/components/schemas/GeneLookupRow"
+          },
+          "recovered_sig": {
+            "type": "boolean",
+            "title": "Recovered Sig"
+          },
+          "in_top_n_correct_sign": {
+            "type": "boolean",
+            "title": "In Top N Correct Sign"
+          }
+        },
+        "type": "object",
+        "required": [
+          "expected",
+          "lookup",
+          "recovered_sig",
+          "in_top_n_correct_sign"
+        ],
+        "title": "MarkerResult"
+      },
+      "MarkerScore": {
+        "properties": {
+          "n_expected": {
+            "type": "integer",
+            "title": "N Expected"
+          },
+          "n_recovered_sig": {
+            "type": "integer",
+            "title": "N Recovered Sig"
+          },
+          "n_in_top_n": {
+            "type": "integer",
+            "title": "N In Top N"
+          },
+          "top_n": {
+            "type": "integer",
+            "title": "Top N"
+          },
+          "fraction_recovered": {
+            "type": "number",
+            "title": "Fraction Recovered"
+          },
+          "fraction_in_top_n": {
+            "type": "number",
+            "title": "Fraction In Top N"
+          },
+          "results": {
+            "items": {
+              "$ref": "#/components/schemas/MarkerResult"
+            },
+            "type": "array",
+            "title": "Results"
+          }
+        },
+        "type": "object",
+        "required": [
+          "n_expected",
+          "n_recovered_sig",
+          "n_in_top_n",
+          "top_n",
+          "fraction_recovered",
+          "fraction_in_top_n",
+          "results"
+        ],
+        "title": "MarkerScore"
+      },
+      "PcaSummary": {
+        "properties": {
+          "n_genes_used": {
+            "type": "integer",
+            "title": "N Genes Used"
+          },
+          "variance_ratio": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array",
+            "title": "Variance Ratio"
+          },
+          "coords": {
+            "additionalProperties": {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            },
+            "type": "object",
+            "title": "Coords"
+          },
+          "arm_r2_pc1": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Arm R2 Pc1"
+          }
+        },
+        "type": "object",
+        "required": [
+          "n_genes_used",
+          "variance_ratio",
+          "coords"
+        ],
+        "title": "PcaSummary"
+      },
+      "QcResult": {
+        "properties": {
+          "samples": {
+            "items": {
+              "$ref": "#/components/schemas/SampleQc"
+            },
+            "type": "array",
+            "title": "Samples"
+          },
+          "median_library_size": {
+            "type": "number",
+            "title": "Median Library Size"
+          },
+          "pca": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PcaSummary"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "flags": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Flags"
+          },
+          "params": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Params"
+          }
+        },
+        "type": "object",
+        "required": [
+          "samples",
+          "median_library_size"
+        ],
+        "title": "QcResult"
+      },
       "QueryStats": {
         "properties": {
           "query": {
@@ -676,6 +1864,448 @@
         ],
         "title": "QueryStats"
       },
+      "Reconciliation": {
+        "properties": {
+          "n_counts_columns": {
+            "type": "integer",
+            "title": "N Counts Columns"
+          },
+          "n_sheet_gsms": {
+            "type": "integer",
+            "title": "N Sheet Gsms"
+          },
+          "n_contrast_gsms": {
+            "type": "integer",
+            "title": "N Contrast Gsms"
+          },
+          "gsms_used": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Gsms Used"
+          },
+          "contrast_gsms_missing_from_counts": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Contrast Gsms Missing From Counts"
+          },
+          "contrast_gsms_missing_from_sheet": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Contrast Gsms Missing From Sheet"
+          },
+          "sheet_gsms_missing_from_counts": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Sheet Gsms Missing From Counts"
+          },
+          "columns_not_in_sheet": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Columns Not In Sheet"
+          },
+          "n_genes": {
+            "type": "integer",
+            "title": "N Genes"
+          },
+          "n_case": {
+            "type": "integer",
+            "title": "N Case"
+          },
+          "n_control": {
+            "type": "integer",
+            "title": "N Control"
+          }
+        },
+        "type": "object",
+        "required": [
+          "n_counts_columns",
+          "n_sheet_gsms",
+          "n_contrast_gsms",
+          "gsms_used",
+          "contrast_gsms_missing_from_counts",
+          "sheet_gsms_missing_from_counts",
+          "columns_not_in_sheet",
+          "n_genes",
+          "n_case",
+          "n_control"
+        ],
+        "title": "Reconciliation",
+        "description": "How the counts matrix columns lined up with the sample sheet and contrast."
+      },
+      "RunRequest": {
+        "properties": {
+          "samplesheet": {
+            "$ref": "#/components/schemas/SampleSheet"
+          },
+          "contrasts": {
+            "items": {
+              "$ref": "#/components/schemas/Contrast"
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Contrasts"
+          },
+          "markers": {
+            "items": {
+              "$ref": "#/components/schemas/MarkerExpectation"
+            },
+            "type": "array",
+            "title": "Markers"
+          },
+          "genes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Genes",
+            "description": "symbols or GeneIDs to look up"
+          },
+          "enrichment": {
+            "type": "boolean",
+            "title": "Enrichment",
+            "default": true
+          },
+          "figures": {
+            "type": "boolean",
+            "title": "Figures",
+            "default": true
+          }
+        },
+        "type": "object",
+        "required": [
+          "samplesheet",
+          "contrasts"
+        ],
+        "title": "RunRequest",
+        "description": "One design file, as ``cell-ledger run --design`` reads it, plus a few run options."
+      },
+      "RunStatus": {
+        "properties": {
+          "gse": {
+            "type": "string",
+            "title": "Gse"
+          },
+          "contrast": {
+            "type": "string",
+            "title": "Contrast"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "running",
+              "complete",
+              "qc_only",
+              "blocked",
+              "failed"
+            ],
+            "title": "Status"
+          },
+          "started_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Started At"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finished At"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error",
+            "description": "pipeline error or why the run failed"
+          },
+          "report": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AnalysisReport"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "uploaded": {
+            "type": "boolean",
+            "title": "Uploaded",
+            "default": false
+          },
+          "files": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Files",
+            "description": "names available for signed URLs"
+          }
+        },
+        "type": "object",
+        "required": [
+          "gse",
+          "contrast",
+          "status"
+        ],
+        "title": "RunStatus"
+      },
+      "Sample": {
+        "properties": {
+          "gsm": {
+            "type": "string",
+            "pattern": "^GSM\\d+$",
+            "title": "Gsm"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "source_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Name"
+          },
+          "group": {
+            "$ref": "#/components/schemas/Group",
+            "default": "unknown"
+          },
+          "condition": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Condition"
+          },
+          "treatment": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Treatment"
+          },
+          "dose": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Dose"
+          },
+          "time_point": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Time Point"
+          },
+          "tissue": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tissue"
+          },
+          "cell_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cell Type"
+          },
+          "cell_line": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cell Line"
+          },
+          "genotype": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Genotype"
+          },
+          "sex": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sex"
+          },
+          "age": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Age"
+          },
+          "donor": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Donor"
+          },
+          "batch": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Batch"
+          },
+          "organism": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Organism"
+          },
+          "replicate": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Replicate"
+          },
+          "evidence": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Evidence"
+          },
+          "confidence": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 1.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Confidence"
+          },
+          "needs_review": {
+            "type": "boolean",
+            "title": "Needs Review",
+            "default": false
+          },
+          "raw": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Raw"
+          },
+          "raw_lines": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Raw Lines"
+          }
+        },
+        "type": "object",
+        "required": [
+          "gsm",
+          "title"
+        ],
+        "title": "Sample",
+        "description": "One GEO sample (GSM) with harmonized labels.\n\n``raw_lines`` holds the GEO ``characteristics_ch1`` lines verbatim and ``raw``\nthe same lines as ``{key: value}``; ``title`` and ``source_name`` are copied\nfrom GEO as-is. Those are the only places an ``evidence`` string may come from."
+      },
       "SampleExclusion": {
         "type": "string",
         "enum": [
@@ -684,6 +2314,95 @@
           "not_in_counts"
         ],
         "title": "SampleExclusion"
+      },
+      "SampleQc": {
+        "properties": {
+          "gsm": {
+            "type": "string",
+            "title": "Gsm"
+          },
+          "arm": {
+            "type": "string",
+            "title": "Arm"
+          },
+          "library_size": {
+            "type": "integer",
+            "title": "Library Size"
+          },
+          "detected_genes": {
+            "type": "integer",
+            "title": "Detected Genes"
+          },
+          "pct_mito": {
+            "type": "number",
+            "title": "Pct Mito"
+          },
+          "pct_ribo": {
+            "type": "number",
+            "title": "Pct Ribo"
+          },
+          "mean_corr_same_arm": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mean Corr Same Arm"
+          },
+          "mean_corr_other_arm": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mean Corr Other Arm"
+          },
+          "reported_sex": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reported Sex"
+          },
+          "predicted_sex": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Predicted Sex"
+          },
+          "flags": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Flags"
+          }
+        },
+        "type": "object",
+        "required": [
+          "gsm",
+          "arm",
+          "library_size",
+          "detected_genes",
+          "pct_mito",
+          "pct_ribo"
+        ],
+        "title": "SampleQc"
       },
       "SampleRecord": {
         "properties": {
@@ -738,6 +2457,44 @@
         ],
         "title": "SampleRecord",
         "description": "One GSM as GEO describes it. Values are verbatim from the SOFT file."
+      },
+      "SampleSheet": {
+        "properties": {
+          "gse": {
+            "type": "string",
+            "pattern": "^GSE\\d+$",
+            "title": "Gse"
+          },
+          "assay": {
+            "$ref": "#/components/schemas/Assay"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          },
+          "samples": {
+            "items": {
+              "$ref": "#/components/schemas/Sample"
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Samples"
+          }
+        },
+        "type": "object",
+        "required": [
+          "gse",
+          "assay",
+          "samples"
+        ],
+        "title": "SampleSheet"
       },
       "SearchRequest": {
         "properties": {
@@ -802,6 +2559,30 @@
         ],
         "title": "SearchResult"
       },
+      "SessionDatasets": {
+        "properties": {
+          "pending": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Pending"
+          },
+          "datasets": {
+            "items": {
+              "$ref": "#/components/schemas/CollectedDataset"
+            },
+            "type": "array",
+            "title": "Datasets"
+          }
+        },
+        "type": "object",
+        "required": [
+          "pending",
+          "datasets"
+        ],
+        "title": "SessionDatasets"
+      },
       "SessionInfo": {
         "properties": {
           "id": {
@@ -812,6 +2593,14 @@
             "type": "string",
             "format": "date-time",
             "title": "Created At"
+          },
+          "pending": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Pending",
+            "description": "GSEs still being collected; poll until empty"
           }
         },
         "type": "object",
@@ -820,6 +2609,43 @@
           "created_at"
         ],
         "title": "SessionInfo"
+      },
+      "StepRecord": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "params": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Params"
+          },
+          "started_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Started At"
+          },
+          "seconds": {
+            "type": "number",
+            "title": "Seconds",
+            "default": 0.0
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "started_at"
+        ],
+        "title": "StepRecord",
+        "description": "One pipeline step: what ran, with which parameters, how long, and what it warned."
       },
       "ValidationError": {
         "properties": {

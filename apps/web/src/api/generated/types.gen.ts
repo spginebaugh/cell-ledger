@@ -5,6 +5,102 @@ export type ClientOptions = {
 };
 
 /**
+ * AnalysisReport
+ */
+export type AnalysisReport = {
+    /**
+     * Gse
+     */
+    gse: string;
+    contrast: Contrast;
+    /**
+     * Status
+     */
+    status: 'complete' | 'qc_only' | 'blocked';
+    /**
+     * Blockers
+     */
+    blockers?: Array<string>;
+    /**
+     * Qualifications
+     *
+     * result stands but must be read with these caveats (uncertain labels etc.)
+     */
+    qualifications?: Array<string>;
+    /**
+     * Error
+     *
+     * set when the pipeline stopped on an exception
+     */
+    error?: string | null;
+    /**
+     * Created At
+     */
+    created_at: string;
+    /**
+     * Versions
+     */
+    versions: {
+        [key: string]: string;
+    };
+    /**
+     * Params
+     */
+    params: {
+        [key: string]: unknown;
+    };
+    /**
+     * Steps
+     */
+    steps?: Array<StepRecord>;
+    reconciliation?: Reconciliation | null;
+    /**
+     * Fingerprint
+     *
+     * sha256 over the counts file, annotation file, design and parameters; a cached run is only reused when it matches
+     */
+    fingerprint?: string | null;
+    /**
+     * Context
+     *
+     * modal harmonized field values (tissue, cell_type, ...) over the samples used, for grouping runs that answer the same question
+     */
+    context?: {
+        [key: string]: string;
+    };
+    qc?: QcResult | null;
+    filtering?: FilterSummary | null;
+    de?: DeResultSummary | null;
+    enrichment?: EnrichmentSummary | null;
+    /**
+     * Gene Lookup
+     */
+    gene_lookup?: Array<GeneLookupRow>;
+    markers?: MarkerScore | null;
+    /**
+     * Warnings
+     */
+    warnings?: Array<string>;
+    /**
+     * Files
+     */
+    files?: {
+        [key: string]: string;
+    };
+    /**
+     * Figures
+     */
+    figures?: {
+        [key: string]: string;
+    };
+};
+
+/**
+ * Assay
+ */
+export type Assay = 'bulk' | 'single_cell';
+
+/**
  * CollectRequest
  */
 export type CollectRequest = {
@@ -15,33 +111,96 @@ export type CollectRequest = {
 };
 
 /**
- * CollectResponse
- */
-export type CollectResponse = {
-    /**
-     * Datasets
-     */
-    datasets: Array<CollectedDataset>;
-};
-
-/**
  * CollectedDataset
  */
 export type CollectedDataset = {
-    record: DatasetRecord;
     /**
-     * Local Dir
+     * Gse
      */
-    local_dir: string;
+    gse: string;
+    /**
+     * None when the download itself failed; see error
+     */
+    record?: DatasetRecord | null;
+    /**
+     * Error
+     */
+    error?: string | null;
     /**
      * Uploaded
      */
-    uploaded: boolean;
+    uploaded?: boolean;
     /**
      * Upload Error
      */
     upload_error?: string | null;
+    /**
+     * Files
+     *
+     * names available for signed URLs
+     */
+    files?: Array<string>;
 };
+
+/**
+ * Contrast
+ */
+export type Contrast = {
+    /**
+     * Gse
+     */
+    gse: string;
+    /**
+     * Name
+     *
+     * slug, e.g. ipf_vs_control
+     */
+    name: string;
+    /**
+     * Case Label
+     */
+    case_label: string;
+    /**
+     * Control Label
+     */
+    control_label: string;
+    /**
+     * Case Gsms
+     */
+    case_gsms: Array<string>;
+    /**
+     * Control Gsms
+     */
+    control_gsms: Array<string>;
+    /**
+     * Blocking
+     *
+     * Sample field pairing case and control (e.g. 'donor'); recorded, not modelled
+     */
+    blocking?: string | null;
+    /**
+     * Restricted To
+     *
+     * Sample field -> value the contrast is limited to, e.g. {'time_point': '24 h'}
+     */
+    restricted_to?: {
+        [key: string]: string;
+    };
+    /**
+     * Confidence
+     */
+    confidence?: number | null;
+    status?: ContrastStatus;
+    /**
+     * Rationale
+     */
+    rationale?: string;
+};
+
+/**
+ * ContrastStatus
+ */
+export type ContrastStatus = 'proposed' | 'confirmed' | 'uncertain' | 'blocked';
 
 /**
  * CountsCheck
@@ -124,6 +283,173 @@ export type DatasetRecord = {
 };
 
 /**
+ * DeResultSummary
+ */
+export type DeResultSummary = {
+    summary: DeSummary;
+    /**
+     * Top Up
+     */
+    top_up: Array<GeneRow>;
+    /**
+     * Top Down
+     */
+    top_down: Array<GeneRow>;
+};
+
+/**
+ * DeSummary
+ */
+export type DeSummary = {
+    /**
+     * Design
+     */
+    design: string;
+    /**
+     * Coefficient
+     */
+    coefficient: string;
+    /**
+     * Blocking
+     */
+    blocking?: string | null;
+    /**
+     * Pairing
+     */
+    pairing?: 'none' | 'modelled' | 'incomplete_dropped' | 'ignored';
+    /**
+     * N Case Used
+     *
+     * observations fitted in the case arm (after collapsing)
+     */
+    n_case_used: number;
+    /**
+     * N Control Used
+     */
+    n_control_used: number;
+    /**
+     * Dropped Unpaired
+     */
+    dropped_unpaired?: Array<string>;
+    /**
+     * Gsms Fitted
+     *
+     * every GSM that contributed to the fit
+     */
+    gsms_fitted?: Array<string>;
+    /**
+     * Collapsed
+     *
+     * fitted observation -> GSMs summed into it (repeated samples per block/arm)
+     */
+    collapsed?: {
+        [key: string]: Array<string>;
+    };
+    /**
+     * N Samples Collapsed
+     */
+    n_samples_collapsed?: number;
+    /**
+     * Lfc Shrunk
+     */
+    lfc_shrunk: boolean;
+    /**
+     * Alpha
+     */
+    alpha: number;
+    /**
+     * Lfc Threshold
+     */
+    lfc_threshold: number;
+    /**
+     * N Genes Tested
+     */
+    n_genes_tested: number;
+    /**
+     * N Sig
+     */
+    n_sig: number;
+    /**
+     * N Up
+     */
+    n_up: number;
+    /**
+     * N Down
+     */
+    n_down: number;
+    /**
+     * N Up Lfc
+     */
+    n_up_lfc: number;
+    /**
+     * N Down Lfc
+     */
+    n_down_lfc: number;
+};
+
+/**
+ * EnrichmentSummary
+ */
+export type EnrichmentSummary = {
+    /**
+     * Library
+     */
+    library: string;
+    /**
+     * N Terms
+     */
+    n_terms: number;
+    /**
+     * N Sig Fdr
+     */
+    n_sig_fdr: number;
+    /**
+     * Fdr Threshold
+     */
+    fdr_threshold: number;
+    /**
+     * Top
+     */
+    top: Array<EnrichmentTerm>;
+    /**
+     * Params
+     */
+    params?: {
+        [key: string]: unknown;
+    };
+};
+
+/**
+ * EnrichmentTerm
+ */
+export type EnrichmentTerm = {
+    /**
+     * Term
+     */
+    term: string;
+    /**
+     * Nes
+     */
+    nes: number;
+    /**
+     * Pvalue
+     */
+    pvalue: number;
+    /**
+     * Fdr
+     */
+    fdr: number;
+    /**
+     * Size
+     */
+    size: number;
+    /**
+     * Lead Genes
+     */
+    lead_genes: Array<string>;
+};
+
+/**
  * FileRecord
  */
 export type FileRecord = {
@@ -161,6 +487,120 @@ export type FileUrl = {
      * Expires In
      */
     expires_in: number;
+};
+
+/**
+ * FilterSummary
+ */
+export type FilterSummary = {
+    /**
+     * N Genes Before
+     */
+    n_genes_before: number;
+    /**
+     * N Genes After
+     */
+    n_genes_after: number;
+    /**
+     * Min Count
+     */
+    min_count: number;
+    /**
+     * Min Samples
+     */
+    min_samples: number;
+};
+
+/**
+ * GeneLookupRow
+ *
+ * The direct answer to 'is gene X higher in case than control' for one dataset.
+ */
+export type GeneLookupRow = {
+    /**
+     * Query
+     */
+    query: string;
+    /**
+     * Gene Id
+     */
+    gene_id: string | null;
+    /**
+     * Symbol
+     */
+    symbol: string | null;
+    /**
+     * Verdict
+     */
+    verdict: 'up' | 'down' | 'no_evidence' | 'untestable' | 'not_tested' | 'not_found' | 'not_run';
+    /**
+     * Reason
+     *
+     * why no verdict: 'independent_filtering' (padj NA), 'outlier_or_all_zero' (pvalue NA), 'filtered_before_testing', 'symbol_not_in_annotation', 'de_not_run'
+     */
+    reason?: string | null;
+    /**
+     * Log2Fc
+     */
+    log2fc?: number | null;
+    /**
+     * Padj
+     */
+    padj?: number | null;
+    /**
+     * Base Mean
+     */
+    base_mean?: number | null;
+    /**
+     * Mean Norm Case
+     */
+    mean_norm_case?: number | null;
+    /**
+     * Mean Norm Control
+     */
+    mean_norm_control?: number | null;
+    /**
+     * Rank By Padj
+     */
+    rank_by_padj?: number | null;
+};
+
+/**
+ * GeneRow
+ */
+export type GeneRow = {
+    /**
+     * Gene Id
+     */
+    gene_id: string;
+    /**
+     * Symbol
+     */
+    symbol: string | null;
+    /**
+     * Base Mean
+     */
+    base_mean: number;
+    /**
+     * Log2Fc
+     */
+    log2fc: number;
+    /**
+     * Lfc Se
+     */
+    lfc_se?: number | null;
+    /**
+     * Stat
+     */
+    stat?: number | null;
+    /**
+     * Pvalue
+     */
+    pvalue?: number | null;
+    /**
+     * Padj
+     */
+    padj?: number | null;
 };
 
 /**
@@ -214,6 +654,13 @@ export type GeoSeriesHit = {
 };
 
 /**
+ * Group
+ *
+ * Role of a sample relative to the research question.
+ */
+export type Group = 'case' | 'control' | 'other' | 'unknown';
+
+/**
  * HTTPValidationError
  */
 export type HttpValidationError = {
@@ -239,6 +686,119 @@ export type Health = {
      * Core Version
      */
     core_version: string;
+};
+
+/**
+ * MarkerExpectation
+ */
+export type MarkerExpectation = {
+    /**
+     * Symbol
+     */
+    symbol: string;
+    /**
+     * Direction
+     */
+    direction: 'up' | 'down';
+};
+
+/**
+ * MarkerResult
+ */
+export type MarkerResult = {
+    expected: MarkerExpectation;
+    lookup: GeneLookupRow;
+    /**
+     * Recovered Sig
+     */
+    recovered_sig: boolean;
+    /**
+     * In Top N Correct Sign
+     */
+    in_top_n_correct_sign: boolean;
+};
+
+/**
+ * MarkerScore
+ */
+export type MarkerScore = {
+    /**
+     * N Expected
+     */
+    n_expected: number;
+    /**
+     * N Recovered Sig
+     */
+    n_recovered_sig: number;
+    /**
+     * N In Top N
+     */
+    n_in_top_n: number;
+    /**
+     * Top N
+     */
+    top_n: number;
+    /**
+     * Fraction Recovered
+     */
+    fraction_recovered: number;
+    /**
+     * Fraction In Top N
+     */
+    fraction_in_top_n: number;
+    /**
+     * Results
+     */
+    results: Array<MarkerResult>;
+};
+
+/**
+ * PcaSummary
+ */
+export type PcaSummary = {
+    /**
+     * N Genes Used
+     */
+    n_genes_used: number;
+    /**
+     * Variance Ratio
+     */
+    variance_ratio: Array<number>;
+    /**
+     * Coords
+     */
+    coords: {
+        [key: string]: Array<number>;
+    };
+    /**
+     * Arm R2 Pc1
+     */
+    arm_r2_pc1?: number | null;
+};
+
+/**
+ * QcResult
+ */
+export type QcResult = {
+    /**
+     * Samples
+     */
+    samples: Array<SampleQc>;
+    /**
+     * Median Library Size
+     */
+    median_library_size: number;
+    pca?: PcaSummary | null;
+    /**
+     * Flags
+     */
+    flags?: Array<string>;
+    /**
+     * Params
+     */
+    params?: {
+        [key: string]: unknown;
+    };
 };
 
 /**
@@ -268,9 +828,288 @@ export type QueryStats = {
 };
 
 /**
+ * Reconciliation
+ *
+ * How the counts matrix columns lined up with the sample sheet and contrast.
+ */
+export type Reconciliation = {
+    /**
+     * N Counts Columns
+     */
+    n_counts_columns: number;
+    /**
+     * N Sheet Gsms
+     */
+    n_sheet_gsms: number;
+    /**
+     * N Contrast Gsms
+     */
+    n_contrast_gsms: number;
+    /**
+     * Gsms Used
+     */
+    gsms_used: Array<string>;
+    /**
+     * Contrast Gsms Missing From Counts
+     */
+    contrast_gsms_missing_from_counts: Array<string>;
+    /**
+     * Contrast Gsms Missing From Sheet
+     */
+    contrast_gsms_missing_from_sheet?: Array<string>;
+    /**
+     * Sheet Gsms Missing From Counts
+     */
+    sheet_gsms_missing_from_counts: Array<string>;
+    /**
+     * Columns Not In Sheet
+     */
+    columns_not_in_sheet: Array<string>;
+    /**
+     * N Genes
+     */
+    n_genes: number;
+    /**
+     * N Case
+     */
+    n_case: number;
+    /**
+     * N Control
+     */
+    n_control: number;
+};
+
+/**
+ * RunRequest
+ *
+ * One design file, as ``cell-ledger run --design`` reads it, plus a few run options.
+ */
+export type RunRequest = {
+    samplesheet: SampleSheet;
+    /**
+     * Contrasts
+     */
+    contrasts: Array<Contrast>;
+    /**
+     * Markers
+     */
+    markers?: Array<MarkerExpectation>;
+    /**
+     * Genes
+     *
+     * symbols or GeneIDs to look up
+     */
+    genes?: Array<string>;
+    /**
+     * Enrichment
+     */
+    enrichment?: boolean;
+    /**
+     * Figures
+     */
+    figures?: boolean;
+};
+
+/**
+ * RunStatus
+ */
+export type RunStatus = {
+    /**
+     * Gse
+     */
+    gse: string;
+    /**
+     * Contrast
+     */
+    contrast: string;
+    /**
+     * Status
+     */
+    status: 'running' | 'complete' | 'qc_only' | 'blocked' | 'failed';
+    /**
+     * Started At
+     */
+    started_at?: string | null;
+    /**
+     * Finished At
+     */
+    finished_at?: string | null;
+    /**
+     * Error
+     *
+     * pipeline error or why the run failed
+     */
+    error?: string | null;
+    report?: AnalysisReport | null;
+    /**
+     * Uploaded
+     */
+    uploaded?: boolean;
+    /**
+     * Files
+     *
+     * names available for signed URLs
+     */
+    files?: Array<string>;
+};
+
+/**
+ * Sample
+ *
+ * One GEO sample (GSM) with harmonized labels.
+ *
+ * ``raw_lines`` holds the GEO ``characteristics_ch1`` lines verbatim and ``raw``
+ * the same lines as ``{key: value}``; ``title`` and ``source_name`` are copied
+ * from GEO as-is. Those are the only places an ``evidence`` string may come from.
+ */
+export type Sample = {
+    /**
+     * Gsm
+     */
+    gsm: string;
+    /**
+     * Title
+     */
+    title: string;
+    /**
+     * Source Name
+     */
+    source_name?: string | null;
+    group?: Group;
+    /**
+     * Condition
+     */
+    condition?: string | null;
+    /**
+     * Treatment
+     */
+    treatment?: string | null;
+    /**
+     * Dose
+     */
+    dose?: string | null;
+    /**
+     * Time Point
+     */
+    time_point?: string | null;
+    /**
+     * Tissue
+     */
+    tissue?: string | null;
+    /**
+     * Cell Type
+     */
+    cell_type?: string | null;
+    /**
+     * Cell Line
+     */
+    cell_line?: string | null;
+    /**
+     * Genotype
+     */
+    genotype?: string | null;
+    /**
+     * Sex
+     */
+    sex?: string | null;
+    /**
+     * Age
+     */
+    age?: string | null;
+    /**
+     * Donor
+     */
+    donor?: string | null;
+    /**
+     * Batch
+     */
+    batch?: string | null;
+    /**
+     * Organism
+     */
+    organism?: string | null;
+    /**
+     * Replicate
+     */
+    replicate?: number | null;
+    /**
+     * Evidence
+     */
+    evidence?: Array<string>;
+    /**
+     * Confidence
+     */
+    confidence?: number | null;
+    /**
+     * Needs Review
+     */
+    needs_review?: boolean;
+    /**
+     * Raw
+     */
+    raw?: {
+        [key: string]: string;
+    };
+    /**
+     * Raw Lines
+     */
+    raw_lines?: Array<string>;
+};
+
+/**
  * SampleExclusion
  */
 export type SampleExclusion = 'not_human' | 'not_rna_seq' | 'not_in_counts';
+
+/**
+ * SampleQc
+ */
+export type SampleQc = {
+    /**
+     * Gsm
+     */
+    gsm: string;
+    /**
+     * Arm
+     */
+    arm: string;
+    /**
+     * Library Size
+     */
+    library_size: number;
+    /**
+     * Detected Genes
+     */
+    detected_genes: number;
+    /**
+     * Pct Mito
+     */
+    pct_mito: number;
+    /**
+     * Pct Ribo
+     */
+    pct_ribo: number;
+    /**
+     * Mean Corr Same Arm
+     */
+    mean_corr_same_arm?: number | null;
+    /**
+     * Mean Corr Other Arm
+     */
+    mean_corr_other_arm?: number | null;
+    /**
+     * Reported Sex
+     */
+    reported_sex?: string | null;
+    /**
+     * Predicted Sex
+     */
+    predicted_sex?: string | null;
+    /**
+     * Flags
+     */
+    flags?: Array<string>;
+};
 
 /**
  * SampleRecord
@@ -313,6 +1152,25 @@ export type SampleRecord = {
 };
 
 /**
+ * SampleSheet
+ */
+export type SampleSheet = {
+    /**
+     * Gse
+     */
+    gse: string;
+    assay: Assay;
+    /**
+     * Title
+     */
+    title?: string | null;
+    /**
+     * Samples
+     */
+    samples: Array<Sample>;
+};
+
+/**
  * SearchRequest
  */
 export type SearchRequest = {
@@ -347,6 +1205,20 @@ export type SearchResult = {
 };
 
 /**
+ * SessionDatasets
+ */
+export type SessionDatasets = {
+    /**
+     * Pending
+     */
+    pending: Array<string>;
+    /**
+     * Datasets
+     */
+    datasets: Array<CollectedDataset>;
+};
+
+/**
  * SessionInfo
  */
 export type SessionInfo = {
@@ -358,6 +1230,42 @@ export type SessionInfo = {
      * Created At
      */
     created_at: string;
+    /**
+     * Pending
+     *
+     * GSEs still being collected; poll until empty
+     */
+    pending?: Array<string>;
+};
+
+/**
+ * StepRecord
+ *
+ * One pipeline step: what ran, with which parameters, how long, and what it warned.
+ */
+export type StepRecord = {
+    /**
+     * Name
+     */
+    name: string;
+    /**
+     * Params
+     */
+    params?: {
+        [key: string]: unknown;
+    };
+    /**
+     * Started At
+     */
+    started_at: string;
+    /**
+     * Seconds
+     */
+    seconds?: number;
+    /**
+     * Warnings
+     */
+    warnings?: Array<string>;
 };
 
 /**
@@ -503,6 +1411,66 @@ export type CreateSessionResponses = {
 
 export type CreateSessionResponse = CreateSessionResponses[keyof CreateSessionResponses];
 
+export type DeleteSessionData = {
+    body?: never;
+    path: {
+        /**
+         * Session Id
+         */
+        session_id: string;
+    };
+    query?: never;
+    url: '/api/sessions/{session_id}';
+};
+
+export type DeleteSessionErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+};
+
+export type DeleteSessionError = DeleteSessionErrors[keyof DeleteSessionErrors];
+
+export type DeleteSessionResponses = {
+    /**
+     * Successful Response
+     */
+    204: void;
+};
+
+export type DeleteSessionResponse = DeleteSessionResponses[keyof DeleteSessionResponses];
+
+export type GetSessionData = {
+    body?: never;
+    path: {
+        /**
+         * Session Id
+         */
+        session_id: string;
+    };
+    query?: never;
+    url: '/api/sessions/{session_id}';
+};
+
+export type GetSessionErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+};
+
+export type GetSessionError = GetSessionErrors[keyof GetSessionErrors];
+
+export type GetSessionResponses = {
+    /**
+     * Successful Response
+     */
+    200: SessionInfo;
+};
+
+export type GetSessionResponse = GetSessionResponses[keyof GetSessionResponses];
+
 export type ListDatasetsData = {
     body?: never;
     path: {
@@ -526,11 +1494,9 @@ export type ListDatasetsError = ListDatasetsErrors[keyof ListDatasetsErrors];
 
 export type ListDatasetsResponses = {
     /**
-     * Response Listdatasets
-     *
      * Successful Response
      */
-    200: Array<DatasetRecord>;
+    200: SessionDatasets;
 };
 
 export type ListDatasetsResponse = ListDatasetsResponses[keyof ListDatasetsResponses];
@@ -560,7 +1526,7 @@ export type CollectDatasetsResponses = {
     /**
      * Successful Response
      */
-    200: CollectResponse;
+    202: SessionInfo;
 };
 
 export type CollectDatasetsResponse = CollectDatasetsResponses[keyof CollectDatasetsResponses];
@@ -603,7 +1569,7 @@ export type GetDatasetFileUrlResponses = {
 
 export type GetDatasetFileUrlResponse = GetDatasetFileUrlResponses[keyof GetDatasetFileUrlResponses];
 
-export type DeleteSessionData = {
+export type ListRunsData = {
     body?: never;
     path: {
         /**
@@ -612,23 +1578,99 @@ export type DeleteSessionData = {
         session_id: string;
     };
     query?: never;
-    url: '/api/sessions/{session_id}';
+    url: '/api/sessions/{session_id}/runs';
 };
 
-export type DeleteSessionErrors = {
+export type ListRunsErrors = {
     /**
      * Validation Error
      */
     422: HttpValidationError;
 };
 
-export type DeleteSessionError = DeleteSessionErrors[keyof DeleteSessionErrors];
+export type ListRunsError = ListRunsErrors[keyof ListRunsErrors];
 
-export type DeleteSessionResponses = {
+export type ListRunsResponses = {
+    /**
+     * Response Listruns
+     *
+     * Successful Response
+     */
+    200: Array<RunStatus>;
+};
+
+export type ListRunsResponse = ListRunsResponses[keyof ListRunsResponses];
+
+export type StartRunData = {
+    body: RunRequest;
+    path: {
+        /**
+         * Session Id
+         */
+        session_id: string;
+    };
+    query?: never;
+    url: '/api/sessions/{session_id}/runs';
+};
+
+export type StartRunErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+};
+
+export type StartRunError = StartRunErrors[keyof StartRunErrors];
+
+export type StartRunResponses = {
+    /**
+     * Response Startrun
+     *
+     * Successful Response
+     */
+    202: Array<RunStatus>;
+};
+
+export type StartRunResponse = StartRunResponses[keyof StartRunResponses];
+
+export type GetRunFileUrlData = {
+    body?: never;
+    path: {
+        /**
+         * Session Id
+         */
+        session_id: string;
+        /**
+         * Gse
+         */
+        gse: string;
+        /**
+         * Contrast
+         */
+        contrast: string;
+        /**
+         * Name
+         */
+        name: string;
+    };
+    query?: never;
+    url: '/api/sessions/{session_id}/runs/{gse}/{contrast}/files/{name}';
+};
+
+export type GetRunFileUrlErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+};
+
+export type GetRunFileUrlError = GetRunFileUrlErrors[keyof GetRunFileUrlErrors];
+
+export type GetRunFileUrlResponses = {
     /**
      * Successful Response
      */
-    204: void;
+    200: FileUrl;
 };
 
-export type DeleteSessionResponse = DeleteSessionResponses[keyof DeleteSessionResponses];
+export type GetRunFileUrlResponse = GetRunFileUrlResponses[keyof GetRunFileUrlResponses];

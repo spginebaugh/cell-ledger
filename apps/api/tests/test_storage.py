@@ -30,6 +30,25 @@ async def test_put_sends_upsert_with_secret_key() -> None:
     assert r.headers["authorization"] == "Bearer sb_secret_x"
 
 
+async def test_put_file_streams_with_content_length(tmp_path) -> None:  # type: ignore[no-untyped-def]
+    big = tmp_path / "counts.tsv.gz"
+    big.write_bytes(b"x" * (3 * (1 << 20) + 17))  # several chunks plus a tail
+    seen: list[tuple[httpx.Headers, bytes]] = []
+
+    async def handle(r: httpx.Request) -> httpx.Response:
+        seen.append((r.headers, await r.aread()))
+        return httpx.Response(200, json={})
+
+    store, http = _store(handle)
+    async with http:
+        await store.put_file("s1/geo/GSE1/counts.tsv.gz", big, "application/gzip")
+    ((headers, body),) = seen
+    assert body == big.read_bytes()
+    assert headers["content-length"] == str(big.stat().st_size)
+    assert "transfer-encoding" not in headers
+    assert headers["content-type"] == "application/gzip" and headers["x-upsert"] == "true"
+
+
 async def test_delete_prefix_walks_folders() -> None:
     tree = {
         "s1": [{"name": "geo", "id": None}],

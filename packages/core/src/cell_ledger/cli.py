@@ -67,8 +67,12 @@ def run_one(
         if not contrasts:
             print(f"{gse}: no contrast named {wanted}", file=sys.stderr)
             return 2
-    counts = args.data_dir / gse / f"{gse}_raw_counts_GRCh38.p13_NCBI.tsv.gz"
-    annotation = args.data_dir / ANNOTATION
+    counts = (
+        Path(args.counts)
+        if getattr(args, "counts", None)
+        else args.data_dir / gse / f"{gse}_raw_counts_GRCh38.p13_NCBI.tsv.gz"
+    )
+    annotation = Path(args.annotation) if args.annotation else args.data_dir / ANNOTATION
     for missing in (p for p in (counts, annotation) if not p.exists()):
         print(f"{gse}: missing {missing} (run scripts/fetch_geo_examples.py)", file=sys.stderr)
         return 2
@@ -210,6 +214,7 @@ def main(argv: list[str] | None = None) -> int:
         sp.add_argument("--data-dir", type=Path, default=DEFAULT_DATA)
         sp.add_argument("--designs-dir", type=Path, default=DEFAULT_DESIGNS)
         sp.add_argument("--out-root", type=Path, default=DEFAULT_RUNS)
+        sp.add_argument("--annotation", help="annotation table (default <data-dir>/annotation/...)")
         sp.add_argument("--contrast", help="contrast name; default all in the design file")
         sp.add_argument("--genes", help="comma-separated symbols or GeneIDs to look up")
         sp.add_argument("--alpha", type=float, default=0.05)
@@ -223,6 +228,7 @@ def main(argv: list[str] | None = None) -> int:
     one = sub.add_parser("run", help="run one GSE")
     one.add_argument("gse")
     one.add_argument("--design", help="design JSON (default <designs-dir>/<GSE>.json)")
+    one.add_argument("--counts", help="counts file (default <data-dir>/<GSE>/<GSE>_raw_counts...)")
     common(one)
     allp = sub.add_parser("run-all", help="run every design in --designs-dir")
     common(allp)

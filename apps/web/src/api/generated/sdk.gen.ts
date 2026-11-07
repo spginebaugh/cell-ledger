@@ -2,7 +2,7 @@
 
 import type { Client, ClientMeta, Options as Options2, RequestResult, TDataShape } from './client';
 import { client } from './client.gen';
-import type { CollectDatasetsData, CollectDatasetsErrors, CollectDatasetsResponses, CreateSessionData, CreateSessionResponses, DeleteSessionData, DeleteSessionErrors, DeleteSessionResponses, GetDatasetFileUrlData, GetDatasetFileUrlErrors, GetDatasetFileUrlResponses, GetHealthData, GetHealthResponses, ListDatasetsData, ListDatasetsErrors, ListDatasetsResponses, SearchGeoData, SearchGeoErrors, SearchGeoResponses } from './types.gen';
+import type { CollectDatasetsData, CollectDatasetsErrors, CollectDatasetsResponses, CreateSessionData, CreateSessionResponses, DeleteSessionData, DeleteSessionErrors, DeleteSessionResponses, GetDatasetFileUrlData, GetDatasetFileUrlErrors, GetDatasetFileUrlResponses, GetHealthData, GetHealthResponses, GetRunFileUrlData, GetRunFileUrlErrors, GetRunFileUrlResponses, GetSessionData, GetSessionErrors, GetSessionResponses, ListDatasetsData, ListDatasetsErrors, ListDatasetsResponses, ListRunsData, ListRunsErrors, ListRunsResponses, SearchGeoData, SearchGeoErrors, SearchGeoResponses, StartRunData, StartRunErrors, StartRunResponses } from './types.gen';
 
 export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends boolean = boolean, TResponse = unknown> = Options2<TData, ThrowOnError, TResponse> & {
     /**
@@ -43,14 +43,29 @@ export const searchGeo = <ThrowOnError extends boolean = false>(options: Options
 export const createSession = <ThrowOnError extends boolean = false>(options?: Options<CreateSessionData, ThrowOnError>): RequestResult<CreateSessionResponses, unknown, ThrowOnError> => (options?.client ?? client).post<CreateSessionResponses, unknown, ThrowOnError>({ url: '/api/sessions', ...options });
 
 /**
+ * Delete Session
+ */
+export const deleteSession = <ThrowOnError extends boolean = false>(options: Options<DeleteSessionData, ThrowOnError>): RequestResult<DeleteSessionResponses, DeleteSessionErrors, ThrowOnError> => (options.client ?? client).delete<DeleteSessionResponses, DeleteSessionErrors, ThrowOnError>({ url: '/api/sessions/{session_id}', ...options });
+
+/**
+ * Get Session
+ */
+export const getSession = <ThrowOnError extends boolean = false>(options: Options<GetSessionData, ThrowOnError>): RequestResult<GetSessionResponses, GetSessionErrors, ThrowOnError> => (options.client ?? client).get<GetSessionResponses, GetSessionErrors, ThrowOnError>({ url: '/api/sessions/{session_id}', ...options });
+
+/**
  * List Datasets
+ *
+ * Everything collected so far plus what is still pending.
  */
 export const listDatasets = <ThrowOnError extends boolean = false>(options: Options<ListDatasetsData, ThrowOnError>): RequestResult<ListDatasetsResponses, ListDatasetsErrors, ThrowOnError> => (options.client ?? client).get<ListDatasetsResponses, ListDatasetsErrors, ThrowOnError>({ url: '/api/sessions/{session_id}/datasets', ...options });
 
 /**
  * Collect Datasets
  *
- * Download the given series into the session; each comes back ready or excluded.
+ * Start downloading the given series in the background.
+ *
+ * Returns at once with the session's ``pending`` list; poll ``listDatasets`` until the
+ * accessions you asked for have left it. Each arrives ready, excluded or failed.
  */
 export const collectDatasets = <ThrowOnError extends boolean = false>(options: Options<CollectDatasetsData, ThrowOnError>): RequestResult<CollectDatasetsResponses, CollectDatasetsErrors, ThrowOnError> => (options.client ?? client).post<CollectDatasetsResponses, CollectDatasetsErrors, ThrowOnError>({
     url: '/api/sessions/{session_id}/datasets',
@@ -62,13 +77,37 @@ export const collectDatasets = <ThrowOnError extends boolean = false>(options: O
 });
 
 /**
- * Get File Url
+ * Get Dataset File Url
  *
  * Short-lived download link for one stored file.
  */
 export const getDatasetFileUrl = <ThrowOnError extends boolean = false>(options: Options<GetDatasetFileUrlData, ThrowOnError>): RequestResult<GetDatasetFileUrlResponses, GetDatasetFileUrlErrors, ThrowOnError> => (options.client ?? client).get<GetDatasetFileUrlResponses, GetDatasetFileUrlErrors, ThrowOnError>({ url: '/api/sessions/{session_id}/datasets/{gse}/files/{name}', ...options });
 
 /**
- * Delete Session
+ * List Runs
  */
-export const deleteSession = <ThrowOnError extends boolean = false>(options: Options<DeleteSessionData, ThrowOnError>): RequestResult<DeleteSessionResponses, DeleteSessionErrors, ThrowOnError> => (options.client ?? client).delete<DeleteSessionResponses, DeleteSessionErrors, ThrowOnError>({ url: '/api/sessions/{session_id}', ...options });
+export const listRuns = <ThrowOnError extends boolean = false>(options: Options<ListRunsData, ThrowOnError>): RequestResult<ListRunsResponses, ListRunsErrors, ThrowOnError> => (options.client ?? client).get<ListRunsResponses, ListRunsErrors, ThrowOnError>({ url: '/api/sessions/{session_id}/runs', ...options });
+
+/**
+ * Start Run
+ *
+ * Run the pipeline on a collected dataset in the background, one entry per contrast.
+ *
+ * Poll ``listRuns`` until the status leaves ``running``. The counts must already be in
+ * the session (``collectDatasets``) and the dataset must be ``ready``.
+ */
+export const startRun = <ThrowOnError extends boolean = false>(options: Options<StartRunData, ThrowOnError>): RequestResult<StartRunResponses, StartRunErrors, ThrowOnError> => (options.client ?? client).post<StartRunResponses, StartRunErrors, ThrowOnError>({
+    url: '/api/sessions/{session_id}/runs',
+    ...options,
+    headers: {
+        'Content-Type': 'application/json',
+        ...options.headers
+    }
+});
+
+/**
+ * Get Run File Url
+ *
+ * Short-lived download link for one run output, e.g. ``report.json`` or ``figures/pca.png``.
+ */
+export const getRunFileUrl = <ThrowOnError extends boolean = false>(options: Options<GetRunFileUrlData, ThrowOnError>): RequestResult<GetRunFileUrlResponses, GetRunFileUrlErrors, ThrowOnError> => (options.client ?? client).get<GetRunFileUrlResponses, GetRunFileUrlErrors, ThrowOnError>({ url: '/api/sessions/{session_id}/runs/{gse}/{contrast}/files/{name}', ...options });

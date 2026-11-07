@@ -8,6 +8,12 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_prefix="CELL_LEDGER_", env_file=".env", extra="ignore")
 
     data_dir: Path = Path("data")
+
+    # Built frontend (apps/web/dist). Set -> served from "/" on the same origin as the
+    # API, which is how the container runs. Unset -> API only (Vite dev server owns the UI).
+    web_dist: Path | None = None
+
+    # Only needed when the UI is served from another origin (the Vite dev server).
     cors_origins: list[str] = ["http://localhost:5173"]
 
     # NCBI E-utilities: 10 requests/s with a key, 3 without.
@@ -22,6 +28,12 @@ class Settings(BaseSettings):
     session_ttl_hours: float = 24
     max_datasets_per_request: int = 10
     max_concurrent_downloads: int = 3
+
+    # Pipeline runs are `cell-ledger run` subprocesses. Each pydeseq2 fit wants a few GB, so
+    # the cap is per machine memory: 2 on 8 GB, 4 on 16 GB. n_cpus unset -> pipeline default.
+    max_concurrent_runs: int = 2
+    run_n_cpus: int | None = None
+    run_timeout_minutes: float = 30
 
 
 settings = Settings()

@@ -7,14 +7,22 @@ Supabase credentials. Paths are bucket-relative, e.g. ``<session>/geo/<GSE>/<fil
 
 from __future__ import annotations
 
+from collections.abc import AsyncIterator
+from pathlib import Path
 from typing import Protocol
 from urllib.parse import quote
 
 import httpx
 
+CHUNK = 1 << 20
+
 
 class ObjectStore(Protocol):
     async def put(self, path: str, data: bytes, content_type: str) -> None: ...
+
+    async def put_file(self, path: str, file: Path, content_type: str) -> None:
+        """Upload a local file without reading it into memory at once."""
+        ...
 
     async def delete_prefix(self, prefix: str) -> int: ...
 
@@ -36,6 +44,28 @@ class SupabaseStore:
             self._object(path),
             content=data,
             headers={**self._headers, "Content-Type": content_type, "x-upsert": "true"},
+        )
+        r.raise_for_status()
+
+    async def put_file(self, path: str, file: Path, content_type: str) -> None:
+        # An explicit Content-Length makes httpx stream the body instead of chunking it,
+        # which Supabase Storage needs for a plain object upload.
+        size = file.stat().st_size
+
+        async def body() -> AsyncIterator[bytes]:
+            with file.open("rb") as f:
+                while chunk := f.read(CHUNK):
+                    yield chunk
+
+        r = await self._http.post(
+            self._object(path),
+            content=body(),
+            headers={
+                **self._headers,
+                "Content-Type": content_type,
+                "Content-Length": str(size),
+                "x-upsert": "true",
+            },
         )
         r.raise_for_status()
 
@@ -93,6 +123,9 @@ class MemoryStore:
 
     async def put(self, path: str, data: bytes, content_type: str) -> None:
         self.objects[path] = data
+
+    async def put_file(self, path: str, file: Path, content_type: str) -> None:
+        self.objects[path] = file.read_bytes()
 
     async def delete_prefix(self, prefix: str) -> int:
         doomed = [p for p in self.objects if p.startswith(prefix.rstrip("/") + "/")]
