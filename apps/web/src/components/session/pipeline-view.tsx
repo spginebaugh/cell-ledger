@@ -87,7 +87,7 @@ function designLabel(d: DatasetStatus): {
     case "failed":
       return { text: "No design", tone: "danger" };
     case "designing":
-      return { text: "Choosing the contrast", tone: "neutral" };
+      return { text: "Choosing the statistical model", tone: "neutral" };
     default:
       return { text: "Waiting to be designed", tone: "neutral" };
   }

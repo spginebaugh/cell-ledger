@@ -49,7 +49,7 @@ export function BodyMap({ tissues, themeKey }: { tissues: GtexTissue[]; themeKey
   // biome-ignore lint/correctness/useExhaustiveDependencies: themeKey re-reads the CSS variables
   const color = useMemo(
     () =>
-      // four stops from a pale tint to deep navy (bright in dark mode), so a tissue at a tenth
+      // four stops from dark blue through burnt orange to a bright orange, so a tissue at a tenth
       // of the top value is unmistakably lighter than the top one
       scaleLinear<string>()
         .domain([0, 1 / 3, 2 / 3, 1])

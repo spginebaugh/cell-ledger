@@ -19,7 +19,7 @@ function rulesFor(scope: string, h: CellHighlights): string {
         ? 0.95
         : 0.45;
     lines.push(
-      `#${scope} #${id}, #${scope} #${id} * { fill: var(--case) !important; fill-opacity: ${opacity} !important; }`,
+      `#${scope} #${id}, #${scope} #${id} * { fill: var(--locus) !important; fill-opacity: ${opacity} !important; }`,
     );
   }
   return lines.join("\n");
@@ -93,12 +93,12 @@ function LocRow({ label, ids, strong }: { label: string; ids: string[]; strong?:
             className={cn(
               "inline-flex h-[22px] items-center gap-1.5 rounded-md border px-2 text-[12px] font-semibold",
               strong
-                ? "border-case/40 bg-case-soft text-case"
+                ? "border-locus/40 bg-locus-soft text-locus"
                 : "border-line-2 bg-surface-2 text-ink-2",
             )}
           >
             <span
-              className="inline-block h-2 w-2 rounded-full bg-case"
+              className="inline-block h-2 w-2 rounded-full bg-locus"
               style={{ opacity: strong ? 1 : 0.45 }}
               aria-hidden
             />
