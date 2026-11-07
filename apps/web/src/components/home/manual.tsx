@@ -25,8 +25,11 @@ export function ManualAccessions({
   const [gene, setGene] = useState("");
   const verify = useVerifyGeo();
   const accessions = [...new Set(text.toUpperCase().match(/GSE\d+/g) ?? [])];
-  const hits: GeoSeriesHit[] = verify.data?.hits ?? [];
-  const ineligible = verify.data?.ineligible ?? [];
+  // A check answers for the accessions it was given; once the text changes it is no longer
+  // what Download would submit, so it is set aside rather than offered.
+  const fresh = verify.data !== undefined && sameSet(verify.variables ?? [], accessions);
+  const hits: GeoSeriesHit[] = fresh ? (verify.data?.hits ?? []) : [];
+  const ineligible = fresh ? (verify.data?.ineligible ?? []) : [];
   const addGene = () => {
     const g = gene.trim().toUpperCase();
     if (g && !genes.includes(g)) onGenesChange([...genes, g]);
@@ -98,7 +101,7 @@ export function ManualAccessions({
           <ErrorBox title="GEO could not be reached">{errorMessage(verify.error)}</ErrorBox>
         </div>
       )}
-      {verify.data && (
+      {fresh && (
         <ul className="mt-4 space-y-2 text-sm">
           {hits.map((h) => (
             <li key={h.gse} className="flex flex-wrap items-baseline gap-2">
@@ -121,4 +124,8 @@ export function ManualAccessions({
       )}
     </Card>
   );
+}
+
+function sameSet(a: string[], b: string[]): boolean {
+  return a.length === b.length && [...a].sort().join(" ") === [...b].sort().join(" ");
 }

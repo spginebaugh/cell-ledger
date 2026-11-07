@@ -188,19 +188,25 @@ def api(
 ) -> Iterator[ApiFactory]:
     """``with api(**settings) as client`` boots the app against the local stack.
 
-    Settings overrides go to :class:`Settings`; ``run_command`` and ``exa`` to
-    :func:`create_app`. Sessions created during the test are removed afterwards.
+    Settings overrides go to :class:`Settings`; ``run_command``, ``compare_command`` and
+    ``exa`` to :func:`create_app`. Sessions created during the test are removed afterwards.
     """
     started = asyncio.run(_db_now(settings_for()))
 
     @contextmanager
     def make(  # type: ignore[no-untyped-def]
-        *, run_command: Any = DEFAULT_COMMAND, exa: Any = None, turn: Any = None, **overrides: Any
+        *,
+        run_command: Any = DEFAULT_COMMAND,
+        compare_command: Any = DEFAULT_COMMAND,
+        exa: Any = None,
+        turn: Any = None,
+        **overrides: Any,
     ):
         app = create_app(
             settings_for(**overrides),
             transport=geo_transport,
             run_command=run_command,
+            compare_command=compare_command,
             exa=exa,
             turn=turn,
         )

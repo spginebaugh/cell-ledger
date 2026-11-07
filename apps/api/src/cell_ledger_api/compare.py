@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import asyncio
 import logging
+import shutil
 from collections.abc import Sequence
 from datetime import datetime
 from pathlib import Path
@@ -197,6 +198,7 @@ class CompareService:
         out_root = self.comparisons_dir(session_id)
         out_root.mkdir(parents=True, exist_ok=True)
         cdir = out_root / req.name
+        shutil.rmtree(cdir, ignore_errors=True)  # a stale report must never read as this attempt's
         set_file = out_root / f"{req.name}.queryset.json"
         set_file.write_text(req.query_set().model_dump_json(indent=2))
         error: str | None = None
@@ -233,10 +235,10 @@ class CompareService:
             try:
                 parsed = ComparisonReport.model_validate_json(path.read_text())
                 status, error, report = parsed.status, parsed.error, parsed.model_dump(mode="json")
-                if run_error and status == "complete":
-                    status, error = "failed", run_error
             except ValueError as e:
                 error = f"unreadable report: {e}"
+        if run_error:  # the process failed: that is the result, whatever a report on disk says
+            status, error = "failed", run_error
         uploaded, upload_error, files = False, None, []
         if cdir.is_dir():
             try:

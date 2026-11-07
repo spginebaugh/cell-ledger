@@ -1,5 +1,5 @@
 import { Loader2 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import type { DatasetStatus, DesignProposal, RunRequest } from "@/api/generated/types.gen";
 import { Badge, Chip } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -15,6 +15,7 @@ export function DatasetCard({
   sessionId,
   dataset,
   question,
+  context,
   agentAvailable,
   defaultGenes,
   proposal,
@@ -27,6 +28,8 @@ export function DatasetCard({
   sessionId: string;
   dataset: DatasetStatus;
   question: string;
+  /** What discovery already settled (interpretation, clarifications); goes to the design step too. */
+  context?: string;
   agentAvailable: boolean;
   defaultGenes: string[];
   proposal: DesignProposal | undefined;
@@ -42,18 +45,17 @@ export function DatasetCard({
   const r = dataset.record;
   const total = r?.samples?.length ?? 0;
 
-  useEffect(() => {
-    if (sse.result) onProposal(dataset.gse, sse.result);
-  }, [sse.result, dataset.gse, onProposal]);
-
-  const design = (answers?: string) => {
+  const design = async (answers?: string) => {
     setMode("design");
     onProposal(dataset.gse, null);
-    void sse.start(`/api/sessions/${sessionId}/datasets/${dataset.gse}/design`, {
+    const result = await sse.start(`/api/sessions/${sessionId}/datasets/${dataset.gse}/design`, {
       question,
-      answers: answers || null,
+      answers: [context, answers].filter(Boolean).join("\n") || null,
       genes,
     });
+    // Saved once, from the resolved stream: an effect keyed on the callback re-fired on every
+    // render while a result was present, each save re-rendering the page (an update loop).
+    if (result) onProposal(dataset.gse, result);
   };
 
   return (
@@ -118,7 +120,7 @@ export function DatasetCard({
             {agentAvailable && (
               <Button
                 variant="primary"
-                onClick={() => design()}
+                onClick={() => void design()}
                 disabled={sse.status === "streaming"}
               >
                 Design the contrast
@@ -152,7 +154,7 @@ export function DatasetCard({
               proposal={proposal}
               genes={genes}
               onGenesChange={setGenes}
-              onAnswer={(answers) => design(answers)}
+              onAnswer={(answers) => void design(answers)}
               onConfirm={(d) => void onStartRun(d)}
               busy={starting}
               error={startError}

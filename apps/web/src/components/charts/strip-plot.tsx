@@ -5,7 +5,13 @@ import { ChartTip } from "@/components/ui/tooltip";
 import { fmtNum } from "@/lib/format";
 import { AxisLeft, armColor, CHART, GridY, jitter, useMeasure } from "./common";
 
-export type StripPoint = { gsm: string; arm: "case" | "control" | string; value: number };
+export type StripPoint = {
+  /** A GSM, or the id of a fitted observation that summed several GSMs (then `members` lists them). */
+  gsm: string;
+  arm: "case" | "control" | string;
+  value: number;
+  members?: string[];
+};
 
 export function StripPlot({
   points,
@@ -104,6 +110,11 @@ export function StripPlot({
           <div>
             {hover.p.arm} · log2 {fmtNum(hover.p.value)}
           </div>
+          {hover.p.members && (
+            <div className="accession mt-0.5 text-[11px]">
+              sum of {hover.p.members.length} samples: {hover.p.members.join(", ")}
+            </div>
+          )}
         </ChartTip>
       )}
     </div>

@@ -186,16 +186,17 @@ class Database:
                 return False
             await conn.execute(
                 """
-                insert into run_contrasts (session_id, gse, contrast, status)
-                select $1, $2, c, 'running' from unnest($3::text[]) as c
+                insert into run_contrasts (session_id, gse, contrast, status, design)
+                select $1, $2, c, 'running', $4 from unnest($3::text[]) as c
                 on conflict (session_id, gse, contrast) do update
                   set status = 'running', started_at = now(), finished_at = null,
                       error = null, report = null, uploaded = false, upload_error = null,
-                      files = '{}', progress = null
+                      files = '{}', progress = null, design = excluded.design
                 """,
                 session_id,
                 gse,
                 list(contrasts),
+                design,
             )
         return True
 
@@ -248,9 +249,11 @@ class Database:
     async def get_run_contrast(
         self, session_id: str, gse: str, contrast: str
     ) -> asyncpg.Record | None:
+        # c.design is the design this contrast's report came from; r.design is whatever the
+        # latest run of the GSE submitted and may no longer describe this contrast.
         return await self._pool.fetchrow(
             """
-            select c.*, r.error as run_error, r.design
+            select c.*, r.error as run_error
               from run_contrasts c join runs r using (session_id, gse)
              where c.session_id = $1 and c.gse = $2 and c.contrast = $3
             """,

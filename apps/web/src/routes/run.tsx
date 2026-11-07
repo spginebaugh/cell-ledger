@@ -263,7 +263,7 @@ export function RunPage() {
                     {(report.gene_expression ?? []).length > 0 && (
                       <Section
                         title="Genes of interest, sample by sample"
-                        description="Log2 normalized counts for each sample; the bar is the arm mean."
+                        description="Log2 normalized counts for each fitted observation; the bar is the arm mean. Repeated samples of one donor or block were summed first, as in the fit."
                       >
                         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                           {(report.gene_expression ?? []).map((g) => {
@@ -292,13 +292,16 @@ export function RunPage() {
                                 </div>
                                 <div className="mt-2">
                                   <StripPlot
-                                    points={Object.entries(g.values)
-                                      .filter(([gsm]) => arms.has(gsm))
-                                      .map(([gsm, v]) => ({
-                                        gsm,
-                                        arm: arms.get(gsm) ?? "other",
-                                        value: v,
-                                      }))}
+                                    points={Object.entries(g.values).flatMap(([unit, v]) => {
+                                      // Repeated samples per block and arm were summed before
+                                      // the fit into units named `<block>|<arm>`; the plot shows
+                                      // what was fitted, so those appear as one point each.
+                                      const arm =
+                                        arms.get(unit) ?? unit.slice(unit.lastIndexOf("|") + 1);
+                                      if (arm !== "case" && arm !== "control") return [];
+                                      const members = report.de?.summary.collapsed?.[unit];
+                                      return [{ gsm: unit, arm, value: v, members }];
+                                    })}
                                     caseLabel={report.contrast.case_label}
                                     controlLabel={report.contrast.control_label}
                                   />

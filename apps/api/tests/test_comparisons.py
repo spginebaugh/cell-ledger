@@ -88,3 +88,46 @@ def test_compare_two_runs(
     assert link.status_code == 200
     log = (tmp_path / "sessions" / sid / "comparisons" / "pilot.log").read_text()
     assert "pilot" in log
+
+
+def test_failed_retry_does_not_reuse_earlier_report(
+    api: ApiFactory,
+    tmp_path: Path,
+    wait_collected: Callable[..., list[dict]],  # type: ignore[type-arg]
+    wait_runs: Callable[..., list[dict]],  # type: ignore[type-arg]
+) -> None:
+    """The first attempt leaves comparison.json behind (``insufficient``). When the retry's
+    process fails, that is the result; the stale file must not stand in for it."""
+    body = {
+        "name": "retry",
+        "question": "does anything replicate?",
+        "case_label": "case",
+        "control_label": "control",
+        "members": [
+            {"gse": "GSE100001", "contrast": CONTRAST},
+            {"gse": "GSE100001", "contrast": "second"},
+        ],
+        "genes_of_interest": ["CXCL9"],
+    }
+    with api(run_command=FAKE, run_timeout_minutes=0.2) as client:
+        sid = client.post("/api/sessions").json()["id"]
+        client.post(f"/api/sessions/{sid}/datasets", json={"gses": ["GSE100001"]})
+        wait_collected(client, sid)
+        design = design_for("GSE100001")
+        second = json.loads(json.dumps(design["contrasts"][0]))
+        second["name"] = "second"
+        design["contrasts"].append(second)
+        assert client.post(f"/api/sessions/{sid}/runs", json=design).status_code == 202
+        assert [r["status"] for r in wait_runs(client, sid)] == ["complete", "complete"]
+        assert client.post(f"/api/sessions/{sid}/comparisons", json=body).status_code == 202
+        assert _wait_comparison(client, sid, "retry")["status"] == "insufficient"
+    stale = tmp_path / "sessions" / sid / "comparisons" / "retry" / "comparison.json"
+    assert stale.exists()
+
+    with api(run_command=FAKE, compare_command=("sh", "-c", "exit 3")) as client:
+        assert client.post(f"/api/sessions/{sid}/comparisons", json=body).status_code == 202
+        view = _wait_comparison(client, sid, "retry")
+    assert view["status"] == "failed"
+    assert view["error"] and "exited with code 3" in view["error"]
+    assert view["report"] is None
+    assert not stale.exists()

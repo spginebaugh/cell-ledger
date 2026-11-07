@@ -11,13 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Card, ErrorBox } from "@/components/ui/card";
 import { Input, Textarea } from "@/components/ui/input";
 import { errorMessage, unwrap } from "@/lib/api";
-import {
-  useAgentAvailable,
-  useCollect,
-  useCreateSession,
-  useSession,
-  useUpdateSession,
-} from "@/lib/queries";
+import { useAgentAvailable, useCollect, useCreateSession, useSession } from "@/lib/queries";
 import { lastSession, rememberSession } from "@/lib/storage";
 import { guessGenes } from "@/lib/ui-state";
 import { useSse } from "@/lib/useSse";
@@ -40,13 +34,13 @@ export function HomePage() {
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [genes, setGenes] = useState<string[]>([]);
   const [selected, setSelected] = useState<Set<string>>(new Set());
+  const [answers, setAnswers] = useState<string[]>([]);
   const [openId, setOpenId] = useState("");
   const [phase, setPhase] = useState<"ask" | "work">("ask");
   const create = useCreateSession();
   const resumeId = lastSession();
   const resume = useSession(resumeId ?? "", Boolean(resumeId));
   const sse = useSse<DiscoveryResult>();
-  const update = useUpdateSession(sessionId ?? "");
   const collect = useCollect(sessionId ?? "");
 
   useEffect(() => {
@@ -77,20 +71,31 @@ export function HomePage() {
     if (agent.data) {
       void sse.start(`/api/sessions/${id}/discover`, { question: q });
     } else {
-      await update.mutateAsync({ question: q });
+      // Called with the id just created: a hook bound to `sessionId` still sees the previous
+      // render's value here (empty on the first submit).
+      await unwrap(await updateSession({ path: { session_id: id }, body: { question: q } }));
     }
   };
 
-  const answer = async (answers: string) => {
+  const answer = async (reply: string) => {
     if (!sessionId) return;
-    const q = `${question.trim()}\n\nClarification from the user: ${answers}`;
+    const all = [...answers, reply.trim()].filter(Boolean);
+    setAnswers(all);
+    const q = `${question.trim()}\n\nClarification from the user: ${all.join("\n")}`;
     void sse.start(`/api/sessions/${sessionId}/discover`, { question: q });
   };
 
   const startCollect = async (gses: string[]) => {
     const id = await ensureSession();
     await collect.mutateAsync(gses);
-    const state = { discovery: sse.result ?? null, genes, selected: gses };
+    // The question stays as typed; clarifications ride along in state so the design step
+    // gets them without the heading turning into a transcript.
+    const state = {
+      discovery: sse.result ?? null,
+      genes,
+      selected: gses,
+      answers: answers.join("\n") || undefined,
+    };
     try {
       unwrap(
         await updateSession({

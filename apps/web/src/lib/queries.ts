@@ -32,10 +32,12 @@ export const keys = {
   session: (id: string) => ["session", id] as const,
   datasets: (id: string) => ["session", id, "datasets"] as const,
   runs: (id: string) => ["session", id, "runs"] as const,
+  runDetails: (id: string) => ["session", id, "run"] as const,
   run: (id: string, gse: string, contrast: string) =>
-    ["session", id, "run", gse, contrast] as const,
+    [...keys.runDetails(id), gse, contrast] as const,
   comparisons: (id: string) => ["session", id, "comparisons"] as const,
-  comparison: (id: string, name: string) => ["session", id, "comparison", name] as const,
+  comparisonDetails: (id: string) => ["session", id, "comparison"] as const,
+  comparison: (id: string, name: string) => [...keys.comparisonDetails(id), name] as const,
 };
 
 export function useAgentAvailable() {
@@ -56,14 +58,34 @@ export function useSession(id: string, enabled = true) {
   });
 }
 
+type SessionPatch = { question?: string | null; state?: Record<string, unknown> | null };
+
+/** PATCH the session. The cache takes the patch at once so a second save computed from it sees
+ * the first; only the last in-flight response is written back, so an earlier reply cannot undo
+ * a later patch. */
 export function useUpdateSession(id: string) {
   const qc = useQueryClient();
+  const key = keys.session(id);
+  const mutationKey = [...key, "update"];
   return useMutation({
-    mutationFn: async (body: {
-      question?: string | null;
-      state?: Record<string, unknown> | null;
-    }) => unwrap(await updateSession({ path: { session_id: id }, body })),
-    onSuccess: (info: SessionInfo) => qc.setQueryData(keys.session(id), info),
+    mutationKey,
+    mutationFn: async (body: SessionPatch) =>
+      unwrap(await updateSession({ path: { session_id: id }, body })),
+    onMutate: (body) => {
+      qc.setQueryData<SessionInfo>(key, (old) =>
+        old
+          ? {
+              ...old,
+              ...(body.question !== undefined ? { question: body.question } : {}),
+              ...(body.state !== undefined ? { state: body.state ?? undefined } : {}),
+            }
+          : old,
+      );
+    },
+    onSuccess: (info: SessionInfo) => {
+      if (qc.isMutating({ mutationKey }) <= 1) qc.setQueryData(key, info);
+    },
+    onError: () => qc.invalidateQueries({ queryKey: key }),
   });
 }
 
@@ -109,7 +131,13 @@ export function useStartRun(id: string) {
   return useMutation({
     mutationFn: async (body: RunRequest) =>
       unwrap(await startRun({ path: { session_id: id }, body })),
-    onSuccess: () => qc.invalidateQueries({ queryKey: keys.runs(id) }),
+    // A rerun reuses its contrast names, so the finished detail views (cached forever) must be
+    // marked stale too; the list key is a sibling of theirs, not a parent.
+    onSuccess: () =>
+      Promise.all([
+        qc.invalidateQueries({ queryKey: keys.runs(id) }),
+        qc.invalidateQueries({ queryKey: keys.runDetails(id) }),
+      ]),
   });
 }
 
@@ -141,7 +169,11 @@ export function useStartComparison(id: string) {
   return useMutation({
     mutationFn: async (body: CompareRequest) =>
       unwrap(await startComparison({ path: { session_id: id }, body })),
-    onSuccess: () => qc.invalidateQueries({ queryKey: keys.comparisons(id) }),
+    onSuccess: () =>
+      Promise.all([
+        qc.invalidateQueries({ queryKey: keys.comparisons(id) }),
+        qc.invalidateQueries({ queryKey: keys.comparisonDetails(id) }),
+      ]),
   });
 }
 

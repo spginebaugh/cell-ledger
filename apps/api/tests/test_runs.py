@@ -88,6 +88,19 @@ def test_run_completes_and_uploads(
     assert rerun.status_code == 202
     assert wait_runs(client, sid)[0]["status"] == "complete"
 
+    # A later run of the same GSE with another contrast and other genes must not rewrite what
+    # the first contrast is shown with: each contrast keeps the design that produced its report.
+    other = design_for("GSE100001")
+    other["contrasts"][0]["name"] = "second"
+    other["genes"] = ["GPC3"]
+    assert client.post(f"/api/sessions/{sid}/runs", json=other).status_code == 202
+    assert [r["status"] for r in wait_runs(client, sid)] == ["complete", "complete"]
+    first = client.get(f"/api/sessions/{sid}/runs/GSE100001/{CONTRAST}").json()
+    second = client.get(f"/api/sessions/{sid}/runs/GSE100001/second").json()
+    assert first["design"]["genes"] == ["CXCL9"]
+    assert second["design"]["genes"] == ["GPC3"]
+    assert [c["name"] for c in first["design"]["contrasts"]] == [CONTRAST]
+
 
 def test_progress_is_visible_while_running(
     api: ApiFactory,

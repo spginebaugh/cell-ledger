@@ -1,5 +1,6 @@
+import { useQueryClient } from "@tanstack/react-query";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import type { DesignProposal, RunRequest } from "@/api/generated/types.gen";
+import type { DesignProposal, RunRequest, SessionInfo } from "@/api/generated/types.gen";
 import { ManualAccessions } from "@/components/home/manual";
 import { Page, TopBar } from "@/components/layout/top-bar";
 import { ComparisonsSection } from "@/components/session/comparisons";
@@ -10,6 +11,7 @@ import { Empty, ErrorBox, Section, Skeleton } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/input";
 import { errorMessage } from "@/lib/api";
 import {
+  keys,
   useAgentAvailable,
   useCollect,
   useComparisons,
@@ -30,6 +32,7 @@ export function SessionPage() {
   const runs = useRuns(sessionId, session.isSuccess);
   const comparisons = useComparisons(sessionId, session.isSuccess);
   const agent = useAgentAvailable();
+  const qc = useQueryClient();
   const update = useUpdateSession(sessionId);
   const startRun = useStartRun(sessionId);
   const collect = useCollect(sessionId);
@@ -55,21 +58,40 @@ export function SessionPage() {
     [state.genes, question],
   );
 
+  // Context discovery settled that the design step should not have to rediscover.
+  const designContext = useMemo(
+    () =>
+      [
+        state.discovery?.interpretation &&
+          `The question as a two-group comparison: ${state.discovery.interpretation}`,
+        state.answers && `Clarifications from the user: ${state.answers}`,
+      ]
+        .filter(Boolean)
+        .join("\n"),
+    [state.discovery?.interpretation, state.answers],
+  );
+
+  // Patches are computed from the latest cached state at call time, not from a closure, so two
+  // cards saving at once do not overwrite each other. `mutate` is stable; the mutation result
+  // object is not, and depending on it made every consumer callback change each render.
+  const { mutate } = update;
   const saveState = useCallback(
-    (patch: Partial<UiState>) => {
-      update.mutate({ state: { ...state, ...patch } });
+    (patch: (current: UiState) => Partial<UiState>) => {
+      const current = readState(qc.getQueryData<SessionInfo>(keys.session(sessionId))?.state);
+      mutate({ state: { ...current, ...patch(current) } });
     },
-    [state, update],
+    [qc, sessionId, mutate],
   );
 
   const onProposal = useCallback(
-    (gse: string, p: DesignProposal | null) => {
-      const proposals = { ...(state.proposals ?? {}) };
-      if (p) proposals[gse] = p;
-      else delete proposals[gse];
-      saveState({ proposals });
-    },
-    [state.proposals, saveState],
+    (gse: string, p: DesignProposal | null) =>
+      saveState((current) => {
+        const proposals = { ...(current.proposals ?? {}) };
+        if (p) proposals[gse] = p;
+        else delete proposals[gse];
+        return { proposals };
+      }),
+    [saveState],
   );
 
   const onStartRun = async (design: RunRequest) => {
@@ -173,7 +195,7 @@ export function SessionPage() {
                 <div className="mb-4">
                   <ManualAccessions
                     genes={genes}
-                    onGenesChange={(g) => saveState({ genes: g })}
+                    onGenesChange={(g) => saveState(() => ({ genes: g }))}
                     onCollect={(gses) => {
                       collect.mutate(gses, { onSuccess: () => setAdding(false) });
                     }}
@@ -201,6 +223,7 @@ export function SessionPage() {
                     sessionId={sessionId}
                     dataset={d}
                     question={question}
+                    context={designContext}
                     agentAvailable={Boolean(agent.data)}
                     defaultGenes={genes}
                     proposal={state.proposals?.[d.gse]}
