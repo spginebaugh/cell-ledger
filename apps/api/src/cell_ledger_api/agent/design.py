@@ -85,8 +85,12 @@ class ContrastProposal(BaseModel):
     control_label: str
     case_gsms: list[str]
     control_gsms: list[str]
-    blocking: str | None = Field(
-        default=None, description="sample field pairing case and control (e.g. donor), if any"
+    # The pipeline pairs on a sample-sheet column, and "donor" is the only one that identifies
+    # a person; any other value would be silently fitted unpaired, so the schema allows no other.
+    blocking: Literal["donor"] | None = Field(
+        default=None,
+        description="donor when the same donors (patients) give samples to both arms, with each "
+        "sample's donor field set to its patient or donor id; null otherwise",
     )
     rationale: str
     confidence: float = Field(ge=0.0, le=1.0)
@@ -132,9 +136,10 @@ For each sample in the record:
 Then choose exactly one contrast: the comparison that answers the question as asked, and as
 restated in the context when one is given. Return a slug name, human labels for both arms,
 the GSMs in each arm (only samples you labelled case or control and that are in the counts
-matrix), a blocking field when case and control come from the same donors, a short rationale,
-and a confidence. Prefer the cleanest reading: the untreated or healthy control over other
-arms, one time point over pooled ones when pooling would mix effects, and the largest arms
+matrix), blocking "donor" when case and control come from the same donors (and then the
+same patient id in each paired sample's donor field), a short rationale, and a confidence.
+Prefer the cleanest reading: the untreated or healthy control over other arms, one time
+point over pooled ones when pooling would mix effects, and the largest arms
 that stay homogeneous. Each arm needs at least three samples; if the series cannot give
 that, still return the best contrast and say so in decisions (it will be set aside).
 
@@ -257,6 +262,15 @@ def compile_design(
         errors.extend(err["msg"] for err in e.errors())
         return None, errors
     c = out.contrast
+    decisions = list(out.decisions)
+    blocking = c.blocking
+    paired = paired_donors(samples, c.case_gsms, c.control_gsms)
+    if blocking is None and len(paired) >= MIN_PAIRS:
+        blocking = "donor"
+        decisions.append(
+            f"Paired by donor: {len(paired)} donors give samples to both arms, so the fit is "
+            "blocked on donor (set by code; an unpaired fit was rejected)."
+        )
     try:
         # Confirmed, not proposed: the pipeline runs what passes ``problems`` with no one in
         # between, and the result page shows the decisions instead of a confirm button.
@@ -267,7 +281,7 @@ def compile_design(
             control_label=c.control_label,
             case_gsms=c.case_gsms,
             control_gsms=c.control_gsms,
-            blocking=c.blocking,
+            blocking=blocking,
             confidence=c.confidence,
             status=ContrastStatus.CONFIRMED,
             rationale=c.rationale,
@@ -281,11 +295,23 @@ def compile_design(
             design=design,
             problems=contrast.problems(sheet),
             qualifications=contrast.qualifications(sheet),
-            decisions=out.decisions,
+            decisions=decisions,
             notes=out.notes,
         ),
         errors,
     )
+
+
+MIN_PAIRS = 3
+"""Donors with samples in both arms needed before code turns on a paired fit by itself."""
+
+
+def paired_donors(samples: list[Sample], case: list[str], control: list[str]) -> set[str]:
+    """Donors (from each sample's donor field) that appear in both arms of the contrast."""
+    donor = {s.gsm: (s.donor or "").strip() for s in samples}
+    in_case = {donor[g] for g in case if donor.get(g)}
+    in_control = {donor[g] for g in control if donor.get(g)}
+    return in_case & in_control
 
 
 def _slug(name: str) -> str:

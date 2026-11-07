@@ -11,6 +11,7 @@ import httpx
 import pytest
 from anthropic.types.beta import BetaMessage
 from fastapi.testclient import TestClient
+from pydantic import ValidationError
 
 from cell_ledger.geo import DatasetRecord, GeoClient
 from cell_ledger_api.agent.design import (
@@ -323,6 +324,33 @@ def test_compile_enforces_verbatim_evidence() -> None:
     # which is a problem, which makes the pipeline skip the dataset.
     assert any("GSM1" in e and "evidence" in e for e in errors)
     assert bad is not None and "GSM1" in str(bad.problems)
+
+
+def test_compile_pairs_on_donor_when_the_model_left_it_out() -> None:
+    # Every donor (P0, P1, P2) gives one sample to each arm; the model set no blocking.
+    proposal, _ = compile_design(RECORD, labels({}), [])
+    assert proposal is not None
+    assert proposal.design.contrasts[0].blocking == "donor"
+    assert any("Paired by donor: 3 donors" in d for d in proposal.decisions)
+
+    # With fewer than three donors in both arms the fit stays unpaired and nothing is added.
+    out = labels({})
+    for s in out.samples:
+        if s.donor == "P0":
+            s.donor = None
+    proposal, _ = compile_design(RECORD, out, [])
+    assert proposal is not None and proposal.design.contrasts[0].blocking is None
+    assert not any("Paired by donor" in d for d in proposal.decisions)
+
+
+def test_blocking_only_accepts_the_donor_column() -> None:
+    # Anything but a sample-sheet column would be silently fitted unpaired downstream.
+    data = labels({}).model_dump()
+    data["contrast"]["blocking"] = "patient id"
+    with pytest.raises(ValidationError):
+        DesignOutput.model_validate(data)
+    data["contrast"]["blocking"] = "donor"
+    assert DesignOutput.model_validate(data).contrast.blocking == "donor"
 
 
 def _tool_use(id_: str, name: str, input_: dict[str, Any]) -> dict[str, Any]:
