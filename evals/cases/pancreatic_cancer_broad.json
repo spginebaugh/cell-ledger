@@ -1,0 +1,94 @@
+{
+  "id": "pancreatic_cancer_broad",
+  "prompt": "pancreatic cancer",
+  "expected_action": "ask",
+  "clarification_targets": [
+    [
+      "compar",
+      "control",
+      "versus",
+      " vs",
+      "normal",
+      "treated",
+      "which"
+    ]
+  ],
+  "answers": [
+    "Any two-group comparison within a pancreatic cancer series is fine: tumor versus normal, treated versus untreated, or knockdown versus control."
+  ],
+  "expected_action_after_answers": "proceed",
+  "pool": {
+    "GSE273398": {
+      "relevant": true,
+      "eligible": true,
+      "rationale": "Approved pancreatic-cancer search result: PATU8988 cell line, three control and three CLIC1-knockdown samples, NCBI raw counts available.",
+      "evidence": "evals/review_drafts/pancreatic-pilot/annotations/GSE273398.json",
+      "reviewed_by": "kirsten",
+      "source": "pilot"
+    },
+    "GSE262627": {
+      "relevant": true,
+      "eligible": true,
+      "rationale": "Approved as an acceptable candidate: mixed cell-line and patient-derived organoid study; 35 of 40 organoid samples are in the NCBI count table. Search may return it; sample-level resolution is not required at discovery.",
+      "evidence": "evals/review_drafts/pancreatic-pilot/annotations/GSE262627.json",
+      "reviewed_by": "kirsten",
+      "source": "pilot"
+    },
+    "GSE333917": {
+      "relevant": null,
+      "eligible": false,
+      "rationale": "Excluded from the confirmed NCBI-generated-counts search scope: no count-filter match or NCBI count download link at the saved check.",
+      "evidence": "evals/review_drafts/pancreatic-pilot/annotations/exclusions.json",
+      "reviewed_by": "kirsten",
+      "source": "pilot"
+    },
+    "GSE246958": {
+      "relevant": null,
+      "eligible": false,
+      "rationale": "Excluded under the confirmed NCBI-generated-counts requirement: no NCBI count-filter match or corresponding download link at the saved check.",
+      "evidence": "evals/review_drafts/pancreatic-pilot/annotations/exclusions.json",
+      "reviewed_by": "kirsten",
+      "source": "pilot"
+    },
+    "GSE348821": {
+      "relevant": null,
+      "eligible": false,
+      "rationale": "Excluded under the confirmed NCBI-generated-counts requirement: no NCBI count-filter match or corresponding download link at the saved check.",
+      "evidence": "evals/review_drafts/pancreatic-pilot/annotations/exclusions.json",
+      "reviewed_by": "kirsten",
+      "source": "pilot"
+    },
+    "GSE327169": {
+      "relevant": null,
+      "eligible": false,
+      "rationale": "Excluded under the confirmed NCBI-generated-counts requirement: no NCBI count-filter match or corresponding download link for this SuperSeries at the saved check.",
+      "evidence": "evals/review_drafts/pancreatic-pilot/annotations/exclusions.json",
+      "reviewed_by": "kirsten",
+      "source": "pilot"
+    },
+    "GSE326458": {
+      "relevant": null,
+      "eligible": false,
+      "rationale": "Excluded under the confirmed bulk RNA-seq requirement: the saved study design describes isolated single nuclei and joint snATAC/snRNA libraries using the 10X Genomics platform. This is a single-nucleus multiome experiment, not bulk RNA-seq.",
+      "evidence": "evals/review_drafts/pancreatic-pilot/annotations/exclusions.json",
+      "reviewed_by": "kirsten",
+      "source": "pilot"
+    },
+    "GSE326455": {
+      "relevant": null,
+      "eligible": false,
+      "rationale": "Excluded under the confirmed bulk RNA-seq requirement: the saved study design explicitly describes single-nucleus RNA-seq using the 10X Genomics platform.",
+      "evidence": "evals/review_drafts/pancreatic-pilot/annotations/exclusions.json",
+      "reviewed_by": "kirsten",
+      "source": "pilot"
+    }
+  },
+  "status": "draft",
+  "reviewed_by": "",
+  "notes": "DRAFT from the reviewed pancreatic pilot (evals/review_drafts/pancreatic-pilot). The pilot accepted the two positives as optional candidates in a bounded search, so recall here is lenient. A bare topic is treated as an ask case; confirm or change that.",
+  "tags": [
+    "cancer",
+    "pancreas",
+    "pilot"
+  ]
+}

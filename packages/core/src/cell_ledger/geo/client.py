@@ -182,6 +182,30 @@ class GeoClient:
         eligible = {h.gse for h in hits}
         return VerifyResult(hits=hits, ineligible=[g for g in wanted if g not in eligible])
 
+    async def exists_series(self, gses: Sequence[str]) -> list[str]:
+        """Which of the accessions exist in GEO as series at all, eligible or not.
+
+        The evals use this on a baseline's output to split accessions that do not exist
+        (fabricated) from ones that exist but are not human bulk RNA-seq with counts.
+        """
+        wanted = list(dict.fromkeys(g.strip().upper() for g in gses))
+        bad = [g for g in wanted if not _GSE.fullmatch(g)]
+        if bad:
+            raise ValueError(f"not GEO series accessions: {bad}")
+        matched: dict[str, list[str]] = {}
+        for i in range(0, len(wanted), VERIFY_BATCH):
+            batch = wanted[i : i + VERIFY_BATCH]
+            ors = " OR ".join(f"{g}[ACCN]" for g in batch)
+            body = await self._call(
+                "esearch.fcgi",
+                {"db": "gds", "term": f"({ors}) AND gse[ETYP]", "retmax": str(len(batch))},
+                post=True,
+            )
+            for uid in body["esearchresult"]["idlist"]:
+                matched[uid] = []
+        found = {h.gse for h in await self._summaries(matched)}
+        return [g for g in wanted if g in found]
+
     async def _summaries(self, matched: dict[str, list[str]]) -> list[GeoSeriesHit]:
         """esummary for gds uids, batched; keeps the order of ``matched``."""
         hits: list[GeoSeriesHit] = []

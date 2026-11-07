@@ -26,6 +26,7 @@ packages/core/       pure-Python pipeline library, no web deps (cell_ledger)
   compare/           cross-dataset comparison over finished runs (gate, meta-analysis, pathways)
   report/            AnalysisReport model, markdown renderer, figures
   cli.py             `cell-ledger run <GSE>` / `run-all` / `run-set <query set>` / `compare`
+evals/               discovery evals: cases, specialist and baseline runners, scorer (evals/README.md)
 scripts/             dev scripts: fetch example GEO datasets, build gold sample sheets
 docs/                specs and ADRs (adr-001: SampleSheet/Contrast contract), deploy.md
 supabase/            local stack config + SQL migrations: Postgres is the source of truth for
@@ -55,6 +56,7 @@ settings: there is no files-only or memory-only mode, locally or deployed.
 | `mise run db:migration -- <name>` | new SQL migration in `supabase/migrations`      |
 | `mise run test`      | pytest + vitest; the API tests run against the local stack  |
 | `mise run e2e`       | Playwright; boots api and web itself                        |
+| `mise run eval -- --system both` | discovery evals vs a web-search baseline (evals/README.md); `eval:score`, `eval:queue` |
 | `mise run lint`      | ruff, pyright, Biome, tsc                                   |
 | `mise run fmt`       | auto-fix formatting everywhere                              |
 | `mise run gen:api`   | export OpenAPI schema and regenerate `apps/web/src/api/generated` |
@@ -74,8 +76,10 @@ The user does two things: ask, then tick the datasets to download. Everything af
 runs on its own (`apps/api/src/cell_ledger_api/pipeline.py`).
 
 1. **Discover** (`POST /api/sessions/{id}/discover`, SSE): Claude searches GEO (and the web via
-   Exa when configured) and returns candidate series with reasons, or clarifying questions the
-   user answers before choosing. Only accessions GEO confirmed in that run can be reported.
+   Exa when configured) and returns candidate series with reasons, or clarifying questions (with
+   options) the user answers before choosing; the answers go back in the request's `answers`
+   field. Only accessions GEO confirmed in that run can be reported, and the result carries a
+   trace of every query and what it returned.
 2. **Collect** (`POST .../datasets`): counts and metadata are downloaded, checked and mirrored
    to Storage. This is the last click.
 3. **Design** (automatic, per ready dataset): Claude labels every sample from its GEO record

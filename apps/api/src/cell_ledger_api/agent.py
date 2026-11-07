@@ -28,15 +28,17 @@ The model call is behind :class:`TurnRunner` so tests can script Claude's turns.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import logging
-from collections.abc import AsyncIterator, Awaitable, Callable
-from typing import Any, Literal, Protocol
+import time
+from collections.abc import AsyncIterator, Awaitable, Callable, Sequence
+from typing import Annotated, Any, Literal, Protocol
 
 import anthropic
 from anthropic.lib._parse._transform import to_json_output_format, transform_schema
 from anthropic.types.beta import BetaMessage, BetaMessageParam
-from pydantic import BaseModel, Field, ValidationError
+from pydantic import BaseModel, Field, StringConstraints, ValidationError
 
 from cell_ledger.geo import DatasetRecord, GeoClient
 from cell_ledger.samplesheet import Assay, Contrast, ContrastStatus, Group, Sample, SampleSheet
@@ -61,6 +63,24 @@ MAX_TOKENS = 16000
 
 class DiscoverRequest(BaseModel):
     question: str = Field(min_length=3, max_length=2000)
+    answers: list[Annotated[str, StringConstraints(max_length=2000)]] = Field(
+        default_factory=list,
+        max_length=10,
+        description="the user's answers to the clarifying questions an earlier discovery of "
+        "this question asked, in order; each at most 2000 characters",
+    )
+
+
+def discovery_prompt(question: str, answers: Sequence[str] = ()) -> str:
+    """The user turn for the discover step. One function so the API and the evals agree."""
+    kept = [a.strip() for a in answers if a and a.strip()]
+    if not kept:
+        return question
+    lines = "\n".join(f"- {a}" for a in kept)
+    return (
+        f"{question}\n\nClarifications from the user (answers to the questions you asked "
+        f"earlier; treat them as settled and do not ask about them again):\n{lines}"
+    )
 
 
 class Candidate(BaseModel):
@@ -78,16 +98,96 @@ class Rejected(BaseModel):
     why: str
 
 
-class DiscoveryResult(BaseModel):
+class ClarifyingQuestion(BaseModel):
+    question: str = Field(description="one decision the user must make before datasets qualify")
+    options: list[str] = Field(
+        default_factory=list,
+        description="suggested answers when the choice is enumerable (the tissues, control "
+        "types or time points the results actually offer); empty for an open question",
+    )
+    why: str = Field(description="what changes with the answer: which series would qualify")
+
+
+class DiscoveryOutput(BaseModel):
+    """What Claude returns from the discover step (the JSON schema it is held to)."""
+
     interpretation: str = Field(description="the question restated as a two-group comparison")
     genes: list[str] = Field(default_factory=list, description="gene symbols the question names")
-    clarifying_questions: list[str] = Field(
+    out_of_scope: str | None = Field(
+        default=None,
+        description="set, with the reason, when no human bulk RNA-seq series with raw counts "
+        "in GEO can answer the question (another organism, single-cell, microarray, "
+        "proteomics, not a gene expression question); candidates must then be empty",
+    )
+    clarifying_questions: list[ClarifyingQuestion] = Field(
         default_factory=list,
         description="what must be decided before choosing datasets; empty when clear",
     )
     candidates: list[Candidate] = Field(default_factory=list)
     rejected: list[Rejected] = Field(default_factory=list)
     queries_tried: list[str] = Field(default_factory=list)
+
+
+class QueryTrace(BaseModel):
+    query: str
+    total: int = Field(description="eligible series in GEO matching this query")
+    returned: int
+    gses: list[str] = Field(description="accessions this query returned, in GEO's order")
+
+
+class ToolCall(BaseModel):
+    """One tool invocation as the code saw it: inputs, what GEO returned, what Claude was shown."""
+
+    tool: str
+    input: dict[str, Any] = Field(default_factory=dict)
+    queries: list[QueryTrace] = Field(default_factory=list, description="search_geo only")
+    confirmed: list[str] = Field(
+        default_factory=list, description="accessions GEO confirmed eligible in this call"
+    )
+    shown: list[str] = Field(
+        default_factory=list, description="the confirmed accessions whose records Claude saw"
+    )
+    ineligible: list[str] = Field(
+        default_factory=list, description="nominated accessions GEO did not confirm"
+    )
+    error: str | None = None
+
+
+class Usage(BaseModel):
+    input_tokens: int = 0
+    output_tokens: int = 0
+    cache_read_input_tokens: int = 0
+    cache_creation_input_tokens: int = 0
+
+    def add(self, usage: Any) -> None:
+        for field in type(self).model_fields:
+            value = getattr(usage, field, None)
+            if isinstance(value, int):
+                setattr(self, field, getattr(self, field) + value)
+
+
+class DiscoveryTrace(BaseModel):
+    """Recorded by the code around the model, never self-reported: which queries ran, which
+    accessions each returned, which Claude saw, and what it cost. The evals read this to tell
+    a search miss (never returned) from a judgment miss (returned, then rejected or ignored)."""
+
+    turns: int = 0
+    calls: list[ToolCall] = Field(default_factory=list)
+    seen: list[str] = Field(
+        default_factory=list, description="every accession GEO confirmed in this run"
+    )
+    invented: list[str] = Field(
+        default_factory=list,
+        description="accessions the model named that GEO never confirmed; dropped",
+    )
+    usage: Usage = Field(default_factory=Usage)
+    elapsed_seconds: float = 0.0
+
+
+class DiscoveryResult(DiscoveryOutput):
+    """Claude's output plus the trace the code recorded around it."""
+
+    trace: DiscoveryTrace = Field(default_factory=DiscoveryTrace)
 
 
 class DesignRequest(BaseModel):
@@ -196,7 +296,15 @@ Your job in this step:
 4. Reject series you looked at but would not use, and say why in a few words.
 5. If the question is ambiguous in a way that changes which datasets qualify (which tissue,
    which control, treated or untreated, which time point), ask clarifying questions instead
-   of guessing, and still list the candidates that fit every reading.
+   of guessing, and still list the candidates that fit every reading. Give each question the
+   options the results actually offer (the tissues, controls or time points you saw) when the
+   choice is enumerable, and say what changes with the answer. When the user has already
+   answered (a "Clarifications from the user" block follows the question), treat those
+   answers as settled and do not ask about them again.
+6. If no human bulk RNA-seq series with raw counts in GEO can answer the question at all
+   (another organism, single-cell, microarray, proteomics, not a gene expression question),
+   say so in out_of_scope with the reason and return no candidates. A question that is in
+   scope but finds nothing is not out of scope: return no candidates and say what you tried.
 
 Never report an accession that did not come back from a search or verification in this
 conversation. Never invent sample counts or titles; copy them from the tool results.
@@ -257,6 +365,18 @@ class Agent:
     def available(self) -> bool:
         return self._turn is not None
 
+    def fingerprint(self) -> str:
+        """Hash of everything that shapes a discover request except the question: the system
+        prompt, the tool definitions, the model and the effort. The evals stamp every run with
+        it, so a prompt or tool change between two runs is visible in the results."""
+        payload = {
+            "system": SYSTEM_DISCOVER,
+            "tools": self._discover_tools(),
+            "model": self._model,
+            "effort": self._effort,
+        }
+        return hashlib.sha256(json.dumps(payload, sort_keys=True).encode()).hexdigest()
+
     def _params(self, **kw: Any) -> dict[str, Any]:
         return {
             "model": self._model,
@@ -316,19 +436,23 @@ class Agent:
             tools.append({**FIND_SERIES_TOOL, "strict": True})
         return tools
 
-    async def _run_tool(self, name: str, args: dict[str, Any]) -> tuple[str, str, list[str]]:
+    async def _run_tool(self, name: str, args: dict[str, Any]) -> tuple[str, str, ToolCall]:
         """Execute one tool.
 
         Returns the result text for Claude, a one-line summary for the UI, and the
-        accessions GEO confirmed eligible (the only ones the final answer may name)."""
+        :class:`ToolCall` the trace keeps (its ``confirmed`` accessions are the only ones
+        the final answer may name)."""
+        call = ToolCall(tool=name, input=args)
         if name == "search_geo":
             queries = [q for q in args.get("queries", []) if isinstance(q, str) and q.strip()]
             if not queries:
-                return "error: no queries given", "search_geo: no queries", []
+                call.error = "no queries given"
+                return "error: no queries given", "search_geo: no queries", call
             since = args.get("since")
             res = await self._geo.search_series(
                 queries[:10], limit_per_query=25, since=since if isinstance(since, int) else None
             )
+            shown = res.hits[:40]
             hits = [
                 {
                     "gse": h.gse,
@@ -338,22 +462,34 @@ class Agent:
                     "summary": h.summary[:400],
                     "matched_queries": h.matched_queries,
                 }
-                for h in res.hits[:40]
+                for h in shown
             ]
             stats = [
                 {"query": q.query, "total": q.total, "returned": q.returned} for q in res.queries
             ]
+            call.queries = [
+                QueryTrace(
+                    query=q.query,
+                    total=q.total,
+                    returned=q.returned,
+                    gses=[h.gse for h in res.hits if q.query in h.matched_queries],
+                )
+                for q in res.queries
+            ]
+            call.confirmed = [h.gse for h in res.hits]
+            call.shown = [h.gse for h in shown]
             return (
                 json.dumps({"queries": stats, "hits": hits}, ensure_ascii=False),
                 f"searched GEO: {len(queries)} queries, {len(res.hits)} series",
-                [h.gse for h in res.hits],
+                call,
             )
         if name == "verify_geo_series":
             gses = [g for g in args.get("gses", []) if isinstance(g, str)]
             try:
                 res = await self._geo.verify_series(gses)
             except ValueError as e:
-                return f"error: {e}", "verify: invalid accession", []
+                call.error = str(e)
+                return f"error: {e}", "verify: invalid accession", call
             hits = [
                 {
                     "gse": h.gse,
@@ -363,10 +499,12 @@ class Agent:
                 }
                 for h in res.hits
             ]
+            call.confirmed = call.shown = [h.gse for h in res.hits]
+            call.ineligible = list(res.ineligible)
             return (
                 json.dumps({"hits": hits, "ineligible": res.ineligible}, ensure_ascii=False),
                 f"verified {len(gses)}: {len(hits)} eligible",
-                [h.gse for h in res.hits],
+                call,
             )
         if name == FIND_SERIES_TOOL["name"] and self._exa is not None:
             res = await find_series_on_web(
@@ -385,28 +523,39 @@ class Agent:
                 ],
                 "rejected": res.rejected,
             }
+            call.confirmed = call.shown = [v.hit.gse for v in res.verified]
+            call.ineligible = list(res.rejected)
             return (
                 json.dumps(payload, ensure_ascii=False),
                 f"web search: {len(res.verified)} verified, {len(res.rejected)} rejected",
-                [v.hit.gse for v in res.verified],
+                call,
             )
-        return f"error: unknown tool {name}", f"unknown tool {name}", []
+        call.error = f"unknown tool {name}"
+        return f"error: unknown tool {name}", f"unknown tool {name}", call
 
-    async def discover(self, question: str, emit: Emit) -> DiscoveryResult:
+    async def discover(
+        self, question: str, emit: Emit, *, answers: Sequence[str] = ()
+    ) -> DiscoveryResult:
         if self._turn is None:
             raise AgentUnavailable("Claude is not configured (CELL_LEDGER_ANTHROPIC_API_KEY)")
-        messages: list[BetaMessageParam] = [{"role": "user", "content": question}]
+        started = time.monotonic()
+        trace = DiscoveryTrace()
+        messages: list[BetaMessageParam] = [
+            {"role": "user", "content": discovery_prompt(question, answers)}
+        ]
         params = self._params(
             system=SYSTEM_DISCOVER,
             tools=self._discover_tools(),
             output_config={
                 "effort": self._effort,
-                "format": to_json_output_format(DiscoveryResult),
+                "format": to_json_output_format(DiscoveryOutput),
             },
         )
-        seen: set[str] = set()  # accessions GEO itself returned during this run
+        seen: dict[str, None] = {}  # accessions GEO itself returned during this run, in order
         for _ in range(MAX_TURNS):
             message = await self._turn({**params, "messages": messages}, emit)
+            trace.turns += 1
+            trace.usage.add(message.usage)
             if message.stop_reason == "refusal":
                 raise AgentUnavailable("the model declined this request")
             tool_uses = [b for b in message.content if b.type == "tool_use"]
@@ -420,13 +569,15 @@ class Agent:
             for use in tool_uses:
                 args = use.input if isinstance(use.input, dict) else {}
                 try:
-                    text, summary, confirmed = await self._run_tool(use.name, args)
+                    text, summary, call = await self._run_tool(use.name, args)
                     is_error = text.startswith("error:")
                 except Exception as e:  # a failed search is a tool error, not a dead agent
                     log.warning("tool %s failed: %s", use.name, e)
                     text = f"error: {type(e).__name__}: {e}"
-                    summary, is_error, confirmed = f"{use.name} failed", True, []
-                seen.update(confirmed)
+                    summary, is_error = f"{use.name} failed", True
+                    call = ToolCall(tool=use.name, input=args, error=text[7:])
+                trace.calls.append(call)
+                seen.update(dict.fromkeys(call.confirmed))
                 await emit({"type": "tool", "name": use.name, "input": args, "summary": summary})
                 results.append(
                     {
@@ -441,19 +592,27 @@ class Agent:
             raise AgentUnavailable(f"gave up after {MAX_TURNS} tool turns")
         text = "".join(b.text for b in message.content if b.type == "text")
         try:
-            result = DiscoveryResult.model_validate_json(text)
+            output = DiscoveryOutput.model_validate_json(text)
         except ValidationError as e:
             raise AgentUnavailable(f"the model returned an unreadable result: {e}") from e
         # Belt and braces: drop any accession GEO did not hand us in this run.
-        kept = [c for c in result.candidates if c.gse in seen]
-        invented = [c.gse for c in result.candidates if c.gse not in seen]
+        kept = [c for c in output.candidates if c.gse in seen]
+        invented = [c.gse for c in output.candidates if c.gse not in seen]
         if invented:
             log.warning("discover: dropped unverified accessions %s", invented)
-            result.rejected.extend(
+            output.rejected.extend(
                 Rejected(gse=g, why="not confirmed by GEO in this run") for g in invented
             )
-        result.candidates = kept
-        return result
+        output.candidates = kept
+        if output.out_of_scope and output.candidates:
+            # An out-of-scope verdict with candidates attached is a contradiction; the
+            # candidates GEO confirmed win and the verdict becomes a concern on the record.
+            log.warning("discover: out_of_scope set alongside %d candidates", len(kept))
+            output.out_of_scope = None
+        trace.seen = list(seen)
+        trace.invented = invented
+        trace.elapsed_seconds = round(time.monotonic() - started, 3)
+        return DiscoveryResult(**output.model_dump(), trace=trace)
 
     # --------------------------------------------------------------- design
 
@@ -640,7 +799,7 @@ async def sse(gen: AsyncIterator[Event]) -> AsyncIterator[bytes]:
 
 def _schema_check() -> None:
     """Fail at import time if the schemas cannot be made strict (keeps tests honest)."""
-    transform_schema(DiscoveryResult)
+    transform_schema(DiscoveryOutput)
     transform_schema(DesignOutput)
 
 

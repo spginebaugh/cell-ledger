@@ -10,7 +10,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from evals.readers import Inspection, _check, _record, _table
+from packages.core.tests.readers.analysis import Inspection, _check, _record, _table
 
 
 def _require(condition: object, message: str) -> None:

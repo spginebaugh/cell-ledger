@@ -214,6 +214,30 @@ export type Candidate = {
 };
 
 /**
+ * ClarifyingQuestion
+ */
+export type ClarifyingQuestion = {
+    /**
+     * Question
+     *
+     * one decision the user must make before datasets qualify
+     */
+    question: string;
+    /**
+     * Options
+     *
+     * suggested answers when the choice is enumerable (the tissues, control types or time points the results actually offer); empty for an open question
+     */
+    options?: Array<string>;
+    /**
+     * Why
+     *
+     * what changes with the answer: which series would qualify
+     */
+    why: string;
+};
+
+/**
  * CollectRequest
  */
 export type CollectRequest = {
@@ -881,10 +905,18 @@ export type DiscoverRequest = {
      * Question
      */
     question: string;
+    /**
+     * Answers
+     *
+     * the user's answers to the clarifying questions an earlier discovery of this question asked, in order; each at most 2000 characters
+     */
+    answers?: Array<string>;
 };
 
 /**
  * DiscoveryResult
+ *
+ * Claude's output plus the trace the code recorded around it.
  */
 export type DiscoveryResult = {
     /**
@@ -900,11 +932,17 @@ export type DiscoveryResult = {
      */
     genes?: Array<string>;
     /**
+     * Out Of Scope
+     *
+     * set, with the reason, when no human bulk RNA-seq series with raw counts in GEO can answer the question (another organism, single-cell, microarray, proteomics, not a gene expression question); candidates must then be empty
+     */
+    out_of_scope?: string | null;
+    /**
      * Clarifying Questions
      *
      * what must be decided before choosing datasets; empty when clear
      */
-    clarifying_questions?: Array<string>;
+    clarifying_questions?: Array<ClarifyingQuestion>;
     /**
      * Candidates
      */
@@ -917,6 +955,42 @@ export type DiscoveryResult = {
      * Queries Tried
      */
     queries_tried?: Array<string>;
+    trace?: DiscoveryTrace;
+};
+
+/**
+ * DiscoveryTrace
+ *
+ * Recorded by the code around the model, never self-reported: which queries ran, which
+ * accessions each returned, which Claude saw, and what it cost. The evals read this to tell
+ * a search miss (never returned) from a judgment miss (returned, then rejected or ignored).
+ */
+export type DiscoveryTrace = {
+    /**
+     * Turns
+     */
+    turns?: number;
+    /**
+     * Calls
+     */
+    calls?: Array<ToolCall>;
+    /**
+     * Seen
+     *
+     * every accession GEO confirmed in this run
+     */
+    seen?: Array<string>;
+    /**
+     * Invented
+     *
+     * accessions the model named that GEO never confirmed; dropped
+     */
+    invented?: Array<string>;
+    usage?: Usage;
+    /**
+     * Elapsed Seconds
+     */
+    elapsed_seconds?: number;
 };
 
 /**
@@ -2039,6 +2113,32 @@ export type QueryStats = {
 };
 
 /**
+ * QueryTrace
+ */
+export type QueryTrace = {
+    /**
+     * Query
+     */
+    query: string;
+    /**
+     * Total
+     *
+     * eligible series in GEO matching this query
+     */
+    total: number;
+    /**
+     * Returned
+     */
+    returned: number;
+    /**
+     * Gses
+     *
+     * accessions this query returned, in GEO's order
+     */
+    gses: Array<string>;
+};
+
+/**
  * Reconciliation
  *
  * How the counts matrix columns lined up with the sample sheet and contrast.
@@ -2670,6 +2770,74 @@ export type StepRecord = {
      * Warnings
      */
     warnings?: Array<string>;
+};
+
+/**
+ * ToolCall
+ *
+ * One tool invocation as the code saw it: inputs, what GEO returned, what Claude was shown.
+ */
+export type ToolCall = {
+    /**
+     * Tool
+     */
+    tool: string;
+    /**
+     * Input
+     */
+    input?: {
+        [key: string]: unknown;
+    };
+    /**
+     * Queries
+     *
+     * search_geo only
+     */
+    queries?: Array<QueryTrace>;
+    /**
+     * Confirmed
+     *
+     * accessions GEO confirmed eligible in this call
+     */
+    confirmed?: Array<string>;
+    /**
+     * Shown
+     *
+     * the confirmed accessions whose records Claude saw
+     */
+    shown?: Array<string>;
+    /**
+     * Ineligible
+     *
+     * nominated accessions GEO did not confirm
+     */
+    ineligible?: Array<string>;
+    /**
+     * Error
+     */
+    error?: string | null;
+};
+
+/**
+ * Usage
+ */
+export type Usage = {
+    /**
+     * Input Tokens
+     */
+    input_tokens?: number;
+    /**
+     * Output Tokens
+     */
+    output_tokens?: number;
+    /**
+     * Cache Read Input Tokens
+     */
+    cache_read_input_tokens?: number;
+    /**
+     * Cache Creation Input Tokens
+     */
+    cache_creation_input_tokens?: number;
 };
 
 /**

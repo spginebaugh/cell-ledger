@@ -12,7 +12,7 @@ import anndata as ad
 import pandas as pd
 import pytest
 
-from evals.readers import read_analysis
+from packages.core.tests.readers import read_analysis
 
 PRODUCE = """
 import json, runpy, sys

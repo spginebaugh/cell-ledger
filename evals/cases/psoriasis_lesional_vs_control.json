@@ -1,0 +1,153 @@
+{
+  "id": "psoriasis_lesional_vs_control",
+  "prompt": "Which genes differ between psoriasis lesional skin and control skin?",
+  "expected_action": "proceed",
+  "clarification_targets": [],
+  "answers": [],
+  "expected_action_after_answers": null,
+  "pool": {
+    "GSE114286": {
+      "relevant": true,
+      "eligible": true,
+      "rationale": "Member of the psoriasis_lesional_vs_control query set: a curated two-group design (psoriasis_vs_healthy) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
+      "evidence": "packages/core/tests/fixtures/geo_examples/GSE114286.json",
+      "reviewed_by": "",
+      "source": "query_set"
+    },
+    "GSE67785": {
+      "relevant": true,
+      "eligible": true,
+      "rationale": "Member of the psoriasis_lesional_vs_control query set: a curated two-group design (lesional_vs_nonlesional) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
+      "evidence": "packages/core/tests/fixtures/geo_examples/GSE67785.json",
+      "reviewed_by": "",
+      "source": "query_set"
+    },
+    "GSE54456": {
+      "relevant": true,
+      "eligible": true,
+      "rationale": "Member of the psoriasis_lesional_vs_control query set: a curated two-group design (lesional_vs_healthy) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
+      "evidence": "packages/core/tests/fixtures/geo_examples/GSE54456.json",
+      "reviewed_by": "",
+      "source": "query_set"
+    },
+    "GSE121212": {
+      "relevant": true,
+      "eligible": true,
+      "rationale": "Member of the psoriasis_lesional_vs_control query set: a curated two-group design (lesional_vs_healthy) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
+      "evidence": "packages/core/tests/fixtures/geo_examples/GSE121212.json",
+      "reviewed_by": "",
+      "source": "query_set"
+    },
+    "GSE154200": {
+      "relevant": true,
+      "eligible": true,
+      "rationale": "Member of the psoriasis_lesional_vs_control query set: a curated two-group design (lesional_vs_nonlesional) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
+      "evidence": "packages/core/tests/fixtures/geo_examples/GSE154200.json",
+      "reviewed_by": "",
+      "source": "query_set"
+    },
+    "GSE171012": {
+      "relevant": true,
+      "eligible": true,
+      "rationale": "Member of the psoriasis_lesional_vs_control query set: a curated two-group design (lesional_vs_healthy) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
+      "evidence": "packages/core/tests/fixtures/geo_examples/GSE171012.json",
+      "reviewed_by": "",
+      "source": "query_set"
+    },
+    "GSE74697": {
+      "relevant": true,
+      "eligible": true,
+      "rationale": "Member of the psoriasis_lesional_vs_control query set: a curated two-group design (lesional_vs_healthy) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
+      "evidence": "packages/core/tests/fixtures/geo_examples/GSE74697.json",
+      "reviewed_by": "",
+      "source": "query_set"
+    },
+    "GSE186063": {
+      "relevant": true,
+      "eligible": true,
+      "rationale": "Member of the psoriasis_lesional_vs_control query set: a curated two-group design (lesional_vs_nonlesional) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
+      "evidence": "packages/core/tests/fixtures/geo_examples/GSE186063.json",
+      "reviewed_by": "",
+      "source": "query_set"
+    },
+    "GSE47944": {
+      "relevant": true,
+      "eligible": true,
+      "rationale": "Member of the psoriasis_lesional_vs_control query set: a curated two-group design (lesional_vs_nonlesional) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
+      "evidence": "packages/core/tests/fixtures/geo_examples/GSE47944.json",
+      "reviewed_by": "",
+      "source": "query_set"
+    },
+    "GSE178197": {
+      "relevant": true,
+      "eligible": true,
+      "rationale": "Member of the psoriasis_lesional_vs_control query set: a curated two-group design (lesional_vs_nonlesional) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
+      "evidence": "packages/core/tests/fixtures/geo_examples/GSE178197.json",
+      "reviewed_by": "",
+      "source": "query_set"
+    },
+    "GSE83645": {
+      "relevant": true,
+      "eligible": true,
+      "rationale": "Member of the psoriasis_lesional_vs_control query set: a curated two-group design (lesional_vs_nonlesional) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
+      "evidence": "packages/core/tests/fixtures/geo_examples/GSE83645.json",
+      "reviewed_by": "",
+      "source": "query_set"
+    },
+    "GSE117405": {
+      "relevant": true,
+      "eligible": true,
+      "rationale": "Member of the psoriasis_lesional_vs_control query set: a curated two-group design (lesional_vs_healthy) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
+      "evidence": "packages/core/tests/fixtures/geo_examples/GSE117405.json",
+      "reviewed_by": "",
+      "source": "query_set"
+    },
+    "GSE205748": {
+      "relevant": true,
+      "eligible": true,
+      "rationale": "Member of the psoriasis_lesional_vs_control query set: a curated two-group design (lesional_vs_healthy) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
+      "evidence": "packages/core/tests/fixtures/geo_examples/GSE205748.json",
+      "reviewed_by": "",
+      "source": "query_set"
+    },
+    "GSE142582": {
+      "relevant": true,
+      "eligible": true,
+      "rationale": "Member of the psoriasis_lesional_vs_control query set: a curated two-group design (lesional_vs_healthy) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
+      "evidence": "packages/core/tests/fixtures/geo_examples/GSE142582.json",
+      "reviewed_by": "",
+      "source": "query_set"
+    },
+    "GSE63979": {
+      "relevant": true,
+      "eligible": true,
+      "rationale": "Member of the psoriasis_lesional_vs_control query set: a curated two-group design (lesional_vs_healthy) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
+      "evidence": "packages/core/tests/fixtures/geo_examples/GSE63979.json",
+      "reviewed_by": "",
+      "source": "query_set"
+    },
+    "GSE249936": {
+      "relevant": true,
+      "eligible": true,
+      "rationale": "Member of the psoriasis_lesional_vs_control query set: a curated two-group design (lesional_vs_nonlesional) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
+      "evidence": "packages/core/tests/fixtures/geo_examples/GSE249936.json",
+      "reviewed_by": "",
+      "source": "query_set"
+    },
+    "GSE197056": {
+      "relevant": true,
+      "eligible": true,
+      "rationale": "Member of the psoriasis_lesional_vs_control query set: a curated two-group design (lesional_vs_nonlesional) exists in packages/core/tests/fixtures/geo_examples and the pipeline has run it on NCBI counts.",
+      "evidence": "packages/core/tests/fixtures/geo_examples/GSE197056.json",
+      "reviewed_by": "",
+      "source": "query_set"
+    }
+  },
+  "status": "draft",
+  "reviewed_by": "",
+  "notes": "DRAFT seeded from the query set of the same name. The members are known positives; the pool has no negatives yet and recall is against these members only. Decide whether the prompt should be an ask case (the control wording 'control skin (healthy or non-lesional)' is open).",
+  "tags": [
+    "skin",
+    "inflammation"
+  ]
+}

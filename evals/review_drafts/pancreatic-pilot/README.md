@@ -1,5 +1,11 @@
 # Pancreatic cancer eval pilot — review draft
 
+> The runnable eval format changed after this draft: the discovery evals now live in
+> `evals/cases/` (see `evals/README.md`), and this pilot's search-stage decisions are carried
+> there as the draft case `evals/cases/pancreatic_cancer_broad.json`. The sample-level selection
+> expectations below belong to the design step, which is no longer evaluated. The evidence and
+> annotations in this folder remain the record behind that case's verdicts.
+
 This folder preserves Kirsten's approved answer-key decisions and the evidence behind them. It is ready for review, not a complete executable benchmark or a report of app accuracy. All examples are development examples already inspected by the team.
 
 ## What is approved

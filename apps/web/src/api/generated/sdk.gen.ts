@@ -206,7 +206,8 @@ export const getComparisonFileUrl = <ThrowOnError extends boolean = false>(optio
  *
  * Events: ``thinking`` (delta), ``tool`` (name, input, summary), ``result`` (a
  * ``DiscoveryResult``), ``error`` (message), ``done``. The question is recorded on the
- * session.
+ * session. To answer the clarifying questions a result asked, post the same question again
+ * with the answers in ``answers``.
  */
 export const discoverDatasets = <ThrowOnError extends boolean = false>(options: Options<DiscoverDatasetsData, ThrowOnError>): RequestResult<DiscoverDatasetsResponses, DiscoverDatasetsErrors, ThrowOnError> => (options.client ?? client).post<DiscoverDatasetsResponses, DiscoverDatasetsErrors, ThrowOnError>({
     url: '/api/sessions/{session_id}/discover',

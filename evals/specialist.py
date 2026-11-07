@@ -1,112 +1,130 @@
-"""Run only a public frozen task. No gold labels are accepted by this entry point."""
+"""Run the specialist's discover step on a case, exactly as the API would, and record it.
 
-import argparse
-import asyncio
-import json
-import os
-from pathlib import Path
+The ``Agent`` is built directly (no FastAPI, no database). A first turn asks the question; if
+the agent asks clarifying questions and the case scripts answers, a second turn sends them
+the same way the UI does. Every accession GEO returned, per query, lands in the record from
+the agent's trace, so scoring can separate a search miss from a judgment miss.
+"""
 
-from dotenv import load_dotenv
+from __future__ import annotations
 
-from cell_ledger.geo.cache import CachedClient
-from cell_ledger.geo.client import GeoSeriesHit
-from cell_ledger.geo.retrieval import get_series_metadata
-from cell_ledger.interpretation import Interpreter
-from cell_ledger.pipeline import RunRequest, run_pipeline
-from evals.contracts import Snapshot, digest
+import time
+from collections.abc import Sequence
+from typing import Any
+
+from cell_ledger.geo import GeoClient
+from cell_ledger_api.agent import Agent, AgentUnavailable, DiscoveryResult, TurnRunner
+from cell_ledger_api.discovery import ExaSearcher
+from evals.cases import Case
+from evals.records import Conditions, RunRecord, Turn, Verification, derive_action
 
 
-async def run(public: Path, case_id: str, output: Path, cache: Path, model: str | None):
-    task = next(
-        (t for t in json.loads((public / "tasks.json").read_text()) if t["id"] == case_id), None
+async def _quiet(_: dict[str, Any]) -> None:
+    pass
+
+
+async def verify_candidates(geo: GeoClient, gses: Sequence[str]) -> Verification:
+    """Code's own check of what a system recommended: eligible, merely existing, or absent."""
+    valid = [g for g in gses if g.startswith("GSE") and g[3:].isdigit()]
+    out = Verification(invalid=[g for g in gses if g not in valid])
+    if not valid:
+        return out
+    eligible = {h.gse for h in (await geo.verify_series(valid)).hits}
+    existing = set(await geo.exists_series(valid)) | eligible
+    out.eligible = [g for g in valid if g in eligible]
+    out.exists_only = [g for g in valid if g in existing and g not in eligible]
+    out.missing = [g for g in valid if g not in existing]
+    return out
+
+
+def _turn(
+    result: DiscoveryResult | None, answers: list[str], elapsed: float, error: str | None
+) -> Turn:
+    if result is None:
+        return Turn(answers=answers, action="error", elapsed_seconds=elapsed, error=error)
+    out = result.model_dump(mode="json")
+    return Turn(
+        answers=answers,
+        action=derive_action(out),
+        output=out,
+        elapsed_seconds=elapsed,
+        input_tokens=result.trace.usage.input_tokens
+        + result.trace.usage.cache_read_input_tokens
+        + result.trace.usage.cache_creation_input_tokens,
+        output_tokens=result.trace.usage.output_tokens,
     )
-    if task is None:
-        raise ValueError("Unknown public task ID")
-    if "stage" in task:
-        raise ValueError(
-            "Stage-specific tasks use evals.pilot run records; "
-            "this runner accepts legacy frozen bundle tasks only"
-        )
-    if (
-        digest({"prompt": task["prompt"], "constraints": task["constraints"]})
-        != task["prompt_sha256"]
-    ):
-        raise ValueError("Public prompt was modified after freeze")
-    snapshot = Snapshot.model_validate_json((public / "snapshot.json").read_text())
-    client = CachedClient(cache, offline=True)
-    candidates = []
-    for gse in task["candidate_gses"]:
-        source = snapshot.records[gse]
-        if not source.exists:
-            continue
-        metadata = await get_series_metadata(client, gse)
-        if (
-            metadata.fields != source.fields
-            or {s.gsm: s.fields for s in metadata.samples} != source.samples
-        ):
-            raise ValueError(f"{gse}: cached metadata differs from the frozen snapshot")
-        candidates.append(
-            GeoSeriesHit(
-                gse=gse,
-                title=" ".join(source.fields.get("title", [])),
-                summary=" ".join(source.fields.get("summary", [])),
-                taxa=sorted(
-                    {
-                        organism
-                        for sample in metadata.samples
-                        for organism in sample.values("organism_ch1")
-                        if organism
-                    }
-                ),
-                series_types=source.fields.get("type", []),
-                published=None,
-                pubmed_ids=source.fields.get("pubmed_id", []),
-                matched_queries=[],
-                n_samples=len(source.samples),
-            )
-        )
-    interpreter = None
-    if model:
-        key = os.getenv("ANTHROPIC_API_KEY", "")
-        if not key:
-            raise ValueError("Scott must configure model credentials before a live model run")
-        interpreter = Interpreter(model, key, cache / "interpretations")
-    constraints = task["constraints"]
-    request = RunRequest(
-        topic=task["prompt"],
-        offline=True,
-        **{
-            k: v
-            for k, v in constraints.items()
-            if k in RunRequest.model_fields and k not in {"topic", "offline"}
+
+
+async def run_specialist(
+    case: Case,
+    *,
+    geo: GeoClient,
+    turn: TurnRunner,
+    exa: ExaSearcher | None,
+    conditions: Conditions,
+    repeat: int = 1,
+) -> RunRecord:
+    agent = Agent(geo, turn=turn, exa=exa, model=conditions.model, effort=conditions.effort)
+    turns: list[Turn] = []
+    results: list[DiscoveryResult] = []
+    started = time.monotonic()
+
+    async def one(answers: list[str]) -> DiscoveryResult | None:
+        t0 = time.monotonic()
+        try:
+            result = await agent.discover(case.prompt, _quiet, answers=answers)
+        except AgentUnavailable as e:
+            turns.append(_turn(None, answers, time.monotonic() - t0, str(e)))
+            return None
+        except Exception as e:  # network, SDK: the run is an error, not a crash of the suite
+            turns.append(_turn(None, answers, time.monotonic() - t0, f"{type(e).__name__}: {e}"))
+            return None
+        turns.append(_turn(result, answers, time.monotonic() - t0, None))
+        results.append(result)
+        return result
+
+    first = await one([])
+    if first is not None and turns[-1].action == "ask" and case.answers:
+        await one(list(case.answers))
+
+    final = results[-1] if results else None
+    seen: dict[str, None] = {}
+    per_query: dict[str, list[str]] = {}
+    invented: dict[str, None] = {}
+    for r in results:
+        seen.update(dict.fromkeys(r.trace.seen))
+        invented.update(dict.fromkeys(r.trace.invented))
+        for call in r.trace.calls:
+            for q in call.queries:
+                merged = per_query.setdefault(q.query, [])
+                merged.extend(g for g in q.gses if g not in merged)
+    candidates = [c.gse for c in final.candidates] if final else []
+    return RunRecord(
+        case_id=case.id,
+        system="specialist",
+        repeat=repeat,
+        conditions=conditions,
+        turns=turns,
+        final_action=turns[-1].action,
+        candidates=candidates,
+        candidate_details={
+            c.gse: {
+                "title": c.title,
+                "why": c.why,
+                "case_hint": c.case_hint,
+                "control_hint": c.control_hint,
+            }
+            for c in (final.candidates if final else [])
         },
+        rejected=[r.gse for r in final.rejected] if final else [],
+        questions=[q.model_dump() for q in results[0].clarifying_questions] if results else [],
+        out_of_scope=final.out_of_scope if final else None,
+        seen=list(seen),
+        per_query=per_query,
+        invented=list(invented),
+        verification=await verify_candidates(geo, candidates),
+        elapsed_seconds=round(time.monotonic() - started, 3),
+        input_tokens=sum(t.input_tokens for t in turns),
+        output_tokens=sum(t.output_tokens for t in turns),
+        error=turns[-1].error,
     )
-
-    async def ask(gse, options):
-        # Preserve the initial ask; do not invent an answer or expose gold to the system.
-        print(f"{gse} requires clarification: {options}; recorded without an invented answer")
-        return None
-
-    manifest = await run_pipeline(
-        request,
-        output,
-        client,
-        interpreter=interpreter,
-        candidate_pool=candidates,
-        snapshot_sha256=snapshot.digest(),
-        ask=ask,
-    )
-    print(f"{manifest['status']}: {output}")
-    print("Without --model this is a deterministic diagnostic, not the Claude baseline comparison.")
-
-
-if __name__ == "__main__":
-    load_dotenv()
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("public", type=Path)
-    parser.add_argument("case")
-    parser.add_argument("output", type=Path)
-    parser.add_argument("--cache", type=Path, required=True)
-    parser.add_argument("--model", default=os.getenv("CELL_LEDGER_MODEL"))
-    args = parser.parse_args()
-    asyncio.run(run(args.public, args.case, args.output, args.cache, args.model))

@@ -110,14 +110,15 @@ async def discover(
 
     Events: ``thinking`` (delta), ``tool`` (name, input, summary), ``result`` (a
     ``DiscoveryResult``), ``error`` (message), ``done``. The question is recorded on the
-    session.
+    session. To answer the clarifying questions a result asked, post the same question again
+    with the answers in ``answers``.
     """
     a = agent(request)
     svc = sessions(request)
     await svc.update(session_id, question=body.question, state=None)
 
     async def work(emit):  # type: ignore[no-untyped-def]
-        return await a.discover(body.question, emit)
+        return await a.discover(body.question, emit, answers=body.answers)
 
     return StreamingResponse(
         sse(_stream(work)), media_type="text/event-stream", headers=SSE_HEADERS

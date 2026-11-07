@@ -10,7 +10,7 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
-from evals.synthesis_reader import read_comparison
+from packages.core.tests.readers import read_comparison
 
 PRODUCE = """
 import json, runpy, sys

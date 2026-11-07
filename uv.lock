@@ -138,7 +138,6 @@ dependencies = [
     { name = "pandas" },
     { name = "pydantic" },
     { name = "pydeseq2" },
-    { name = "python-dotenv" },
     { name = "scanpy" },
 ]
 
@@ -152,7 +151,6 @@ requires-dist = [
     { name = "pandas", specifier = ">=2.2" },
     { name = "pydantic", specifier = ">=2.11" },
     { name = "pydeseq2", specifier = ">=0.5" },
-    { name = "python-dotenv", specifier = ">=1" },
     { name = "scanpy", specifier = ">=1.11" },
 ]
 

@@ -13,8 +13,8 @@ import pytest
 
 from cell_ledger.analysis import PipelineParams, run_pipeline
 from cell_ledger.geo.fetch import counts_url, fetch_series, soft_url
-from evals.readers import read_analysis, read_collection
 from packages.core.tests.conftest import make_synthetic
+from packages.core.tests.readers import read_analysis, read_collection
 
 
 def fingerprints(root):
@@ -238,7 +238,7 @@ async def test_cli_emits_json_without_modifying_inputs(tmp_path):
     folder = await collect(tmp_path)
     before = fingerprints(folder)
     proc = subprocess.run(
-        [sys.executable, "-m", "evals.readers", "collection", str(folder)],
+        [sys.executable, "-m", "packages.core.tests.readers.analysis", "collection", str(folder)],
         capture_output=True,
         text=True,
         check=True,

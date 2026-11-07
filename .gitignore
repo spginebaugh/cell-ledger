@@ -29,7 +29,6 @@ data/*
 .DS_Store
 .idea/
 tmp/
-evals/private/
 .vscode/*
 !.vscode/extensions.json
 

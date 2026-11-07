@@ -88,12 +88,36 @@ export function DiscoveryView({
             )}
           </Card>
 
+          {result.out_of_scope && (
+            <Notice tone="amber" title="This question is outside what cell-ledger can answer">
+              {result.out_of_scope} It only works with human bulk RNA-seq series in GEO that have
+              NCBI raw counts.
+            </Notice>
+          )}
+
           {(result.clarifying_questions ?? []).length > 0 && (
             <Card className="border-amber/40 p-5">
               <h3>Before choosing datasets, the specialist asks</h3>
-              <ul className="mt-2 list-disc space-y-1 pl-5 text-sm">
+              <ul className="mt-2 space-y-3 text-sm">
                 {(result.clarifying_questions ?? []).map((q) => (
-                  <li key={q}>{q}</li>
+                  <li key={q.question}>
+                    <p className="font-medium">{q.question}</p>
+                    <p className="mt-0.5 text-[13px] text-ink-2">{q.why}</p>
+                    {(q.options ?? []).length > 0 && (
+                      <div className="mt-1.5 flex flex-wrap gap-1.5">
+                        {(q.options ?? []).map((o) => (
+                          <button
+                            key={o}
+                            type="button"
+                            onClick={() => setAnswers((a) => (a ? `${a}\n${o}` : o))}
+                            className="rounded-full border border-line px-2.5 py-0.5 text-[12px] text-ink-2 hover:border-line-2 hover:text-ink"
+                          >
+                            {o}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </li>
                 ))}
               </ul>
               <Label htmlFor="disc-answers" className="mt-3">
@@ -117,7 +141,7 @@ export function DiscoveryView({
             </Card>
           )}
 
-          {(result.candidates ?? []).length === 0 ? (
+          {(result.candidates ?? []).length === 0 && !result.out_of_scope ? (
             <Notice tone="amber" title="No usable dataset came back from GEO">
               The search tried {(result.queries_tried ?? []).length} wordings. Broaden the question
               (organism, synonyms, drop a control requirement) and search again.
