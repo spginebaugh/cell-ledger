@@ -237,7 +237,7 @@ def compile_design(
                     treatment=lab.treatment,
                     tissue=lab.tissue,
                     cell_type=lab.cell_type,
-                    donor=lab.donor,
+                    donor=lab.donor or record_donor(raw),
                     time_point=lab.time_point,
                     sex=lab.sex,
                     age=lab.age,
@@ -300,6 +300,33 @@ def compile_design(
         ),
         errors,
     )
+
+
+DONOR_FIELDS = frozenset(
+    {
+        "patient",
+        "patient id",
+        "patient no",
+        "donor",
+        "donor id",
+        "individual",
+        "individual id",
+        "subject",
+        "subject id",
+    }
+)
+"""Characteristic names (lowercased, punctuation as spaces) that hold a patient identifier.
+Exact names only: "patient's condition" is a diagnosis, not an id."""
+
+
+def record_donor(raw: dict[str, str]) -> str | None:
+    """The patient or donor id the GEO record states for a sample, if it states one. Used when
+    Claude leaves the donor field empty, so pairing does not depend on the model filling it."""
+    for key, value in raw.items():
+        name = " ".join(re.sub(r"[^a-z0-9]+", " ", key.lower()).split())
+        if name in DONOR_FIELDS and value.strip():
+            return value.strip()
+    return None
 
 
 MIN_PAIRS = 3

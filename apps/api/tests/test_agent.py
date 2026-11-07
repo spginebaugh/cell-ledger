@@ -19,6 +19,7 @@ from cell_ledger_api.agent.design import (
     DesignOutput,
     DesignRequest,
     compile_design,
+    record_donor,
     record_text,
 )
 from cell_ledger_api.agent.discover import Discoverer, DiscoveryOutput, discovery_prompt
@@ -334,13 +335,38 @@ def test_compile_pairs_on_donor_when_the_model_left_it_out() -> None:
     assert any("Paired by donor: 3 donors" in d for d in proposal.decisions)
 
     # With fewer than three donors in both arms the fit stays unpaired and nothing is added.
+    # (The record must not state the patient either, or the donor is taken from it.)
+    unstated = RECORD.model_copy(deep=True)
+    for rec in unstated.samples:
+        rec.characteristics = [c for c in rec.characteristics if not c.startswith("patient")]
     out = labels({})
     for s in out.samples:
         if s.donor == "P0":
             s.donor = None
-    proposal, _ = compile_design(RECORD, out, [])
+    proposal, _ = compile_design(unstated, out, [])
     assert proposal is not None and proposal.design.contrasts[0].blocking is None
     assert not any("Paired by donor" in d for d in proposal.decisions)
+
+
+def test_compile_takes_the_donor_from_the_record_when_the_model_leaves_it_empty() -> None:
+    # RECORD states "patient: P1" etc.; the model filled no donor and set no blocking.
+    out = labels({})
+    for s in out.samples:
+        s.donor = None
+    proposal, _ = compile_design(RECORD, out, [])
+    assert proposal is not None
+    donors = {s.gsm: s.donor for s in proposal.design.samplesheet.samples}
+    assert donors["GSM1"] == "P1" and donors["GSM4"] == "P1"
+    assert proposal.design.contrasts[0].blocking == "donor"
+
+
+def test_record_donor_reads_only_id_fields() -> None:
+    assert record_donor({"patient id": "10004", "diagnosis": "psoriasis"}) == "10004"
+    assert record_donor({"Patient": "1"}) == "1"
+    assert record_donor({"Subject_ID": "S7"}) == "S7"
+    # A diagnosis that happens to start with "patient" is not an identifier.
+    assert record_donor({"patient's condition": "AD", "skin type": "lesional"}) is None
+    assert record_donor({"patient id": "  "}) is None
 
 
 def test_blocking_only_accepts_the_donor_column() -> None:
