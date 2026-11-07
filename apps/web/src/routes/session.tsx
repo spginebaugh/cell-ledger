@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
-import { Page, TopBar } from "@/components/layout/top-bar";
+import { Footer, Page, TopBar } from "@/components/layout/top-bar";
 import { ComparisonsSection } from "@/components/session/comparisons";
 import { DatasetRow, deriveStage, PipelineStepper } from "@/components/session/pipeline-view";
 import { RunsList } from "@/components/session/runs-list";
-import { Empty, ErrorBox, Section, Skeleton } from "@/components/ui/card";
+import { Empty, ErrorBox, Pill, Section, Skeleton } from "@/components/ui/card";
 import { errorMessage } from "@/lib/api";
 import { useComparisons, useDatasets, useRuns, useSession } from "@/lib/queries";
 import { rememberSession } from "@/lib/storage";
@@ -26,8 +26,8 @@ export function SessionPage() {
   }, [session.isSuccess, sessionId]);
   useEffect(() => {
     document.title = session.data?.question
-      ? `${session.data.question.slice(0, 60)} · cell-ledger`
-      : "Session · cell-ledger";
+      ? `${session.data.question.slice(0, 60)} · cell ledger`
+      : "Session · cell ledger";
   }, [session.data?.question]);
 
   const state: UiState = useMemo(() => readState(session.data?.state), [session.data?.state]);
@@ -59,27 +59,25 @@ export function SessionPage() {
         )}
         {session.data && (
           <>
-            <div className="max-w-[70ch]">
-              <p className="text-[13px] text-ink-2">The question</p>
-              <h1 className="mt-1">
-                {question || <span className="text-ink-3">No question recorded</span>}
-              </h1>
-              {state.discovery?.interpretation && (
-                <p className="mt-2 text-ink-2">Read as: {state.discovery.interpretation}</p>
-              )}
-              {state.answers && (
-                <p className="mt-1 text-[13px] text-ink-2">You added: {state.answers}</p>
-              )}
+            <div className="flex items-center justify-between gap-2 text-[13px]">
+              <span className="font-semibold text-ink-2">The question</span>
+              {loaded && ds.length > 0 && <PipelineStepper stage={stage} />}
             </div>
-            {loaded && ds.length > 0 && (
-              <div className="mt-6">
-                <PipelineStepper stage={stage} />
+            <h1 className="mt-3 w-full">
+              {question || <span className="text-ink-3">No question recorded</span>}
+            </h1>
+            {(state.discovery?.interpretation || state.answers) && (
+              <div className="mt-5 grid justify-items-start gap-2">
+                {state.discovery?.interpretation && (
+                  <Pill label="Read as">{state.discovery.interpretation}</Pill>
+                )}
+                {state.answers && <Pill label="You added">{state.answers}</Pill>}
               </div>
             )}
 
             <Section
               title="Datasets"
-              description="Each series is downloaded from NCBI and checked, then the specialist labels its samples and chooses the one contrast that answers the question. Runnable contrasts start at once; the rest are set aside with the reason."
+              info="Each series is downloaded from NCBI and checked, then the specialist labels its samples and chooses the one contrast that answers the question. Runnable contrasts start at once; the rest are set aside with the reason."
             >
               {datasets.isPending && <Skeleton className="h-24" />}
               {datasets.data && datasets.data.length === 0 && (
@@ -102,7 +100,7 @@ export function SessionPage() {
             <Section
               id="runs"
               title="Runs"
-              description="One per dataset with a runnable contrast. A run polls the pipeline while it works and links to its result when done."
+              info="One per dataset with a runnable contrast. A run polls the pipeline while it works and links to its result when done."
             >
               {runs.isPending ? (
                 <Skeleton className="h-20" />
@@ -112,8 +110,8 @@ export function SessionPage() {
             </Section>
 
             <Section
-              title="Across datasets"
-              description="When every run is done, the complete ones are pooled to see what replicates."
+              title="Across Datasets"
+              info="When every run is done, the complete ones are pooled to see what replicates."
             >
               {comparisons.isPending ? (
                 <Skeleton className="h-20" />
@@ -128,6 +126,7 @@ export function SessionPage() {
             </Section>
           </>
         )}
+        <Footer />
       </Page>
     </>
   );

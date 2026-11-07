@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useMemo, useState } from "react";
 import type { EnrichmentTerm } from "@/api/generated/types.gen";
+import { termLabel } from "@/components/charts/enrichment-bars";
 import { Volcano } from "@/components/charts/volcano";
 import { Input } from "@/components/ui/input";
 import { fetchFileBytes } from "@/lib/queries";
@@ -62,9 +63,11 @@ export function VolcanoPanel({
 
   return (
     <div>
-      <div className="mb-3 flex flex-wrap items-end gap-x-6 gap-y-3">
-        <label className="text-[13px] text-ink-2">
-          Significance: padj &lt; <span className="num font-medium text-ink">{alpha}</span>
+      <div className="mb-3 flex flex-wrap items-end gap-x-6 gap-y-3 text-[12px] text-ink-2">
+        <label className="grid gap-1 whitespace-nowrap">
+          <span>
+            padj &lt; <span className="num font-medium text-ink">{alpha}</span>
+          </span>
           <input
             type="range"
             min={0}
@@ -72,12 +75,14 @@ export function VolcanoPanel({
             step={1}
             value={alphaSteps.indexOf(alpha) === -1 ? 2 : alphaSteps.indexOf(alpha)}
             onChange={(e) => setAlpha(alphaSteps[Number(e.target.value)])}
-            className="mt-1 block w-44 accent-[var(--ink)]"
+            className="m-0 h-[22px] w-[140px] accent-[var(--accent)]"
             aria-label="Adjusted p threshold"
           />
         </label>
-        <label className="text-[13px] text-ink-2">
-          Effect size: |log2FC| ≥ <span className="num font-medium text-ink">{lfc.toFixed(1)}</span>
+        <label className="grid gap-1 whitespace-nowrap">
+          <span>
+            |log2FC| ≥ <span className="num font-medium text-ink">{lfc.toFixed(2)}</span>
+          </span>
           <input
             type="range"
             min={0}
@@ -85,14 +90,12 @@ export function VolcanoPanel({
             step={0.5}
             value={lfc}
             onChange={(e) => setLfc(Number(e.target.value))}
-            className="mt-1 block w-44 accent-[var(--ink)]"
+            className="m-0 h-[22px] w-[140px] accent-[var(--accent)]"
             aria-label="Log2 fold change threshold"
           />
         </label>
-        <div className="min-w-[200px] flex-1 max-w-xs">
-          <label htmlFor="gene-search" className="text-[13px] text-ink-2">
-            Find a gene
-          </label>
+        <div className="ml-auto grid gap-1">
+          <label htmlFor="gene-search">Find a gene</label>
           <Input
             id="gene-search"
             placeholder="e.g. IL17A"
@@ -106,24 +109,17 @@ export function VolcanoPanel({
               }
             }}
             onBlur={() => onFocus(search.trim() || null)}
-            className="mt-1"
+            className="h-[30px] w-[150px] bg-bg font-mono text-[13px]"
             autoComplete="off"
           />
           {unknown && (
-            <p className="mt-1 text-[12px] text-amber">
-              {search.trim()} is not in the tested genes
-            </p>
+            <p className="text-[12px] text-amber">{search.trim()} is not in the tested genes</p>
           )}
         </div>
         {term && (
-          <p className="text-[13px] text-ink-2">
-            Highlighting {highlight.size} leading genes of{" "}
-            <span className="font-medium text-ink">
-              {term.term
-                .replace(/^HALLMARK_/, "")
-                .replaceAll("_", " ")
-                .toLowerCase()}
-            </span>
+          <p className="w-full text-[12px] text-ink-3">
+            Marking {highlight.size} leading genes of{" "}
+            <span className="font-medium text-ink">{termLabel(term.term)}</span>
           </p>
         )}
       </div>

@@ -1,14 +1,15 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Check, Loader2 } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Loader2 } from "lucide-react";
 import type {
   ComparisonStatus,
   DatasetStatus,
   DesignProposal,
   RunStatus,
 } from "@/api/generated/types.gen";
-import { Badge } from "@/components/ui/badge";
-import { Card, Details, Notice } from "@/components/ui/card";
-import { fmtNum, humanExclusion, statusLabel, statusTone } from "@/lib/format";
+import { Badge, StatusChip, Tag } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
+import { Details, Notice, Panel } from "@/components/ui/card";
+import { fmtInt, fmtNum, humanExclusion } from "@/lib/format";
 import { cn } from "@/lib/utils";
 
 export type Stage = "collecting" | "designing" | "running" | "comparing" | "done";
@@ -46,33 +47,27 @@ export function deriveStage(
   return { stage: "done", settled: true, completeDatasets };
 }
 
+/** The five stages as a row of tags: done in teal with a check, current with a spinner. */
 export function PipelineStepper({ stage }: { stage: Stage }) {
   const at = STAGES.findIndex((s) => s.key === stage);
   return (
-    <ol className="flex flex-wrap gap-x-6 gap-y-2" aria-label="Pipeline progress">
+    <ol className="flex flex-wrap gap-1.5" aria-label="Pipeline progress">
       {STAGES.map((s, i) => {
         const done = i < at || (stage === "done" && i === at);
         const current = i === at && stage !== "done";
         return (
-          <li
-            key={s.key}
-            aria-current={current ? "step" : undefined}
-            className={cn(
-              "flex items-center gap-1.5 text-sm",
-              done ? "text-ink" : current ? "font-medium text-ink" : "text-ink-3",
-            )}
-          >
-            {done ? (
-              <Check size={14} className="text-case" />
-            ) : current ? (
-              <Loader2 size={14} className="animate-spin text-case" />
-            ) : (
-              <span className="inline-block h-3.5 w-3.5 rounded-full border border-line-2" />
-            )}
-            {s.label}
-            {current && (
-              <span className="hidden text-ink-2 sm:inline"> · {s.doing.toLowerCase()}</span>
-            )}
+          <li key={s.key} aria-current={current ? "step" : undefined} title={s.doing}>
+            <Tag
+              tone={done || current ? "ok" : "neutral"}
+              className={cn(!done && !current && "text-ink-3")}
+            >
+              {done ? (
+                <Check size={12} className="mr-1" />
+              ) : current ? (
+                <Loader2 size={12} className="mr-1 animate-spin" />
+              ) : null}
+              {s.label}
+            </Tag>
           </li>
         );
       })}
@@ -115,35 +110,33 @@ export function DatasetRow({
   const ready = dataset.status === "ready";
   const design = designLabel(dataset);
   return (
-    <Card className="p-5">
+    <Panel className="p-5">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="accession text-[15px] font-medium">{dataset.gse}</span>
-            <Badge tone={statusTone(dataset.status)}>
-              {dataset.status === "pending" && <Loader2 size={12} className="animate-spin" />}
-              {statusLabel(dataset.status)}
-            </Badge>
+            <span className="accession text-[15px] font-bold text-accent-ink">{dataset.gse}</span>
+            <StatusChip status={dataset.status} busy={dataset.status === "pending"} />
             {ready && (
               <Badge tone={design.tone}>
                 {inDesign(dataset) && <Loader2 size={12} className="animate-spin" />}
                 {design.text}
               </Badge>
             )}
-            {run && <Badge tone={statusTone(run.status)}>run {statusLabel(run.status)}</Badge>}
+            {run && <StatusChip status={run.status} busy={run.status === "running"} />}
           </div>
-          {r?.title && <h3 className="mt-1.5 leading-snug">{r.title}</h3>}
+          {r?.title && <h3 className="mt-2 leading-snug">{r.title}</h3>}
           {r && ready && (
-            <p className="num mt-1 text-[13px] text-ink-2">
-              {r.n_eligible} of {total} samples are human bulk RNA-seq with counts
-              {" · "}
+            <p className="num mt-1 flex flex-wrap items-center gap-x-3 text-[13px] text-ink-2">
+              <span>
+                {r.n_eligible} of {total} samples are human bulk RNA-seq with counts
+              </span>
               <a
-                className="underline-offset-2 hover:underline"
+                className="inline-flex items-center gap-0.5 text-accent-ink no-underline hover:underline"
                 href={`https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=${dataset.gse}`}
                 target="_blank"
                 rel="noreferrer"
               >
-                GEO
+                GEO record <ArrowUpRight size={12} />
               </a>
             </p>
           )}
@@ -167,7 +160,7 @@ export function DatasetRow({
           <Link
             to="/s/$sessionId/runs/$gse/$contrast"
             params={{ sessionId, gse: run.gse, contrast: run.contrast }}
-            className="inline-flex shrink-0 items-center gap-1 rounded-md border border-line-2 px-3 py-1.5 text-sm font-medium hover:bg-surface-2"
+            className={cn(buttonVariants({ variant: "secondary", size: "sm" }), "no-underline")}
           >
             Open the result <ArrowRight size={14} />
           </Link>
@@ -175,7 +168,7 @@ export function DatasetRow({
       </div>
 
       {ready && inDesign(dataset) && (
-        <p className="mt-3 text-sm text-ink-2">
+        <p className="mt-3 text-[13px] text-ink-2">
           The specialist is labelling every sample from its GEO record and choosing the one
           comparison that answers the question. Nothing to do here; this page updates itself.
         </p>
@@ -197,19 +190,23 @@ export function DatasetRow({
       {contrast && (
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
           <div className="border-l-[3px] border-case pl-3">
-            <div className="text-[13px] text-ink-2">Case · {contrast.case_gsms.length} samples</div>
-            <div className="font-medium">{contrast.case_label}</div>
+            <div className="num flex items-center gap-2 text-[12px] text-ink-2">
+              <Tag tone="case">Case</Tag>
+              {fmtInt(contrast.case_gsms.length)} samples
+            </div>
+            <div className="mt-1 font-medium">{contrast.case_label}</div>
           </div>
           <div className="border-l-[3px] border-control pl-3">
-            <div className="text-[13px] text-ink-2">
-              Control · {contrast.control_gsms.length} samples
+            <div className="num flex items-center gap-2 text-[12px] text-ink-2">
+              <Tag tone="control">Control</Tag>
+              {fmtInt(contrast.control_gsms.length)} samples
             </div>
-            <div className="font-medium">{contrast.control_label}</div>
+            <div className="mt-1 font-medium">{contrast.control_label}</div>
           </div>
         </div>
       )}
       {contrast && (contrast.blocking || contrast.rationale) && (
-        <p className="mt-3 text-sm text-ink-2">
+        <p className="mt-3 text-[13px] text-ink-2">
           {contrast.blocking && (
             <>
               Paired by <span className="font-medium text-ink">{contrast.blocking}</span>.{" "}
@@ -222,11 +219,11 @@ export function DatasetRow({
         </p>
       )}
       {proposal && (
-        <div className="mt-3">
+        <div className="mt-3 border-t border-line pt-2">
           <Decisions proposal={proposal} />
         </div>
       )}
-    </Card>
+    </Panel>
   );
 }
 
@@ -244,27 +241,19 @@ export function Decisions({
   const n = decisions.length + quals.length + errors.length;
   if (n === 0 && !proposal.notes) return null;
   return (
-    <Details
-      summary={`How the contrast was decided${n ? ` (${n} note${n === 1 ? "" : "s"})` : ""}`}
-      defaultOpen={defaultOpen}
-    >
-      <div className="space-y-3 text-sm">
-        {proposal.notes && <p className="text-ink-2">{proposal.notes}</p>}
+    <Details summary="How the contrast was decided" defaultOpen={defaultOpen}>
+      <div className="space-y-3">
+        {proposal.notes && <p>{proposal.notes}</p>}
         {decisions.length > 0 && (
-          <div>
-            <div className="text-[13px] font-medium text-ink-2">Decisions made for you</div>
-            <ul className="mt-1 list-disc space-y-1 pl-5">
-              {decisions.map((d) => (
-                <li key={d}>{d}</li>
-              ))}
-            </ul>
-          </div>
+          <ul className="list-disc space-y-1 pl-5">
+            {decisions.map((d) => (
+              <li key={d}>{d}</li>
+            ))}
+          </ul>
         )}
         {quals.length > 0 && (
           <div>
-            <div className="text-[13px] font-medium text-amber">
-              Read the result with these caveats
-            </div>
+            <div className="font-medium text-amber">Read the result with these caveats</div>
             <ul className="mt-1 list-disc space-y-1 pl-5">
               {quals.map((q) => (
                 <li key={q}>{q}</li>
@@ -274,11 +263,11 @@ export function Decisions({
         )}
         {errors.length > 0 && (
           <div>
-            <div className="text-[13px] font-medium text-ink-2">
+            <div className="font-medium">
               {errors.length} label{errors.length === 1 ? "" : "s"} the GEO record could not back,
               dropped
             </div>
-            <ul className="mt-1 list-disc space-y-1 pl-5 text-ink-2">
+            <ul className="mt-1 list-disc space-y-1 pl-5">
               {errors.slice(0, 8).map((e) => (
                 <li key={e}>{e}</li>
               ))}

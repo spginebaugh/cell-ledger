@@ -81,9 +81,13 @@ describe("AnswerPanel", () => {
   });
   it("shows qualifications as caveats and collapses warnings", () => {
     render(<StatusBanner report={report} status="complete" />);
-    expect(screen.getByText(/read it with these caveats/)).toBeInTheDocument();
+    expect(screen.getByText(/Read It With These Caveats/)).toBeInTheDocument();
     expect(screen.getByText("contrast confidence 0.60 < 0.7")).toBeInTheDocument();
-    expect(screen.getByText("1 warning from the pipeline")).toBeInTheDocument();
+    const warn = screen.getByRole("button", { name: "1 warning from the pipeline" });
+    expect(warn).toHaveAttribute("aria-expanded", "false");
+    expect(
+      screen.getByText("3 counts columns are not in the sample sheet and were ignored"),
+    ).toBeInTheDocument();
   });
   it("explains a blocked run in plain terms", () => {
     render(
@@ -96,7 +100,7 @@ describe("AnswerPanel", () => {
         status="blocked"
       />,
     );
-    expect(screen.getByText(/must not be read as a result/)).toBeInTheDocument();
+    expect(screen.getByText(/Blocked: Not a Result/)).toBeInTheDocument();
     expect(screen.getByText(/fewer than 3 samples/)).toBeInTheDocument();
   });
 });

@@ -1,83 +1,100 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------ tokens
-   The pipeline's palette (case blue, control orange, muted grey) is the law here so that
-   the PNGs in report.md and the live charts say the same thing. */
+   Light: pale mineral ground, dark ink, deep teal accent. Dark: deep blue-green ground, off-white
+   ink, light teal accent. The arm palette (case blue, control orange) is the law here so that the
+   PNGs in report.md and the live charts say the same thing. */
 :root {
-  --bg: #f4f3ee;
-  --surface: #fcfcfb;
-  --surface-2: #f0efe9;
-  --ink: #141412;
-  --ink-2: #52514e;
-  --ink-3: #8a8983;
-  --line: #e2e1db;
-  --line-2: #cfcec6;
-  --case: #2a78d6;
-  --case-soft: #e3eefb;
-  --control: #eb6834;
-  --control-soft: #fde9df;
-  --muted: #b8b7b2;
-  --danger: #b9382a;
-  --danger-soft: #fbe7e3;
-  --amber: #a46d0b;
-  --amber-soft: #fbefd6;
-  --ok: #2f7d4f;
-  --ok-soft: #e0f1e6;
-  --focus: #2a78d6;
-  --grid: #e8e7e1;
-  --shadow: 0 1px 0 rgba(20, 20, 18, 0.04), 0 1px 2px rgba(20, 20, 18, 0.06);
+  --bg: #f2f5f3;
+  --bg-glow: transparent;
+  --surface: #fbfcfb;
+  --surface-2: #eceff0;
+  --surface-3: #e2e8e7;
+  --ink: #121c1d;
+  --ink-2: #485a5b;
+  --ink-3: #74898a;
+  --line: #d3dcd9;
+  --line-2: #b4c3bf;
+  --accent: #0f766e;
+  --accent-ink: #0b5f59;
+  --accent-soft: #daefec;
+  --case: #2b6fc8;
+  --case-soft: #e0eaf8;
+  --control: #d3602a;
+  --control-soft: #f9e5da;
+  --muted: #b3bdbb;
+  --danger: #b4382a;
+  --danger-soft: #f8e3df;
+  --amber: #946200;
+  --amber-soft: #f6ecd2;
+  --ok: #0f766e;
+  --ok-soft: #daefec;
+  --focus: #0f766e;
+  --grid: #e3e9e7;
+  --shadow: 0 1px 0 rgba(18, 28, 29, 0.04);
+  --gutter: clamp(16px, 3vw, 48px);
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #121311;
-    --surface: #1a1b19;
-    --surface-2: #222320;
-    --ink: #ecebe5;
-    --ink-2: #b4b2aa;
-    --ink-3: #7f7e77;
-    --line: #2b2c28;
-    --line-2: #3a3b36;
-    --case: #5a9ae6;
-    --case-soft: #182a40;
-    --control: #f0875d;
-    --control-soft: #3d241a;
-    --muted: #6f6e68;
-    --danger: #e0695a;
+    --bg: #0b1416;
+    --bg-glow: rgba(78, 205, 196, 0.07);
+    --surface: #101c1f;
+    --surface-2: #152528;
+    --surface-3: #1b2f33;
+    --ink: #e4edec;
+    --ink-2: #a3b8b8;
+    --ink-3: #6e8688;
+    --line: #1e3337;
+    --line-2: #2d474c;
+    --accent: #4fd1c5;
+    --accent-ink: #7fe0d6;
+    --accent-soft: #0f3034;
+    --case: #6aa9f2;
+    --case-soft: #15293f;
+    --control: #f08b57;
+    --control-soft: #3a2418;
+    --muted: #4f6366;
+    --danger: #ef7d6c;
     --danger-soft: #3b1f1b;
-    --amber: #d7a13b;
-    --amber-soft: #3a2d14;
-    --ok: #6cbf8a;
-    --ok-soft: #1c3326;
-    --focus: #7fb2f0;
-    --grid: #262723;
-    --shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+    --amber: #e2b45c;
+    --amber-soft: #352b14;
+    --ok: #4fd1c5;
+    --ok-soft: #0f3034;
+    --focus: #4fd1c5;
+    --grid: #172729;
+    --shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #121311;
-  --surface: #1a1b19;
-  --surface-2: #222320;
-  --ink: #ecebe5;
-  --ink-2: #b4b2aa;
-  --ink-3: #7f7e77;
-  --line: #2b2c28;
-  --line-2: #3a3b36;
-  --case: #5a9ae6;
-  --case-soft: #182a40;
-  --control: #f0875d;
-  --control-soft: #3d241a;
-  --muted: #6f6e68;
-  --danger: #e0695a;
+  --bg: #0b1416;
+  --bg-glow: rgba(78, 205, 196, 0.07);
+  --surface: #101c1f;
+  --surface-2: #152528;
+  --surface-3: #1b2f33;
+  --ink: #e4edec;
+  --ink-2: #a3b8b8;
+  --ink-3: #6e8688;
+  --line: #1e3337;
+  --line-2: #2d474c;
+  --accent: #4fd1c5;
+  --accent-ink: #7fe0d6;
+  --accent-soft: #0f3034;
+  --case: #6aa9f2;
+  --case-soft: #15293f;
+  --control: #f08b57;
+  --control-soft: #3a2418;
+  --muted: #4f6366;
+  --danger: #ef7d6c;
   --danger-soft: #3b1f1b;
-  --amber: #d7a13b;
-  --amber-soft: #3a2d14;
-  --ok: #6cbf8a;
-  --ok-soft: #1c3326;
-  --focus: #7fb2f0;
-  --grid: #262723;
-  --shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+  --amber: #e2b45c;
+  --amber-soft: #352b14;
+  --ok: #4fd1c5;
+  --ok-soft: #0f3034;
+  --focus: #4fd1c5;
+  --grid: #172729;
+  --shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
   color-scheme: dark;
 }
 
@@ -85,11 +102,15 @@
   --color-bg: var(--bg);
   --color-surface: var(--surface);
   --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
   --color-ink: var(--ink);
   --color-ink-2: var(--ink-2);
   --color-ink-3: var(--ink-3);
   --color-line: var(--line);
   --color-line-2: var(--line-2);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-soft: var(--accent-soft);
   --color-case: var(--case);
   --color-case-soft: var(--case-soft);
   --color-control: var(--control);
@@ -102,12 +123,12 @@
   --color-ok: var(--ok);
   --color-ok-soft: var(--ok-soft);
   --color-focus: var(--focus);
-  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
   --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --radius-sm: 4px;
-  --radius-md: 6px;
-  --radius-lg: 10px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
 }
 
 /* ------------------------------------------------------------------- base */
@@ -116,34 +137,45 @@ html {
 }
 body {
   margin: 0;
-  background: var(--bg);
+  background: radial-gradient(1100px 520px at 12% -8%, var(--bg-glow), transparent 65%), var(--bg);
   color: var(--ink);
   font-family: var(--font-sans);
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
+/* Heading scale: one face, one weight, three sizes. */
 h1,
 h2,
 h3 {
   font-family: var(--font-display);
-  font-weight: 500;
+  font-weight: 700;
+  font-style: italic;
   letter-spacing: -0.005em;
   margin: 0;
+  text-wrap: balance;
+  color: var(--ink);
 }
 h1 {
-  font-size: clamp(1.9rem, 2.2vw + 1rem, 2.6rem);
+  font-size: clamp(28px, 22px + 1vw, 34px);
   line-height: 1.15;
   font-variation-settings: "opsz" 72;
 }
+/* Arm labels come from the record in whatever case it used; a title still opens with a capital. */
+h1::first-letter {
+  text-transform: uppercase;
+}
 h2 {
-  font-size: 1.35rem;
-  line-height: 1.3;
+  font-size: 22px;
+  line-height: 1.25;
+  font-variation-settings: "opsz" 36;
+  color: var(--accent-ink);
 }
 h3 {
-  font-size: 1.05rem;
-  line-height: 1.35;
+  font-size: 17px;
+  line-height: 1.3;
+  font-variation-settings: "opsz" 24;
 }
 a {
   color: inherit;
@@ -151,18 +183,22 @@ a {
 :focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 2px;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 ::selection {
-  background: var(--case-soft);
+  background: var(--accent-soft);
 }
 .accession {
   font-family: var(--font-mono);
-  font-size: 0.86em;
-  letter-spacing: 0.01em;
+  font-size: 0.93em;
 }
 .num {
   font-variant-numeric: tabular-nums;
+}
+/* Pills and tags capitalise each word. */
+.tag,
+.pill {
+  text-transform: capitalize;
 }
 .prose p {
   margin: 0 0 0.75em;
@@ -171,6 +207,8 @@ a {
 .prose h2,
 .prose h3 {
   margin: 1.2em 0 0.4em;
+  font-style: normal;
+  color: var(--ink);
 }
 .prose table {
   border-collapse: collapse;

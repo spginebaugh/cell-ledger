@@ -24,10 +24,10 @@ export function MemberLedger({ members }: { members: Member[] }) {
         {members.map((m) => (
           <tr key={m.label}>
             <Td className="whitespace-nowrap">
-              <span className="accession font-medium">{m.gse}</span>
+              <span className="accession font-bold text-accent-ink">{m.gse}</span>
               <div className="font-mono text-[12px] text-ink-2">{m.contrast}</div>
             </Td>
-            <Td className="text-[13px]">{m.stratum?.replaceAll("_", " ") ?? "—"}</Td>
+            <Td>{m.stratum?.replaceAll("_", " ") ?? "—"}</Td>
             <Td>
               <Badge tone={m.tier === "clean" ? "ok" : "amber"}>{m.tier}</Badge>
             </Td>

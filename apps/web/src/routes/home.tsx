@@ -5,10 +5,10 @@ import { useEffect, useState } from "react";
 import { getHealth, updateSession } from "@/api/generated/sdk.gen";
 import type { DiscoveryResult } from "@/api/generated/types.gen";
 import { DiscoveryView } from "@/components/home/discovery";
-import { Page, TopBar } from "@/components/layout/top-bar";
+import { Footer, Page, TopBar } from "@/components/layout/top-bar";
 import { Button } from "@/components/ui/button";
-import { Card, ErrorBox } from "@/components/ui/card";
-import { Input, Textarea } from "@/components/ui/input";
+import { ColHead, ErrorBox, Panel } from "@/components/ui/card";
+import { Input, Label, Textarea } from "@/components/ui/input";
 import { errorMessage, unwrap } from "@/lib/api";
 import { useAgentAvailable, useCollect, useCreateSession, useSession } from "@/lib/queries";
 import { lastSession, rememberSession } from "@/lib/storage";
@@ -43,7 +43,7 @@ export function HomePage() {
   const collect = useCollect(sessionId ?? "");
 
   useEffect(() => {
-    document.title = "cell-ledger";
+    document.title = "cell ledger";
   }, []);
 
   useEffect(() => {
@@ -107,25 +107,24 @@ export function HomePage() {
   };
 
   const busy = create.isPending || sse.status === "streaming";
+  const validId = /^[0-9a-f]{32}$/.test(openId.trim());
 
   return (
     <>
       <TopBar sessionId={sessionId ?? undefined} />
-      <Page width="narrow">
-        <div className="pt-6">
+      <Page>
+        <div className="pt-4">
           <p className="text-[13px] text-ink-2">A specialist for public RNA-seq data</p>
-          <h1 className="mt-2 max-w-[22ch]">Ask a question a dataset can answer.</h1>
-          <p className="mt-4 max-w-[60ch] text-ink-2">
-            cell-ledger finds bulk RNA-seq series in NCBI GEO, checks which ones are actually
+          <h1 className="mt-2 max-w-[26ch]">Ask a question a dataset can answer.</h1>
+          <p className="mt-4 max-w-[64ch] text-ink-2">
+            cell ledger finds bulk RNA-seq series in NCBI GEO, checks which ones are actually
             usable, labels their samples from the record with the evidence attached, and runs one
             reproducible two-group analysis. Every number it shows can be traced back to a file.
           </p>
         </div>
 
-        <Card className="mt-8 p-5">
-          <label htmlFor="question" className="text-[13px] font-medium text-ink-2">
-            Your question
-          </label>
+        <Panel className="mt-8 p-5">
+          <Label htmlFor="question">Your question</Label>
           <Textarea
             id="question"
             rows={3}
@@ -135,7 +134,7 @@ export function HomePage() {
               if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) void submit();
             }}
             placeholder="Is gene X higher in cell type Y in disease Z?"
-            className="mt-1.5 text-[17px]"
+            className="mt-1.5 text-[16px]"
             disabled={phase === "work" && busy}
           />
           <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
@@ -145,7 +144,7 @@ export function HomePage() {
                   key={ex}
                   type="button"
                   onClick={() => setQuestion(ex)}
-                  className="rounded-full border border-line px-2.5 py-0.5 text-[12px] text-ink-2 hover:border-line-2 hover:text-ink"
+                  className="h-7 rounded-md border border-line-2 bg-surface-2 px-2.5 text-[12px] text-ink-2 hover:border-accent hover:text-ink"
                 >
                   {ex.length > 52 ? `${ex.slice(0, 50)}…` : ex}
                 </button>
@@ -171,7 +170,7 @@ export function HomePage() {
               <ErrorBox title="Could not start a session">{errorMessage(create.error)}</ErrorBox>
             </div>
           )}
-        </Card>
+        </Panel>
 
         {phase === "work" && sessionId && (
           <div className="mt-6">
@@ -212,56 +211,55 @@ export function HomePage() {
           </div>
         )}
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2">
+        <div className="mt-10 grid gap-4 md:grid-cols-2">
           {resumeId && resume.data && (
-            <Card className="p-4">
-              <div className="text-[13px] text-ink-2">Pick up where you left off</div>
-              <p className="mt-1 line-clamp-2 text-sm">
+            <Panel>
+              <ColHead label="Pick up where you left off" />
+              <p className="line-clamp-2 text-[14px]">
                 {resume.data.question ?? "An untitled session"}
               </p>
               <Link
                 to="/s/$sessionId"
                 params={{ sessionId: resumeId }}
-                className="mt-2 inline-flex items-center gap-1 text-sm font-medium hover:underline"
+                className="mt-3 inline-flex items-center gap-1 text-[13px] font-semibold text-accent-ink no-underline hover:underline"
               >
-                Open session <span className="accession text-ink-3">{resumeId.slice(0, 8)}</span>{" "}
+                Open session <span className="accession text-ink-3">{resumeId.slice(0, 8)}</span>
                 <ArrowRight size={14} />
               </Link>
-            </Card>
+            </Panel>
           )}
-          <Card className="p-4">
-            <label htmlFor="open-id" className="text-[13px] text-ink-2">
-              Open a session by id
-            </label>
+          <Panel>
+            <ColHead label="Open a session by id" />
             <form
-              className="mt-1 flex gap-2"
+              className="flex gap-2"
               onSubmit={(e) => {
                 e.preventDefault();
-                const id = openId.trim();
-                if (/^[0-9a-f]{32}$/.test(id))
-                  void navigate({ to: "/s/$sessionId", params: { sessionId: id } });
+                if (validId)
+                  void navigate({ to: "/s/$sessionId", params: { sessionId: openId.trim() } });
               }}
             >
               <Input
                 id="open-id"
+                aria-label="Session id"
                 value={openId}
                 onChange={(e) => setOpenId(e.target.value)}
                 placeholder="32 hex characters"
-                className="font-mono text-[13px]"
+                className="font-mono"
               />
-              <Button type="submit" disabled={!/^[0-9a-f]{32}$/.test(openId.trim())}>
+              <Button type="submit" disabled={!validId}>
                 Open
               </Button>
             </form>
-          </Card>
+          </Panel>
         </div>
 
-        <p className="mt-10 text-[12px] text-ink-3" data-testid="api-status">
+        <p className="mt-8 text-[12px] text-ink-3" data-testid="api-status">
           {health.isPending && "Checking the API…"}
           {health.isError && `API unreachable: ${errorMessage(health.error)}`}
           {health.data &&
             `API ${health.data.status} · api ${health.data.api_version} · core ${health.data.core_version}`}
         </p>
+        <Footer />
       </Page>
     </>
   );

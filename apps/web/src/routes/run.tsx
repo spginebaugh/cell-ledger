@@ -1,22 +1,18 @@
 import { Link } from "@tanstack/react-router";
-import { useEffect, useMemo, useState } from "react";
+import { ChevronLeft } from "lucide-react";
+import { useEffect, useState } from "react";
 import type { EnrichmentTerm } from "@/api/generated/types.gen";
 import { EnrichmentBars } from "@/components/charts/enrichment-bars";
-import { LibrarySizes } from "@/components/charts/library-sizes";
-import { PcaScatter } from "@/components/charts/pca";
-import { StripPlot } from "@/components/charts/strip-plot";
-import { Page, TopBar } from "@/components/layout/top-bar";
+import { Footer, Page, TopBar } from "@/components/layout/top-bar";
 import { AnswerPanel, StatusBanner } from "@/components/run/answer-panel";
-import { DesignPanel } from "@/components/run/design-panel";
+import { ComparisonPanel } from "@/components/run/design-panel";
 import { Downloads, MarkdownFile } from "@/components/run/downloads";
-import { buildRows, SamplesTable } from "@/components/run/samples-table";
-import { LiveStepper, StepTimeline } from "@/components/run/steps";
+import { LiveStepper } from "@/components/run/steps";
 import { VolcanoPanel } from "@/components/run/volcano-panel";
-import { Decisions } from "@/components/session/pipeline-view";
-import { Badge } from "@/components/ui/badge";
-import { Card, Details, ErrorBox, Section, Skeleton } from "@/components/ui/card";
+import { StatusChip } from "@/components/ui/badge";
+import { ColHead, ErrorBox, Panel, Pill, Section, Skeleton } from "@/components/ui/card";
 import { errorMessage } from "@/lib/api";
-import { fmtInt, statusLabel, statusTone, verdictLabel, verdictTone } from "@/lib/format";
+import { fmtInt } from "@/lib/format";
 import { useDatasets, useRun, useSession } from "@/lib/queries";
 import { useTheme } from "@/lib/theme";
 import { runRoute } from "@/router";
@@ -30,59 +26,45 @@ export function RunPage() {
   const [focus, setFocus] = useState<string | null>(null);
 
   useEffect(() => {
-    document.title = `${gse} ${contrast.replaceAll("_", " ")} · cell-ledger`;
+    document.title = `${gse} ${contrast.replaceAll("_", " ")} · cell ledger`;
   }, [gse, contrast]);
 
   const view = run.data;
   const report = view?.report ?? null;
-  const design = view?.design ?? null;
   const datasets = useDatasets(sessionId, session.isSuccess);
   const proposal = datasets.data?.find((d) => d.gse === gse)?.proposal ?? null;
   const urls = view?.urls ?? {};
-
-  const sampleRows = useMemo(() => {
-    if (!report || !design) return [];
-    return buildRows(design.samplesheet.samples, report.contrast, report.qc?.samples ?? []);
-  }, [report, design]);
-
-  const labelsByGsm = useMemo(() => {
-    const m = new Map<string, string[]>();
-    for (const r of sampleRows) {
-      const s = r.sample;
-      if (s)
-        m.set(
-          r.gsm,
-          [s.condition, s.tissue, s.treatment, s.donor && `donor ${s.donor}`].filter(
-            (v): v is string => Boolean(v),
-          ),
-        );
-    }
-    return m;
-  }, [sampleRows]);
+  const nFiles = Object.keys(urls).length;
 
   const focusGene = (symbol: string | null) => {
     setFocus(symbol);
     if (symbol) {
-      const el = document.getElementById(`gene-${symbol.toUpperCase()}`);
-      el?.scrollIntoView({ behavior: "smooth", block: "center" });
+      document.getElementById("volcano")?.scrollIntoView({ behavior: "smooth", block: "center" });
     }
   };
 
-  const lowLibrary = Number(
-    (report?.params as Record<string, unknown> | undefined)?.low_library_size ?? 1e6,
-  );
+  const de = report?.de?.summary;
+  const deLede = de
+    ? `DESeq2${de.blocking ? `, blocked by ${de.blocking}` : ""}. ${fmtInt(de.n_sig)} genes differ at padj < ${de.alpha}; at |log2FC| ≥ ${de.lfc_threshold.toFixed(2)}, ${fmtInt(de.n_up_lfc)} are higher in case and ${fmtInt(de.n_down_lfc)} higher in control. Adjust the thresholds and the counts follow.`
+    : "Differential expression did not run for this contrast.";
 
   return (
     <>
       <TopBar sessionId={sessionId} />
       <Page>
-        <nav className="text-[13px] text-ink-2">
-          <Link to="/s/$sessionId" params={{ sessionId }} className="hover:underline">
-            Session
+        <div className="flex items-center justify-between gap-2 text-[13px]">
+          <Link
+            to="/s/$sessionId"
+            params={{ sessionId }}
+            className="inline-flex items-center gap-0.5 font-semibold text-ink no-underline hover:text-accent-ink"
+          >
+            <ChevronLeft size={14} strokeWidth={2.5} />
+            Back
           </Link>
-          <span className="mx-1.5 text-ink-3">/</span>
-          <span className="accession">{gse}</span>
-        </nav>
+          <span className="font-semibold">
+            Dataset <span className="accession font-bold text-accent-ink">{gse}</span>
+          </span>
+        </div>
         {run.isPending && (
           <div className="mt-4 space-y-4">
             <Skeleton className="h-10 w-2/3" />
@@ -97,31 +79,30 @@ export function RunPage() {
         )}
         {view && (
           <>
-            <div className="mt-3 flex flex-wrap items-start justify-between gap-4">
-              <div className="max-w-[70ch]">
-                <h1>
-                  {report ? (
-                    <>
-                      {report.contrast.case_label} <span className="text-ink-3">vs</span>{" "}
-                      {report.contrast.control_label}
-                    </>
-                  ) : (
-                    contrast.replaceAll("_", " ")
-                  )}
-                </h1>
-                <p className="mt-2 text-ink-2">
-                  <span className="accession">{gse}</span> · contrast{" "}
-                  <span className="font-mono text-[14px]">{contrast}</span>
-                  {session.data?.question && <> · asked: “{session.data.question}”</>}
-                </p>
+            <div className="mt-3">
+              <h1 className="w-full">
+                {report ? (
+                  <>
+                    {report.contrast.case_label} <span className="font-normal text-ink-3">vs</span>{" "}
+                    {report.contrast.control_label}
+                  </>
+                ) : (
+                  contrast.replaceAll("_", " ")
+                )}
+              </h1>
+              <div className="mt-5 flex flex-wrap items-center justify-between gap-4">
+                <div className="grid min-w-0 justify-items-start gap-2">
+                  <Pill label="Contrast" mono>
+                    {contrast}
+                  </Pill>
+                  {session.data?.question && <Pill label="Asked">“{session.data.question}”</Pill>}
+                </div>
+                <StatusChip status={view.status} busy={view.status === "running"} />
               </div>
-              <Badge tone={statusTone(view.status)} className="text-[13px]">
-                {statusLabel(view.status)}
-              </Badge>
             </div>
 
             {view.status === "running" && (
-              <Card className="mt-6 max-w-xl p-5">
+              <Panel className="mt-6 max-w-xl p-5">
                 <h3>The pipeline is running</h3>
                 <p className="mt-1 text-sm text-ink-2">
                   This page refreshes itself and fills in as the steps complete.
@@ -129,7 +110,7 @@ export function RunPage() {
                 <div className="mt-4">
                   <LiveStepper progress={view.progress} startedAt={view.started_at} />
                 </div>
-              </Card>
+              </Panel>
             )}
 
             {view.status !== "running" && (
@@ -141,8 +122,8 @@ export function RunPage() {
                 {report && (
                   <>
                     <Section
-                      title="The answer"
-                      description="One card per gene asked about, from this dataset alone. Click a card to find the gene in the plots below."
+                      title="The Answer"
+                      info="A verdict for each gene the question named, drawn from this dataset alone. Select a gene to locate it in the plots."
                     >
                       <AnswerPanel report={report} onFocus={focusGene} focus={focus} />
                       {report.markers && (
@@ -155,222 +136,80 @@ export function RunPage() {
                     </Section>
 
                     <Section
-                      title="The comparison"
-                      description="What was compared with what, and how the model was set up."
+                      title="The Comparison"
+                      info="The two arms of the comparison, and the reasoning that chose them."
                     >
-                      <DesignPanel report={report} design={design} />
-                      {proposal && (
-                        <div className="mt-4">
-                          <Decisions proposal={proposal} defaultOpen />
-                        </div>
-                      )}
+                      <ComparisonPanel report={report} proposal={proposal} />
                     </Section>
 
-                    {sampleRows.length > 0 && (
-                      <Section
-                        title="Samples and their evidence"
-                        description="Every label was copied from the GEO record; the quoted text is the proof. Flagged rows are tinted."
-                      >
-                        <SamplesTable rows={sampleRows} lowLibrary={lowLibrary} />
-                      </Section>
-                    )}
-
-                    {report.qc && (
-                      <Section
-                        title="Quality control"
-                        description={
-                          report.qc.flags?.length
-                            ? `Dataset flags: ${report.qc.flags.join(", ")}`
-                            : "No dataset-level flags were raised."
-                        }
-                      >
-                        <div className="grid gap-6 lg:grid-cols-2">
-                          <Card className="p-4">
-                            <h3>Library size per sample</h3>
-                            <div className="mt-3">
-                              <LibrarySizes
-                                rows={report.qc.samples.map((s) => ({
-                                  gsm: s.gsm,
-                                  arm: s.arm,
-                                  librarySize: s.library_size,
-                                  flags: s.flags ?? [],
-                                }))}
-                                threshold={lowLibrary}
+                    {report.de && (
+                      <Section title="Differential Expression" info={deLede}>
+                        <Panel>
+                          <div className="grid gap-6 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:gap-x-8">
+                            <div id="volcano" className="min-w-0">
+                              <ColHead label="Volcano" />
+                              <VolcanoPanel
+                                url={urls["volcano.json.gz"]}
+                                alpha0={report.de.summary.alpha}
+                                lfc0={report.de.summary.lfc_threshold}
+                                term={term}
+                                focus={focus}
+                                onFocus={focusGene}
+                                themeKey={resolved}
                               />
                             </div>
-                          </Card>
-                          {report.qc.pca && (
-                            <Card className="p-4">
-                              <h3>Principal components</h3>
-                              <p className="mt-0.5 text-[12px] text-ink-3">
-                                log-CPM of the most variable genes; flagged samples are labelled
-                              </p>
-                              <div className="mt-3">
-                                <PcaScatter
-                                  points={report.qc.samples.map((s) => {
-                                    const c = report.qc?.pca?.coords[s.gsm] ?? [0, 0];
-                                    return {
-                                      gsm: s.gsm,
-                                      arm: s.arm,
-                                      x: c[0],
-                                      y: c[1],
-                                      flags: s.flags ?? [],
-                                      labels: labelsByGsm.get(s.gsm) ?? [],
-                                    };
-                                  })}
-                                  variance={report.qc.pca.variance_ratio}
-                                  armR2={report.qc.pca.arm_r2_pc1}
+                            {report.enrichment && (
+                              <div className="min-w-0 border-t border-line pt-4 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
+                                <ColHead
+                                  label="Pathways"
+                                  detail={`${report.enrichment.n_sig_fdr} of ${report.enrichment.n_terms} sets at FDR < ${report.enrichment.fdr_threshold}`}
                                 />
-                              </div>
-                            </Card>
-                          )}
-                        </div>
-                      </Section>
-                    )}
-
-                    {report.de && (
-                      <Section
-                        title="Differential expression"
-                        description={`${fmtInt(report.de.summary.n_sig)} genes at padj < ${report.de.summary.alpha}: ${fmtInt(report.de.summary.n_up)} higher in case, ${fmtInt(report.de.summary.n_down)} higher in control. Move the thresholds to see how the counts respond.`}
-                      >
-                        <div className="grid gap-6 xl:grid-cols-[3fr_2fr]">
-                          <Card className="p-4">
-                            <VolcanoPanel
-                              url={urls["volcano.json.gz"]}
-                              alpha0={report.de.summary.alpha}
-                              lfc0={report.de.summary.lfc_threshold}
-                              term={term}
-                              focus={focus}
-                              onFocus={focusGene}
-                              themeKey={resolved}
-                            />
-                          </Card>
-                          {report.enrichment && (
-                            <Card className="p-4">
-                              <h3>
-                                Pathways (GSEA, {report.enrichment.library.replaceAll("_", " ")})
-                              </h3>
-                              <p className="mt-0.5 text-[12px] text-ink-3">
-                                {report.enrichment.n_sig_fdr} of {report.enrichment.n_terms} sets at
-                                FDR &lt; {report.enrichment.fdr_threshold}; click a bar to light up
-                                its genes on the volcano
-                              </p>
-                              <div className="mt-3">
                                 <EnrichmentBars
                                   terms={report.enrichment.top}
                                   selected={term?.term ?? null}
                                   onSelect={setTerm}
                                 />
+                                <p className="mt-3 text-[12px] text-ink-3">
+                                  Select a set to mark its leading genes on the volcano. A positive
+                                  score means the set is enriched in {report.contrast.case_label}.
+                                </p>
                               </div>
-                            </Card>
-                          )}
-                        </div>
+                            )}
+                          </div>
+                        </Panel>
                       </Section>
                     )}
-
-                    {(report.gene_expression ?? []).length > 0 && (
-                      <Section
-                        title="Genes of interest, sample by sample"
-                        description="Log2 normalized counts for each fitted observation; the bar is the arm mean. Repeated samples of one donor or block were summed first, as in the fit."
-                      >
-                        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                          {(report.gene_expression ?? []).map((g) => {
-                            const lookup = (report.gene_lookup ?? []).find(
-                              (r) => r.gene_id === g.gene_id,
-                            );
-                            const arms = new Map<string, "case" | "control">([
-                              ...report.contrast.case_gsms.map((x) => [x, "case"] as const),
-                              ...report.contrast.control_gsms.map((x) => [x, "control"] as const),
-                            ]);
-                            const sym = g.symbol ?? g.gene_id;
-                            const isFocus = focus?.toUpperCase() === sym.toUpperCase();
-                            return (
-                              <Card
-                                key={g.gene_id}
-                                id={`gene-${sym.toUpperCase()}`}
-                                className={isFocus ? "border-ink p-4" : "p-4"}
-                              >
-                                <div className="flex items-center justify-between gap-2">
-                                  <h3>{sym}</h3>
-                                  {lookup && (
-                                    <Badge tone={verdictTone(lookup.verdict)}>
-                                      {verdictLabel(lookup.verdict)}
-                                    </Badge>
-                                  )}
-                                </div>
-                                <div className="mt-2">
-                                  <StripPlot
-                                    points={Object.entries(g.values).flatMap(([unit, v]) => {
-                                      // Repeated samples per block and arm were summed before
-                                      // the fit into units named `<block>|<arm>`; the plot shows
-                                      // what was fitted, so those appear as one point each.
-                                      const arm =
-                                        arms.get(unit) ?? unit.slice(unit.lastIndexOf("|") + 1);
-                                      if (arm !== "case" && arm !== "control") return [];
-                                      const members = report.de?.summary.collapsed?.[unit];
-                                      return [{ gsm: unit, arm, value: v, members }];
-                                    })}
-                                    caseLabel={report.contrast.case_label}
-                                    controlLabel={report.contrast.control_label}
-                                  />
-                                </div>
-                              </Card>
-                            );
-                          })}
-                        </div>
-                      </Section>
-                    )}
-
-                    <Section
-                      title="How it ran"
-                      description="Every step with its parameters and timing. The fingerprint identifies this exact input, design, parameter set and code version."
-                    >
-                      <div className="grid gap-6 lg:grid-cols-[3fr_2fr]">
-                        <Card className="p-4">
-                          <StepTimeline steps={report.steps ?? []} />
-                        </Card>
-                        <div className="space-y-3">
-                          <Details summary="Software versions" defaultOpen>
-                            <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 font-mono text-[12px]">
-                              {Object.entries(report.versions).map(([k, v]) => (
-                                <div key={k} className="contents">
-                                  <dt className="text-ink-2">{k}</dt>
-                                  <dd>{v}</dd>
-                                </div>
-                              ))}
-                            </dl>
-                          </Details>
-                          <Details summary="Fingerprint and parameters">
-                            <p className="break-all font-mono text-[12px]">
-                              {report.fingerprint ?? "no fingerprint"}
-                            </p>
-                            <pre className="mt-2 max-h-64 overflow-auto rounded bg-surface-2 p-2 text-[11px]">
-                              {JSON.stringify(report.params, null, 1)}
-                            </pre>
-                          </Details>
-                        </div>
-                      </div>
-                    </Section>
                   </>
                 )}
 
-                {Object.keys(urls).length > 0 && (
+                {nFiles > 0 && (
                   <Section
                     title="Files"
-                    description="Everything the run wrote, straight from storage. Links are valid for a day."
+                    description={
+                      <>
+                        <span className="num">
+                          {nFiles} file{nFiles === 1 ? "" : "s"}
+                        </span>
+                        <span className="mx-1 text-ink-3">|</span>
+                        <em className="text-ink-3">Links valid for one day</em>
+                      </>
+                    }
                   >
-                    <Downloads urls={urls} />
-                    {urls["report.md"] && (
-                      <div className="mt-4">
-                        <MarkdownFile url={urls["report.md"]} summary="Read report.md inline" />
-                      </div>
-                    )}
+                    <Panel>
+                      <Downloads urls={urls} />
+                      {urls["report.md"] && (
+                        <div className="mt-4 border-t border-line pt-3">
+                          <MarkdownFile url={urls["report.md"]} summary="Read report.md inline" />
+                        </div>
+                      )}
+                    </Panel>
                   </Section>
                 )}
               </>
             )}
           </>
         )}
+        <Footer />
       </Page>
     </>
   );

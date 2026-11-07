@@ -1,9 +1,9 @@
 import { useState } from "react";
 import type { Candidate, DiscoveryResult } from "@/api/generated/types.gen";
 import { AgentFeed } from "@/components/session/agent-feed";
-import { Chip } from "@/components/ui/badge";
+import { Chip, Tag } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, Details, ErrorBox, Notice } from "@/components/ui/card";
+import { ColHead, Details, ErrorBox, Notice, Panel, Pill } from "@/components/ui/card";
 import { Input, Label, Textarea } from "@/components/ui/input";
 import type { FeedItem } from "@/lib/useSse";
 import { cn } from "@/lib/utils";
@@ -40,6 +40,7 @@ export function DiscoveryView({
     if (g && !genes.includes(g)) onGenesChange([...genes, g]);
     setGene("");
   };
+  const candidates = result?.candidates ?? [];
   return (
     <div className="space-y-5">
       {(streaming || (!result && feed.length > 0)) && (
@@ -52,11 +53,10 @@ export function DiscoveryView({
       {error && <ErrorBox title="The search failed">{error}</ErrorBox>}
       {result && (
         <>
-          <Card className="p-5">
-            <div className="text-[13px] text-ink-2">Read as</div>
-            <p className="mt-1 font-display text-[1.25rem] leading-snug">{result.interpretation}</p>
+          <Panel className="p-5">
+            <Pill label="Read as">{result.interpretation}</Pill>
             <div className="mt-4 flex flex-wrap items-center gap-1.5">
-              <span className="mr-1 text-[13px] text-ink-2">Genes to answer for</span>
+              <span className="mr-1 text-[12px] text-ink-2">Genes to answer for</span>
               {genes.map((g) => (
                 <Chip
                   key={g}
@@ -77,7 +77,7 @@ export function DiscoveryView({
                 }}
                 onBlur={addGene}
                 placeholder="add a symbol"
-                className="h-8 w-36 text-[13px]"
+                className="h-7 w-36 font-mono text-[12px]"
                 aria-label="Add a gene symbol"
               />
             </div>
@@ -86,12 +86,12 @@ export function DiscoveryView({
                 Searched GEO for: {(result.queries_tried ?? []).join(" · ")}
               </p>
             )}
-          </Card>
+          </Panel>
 
           {(result.clarifying_questions ?? []).length > 0 && (
-            <Card className="border-amber/40 p-5">
-              <h3>Before choosing datasets, the specialist asks</h3>
-              <ul className="mt-2 list-disc space-y-1 pl-5 text-sm">
+            <Panel className="border-l-[3px] border-l-amber p-5">
+              <h3 className="text-amber">Before choosing datasets, the specialist asks</h3>
+              <ul className="mt-2 list-disc space-y-1 pl-5 text-[13px] text-ink-2">
                 {(result.clarifying_questions ?? []).map((q) => (
                   <li key={q}>{q}</li>
                 ))}
@@ -114,25 +114,22 @@ export function DiscoveryView({
                   or pick from the candidates below that fit every reading.
                 </span>
               </div>
-            </Card>
+            </Panel>
           )}
 
-          {(result.candidates ?? []).length === 0 ? (
+          {candidates.length === 0 ? (
             <Notice tone="amber" title="No usable dataset came back from GEO">
               The search tried {(result.queries_tried ?? []).length} wordings. Broaden the question
               (organism, synonyms, drop a control requirement) and search again.
             </Notice>
           ) : (
-            <div>
-              <h3>
-                {(result.candidates ?? []).length} candidate dataset
-                {(result.candidates ?? []).length === 1 ? "" : "s"}
-              </h3>
-              <p className="mt-0.5 text-[13px] text-ink-2">
-                Every accession here was confirmed by GEO in this search. Tick the ones to download.
-              </p>
-              <div className="mt-3 grid gap-3 md:grid-cols-2">
-                {(result.candidates ?? []).map((c) => (
+            <Panel>
+              <ColHead
+                label={`${candidates.length} candidate dataset${candidates.length === 1 ? "" : "s"}`}
+                detail="Every accession here was confirmed by GEO in this search. Tick the ones to download."
+              />
+              <div className="grid gap-3 md:grid-cols-2">
+                {candidates.map((c) => (
                   <CandidateCard
                     key={c.gse}
                     c={c}
@@ -141,20 +138,23 @@ export function DiscoveryView({
                   />
                 ))}
               </div>
-            </div>
-          )}
-
-          {(result.rejected ?? []).length > 0 && (
-            <Details summary={`${(result.rejected ?? []).length} series looked at and set aside`}>
-              <ul className="space-y-1 text-sm">
-                {(result.rejected ?? []).map((r) => (
-                  <li key={r.gse}>
-                    <span className="accession">{r.gse}</span>{" "}
-                    <span className="text-ink-2">— {r.why}</span>
-                  </li>
-                ))}
-              </ul>
-            </Details>
+              {(result.rejected ?? []).length > 0 && (
+                <div className="mt-4 border-t border-line pt-3">
+                  <Details
+                    summary={`${(result.rejected ?? []).length} series looked at and set aside`}
+                  >
+                    <ul className="space-y-1">
+                      {(result.rejected ?? []).map((r) => (
+                        <li key={r.gse}>
+                          <span className="accession font-medium text-accent-ink">{r.gse}</span>{" "}
+                          <span className="text-ink-2">— {r.why}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </Details>
+                </div>
+              )}
+            </Panel>
           )}
 
           <div className="flex flex-wrap items-center gap-3">
@@ -191,7 +191,7 @@ function CandidateCard({
     <label
       className={cn(
         "flex cursor-pointer gap-3 rounded-lg border bg-surface p-4 transition-colors",
-        checked ? "border-ink" : "border-line hover:border-line-2",
+        checked ? "border-accent" : "border-line hover:border-line-2",
       )}
       style={{ boxShadow: "var(--shadow)" }}
     >
@@ -199,22 +199,26 @@ function CandidateCard({
         type="checkbox"
         checked={checked}
         onChange={onToggle}
-        className="mt-1 h-4 w-4 shrink-0"
+        className="mt-1 h-4 w-4 shrink-0 accent-[var(--accent)]"
       />
       <span className="min-w-0">
-        <span className="flex flex-wrap items-baseline gap-2">
-          <span className="accession font-medium">{c.gse}</span>
+        <span className="flex flex-wrap items-center gap-2">
+          <span className="accession font-bold text-accent-ink">{c.gse}</span>
           <span className="num text-[12px] text-ink-3">{c.n_samples} samples</span>
         </span>
         <span className="mt-0.5 block font-medium leading-snug">{c.title}</span>
         <span className="mt-1.5 block text-[13px] text-ink-2">{c.why}</span>
-        <span className="mt-2 grid gap-1 text-[13px]">
+        <span className="mt-3 grid gap-2 text-[13px]">
           <span className="border-l-[3px] border-case pl-2">
-            <span className="text-ink-3">case: </span>
+            <Tag tone="case" className="mr-2">
+              Case
+            </Tag>
             {c.case_hint}
           </span>
           <span className="border-l-[3px] border-control pl-2">
-            <span className="text-ink-3">control: </span>
+            <Tag tone="control" className="mr-2">
+              Control
+            </Tag>
             {c.control_hint}
           </span>
         </span>

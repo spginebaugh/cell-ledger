@@ -13,6 +13,10 @@ const DESCRIPTIONS: Record<string, string> = {
   "enrichment.tsv": "full GSEA table",
   "gene_lookup.csv": "verdicts for the genes asked about",
   "volcano.json.gz": "the table behind the interactive volcano",
+  "figures/volcano.png": "static volcano, as in report.md",
+  "figures/enrichment.png": "pathway bars",
+  "figures/library_sizes.png": "library size per sample",
+  "figures/pca.png": "principal components",
   "comparison.json": "the canonical comparison report",
   "comparison.md": "the comparison, readable",
   "gene_table.tsv": "per-gene pooled estimates with every member's effect",
@@ -23,29 +27,42 @@ const DESCRIPTIONS: Record<string, string> = {
   "pooled_enrichment.tsv": "GSEA on the pooled statistic",
 };
 
+/** File name and a download button on the left, description on the right, hairline between. */
 export function Downloads({ urls }: { urls: Record<string, string> }) {
   const names = Object.keys(urls).sort(
     (a, b) =>
       (a.startsWith("figures/") ? 1 : 0) - (b.startsWith("figures/") ? 1 : 0) || a.localeCompare(b),
   );
   return (
-    <ul className="grid gap-x-6 gap-y-1.5 text-sm sm:grid-cols-2 lg:grid-cols-3">
-      {names.map((n) => (
-        <li key={n} className="flex items-baseline gap-2">
-          <a
-            href={urls[n]}
-            download
-            className="inline-flex items-center gap-1 font-mono text-[13px] underline-offset-2 hover:underline"
-            target="_blank"
-            rel="noreferrer"
+    <div className="grid grid-cols-1 text-[13px] sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
+      {names.map((n, i) => (
+        <div key={n} className="contents">
+          <div
+            className={`flex min-h-9 items-center justify-between gap-3 sm:border-r sm:border-line sm:pr-6 ${i > 0 ? "border-t border-line" : ""}`}
           >
-            <Download size={12} className="shrink-0" />
-            {n}
-          </a>
-          {DESCRIPTIONS[n] && <span className="text-[12px] text-ink-3">{DESCRIPTIONS[n]}</span>}
-        </li>
+            <span className="truncate font-mono text-[12px] text-accent-ink" title={n}>
+              {n}
+            </span>
+            <a
+              href={urls[n]}
+              download
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Download ${n}`}
+              title="Download"
+              className="inline-grid h-7 w-7 shrink-0 place-items-center rounded-md border border-line-2 bg-surface text-ink-2 hover:border-accent hover:text-accent-ink"
+            >
+              <Download size={13} />
+            </a>
+          </div>
+          <div
+            className={`flex min-h-9 items-center pb-2 text-[12px] text-ink-3 sm:min-h-9 sm:border-t-0 sm:pb-0 sm:pl-6 sm:text-[13px] sm:text-ink-2 ${i > 0 ? "sm:border-t sm:border-line" : ""}`}
+          >
+            {DESCRIPTIONS[n] ?? ""}
+          </div>
+        </div>
       ))}
-    </ul>
+    </div>
   );
 }
 

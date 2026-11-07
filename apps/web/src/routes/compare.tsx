@@ -1,16 +1,25 @@
 import { Link } from "@tanstack/react-router";
-import { Loader2 } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
 import { useEffect } from "react";
 import { ConcordanceHeatmap } from "@/components/charts/heatmap";
 import { GeneAcrossCard, RobustGenes } from "@/components/compare/genes";
 import { MemberLedger } from "@/components/compare/ledger";
 import { PathwaysTable } from "@/components/compare/pathways";
-import { Page, TopBar } from "@/components/layout/top-bar";
+import { Footer, Page, TopBar } from "@/components/layout/top-bar";
 import { Downloads, MarkdownFile } from "@/components/run/downloads";
-import { Badge } from "@/components/ui/badge";
-import { Card, Details, ErrorBox, Notice, Section, Skeleton } from "@/components/ui/card";
+import { StatusChip } from "@/components/ui/badge";
+import {
+  ColHead,
+  Details,
+  ErrorBox,
+  Notice,
+  Panel,
+  Pill,
+  Section,
+  Skeleton,
+} from "@/components/ui/card";
 import { errorMessage } from "@/lib/api";
-import { fmtInt, statusLabel, statusTone } from "@/lib/format";
+import { fmtInt } from "@/lib/format";
 import { useComparison } from "@/lib/queries";
 import { compareRoute } from "@/router";
 
@@ -18,7 +27,7 @@ export function ComparePage() {
   const { sessionId, name } = compareRoute.useParams();
   const q = useComparison(sessionId, name);
   useEffect(() => {
-    document.title = `${name.replaceAll("_", " ")} · cell-ledger`;
+    document.title = `${name.replaceAll("_", " ")} · cell ledger`;
   }, [name]);
   const view = q.data;
   const rep = view?.report ?? null;
@@ -29,17 +38,24 @@ export function ComparePage() {
   const lookups = rep?.gene_lookup ?? [];
   const excluded = rep?.excluded ?? [];
   const urls = view?.urls ?? {};
+  const nFiles = Object.keys(urls).length;
   return (
     <>
       <TopBar sessionId={sessionId} />
       <Page>
-        <nav className="text-[13px] text-ink-2">
-          <Link to="/s/$sessionId" params={{ sessionId }} className="hover:underline">
-            Session
+        <div className="flex items-center justify-between gap-2 text-[13px]">
+          <Link
+            to="/s/$sessionId"
+            params={{ sessionId }}
+            className="inline-flex items-center gap-0.5 font-semibold text-ink no-underline hover:text-accent-ink"
+          >
+            <ChevronLeft size={14} strokeWidth={2.5} />
+            Back
           </Link>
-          <span className="mx-1.5 text-ink-3">/</span>
-          comparison
-        </nav>
+          <span className="font-semibold">
+            Comparison <span className="font-mono font-bold text-accent-ink">{name}</span>
+          </span>
+        </div>
         {q.isPending && (
           <div className="mt-4 space-y-4">
             <Skeleton className="h-10 w-2/3" />
@@ -53,30 +69,26 @@ export function ComparePage() {
         )}
         {view && (
           <>
-            <div className="mt-3 flex flex-wrap items-start justify-between gap-4">
-              <div className="max-w-[70ch]">
-                <h1>{view.request.question}</h1>
-                <p className="mt-2 text-ink-2">
-                  <span className="text-case">{view.request.case_label}</span> vs{" "}
-                  <span className="text-control">{view.request.control_label}</span> ·{" "}
-                  {view.request.members.length} datasets ·{" "}
-                  <span className="font-mono text-[14px]">{name}</span>
-                </p>
+            <div className="mt-3">
+              <h1 className="w-full">{view.request.question}</h1>
+              <div className="mt-5 flex flex-wrap items-center justify-between gap-4">
+                <div className="grid min-w-0 justify-items-start gap-2">
+                  <Pill label="Case">{view.request.case_label}</Pill>
+                  <Pill label="Control">{view.request.control_label}</Pill>
+                  <Pill label="Datasets">{view.request.members.length} pooled</Pill>
+                </div>
+                <StatusChip status={view.status} busy={view.status === "running"} />
               </div>
-              <Badge tone={statusTone(view.status)} className="text-[13px]">
-                {view.status === "running" && <Loader2 size={13} className="animate-spin" />}
-                {statusLabel(view.status)}
-              </Badge>
             </div>
 
             {view.status === "running" && (
-              <Card className="mt-6 max-w-xl p-5">
+              <Panel className="mt-6 max-w-xl p-5">
                 <h3>Pooling the runs</h3>
-                <p className="mt-1 text-sm text-ink-2">
+                <p className="mt-1 text-[13px] text-ink-2">
                   Random-effects meta-analysis per gene, concordance, pathways and pooled GSEA. This
                   takes a minute.
                 </p>
-              </Card>
+              </Panel>
             )}
             {view.status === "failed" && (
               <div className="mt-6">
@@ -90,7 +102,7 @@ export function ComparePage() {
               <>
                 <div className="mt-6 space-y-3">
                   {rep.status === "insufficient" && (
-                    <Notice tone="amber" title="Not enough datasets could be pooled for a verdict">
+                    <Notice tone="amber" title="Insufficient: Not Enough Datasets Pooled">
                       <ul>
                         {warnings.map((w) => (
                           <li key={w}>{w}</li>
@@ -99,7 +111,7 @@ export function ComparePage() {
                     </Notice>
                   )}
                   {questions.length > 0 && (
-                    <Notice tone="amber" title="Decide these before trusting the pool">
+                    <Notice tone="amber" title="Decide These Before Trusting the Pool">
                       <ul>
                         {questions.map((x) => (
                           <li key={x}>{x}</li>
@@ -110,21 +122,27 @@ export function ComparePage() {
                   {rep.status === "complete" && rep.genes && (
                     <Notice
                       tone="ok"
-                      title={`${fmtInt(rep.genes.n_robust)} genes replicate across ${memberRows.filter((m) => m.pooled).length} pooled datasets`}
+                      title={`Complete: ${fmtInt(rep.genes.n_robust)} Genes Replicate`}
                     >
-                      {fmtInt(rep.genes.n_robust_up)} higher in case,{" "}
-                      {fmtInt(rep.genes.n_robust_down)} higher in control, out of{" "}
-                      {fmtInt(rep.genes.n_genes_pooled)} genes pooled. A gene is robust when its
-                      pooled padj &lt; {rep.genes.alpha}, its sign agrees in at least{" "}
-                      {Math.round(rep.genes.sign_consistency * 100)}% of datasets and it is
-                      significant in at least {Math.round(rep.genes.min_replication * 100)}%.
+                      <p className="num">
+                        {fmtInt(rep.genes.n_robust_up)} higher in case,{" "}
+                        {fmtInt(rep.genes.n_robust_down)} higher in control, out of{" "}
+                        {fmtInt(rep.genes.n_genes_pooled)} genes pooled across{" "}
+                        {memberRows.filter((m) => m.pooled).length} datasets.
+                      </p>
+                      <p>
+                        A gene is robust when its pooled padj &lt; {rep.genes.alpha}, its sign
+                        agrees in at least {Math.round(rep.genes.sign_consistency * 100)}% of
+                        datasets and it is significant in at least{" "}
+                        {Math.round(rep.genes.min_replication * 100)}%.
+                      </p>
                     </Notice>
                   )}
                   {rep.status === "complete" && warnings.length > 0 && (
                     <Details
                       summary={`${warnings.length} warning${warnings.length === 1 ? "" : "s"}`}
                     >
-                      <ul className="list-disc pl-5 text-sm text-ink-2">
+                      <ul className="list-disc pl-5">
                         {warnings.map((w) => (
                           <li key={w}>{w}</li>
                         ))}
@@ -135,10 +153,10 @@ export function ComparePage() {
 
                 {lookups.length > 0 && (
                   <Section
-                    title="The answer, across datasets"
-                    description="Each gene's estimate per dataset (points, 95% interval) and the pooled estimate (diamond)."
+                    title="The Answer, Across Datasets"
+                    info="Each gene's estimate per dataset (points, 95% interval) and the pooled estimate (diamond)."
                   >
-                    <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                    <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
                       {lookups.map((g) => (
                         <GeneAcrossCard key={g.query} lookup={g} members={members} />
                       ))}
@@ -147,79 +165,116 @@ export function ComparePage() {
                 )}
 
                 <Section
-                  title="The ledger"
-                  description="Which runs were pooled, how they were fitted, and what was held against them."
+                  title="The Ledger"
+                  info="Which runs were pooled, how they were fitted, and what was held against them."
                 >
-                  <MemberLedger members={memberRows} />
-                  {excluded.length > 0 && (
-                    <div className="mt-3">
-                      <Details
-                        summary={`${excluded.length} run${excluded.length === 1 ? "" : "s"} not pooled`}
-                      >
-                        <ul className="space-y-1 text-sm">
-                          {excluded.map((e) => (
-                            <li key={e.label}>
-                              <span className="accession">{e.gse ?? e.label}</span>{" "}
-                              <Badge tone="danger">{e.reason.replaceAll("_", " ")}</Badge>{" "}
-                              <span className="text-ink-2">{e.detail}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </Details>
-                    </div>
-                  )}
+                  <Panel>
+                    <MemberLedger members={memberRows} />
+                    {excluded.length > 0 && (
+                      <div className="mt-4 border-t border-line pt-3">
+                        <Details
+                          summary={`${excluded.length} run${excluded.length === 1 ? "" : "s"} not pooled`}
+                        >
+                          <ul className="space-y-1">
+                            {excluded.map((e) => (
+                              <li key={e.label} className="flex flex-wrap items-center gap-2">
+                                <span className="accession font-medium text-accent-ink">
+                                  {e.gse ?? e.label}
+                                </span>
+                                <span className="tag inline-flex h-[22px] items-center rounded-md border border-danger/40 bg-danger-soft px-2 text-[12px] font-semibold text-danger">
+                                  {e.reason.replaceAll("_", " ")}
+                                </span>
+                                <span className="text-ink-2">{e.detail}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </Details>
+                      </div>
+                    )}
+                  </Panel>
                 </Section>
 
-                <div className="grid gap-6 lg:grid-cols-2">
-                  {rep.concordance && rep.concordance.members.length >= 2 && (
-                    <Section
-                      title="Do the datasets agree?"
-                      description="Spearman correlation of Wald statistics over genes tested in both runs."
-                    >
-                      <Card className="p-4">
-                        <ConcordanceHeatmap concordance={rep.concordance} />
-                      </Card>
-                    </Section>
-                  )}
-                  {rep.pathways && rep.pathways.terms.length > 0 && (
-                    <Section
-                      title="Pathways across datasets"
-                      description={`${rep.pathways.n_consistent} of ${rep.pathways.n_terms} sets point the same way in every member.`}
-                    >
-                      <PathwaysTable pathways={rep.pathways} />
-                    </Section>
-                  )}
-                </div>
+                {((rep.concordance && rep.concordance.members.length >= 2) ||
+                  (rep.pathways && rep.pathways.terms.length > 0)) && (
+                  <Section
+                    title="Agreement and Pathways"
+                    info="Spearman correlation of Wald statistics over genes tested in both runs, and the hallmark sets that point the same way in every member."
+                  >
+                    <Panel>
+                      <div className="grid gap-6 lg:grid-cols-2 lg:gap-x-8">
+                        {rep.concordance && rep.concordance.members.length >= 2 && (
+                          <div className="min-w-0">
+                            <ColHead label="Do the datasets agree?" />
+                            <ConcordanceHeatmap concordance={rep.concordance} />
+                          </div>
+                        )}
+                        {rep.pathways && rep.pathways.terms.length > 0 && (
+                          <div className="min-w-0 border-t border-line pt-4 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
+                            <ColHead
+                              label="Pathways across datasets"
+                              detail={`${rep.pathways.n_consistent} of ${rep.pathways.n_terms} sets agree in every member`}
+                            />
+                            <PathwaysTable pathways={rep.pathways} />
+                          </div>
+                        )}
+                      </div>
+                    </Panel>
+                  </Section>
+                )}
 
                 {rep.genes && (rep.genes.top_up.length > 0 || rep.genes.top_down.length > 0) && (
                   <Section
-                    title="Robust genes"
-                    description={`Ranked by pooled z among genes with |pooled log2FC| ≥ ${rep.genes.lfc_threshold}.`}
+                    title="Robust Genes"
+                    info={`Ranked by pooled z among genes with |pooled log2FC| ≥ ${rep.genes.lfc_threshold}.`}
                   >
-                    <div className="grid gap-6 lg:grid-cols-2">
-                      <RobustGenes title="Higher in case" rows={rep.genes.top_up} />
-                      <RobustGenes title="Higher in control" rows={rep.genes.top_down} />
-                    </div>
+                    <Panel>
+                      <div className="grid gap-6 lg:grid-cols-2 lg:gap-x-8">
+                        <div className="min-w-0">
+                          <RobustGenes title="Higher in case" tone="case" rows={rep.genes.top_up} />
+                        </div>
+                        <div className="min-w-0 border-t border-line pt-4 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
+                          <RobustGenes
+                            title="Higher in control"
+                            tone="control"
+                            rows={rep.genes.top_down}
+                          />
+                        </div>
+                      </div>
+                    </Panel>
                   </Section>
                 )}
               </>
             )}
 
-            {Object.keys(urls).length > 0 && (
+            {nFiles > 0 && (
               <Section
                 title="Files"
-                description="Everything the comparison wrote. Links are valid for a day."
+                description={
+                  <>
+                    <span className="num">
+                      {nFiles} file{nFiles === 1 ? "" : "s"}
+                    </span>
+                    <span className="mx-1 text-ink-3">|</span>
+                    <em className="text-ink-3">Links valid for one day</em>
+                  </>
+                }
               >
-                <Downloads urls={urls} />
-                {urls["comparison.md"] && (
-                  <div className="mt-4">
-                    <MarkdownFile url={urls["comparison.md"]} summary="Read comparison.md inline" />
-                  </div>
-                )}
+                <Panel>
+                  <Downloads urls={urls} />
+                  {urls["comparison.md"] && (
+                    <div className="mt-4 border-t border-line pt-3">
+                      <MarkdownFile
+                        url={urls["comparison.md"]}
+                        summary="Read comparison.md inline"
+                      />
+                    </div>
+                  )}
+                </Panel>
               </Section>
             )}
           </>
         )}
+        <Footer />
       </Page>
     </>
   );

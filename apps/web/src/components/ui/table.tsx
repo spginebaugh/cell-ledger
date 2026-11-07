@@ -1,10 +1,11 @@
 import type { HTMLAttributes, TdHTMLAttributes, ThHTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
 
+/** Hairline rows, quiet header; wrap it in a Panel. */
 export function Table({ className, ...props }: HTMLAttributes<HTMLTableElement>) {
   return (
-    <div className="w-full overflow-x-auto rounded-lg border border-line bg-surface">
-      <table className={cn("w-full border-collapse text-sm", className)} {...props} />
+    <div className="w-full overflow-x-auto">
+      <table className={cn("w-full border-collapse text-[13px]", className)} {...props} />
     </div>
   );
 }
@@ -12,7 +13,7 @@ export function Th({ className, ...props }: ThHTMLAttributes<HTMLTableCellElemen
   return (
     <th
       className={cn(
-        "sticky top-0 border-b border-line bg-surface px-3 py-2 text-left text-[12px] font-medium text-ink-2 whitespace-nowrap",
+        "whitespace-nowrap border-b border-line px-3 pb-2 pt-0 text-left text-[12px] font-normal text-ink-3 first:pl-0 last:pr-0",
         className,
       )}
       {...props}
@@ -20,5 +21,10 @@ export function Th({ className, ...props }: ThHTMLAttributes<HTMLTableCellElemen
   );
 }
 export function Td({ className, ...props }: TdHTMLAttributes<HTMLTableCellElement>) {
-  return <td className={cn("border-b border-line px-3 py-1.5 align-top", className)} {...props} />;
+  return (
+    <td
+      className={cn("border-b border-line px-3 py-2 align-top first:pl-0 last:pr-0", className)}
+      {...props}
+    />
+  );
 }

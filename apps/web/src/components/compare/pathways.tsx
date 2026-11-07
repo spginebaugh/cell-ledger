@@ -1,4 +1,5 @@
 import type { PathwaySynthesis } from "@/api/generated/types.gen";
+import { termLabel } from "@/components/charts/enrichment-bars";
 import { Table, Td, Th } from "@/components/ui/table";
 import { fmtNum } from "@/lib/format";
 import { cn } from "@/lib/utils";
@@ -12,7 +13,7 @@ export function PathwaysTable({ pathways, n = 20 }: { pathways: PathwaySynthesis
     <Table>
       <thead>
         <tr>
-          <Th>Pathway</Th>
+          <Th>Set</Th>
           <Th className="text-right">mean NES</Th>
           <Th className="text-right">consistency</Th>
           <Th className="text-right">sig. FDR</Th>
@@ -26,12 +27,7 @@ export function PathwaysTable({ pathways, n = 20 }: { pathways: PathwaySynthesis
       <tbody>
         {terms.map((t) => (
           <tr key={t.term}>
-            <Td className="text-[13px]">
-              {t.term
-                .replace(/^HALLMARK_/, "")
-                .replaceAll("_", " ")
-                .toLowerCase()}
-            </Td>
+            <Td className="text-ink-2">{termLabel(t.term)}</Td>
             <Td
               className={cn(
                 "num text-right font-medium",
