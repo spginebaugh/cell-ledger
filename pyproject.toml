@@ -43,6 +43,7 @@ testpaths = ["packages/core/tests", "apps/api/tests"]
 addopts = "-q --import-mode=importlib"
 asyncio_mode = "auto"
 asyncio_default_fixture_loop_scope = "function"
+markers = ["slow: needs the local GEO downloads and takes tens of seconds"]
 
 # --------------------------------------------------------------- pyright
 [tool.pyright]

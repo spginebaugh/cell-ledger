@@ -11,7 +11,12 @@ dependencies = [
   "anndata>=0.11",
   "scanpy>=1.11",
   "pydeseq2>=0.5",
+  "gseapy>=1.1",
+  "matplotlib>=3.9",
 ]
+
+[project.scripts]
+cell-ledger = "cell_ledger.cli:main"
 
 [build-system]
 requires = ["uv_build>=0.9,<0.10"]

@@ -71,6 +71,18 @@ depends = ["test:py", "test:web"]
 description = "Playwright end-to-end tests (boots api and web itself)"
 run = "bun run --cwd apps/web e2e"
 
+# ----------------------------------------------------------- analysis
+
+[tasks."data:fetch"]
+description = "Download the ten example GEO datasets into data/geo (gitignored)"
+run = "uv run python scripts/fetch_geo_examples.py"
+
+[tasks.analyze]
+description = "Run the pipeline: mise run analyze -- GSE82227 [--genes CXCL9] | mise run analyze -- --all"
+run = """
+if [ "$1" = "--all" ]; then shift; uv run cell-ledger run-all "$@"; else uv run cell-ledger run "$@"; fi
+"""
+
 # ------------------------------------------------------------ codegen
 
 [tasks."gen:api"]

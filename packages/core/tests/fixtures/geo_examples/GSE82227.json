@@ -1,0 +1,1426 @@
+{
+ "samplesheet": {
+  "gse": "GSE82227",
+  "assay": "bulk",
+  "title": "TLR2/1 ligand and IFN-g inducible genes in human monocyte-derived macrophages (MDMs)",
+  "samples": [
+   {
+    "gsm": "GSM2186787",
+    "title": "SR094-01",
+    "source_name": "Donor 1, Media, 2hrs",
+    "group": "control",
+    "condition": "media alone",
+    "treatment": "media alone",
+    "dose": null,
+    "time_point": "2 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 1",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: media alone"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "2 hours",
+     "stimulation": "media alone"
+    }
+   },
+   {
+    "gsm": "GSM2186788",
+    "title": "SR094-02",
+    "source_name": "Donor 1, TLR2/1L, 2hrs",
+    "group": "other",
+    "condition": "TLR2/1 ligand",
+    "treatment": "TLR2/1 ligand",
+    "dose": null,
+    "time_point": "2 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 1",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: TLR2/1 ligand"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "2 hours",
+     "stimulation": "TLR2/1 ligand"
+    }
+   },
+   {
+    "gsm": "GSM2186789",
+    "title": "SR094-03",
+    "source_name": "Donor 1, IFN-g, 2hrs",
+    "group": "case",
+    "condition": "interferon gamma",
+    "treatment": "interferon gamma",
+    "dose": null,
+    "time_point": "2 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 1",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: interferon gamma"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "2 hours",
+     "stimulation": "interferon gamma"
+    }
+   },
+   {
+    "gsm": "GSM2186790",
+    "title": "SR094-05",
+    "source_name": "Donor 1, Media, 6hrs",
+    "group": "control",
+    "condition": "media alone",
+    "treatment": "media alone",
+    "dose": null,
+    "time_point": "6 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 1",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: media alone"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "6 hours",
+     "stimulation": "media alone"
+    }
+   },
+   {
+    "gsm": "GSM2186791",
+    "title": "SR094-06",
+    "source_name": "Donor 1, TLR2/1L, 6hrs",
+    "group": "other",
+    "condition": "TLR2/1 ligand",
+    "treatment": "TLR2/1 ligand",
+    "dose": null,
+    "time_point": "6 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 1",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: TLR2/1 ligand"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "6 hours",
+     "stimulation": "TLR2/1 ligand"
+    }
+   },
+   {
+    "gsm": "GSM2186792",
+    "title": "SR094-07",
+    "source_name": "Donor 1, IFN-g, 6hrs",
+    "group": "case",
+    "condition": "interferon gamma",
+    "treatment": "interferon gamma",
+    "dose": null,
+    "time_point": "6 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 1",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: interferon gamma"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "6 hours",
+     "stimulation": "interferon gamma"
+    }
+   },
+   {
+    "gsm": "GSM2186793",
+    "title": "SR094-09",
+    "source_name": "Donor 1, Media, 24hrs",
+    "group": "control",
+    "condition": "media alone",
+    "treatment": "media alone",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 1",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: media alone"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "24 hours",
+     "stimulation": "media alone"
+    }
+   },
+   {
+    "gsm": "GSM2186794",
+    "title": "SR094-10",
+    "source_name": "Donor 1, TLR2/1L, 24hrs",
+    "group": "other",
+    "condition": "TLR2/1 ligand",
+    "treatment": "TLR2/1 ligand",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 1",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: TLR2/1 ligand"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "24 hours",
+     "stimulation": "TLR2/1 ligand"
+    }
+   },
+   {
+    "gsm": "GSM2186795",
+    "title": "SR094-11",
+    "source_name": "Donor 1, IFN-g, 24hrs",
+    "group": "case",
+    "condition": "interferon gamma",
+    "treatment": "interferon gamma",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 1",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: interferon gamma"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "24 hours",
+     "stimulation": "interferon gamma"
+    }
+   },
+   {
+    "gsm": "GSM2186796",
+    "title": "SR095-01",
+    "source_name": "Donor 2, Media, 2hrs",
+    "group": "control",
+    "condition": "media alone",
+    "treatment": "media alone",
+    "dose": null,
+    "time_point": "2 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 2",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: media alone"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "2 hours",
+     "stimulation": "media alone"
+    }
+   },
+   {
+    "gsm": "GSM2186797",
+    "title": "SR095-02",
+    "source_name": "Donor 2, TLR2/1L, 2hrs",
+    "group": "other",
+    "condition": "TLR2/1 ligand",
+    "treatment": "TLR2/1 ligand",
+    "dose": null,
+    "time_point": "2 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 2",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: TLR2/1 ligand"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "2 hours",
+     "stimulation": "TLR2/1 ligand"
+    }
+   },
+   {
+    "gsm": "GSM2186798",
+    "title": "SR095-03",
+    "source_name": "Donor 2, IFN-g, 2hrs",
+    "group": "case",
+    "condition": "interferon gamma",
+    "treatment": "interferon gamma",
+    "dose": null,
+    "time_point": "2 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 2",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: interferon gamma"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "2 hours",
+     "stimulation": "interferon gamma"
+    }
+   },
+   {
+    "gsm": "GSM2186799",
+    "title": "SR095-05",
+    "source_name": "Donor 2, Media, 6hrs",
+    "group": "control",
+    "condition": "media alone",
+    "treatment": "media alone",
+    "dose": null,
+    "time_point": "6 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 2",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: media alone"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "6 hours",
+     "stimulation": "media alone"
+    }
+   },
+   {
+    "gsm": "GSM2186800",
+    "title": "SR095-06",
+    "source_name": "Donor 2, TLR2/1L, 6hrs",
+    "group": "other",
+    "condition": "TLR2/1 ligand",
+    "treatment": "TLR2/1 ligand",
+    "dose": null,
+    "time_point": "6 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 2",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: TLR2/1 ligand"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "6 hours",
+     "stimulation": "TLR2/1 ligand"
+    }
+   },
+   {
+    "gsm": "GSM2186801",
+    "title": "SR095-07",
+    "source_name": "Donor 2, IFN-g, 6hrs",
+    "group": "case",
+    "condition": "interferon gamma",
+    "treatment": "interferon gamma",
+    "dose": null,
+    "time_point": "6 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 2",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: interferon gamma"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "6 hours",
+     "stimulation": "interferon gamma"
+    }
+   },
+   {
+    "gsm": "GSM2186802",
+    "title": "SR095-09",
+    "source_name": "Donor 2, Media, 24hrs",
+    "group": "control",
+    "condition": "media alone",
+    "treatment": "media alone",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 2",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: media alone"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "24 hours",
+     "stimulation": "media alone"
+    }
+   },
+   {
+    "gsm": "GSM2186803",
+    "title": "SR095-10",
+    "source_name": "Donor 2, TLR2/1L, 24hrs",
+    "group": "other",
+    "condition": "TLR2/1 ligand",
+    "treatment": "TLR2/1 ligand",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 2",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: TLR2/1 ligand"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "24 hours",
+     "stimulation": "TLR2/1 ligand"
+    }
+   },
+   {
+    "gsm": "GSM2186804",
+    "title": "SR095-11",
+    "source_name": "Donor 2, IFN-g, 24hrs",
+    "group": "case",
+    "condition": "interferon gamma",
+    "treatment": "interferon gamma",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 2",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: interferon gamma"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "24 hours",
+     "stimulation": "interferon gamma"
+    }
+   },
+   {
+    "gsm": "GSM2186805",
+    "title": "SR097-01",
+    "source_name": "Donor 3, Media, 2hrs",
+    "group": "control",
+    "condition": "media alone",
+    "treatment": "media alone",
+    "dose": null,
+    "time_point": "2 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 3",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: media alone"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "2 hours",
+     "stimulation": "media alone"
+    }
+   },
+   {
+    "gsm": "GSM2186806",
+    "title": "SR097-02",
+    "source_name": "Donor 3, TLR2/1L, 2hrs",
+    "group": "other",
+    "condition": "TLR2/1 ligand",
+    "treatment": "TLR2/1 ligand",
+    "dose": null,
+    "time_point": "2 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 3",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: TLR2/1 ligand"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "2 hours",
+     "stimulation": "TLR2/1 ligand"
+    }
+   },
+   {
+    "gsm": "GSM2186807",
+    "title": "SR097-03",
+    "source_name": "Donor 3, IFN-g, 2hrs",
+    "group": "case",
+    "condition": "interferon gamma",
+    "treatment": "interferon gamma",
+    "dose": null,
+    "time_point": "2 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 3",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: interferon gamma"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "2 hours",
+     "stimulation": "interferon gamma"
+    }
+   },
+   {
+    "gsm": "GSM2186808",
+    "title": "SR097-05",
+    "source_name": "Donor 3, Media, 6hrs",
+    "group": "control",
+    "condition": "media alone",
+    "treatment": "media alone",
+    "dose": null,
+    "time_point": "6 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 3",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: media alone"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "6 hours",
+     "stimulation": "media alone"
+    }
+   },
+   {
+    "gsm": "GSM2186809",
+    "title": "SR097-06",
+    "source_name": "Donor 3, TLR2/1L, 6hrs",
+    "group": "other",
+    "condition": "TLR2/1 ligand",
+    "treatment": "TLR2/1 ligand",
+    "dose": null,
+    "time_point": "6 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 3",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: TLR2/1 ligand"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "6 hours",
+     "stimulation": "TLR2/1 ligand"
+    }
+   },
+   {
+    "gsm": "GSM2186810",
+    "title": "SR097-07",
+    "source_name": "Donor 3, IFN-g, 6hrs",
+    "group": "case",
+    "condition": "interferon gamma",
+    "treatment": "interferon gamma",
+    "dose": null,
+    "time_point": "6 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 3",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: interferon gamma"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "6 hours",
+     "stimulation": "interferon gamma"
+    }
+   },
+   {
+    "gsm": "GSM2186811",
+    "title": "SR097-09",
+    "source_name": "Donor 3, Media, 24hrs",
+    "group": "control",
+    "condition": "media alone",
+    "treatment": "media alone",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 3",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: media alone"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "24 hours",
+     "stimulation": "media alone"
+    }
+   },
+   {
+    "gsm": "GSM2186812",
+    "title": "SR097-10",
+    "source_name": "Donor 3, TLR2/1L, 24hrs",
+    "group": "other",
+    "condition": "TLR2/1 ligand",
+    "treatment": "TLR2/1 ligand",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 3",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: TLR2/1 ligand"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "24 hours",
+     "stimulation": "TLR2/1 ligand"
+    }
+   },
+   {
+    "gsm": "GSM2186813",
+    "title": "SR097-11",
+    "source_name": "Donor 3, IFN-g, 24hrs",
+    "group": "case",
+    "condition": "interferon gamma",
+    "treatment": "interferon gamma",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 3",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: interferon gamma"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "24 hours",
+     "stimulation": "interferon gamma"
+    }
+   },
+   {
+    "gsm": "GSM2186814",
+    "title": "SR100-01",
+    "source_name": "Donor 4, Media, 2hrs",
+    "group": "control",
+    "condition": "media alone",
+    "treatment": "media alone",
+    "dose": null,
+    "time_point": "2 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 4",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: media alone"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "2 hours",
+     "stimulation": "media alone"
+    }
+   },
+   {
+    "gsm": "GSM2186815",
+    "title": "SR100-02",
+    "source_name": "Donor 4, TLR2/1L, 2hrs",
+    "group": "other",
+    "condition": "TLR2/1 ligand",
+    "treatment": "TLR2/1 ligand",
+    "dose": null,
+    "time_point": "2 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 4",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: TLR2/1 ligand"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "2 hours",
+     "stimulation": "TLR2/1 ligand"
+    }
+   },
+   {
+    "gsm": "GSM2186816",
+    "title": "SR100-03",
+    "source_name": "Donor 4, IFN-g, 2hrs",
+    "group": "case",
+    "condition": "interferon gamma",
+    "treatment": "interferon gamma",
+    "dose": null,
+    "time_point": "2 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 4",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: interferon gamma"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "2 hours",
+     "stimulation": "interferon gamma"
+    }
+   },
+   {
+    "gsm": "GSM2186817",
+    "title": "SR100-05",
+    "source_name": "Donor 4, Media, 6hrs",
+    "group": "control",
+    "condition": "media alone",
+    "treatment": "media alone",
+    "dose": null,
+    "time_point": "6 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 4",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: media alone"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "6 hours",
+     "stimulation": "media alone"
+    }
+   },
+   {
+    "gsm": "GSM2186818",
+    "title": "SR100-06",
+    "source_name": "Donor 4, TLR2/1L, 6hrs",
+    "group": "other",
+    "condition": "TLR2/1 ligand",
+    "treatment": "TLR2/1 ligand",
+    "dose": null,
+    "time_point": "6 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 4",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: TLR2/1 ligand"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "6 hours",
+     "stimulation": "TLR2/1 ligand"
+    }
+   },
+   {
+    "gsm": "GSM2186819",
+    "title": "SR100-07",
+    "source_name": "Donor 4, IFN-g, 6hrs",
+    "group": "case",
+    "condition": "interferon gamma",
+    "treatment": "interferon gamma",
+    "dose": null,
+    "time_point": "6 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 4",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: interferon gamma"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "6 hours",
+     "stimulation": "interferon gamma"
+    }
+   },
+   {
+    "gsm": "GSM2186820",
+    "title": "SR100-09",
+    "source_name": "Donor 4, Media, 24hrs",
+    "group": "control",
+    "condition": "media alone",
+    "treatment": "media alone",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 4",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: media alone"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "24 hours",
+     "stimulation": "media alone"
+    }
+   },
+   {
+    "gsm": "GSM2186821",
+    "title": "SR100-10",
+    "source_name": "Donor 4, TLR2/1L, 24hrs",
+    "group": "other",
+    "condition": "TLR2/1 ligand",
+    "treatment": "TLR2/1 ligand",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 4",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: TLR2/1 ligand"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "24 hours",
+     "stimulation": "TLR2/1 ligand"
+    }
+   },
+   {
+    "gsm": "GSM2186822",
+    "title": "SR100-11",
+    "source_name": "Donor 4, IFN-g, 24hrs",
+    "group": "case",
+    "condition": "interferon gamma",
+    "treatment": "interferon gamma",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 4",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: interferon gamma"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "24 hours",
+     "stimulation": "interferon gamma"
+    }
+   },
+   {
+    "gsm": "GSM2186823",
+    "title": "SR106-01",
+    "source_name": "Donor 5, Media, 2hrs",
+    "group": "control",
+    "condition": "media alone",
+    "treatment": "media alone",
+    "dose": null,
+    "time_point": "2 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 5",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: media alone"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "2 hours",
+     "stimulation": "media alone"
+    }
+   },
+   {
+    "gsm": "GSM2186824",
+    "title": "SR106-02",
+    "source_name": "Donor 5, TLR2/1L, 2hrs",
+    "group": "other",
+    "condition": "TLR2/1 ligand",
+    "treatment": "TLR2/1 ligand",
+    "dose": null,
+    "time_point": "2 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 5",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: TLR2/1 ligand"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "2 hours",
+     "stimulation": "TLR2/1 ligand"
+    }
+   },
+   {
+    "gsm": "GSM2186825",
+    "title": "SR106-03",
+    "source_name": "Donor 5, IFN-g, 2hrs",
+    "group": "case",
+    "condition": "interferon gamma",
+    "treatment": "interferon gamma",
+    "dose": null,
+    "time_point": "2 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 5",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: interferon gamma"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "2 hours",
+     "stimulation": "interferon gamma"
+    }
+   },
+   {
+    "gsm": "GSM2186826",
+    "title": "SR106-05",
+    "source_name": "Donor 5, Media, 6hrs",
+    "group": "control",
+    "condition": "media alone",
+    "treatment": "media alone",
+    "dose": null,
+    "time_point": "6 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 5",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: media alone"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "6 hours",
+     "stimulation": "media alone"
+    }
+   },
+   {
+    "gsm": "GSM2186827",
+    "title": "SR106-06",
+    "source_name": "Donor 5, TLR2/1L, 6hrs",
+    "group": "other",
+    "condition": "TLR2/1 ligand",
+    "treatment": "TLR2/1 ligand",
+    "dose": null,
+    "time_point": "6 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 5",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: TLR2/1 ligand"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "6 hours",
+     "stimulation": "TLR2/1 ligand"
+    }
+   },
+   {
+    "gsm": "GSM2186828",
+    "title": "SR106-07",
+    "source_name": "Donor 5, IFN-g, 6hrs",
+    "group": "case",
+    "condition": "interferon gamma",
+    "treatment": "interferon gamma",
+    "dose": null,
+    "time_point": "6 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 5",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: interferon gamma"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "6 hours",
+     "stimulation": "interferon gamma"
+    }
+   },
+   {
+    "gsm": "GSM2186829",
+    "title": "SR106-09",
+    "source_name": "Donor 5, Media, 24hrs",
+    "group": "control",
+    "condition": "media alone",
+    "treatment": "media alone",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 5",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: media alone"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "24 hours",
+     "stimulation": "media alone"
+    }
+   },
+   {
+    "gsm": "GSM2186830",
+    "title": "SR106-10",
+    "source_name": "Donor 5, TLR2/1L, 24hrs",
+    "group": "other",
+    "condition": "TLR2/1 ligand",
+    "treatment": "TLR2/1 ligand",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 5",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: TLR2/1 ligand"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "24 hours",
+     "stimulation": "TLR2/1 ligand"
+    }
+   },
+   {
+    "gsm": "GSM2186831",
+    "title": "SR106-11",
+    "source_name": "Donor 5, IFN-g, 24hrs",
+    "group": "case",
+    "condition": "interferon gamma",
+    "treatment": "interferon gamma",
+    "dose": null,
+    "time_point": "24 hours",
+    "tissue": null,
+    "cell_type": "monocyte-dervied macrophages",
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": "Donor 5",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "stimulation: interferon gamma"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "cell type": "monocyte-dervied macrophages",
+     "stimulation length": "24 hours",
+     "stimulation": "interferon gamma"
+    }
+   }
+  ]
+ },
+ "contrasts": [
+  {
+   "gse": "GSE82227",
+   "name": "ifng_vs_media_24h",
+   "case_label": "IFN-gamma 24 h",
+   "control_label": "media alone 24 h",
+   "case_gsms": [
+    "GSM2186795",
+    "GSM2186804",
+    "GSM2186813",
+    "GSM2186822",
+    "GSM2186831"
+   ],
+   "control_gsms": [
+    "GSM2186793",
+    "GSM2186802",
+    "GSM2186811",
+    "GSM2186820",
+    "GSM2186829"
+   ],
+   "blocking": "donor",
+   "restricted_to": {
+    "time_point": "24 hours"
+   },
+   "confidence": 1.0,
+   "status": "confirmed",
+   "rationale": "Expect CXCL9/10/11, IDO1, GBP1 up. Donors paired across arms."
+  }
+ ],
+ "markers": [
+  {
+   "symbol": "CXCL9",
+   "direction": "up"
+  },
+  {
+   "symbol": "CXCL10",
+   "direction": "up"
+  },
+  {
+   "symbol": "CXCL11",
+   "direction": "up"
+  },
+  {
+   "symbol": "IDO1",
+   "direction": "up"
+  },
+  {
+   "symbol": "GBP1",
+   "direction": "up"
+  },
+  {
+   "symbol": "GBP5",
+   "direction": "up"
+  },
+  {
+   "symbol": "STAT1",
+   "direction": "up"
+  },
+  {
+   "symbol": "IRF1",
+   "direction": "up"
+  },
+  {
+   "symbol": "CIITA",
+   "direction": "up"
+  }
+ ]
+}

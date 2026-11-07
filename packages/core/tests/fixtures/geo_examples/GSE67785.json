@@ -1,0 +1,928 @@
+{
+ "samplesheet": {
+  "gse": "GSE67785",
+  "assay": "bulk",
+  "title": "Proteogenomic analysis of psoriasis reveals discordant and concordant changes in mRNA and protein abundance",
+  "samples": [
+   {
+    "gsm": "GSM1656052",
+    "title": "Patient 1 (PP, M, 47)",
+    "source_name": "skin",
+    "group": "case",
+    "condition": "PP",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": null,
+    "donor": "1",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "group: PP"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "group": "PP",
+     "patient": "1",
+     "gender": "male"
+    }
+   },
+   {
+    "gsm": "GSM1656053",
+    "title": "Patient 1 (PN, M, 47)",
+    "source_name": "skin",
+    "group": "control",
+    "condition": "PN",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": null,
+    "donor": "1",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "group: PN"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "group": "PN",
+     "patient": "1",
+     "gender": "male"
+    }
+   },
+   {
+    "gsm": "GSM1656054",
+    "title": "Patient 2 (PP, M, 44)",
+    "source_name": "skin",
+    "group": "case",
+    "condition": "PP",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": null,
+    "donor": "2",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "group: PP"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "group": "PP",
+     "patient": "2",
+     "gender": "male"
+    }
+   },
+   {
+    "gsm": "GSM1656055",
+    "title": "Patient 2 (PN, M, 44)",
+    "source_name": "skin",
+    "group": "control",
+    "condition": "PN",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": null,
+    "donor": "2",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "group: PN"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "group": "PN",
+     "patient": "2",
+     "gender": "male"
+    }
+   },
+   {
+    "gsm": "GSM1656056",
+    "title": "Patient 3 (PP, M, 53)",
+    "source_name": "skin",
+    "group": "case",
+    "condition": "PP",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": null,
+    "donor": "3",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "group: PP"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "group": "PP",
+     "patient": "3",
+     "gender": "male"
+    }
+   },
+   {
+    "gsm": "GSM1656057",
+    "title": "Patient 3 (PN, M, 53)",
+    "source_name": "skin",
+    "group": "control",
+    "condition": "PN",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": null,
+    "donor": "3",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "group: PN"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "group": "PN",
+     "patient": "3",
+     "gender": "male"
+    }
+   },
+   {
+    "gsm": "GSM1656058",
+    "title": "Patient 4 (PP, F, 42)",
+    "source_name": "skin",
+    "group": "case",
+    "condition": "PP",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": null,
+    "donor": "4",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "group: PP"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "group": "PP",
+     "patient": "4",
+     "gender": "female"
+    }
+   },
+   {
+    "gsm": "GSM1656059",
+    "title": "Patient 4 (PN, F, 42)",
+    "source_name": "skin",
+    "group": "control",
+    "condition": "PN",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": null,
+    "donor": "4",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "group: PN"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "group": "PN",
+     "patient": "4",
+     "gender": "female"
+    }
+   },
+   {
+    "gsm": "GSM1656060",
+    "title": "Patient 5 (PP, M, 60)",
+    "source_name": "skin",
+    "group": "case",
+    "condition": "PP",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": null,
+    "donor": "5",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "group: PP"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "group": "PP",
+     "patient": "5",
+     "gender": "male"
+    }
+   },
+   {
+    "gsm": "GSM1656061",
+    "title": "Patient 5 (PN, M, 60)",
+    "source_name": "skin",
+    "group": "control",
+    "condition": "PN",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": null,
+    "donor": "5",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "group: PN"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "group": "PN",
+     "patient": "5",
+     "gender": "male"
+    }
+   },
+   {
+    "gsm": "GSM1656062",
+    "title": "Patient 6 (PP, F, 56)",
+    "source_name": "skin",
+    "group": "case",
+    "condition": "PP",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": null,
+    "donor": "6",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "group: PP"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "group": "PP",
+     "patient": "6",
+     "gender": "female"
+    }
+   },
+   {
+    "gsm": "GSM1656063",
+    "title": "Patient 6 (PN, F, 56)",
+    "source_name": "skin",
+    "group": "control",
+    "condition": "PN",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": null,
+    "donor": "6",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "group: PN"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "group": "PN",
+     "patient": "6",
+     "gender": "female"
+    }
+   },
+   {
+    "gsm": "GSM1656064",
+    "title": "Patient 7 (PP, M, 62)",
+    "source_name": "skin",
+    "group": "case",
+    "condition": "PP",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": null,
+    "donor": "7",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "group: PP"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "group": "PP",
+     "patient": "7",
+     "gender": "male"
+    }
+   },
+   {
+    "gsm": "GSM1656065",
+    "title": "Patient 7 (PN, M, 62)",
+    "source_name": "skin",
+    "group": "control",
+    "condition": "PN",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": null,
+    "donor": "7",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "group: PN"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "group": "PN",
+     "patient": "7",
+     "gender": "male"
+    }
+   },
+   {
+    "gsm": "GSM1656066",
+    "title": "Patient 8 (PP, M, 52)",
+    "source_name": "skin",
+    "group": "case",
+    "condition": "PP",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": null,
+    "donor": "8",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "group: PP"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "group": "PP",
+     "patient": "8",
+     "gender": "male"
+    }
+   },
+   {
+    "gsm": "GSM1656067",
+    "title": "Patient 8 (PN, M, 52)",
+    "source_name": "skin",
+    "group": "control",
+    "condition": "PN",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": null,
+    "donor": "8",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "group: PN"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "group": "PN",
+     "patient": "8",
+     "gender": "male"
+    }
+   },
+   {
+    "gsm": "GSM1656068",
+    "title": "Patient 9 (PP, M, 71)",
+    "source_name": "skin",
+    "group": "case",
+    "condition": "PP",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": null,
+    "donor": "9",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "group: PP"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "group": "PP",
+     "patient": "9",
+     "gender": "male"
+    }
+   },
+   {
+    "gsm": "GSM1656069",
+    "title": "Patient 9 (PN, M, 71)",
+    "source_name": "skin",
+    "group": "control",
+    "condition": "PN",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": null,
+    "donor": "9",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "group: PN"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "group": "PN",
+     "patient": "9",
+     "gender": "male"
+    }
+   },
+   {
+    "gsm": "GSM1656070",
+    "title": "Patient 10 (PP, M, 43)",
+    "source_name": "skin",
+    "group": "case",
+    "condition": "PP",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": null,
+    "donor": "10",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "group: PP"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "group": "PP",
+     "patient": "10",
+     "gender": "male"
+    }
+   },
+   {
+    "gsm": "GSM1656071",
+    "title": "Patient 10 (PN, M, 43)",
+    "source_name": "skin",
+    "group": "control",
+    "condition": "PN",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "male",
+    "age": null,
+    "donor": "10",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "group: PN"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "group": "PN",
+     "patient": "10",
+     "gender": "male"
+    }
+   },
+   {
+    "gsm": "GSM1656072",
+    "title": "Patient 11 (PP, F, 57)",
+    "source_name": "skin",
+    "group": "case",
+    "condition": "PP",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": null,
+    "donor": "11",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "group: PP"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "group": "PP",
+     "patient": "11",
+     "gender": "female"
+    }
+   },
+   {
+    "gsm": "GSM1656073",
+    "title": "Patient 11 (PN, F, 57)",
+    "source_name": "skin",
+    "group": "control",
+    "condition": "PN",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": null,
+    "donor": "11",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "group: PN"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "group": "PN",
+     "patient": "11",
+     "gender": "female"
+    }
+   },
+   {
+    "gsm": "GSM1656074",
+    "title": "Patient 12 (PP, F, 35)",
+    "source_name": "skin",
+    "group": "case",
+    "condition": "PP",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": null,
+    "donor": "12",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "group: PP"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "group": "PP",
+     "patient": "12",
+     "gender": "female"
+    }
+   },
+   {
+    "gsm": "GSM1656075",
+    "title": "Patient 12 (PN, F, 35)",
+    "source_name": "skin",
+    "group": "control",
+    "condition": "PN",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": null,
+    "donor": "12",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "group: PN"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "group": "PN",
+     "patient": "12",
+     "gender": "female"
+    }
+   },
+   {
+    "gsm": "GSM1656076",
+    "title": "Patient 13 (PP, F, 42)",
+    "source_name": "skin",
+    "group": "case",
+    "condition": "PP",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": null,
+    "donor": "13",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "group: PP"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "group": "PP",
+     "patient": "13",
+     "gender": "female"
+    }
+   },
+   {
+    "gsm": "GSM1656077",
+    "title": "Patient 13 (PN, F, 42)",
+    "source_name": "skin",
+    "group": "control",
+    "condition": "PN",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": null,
+    "donor": "13",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "group: PN"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "group": "PN",
+     "patient": "13",
+     "gender": "female"
+    }
+   },
+   {
+    "gsm": "GSM1656078",
+    "title": "Patient 14 (PP, F, 24)",
+    "source_name": "skin",
+    "group": "case",
+    "condition": "PP",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": null,
+    "donor": "14",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "group: PP"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "group": "PP",
+     "patient": "14",
+     "gender": "female"
+    }
+   },
+   {
+    "gsm": "GSM1656079",
+    "title": "Patient 14 (PN, F, 24)",
+    "source_name": "skin",
+    "group": "control",
+    "condition": "PN",
+    "treatment": null,
+    "dose": null,
+    "time_point": null,
+    "tissue": "skin",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": "female",
+    "age": null,
+    "donor": "14",
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "group: PN"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "group": "PN",
+     "patient": "14",
+     "gender": "female"
+    }
+   }
+  ]
+ },
+ "contrasts": [
+  {
+   "gse": "GSE67785",
+   "name": "lesional_vs_nonlesional",
+   "case_label": "psoriasis lesional (PP)",
+   "control_label": "psoriasis uninvolved (PN)",
+   "case_gsms": [
+    "GSM1656052",
+    "GSM1656054",
+    "GSM1656056",
+    "GSM1656058",
+    "GSM1656060",
+    "GSM1656062",
+    "GSM1656064",
+    "GSM1656066",
+    "GSM1656068",
+    "GSM1656070",
+    "GSM1656072",
+    "GSM1656074",
+    "GSM1656076",
+    "GSM1656078"
+   ],
+   "control_gsms": [
+    "GSM1656053",
+    "GSM1656055",
+    "GSM1656057",
+    "GSM1656059",
+    "GSM1656061",
+    "GSM1656063",
+    "GSM1656065",
+    "GSM1656067",
+    "GSM1656069",
+    "GSM1656071",
+    "GSM1656073",
+    "GSM1656075",
+    "GSM1656077",
+    "GSM1656079"
+   ],
+   "blocking": "donor",
+   "restricted_to": {},
+   "confidence": 1.0,
+   "status": "confirmed",
+   "rationale": "Paired: PP and PN from the same 14 patients."
+  }
+ ],
+ "markers": [
+  {
+   "symbol": "S100A7",
+   "direction": "up"
+  },
+  {
+   "symbol": "S100A8",
+   "direction": "up"
+  },
+  {
+   "symbol": "S100A9",
+   "direction": "up"
+  },
+  {
+   "symbol": "DEFB4A",
+   "direction": "up"
+  },
+  {
+   "symbol": "KRT16",
+   "direction": "up"
+  },
+  {
+   "symbol": "PI3",
+   "direction": "up"
+  },
+  {
+   "symbol": "IL36G",
+   "direction": "up"
+  },
+  {
+   "symbol": "SERPINB4",
+   "direction": "up"
+  }
+ ]
+}

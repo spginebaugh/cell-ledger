@@ -1,0 +1,928 @@
+{
+ "samplesheet": {
+  "gse": "GSE232753",
+  "assay": "bulk",
+  "title": "Bioinformatics Analysis of Gene Expression Profiles for Diagnosing Sepsis and Risk Prediction in Patients with Sepsis",
+  "samples": [
+   {
+    "gsm": "GSM7373348",
+    "title": "Control 1,Human, Blood",
+    "source_name": "blood",
+    "group": "control",
+    "condition": "none",
+    "treatment": null,
+    "dose": null,
+    "time_point": "Day 0",
+    "tissue": "blood",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: none"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "blood",
+     "disease state": "none",
+     "time": "Day 0"
+    }
+   },
+   {
+    "gsm": "GSM7373349",
+    "title": "Control 2,Human, Blood",
+    "source_name": "blood",
+    "group": "control",
+    "condition": "none",
+    "treatment": null,
+    "dose": null,
+    "time_point": "Day 0",
+    "tissue": "blood",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: none"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "blood",
+     "disease state": "none",
+     "time": "Day 0"
+    }
+   },
+   {
+    "gsm": "GSM7373350",
+    "title": "Control 3,Human, Blood",
+    "source_name": "blood",
+    "group": "control",
+    "condition": "none",
+    "treatment": null,
+    "dose": null,
+    "time_point": "Day 0",
+    "tissue": "blood",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: none"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "blood",
+     "disease state": "none",
+     "time": "Day 0"
+    }
+   },
+   {
+    "gsm": "GSM7373351",
+    "title": "Control 4,Human, Blood",
+    "source_name": "blood",
+    "group": "control",
+    "condition": "none",
+    "treatment": null,
+    "dose": null,
+    "time_point": "Day 0",
+    "tissue": "blood",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: none"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "blood",
+     "disease state": "none",
+     "time": "Day 0"
+    }
+   },
+   {
+    "gsm": "GSM7373352",
+    "title": "Control 5,Human, Blood",
+    "source_name": "blood",
+    "group": "control",
+    "condition": "none",
+    "treatment": null,
+    "dose": null,
+    "time_point": "Day 0",
+    "tissue": "blood",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: none"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "blood",
+     "disease state": "none",
+     "time": "Day 0"
+    }
+   },
+   {
+    "gsm": "GSM7373353",
+    "title": "Control 6,Human, Blood",
+    "source_name": "blood",
+    "group": "control",
+    "condition": "none",
+    "treatment": null,
+    "dose": null,
+    "time_point": "Day 0",
+    "tissue": "blood",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: none"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "blood",
+     "disease state": "none",
+     "time": "Day 0"
+    }
+   },
+   {
+    "gsm": "GSM7373354",
+    "title": "Control 7,Human, Blood",
+    "source_name": "blood",
+    "group": "control",
+    "condition": "none",
+    "treatment": null,
+    "dose": null,
+    "time_point": "Day 0",
+    "tissue": "blood",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: none"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "blood",
+     "disease state": "none",
+     "time": "Day 0"
+    }
+   },
+   {
+    "gsm": "GSM7373355",
+    "title": "Control 8,Human, Blood",
+    "source_name": "blood",
+    "group": "control",
+    "condition": "none",
+    "treatment": null,
+    "dose": null,
+    "time_point": "Day 0",
+    "tissue": "blood",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: none"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "blood",
+     "disease state": "none",
+     "time": "Day 0"
+    }
+   },
+   {
+    "gsm": "GSM7373356",
+    "title": "Sepsis 1,Human, Blood",
+    "source_name": "blood",
+    "group": "case",
+    "condition": "sepsis",
+    "treatment": null,
+    "dose": null,
+    "time_point": "Day 0",
+    "tissue": "blood",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: sepsis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "blood",
+     "disease state": "sepsis",
+     "time": "Day 0"
+    }
+   },
+   {
+    "gsm": "GSM7373357",
+    "title": "Sepsis2,Human, Blood",
+    "source_name": "blood",
+    "group": "case",
+    "condition": "sepsis",
+    "treatment": null,
+    "dose": null,
+    "time_point": "Day 0",
+    "tissue": "blood",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: sepsis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "blood",
+     "disease state": "sepsis",
+     "time": "Day 0"
+    }
+   },
+   {
+    "gsm": "GSM7373358",
+    "title": "Sepsis 3,Human, Blood",
+    "source_name": "blood",
+    "group": "case",
+    "condition": "sepsis",
+    "treatment": null,
+    "dose": null,
+    "time_point": "Day 0",
+    "tissue": "blood",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: sepsis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "blood",
+     "disease state": "sepsis",
+     "time": "Day 0"
+    }
+   },
+   {
+    "gsm": "GSM7373359",
+    "title": "Sepsis 4,Human, Blood",
+    "source_name": "blood",
+    "group": "case",
+    "condition": "sepsis",
+    "treatment": null,
+    "dose": null,
+    "time_point": "Day 0",
+    "tissue": "blood",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: sepsis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "blood",
+     "disease state": "sepsis",
+     "time": "Day 0"
+    }
+   },
+   {
+    "gsm": "GSM7373360",
+    "title": "Sepsis 5,Human, Blood",
+    "source_name": "blood",
+    "group": "case",
+    "condition": "sepsis",
+    "treatment": null,
+    "dose": null,
+    "time_point": "Day 0",
+    "tissue": "blood",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: sepsis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "blood",
+     "disease state": "sepsis",
+     "time": "Day 0"
+    }
+   },
+   {
+    "gsm": "GSM7373361",
+    "title": "Sepsis 6,Human, Blood",
+    "source_name": "blood",
+    "group": "case",
+    "condition": "sepsis",
+    "treatment": null,
+    "dose": null,
+    "time_point": "Day 0",
+    "tissue": "blood",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: sepsis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "blood",
+     "disease state": "sepsis",
+     "time": "Day 0"
+    }
+   },
+   {
+    "gsm": "GSM7373362",
+    "title": "Sepsis 7,Human, Blood",
+    "source_name": "blood",
+    "group": "case",
+    "condition": "sepsis",
+    "treatment": null,
+    "dose": null,
+    "time_point": "Day 0",
+    "tissue": "blood",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: sepsis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "blood",
+     "disease state": "sepsis",
+     "time": "Day 0"
+    }
+   },
+   {
+    "gsm": "GSM7373363",
+    "title": "Sepsis 8,Human, Blood",
+    "source_name": "blood",
+    "group": "case",
+    "condition": "sepsis",
+    "treatment": null,
+    "dose": null,
+    "time_point": "Day 0",
+    "tissue": "blood",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: sepsis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "blood",
+     "disease state": "sepsis",
+     "time": "Day 0"
+    }
+   },
+   {
+    "gsm": "GSM7373364",
+    "title": "Sepsis 9,Human, Blood",
+    "source_name": "blood",
+    "group": "case",
+    "condition": "sepsis",
+    "treatment": null,
+    "dose": null,
+    "time_point": "Day 0",
+    "tissue": "blood",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: sepsis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "blood",
+     "disease state": "sepsis",
+     "time": "Day 0"
+    }
+   },
+   {
+    "gsm": "GSM7373365",
+    "title": "Sepsis 10,Human, Blood",
+    "source_name": "blood",
+    "group": "case",
+    "condition": "sepsis",
+    "treatment": null,
+    "dose": null,
+    "time_point": "Day 0",
+    "tissue": "blood",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: sepsis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "blood",
+     "disease state": "sepsis",
+     "time": "Day 0"
+    }
+   },
+   {
+    "gsm": "GSM7373366",
+    "title": "Sepsis 11,Human, Blood",
+    "source_name": "blood",
+    "group": "case",
+    "condition": "sepsis",
+    "treatment": null,
+    "dose": null,
+    "time_point": "Day 0",
+    "tissue": "blood",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: sepsis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "blood",
+     "disease state": "sepsis",
+     "time": "Day 0"
+    }
+   },
+   {
+    "gsm": "GSM7373367",
+    "title": "Sepsis 12,Human, Blood",
+    "source_name": "blood",
+    "group": "case",
+    "condition": "sepsis",
+    "treatment": null,
+    "dose": null,
+    "time_point": "Day 0",
+    "tissue": "blood",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: sepsis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "blood",
+     "disease state": "sepsis",
+     "time": "Day 0"
+    }
+   },
+   {
+    "gsm": "GSM7373368",
+    "title": "Sepsis 13,Human, Blood",
+    "source_name": "blood",
+    "group": "case",
+    "condition": "sepsis",
+    "treatment": null,
+    "dose": null,
+    "time_point": "Day 0",
+    "tissue": "blood",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: sepsis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "blood",
+     "disease state": "sepsis",
+     "time": "Day 0"
+    }
+   },
+   {
+    "gsm": "GSM7373369",
+    "title": "Sepsis 14,Human, Blood",
+    "source_name": "blood",
+    "group": "case",
+    "condition": "sepsis",
+    "treatment": null,
+    "dose": null,
+    "time_point": "Day 0",
+    "tissue": "blood",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: sepsis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "blood",
+     "disease state": "sepsis",
+     "time": "Day 0"
+    }
+   },
+   {
+    "gsm": "GSM7373370",
+    "title": "Sepsis 15,Human, Blood",
+    "source_name": "blood",
+    "group": "case",
+    "condition": "sepsis",
+    "treatment": null,
+    "dose": null,
+    "time_point": "Day 0",
+    "tissue": "blood",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: sepsis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "blood",
+     "disease state": "sepsis",
+     "time": "Day 0"
+    }
+   },
+   {
+    "gsm": "GSM7373371",
+    "title": "Sepsis 16,Human, Blood",
+    "source_name": "blood",
+    "group": "case",
+    "condition": "sepsis",
+    "treatment": null,
+    "dose": null,
+    "time_point": "Day 0",
+    "tissue": "blood",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: sepsis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "blood",
+     "disease state": "sepsis",
+     "time": "Day 0"
+    }
+   },
+   {
+    "gsm": "GSM7373372",
+    "title": "Sepsis 17,Human, Blood",
+    "source_name": "blood",
+    "group": "case",
+    "condition": "sepsis",
+    "treatment": null,
+    "dose": null,
+    "time_point": "Day 0",
+    "tissue": "blood",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: sepsis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "blood",
+     "disease state": "sepsis",
+     "time": "Day 0"
+    }
+   },
+   {
+    "gsm": "GSM7373373",
+    "title": "Sepsis 18,Human, Blood",
+    "source_name": "blood",
+    "group": "case",
+    "condition": "sepsis",
+    "treatment": null,
+    "dose": null,
+    "time_point": "Day 0",
+    "tissue": "blood",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: sepsis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "blood",
+     "disease state": "sepsis",
+     "time": "Day 0"
+    }
+   },
+   {
+    "gsm": "GSM7373374",
+    "title": "Sepsis 19,Human, Blood",
+    "source_name": "blood",
+    "group": "case",
+    "condition": "sepsis",
+    "treatment": null,
+    "dose": null,
+    "time_point": "Day 0",
+    "tissue": "blood",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: sepsis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "blood",
+     "disease state": "sepsis",
+     "time": "Day 0"
+    }
+   },
+   {
+    "gsm": "GSM7373375",
+    "title": "Sepsis 20,Human, Blood",
+    "source_name": "blood",
+    "group": "case",
+    "condition": "sepsis",
+    "treatment": null,
+    "dose": null,
+    "time_point": "Day 0",
+    "tissue": "blood",
+    "cell_type": null,
+    "cell_line": null,
+    "genotype": null,
+    "sex": null,
+    "age": null,
+    "donor": null,
+    "batch": null,
+    "organism": "Homo sapiens",
+    "replicate": null,
+    "evidence": [
+     "disease state: sepsis"
+    ],
+    "confidence": 1.0,
+    "needs_review": false,
+    "raw": {
+     "tissue": "blood",
+     "disease state": "sepsis",
+     "time": "Day 0"
+    }
+   }
+  ]
+ },
+ "contrasts": [
+  {
+   "gse": "GSE232753",
+   "name": "sepsis_vs_healthy",
+   "case_label": "sepsis whole blood",
+   "control_label": "healthy whole blood",
+   "case_gsms": [
+    "GSM7373356",
+    "GSM7373357",
+    "GSM7373358",
+    "GSM7373359",
+    "GSM7373360",
+    "GSM7373361",
+    "GSM7373362",
+    "GSM7373363",
+    "GSM7373364",
+    "GSM7373365",
+    "GSM7373366",
+    "GSM7373367",
+    "GSM7373368",
+    "GSM7373369",
+    "GSM7373370",
+    "GSM7373371",
+    "GSM7373372",
+    "GSM7373373",
+    "GSM7373374",
+    "GSM7373375"
+   ],
+   "control_gsms": [
+    "GSM7373348",
+    "GSM7373349",
+    "GSM7373350",
+    "GSM7373351",
+    "GSM7373352",
+    "GSM7373353",
+    "GSM7373354",
+    "GSM7373355"
+   ],
+   "blocking": null,
+   "restricted_to": {},
+   "confidence": 1.0,
+   "status": "confirmed",
+   "rationale": ""
+  }
+ ],
+ "markers": [
+  {
+   "symbol": "MMP8",
+   "direction": "up"
+  },
+  {
+   "symbol": "CD177",
+   "direction": "up"
+  },
+  {
+   "symbol": "OLFM4",
+   "direction": "up"
+  },
+  {
+   "symbol": "ARG1",
+   "direction": "up"
+  },
+  {
+   "symbol": "LCN2",
+   "direction": "up"
+  },
+  {
+   "symbol": "HP",
+   "direction": "up"
+  },
+  {
+   "symbol": "RETN",
+   "direction": "up"
+  },
+  {
+   "symbol": "MMP9",
+   "direction": "up"
+  }
+ ]
+}

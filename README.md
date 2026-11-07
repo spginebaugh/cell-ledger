@@ -19,8 +19,11 @@ packages/core/       pure-Python pipeline library, no web deps (cell_ledger)
   geo/               GEO search and metadata retrieval
   triage/            usability checks
   samplesheet/       harmonized SampleSheet model: the backend/frontend contract
-  analysis/          bulk (pydeseq2) and single-cell (scanpy) steps
-  report/            serializable reports
+  analysis/          the standard two-group pipeline (QC, pydeseq2, GSEA, gene lookup)
+  report/            AnalysisReport model, markdown renderer, figures
+  cli.py             `cell-ledger run <GSE>` / `run-all`
+scripts/             dev scripts: fetch example GEO datasets, build gold sample sheets
+docs/                specs and ADRs (adr-001: SampleSheet/Contrast contract)
 data/                gitignored GEO cache and run outputs
 ```
 
@@ -41,6 +44,8 @@ mise run setup   # uv sync, bun install, Playwright Chromium
 | `mise run lint`      | ruff, pyright, Biome, tsc                                   |
 | `mise run fmt`       | auto-fix formatting everywhere                              |
 | `mise run gen:api`   | export OpenAPI schema and regenerate `apps/web/src/api/generated` |
+| `mise run data:fetch`| download the ten example GEO datasets into `data/geo`       |
+| `mise run analyze -- GSE82227` | run the pipeline on one dataset (see docs/pipeline.md) |
 
 Run `mise run gen:api` after changing any FastAPI route or pydantic model so the
 frontend types stay in sync. The generated client is committed.
@@ -52,4 +57,6 @@ frontend types stay in sync. The generated client is committed.
 - `packages/core` never imports FastAPI; the agent's tools are thin wrappers
   over core functions so the pipeline runs from a CLI or a test fixture.
 - Tests that need GEO data use small fixtures in `packages/core/tests/fixtures`,
-  never the network.
+  never the network. `fixtures/geo_examples/` holds hand-curated sample sheets and
+  contrasts for ten two-group series; `uv run python scripts/fetch_geo_examples.py`
+  downloads their counts into `data/geo/` for local integration tests.
