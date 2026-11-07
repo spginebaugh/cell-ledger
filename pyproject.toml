@@ -39,7 +39,7 @@ known-first-party = ["cell_ledger", "cell_ledger_api"]
 
 # ---------------------------------------------------------------- pytest
 [tool.pytest.ini_options]
-testpaths = ["packages/core/tests", "apps/api/tests"]
+testpaths = ["packages/core/tests", "apps/api/tests", "evals/tests"]
 addopts = "-q --import-mode=importlib"
 asyncio_mode = "auto"
 asyncio_default_fixture_loop_scope = "function"
@@ -50,5 +50,5 @@ markers = ["slow: needs the local GEO downloads and takes tens of seconds"]
 venvPath = "."
 venv = ".venv"
 pythonVersion = "3.13"
-include = ["packages/core/src", "apps/api/src", "packages/core/tests", "apps/api/tests"]
+include = ["packages/core/src", "apps/api/src", "packages/core/tests", "apps/api/tests", "evals"]
 typeCheckingMode = "standard"

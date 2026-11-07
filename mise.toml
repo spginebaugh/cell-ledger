@@ -74,6 +74,10 @@ run = "bun run --cwd apps/web test"
 [tasks.test]
 depends = ["test:py", "test:web"]
 
+[tasks.eval]
+description = "Offline integrity checks with machine-readable results (not a biology benchmark)"
+run = "uv run python evals/run.py"
+
 [tasks.e2e]
 description = "Playwright end-to-end tests (boots api and web itself)"
 run = "bun run --cwd apps/web e2e"

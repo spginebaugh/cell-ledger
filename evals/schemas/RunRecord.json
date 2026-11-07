@@ -1,0 +1,406 @@
+{
+  "$defs": {
+    "BundleObservation": {
+      "additionalProperties": false,
+      "properties": {
+        "gse": {
+          "title": "Gse",
+          "type": "string"
+        },
+        "sample_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Sample Ids",
+          "type": "array"
+        },
+        "units": {
+          "title": "Units",
+          "type": "string"
+        },
+        "de_ready": {
+          "title": "De Ready",
+          "type": "boolean"
+        },
+        "integrity_passed": {
+          "title": "Integrity Passed",
+          "type": "boolean"
+        },
+        "integrity_errors": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Integrity Errors",
+          "type": "array"
+        },
+        "workflow_executed": {
+          "default": false,
+          "title": "Workflow Executed",
+          "type": "boolean"
+        },
+        "workflow_passed": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Workflow Passed"
+        },
+        "workflow_log_sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[a-f0-9]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Workflow Log Sha256"
+        }
+      },
+      "required": [
+        "gse",
+        "sample_ids",
+        "units",
+        "de_ready",
+        "integrity_passed"
+      ],
+      "title": "BundleObservation",
+      "type": "object"
+    },
+    "Conditions": {
+      "additionalProperties": false,
+      "properties": {
+        "model": {
+          "minLength": 1,
+          "title": "Model",
+          "type": "string"
+        },
+        "source_access": {
+          "minLength": 1,
+          "title": "Source Access",
+          "type": "string"
+        },
+        "execution_access": {
+          "minLength": 1,
+          "title": "Execution Access",
+          "type": "string"
+        },
+        "time_budget_seconds": {
+          "exclusiveMinimum": 0,
+          "title": "Time Budget Seconds",
+          "type": "integer"
+        },
+        "token_budget": {
+          "exclusiveMinimum": 0,
+          "title": "Token Budget",
+          "type": "integer"
+        },
+        "protocol": {
+          "default": "frozen_pool",
+          "enum": [
+            "frozen_pool",
+            "live_search"
+          ],
+          "title": "Protocol",
+          "type": "string"
+        },
+        "snapshot_sha256": {
+          "title": "Snapshot Sha256",
+          "type": "string"
+        },
+        "prompt_sha256": {
+          "title": "Prompt Sha256",
+          "type": "string"
+        },
+        "attempt": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Attempt",
+          "type": "integer"
+        },
+        "code_revision": {
+          "minLength": 1,
+          "title": "Code Revision",
+          "type": "string"
+        }
+      },
+      "required": [
+        "model",
+        "source_access",
+        "execution_access",
+        "time_budget_seconds",
+        "token_budget",
+        "snapshot_sha256",
+        "prompt_sha256",
+        "code_revision"
+      ],
+      "title": "Conditions",
+      "type": "object"
+    },
+    "Evidence": {
+      "additionalProperties": false,
+      "properties": {
+        "gse": {
+          "pattern": "^GSE\\d+$",
+          "title": "Gse",
+          "type": "string"
+        },
+        "gsm": {
+          "anyOf": [
+            {
+              "pattern": "^GSM\\d+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Gsm"
+        },
+        "field": {
+          "title": "Field",
+          "type": "string"
+        },
+        "quote": {
+          "minLength": 1,
+          "title": "Quote",
+          "type": "string"
+        }
+      },
+      "required": [
+        "gse",
+        "field",
+        "quote"
+      ],
+      "title": "Evidence",
+      "type": "object"
+    },
+    "SamplePrediction": {
+      "additionalProperties": false,
+      "properties": {
+        "gse": {
+          "title": "Gse",
+          "type": "string"
+        },
+        "gsm": {
+          "title": "Gsm",
+          "type": "string"
+        },
+        "fields": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "title": "Fields",
+          "type": "object"
+        },
+        "evidence": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "object"
+        }
+      },
+      "required": [
+        "gse",
+        "gsm",
+        "fields"
+      ],
+      "title": "SamplePrediction",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "case_id": {
+      "title": "Case Id",
+      "type": "string"
+    },
+    "system": {
+      "enum": [
+        "specialist",
+        "baseline"
+      ],
+      "title": "System",
+      "type": "string"
+    },
+    "conditions": {
+      "$ref": "#/$defs/Conditions"
+    },
+    "run_status": {
+      "enum": [
+        "complete",
+        "error",
+        "timeout"
+      ],
+      "title": "Run Status",
+      "type": "string"
+    },
+    "action": {
+      "enum": [
+        "proceed",
+        "ask",
+        "decline",
+        "no_results",
+        "error"
+      ],
+      "title": "Action",
+      "type": "string"
+    },
+    "ranking": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Ranking",
+      "type": "array"
+    },
+    "recommendations": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Recommendations",
+      "type": "array"
+    },
+    "clarification_targets": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Clarification Targets",
+      "type": "array"
+    },
+    "questions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Questions",
+      "type": "array"
+    },
+    "question_reviewed_by": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Question Reviewed By"
+    },
+    "samples": {
+      "items": {
+        "$ref": "#/$defs/SamplePrediction"
+      },
+      "title": "Samples",
+      "type": "array"
+    },
+    "bundles": {
+      "items": {
+        "$ref": "#/$defs/BundleObservation"
+      },
+      "title": "Bundles",
+      "type": "array"
+    },
+    "elapsed_seconds": {
+      "minimum": 0,
+      "title": "Elapsed Seconds",
+      "type": "number"
+    },
+    "cost_usd": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Cost Usd"
+    },
+    "input_tokens": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Input Tokens"
+    },
+    "output_tokens": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Output Tokens"
+    },
+    "human_corrections": {
+      "default": 0,
+      "minimum": 0,
+      "title": "Human Corrections",
+      "type": "integer"
+    },
+    "clarification_answers": {
+      "default": 0,
+      "minimum": 0,
+      "title": "Clarification Answers",
+      "type": "integer"
+    },
+    "error": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Error"
+    },
+    "raw_output_sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Raw Output Sha256",
+      "type": "string"
+    }
+  },
+  "required": [
+    "case_id",
+    "system",
+    "conditions",
+    "run_status",
+    "action",
+    "ranking",
+    "recommendations",
+    "elapsed_seconds",
+    "raw_output_sha256"
+  ],
+  "title": "RunRecord",
+  "type": "object"
+}

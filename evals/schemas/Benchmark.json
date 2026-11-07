@@ -1,0 +1,298 @@
+{
+  "$defs": {
+    "CaseGold": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z0-9][a-z0-9_-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "split": {
+          "enum": [
+            "development",
+            "held_out"
+          ],
+          "title": "Split",
+          "type": "string"
+        },
+        "prompt": {
+          "minLength": 3,
+          "title": "Prompt",
+          "type": "string"
+        },
+        "constraints": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              },
+              {
+                "type": "boolean"
+              }
+            ]
+          },
+          "title": "Constraints",
+          "type": "object"
+        },
+        "required_workflow": {
+          "default": "none",
+          "enum": [
+            "none",
+            "load_only",
+            "downstream"
+          ],
+          "title": "Required Workflow",
+          "type": "string"
+        },
+        "expected_action": {
+          "enum": [
+            "proceed",
+            "ask",
+            "decline",
+            "no_results"
+          ],
+          "title": "Expected Action",
+          "type": "string"
+        },
+        "clarification_targets": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Clarification Targets",
+          "type": "array"
+        },
+        "studies": {
+          "additionalProperties": {
+            "$ref": "#/$defs/StudyGold"
+          },
+          "title": "Studies",
+          "type": "object"
+        },
+        "reviewed_by": {
+          "minLength": 1,
+          "title": "Reviewed By",
+          "type": "string"
+        },
+        "review_notes": {
+          "minLength": 1,
+          "title": "Review Notes",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "split",
+        "prompt",
+        "expected_action",
+        "reviewed_by",
+        "review_notes"
+      ],
+      "title": "CaseGold",
+      "type": "object"
+    },
+    "Evidence": {
+      "additionalProperties": false,
+      "properties": {
+        "gse": {
+          "pattern": "^GSE\\d+$",
+          "title": "Gse",
+          "type": "string"
+        },
+        "gsm": {
+          "anyOf": [
+            {
+              "pattern": "^GSM\\d+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Gsm"
+        },
+        "field": {
+          "title": "Field",
+          "type": "string"
+        },
+        "quote": {
+          "minLength": 1,
+          "title": "Quote",
+          "type": "string"
+        }
+      },
+      "required": [
+        "gse",
+        "field",
+        "quote"
+      ],
+      "title": "Evidence",
+      "type": "object"
+    },
+    "SampleGold": {
+      "additionalProperties": false,
+      "properties": {
+        "fields": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "title": "Fields",
+          "type": "object"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "minItems": 1,
+          "title": "Evidence",
+          "type": "array"
+        }
+      },
+      "required": [
+        "fields",
+        "evidence"
+      ],
+      "title": "SampleGold",
+      "type": "object"
+    },
+    "StudyGold": {
+      "additionalProperties": false,
+      "properties": {
+        "family_id": {
+          "minLength": 1,
+          "title": "Family Id",
+          "type": "string"
+        },
+        "relevant": {
+          "title": "Relevant",
+          "type": "boolean"
+        },
+        "eligible": {
+          "title": "Eligible",
+          "type": "boolean"
+        },
+        "expected_gsms": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Expected Gsms",
+          "type": "array"
+        },
+        "units": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Units"
+        },
+        "de_ready": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "De Ready"
+        },
+        "samples": {
+          "additionalProperties": {
+            "$ref": "#/$defs/SampleGold"
+          },
+          "title": "Samples",
+          "type": "object"
+        },
+        "rationale": {
+          "minLength": 1,
+          "title": "Rationale",
+          "type": "string"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "reviewed_by": {
+          "minLength": 1,
+          "title": "Reviewed By",
+          "type": "string"
+        }
+      },
+      "required": [
+        "family_id",
+        "relevant",
+        "eligible",
+        "rationale",
+        "reviewed_by"
+      ],
+      "title": "StudyGold",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "title": "Id",
+      "type": "string"
+    },
+    "version": {
+      "title": "Version",
+      "type": "string"
+    },
+    "data_kind": {
+      "default": "real",
+      "enum": [
+        "real",
+        "synthetic"
+      ],
+      "title": "Data Kind",
+      "type": "string"
+    },
+    "snapshot_sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Snapshot Sha256",
+      "type": "string"
+    },
+    "frozen": {
+      "default": false,
+      "title": "Frozen",
+      "type": "boolean"
+    },
+    "cases": {
+      "items": {
+        "$ref": "#/$defs/CaseGold"
+      },
+      "minItems": 1,
+      "title": "Cases",
+      "type": "array"
+    }
+  },
+  "required": [
+    "id",
+    "version",
+    "snapshot_sha256",
+    "cases"
+  ],
+  "title": "Benchmark",
+  "type": "object"
+}

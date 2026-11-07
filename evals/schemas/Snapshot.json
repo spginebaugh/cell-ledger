@@ -1,0 +1,98 @@
+{
+  "$defs": {
+    "SourceRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "gse": {
+          "pattern": "^GSE\\d+$",
+          "title": "Gse",
+          "type": "string"
+        },
+        "exists": {
+          "default": true,
+          "title": "Exists",
+          "type": "boolean"
+        },
+        "url": {
+          "title": "Url",
+          "type": "string"
+        },
+        "retrieved_at": {
+          "title": "Retrieved At",
+          "type": "string"
+        },
+        "fields": {
+          "additionalProperties": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "title": "Fields",
+          "type": "object"
+        },
+        "samples": {
+          "additionalProperties": {
+            "additionalProperties": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "type": "object"
+          },
+          "title": "Samples",
+          "type": "object"
+        },
+        "absence_evidence": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Absence Evidence"
+        }
+      },
+      "required": [
+        "gse",
+        "url",
+        "retrieved_at"
+      ],
+      "title": "SourceRecord",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "data_kind": {
+      "default": "real",
+      "enum": [
+        "real",
+        "synthetic"
+      ],
+      "title": "Data Kind",
+      "type": "string"
+    },
+    "records": {
+      "additionalProperties": {
+        "$ref": "#/$defs/SourceRecord"
+      },
+      "title": "Records",
+      "type": "object"
+    }
+  },
+  "required": [
+    "records"
+  ],
+  "title": "Snapshot",
+  "type": "object"
+}
