@@ -1,9 +1,15 @@
 # cell-ledger
 
-**A specialist agent for public RNA-seq data.** Ask a question about a gene, and cell-ledger
+
+🏆 **First place, [Gauntlet AI Champions vs. Challengers](https://luma.com/jx1xu350).** This
+project was built in 24 hours as part of the Gauntlet AI 24-hour hackathon.
+
+**A specialist agent for public RNA-seq data.** Ask a biological research question, and cell-ledger
 finds real human bulk RNA-seq studies on NIH GEO, checks that they fit, labels every sample,
 runs one clean differential-expression comparison per study, and pools the answer across
 studies. Every number on screen comes from a file you can open.
+
+
 
 ![cell-ledger home page: ask a question a dataset can answer](docs/images/01-home.png)
 
