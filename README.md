@@ -4,10 +4,14 @@
 🏆 **First place, [Gauntlet AI Champions vs. Challengers](https://luma.com/jx1xu350).** This
 project was built in 24 hours as part of the Gauntlet AI 24-hour hackathon.
 
-**A specialist agent for public RNA-seq data.** Ask a biological research question, and cell-ledger
-finds real human bulk RNA-seq studies on NIH GEO, checks that they fit, labels every sample,
-runs one clean differential-expression comparison per study, and pools the answer across
-studies. Every number on screen comes from a file you can open.
+**A specialist agent for public RNA-seq data.** Ask a biological research question, and
+cell-ledger turns public human bulk RNA-seq studies into an answer. It searches NIH GEO for
+studies that fit, labels every sample with evidence quoted from the GEO record, and runs a full
+analysis on each study: sample QC (PCA, clustering, sex and outlier checks), differential
+expression, pathway enrichment, and a verdict for each gene you asked about. Click any gene to see
+where it's expressed in the body and in the cell, its 3D structure and its interaction partners.
+When several studies address the same question, a meta-analysis pools them. Every number on screen
+comes from a file you can open.
 
 
 
